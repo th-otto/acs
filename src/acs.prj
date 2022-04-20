@@ -1,0 +1,228 @@
+acs.app
+;
+; Not nice to use absolute paths here,
+; but we must ensure that we use the current versions
+; of acs header files, not the ones that are already installed in
+; the default directory.
+; For the same reason, we have to add the default include directory
+; here.
+; Important: make sure to *not* use any include directory
+; in your shell directory settings,
+; because that would be looked up first.
+;
+.C[-IC:\src\acs\include]
+.C[-IC:\pc\include]
+
+.C[ -A- ]		; no strict ANSI
+.C[ -C- ]		; no nested comments
+.C[ -T- ]		; no stack checking
+.C[ -K- ]		; Default Char is signed
+.C[ -P  ]		; Absolute calls
+.C[ -G- ]		; optimize for speed
+
+; Flags fÅr die Debug-Version
+;.C[ -D_DEBUG -DDEBUG ]
+;.C[ -J+ ]		; No jump optimization
+;.C[ -Z+ ]		; No register optimization
+;.C[ -M+ ]		; No String Merging
+;.C[ -R+ ]		; No Register Variables
+
+; Flags fÅr die Release-Version
+.C[ -J- ]		; Jump optimization
+.C[ -Z- ]		; Register optimization
+.C[ -M- ]		; String Merging
+.C[ -R- ]		; Register Variables
+
+.S[-U]
+
+.L[-S=40960]
+
+=
+stupargv.s
+
+acsbase.s
+palette.s
+edbehave.s
+general.s
+about.s
+edutil.s
+
+io\protocol.s
+io\fixacs.s
+io\acsio.s
+io\rcsin.s
+io\pc_head.s
+io\pc_out.s
+io\pp_out.s
+io\str_out.s
+
+edit2\eddataed.s
+edit2\edrefed.s
+edit2\edaled.s
+edit2\ediconed.s
+edit2\edimaged.s
+edit2\edmoused.s
+edit2\edusred.s
+edit2\edteded.s
+edit2\edstred.s
+edit2\edwinded.s
+edit2\edparts.s
+
+editor\edobjced.s
+editor\edmenued.s
+editor\edpuped.s
+editor\ueboxed.s
+editor\ueselect.s
+editor\ueeditor.s
+editor\ueslider.s
+editor\uepictur.s
+editor\uecycle.s
+editor\uearrow.s
+editor\uepatter.s
+editor\ueinner.s
+editor\ue3dbutt.s
+editor\uecheck.s
+editor\ueftext.s
+editor\uetitle.s [-M-]
+editor\edobclas.s
+editor\edobstru.s
+editor\edobsurf.s
+editor\edobobjc.s
+editor\edobusrm.s
+editor\edobboxm.s
+editor\edobicm.s
+editor\edobimm.s
+editor\edobstrm.s
+editor\edobtedm.s
+editor\edobaflm.s
+editor\edobaeom.s
+editor\edobkeys.s
+
+list\edlist.s
+list\edalert.s
+list\eddata.s
+list\edwind.s
+list\edicon.s
+list\edimage.s
+list\eduser.s
+list\edmenu.s
+list\edmouse.s
+list\edobject.s
+list\edpopup.s
+list\edref.s
+list\edstring.s
+list\edtedi.s
+
+acsplus\slider.s
+acsplus\wislider.s
+acsplus\editor.s
+acsplus\pur_desk.s
+acsplus\editwi.s
+acsplus\fontsel.s [-M-]
+acsplus\list.s
+acsplus\proto.s
+
+lib\main.s
+lib\initterm.s
+lib\vdi_data.s
+lib\mygemdos.s [-S]
+lib\nkcc_s.s
+lib\nkcc.s
+lib\config.s
+lib\string.s
+lib\drag.s
+lib\event.s
+lib\fileutil.s
+lib\memory.s
+lib\menu.s
+lib\mouse.s
+lib\object.s
+lib\wobject.s
+lib\backplan.s
+lib\window.s
+lib\shelutil.s
+lib\thermo.s
+lib\keytab.s [-M-]
+lib\messages\msgserv.s [-M-]
+lib\messages\screen.s
+lib\messages\xacc.s [-M-]
+lib\messages\av.s
+lib\messages\dd.s
+lib\messages\dhst.s
+lib\messages\bubble.s [-M-]
+lib\messages\gemscr.s
+lib\messages\olga.s
+lib\messages\stguide.s
+lib\messages\seproto.s
+lib\messages\ssp.s
+lib\messages\pc_help.s [-M-]
+lib\userdef\userobj.s
+lib\userdef\userobj2.s
+lib\userdef\ftext.s [-M-]
+lib\userdef\cycle.s [-M-]
+lib\userdef\picture.s
+lib\userdef\boxed.s [-M-]
+lib\utility\util.s
+lib\utility\date.s
+lib\wdialog\filesel.s
+lib\wdialog\printsel.s
+lib\wdialog\fontsel.s
+lib\listen\ulinlist.s
+lib\modul\modul.s
+lib\modul\modulold.s
+
+vdi\vdi_s.s
+vdi\vdi_c.c
+vdi\ctrl.c
+vdi\output.c
+vdi\attrib.c
+vdi\raster.c
+vdi\input.c
+vdi\inquire.c
+vdi\escape.c
+
+aes\aes_s.s
+aes\appl.c [-M-]
+aes\evnt.c
+aes\menu.c
+aes\objc.c
+aes\form.c
+aes\graf.c
+aes\scrp.c
+aes\fsel.c
+aes\fslx.c
+aes\wind.c
+aes\rsrc.c
+aes\shel.c
+aes\fnts.c
+aes\lbox.c
+aes\pdlg.c
+aes\wdlg.c
+aes\edit.c
+aes\purec\appl_pc.c
+aes\purec\evnt_pc.c
+aes\purec\menu_pc.c
+aes\purec\objc_pc.c
+aes\purec\form_pc.c
+aes\purec\graf_pc.c
+aes\purec\scrp_pc.c
+aes\purec\fsel_pc.c
+aes\purec\fslx_pc.c
+aes\purec\wind_pc.c
+aes\purec\rsrc_pc.c
+aes\purec\shel_pc.c
+aes\purec\fnts_pc.c
+aes\purec\lbox_pc.c
+aes\purec\pdlg_pc.c
+aes\purec\wdlg_pc.c
+aes\purec\edit_pc.c
+
+tos\bios.s
+tos\xbios.s
+tos\gemdos.s
+tos\mintnet.s
+tos\pamsnet.s
+tos\tos_util.c [-J- -Z- -R- -M-]
+
+..\lib\pcfltlib.lib
+..\lib\pcstdlib.lib
