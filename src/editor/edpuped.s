@@ -1,25 +1,28 @@
+
 pu_init:
 [00024b4e] 48e7 1c3e                 movem.l    d3-d5/a2-a6,-(a7)
 [00024b52] 2448                      movea.l    a0,a2
-[00024b54] 4eb9 0002 aada            jsr        $0002AADA
+[00024b54] 4eb9 0002 aada            jsr        ed_init
 [00024b5a] 4a40                      tst.w      d0
-[00024b5c] 6704                      beq.s      $00024B62
+[00024b5c] 6704                      beq.s      pu_init_1
 [00024b5e] 70ff                      moveq.l    #-1,d0
-[00024b60] 6066                      bra.s      $00024BC8
+[00024b60] 6066                      bra.s      pu_init_2
+pu_init_1:
 [00024b62] 266a 0014                 movea.l    20(a2),a3
 [00024b66] 284b                      movea.l    a3,a4
 [00024b68] 2a52                      movea.l    (a2),a5
 [00024b6a] 2c6d 0004                 movea.l    4(a5),a6
 [00024b6e] 202e 000e                 move.l     14(a6),d0
 [00024b72] 7238                      moveq.l    #56,d1
-[00024b74] 4eb9 0007 769e            jsr        $0007769E
+[00024b74] 4eb9 0007 769e            jsr        _uldiv
 [00024b7a] 2600                      move.l     d0,d3
 [00024b7c] 2079 0010 1f12            movea.l    ACSblk,a0
 [00024b82] 3768 000c 0014            move.w     12(a0),20(a3)
 [00024b88] 2079 0010 1f12            movea.l    ACSblk,a0
 [00024b8e] 3768 000e 0016            move.w     14(a0),22(a3)
 [00024b94] 4244                      clr.w      d4
-[00024b96] 601e                      bra.s      $00024BB6
+[00024b96] 601e                      bra.s      pu_init_3
+pu_init_4:
 [00024b98] 3a04                      move.w     d4,d5
 [00024b9a] da45                      add.w      d5,d5
 [00024b9c] da44                      add.w      d4,d5
@@ -30,16 +33,19 @@ pu_init:
 [00024ba6] d080                      add.l      d0,d0
 [00024ba8] d081                      add.l      d1,d0
 [00024baa] e788                      lsl.l      #3,d0
-[00024bac] 29bc 0002 4dbe 0800       move.l     #$00024DBE,0(a4,d0.l)
+[00024bac] 29bc 0002 4dbe 0800       move.l     #pup_edit,0(a4,d0.l)
 [00024bb4] 5244                      addq.w     #1,d4
+pu_init_3:
 [00024bb6] b644                      cmp.w      d4,d3
-[00024bb8] 6ede                      bgt.s      $00024B98
+[00024bb8] 6ede                      bgt.s      pu_init_4
 [00024bba] 302d 0018                 move.w     24(a5),d0
 [00024bbe] 204a                      movea.l    a2,a0
-[00024bc0] 4eb9 0002 4f68            jsr        $00024F68
+[00024bc0] 4eb9 0002 4f68            jsr        set_menu
 [00024bc6] 4240                      clr.w      d0
+pu_init_2:
 [00024bc8] 4cdf 7c38                 movem.l    (a7)+,d3-d5/a2-a6
 [00024bcc] 4e75                      rts
+
 pu_make:
 [00024bce] 48e7 0038                 movem.l    a2-a4,-(a7)
 [00024bd2] 594f                      subq.w     #4,a7
@@ -47,15 +53,16 @@ pu_make:
 [00024bd6] 2668 0004                 movea.l    4(a0),a3
 [00024bda] 286b 0012                 movea.l    18(a3),a4
 [00024bde] 200c                      move.l     a4,d0
-[00024be0] 670c                      beq.s      $00024BEE
+[00024be0] 670c                      beq.s      pu_make_1
 [00024be2] 204c                      movea.l    a4,a0
-[00024be4] 4eb9 0004 f0ca            jsr        $0004F0CA
-[00024bea] 6000 0086                 bra        $00024C72
+[00024be4] 4eb9 0004 f0ca            jsr        Awi_show
+[00024bea] 6000 0086                 bra        pu_make_2
+pu_make_1:
 [00024bee] 7032                      moveq.l    #50,d0
 [00024bf0] 4eb9 0004 7cc8            jsr        Ax_malloc
 [00024bf6] 2448                      movea.l    a0,a2
 [00024bf8] 200a                      move.l     a2,d0
-[00024bfa] 6772                      beq.s      $00024C6E
+[00024bfa] 6772                      beq.s      pu_make_3
 [00024bfc] 2257                      movea.l    (a7),a1
 [00024bfe] 2091                      move.l     (a1),(a0)
 [00024c00] 254b 0004                 move.l     a3,4(a2)
@@ -67,17 +74,17 @@ pu_make:
 [00024c1c] 23c9 000b ca68            move.l     a1,$000BCA68
 [00024c22] 2079 000b ca74            movea.l    $000BCA74,a0
 [00024c28] 2149 0008                 move.l     a1,8(a0)
-[00024c2c] 41f9 000b ca1a            lea.l      $000BCA1A,a0
-[00024c32] 4eb9 0004 f41a            jsr        $0004F41A
+[00024c2c] 41f9 000b ca1a            lea.l      WI_POPUP,a0
+[00024c32] 4eb9 0004 f41a            jsr        Awi_create
 [00024c38] 2848                      movea.l    a0,a4
 [00024c3a] 200c                      move.l     a4,d0
-[00024c3c] 6730                      beq.s      $00024C6E
+[00024c3c] 6730                      beq.s      pu_make_3
 [00024c3e] 2257                      movea.l    (a7),a1
 [00024c40] 2051                      movea.l    (a1),a0
 [00024c42] 4868 0168                 pea.l      360(a0)
 [00024c46] 43eb 003a                 lea.l      58(a3),a1
 [00024c4a] 204c                      movea.l    a4,a0
-[00024c4c] 4eb9 0001 47a8            jsr        $000147A8
+[00024c4c] 4eb9 0001 47a8            jsr        wi_pos
 [00024c52] 584f                      addq.w     #4,a7
 [00024c54] 288a                      move.l     a2,(a4)
 [00024c56] 274c 0012                 move.l     a4,18(a3)
@@ -85,15 +92,19 @@ pu_make:
 [00024c5c] 226c 000c                 movea.l    12(a4),a1
 [00024c60] 4e91                      jsr        (a1)
 [00024c62] 4a40                      tst.w      d0
-[00024c64] 670c                      beq.s      $00024C72
+[00024c64] 670c                      beq.s      pu_make_2
 [00024c66] 204c                      movea.l    a4,a0
-[00024c68] 4eb9 0002 af6a            jsr        $0002AF6A
+[00024c68] 4eb9 0002 af6a            jsr        ed_term
+pu_make_3:
 [00024c6e] 91c8                      suba.l     a0,a0
-[00024c70] 6002                      bra.s      $00024C74
+[00024c70] 6002                      bra.s      pu_make_4
+pu_make_2:
 [00024c72] 204c                      movea.l    a4,a0
+pu_make_4:
 [00024c74] 584f                      addq.w     #4,a7
 [00024c76] 4cdf 1c00                 movem.l    (a7)+,a2-a4
 [00024c7a] 4e75                      rts
+
 new_menu:
 [00024c7c] 48e7 1838                 movem.l    d3-d4/a2-a4,-(a7)
 [00024c80] 2448                      movea.l    a0,a2
@@ -101,11 +112,11 @@ new_menu:
 [00024c84] 2050                      movea.l    (a0),a0
 [00024c86] 2650                      movea.l    (a0),a3
 [00024c88] 2868 0004                 movea.l    4(a0),a4
-[00024c8c] 4879 000a f22c            pea.l      $000AF22C
+[00024c8c] 4879 000a f22c            pea.l      protosub
 [00024c92] 224c                      movea.l    a4,a1
 [00024c94] 204b                      movea.l    a3,a0
 [00024c96] 4240                      clr.w      d0
-[00024c98] 4eb9 0002 b77e            jsr        $0002B77E
+[00024c98] 4eb9 0002 b77e            jsr        copysub_ob
 [00024c9e] 584f                      addq.w     #4,a7
 [00024ca0] 3600                      move.w     d0,d3
 [00024ca2] 72fe                      moveq.l    #-2,d1
@@ -133,6 +144,7 @@ new_menu:
 [00024cda] 4e91                      jsr        (a1)
 [00024cdc] 4cdf 1c18                 movem.l    (a7)+,d3-d4/a2-a4
 [00024ce0] 4e75                      rts
+
 open_menu:
 [00024ce2] 48e7 1c38                 movem.l    d3-d5/a2-a4,-(a7)
 [00024ce6] 2079 0010 1f12            movea.l    ACSblk,a0
@@ -146,21 +158,22 @@ open_menu:
 [00024d00] d081                      add.l      d1,d0
 [00024d02] e788                      lsl.l      #3,d0
 [00024d04] 3833 0802                 move.w     2(a3,d0.l),d4
-[00024d08] 4eb9 0004 4a26            jsr        $00044A26
+[00024d08] 4eb9 0004 4a26            jsr        Adr_unselect
 [00024d0e] 2852                      movea.l    (a2),a4
 [00024d10] 3a2c 0018                 move.w     24(a4),d5
 [00024d14] 4a44                      tst.w      d4
-[00024d16] 6a26                      bpl.s      $00024D3E
-[00024d18] 4eb9 0004 ad60            jsr        $0004AD60
-[00024d1e] 41f9 000b 8518            lea.l      $000B8518,a0
+[00024d16] 6a26                      bpl.s      open_menu_1
+[00024d18] 4eb9 0004 ad60            jsr        Aev_release
+[00024d1e] 41f9 000b 8518            lea.l      NEW_POPUP,a0
 [00024d24] 7001                      moveq.l    #1,d0
-[00024d26] 4eb9 0005 17fe            jsr        $000517FE
+[00024d26] 4eb9 0005 17fe            jsr        Awi_alert
 [00024d2c] 5540                      subq.w     #2,d0
-[00024d2e] 6700 0088                 beq        $00024DB8
+[00024d2e] 6700 0088                 beq        open_menu_2
 [00024d32] 3003                      move.w     d3,d0
 [00024d34] 204a                      movea.l    a2,a0
-[00024d36] 6100 ff44                 bsr        $00024C7C
+[00024d36] 6100 ff44                 bsr        new_menu
 [00024d3a] 266a 0014                 movea.l    20(a2),a3
+open_menu_1:
 [00024d3e] 7201                      moveq.l    #1,d1
 [00024d40] 3403                      move.w     d3,d2
 [00024d42] 48c2                      ext.l      d2
@@ -204,12 +217,14 @@ open_menu:
 [00024d9e] 0073 1800 5808            ori.w      #$1800,8(a3,d5.l)
 [00024da4] 204a                      movea.l    a2,a0
 [00024da6] 3004                      move.w     d4,d0
-[00024da8] 4eb9 0002 4f68            jsr        $00024F68
+[00024da8] 4eb9 0002 4f68            jsr        set_menu
 [00024dae] 3004                      move.w     d4,d0
 [00024db0] 204a                      movea.l    a2,a0
-[00024db2] 4eb9 0004 b846            jsr        $0004B846
+[00024db2] 4eb9 0004 b846            jsr        Awi_obredraw
+open_menu_2:
 [00024db8] 4cdf 1c38                 movem.l    (a7)+,d3-d5/a2-a4
 [00024dbc] 4e75                      rts
+
 pup_edit:
 [00024dbe] 48e7 183c                 movem.l    d3-d4/a2-a5,-(a7)
 [00024dc2] 4fef fff0                 lea.l      -16(a7),a7
@@ -223,27 +238,28 @@ pup_edit:
 [00024de0] d043                      add.w      d3,d0
 [00024de2] 224b                      movea.l    a3,a1
 [00024de4] 41d7                      lea.l      (a7),a0
-[00024de6] 4eb9 0004 a3be            jsr        $0004A3BE
+[00024de6] 4eb9 0004 a3be            jsr        Aob_offset
 [00024dec] 70ff                      moveq.l    #-1,d0
 [00024dee] d044                      add.w      d4,d0
 [00024df0] 224b                      movea.l    a3,a1
 [00024df2] 41ef 0008                 lea.l      8(a7),a0
-[00024df6] 4eb9 0004 a3be            jsr        $0004A3BE
+[00024df6] 4eb9 0004 a3be            jsr        Aob_offset
 [00024dfc] 43ef 0008                 lea.l      8(a7),a1
 [00024e00] 41d7                      lea.l      (a7),a0
-[00024e02] 4eb9 0005 f94a            jsr        $0005F94A
+[00024e02] 4eb9 0005 f94a            jsr        intersect
 [00024e08] 302f 0004                 move.w     4(a7),d0
-[00024e0c] 6752                      beq.s      $00024E60
+[00024e0c] 6752                      beq.s      pup_edit_1
 [00024e0e] 2079 0010 1f12            movea.l    ACSblk,a0
 [00024e14] 0c68 0002 02ca            cmpi.w     #$0002,714(a0)
-[00024e1a] 6616                      bne.s      $00024E32
+[00024e1a] 6616                      bne.s      pup_edit_2
 [00024e1c] 204b                      movea.l    a3,a0
 [00024e1e] 3004                      move.w     d4,d0
-[00024e20] 4eb9 0004 af6c            jsr        $0004AF6C
+[00024e20] 4eb9 0004 af6c            jsr        Aob_up
 [00024e26] b640                      cmp.w      d0,d3
-[00024e28] 6608                      bne.s      $00024E32
-[00024e2a] 6100 feb6                 bsr        $00024CE2
-[00024e2e] 6000 012e                 bra        $00024F5E
+[00024e28] 6608                      bne.s      pup_edit_2
+[00024e2a] 6100 feb6                 bsr        open_menu
+[00024e2e] 6000 012e                 bra        pup_edit_3
+pup_edit_2:
 [00024e32] 3204                      move.w     d4,d1
 [00024e34] 48c1                      ext.l      d1
 [00024e36] 2001                      move.l     d1,d0
@@ -251,7 +267,7 @@ pup_edit:
 [00024e3a] d081                      add.l      d1,d0
 [00024e3c] e788                      lsl.l      #3,d0
 [00024e3e] 0073 0040 080a            ori.w      #$0040,10(a3,d0.l)
-[00024e44] 4eb9 0002 c55a            jsr        $0002C55A
+[00024e44] 4eb9 0002 c55a            jsr        ed_edit
 [00024e4a] 3204                      move.w     d4,d1
 [00024e4c] 48c1                      ext.l      d1
 [00024e4e] 2001                      move.l     d1,d0
@@ -259,8 +275,9 @@ pup_edit:
 [00024e52] d081                      add.l      d1,d0
 [00024e54] e788                      lsl.l      #3,d0
 [00024e56] 0273 ffbf 080a            andi.w     #$FFBF,10(a3,d0.l)
-[00024e5c] 6000 0100                 bra        $00024F5E
-[00024e60] 4eb9 0004 4a26            jsr        $00044A26
+[00024e5c] 6000 0100                 bra        pup_edit_3
+pup_edit_1:
+[00024e60] 4eb9 0004 4a26            jsr        Adr_unselect
 [00024e66] 3203                      move.w     d3,d1
 [00024e68] 48c1                      ext.l      d1
 [00024e6a] 2001                      move.l     d1,d0
@@ -270,10 +287,11 @@ pup_edit:
 [00024e72] 0273 e7ff 0808            andi.w     #$E7FF,8(a3,d0.l)
 [00024e78] 204a                      movea.l    a2,a0
 [00024e7a] 3003                      move.w     d3,d0
-[00024e7c] 4eb9 0002 d8e6            jsr        $0002D8E6
+[00024e7c] 4eb9 0002 d8e6            jsr        undraw
 [00024e82] 7801                      moveq.l    #1,d4
 [00024e84] d86b 0002                 add.w      2(a3),d4
-[00024e88] 6014                      bra.s      $00024E9E
+[00024e88] 6014                      bra.s      pup_edit_4
+pup_edit_5:
 [00024e8a] 7001                      moveq.l    #1,d0
 [00024e8c] 3404                      move.w     d4,d2
 [00024e8e] 48c2                      ext.l      d2
@@ -283,6 +301,7 @@ pup_edit:
 [00024e96] e789                      lsl.l      #3,d1
 [00024e98] d073 1800                 add.w      0(a3,d1.l),d0
 [00024e9c] 3800                      move.w     d0,d4
+pup_edit_4:
 [00024e9e] 7001                      moveq.l    #1,d0
 [00024ea0] 3404                      move.w     d4,d2
 [00024ea2] 48c2                      ext.l      d2
@@ -292,7 +311,7 @@ pup_edit:
 [00024eaa] e789                      lsl.l      #3,d1
 [00024eac] d073 1800                 add.w      0(a3,d1.l),d0
 [00024eb0] b640                      cmp.w      d0,d3
-[00024eb2] 66d6                      bne.s      $00024E8A
+[00024eb2] 66d6                      bne.s      pup_edit_5
 [00024eb4] 4273 1800                 clr.w      0(a3,d1.l)
 [00024eb8] 3744 0004                 move.w     d4,4(a3)
 [00024ebc] 206c 0004                 movea.l    4(a4),a0
@@ -338,18 +357,20 @@ pup_edit:
 [00024f20] 4e91                      jsr        (a1)
 [00024f22] 3004                      move.w     d4,d0
 [00024f24] 204b                      movea.l    a3,a0
-[00024f26] 4eb9 0004 af6c            jsr        $0004AF6C
+[00024f26] 4eb9 0004 af6c            jsr        Aob_up
 [00024f2c] 3600                      move.w     d0,d3
 [00024f2e] 3940 0018                 move.w     d0,24(a4)
 [00024f32] 4a43                      tst.w      d3
-[00024f34] 6b10                      bmi.s      $00024F46
+[00024f34] 6b10                      bmi.s      pup_edit_6
 [00024f36] 72fe                      moveq.l    #-2,d1
 [00024f38] d243                      add.w      d3,d1
 [00024f3a] 48c1                      ext.l      d1
 [00024f3c] 83fc 0003                 divs.w     #$0003,d1
 [00024f40] 3941 000a                 move.w     d1,10(a4)
-[00024f44] 6006                      bra.s      $00024F4C
+[00024f44] 6006                      bra.s      pup_edit_7
+pup_edit_6:
 [00024f46] 397c ffff 000a            move.w     #$FFFF,10(a4)
+pup_edit_7:
 [00024f4c] 3203                      move.w     d3,d1
 [00024f4e] 48c1                      ext.l      d1
 [00024f50] 2001                      move.l     d1,d0
@@ -357,19 +378,21 @@ pup_edit:
 [00024f54] d081                      add.l      d1,d0
 [00024f56] e788                      lsl.l      #3,d0
 [00024f58] 0073 1800 0808            ori.w      #$1800,8(a3,d0.l)
+pup_edit_3:
 [00024f5e] 4fef 0010                 lea.l      16(a7),a7
 [00024f62] 4cdf 3c18                 movem.l    (a7)+,d3-d4/a2-a5
 [00024f66] 4e75                      rts
+
 set_menu:
 [00024f68] 48e7 1830                 movem.l    d3-d4/a2-a3,-(a7)
 [00024f6c] 2448                      movea.l    a0,a2
 [00024f6e] 3600                      move.w     d0,d3
 [00024f70] 266a 0014                 movea.l    20(a2),a3
 [00024f74] 204b                      movea.l    a3,a0
-[00024f76] 4eb9 0004 af6c            jsr        $0004AF6C
+[00024f76] 4eb9 0004 af6c            jsr        Aob_up
 [00024f7c] 3800                      move.w     d0,d4
 [00024f7e] 5340                      subq.w     #1,d0
-[00024f80] 6d00 00b6                 blt        $00025038
+[00024f80] 6d00 00b6                 blt        set_menu_1
 [00024f84] 72ff                      moveq.l    #-1,d1
 [00024f86] 3004                      move.w     d4,d0
 [00024f88] 48c0                      ext.l      d0
@@ -390,10 +413,10 @@ set_menu:
 [00024fb2] 0273 ff7f 18f0            andi.w     #$FF7F,-16(a3,d1.l)
 [00024fb8] 204b                      movea.l    a3,a0
 [00024fba] 3004                      move.w     d4,d0
-[00024fbc] 4eb9 0004 af6c            jsr        $0004AF6C
+[00024fbc] 4eb9 0004 af6c            jsr        Aob_up
 [00024fc2] 3800                      move.w     d0,d4
 [00024fc4] 204a                      movea.l    a2,a0
-[00024fc6] 6100 ffa0                 bsr.w      $00024F68
+[00024fc6] 6100 ffa0                 bsr.w      set_menu
 [00024fca] 382b 0004                 move.w     4(a3),d4
 [00024fce] 302b 002a                 move.w     42(a3),d0
 [00024fd2] 3403                      move.w     d3,d2
@@ -435,5 +458,117 @@ set_menu:
 [0002502e] e78a                      lsl.l      #3,d2
 [00025030] 3781 2800                 move.w     d1,0(a3,d2.l)
 [00025034] 3743 0004                 move.w     d3,4(a3)
+set_menu_1:
 [00025038] 4cdf 0c18                 movem.l    (a7)+,d3-d4/a2-a3
 [0002503c] 4e75                      rts
+
+	.data
+subtree:
+[000af1f4]                           dc.b $00
+[000af1f5]                           dc.b $00
+[000af1f6]                           dc.b $00
+[000af1f7]                           dc.b $00
+[000af1f8]                           dc.b $00
+[000af1f9]                           dc.b $00
+[000af1fa]                           dc.b $00
+[000af1fb]                           dc.b $00
+[000af1fc]                           dc.w $ffff
+[000af1fe]                           dc.w $ffff
+[000af200]                           dc.w $ffff
+[000af202]                           dc.b $00
+[000af203]                           dc.b $14
+[000af204]                           dc.b $00
+[000af205]                           dc.b $80
+[000af206]                           dc.b $00
+[000af207]                           dc.b $20
+[000af208]                           dc.b $00
+[000af209]                           dc.b $ff
+[000af20a]                           dc.w $1101
+[000af20c]                           dc.b $00
+[000af20d]                           dc.b $00
+[000af20e]                           dc.b $00
+[000af20f]                           dc.b $00
+[000af210]                           dc.b $00
+[000af211]                           dc.b $0c
+[000af212]                           dc.b $00
+[000af213]                           dc.b $04
+[000af214]                           dc.b $00
+[000af215]                           dc.b $00
+[000af216]                           dc.b $00
+[000af217]                           dc.b $00
+[000af218]                           dc.b $00
+[000af219]                           dc.b $00
+[000af21a]                           dc.b $00
+[000af21b]                           dc.b $00
+[000af21c]                           dc.w $8000
+[000af21e]                           dc.b $00
+[000af21f]                           dc.b $00
+[000af220]                           dc.b $00
+[000af221]                           dc.b $00
+[000af222]                           dc.b $00
+[000af223]                           dc.b $00
+[000af224]                           dc.b $00
+[000af225]                           dc.b $00
+[000af226]                           dc.b $00
+[000af227]                           dc.b $00
+[000af228]                           dc.b $00
+[000af229]                           dc.b $00
+[000af22a]                           dc.b $00
+[000af22b]                           dc.b $00
+protosub:
+[000af22c]                           dc.b $00
+[000af22d]                           dc.b $00
+[000af22e]                           dc.b $00
+[000af22f]                           dc.b $00
+[000af230] 000af1f4                  dc.l subtree
+[000af234]                           dc.b $00
+[000af235]                           dc.b $00
+[000af236]                           dc.b $00
+[000af237]                           dc.b $00
+[000af238]                           dc.b $00
+[000af239]                           dc.b $38
+[000af23a]                           dc.b $00
+[000af23b]                           dc.b $00
+[000af23c]                           dc.b $00
+[000af23d]                           dc.b $38
+[000af23e]                           dc.b $00
+[000af23f]                           dc.b $00
+[000af240]                           dc.b $00
+[000af241]                           dc.b $00
+[000af242]                           dc.b 'SUBPROTO',0
+[000af24b]                           dc.b $00
+[000af24c]                           dc.b $00
+[000af24d]                           dc.b $00
+[000af24e]                           dc.b $00
+[000af24f]                           dc.b $00
+[000af250]                           dc.b $00
+[000af251]                           dc.b $00
+[000af252]                           dc.b $00
+[000af253]                           dc.b $00
+[000af254]                           dc.b $00
+[000af255]                           dc.b $00
+[000af256]                           dc.b $00
+[000af257]                           dc.b $00
+[000af258]                           dc.b $00
+[000af259]                           dc.b $00
+[000af25a]                           dc.b $00
+[000af25b]                           dc.b $00
+[000af25c]                           dc.b $00
+[000af25d]                           dc.b $00
+[000af25e]                           dc.b $00
+[000af25f]                           dc.b $00
+[000af260]                           dc.b $00
+[000af261]                           dc.b $00
+[000af262]                           dc.b $00
+[000af263]                           dc.b $01
+[000af264]                           dc.b $00
+[000af265]                           dc.b $00
+[000af266]                           dc.b $00
+[000af267]                           dc.b $00
+[000af268]                           dc.b $00
+[000af269]                           dc.b $00
+[000af26a]                           dc.b $00
+[000af26b]                           dc.b $00
+[000af26c]                           dc.b $00
+[000af26d]                           dc.b $00
+	.even

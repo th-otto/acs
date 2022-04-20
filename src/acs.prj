@@ -33,6 +33,13 @@ acs.app
 .C[ -M- ]		; String Merging
 .C[ -R- ]		; Register Variables
 
+; For other localizations, change the COUNTRY code below
+; supported:
+; 0=english
+; 1=german
+.S[-DCOUNTRY=1]
+.C[-DCOUNTRY=1]
+
 .S[-U]
 
 .L[-S=40960]
