@@ -118,16 +118,16 @@ list\edobject.s
 list\edpopup.s
 list\edref.s
 list\edstring.s
-;list\edtedi.s
+list\edtedi.s
 
-;acsplus\slider.s
-;acsplus\wislider.s
-;acsplus\editor.s
-;acsplus\pur_desk.s
-;acsplus\editwi.s
-;acsplus\fontsel.s [-M-]
-;acsplus\list.s
-;acsplus\proto.s
+acsplus\slider.s
+acsplus\wislider.s
+acsplus\editor.s
+acsplus\pur_desk.s
+acsplus\editwi.s
+acsplus\fontsel.s [-M-]
+acsplus\list.s
+acsplus\proto.s
 
 ;lib\main.s
 ;lib\initterm.s
