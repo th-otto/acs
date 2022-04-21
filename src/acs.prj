@@ -150,33 +150,33 @@ lib\window.s
 lib\shelutil.s
 lib\thermo.s
 lib\keytab.s [-M-]
-;lib\messages\msgserv.s [-M-]
-;lib\messages\screen.s
-;lib\messages\xacc.s [-M-]
-;lib\messages\av.s
-;lib\messages\dd.s
-;lib\messages\dhst.s
-;lib\messages\bubble.s [-M-]
-;lib\messages\gemscr.s
-;lib\messages\olga.s
-;lib\messages\stguide.s
-;lib\messages\seproto.s
-;lib\messages\ssp.s
-;lib\messages\pc_help.s [-M-]
-;lib\userdef\userobj.s
-;lib\userdef\userobj2.s
-;lib\userdef\ftext.s [-M-]
-;lib\userdef\cycle.s [-M-]
-;lib\userdef\picture.s
-;lib\userdef\boxed.s [-M-]
-;lib\utility\util.s
-;lib\utility\date.s
-;lib\wdialog\filesel.s
-;lib\wdialog\printsel.s
-;lib\wdialog\fontsel.s
-;lib\listen\ulinlist.s
-;lib\modul\modul.s
-;lib\modul\modulold.s
+lib\messages\msgserv.s [-M-]
+lib\messages\screen.s
+lib\messages\xacc.s [-M-]
+lib\messages\av.s
+lib\messages\dd.s
+lib\messages\dhst.s
+lib\messages\bubble.s [-M-]
+lib\messages\gemscr.s
+lib\messages\olga.s
+lib\messages\stguide.s [-M]
+lib\messages\seproto.s
+lib\messages\ssp.s
+lib\messages\pc_help.s [-M]
+lib\userdef\userobj.s
+lib\userdef\userobj2.s
+lib\userdef\ftext.s [-M-]
+lib\userdef\cycle.s [-M-]
+lib\userdef\picture.s
+lib\userdef\boxed.s [-M-]
+lib\utility\util.s
+lib\utility\date.s
+lib\wdialog\filesel.s
+lib\wdialog\printsel.s
+lib\wdialog\fontsel.s
+lib\listen\ulinlist.s
+lib\modul\modul.s
+lib\modul\modulold.s
 
 vdi\vdi_s.s
 vdi\vdi_c.c

@@ -373,6 +373,9 @@ Akt_getEuro_2:
 		movea.l    (a7)+,a2
 		rts
 
+/* new function */
+	.globl x53320
+x53320:
 		movem.l    d3-d4/a2-a3,-(a7)
 		move.w     d0,d4
 		move.w     d1,d3
@@ -410,6 +413,9 @@ x53320_2:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+/* new function */
+	.globl x5336e
+x5336e:
 		movem.l    d3-d5/a2-a3,-(a7)
 		move.w     d0,d5
 		move.w     d1,d4
