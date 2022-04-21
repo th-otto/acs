@@ -26017,10 +26017,15 @@ lib_date:
 [000d2cb5]                           dc.b $00
 [000d2cb6]                           dc.b $00
 [000d2cb7]                           dc.b $00
+xd2cb8:
 [000d2cb8]                           dc.b 'vom %s',0
+xd2cbf:
 [000d2cbf]                           dc.b '                   ',0
+xd2cd3:
 [000d2cd3]                           dc.b ' ',$09,'=+-*/()!&|[]{}<>,.;:'
+xd2ce9:
 [000d2ce9]                           dc.b $dd
+xd2cea:
 [000d2cea]                           dc.b '$%?`',$27,'^#~@\"',0
 		.even
 

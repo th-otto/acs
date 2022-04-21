@@ -301,5 +301,6 @@ Af_next230:
 
 	.data
 
+xd7a44:
 [000d7a44]                           dc.b $00
 [000d7a45]                           dc.b $00

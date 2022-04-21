@@ -897,8 +897,12 @@ max_grp_id:
 phase:
 [000d4c00]                           dc.w $ffff
 [000d4c02]                           dc.b $00
+xd4c03:
 [000d4c03]                           dc.b 'OLGA    ',0
+xd4c0c:
 [000d4c0c]                           dc.b 'OLGAMANAGER',0
+xd4c18:
 [000d4c18]                           dc.b 'OLEMANGR',0
+xd4c21:
 [000d4c21]                           dc.b 'OLEMANAGER',0
 		.even

@@ -115,17 +115,30 @@ Adate_getMonth_13:
 
 		.data
 
+xd5152:
 [000d5152]                           dc.b 'JAN',0
+xd5156:
 [000d5156]                           dc.b 'FEB',0
+xd515a:
 [000d515a]                           dc.b 'MAR',0
+xd515e:
 [000d515e]                           dc.b 'APR',0
+xd5162:
 [000d5162]                           dc.b 'MAY',0
+xd5166:
 [000d5166]                           dc.b 'JUN',0
+xd516a:
 [000d516a]                           dc.b 'JUL',0
+xd516e:
 [000d516e]                           dc.b 'AUG',0
+xd5172:
 [000d5172]                           dc.b 'SEP',0
+xd5176:
 [000d5176]                           dc.b 'OCT',0
+xd517a:
 [000d517a]                           dc.b 'NOV',0
+xd517e:
 [000d517e]                           dc.b 'DEC',0
+xd5182:
 [000d5182]                           dc.b '%02i',0
 		.even

@@ -1019,20 +1019,36 @@ GetXAccID:
 [000d48d5]                           dc.b $00
 [000d48d6]                           dc.b $00
 [000d48d7]                           dc.b $00
+xd48d8:
 [000d48d8]                           dc.b 'XAccTxt',0
+xd48e0:
 [000d48e0]                           dc.b '[4][Bei einem XAcc-Transfer|konnte auf den Speicher|nicht zugegriffen|werden (Speicherschutz)!][OK]',0
+xd4944:
 [000d4944]                           dc.b 'img',0
+xd4948:
 [000d4948]                           dc.b 'img',0
+xd494c:
 [000d494c]                           dc.b 'IMG',0
+xd4950:
 [000d4950]                           dc.b 'img',0
+xd4954:
 [000d4954]                           dc.b 'img',0
+xd4958:
 [000d4958]                           dc.b '[4][Bei einem XAcc-Transfer|konnte auf den Speicher|nicht zugegriffen|werden (Speicherschutz)!][OK]',0
+xd49bc:
 [000d49bc]                           dc.b 'img',0
+xd49c0:
 [000d49c0]                           dc.b 'gem',0
+xd49c4:
 [000d49c4]                           dc.b 'gem',0
+xd49c8:
 [000d49c8]                           dc.b 'gem',0
+xd49cc:
 [000d49cc]                           dc.b 'gem',0
+xd49d0:
 [000d49d0]                           dc.b 'gem',0
+xd49d4:
 [000d49d4]                           dc.b '[4][Bei einem XAcc-Transfer|konnte auf den Speicher|nicht zugegriffen|werden (Speicherschutz)!][OK]',0
+xd4a38:
 [000d4a38]                           dc.b 'gem',0
 	.even

@@ -955,5 +955,6 @@ free_icon:
 [000c1fcf]                           dc.b $00
 [000c1fd0]                           dc.b $00
 [000c1fd1]                           dc.b $00
+xc1fd2:
 [000c1fd2]                           dc.b 'CICON',0
 		.even

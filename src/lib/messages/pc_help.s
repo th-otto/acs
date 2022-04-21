@@ -220,8 +220,12 @@ help_name:
 [000d4c63]                           dc.b $00
 [000d4c64]                           dc.b $00
 [000d4c65]                           dc.b $00
+xd4c66:
 [000d4c66]                           dc.b 'PC_HELP ',0
+xd4c6f:
 [000d4c6f]                           dc.b 'PC_HELP ',0
+xd4c78:
 [000d4c78]                           dc.b 'ST-GUIDE',0
+xd4c81:
 [000d4c81]                           dc.b 'ST-GUIDE',0
 		.even

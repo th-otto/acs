@@ -315,22 +315,42 @@ Aev_GetAPDragDrop_3:
 
 		.data
 
+xd4aba:
 [000d4aba]                           dc.b 'U:\PIPE\DRAGDROP.AA',0
+xd4ace:
 [000d4ace]                           dc.b $00
+xd4acf:
 [000d4acf]                           dc.b $00
+xd4ad0:
 [000d4ad0]                           dc.b $00
+xd4ad1:
 [000d4ad1]                           dc.b $00
+xd4ad2:
 [000d4ad2]                           dc.b $00
+xd4ad3:
 [000d4ad3]                           dc.b 'U:\PIPE\DRAGDROP.AA',0
+xd4ae7:
 [000d4ae7]                           dc.b $00
+xd4ae8:
 [000d4ae8]                           dc.b '.TXT.IMG',0
+xd4af1:
 [000d4af1]                           dc.b 'PATH',0
+xd4af6:
 [000d4af6]                           dc.b '.IMG',0
+xd4afb:
 [000d4afb]                           dc.b '.TXT',0
+xd4b00:
 [000d4b00]                           dc.b 'ARGS',0
+xd4b05:
 [000d4b05]                           dc.b '.TMP',0
+xd4b0a:
 [000d4b0a]                           dc.b 'U:\PIPE',0
+xd4b12:
 [000d4b12]                           dc.b '    ',0
+xd4b17:
 [000d4b17]                           dc.b $00
+xd4b18:
 [000d4b18]                           dc.b $00
+xd4b19:
 [000d4b19]                           dc.b 'PATH',0
+		.even

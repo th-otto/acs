@@ -146,10 +146,15 @@ help_meldung:
 [000d4c31]                           dc.b $00
 [000d4c32]                           dc.b $00
 [000d4c33]                           dc.b $00
+xd4c34:
 [000d4c34]                           dc.b 'ST-GUIDE',0
+xd4c3d:
 [000d4c3d]                           dc.b 'ST-GUIDE',0
+xd4c46:
 [000d4c46]                           dc.b '*:\',0
+xd4c4a:
 [000d4c4a]                           dc.b '.REF',0
+xd4c4f:
 [000d4c4f]                           dc.b $20
 [000d4c50]                           dc.b $00
 		.even

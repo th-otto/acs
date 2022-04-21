@@ -394,6 +394,7 @@ list_alert:
 [000c1a21]                           dc.b $00
 [000c1a22]                           dc.b $00
 [000c1a23]                           dc.b $00
+xc1a24:
 [000c1a24]                           dc.b '                               ',0
 [000c1a44]                           dc.b $00
 [000c1a45]                           dc.b $01
@@ -407,6 +408,7 @@ list_alert:
 [000c1a4d]                           dc.b $00
 [000c1a4e]                           dc.b $00
 [000c1a4f]                           dc.b $00
+xc1a50:
 [000c1a50]                           dc.b '%.28s'
 [000c1a55]                           dc.b $01
 [000c1a56]                           dc.w $2564

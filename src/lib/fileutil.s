@@ -1149,17 +1149,27 @@ AktDatei:
 [000d38a8]                           dc.w $2e00
 max_mode:
 [000d38aa]                           dc.w $fffe
+xd38ac:
 [000d38ac]                           dc.b 'A:\',0
+xd38b0:
 [000d38b0]                           dc.b 'A:\',0
+xd38b4:
 [000d38b4]                           dc.b '.cfg',0
+xd38b9:
 [000d38b9]                           dc.b $2e
 [000d38ba]                           dc.w $5c00
+xd38bc:
 [000d38bc]                           dc.w $2e00
+xd38be:
 [000d38be]                           dc.b '*.*',0
+xd38c2:
 [000d38c2]                           dc.b '\*.*',0
+xd38c7:
 [000d38c7]                           dc.b $2e
 [000d38c8]                           dc.w $2e00
+xd38ca:
 [000d38ca]                           dc.b ' ',$09,$0a,$0d,$27,0
+xd38d0:
 [000d38d0]                           dc.w $2722
 [000d38d2]                           dc.b $00
 		.even

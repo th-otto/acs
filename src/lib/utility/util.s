@@ -1650,8 +1650,12 @@ a_dialog_active:
 [000d5135]                           dc.b $00
 [000d5136]                           dc.b $00
 [000d5137]                           dc.b $00
+xd5138:
 [000d5138]                           dc.b '[3][',0
+xd513d:
 [000d513d]                           dc.b '][ OK ]',0
+xd5145:
 [000d5145]                           dc.b 'SCRAP',0
+xd514b:
 [000d514b]                           dc.b 'scrap',0
 		.even

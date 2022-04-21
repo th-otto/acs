@@ -1239,27 +1239,42 @@ _gs_cmd_anzahl:
 _gs_sorted:
 [000d4b84]                           dc.b $00
 [000d4b85]                           dc.b $00
+xd4b86:
 [000d4b86]                           dc.w $3000
+xd4b88:
 [000d4b88]                           dc.b $00
+xd4b89:
 [000d4b89]                           dc.b $01
 [000d4b8a]                           dc.w $0203
 [000d4b8c]                           dc.w $0405
 [000d4b8e]                           dc.w $0600
 [000d4b90]                           dc.b $00
+xd4b91:
 [000d4b91]                           dc.b $30
 [000d4b92]                           dc.b $00
+xd4b93:
 [000d4b93]                           dc.b $31
 [000d4b94]                           dc.b $00
+xd4b95:
 [000d4b95]                           dc.b $00
+xd4b96:
 [000d4b96]                           dc.b $00
+xd4b97:
 [000d4b97]                           dc.b 'CheckCommand',0
+xd4ba4:
 [000d4ba4]                           dc.b 'GetFront',0
+xd4bad:
 [000d4bad]                           dc.b 'Quit',0
+xd4bb2:
 [000d4bb2]                           dc.b 'AppGetLongName',0
+xd4bc1:
 [000d4bc1]                           dc.b 'KeyPress',0
+xd4bca:
 [000d4bca]                           dc.b 'GetAllCommands',0
+xd4bd9:
 [000d4bd9]                           dc.b $31
 [000d4bda]                           dc.b $00
+xd4bdb:
 [000d4bdb]                           dc.b $31
 [000d4bdc]                           dc.b $00
 		.even

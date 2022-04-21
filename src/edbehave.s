@@ -11,7 +11,7 @@ edbh_list:
 		move.l     a0,(a3)
 		move.l     20(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3

@@ -3773,7 +3773,10 @@ last_edit:
 [000d3d74]                           dc.w $ffff
 [000d3d76]                           dc.w $ffff
 [000d3d78]                           dc.w $ffff
+xd3d7a:
 [000d3d7a]                           dc.w $2000
+xd3d7c:
 [000d3d7c]                           dc.b 'Window-Lib',0
+xd3d87:
 [000d3d87]                           dc.b 'txt',0
 		.even

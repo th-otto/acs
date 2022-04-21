@@ -233,8 +233,12 @@ bubble_string:
 [000d4b21]                           dc.b $00
 phase:
 [000d4b22]                           dc.w $ffff
+xd4b24:
 [000d4b24]                           dc.b 'BUBBLE  ',0
+xd4b2d:
 [000d4b2d]                           dc.b 'BUBBLEGEM',0
+xd4b37:
 [000d4b37]                           dc.b $00
+xd4b38:
 [000d4b38]                           dc.b 'BUBBLE  ',0
 		.even

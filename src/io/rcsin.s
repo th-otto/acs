@@ -931,6 +931,7 @@ x98b9c:
 		dc.b 'OBJECT_01',0
 x98ba6:
 		dc.b '.DFN',0
+x98bab:
 		dc.b '.ACS',0
 		.even
 

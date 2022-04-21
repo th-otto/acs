@@ -1127,21 +1127,34 @@ dum_ob:
 [000d2d47]                           dc.b $00
 [000d2d48]                           dc.w $4653
 [000d2d4a]                           dc.b $00
+xd2d4b:
 [000d2d4b]                           dc.b 'IFS',0
+xd2d4f:
 [000d2d4f]                           dc.b $20
 [000d2d50]                           dc.b $00
+xd2d51:
 [000d2d51]                           dc.b $5c
 [000d2d52]                           dc.b $00
+xd2d53:
 [000d2d53]                           dc.b '  ACS-Acc',0
+xd2d5d:
 [000d2d5d]                           dc.b 'HOME',0
+xd2d62:
 [000d2d62]                           dc.b 'TMPDIR',0
+xd2d69:
 [000d2d69]                           dc.b 'TMP',0
+xd2d6d:
 [000d2d6d]                           dc.b 'A:\',0
+xd2d71:
 [000d2d71]                           dc.b '        ',0
+xd2d7a:
 [000d2d7a]                           dc.b $00
+xd2d7b:
 [000d2d7b]                           dc.b 'CLIPBOARD',0
+xd2d85:
 [000d2d85]                           dc.b 'CLIPBRD',0
+xd2d8d:
 [000d2d8d]                           dc.b 'SCRAPDIR',0
+xd2d96:
 [000d2d96]                           dc.b 'X:\clipbrd',0
-[000d2da1]                           dc.b $00
 		.even

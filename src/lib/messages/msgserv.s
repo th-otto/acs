@@ -1837,7 +1837,10 @@ MsgListeLen:
 [000d4877]                           dc.b '>ARGS',0
 [000d487d]                           dc.b $0a
 [000d487e]                           dc.w $0d00
+xd4880:
 [000d4880]                           dc.b 'XAccTxt',0
+xd4888:
 [000d4888]                           dc.b 'ARGS',0
+xd488d:
 [000d488d]                           dc.b '.TXT',0
 		.even

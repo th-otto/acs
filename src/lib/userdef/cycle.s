@@ -1232,4 +1232,6 @@ a3dproto:
 [000d4e4a]                           dc.b $00
 [000d4e4b]                           dc.b $7c
 [000d4e4c]                           dc.w $5d00
+xd4e4e:
 [000d4e4e]                           dc.b '[]|',0
+		.even

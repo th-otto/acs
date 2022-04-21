@@ -1545,34 +1545,63 @@ freeBlockStat:
 [000d3bc5]                           dc.b $00
 [000d3bc6]                           dc.b $00
 [000d3bc7]                           dc.b $00
+xd3bc8:
 [000d3bc8]                           dc.b 'Awindow',0
+xd3bd0:
 [000d3bd0]                           dc.b 'AUSERBLK',0
+xd3bd9:
 [000d3bd9]                           dc.b 'CICONBLK',0
+xd3be2:
 [000d3be2]                           dc.b 'CICON',0
+xd3be8:
 [000d3be8]                           dc.b 'BITBLK',0
+xd3bef:
 [000d3bef]                           dc.b 'TEDINFO',0
+xd3bf7:
 [000d3bf7]                           dc.b 'MFDB',0
+xd3bfc:
 [000d3bfc]                           dc.b 'FontSelect',0
+xd3c07:
 [000d3c07]                           dc.b 'PrintSelect',0
+xd3c13:
 [000d3c13]                           dc.b 'MsgService',0
+xd3c1e:
 [000d3c1e]                           dc.b 'A_dd',0
+xd3c23:
 [000d3c23]                           dc.b 'Interne DD-Daten',0
+xd3c34:
 [000d3c34]                           dc.b 'GS-Connection',0
+xd3c42:
 [000d3c42]                           dc.b 'GS-Suche',0
+xd3c4b:
 [000d3c4b]                           dc.b 'GS-Antwort',0
+xd3c56:
 [000d3c56]                           dc.b 'OLGA',0
+xd3c5b:
 [000d3c5b]                           dc.b 'Thermometer',0
+xd3c67:
 [000d3c67]                           dc.b 'FileSelect',0
+xd3c72:
 [000d3c72]                           dc.b 'Int. Speicherverw.',0
+xd3c85:
 [000d3c85]                           dc.b 'XAcc-Daten',0
+xd3c90:
 [000d3c90]                           dc.b 'UConfig',0
+xd3c98:
 [000d3c98]                           dc.b 'UCfgInfo',0
+xd3ca1:
 [000d3ca1]                           dc.b 'Cfg-Gruppe',0
+xd3cac:
 [000d3cac]                           dc.b 'ULinList',0
+xd3cb5:
 [000d3cb5]                           dc.b 'ULinList-Element',0
+xd3cc6:
 [000d3cc6]                           dc.b 'Stack',0
+xd3ccc:
 [000d3ccc]                           dc.b 'Queue',0
+xd3cd2:
 [000d3cd2]                           dc.b 'Listen-Elemente',0
+xd3ce2:
 [000d3ce2]                           dc.b 'Queue-Elemente',0
 		.even
 

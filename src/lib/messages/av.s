@@ -519,6 +519,7 @@ Aev_AvStarted_4:
 
 		.data
 
+xd4a3c:
 [000d4a3c]                           dc.b $00
 [000d4a3d]                           dc.b $00
 [000d4a3e]                           dc.b $00
@@ -599,9 +600,14 @@ Aev_AvStarted_4:
 [000d4a89]                           dc.b $00
 [000d4a8a]                           dc.b $00
 [000d4a8b]                           dc.b $00
+xd4a8c:
 [000d4a8c]                           dc.b 'AVSERVER',0
+xd4a95:
 [000d4a95]                           dc.b 'JINNEE  ',0
+xd4a9e:
 [000d4a9e]                           dc.b 'GEMINI  ',0
+xd4aa7:
 [000d4aa7]                           dc.b 'AVSERVER',0
+xd4ab0:
 [000d4ab0]                           dc.b 'MAGXDESK',0
 		.even

@@ -445,7 +445,7 @@ set_udftype_1:
 [000338f6] 2740 000e                 move.l     d0,14(a3)
 [000338fa] 6040                      bra.s      set_udftype_5
 set_udftype_2:
-[000338fc] 43f9 000c 23d2            lea.l      $000C23D2,a1
+[000338fc] 43f9 000c 23d2            lea.l      xc23d2,a1
 [00033902] 41eb 0016                 lea.l      22(a3),a0
 [00033906] 4eb9 0007 6950            jsr        strcpy
 [0003390c] 204a                      movea.l    a2,a0
@@ -455,7 +455,7 @@ set_udftype_2:
 [0003391a] 2740 000e                 move.l     d0,14(a3)
 [0003391e] 6018                      bra.s      set_udftype_6
 set_udftype_3:
-[00033920] 43f9 000c 23da            lea.l      $000C23DA,a1
+[00033920] 43f9 000c 23da            lea.l      xc23da,a1
 [00033926] 41eb 0016                 lea.l      22(a3),a0
 [0003392a] 4eb9 0007 6950            jsr        strcpy
 [00033930] 2743 000a                 move.l     d3,10(a3)
@@ -529,7 +529,7 @@ change_user:
 [000339c6] 246f 0014                 movea.l    20(a7),a2
 [000339ca] 49f9 000c 2370            lea.l      us_blk,a4
 [000339d0] 701f                      moveq.l    #31,d0
-[000339d2] 43f9 000c 23d7            lea.l      $000C23D7,a1
+[000339d2] 43f9 000c 23d7            lea.l      xc23d7,a1
 [000339d8] 2f00                      move.l     d0,-(a7)
 [000339da] 2f09                      move.l     a1,-(a7)
 [000339dc] 2252                      movea.l    (a2),a1
@@ -703,7 +703,7 @@ change_udf:
 [00033bbc] 2e88                      move.l     a0,(a7)
 [00033bbe] 4df9 000c 2370            lea.l      us_blk,a6
 [00033bc4] 701f                      moveq.l    #31,d0
-[00033bc6] 43f9 000c 23d7            lea.l      $000C23D7,a1
+[00033bc6] 43f9 000c 23d7            lea.l      xc23d7,a1
 [00033bcc] 2f00                      move.l     d0,-(a7)
 [00033bce] 2f09                      move.l     a1,-(a7)
 [00033bd0] 41ee 0036                 lea.l      54(a6),a0
@@ -1520,7 +1520,11 @@ new_user:
 [000c23cf]                           dc.b $00
 [000c23d0]                           dc.b $00
 [000c23d1]                           dc.b $00
-[000c23d2]                           dc.b 'TEXT_01',0
+xc23d2:
+[000c23d2]                           dc.b 'TEXT_'
+xc23d7:
+		dc.b '01',0
+xc23da:
 [000c23da]                           dc.b 'DATAS_01',0
 		.even
 

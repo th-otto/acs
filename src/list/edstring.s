@@ -832,6 +832,7 @@ free_string:
 [000c2c6b]                           dc.b $00
 [000c2c6c]                           dc.b $00
 [000c2c6d]                           dc.b $00
+xc2c6e:
 [000c2c6e]                           dc.b '                               ',0
 [000c2c8e]                           dc.b $00
 [000c2c8f]                           dc.b $01
@@ -845,9 +846,11 @@ free_string:
 [000c2c97]                           dc.b $00
 [000c2c98]                           dc.b $00
 [000c2c99]                           dc.b $00
+xc2c9a:
 [000c2c9a]                           dc.b '%.28s'
 [000c2c9f]                           dc.b $01
 [000c2ca0]                           dc.w $2564
 [000c2ca2]                           dc.w $0100
+xc2ca4:
 [000c2ca4]                           dc.b '            ',0
 		.even

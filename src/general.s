@@ -631,7 +631,7 @@ ge_alert:
 		move.l     a0,(a3)
 		move.l     36(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -649,7 +649,7 @@ ge_icon:
 		move.l     a0,(a3)
 		move.l     44(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -667,7 +667,7 @@ ge_mouse:
 		move.l     a0,(a3)
 		move.l     64(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -685,7 +685,7 @@ ge_image:
 		move.l     a0,(a3)
 		move.l     48(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -703,7 +703,7 @@ ge_menu:
 		move.l     a0,(a3)
 		move.l     28(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -721,7 +721,7 @@ ge_data:
 		move.l     a0,(a3)
 		move.l     68(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -739,7 +739,7 @@ ge_object:
 		move.l     a0,(a3)
 		move.l     24(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -757,7 +757,7 @@ ge_popup:
 		move.l     a0,(a3)
 		move.l     32(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -775,7 +775,7 @@ ge_reference:
 		move.l     a0,(a3)
 		move.l     60(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -793,7 +793,7 @@ ge_text:
 		move.l     a0,(a3)
 		move.l     52(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -811,7 +811,7 @@ ge_tedinfo:
 		move.l     a0,(a3)
 		move.l     40(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -829,7 +829,7 @@ ge_userblk:
 		move.l     a0,(a3)
 		move.l     56(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -847,7 +847,7 @@ ge_window:
 		move.l     a0,(a3)
 		move.l     20(a0),4(a3)
 		movea.l    a3,a0
-		movea.l    $000C1880,a1
+		movea.l    WI_LIST+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
