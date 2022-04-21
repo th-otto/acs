@@ -129,27 +129,27 @@ acsplus\fontsel.s [-M-]
 acsplus\list.s
 acsplus\proto.s
 
-;lib\main.s
-;lib\initterm.s
-;lib\vdi_data.s
-;lib\mygemdos.s [-S]
-;lib\nkcc_s.s
-;lib\nkcc.s
-;lib\config.s
-;lib\string.s
-;lib\drag.s
-;lib\event.s
-;lib\fileutil.s
-;lib\memory.s
-;lib\menu.s
-;lib\mouse.s
-;lib\object.s
-;lib\wobject.s
-;lib\backplan.s
-;lib\window.s
-;lib\shelutil.s
-;lib\thermo.s
-;lib\keytab.s [-M-]
+lib\main.s
+lib\initterm.s
+lib\vdi_data.s
+lib\mygemdos.s [-S]
+lib\nkcc_s.s
+lib\nkcc.s
+lib\config.s
+lib\string.s
+lib\drag.s
+lib\event.s
+lib\fileutil.s
+lib\memory.s
+lib\menu.s
+lib\mouse.s
+lib\object.s
+lib\wobject.s
+lib\backplan.s
+lib\window.s
+lib\shelutil.s
+lib\thermo.s
+lib\keytab.s [-M-]
 ;lib\messages\msgserv.s [-M-]
 ;lib\messages\screen.s
 ;lib\messages\xacc.s [-M-]

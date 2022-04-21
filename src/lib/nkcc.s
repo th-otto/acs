@@ -1,240 +1,240 @@
 
 nkc_gemks2n:
-[00041e3e] 3f04                      move.w     d4,-(a7)
-[00041e40] 3800                      move.w     d0,d4
-[00041e42] c07c 00ff                 and.w      #$00FF,d0
-[00041e46] 48c0                      ext.l      d0
-[00041e48] 3404                      move.w     d4,d2
-[00041e4a] 48c2                      ext.l      d2
-[00041e4c] c4bc 0000 ff00            and.l      #$0000FF00,d2
-[00041e52] e18a                      lsl.l      #8,d2
-[00041e54] 8082                      or.l       d2,d0
-[00041e56] c27c 00ff                 and.w      #$00FF,d1
-[00041e5a] 48c1                      ext.l      d1
-[00041e5c] 7418                      moveq.l    #24,d2
-[00041e5e] e5a9                      lsl.l      d2,d1
-[00041e60] 8081                      or.l       d1,d0
-[00041e62] 4eb9 0004 1b4e            jsr        nkc_tos2
-[00041e68] c07c bfff                 and.w      #$BFFF,d0
-[00041e6c] 381f                      move.w     (a7)+,d4
-[00041e6e] 4e75                      rts
+		move.w     d4,-(a7)
+		move.w     d0,d4
+		and.w      #$00FF,d0
+		ext.l      d0
+		move.w     d4,d2
+		ext.l      d2
+		and.l      #$0000FF00,d2
+		lsl.l      #8,d2
+		or.l       d2,d0
+		and.w      #$00FF,d1
+		ext.l      d1
+		moveq.l    #24,d2
+		lsl.l      d2,d1
+		or.l       d1,d0
+		jsr        nkc_tos2
+		and.w      #$BFFF,d0
+		move.w     (a7)+,d4
+		rts
 
 nkc_gem2n:
-[00041e70] 3f03                      move.w     d3,-(a7)
-[00041e72] 3600                      move.w     d0,d3
-[00041e74] 4eb9 0004 1ef0            jsr        nkc_kstate
-[00041e7a] 3203                      move.w     d3,d1
-[00041e7c] 6100 ffc0                 bsr.w      nkc_gemks2n
-[00041e80] 361f                      move.w     (a7)+,d3
-[00041e82] 4e75                      rts
+		move.w     d3,-(a7)
+		move.w     d0,d3
+		jsr        nkc_kstate
+		move.w     d3,d1
+		bsr.w      nkc_gemks2n
+		move.w     (a7)+,d3
+		rts
 
 nkc_n2gemks:
-[00041e84] 2f0a                      move.l     a2,-(a7)
-[00041e86] 2f0b                      move.l     a3,-(a7)
-[00041e88] 2648                      movea.l    a0,a3
-[00041e8a] 2449                      movea.l    a1,a2
-[00041e8c] 4eb9 0004 1cc2            jsr        nkc_n2to
-[00041e92] 220a                      move.l     a2,d1
-[00041e94] 6714                      beq.s      nkc_n2gemks_1
-[00041e96] 3400                      move.w     d0,d2
-[00041e98] c47c 00ff                 and.w      #$00FF,d2
-[00041e9c] 2200                      move.l     d0,d1
-[00041e9e] c2bc 00ff 0000            and.l      #$00FF0000,d1
-[00041ea4] e081                      asr.l      #8,d1
-[00041ea6] 8441                      or.w       d1,d2
-[00041ea8] 3482                      move.w     d2,(a2)
+		move.l     a2,-(a7)
+		move.l     a3,-(a7)
+		movea.l    a0,a3
+		movea.l    a1,a2
+		jsr        nkc_n2to
+		move.l     a2,d1
+		beq.s      nkc_n2gemks_1
+		move.w     d0,d2
+		and.w      #$00FF,d2
+		move.l     d0,d1
+		and.l      #$00FF0000,d1
+		asr.l      #8,d1
+		or.w       d1,d2
+		move.w     d2,(a2)
 nkc_n2gemks_1:
-[00041eaa] 220b                      move.l     a3,d1
-[00041eac] 670e                      beq.s      nkc_n2gemks_2
-[00041eae] 2400                      move.l     d0,d2
-[00041eb0] c4bc ff00 0000            and.l      #$FF000000,d2
-[00041eb6] 7218                      moveq.l    #24,d1
-[00041eb8] e2aa                      lsr.l      d1,d2
-[00041eba] 3682                      move.w     d2,(a3)
+		move.l     a3,d1
+		beq.s      nkc_n2gemks_2
+		move.l     d0,d2
+		and.l      #$FF000000,d2
+		moveq.l    #24,d1
+		lsr.l      d1,d2
+		move.w     d2,(a3)
 nkc_n2gemks_2:
-[00041ebc] 265f                      movea.l    (a7)+,a3
-[00041ebe] 245f                      movea.l    (a7)+,a2
-[00041ec0] 4e75                      rts
+		movea.l    (a7)+,a3
+		movea.l    (a7)+,a2
+		rts
 
 nkc_n2gem:
-[00041ec2] 4eb9 0004 1cc2            jsr        nkc_n2to
-[00041ec8] 3200                      move.w     d0,d1
-[00041eca] c27c 00ff                 and.w      #$00FF,d1
-[00041ece] 2400                      move.l     d0,d2
-[00041ed0] c4bc 00ff 0000            and.l      #$00FF0000,d2
-[00041ed6] e082                      asr.l      #8,d2
-[00041ed8] 8242                      or.w       d2,d1
-[00041eda] 3001                      move.w     d1,d0
-[00041edc] 4e75                      rts
+		jsr        nkc_n2to
+		move.w     d0,d1
+		and.w      #$00FF,d1
+		move.l     d0,d2
+		and.l      #$00FF0000,d2
+		asr.l      #8,d2
+		or.w       d2,d1
+		move.w     d1,d0
+		rts
 
 nkc_n2kstate:
-[00041ede] 4eb9 0004 1cc2            jsr        nkc_n2to
-[00041ee4] c0bc ff00 0000            and.l      #$FF000000,d0
-[00041eea] 7218                      moveq.l    #24,d1
-[00041eec] e2a8                      lsr.l      d1,d0
-[00041eee] 4e75                      rts
+		jsr        nkc_n2to
+		and.l      #$FF000000,d0
+		moveq.l    #24,d1
+		lsr.l      d1,d0
+		rts
 
 nkc_kstate:
-[00041ef0] 2f0a                      move.l     a2,-(a7)
-[00041ef2] 45f9 000d 3610            lea.l      pshift,a2
-[00041ef8] 2012                      move.l     (a2),d0
-[00041efa] 661a                      bne.s      nkc_kstate_1
-[00041efc] 4eb9 0007 2cf0            jsr        Ash_getOSHeader
-[00041f02] 0c68 0100 0002            cmpi.w     #$0100,2(a0)
-[00041f08] 6706                      beq.s      nkc_kstate_2
-[00041f0a] 24a8 0024                 move.l     36(a0),(a2)
-[00041f0e] 6006                      bra.s      nkc_kstate_1
+		move.l     a2,-(a7)
+		lea.l      pshift,a2
+		move.l     (a2),d0
+		bne.s      nkc_kstate_1
+		jsr        Ash_getOSHeader
+		cmpi.w     #$0100,2(a0)
+		beq.s      nkc_kstate_2
+		move.l     36(a0),(a2)
+		bra.s      nkc_kstate_1
 nkc_kstate_2:
-[00041f10] 24bc 0000 0e1b            move.l     #$00000E1B,(a2)
+		move.l     #$00000E1B,(a2)
 nkc_kstate_1:
-[00041f16] 701f                      moveq.l    #31,d0
-[00041f18] 2052                      movea.l    (a2),a0
-[00041f1a] c068 0002                 and.w      2(a0),d0
-[00041f1e] e148                      lsl.w      #8,d0
-[00041f20] 245f                      movea.l    (a7)+,a2
-[00041f22] 4e75                      rts
+		moveq.l    #31,d0
+		movea.l    (a2),a0
+		and.w      2(a0),d0
+		lsl.w      #8,d0
+		movea.l    (a7)+,a2
+		rts
 
 nkc_cmp:
-[00041f24] 48e7 1f00                 movem.l    d3-d7,-(a7)
-[00041f28] 554f                      subq.w     #2,a7
-[00041f2a] 3800                      move.w     d0,d4
-[00041f2c] 3601                      move.w     d1,d3
-[00041f2e] 3a00                      move.w     d0,d5
-[00041f30] b345                      eor.w      d1,d5
-[00041f32] 7cff                      moveq.l    #-1,d6
-[00041f34] cc04                      and.b      d4,d6
-[00041f36] 7eff                      moveq.l    #-1,d7
-[00041f38] ce03                      and.b      d3,d7
-[00041f3a] 4a45                      tst.w      d5
-[00041f3c] 6700 00e2                 beq        nkc_cmp_1
-[00041f40] 3405                      move.w     d5,d2
-[00041f42] c47c 8000                 and.w      #$8000,d2
-[00041f46] 6700 0070                 beq.w      nkc_cmp_2
-[00041f4a] 3005                      move.w     d5,d0
-[00041f4c] c07c 0c00                 and.w      #$0C00,d0
-[00041f50] 6600 00de                 bne        nkc_cmp_3
-[00041f54] bc3c 0020                 cmp.b      #$20,d6
-[00041f58] 6d34                      blt.s      nkc_cmp_4
-[00041f5a] 4a44                      tst.w      d4
-[00041f5c] 6604                      bne.s      nkc_cmp_5
-[00041f5e] 7201                      moveq.l    #1,d1
-[00041f60] 6002                      bra.s      nkc_cmp_6
+		movem.l    d3-d7,-(a7)
+		subq.w     #2,a7
+		move.w     d0,d4
+		move.w     d1,d3
+		move.w     d0,d5
+		eor.w      d1,d5
+		moveq.l    #-1,d6
+		and.b      d4,d6
+		moveq.l    #-1,d7
+		and.b      d3,d7
+		tst.w      d5
+		beq        nkc_cmp_1
+		move.w     d5,d2
+		and.w      #$8000,d2
+		beq.w      nkc_cmp_2
+		move.w     d5,d0
+		and.w      #$0C00,d0
+		bne        nkc_cmp_3
+		cmp.b      #$20,d6
+		blt.s      nkc_cmp_4
+		tst.w      d4
+		bne.s      nkc_cmp_5
+		moveq.l    #1,d1
+		bra.s      nkc_cmp_6
 nkc_cmp_5:
-[00041f62] 4241                      clr.w      d1
+		clr.w      d1
 nkc_cmp_6:
-[00041f64] c27c 4000                 and.w      #$4000,d1
-[00041f68] 670a                      beq.s      nkc_cmp_7
-[00041f6a] 3005                      move.w     d5,d0
-[00041f6c] c07c 2000                 and.w      #$2000,d0
-[00041f70] 6600 00be                 bne        nkc_cmp_3
+		and.w      #$4000,d1
+		beq.s      nkc_cmp_7
+		move.w     d5,d0
+		and.w      #$2000,d0
+		bne        nkc_cmp_3
 nkc_cmp_7:
-[00041f74] be06                      cmp.b      d6,d7
-[00041f76] 6600 00b8                 bne        nkc_cmp_3
-[00041f7a] 4a43                      tst.w      d3
-[00041f7c] 6604                      bne.s      nkc_cmp_8
-[00041f7e] 7001                      moveq.l    #1,d0
-[00041f80] 6002                      bra.s      nkc_cmp_9
+		cmp.b      d6,d7
+		bne        nkc_cmp_3
+		tst.w      d3
+		bne.s      nkc_cmp_8
+		moveq.l    #1,d0
+		bra.s      nkc_cmp_9
 nkc_cmp_8:
-[00041f82] 4240                      clr.w      d0
+		clr.w      d0
 nkc_cmp_9:
-[00041f84] c07c 4000                 and.w      #$4000,d0
-[00041f88] 670a                      beq.s      nkc_cmp_10
-[00041f8a] 6000 0094                 bra        nkc_cmp_1
+		and.w      #$4000,d0
+		beq.s      nkc_cmp_10
+		bra        nkc_cmp_1
 nkc_cmp_4:
-[00041f8e] be06                      cmp.b      d6,d7
-[00041f90] 6600 009e                 bne        nkc_cmp_3
+		cmp.b      d6,d7
+		bne        nkc_cmp_3
 nkc_cmp_10:
-[00041f94] 4a45                      tst.w      d5
-[00041f96] 6604                      bne.s      nkc_cmp_11
-[00041f98] 7001                      moveq.l    #1,d0
-[00041f9a] 6002                      bra.s      nkc_cmp_12
+		tst.w      d5
+		bne.s      nkc_cmp_11
+		moveq.l    #1,d0
+		bra.s      nkc_cmp_12
 nkc_cmp_11:
-[00041f9c] 4240                      clr.w      d0
+		clr.w      d0
 nkc_cmp_12:
-[00041f9e] c07c 0300                 and.w      #$0300,d0
-[00041fa2] 6600 007c                 bne.w      nkc_cmp_1
-[00041fa6] 3204                      move.w     d4,d1
-[00041fa8] c27c 0300                 and.w      #$0300,d1
-[00041fac] b27c 0300                 cmp.w      #$0300,d1
-[00041fb0] 6600 007e                 bne.w      nkc_cmp_3
-[00041fb4] 6000 007e                 bra.w      nkc_cmp_13
+		and.w      #$0300,d0
+		bne.w      nkc_cmp_1
+		move.w     d4,d1
+		and.w      #$0300,d1
+		cmp.w      #$0300,d1
+		bne.w      nkc_cmp_3
+		bra.w      nkc_cmp_13
 nkc_cmp_2:
-[00041fb8] 4a44                      tst.w      d4
-[00041fba] 6604                      bne.s      nkc_cmp_14
-[00041fbc] 7001                      moveq.l    #1,d0
-[00041fbe] 6002                      bra.s      nkc_cmp_15
+		tst.w      d4
+		bne.s      nkc_cmp_14
+		moveq.l    #1,d0
+		bra.s      nkc_cmp_15
 nkc_cmp_14:
-[00041fc0] 4240                      clr.w      d0
+		clr.w      d0
 nkc_cmp_15:
-[00041fc2] c07c 4000                 and.w      #$4000,d0
-[00041fc6] 6708                      beq.s      nkc_cmp_16
-[00041fc8] 3205                      move.w     d5,d1
-[00041fca] c27c 2000                 and.w      #$2000,d1
-[00041fce] 6660                      bne.s      nkc_cmp_3
+		and.w      #$4000,d0
+		beq.s      nkc_cmp_16
+		move.w     d5,d1
+		and.w      #$2000,d1
+		bne.s      nkc_cmp_3
 nkc_cmp_16:
-[00041fd0] 3004                      move.w     d4,d0
-[00041fd2] 4eb9 0004 1e1e            jsr        nkc_toupper
-[00041fd8] 1e80                      move.b     d0,(a7)
-[00041fda] be06                      cmp.b      d6,d7
-[00041fdc] 6722                      beq.s      nkc_cmp_17
-[00041fde] 3204                      move.w     d4,d1
-[00041fe0] c27c 1000                 and.w      #$1000,d1
-[00041fe4] 674a                      beq.s      nkc_cmp_3
-[00041fe6] 3003                      move.w     d3,d0
-[00041fe8] 4eb9 0004 1e1e            jsr        nkc_toupper
-[00041fee] c03c ffff                 and.b      #$FF,d0
-[00041ff2] 1217                      move.b     (a7),d1
-[00041ff4] b200                      cmp.b      d0,d1
-[00041ff6] 6604                      bne.s      nkc_cmp_18
-[00041ff8] 7001                      moveq.l    #1,d0
-[00041ffa] 6002                      bra.s      nkc_cmp_19
+		move.w     d4,d0
+		jsr        nkc_toupper
+		move.b     d0,(a7)
+		cmp.b      d6,d7
+		beq.s      nkc_cmp_17
+		move.w     d4,d1
+		and.w      #$1000,d1
+		beq.s      nkc_cmp_3
+		move.w     d3,d0
+		jsr        nkc_toupper
+		and.b      #$FF,d0
+		move.b     (a7),d1
+		cmp.b      d0,d1
+		bne.s      nkc_cmp_18
+		moveq.l    #1,d0
+		bra.s      nkc_cmp_19
 nkc_cmp_18:
-[00041ffc] 4240                      clr.w      d0
+		clr.w      d0
 nkc_cmp_19:
-[00041ffe] 6042                      bra.s      nkc_cmp_20
+		bra.s      nkc_cmp_20
 nkc_cmp_17:
-[00042000] 4a43                      tst.w      d3
-[00042002] 6604                      bne.s      nkc_cmp_21
-[00042004] 7001                      moveq.l    #1,d0
-[00042006] 6002                      bra.s      nkc_cmp_22
+		tst.w      d3
+		bne.s      nkc_cmp_21
+		moveq.l    #1,d0
+		bra.s      nkc_cmp_22
 nkc_cmp_21:
-[00042008] 4240                      clr.w      d0
+		clr.w      d0
 nkc_cmp_22:
-[0004200a] c07c 4000                 and.w      #$4000,d0
-[0004200e] 6610                      bne.s      nkc_cmp_1
-[00042010] 4a45                      tst.w      d5
-[00042012] 6604                      bne.s      nkc_cmp_23
-[00042014] 7201                      moveq.l    #1,d1
-[00042016] 6002                      bra.s      nkc_cmp_24
+		and.w      #$4000,d0
+		bne.s      nkc_cmp_1
+		tst.w      d5
+		bne.s      nkc_cmp_23
+		moveq.l    #1,d1
+		bra.s      nkc_cmp_24
 nkc_cmp_23:
-[00042018] 4241                      clr.w      d1
+		clr.w      d1
 nkc_cmp_24:
-[0004201a] c27c 0300                 and.w      #$0300,d1
-[0004201e] 6704                      beq.s      nkc_cmp_25
+		and.w      #$0300,d1
+		beq.s      nkc_cmp_25
 nkc_cmp_1:
-[00042020] 7001                      moveq.l    #1,d0
-[00042022] 601e                      bra.s      nkc_cmp_20
+		moveq.l    #1,d0
+		bra.s      nkc_cmp_20
 nkc_cmp_25:
-[00042024] 3004                      move.w     d4,d0
-[00042026] c07c 0300                 and.w      #$0300,d0
-[0004202a] b07c 0300                 cmp.w      #$0300,d0
-[0004202e] 6704                      beq.s      nkc_cmp_13
+		move.w     d4,d0
+		and.w      #$0300,d0
+		cmp.w      #$0300,d0
+		beq.s      nkc_cmp_13
 nkc_cmp_3:
-[00042030] 4240                      clr.w      d0
-[00042032] 600e                      bra.s      nkc_cmp_20
+		clr.w      d0
+		bra.s      nkc_cmp_20
 nkc_cmp_13:
-[00042034] 3003                      move.w     d3,d0
-[00042036] c07c 0300                 and.w      #$0300,d0
-[0004203a] 6704                      beq.s      nkc_cmp_26
-[0004203c] 7001                      moveq.l    #1,d0
-[0004203e] 6002                      bra.s      nkc_cmp_20
+		move.w     d3,d0
+		and.w      #$0300,d0
+		beq.s      nkc_cmp_26
+		moveq.l    #1,d0
+		bra.s      nkc_cmp_20
 nkc_cmp_26:
-[00042040] 4240                      clr.w      d0
+		clr.w      d0
 nkc_cmp_20:
-[00042042] 544f                      addq.w     #2,a7
-[00042044] 4cdf 00f8                 movem.l    (a7)+,d3-d7
-[00042048] 4e75                      rts
+		addq.w     #2,a7
+		movem.l    (a7)+,d3-d7
+		rts
 
 nkc_exit:
-[0004204a] 4240                      clr.w      d0
-[0004204c] 4e75                      rts
+		clr.w      d0
+		rts
