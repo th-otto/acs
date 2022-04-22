@@ -1,3 +1,4 @@
+		.globl set_flag
 set_flag:
 		tst.w      d0
 		beq.s      set_flag_1
@@ -7,6 +8,7 @@ set_flag_1:
 		andi.w     #$FFFE,10(a0)
 		rts
 
+		.globl mod_ref
 mod_ref:
 		movem.l    a2-a5,-(a7)
 		movea.l    a0,a5
@@ -31,6 +33,7 @@ mod_ref_3:
 		movem.l    (a7)+,a2-a5
 		rts
 
+		.globl set_ref
 set_ref:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -49,6 +52,7 @@ set_ref_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl set_val
 set_val:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -67,6 +71,7 @@ set_val_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl A_rubberbox
 A_rubberbox:
 		movem.l    d3-d7/a2-a6,-(a7)
 		lea.l      -72(a7),a7
@@ -475,6 +480,7 @@ A_rubberbox_15:
 		movem.l    (a7)+,d3-d7/a2-a6
 		rts
 
+		.globl view_grow
 view_grow:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -505,6 +511,7 @@ view_grow_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl view_shrink
 view_shrink:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -535,6 +542,7 @@ view_shrink_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl new_name
 new_name:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -565,6 +573,7 @@ new_name_1:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl chk_new_label
 chk_new_label:
 		lea.l      -128(a7),a7
 		lea.l      (a7),a1
@@ -580,6 +589,7 @@ chk_new_label_1:
 		lea.l      128(a7),a7
 		rts
 
+		.globl newlabel
 newlabel:
 		movem.l    a2-a3/a5,-(a7)
 		lea.l      -128(a7),a7
@@ -625,6 +635,7 @@ newlabel_1:
 		movem.l    (a7)+,a2-a3/a5
 		rts
 
+		.globl new2label
 new2label:
 		movem.l    d3/a2-a3/a5,-(a7)
 		lea.l      -128(a7),a7
@@ -709,6 +720,7 @@ wicalc_pos_4:
 		movem.l    (a7)+,d3-d7
 		rts
 
+		.globl wi_pos
 wi_pos:
 		movem.l    a2-a5,-(a7)
 		movea.l    a0,a5
@@ -956,6 +968,7 @@ convert_17:
 		movem.l    (a7)+,d3-d7/a2-a3/a5
 		rts
 
+		.globl to_cicon
 to_cicon:
 		movem.l    d3-d6/a2-a4/a6,-(a7)
 		lea.l      -48(a7),a7

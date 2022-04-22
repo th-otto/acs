@@ -1,4 +1,5 @@
 
+		.globl INmouse
 INmouse:
 		move.w     init,d0
 		addq.w     #1,init
@@ -10,10 +11,12 @@ INmouse_1:
 		clr.w      d0
 		rts
 
+		.globl TRmouse
 TRmouse:
 		jsr        Amo_point
 		rts
 
+		.globl Amo_new
 Amo_new:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -37,6 +40,7 @@ Amo_new_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Amo_point
 Amo_point:
 		clr.w      busy
 		bra.s      Amo_point_1
@@ -51,6 +55,7 @@ Amo_point_1:
 		bsr.w      Amo_new
 		rts
 
+		.globl Amo_busy
 Amo_busy:
 		move.l     a2,-(a7)
 		move.w     busy,d0
@@ -70,6 +75,7 @@ Amo_busy_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Amo_unbusy
 Amo_unbusy:
 		subq.w     #1,busy
 		bgt.s      Amo_unbusy_1
@@ -83,6 +89,7 @@ Amo_unbusy:
 Amo_unbusy_1:
 		rts
 
+		.globl Amo_hide
 Amo_hide:
 		move.w     hide,d0
 		addq.w     #1,hide
@@ -95,6 +102,7 @@ Amo_hide:
 Amo_hide_1:
 		rts
 
+		.globl Amo_show
 Amo_show:
 		subq.w     #1,hide
 		bgt.s      Amo_show_1
@@ -110,6 +118,7 @@ Amo_show:
 Amo_show_1:
 		rts
 
+		.globl Amo_restart
 Amo_restart:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -129,6 +138,7 @@ Amo_restart:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Amo_return
 Amo_return:
 		move.l     a2,-(a7)
 		movea.l    a0,a2

@@ -1,4 +1,5 @@
 
+		.globl pu_init
 pu_init:
 		movem.l    d3-d5/a2-a6,-(a7)
 		movea.l    a0,a2
@@ -46,6 +47,7 @@ pu_init_2:
 		movem.l    (a7)+,d3-d5/a2-a6
 		rts
 
+		.globl pu_make
 pu_make:
 		movem.l    a2-a4,-(a7)
 		subq.w     #4,a7

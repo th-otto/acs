@@ -1,4 +1,5 @@
 
+		.globl A_ftext
 A_ftext:
 		movem.l    d2-d7/a2-a6,-(a7)
 		lea.l      -66(a7),a7
@@ -341,8 +342,7 @@ A_ftext_4:
 		movem.l    (a7)+,d2-d7/a2-a6
 		rts
 
-Auo_ftext_11:
-Auo_ftext_13:
+		.globl Auo_ftext
 Auo_ftext:
 		movem.l    d3/a2-a4,-(a7)
 		subq.w     #4,a7

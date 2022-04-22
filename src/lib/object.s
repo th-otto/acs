@@ -1,4 +1,5 @@
 
+		.globl Aob_create
 Aob_create:
 		movem.l    d3/a2-a5,-(a7)
 		subq.w     #6,a7
@@ -108,6 +109,7 @@ Aob_create_10:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Aob_delete
 Aob_delete:
 		movem.l    a2-a5,-(a7)
 		movea.l    a0,a2
@@ -183,6 +185,7 @@ Aob_delete_1:
 		movem.l    (a7)+,a2-a5
 		rts
 
+		.globl Aob_count
 Aob_count:
 		moveq.l    #1,d1
 		movea.l    a0,a1
@@ -380,6 +383,7 @@ convert_2:
 		movem.l    (a7)+,d3-d7/a2-a4/a6
 		rts
 
+		.globl Aic_create
 Aic_create:
 		movem.l    d3-d5/a2-a6,-(a7)
 		lea.l      -44(a7),a7
@@ -572,6 +576,7 @@ Aic_create_3:
 		movem.l    (a7)+,d3-d5/a2-a6
 		rts
 
+		.globl Aic_delete
 Aic_delete:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a2
@@ -614,6 +619,7 @@ Aic_delete_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Aim_create
 Aim_create:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -636,11 +642,13 @@ Aim_create_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aim_delete
 Aim_delete:
 		moveq.l    #14,d0
 		jsr        Ax_recycle
 		rts
 
+		.globl Ate_create
 Ate_create:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -685,6 +693,7 @@ Ate_create_4:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ate_delete
 Ate_delete:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -703,6 +712,7 @@ Ate_delete_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aus_create
 Aus_create:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -731,6 +741,7 @@ Aus_create_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aus_delete
 Aus_delete:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -744,6 +755,7 @@ Aus_delete:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aob_fix
 Aob_fix:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -830,6 +842,7 @@ Aob_fix_1:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Aob_icon
 Aob_icon:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -872,6 +885,7 @@ Aob_icon_4:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aob_offset
 Aob_offset:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a3
@@ -1041,6 +1055,7 @@ Aob_offset_16:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Aob_save
 Aob_save:
 		movem.l    a2-a3/a5,-(a7)
 		lea.l      -16(a7),a7
@@ -1127,6 +1142,7 @@ Aob_save_6:
 		movem.l    (a7)+,a2-a3/a5
 		rts
 
+		.globl Aob_restore
 Aob_restore:
 		movem.l    a3-a5,-(a7)
 		lea.l      -16(a7),a7
@@ -1198,6 +1214,7 @@ Aob_restore_3:
 		movem.l    (a7)+,a3-a5
 		rts
 
+		.globl Aob_tobkey
 Aob_tobkey:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -1243,6 +1260,7 @@ Aob_tobkey_4:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Aob_wobkey
 Aob_wobkey:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -1288,6 +1306,7 @@ Aob_wobkey_4:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Aob_execute
 Aob_execute:
 		movem.l    d3-d4/a2-a5,-(a7)
 		movea.l    a0,a5
@@ -1389,6 +1408,7 @@ Aob_execute_5:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Aob_alias
 Aob_alias:
 		movem.l    d3/a2-a5,-(a7)
 		lea.l      ACSblk,a2
@@ -1424,6 +1444,7 @@ Aob_alias_2:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Aob_select
 Aob_select:
 		movem.l    d3-d7/a2-a4,-(a7)
 		subq.w     #2,a7
@@ -1634,6 +1655,7 @@ Aob_select_5:
 		movem.l    (a7)+,d3-d7/a2-a4
 		rts
 
+		.globl Aob_watch
 Aob_watch:
 		movem.l    d3-d6/a2-a5,-(a7)
 		lea.l      -22(a7),a7
@@ -1815,6 +1837,7 @@ Aob_watch_6:
 		movem.l    (a7)+,d3-d6/a2-a5
 		rts
 
+		.globl Aev_release
 Aev_release:
 		move.w     d3,-(a7)
 		subq.w     #2,a7
@@ -1857,6 +1880,7 @@ Aev_release_1:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Aob_key
 Aob_key:
 		movem.l    d3-d6/a2,-(a7)
 		movea.l    a0,a2
@@ -1976,6 +2000,7 @@ Aob_key_11:
 		movem.l    (a7)+,d3-d6/a2
 		rts
 
+		.globl Aob_findflag
 Aob_findflag:
 		movem.l    d3-d5/a2,-(a7)
 		movea.l    a0,a2
@@ -2059,6 +2084,7 @@ Aob_findflag_9:
 		movem.l    (a7)+,d3-d5/a2
 		rts
 
+		.globl Aob_up
 Aob_up:
 		movem.l    d3-d4/a2,-(a7)
 		movea.l    a0,a2
@@ -2093,6 +2119,7 @@ Aob_up_2:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Aob_printf
 Aob_printf:
 		movem.l    d3/a2-a5,-(a7)
 		movea.l    a0,a5
@@ -2112,6 +2139,7 @@ Aob_printf:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Aob_puttext
 Aob_puttext:
 		movem.l    d3/a2-a5,-(a7)
 		movea.l    a0,a2
@@ -2201,6 +2229,7 @@ Aob_puttext_1:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Aob_scanf
 Aob_scanf:
 		movem.l    d3/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -2264,6 +2293,7 @@ Aob_scanf_1:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Aob_gettext
 Aob_gettext:
 		movem.l    d3-d4/a2-a5,-(a7)
 		subq.w     #4,a7
@@ -2464,3 +2494,8 @@ xd3d40:
 xd3d50:
 		dc.b '0 0 0 0 0 0 0 0 0 0',0
 		.even
+
+	.bss
+
+ob_inout: ds.b 1024
+col: ds.l 1

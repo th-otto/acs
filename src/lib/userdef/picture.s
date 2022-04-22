@@ -1,4 +1,5 @@
 
+		.globl A_picture
 A_picture:
 		movem.l    d2-d7/a2-a5,-(a7)
 		lea.l      -16(a7),a7
@@ -421,6 +422,7 @@ make_pic_5:
 		movem.l    (a7)+,d3-d5/a2-a6
 		rts
 
+		.globl Auo_picture
 Auo_picture:
 		movem.l    a2-a4,-(a7)
 		subq.w     #4,a7

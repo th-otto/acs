@@ -1,8 +1,10 @@
+		.globl ShowACSVersion
 ShowACSVersion:
 		movea.l    OldAboutMe,a0
 		jsr        (a0)
 		rts
 
+		.globl ShowACSUpdate
 ShowACSUpdate:
 		move.l     a2,-(a7)
 		lea.l      ABOUT_UPDATE_WIND,a2
@@ -12,6 +14,7 @@ ShowACSUpdate:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl AboutGUIEditor
 AboutGUIEditor:
 		move.l     a2,-(a7)
 		lea.l      ABOUT_GUI_EDITOR_WIND,a2
@@ -25062,6 +25065,7 @@ _11_ABOUT_UPDATE_OBJ:
 		dc.b $34
 		dc.b $00
 		dc.b $01
+		.globl ABOUT_GUI_EDITOR_WIND
 ABOUT_GUI_EDITOR_WIND:
 		dc.b $00
 		dc.b $00
@@ -25154,6 +25158,7 @@ ABOUT_GUI_EDITOR_WIND:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl ABOUT_UPDATE_WIND
 ABOUT_UPDATE_WIND:
 		dc.b $00
 		dc.b $00

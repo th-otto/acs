@@ -1,7 +1,9 @@
+		.globl Aev_InitPCHelp
 Aev_InitPCHelp:
 		moveq.l    #1,d0
 		rts
 
+		.globl Aev_ExitPCHelp
 Aev_ExitPCHelp:
 		move.l     help_string,d0
 		beq.s      Aev_ExitPCHelp_1
@@ -66,6 +68,7 @@ FindPCHelp_5:
 		addq.w     #6,a7
 		rts
 
+		.globl CheckPcHelp
 CheckPcHelp:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -99,6 +102,7 @@ SendMeldung_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetAcReply
 Aev_GetAcReply:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -135,6 +139,7 @@ Aev_GetAcReply_3:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_AcHelp
 Aev_AcHelp:
 		lea.l      -26(a7),a7
 		move.l     a0,22(a7)

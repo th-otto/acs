@@ -1,4 +1,5 @@
 
+		.globl Ast_create
 Ast_create:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -29,6 +30,7 @@ Ast_create_3:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Ast_delete
 Ast_delete:
 		cmpa.l     #null_string,a0
 		beq.s      Ast_delete_1
@@ -36,16 +38,19 @@ Ast_delete:
 Ast_delete_1:
 		rts
 
+		.globl Ach_toupper
 Ach_toupper:
 		ext.w      d0
 		jsr        nkc_toupper
 		rts
 
+		.globl Ach_tolower
 Ach_tolower:
 		ext.w      d0
 		jsr        nkc_tolower
 		rts
 
+		.globl Ast_toupper
 Ast_toupper:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -73,6 +78,7 @@ Ast_toupper_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ast_tolower
 Ast_tolower:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -100,6 +106,7 @@ Ast_tolower_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ast_ltrim
 Ast_ltrim:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -139,6 +146,7 @@ Ast_ltrim_5:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ast_rtrim
 Ast_rtrim:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -184,6 +192,7 @@ Ast_rtrim_8:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ast_alltrim
 Ast_alltrim:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -198,6 +207,7 @@ Ast_alltrim_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ast_cmp
 Ast_cmp:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -252,6 +262,7 @@ Ast_cmp_7:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ast_icmp
 Ast_icmp:
 		movem.l    d3/a2-a4,-(a7)
 		lea.l      null_string,a2
@@ -311,6 +322,7 @@ Ast_icmp_7:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Ast_ncmp
 Ast_ncmp:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -376,6 +388,7 @@ Ast_ncmp_7:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ast_incmp
 Ast_incmp:
 		movem.l    d3-d5/a2-a4,-(a7)
 		move.w     d0,d5
@@ -445,6 +458,7 @@ Ast_incmp_7:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl Ast_istr
 Ast_istr:
 		movem.l    d3-d6/a2-a4,-(a7)
 		movea.l    a0,a2
@@ -504,6 +518,7 @@ Ast_istr_9:
 		movem.l    (a7)+,d3-d6/a2-a4
 		rts
 
+		.globl Ach_isWhite
 Ach_isWhite:
 		tst.b      d0
 		beq.s      Ach_isWhite_1
@@ -518,6 +533,7 @@ Ach_isWhite_1:
 		clr.w      d0
 		rts
 
+		.globl Ast_isEmpty
 Ast_isEmpty:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -551,6 +567,7 @@ Ast_isEmpty_6:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ast_add
 Ast_add:
 		movem.l    d3-d6/a2-a5,-(a7)
 		move.w     d0,d6
@@ -616,6 +633,7 @@ Ast_add_2:
 		movem.l    (a7)+,d3-d6/a2-a5
 		rts
 
+		.globl Ast_adl
 Ast_adl:
 		movem.l    d3-d4/a2,-(a7)
 		movea.l    a0,a2
@@ -641,6 +659,7 @@ Ast_adl_2:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Ast_adr
 Ast_adr:
 		movem.l    d3-d4/a2,-(a7)
 		movea.l    a0,a2
@@ -672,6 +691,7 @@ Ast_adr_2:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Ast_adc
 Ast_adc:
 		movem.l    d3-d4/a2,-(a7)
 		movea.l    a0,a2
@@ -705,6 +725,7 @@ Ast_adc_2:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Ast_filter
 Ast_filter:
 		movem.l    a2-a6,-(a7)
 		movea.l    a0,a2
@@ -769,6 +790,7 @@ Ast_filter_3:
 		movem.l    (a7)+,a2-a6
 		rts
 
+		.globl Ast_count
 Ast_count:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a1,a3
@@ -874,6 +896,7 @@ strfsearchafterwc_11:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Ast_fcmp
 Ast_fcmp:
 		movem.l    d3-d4/a2-a5,-(a7)
 		lea.l      -40(a7),a7
@@ -1101,6 +1124,7 @@ Ast_fcmp_29:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Ast_countASCIZZ
 Ast_countASCIZZ:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -1119,6 +1143,7 @@ Ast_countASCIZZ_1:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Ast_splitASCIIZZ
 Ast_splitASCIIZZ:
 		movem.l    d3/a2-a5,-(a7)
 		movea.l    a0,a2
@@ -1157,6 +1182,7 @@ Ast_splitASCIIZZ_2:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Ast_mergeASCIIZZ
 Ast_mergeASCIIZZ:
 		movem.l    d3-d6/a2-a5,-(a7)
 		movea.l    a0,a2
@@ -1337,6 +1363,7 @@ Ast_mergeASCIIZZ_10:
 		movem.l    (a7)+,d3-d6/a2-a5
 		rts
 
+		.globl Ast_deleteAry
 Ast_deleteAry:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -1357,6 +1384,7 @@ Ast_deleteAry_1:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Ast_copy
 Ast_copy:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -1399,6 +1427,7 @@ Ast_copy_5:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Ast_reverse
 Ast_reverse:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -1430,6 +1459,7 @@ Ast_reverse_4:
 
 		.data
 
+		.globl null_string
 null_string:
 		dc.b $00
 xd3661:

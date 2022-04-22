@@ -1,4 +1,5 @@
 
+		.globl A_cycle
 A_cycle:
 		movem.l    d2-d5/a2-a6,-(a7)
 		lea.l      -66(a7),a7
@@ -513,6 +514,7 @@ cyc_index_1:
 
 Auo_cycle_14:
 Auo_cycle_9:
+		.globl Auo_cycle
 Auo_cycle:
 		movem.l    a2-a4,-(a7)
 		subq.w     #4,a7
@@ -995,6 +997,7 @@ create_popup_5:
 		movem.l    (a7)+,d3-d5/a2-a5
 		rts
 
+		.globl Ame_strpopup
 Ame_strpopup:
 		movem.l    d3-d6/a2-a5,-(a7)
 		movea.l    a0,a4
@@ -1085,6 +1088,7 @@ Ame_strpopup_10:
 		movem.l    (a7)+,d3-d6/a2-a5
 		rts
 
+		.globl Aus_cycle
 Aus_cycle:
 		movem.l    d3-d5/a2-a5,-(a7)
 		lea.l      -18(a7),a7

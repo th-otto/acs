@@ -80,6 +80,7 @@ ok:
 		move.l     a0,DEBUG_DEFECT_MEM
 		rts
 
+		.globl acs_call
 acs_call:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -105,6 +106,7 @@ acs_call_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl get_acsblk
 get_acsblk:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -287,6 +289,7 @@ get_acsblk_24:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl main
 main:
 		movem.l    d3/a2-a3,-(a7)
 		move.w     d0,d3
@@ -302,12 +305,16 @@ main:
 
 		.data
 
+		.globl _A_ERR_ACC
 _A_ERR_ACC:
 		dc.b '[2][ | Soll das Accessory | >>               << | gestartet werden?| ][Ja|  Nein  ]',0
+		.globl _A_ERR_MESS
 _A_ERR_MESS:
 		dc.b '[2][ Unbekannte GEM-Nachricht | erhalten.| ID = ',$27,'%s',$27,'| Weiterhin berichten?][Ja|  Nein  ]',0
+		.globl _A_ERR_WINDOW
 _A_ERR_WINDOW:
 		dc.b '[3][ Keine freie GEM-Fenster-ID | mehr vorhanden!| Abhilfe: Ein offenes| GEM-Fenster schliežen.][    OK    ]',0
+		.globl _A_ERR_WISLOT
 _A_ERR_WISLOT:
 		dc.b '[3][ Kein freier ACS-Fenster- | Platz mehr vorhanden!| Abhilfe: Ein ACS-Fenster| l”schen.][    OK    ]',0
 NULL_STRING:
@@ -20856,6 +20863,7 @@ A_TITLE05:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl _MSK__CHK_1D_DS
 _MSK__CHK_1D_DS:
 		dc.w $fffe
 		dc.w $fffe
@@ -20898,6 +20906,7 @@ _DAT__CHK_1D_DS:
 		dc.w $5554
 		dc.b $00
 		dc.b $00
+		.globl _CHK_1D_DS
 _CHK_1D_DS:
 		dc.l _MSK__CHK_1D_DS
 		dc.l _DAT__CHK_1D_DS
@@ -20969,6 +20978,7 @@ _DAT__CHK_1D_DU:
 		dc.w $5554
 		dc.b $00
 		dc.b $00
+		.globl _CHK_1D_DU
 _CHK_1D_DU:
 		dc.l _MSK__CHK_1D_DU
 		dc.l _DAT__CHK_1D_DU
@@ -21034,6 +21044,7 @@ _DAT__CHK_1D_S:
 		dc.w $fffe
 		dc.b $00
 		dc.b $00
+		.globl _CHK_1D_S
 _CHK_1D_S:
 		dc.l _MSK__CHK_1D_S
 		dc.l _DAT__CHK_1D_S
@@ -21063,6 +21074,7 @@ _CHK_1D_S:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl _MSK__CHK_1D_U
 _MSK__CHK_1D_U:
 		dc.w $fffe
 		dc.w $fffe
@@ -21099,6 +21111,7 @@ _DAT__CHK_1D_U:
 		dc.w $fffe
 		dc.b $00
 		dc.b $00
+		.globl _CHK_1D_U
 _CHK_1D_U:
 		dc.l _MSK__CHK_1D_U
 		dc.l _DAT__CHK_1D_U
@@ -21193,6 +21206,7 @@ _DAT__CHK_3D_DS:
 		dc.w $5554
 		dc.b $00
 		dc.b $00
+		.globl _CHK_3D_DS
 _CHK_3D_DS:
 		dc.l _MSK__CHK_3D_DS
 		dc.l _DAT__CHK_3D_DS
@@ -21292,6 +21306,7 @@ _DAT__CHK_3D_DU:
 		dc.w $5554
 		dc.b $00
 		dc.b $00
+		.globl _CHK_3D_DU
 _CHK_3D_DU:
 		dc.l _MSK__CHK_3D_DU
 		dc.l _DAT__CHK_3D_DU
@@ -21385,6 +21400,7 @@ _DAT__CHK_3D_S:
 		dc.w $fffe
 		dc.b $00
 		dc.b $00
+		.globl _CHK_3D_S
 _CHK_3D_S:
 		dc.l _MSK__CHK_3D_S
 		dc.l _DAT__CHK_3D_S
@@ -21478,6 +21494,7 @@ _DAT__CHK_3D_U:
 		dc.w $fffe
 		dc.b $00
 		dc.b $00
+		.globl _CHK_3D_U
 _CHK_3D_U:
 		dc.l _MSK__CHK_3D_U
 		dc.l _DAT__CHK_3D_U
@@ -21504,6 +21521,7 @@ _CHK_3D_U:
 		dc.b $00
 		dc.b $00
 		dc.l _C4__CHK_3D_U
+		.globl _MSK__IM_EXCLAM
 _MSK__IM_EXCLAM:
 		dc.b $00
 		dc.b $03
@@ -21691,6 +21709,7 @@ _IM_EXCLAM:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl _MSK__IM_QUEST
 _MSK__IM_QUEST:
 		dc.w $3fff
 		dc.w $fffc
@@ -21877,6 +21896,7 @@ _IM_QUEST:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl _MSK__IM_STOP
 _MSK__IM_STOP:
 		dc.b $00
 		dc.b $7f
@@ -22044,6 +22064,7 @@ _IM_STOP:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl _C4__IM_TIME0
 _C4__IM_TIME0:
 		dc.b $00
 		dc.b $04
@@ -22252,6 +22273,7 @@ _IM_TIME0:
 		dc.b $00
 		dc.b $00
 		dc.l _C4__IM_TIME0
+		.globl _C4__IM_TIME1
 _C4__IM_TIME1:
 		dc.b $00
 		dc.b $04
@@ -22453,6 +22475,7 @@ _IM_TIME1:
 		dc.b $00
 		dc.b $00
 		dc.l _C4__IM_TIME1
+		.globl _C4__IM_TIME2
 _C4__IM_TIME2:
 		dc.b $00
 		dc.b $04
@@ -22653,6 +22676,7 @@ _IM_TIME2:
 		dc.b $00
 		dc.b $00
 		dc.l _C4__IM_TIME2
+		.globl _C4__IM_TIME3
 _C4__IM_TIME3:
 		dc.b $00
 		dc.b $04
@@ -22846,6 +22870,7 @@ _IM_TIME3:
 		dc.b $00
 		dc.b $00
 		dc.l _C4__IM_TIME3
+		.globl _C4__IM_TIME4
 _C4__IM_TIME4:
 		dc.b $00
 		dc.b $04
@@ -23039,6 +23064,7 @@ _IM_TIME4:
 		dc.b $00
 		dc.b $00
 		dc.l _C4__IM_TIME4
+		.globl _C4__IM_TIME5
 _C4__IM_TIME5:
 		dc.b $00
 		dc.b $04
@@ -23232,6 +23258,7 @@ _IM_TIME5:
 		dc.b $00
 		dc.b $00
 		dc.l _C4__IM_TIME5
+		.globl _C4__IM_TIME6
 _C4__IM_TIME6:
 		dc.b $00
 		dc.b $04
@@ -23425,6 +23452,7 @@ _IM_TIME6:
 		dc.b $00
 		dc.b $00
 		dc.l _C4__IM_TIME6
+		.globl _C4__IM_TIME7
 _C4__IM_TIME7:
 		dc.b $00
 		dc.b $04
@@ -23618,6 +23646,7 @@ _IM_TIME7:
 		dc.b $00
 		dc.b $00
 		dc.l _C4__IM_TIME7
+		.globl _C4__IM_TIME8
 _C4__IM_TIME8:
 		dc.b $00
 		dc.b $04
@@ -23850,6 +23879,7 @@ _DAT__RD_1D_DS:
 		dc.w $0280
 		dc.b $00
 		dc.b $00
+		.globl _RD_1D_DS
 _RD_1D_DS:
 		dc.l _MSK__RD_1D_DS
 		dc.l _DAT__RD_1D_DS
@@ -23922,6 +23952,7 @@ _DAT__RD_1D_DU:
 		dc.w $0280
 		dc.b $00
 		dc.b $00
+		.globl _RD_1D_DU
 _RD_1D_DU:
 		dc.l _MSK__RD_1D_DU
 		dc.l _DAT__RD_1D_DU
@@ -23989,6 +24020,7 @@ _DAT__RD_1D_S:
 		dc.w $03c0
 		dc.b $00
 		dc.b $00
+		.globl _RD_1D_S
 _RD_1D_S:
 		dc.l _MSK__RD_1D_S
 		dc.l _DAT__RD_1D_S
@@ -24056,6 +24088,7 @@ _DAT__RD_1D_U:
 		dc.w $03c0
 		dc.b $00
 		dc.b $00
+		.globl _RD_1D_U
 _RD_1D_U:
 		dc.l _MSK__RD_1D_U
 		dc.l _DAT__RD_1D_U
@@ -24156,6 +24189,7 @@ _DAT__RD_3D_DS:
 		dc.w $0280
 		dc.b $00
 		dc.b $00
+		.globl _RD_3D_DS
 _RD_3D_DS:
 		dc.l _MSK__RD_3D_DS
 		dc.l _DAT__RD_3D_DS
@@ -24255,6 +24289,7 @@ _DAT__RD_3D_DU:
 		dc.w $0280
 		dc.b $00
 		dc.b $00
+		.globl _RD_3D_DU
 _RD_3D_DU:
 		dc.l _MSK__RD_3D_DU
 		dc.l _DAT__RD_3D_DU
@@ -24350,6 +24385,7 @@ _DAT__RD_3D_S:
 		dc.w $03c0
 		dc.b $00
 		dc.b $00
+		.globl _RD_3D_S
 _RD_3D_S:
 		dc.l _MSK__RD_3D_S
 		dc.l _DAT__RD_3D_S
@@ -24445,6 +24481,7 @@ _DAT__RD_3D_U:
 		dc.w $03c0
 		dc.b $00
 		dc.b $00
+		.globl _RD_3D_U
 _RD_3D_U:
 		dc.l _MSK__RD_3D_U
 		dc.l _DAT__RD_3D_U
@@ -24649,6 +24686,7 @@ _WIN:
 		dc.b $00
 		dc.b $08
 		dc.l _C4__WIN
+		.globl _ABOUT_ME
 _ABOUT_ME:
 		dc.w $ffff
 		dc.b $00
@@ -24997,6 +25035,7 @@ _16__ABOUT_ME:
 		dc.b $10
 		dc.b $00
 		dc.b $01
+		.globl _ALERT
 _ALERT:
 		dc.w $ffff
 		dc.b $00
@@ -25554,6 +25593,7 @@ _25a_ALERT:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl _DDD
 _DDD:
 		dc.w $ffff
 		dc.b $00
@@ -25647,6 +25687,7 @@ _02a_DDD:
 		dc.b $00
 		dc.b $00
 		dc.b $14
+		.globl _ICO
 _ICO:
 		dc.w $ffff
 		dc.b $00
@@ -25712,6 +25753,7 @@ _01a_ICO:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl _WDD
 _WDD:
 		dc.b $00
 		dc.b $00
@@ -25804,6 +25846,7 @@ _WDD:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl _W_ABOUT
 _W_ABOUT:
 		dc.b $00
 		dc.b $00
@@ -25896,6 +25939,7 @@ _W_ABOUT:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl _W_ALERT
 _W_ALERT:
 		dc.b $00
 		dc.b $00
@@ -25988,11 +26032,13 @@ _W_ALERT:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl SentMsg
 SentMsg:
 		dc.b $00
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl ListOfApps
 ListOfApps:
 		dc.b $00
 		dc.b $00

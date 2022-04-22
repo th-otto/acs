@@ -849,6 +849,7 @@ _07aEDIT_STRING:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WI_STRING
 WI_STRING:
 		dc.b $00
 		dc.b $00

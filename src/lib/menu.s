@@ -1530,6 +1530,7 @@ Ame_submenu_10:
 		movem.l    (a7)+,d3-d7/a2-a5
 		rts
 
+		.globl Ame_popup
 Ame_popup:
 		movem.l    d3/a2-a5,-(a7)
 		lea.l      -30(a7),a7
@@ -1605,6 +1606,7 @@ Ame_popup_3:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Ame_root
 Ame_root:
 		movem.l    d3-d4/a2-a3,-(a7)
 		move.w     d0,d3
@@ -1634,6 +1636,7 @@ Ame_root_2:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Ame_drop
 Ame_drop:
 		movem.l    d3-d5/a2-a3,-(a7)
 		subq.w     #8,a7
@@ -1685,6 +1688,7 @@ Ame_drop_1:
 		movem.l    (a7)+,d3-d5/a2-a3
 		rts
 
+		.globl Ame_key
 Ame_key:
 		movem.l    d3-d7/a2-a3,-(a7)
 		subq.w     #4,a7
@@ -1796,6 +1800,7 @@ Ame_key_4:
 		movem.l    (a7)+,d3-d7/a2-a3
 		rts
 
+		.globl Ame_namefix
 Ame_namefix:
 		movem.l    d3-d7/a2-a4,-(a7)
 		subq.w     #4,a7

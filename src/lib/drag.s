@@ -1,4 +1,5 @@
 
+		.globl dotted_xline
 dotted_xline:
 		movem.l    d3-d5/a2-a3,-(a7)
 		subq.w     #8,a7
@@ -52,6 +53,7 @@ dotted_xline_1:
 		movem.l    (a7)+,d3-d5/a2-a3
 		rts
 
+		.globl dotted_yline
 dotted_yline:
 		movem.l    d3-d5/a2-a3,-(a7)
 		subq.w     #8,a7
@@ -106,6 +108,7 @@ dotted_yline_1:
 		movem.l    (a7)+,d3-d5/a2-a3
 		rts
 
+		.globl xline2
 xline2:
 		movem.l    d3-d5/a2-a3,-(a7)
 		subq.w     #8,a7
@@ -159,6 +162,7 @@ xline2_1:
 		movem.l    (a7)+,d3-d5/a2-a3
 		rts
 
+		.globl yline2
 yline2:
 		movem.l    d3-d5/a2-a3,-(a7)
 		subq.w     #8,a7
@@ -508,11 +512,13 @@ drag_draw_2:
 		movem.l    (a7)+,d3-d7/a2/a4
 		rts
 
+		.globl Adr_start
 Adr_start:
 		movea.l    ACSblk,a0
 		clr.w      584(a0)
 		rts
 
+		.globl Adr_next
 Adr_next:
 		lea.l      ACSblk,a0
 		movea.l    (a0),a1
@@ -532,6 +538,7 @@ Adr_next_1:
 		move.w     0(a1,d0.l),d0
 		rts
 
+		.globl Adr_add
 Adr_add:
 		movem.l    d3/a2-a4,-(a7)
 		subq.w     #2,a7
@@ -603,6 +610,7 @@ Adr_add_5:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Adr_del
 Adr_del:
 		movem.l    d3-d4/a2-a5,-(a7)
 		subq.w     #6,a7
@@ -694,6 +702,7 @@ Adr_del_1:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Adr_unselect
 Adr_unselect:
 		movem.l    d3-d4/a2-a3,-(a7)
 		lea.l      ACSblk,a2
@@ -955,6 +964,7 @@ rect_find_1:
 		movem.l    (a7)+,d3-d7/a2-a5
 		rts
 
+		.globl Adr_box
 Adr_box:
 		movem.l    d3-d7/a2-a6,-(a7)
 		lea.l      -66(a7),a7
@@ -1624,6 +1634,7 @@ Adr_find0_5:
 		movem.l    (a7)+,d3-d7/a2-a4
 		rts
 
+		.globl Adr_find
 Adr_find:
 		movem.l    d3-d7/a2,-(a7)
 		subq.w     #4,a7
@@ -1728,6 +1739,7 @@ DDCmpName_4:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Adr_drag
 Adr_drag:
 		movem.l    d3-d7/a2-a6,-(a7)
 		lea.l      -502(a7),a7

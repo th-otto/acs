@@ -1226,6 +1226,7 @@ boxed_charlist_1:
 		movem.l    (a7)+,d3/a2/a4-a6
 		rts
 
+		.globl Aus_boxed
 Aus_boxed:
 		movea.l    ACSblk,a0
 		move.w     608(a0),d0
@@ -1234,6 +1235,7 @@ Aus_boxed:
 		jsr        Aus_objboxed
 		rts
 
+		.globl Aus_objboxed
 Aus_objboxed:
 		movem.l    d3-d7/a2-a5,-(a7)
 		lea.l      -82(a7),a7
@@ -1551,6 +1553,7 @@ Aus_objboxed_1:
 		rts
 
 Auo_boxed_11:
+		.globl Auo_boxed
 Auo_boxed:
 		movem.l    d3-d7/a2-a6,-(a7)
 		lea.l      -38(a7),a7
@@ -2433,6 +2436,7 @@ Auo_boxed_122:
 		rts
 Auo_boxed_13:
 
+		.globl A_boxed
 A_boxed:
 		movem.l    d2-d7/a2-a6,-(a7)
 		lea.l      -574(a7),a7

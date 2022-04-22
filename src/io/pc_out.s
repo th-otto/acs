@@ -1,4 +1,5 @@
 
+		.globl info_start
 info_start:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a4
@@ -58,6 +59,7 @@ info_start_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl info_end
 info_end:
 		movea.l    work,a0
 		jsr        Aob_delete
@@ -66,6 +68,7 @@ info_end:
 		jsr        Aob_restore
 		rts
 
+		.globl info_title
 info_title:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -97,6 +100,7 @@ info_title_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl info_list
 info_list:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -126,6 +130,7 @@ info_list_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl info_obj
 info_obj:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -2094,6 +2099,7 @@ out_declproto_1:
 		movem.l    (a7)+,d3-d5/a2-a5
 		rts
 
+		.globl pc_output
 pc_output:
 		movem.l    d3-d5/a2-a5,-(a7)
 		lea.l      -136(a7),a7

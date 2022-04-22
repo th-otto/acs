@@ -1,4 +1,5 @@
 
+		.globl Aev_unhidepointer
 Aev_unhidepointer:
 		move.w     hidepointer,d0
 		beq.s      Aev_unhidepointer_1
@@ -7,6 +8,7 @@ Aev_unhidepointer:
 Aev_unhidepointer_1:
 		rts
 
+		.globl Aev_quit
 Aev_quit:
 		moveq.l    #1,d0
 		move.w     d0,exitapp
@@ -109,6 +111,7 @@ IsDeadKey_2:
 		movem.l    (a7)+,d3-d5/a2-a5
 		rts
 
+		.globl evkeybrd
 evkeybrd:
 		movem.l    d3/a2-a6,-(a7)
 		lea.l      -18(a7),a7
@@ -352,6 +355,7 @@ evkeybrd_3:
 		movem.l    (a7)+,d3/a2-a6
 		rts
 
+		.globl ev_dobutton
 ev_dobutton:
 		movem.l    d3-d7/a2-a5,-(a7)
 		subq.w     #8,a7
@@ -524,6 +528,7 @@ ev_dobutton_13:
 		movem.l    (a7)+,d3-d7/a2-a5
 		rts
 
+		.globl evmwheel
 evmwheel:
 		movem.l    d3-d5/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -555,6 +560,7 @@ evmwheel_4:
 		movem.l    (a7)+,d3-d5/a2-a3
 		rts
 
+		.globl evbutton
 evbutton:
 		movem.l    d3-d7/a2-a4,-(a7)
 		subq.w     #8,a7
@@ -741,6 +747,7 @@ evbutton_3:
 		movem.l    (a7)+,d3-d7/a2-a4
 		rts
 
+		.globl evmouse
 evmouse:
 		movem.l    d3-d5/a2-a4,-(a7)
 		subq.w     #2,a7
@@ -883,6 +890,7 @@ evmouse_1:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl Aev_mess
 Aev_mess:
 		move.l     d3,-(a7)
 		move.l     a2,-(a7)
@@ -950,6 +958,7 @@ Aev_mess_1:
 		move.l     (a7)+,d3
 		rts
 
+		.globl ACSeventhandler
 ACSeventhandler:
 		movem.l    d3-d4/a2-a5,-(a7)
 		lea.l      -48(a7),a7

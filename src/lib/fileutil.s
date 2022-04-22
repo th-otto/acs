@@ -1,4 +1,5 @@
 
+		.globl Af_cfgfile
 Af_cfgfile:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a4
@@ -47,6 +48,7 @@ Af_cfgfile_4:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Af_2drv
 Af_2drv:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -68,6 +70,7 @@ Af_2drv_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Af_2path
 Af_2path:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a3
@@ -134,6 +137,7 @@ Af_2path_2:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Af_2name
 Af_2name:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a4
@@ -179,6 +183,7 @@ Af_2name_4:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Af_2fullname
 Af_2fullname:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a4
@@ -207,6 +212,7 @@ Af_2fullname_2:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Af_2ext
 Af_2ext:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a4
@@ -239,6 +245,7 @@ Af_2ext_3:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Af_buildname
 Af_buildname:
 		movem.l    d3-d4/a2-a6,-(a7)
 		movea.l    a0,a3
@@ -320,6 +327,7 @@ Af_buildname_8:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+		.globl Af_length
 Af_length:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -773,6 +781,7 @@ Af_readdirNew_8:
 		movem.l    (a7)+,d3-d7/a3-a6
 		rts
 
+		.globl Af_readdir
 Af_readdir:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -845,6 +854,7 @@ Af_readdir_2:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Af_freedir
 Af_freedir:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -867,6 +877,7 @@ Af_freedir_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Af_first
 Af_first:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a3
@@ -894,6 +905,7 @@ Af_first_3:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Af_next
 Af_next:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -936,6 +948,7 @@ Af_next_6:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Af_quote
 Af_quote:
 		movem.l    d3/a2-a5,-(a7)
 		movea.l    a0,a2
@@ -994,6 +1007,7 @@ Af_quote_2:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Af_unquote
 Af_unquote:
 		move.w     d3,-(a7)
 		move.l     a3,-(a7)
@@ -1041,6 +1055,7 @@ Af_unquote_2:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Af_parseCmdLine
 Af_parseCmdLine:
 		movem.l    d3/a2-a6,-(a7)
 		lea.l      -136(a7),a7

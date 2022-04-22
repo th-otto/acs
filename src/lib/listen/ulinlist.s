@@ -1,4 +1,5 @@
 
+		.globl Alu_create
 Alu_create:
 		move.l     a2,-(a7)
 		moveq.l    #68,d0
@@ -28,6 +29,7 @@ Alu_create_3:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Alu_delete
 Alu_delete:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -239,6 +241,7 @@ Alu_deleteElem_5:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Alu_ptrCmp
 Alu_ptrCmp:
 		cmpa.l     a0,a1
 		bne.s      Alu_ptrCmp_1
@@ -533,6 +536,8 @@ Alu_doForElem_1:
 		movem.l    (a7)+,a2-a5
 		rts
 
+/* new function */
+	.globl x62eaa
 x62eaa:
 		move.l     a2,-(a7)
 		moveq.l    #28,d0
@@ -553,6 +558,8 @@ x62eaa_2:
 		movea.l    (a7)+,a2
 		rts
 
+/* new function */
+	.globl x62ed6
 x62ed6:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -653,6 +660,8 @@ x62f80_1:
 		bne.s      x62f80_2
 		rts
 
+/* new function */
+	.globl x62f90
 x62f90:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -685,6 +694,8 @@ x62f90_3:
 		movea.l    (a7)+,a2
 		rts
 
+/* new function */
+	.globl x62fde
 x62fde:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -820,10 +831,7 @@ x630cc_1:
 		.data
 
 empty:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.l 0
 		dc.l Ax_free
 		dc.l Alu_clearElem
 		dc.l Alu_appendElem
@@ -841,3 +849,20 @@ empty:
 		dc.l Alu_countForElem
 		dc.l Alu_doForElem
 
+xd632c:
+		dc.l 0
+		dc.l Ax_free
+		dc.l x62f20
+		dc.l x62f4c
+		dc.l x62f74
+		dc.l x62f80
+		dc.l x62ef2
+
+xd6348:
+		dc.l 0
+		dc.l Ax_free
+		dc.l x63030
+		dc.l x63066
+		dc.l x630be
+		dc.l x630cc
+		dc.l x63002

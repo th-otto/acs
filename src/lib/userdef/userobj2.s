@@ -1,4 +1,5 @@
 
+		.globl A_pattern
 A_pattern:
 		movem.l    d2-d3/a2-a4,-(a7)
 		lea.l      -12(a7),a7
@@ -161,6 +162,7 @@ A_pattern_13:
 		movem.l    (a7)+,d2-d3/a2-a4
 		rts
 
+		.globl A_arrows
 A_arrows:
 		movem.l    d2-d6/a2/a4-a5,-(a7)
 		subq.w     #8,a7
@@ -497,6 +499,7 @@ A_arrows_37:
 		movem.l    (a7)+,d2-d6/a2/a4-a5
 		rts
 
+		.globl A_select
 A_select:
 		movem.l    d2/a2-a4,-(a7)
 		lea.l      -28(a7),a7
@@ -691,9 +694,9 @@ senk:
 senk2:
 		dc.b 'DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD'
 senk3:
-		dc.b '33333333333333333333333333333333',0
-		dc.b $0d
-		dc.w $4cd6
+		dc.b '33333333333333333333333333333333'
+up:
+		dc.l quer
 		dc.l quer
 		dc.l quer2
 		dc.l quer3

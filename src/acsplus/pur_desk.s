@@ -1,4 +1,5 @@
 
+		.globl Apd_close
 Apd_close:
 		movem.l    a2/a4-a5,-(a7)
 		subq.w     #2,a7
@@ -65,6 +66,7 @@ Apd_close_2:
 		movem.l    (a7)+,a2/a4-a5
 		rts
 
+		.globl Apd_delete
 Apd_delete:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -111,6 +113,7 @@ Apd_delete_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Apd_info
 Apd_info:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -139,6 +142,7 @@ Apd_info_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Apd_list
 Apd_list:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -185,6 +189,7 @@ Apd_list_5:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Apd_module
 Apd_module:
 		move.l     module_window,d0
 		beq.s      Apd_module_1
@@ -193,11 +198,13 @@ Apd_module:
 Apd_module_1:
 		rts
 
+		.globl Apd_new
 Apd_new:
 		suba.l     a0,a0
 		jsr        new_call
 		rts
 
+		.globl Apd_open
 Apd_open:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -222,6 +229,7 @@ Apd_open_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Apd_quit
 Apd_quit:
 		movea.l    ACSblk,a0
 		movea.l    672(a0),a0
@@ -793,6 +801,7 @@ mod_load_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl modul_close
 modul_close:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -1918,101 +1927,9 @@ purGEMScript_2:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
-set_icon:
-		movem.l    a2-a5,-(a7)
-		subq.w     #4,a7
-		move.l     a0,(a7)
-		movea.l    90(a0),a3
-		move.l     a3,d0
-		beq.w      set_icon_1
-		movea.l    (a0),a4
-		move.b     168(a4),d0
-		beq.s      set_icon_2
-		lea.l      168(a4),a5
-		bra.s      set_icon_3
-set_icon_2:
-		lea.l      402(a4),a2
-		moveq.l    #92,d0
-		movea.l    a2,a0
-		jsr        strrchr
-		movea.l    a0,a5
-		move.l     a5,d0
-		beq.s      set_icon_4
-		addq.w     #1,a5
-		bra.s      set_icon_3
-set_icon_4:
-		movea.l    a2,a5
-set_icon_3:
-		lea.l      184(a4),a1
-		movea.l    a5,a0
-		jsr        strcmp
-		tst.w      d0
-		beq.s      set_icon_1
-		clr.b      184(a4)
-		moveq.l    #15,d0
-		movea.l    a5,a1
-		lea.l      184(a4),a0
-		jsr        strncat
-		movea.l    8(a3),a0
-		jsr        Ast_delete
-		movea.l    a5,a0
-		jsr        Ast_create
-		move.l     a0,8(a3)
-		jsr        Awi_root
-		movea.l    a0,a2
-		movea.l    (a7),a1
-		lea.l      88(a1),a1
-		moveq.l    #109,d0
-		movea.l    4(a2),a3
-		jsr        (a3)
-set_icon_1:
-		addq.w     #4,a7
-		movem.l    (a7)+,a2-a5
-		rts
-
-home:
-		move.l     a2,-(a7)
-		subq.w     #4,a7
-		movea.l    a0,a2
-		clr.l      (a7)
-		suba.l     a1,a1
-		move.w     #$00D5,d0
-		jsr        Auo_editor
-		suba.l     a1,a1
-		moveq.l    #14,d0
-		movea.l    a2,a0
-		jsr        Auo_editor
-		lea.l      (a7),a1
-		move.w     #$00D7,d0
-		movea.l    a2,a0
-		jsr        Auo_editor
-		suba.l     a1,a1
-		move.w     #$00DB,d0
-		movea.l    a2,a0
-		jsr        Auo_editor
-		suba.l     a1,a1
-		moveq.l    #5,d0
-		movea.l    a2,a0
-		jsr        Auo_editor
-		suba.l     a1,a1
-		move.w     #$00D6,d0
-		movea.l    a2,a0
-		jsr        Auo_editor
-		addq.w     #4,a7
-		movea.l    (a7)+,a2
-		rts
-
-set_select:
-		tst.w      d0
-		beq.s      set_select_1
-		ori.w      #$0001,10(a0)
-		rts
-set_select_1:
-		andi.w     #$FFFE,10(a0)
-		rts
-
 		.data
 
+		.globl module_window
 module_window:
 		dc.b $00
 		dc.b $00
@@ -4557,6 +4474,7 @@ _08aPUR_TOOL:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl PUR_DESK
 PUR_DESK:
 		dc.b $00
 		dc.b $00
@@ -4643,6 +4561,7 @@ PUR_DESK:
 		dc.l purGEMScript
 		dc.l STGUIDE_02
 		dc.l HELPFILE_02
+		.globl PUR_MODULE
 PUR_MODULE:
 		dc.b $00
 		dc.b $00

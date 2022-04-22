@@ -1,4 +1,5 @@
 
+		.globl Aev_InitBubble
 Aev_InitBubble:
 		subq.w     #2,a7
 		moveq.l    #8,d0
@@ -13,6 +14,7 @@ Aev_InitBubble_1:
 		addq.w     #2,a7
 		rts
 
+		.globl Aev_ExitBubble
 Aev_ExitBubble:
 		move.w     #$0001,phase
 		move.l     bubble_string,d0
@@ -89,6 +91,7 @@ FindBubbleGEM_1:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_GetAckBubbleGEM
 Aev_GetAckBubbleGEM:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -118,7 +121,8 @@ Aev_GetAckBubbleGEM_3:
 		addq.w     #8,a7
 		rts
 
-Aev_GetRequestBubbleGE:
+	.globl Aev_GetRequestBubbleGEM
+Aev_GetRequestBubbleGEM:
 		subq.w     #4,a7
 		move.l     a0,(a7)
 		movea.l    (a7),a0
@@ -131,6 +135,7 @@ Aev_GetRequestBubbleGE:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_ShowBubbleGEM
 Aev_ShowBubbleGEM:
 		lea.l      -30(a7),a7
 		move.l     a0,26(a7)

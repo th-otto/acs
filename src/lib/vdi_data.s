@@ -1,4 +1,5 @@
 
+		.globl Avdi_getRGB
 Avdi_getRGB:
 		tst.w      d0
 		bmi.s      Avdi_getRGB_1
@@ -15,6 +16,7 @@ Avdi_getRGB_1:
 		suba.l     a0,a0
 		rts
 
+		.globl ACSInitLinea
 ACSInitLinea:
 		movem.l    d3-d7/a2-a6,-(a7)
 		ALINE      #$0000

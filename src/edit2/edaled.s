@@ -1989,6 +1989,7 @@ _16aEDIT_ALERT:
 		dc.w $0000
 		dc.w $0000
 		dc.w $0000
+		.globl WI_ALERT
 WI_ALERT:
 		dc.w $0000
 		dc.w $0000

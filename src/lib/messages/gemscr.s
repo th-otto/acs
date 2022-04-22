@@ -1,4 +1,5 @@
 
+		.globl Aev_InitGEMScript
 Aev_InitGEMScript:
 		moveq.l    #12,d0
 		jsr        Ax_glmalloc
@@ -28,6 +29,7 @@ Aev_InitGEMScript_2:
 		moveq.l    #1,d0
 		rts
 
+		.globl Aev_ExitGEMScript
 Aev_ExitGEMScript:
 		movea.l    gs_connect,a0
 		jsr        Alu_delete
@@ -368,6 +370,7 @@ ParseGSCommands_1:
 		lea.l      36(a7),a7
 		rts
 
+		.globl Aev_GetGSRequest
 Aev_GetGSRequest:
 		move.l     a2,-(a7)
 		lea.l      -24(a7),a7
@@ -448,6 +451,7 @@ Aev_GetGSRequest_3:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetGSQuit
 Aev_GetGSQuit:
 		move.l     a2,-(a7)
 		lea.l      -12(a7),a7
@@ -482,6 +486,7 @@ Aev_GetGSQuit:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetGSCommand
 Aev_GetGSCommand:
 		move.l     a2,-(a7)
 		lea.l      -48(a7),a7
@@ -588,6 +593,7 @@ Aev_GetGSCommand_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetGSAck
 Aev_GetGSAck:
 		move.l     a2,-(a7)
 		lea.l      -58(a7),a7
@@ -837,6 +843,7 @@ _gs_search:
 		addq.w     #8,a7
 		rts
 
+		.globl _gs_strcmp
 _gs_strcmp:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -849,6 +856,7 @@ _gs_strcmp:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_GEMScript
 Aev_GEMScript:
 		move.l     a2,-(a7)
 		lea.l      -14(a7),a7
@@ -1212,6 +1220,7 @@ gs_connect:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+xd4b4a:
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -1248,6 +1257,7 @@ xd4b89:
 		dc.w $0203
 		dc.w $0405
 		dc.w $0600
+xd4b90:
 		dc.b $00
 xd4b91:
 		dc.b $30

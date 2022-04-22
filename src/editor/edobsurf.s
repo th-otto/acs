@@ -1,4 +1,5 @@
 
+		.globl char_x
 char_x:
 		tst.w      d0
 		bpl.s      char_x_1
@@ -32,6 +33,7 @@ char_x_2:
 		move.w     d1,d0
 		rts
 
+		.globl char_y
 char_y:
 		tst.w      d0
 		bpl.s      char_y_1
@@ -65,6 +67,7 @@ char_y_2:
 		move.w     d1,d0
 		rts
 
+		.globl pixel_x
 pixel_x:
 		move.w     d0,d1
 		asr.w      #8,d1
@@ -81,6 +84,7 @@ pixel_x_1:
 		move.w     d2,d0
 		rts
 
+		.globl pixel_y
 pixel_y:
 		move.w     d0,d1
 		asr.w      #8,d1
@@ -97,6 +101,7 @@ pixel_y_1:
 		move.w     d2,d0
 		rts
 
+		.globl del_obentry
 del_obentry:
 		movem.l    d3-d6/a2-a5,-(a7)
 		subq.w     #4,a7
@@ -187,6 +192,7 @@ del_obentry_2:
 		movem.l    (a7)+,d3-d6/a2-a5
 		rts
 
+		.globl ed_delete
 ed_delete:
 		movem.l    d3-d4/a2-a4,-(a7)
 		subq.w     #4,a7
@@ -259,6 +265,7 @@ ed_delete_1:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl ed_dragged
 ed_dragged:
 		movem.l    d3-d4/a2-a5,-(a7)
 		lea.l      -12(a7),a7
@@ -576,6 +583,7 @@ draw_box_3:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl ed_edit
 ed_edit:
 		movem.l    d3-d7/a2-a5,-(a7)
 		subq.w     #4,a7
@@ -707,6 +715,7 @@ ed_edit_6:
 		movem.l    (a7)+,d3-d7/a2-a5
 		rts
 
+		.globl find_parent
 find_parent:
 		movem.l    a2-a6,-(a7)
 		lea.l      -12(a7),a7
@@ -1063,6 +1072,7 @@ new_ob_1:
 		movem.l    (a7)+,d3-d7/a2-a5
 		rts
 
+		.globl min_size
 min_size:
 		movem.l    a2-a4,-(a7)
 		lea.l      -16(a7),a7
@@ -1190,6 +1200,7 @@ min_size_13:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl ob_addselect
 ob_addselect:
 		movem.l    d3-d5/a2-a4,-(a7)
 		movea.l    a0,a2
@@ -1296,6 +1307,7 @@ ob_addselect_1:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl edob_next
 edob_next:
 		movem.l    d3-d5/a2-a4,-(a7)
 		lea.l      ACSblk,a2
@@ -1410,6 +1422,7 @@ edob_next_1:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl rubberbox
 rubberbox:
 		movem.l    d3-d7/a2-a6,-(a7)
 		lea.l      -86(a7),a7
@@ -2177,6 +2190,7 @@ rubberbox_40:
 		movem.l    (a7)+,d3-d7/a2-a6
 		rts
 
+		.globl sizing
 sizing:
 		movem.l    d3-d7/a2-a6,-(a7)
 		lea.l      -20(a7),a7
@@ -2362,6 +2376,7 @@ sizing_4:
 		movem.l    (a7)+,d3-d7/a2-a6
 		rts
 
+		.globl undraw
 undraw:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2

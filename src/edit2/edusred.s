@@ -1793,6 +1793,7 @@ _14aEDIT_USER:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WI_USER
 WI_USER:
 		dc.b $00
 		dc.b $00

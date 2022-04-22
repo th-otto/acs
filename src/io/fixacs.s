@@ -150,6 +150,7 @@ next_trans_1:
 		addq.w     #1,used
 		rts
 
+		.globl fix_all
 fix_all:
 		movem.l    d3/a2-a4,-(a7)
 		movea.l    a0,a3
@@ -358,6 +359,7 @@ fix_all_4:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl unfix_all
 unfix_all:
 		movem.l    d3/a2-a5,-(a7)
 		movea.l    a0,a4
@@ -528,6 +530,7 @@ unfix_all_1:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl wr_all
 wr_all:
 		move.l     d3,-(a7)
 		move.l     a2,-(a7)
@@ -562,6 +565,7 @@ wr_all_1:
 		move.l     (a7)+,d3
 		rts
 
+		.globl rd_all
 rd_all:
 		movem.l    d3-d5/a2-a5,-(a7)
 		movea.l    a0,a4
@@ -1393,6 +1397,7 @@ unfix_user2_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl release_err
 release_err:
 		movem.l    d3/a2-a3,-(a7)
 		lea.l      trans,a2
@@ -1427,6 +1432,7 @@ release_err_1:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl free_acs
 free_acs:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a2
@@ -1449,6 +1455,7 @@ free_acs_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl objfree
 objfree:
 		movem.l    a2-a4,-(a7)
 		movea.l    a1,a4
@@ -1486,6 +1493,7 @@ objfree_3:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl objmalloc
 objmalloc:
 		movem.l    d3/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -1533,6 +1541,7 @@ objmalloc_5:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl objextent
 objextent:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -1619,6 +1628,7 @@ makeformat_7:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl uniquename
 uniquename:
 		movem.l    d3-d4/a2/a4-a6,-(a7)
 		lea.l      -80(a7),a7
@@ -1698,6 +1708,7 @@ uniquename_6:
 		movem.l    (a7)+,d3-d4/a2/a4-a6
 		rts
 
+		.globl objname
 objname:
 		movem.l    a2-a3/a5,-(a7)
 		subq.w     #4,a7

@@ -1,3 +1,97 @@
+	.text
+	
+set_icon:
+		movem.l    a2-a5,-(a7)
+		subq.w     #4,a7
+		move.l     a0,(a7)
+		movea.l    90(a0),a3
+		move.l     a3,d0
+		beq.w      set_icon_1
+		movea.l    (a0),a4
+		move.b     168(a4),d0
+		beq.s      set_icon_2
+		lea.l      168(a4),a5
+		bra.s      set_icon_3
+set_icon_2:
+		lea.l      402(a4),a2
+		moveq.l    #92,d0
+		movea.l    a2,a0
+		jsr        strrchr
+		movea.l    a0,a5
+		move.l     a5,d0
+		beq.s      set_icon_4
+		addq.w     #1,a5
+		bra.s      set_icon_3
+set_icon_4:
+		movea.l    a2,a5
+set_icon_3:
+		lea.l      184(a4),a1
+		movea.l    a5,a0
+		jsr        strcmp
+		tst.w      d0
+		beq.s      set_icon_1
+		clr.b      184(a4)
+		moveq.l    #15,d0
+		movea.l    a5,a1
+		lea.l      184(a4),a0
+		jsr        strncat
+		movea.l    8(a3),a0
+		jsr        Ast_delete
+		movea.l    a5,a0
+		jsr        Ast_create
+		move.l     a0,8(a3)
+		jsr        Awi_root
+		movea.l    a0,a2
+		movea.l    (a7),a1
+		lea.l      88(a1),a1
+		moveq.l    #109,d0
+		movea.l    4(a2),a3
+		jsr        (a3)
+set_icon_1:
+		addq.w     #4,a7
+		movem.l    (a7)+,a2-a5
+		rts
+
+home:
+		move.l     a2,-(a7)
+		subq.w     #4,a7
+		movea.l    a0,a2
+		clr.l      (a7)
+		suba.l     a1,a1
+		move.w     #$00D5,d0
+		jsr        Auo_editor
+		suba.l     a1,a1
+		moveq.l    #14,d0
+		movea.l    a2,a0
+		jsr        Auo_editor
+		lea.l      (a7),a1
+		move.w     #$00D7,d0
+		movea.l    a2,a0
+		jsr        Auo_editor
+		suba.l     a1,a1
+		move.w     #$00DB,d0
+		movea.l    a2,a0
+		jsr        Auo_editor
+		suba.l     a1,a1
+		moveq.l    #5,d0
+		movea.l    a2,a0
+		jsr        Auo_editor
+		suba.l     a1,a1
+		move.w     #$00D6,d0
+		movea.l    a2,a0
+		jsr        Auo_editor
+		addq.w     #4,a7
+		movea.l    (a7)+,a2
+		rts
+
+set_select:
+		tst.w      d0
+		beq.s      set_select_1
+		ori.w      #$0001,10(a0)
+		rts
+set_select_1:
+		andi.w     #$FFFE,10(a0)
+		rts
 
 undirty:
 		movem.l    a2-a4,-(a7)
@@ -2760,6 +2854,7 @@ edit_vslid:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Aed_copy
 Aed_copy:
 		move.w     #$8463,d1
 		clr.w      d0
@@ -2768,6 +2863,7 @@ Aed_copy:
 		bsr        edit_key
 		rts
 
+		.globl Aed_cut
 Aed_cut:
 		move.w     #$8478,d1
 		clr.w      d0
@@ -2776,6 +2872,7 @@ Aed_cut:
 		bsr        edit_key
 		rts
 
+		.globl Aed_cutline
 Aed_cutline:
 		move.w     #$8479,d1
 		clr.w      d0
@@ -2887,6 +2984,7 @@ find_next_1:
 		movem.l    (a7)+,a2-a5
 		rts
 
+		.globl Aed_find
 Aed_find:
 		movem.l    a2-a5,-(a7)
 		movea.l    ACSblk,a0
@@ -2960,12 +3058,14 @@ Aed_find_1:
 		movem.l    (a7)+,a2-a5
 		rts
 
+		.globl Aed_findnext
 Aed_findnext:
 		movea.l    ACSblk,a0
 		movea.l    600(a0),a0
 		bsr        find_next
 		rts
 
+		.globl Aed_findsel
 Aed_findsel:
 		movem.l    d3/a2-a5,-(a7)
 		lea.l      -28(a7),a7
@@ -3019,6 +3119,7 @@ Aed_findsel_2:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Aed_font
 Aed_font:
 		movem.l    d3-d4/a2-a5,-(a7)
 		lea.l      -12(a7),a7
@@ -3124,6 +3225,7 @@ Aed_font_4:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Aed_gotoline
 Aed_gotoline:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -3196,6 +3298,7 @@ Aed_gotoline_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aed_info
 Aed_info:
 		movem.l    d3-d4/a2-a5,-(a7)
 		lea.l      -36(a7),a7
@@ -3419,6 +3522,7 @@ open_file_2:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Aed_open
 Aed_open:
 		movem.l    a2-a4,-(a7)
 		movea.l    ACSblk,a0
@@ -3517,6 +3621,7 @@ merge_it_1:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Aed_merge
 Aed_merge:
 		movem.l    a2-a4,-(a7)
 		movea.l    ACSblk,a0
@@ -3537,6 +3642,7 @@ Aed_merge_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Aed_paste
 Aed_paste:
 		move.w     #$8476,d1
 		clr.w      d0
@@ -3545,6 +3651,7 @@ Aed_paste:
 		bsr        edit_key
 		rts
 
+		.globl Aed_quit
 Aed_quit:
 		movea.l    ACSblk,a0
 		movea.l    600(a0),a0
@@ -3717,6 +3824,7 @@ replace_next_1:
 		movem.l    (a7)+,a2-a4/a6
 		rts
 
+		.globl Aed_replace
 Aed_replace:
 		movem.l    a2-a5,-(a7)
 		movea.l    ACSblk,a0
@@ -3810,6 +3918,7 @@ Aed_replace_1:
 		movem.l    (a7)+,a2-a5
 		rts
 
+		.globl Aed_replacenext
 Aed_replacenext:
 		movea.l    ACSblk,a0
 		movea.l    600(a0),a0
@@ -4032,6 +4141,7 @@ ed_save_2:
 		movem.l    (a7)+,a2-a5
 		rts
 
+		.globl Aed_save
 Aed_save:
 		movea.l    ACSblk,a0
 		movea.l    600(a0),a0
@@ -4073,7 +4183,7 @@ ed_saveas_2:
 ed_saveas_1:
 		movea.l    (a2),a4
 		lea.l      402(a4),a1
-		lea.l      xc7688,a0
+		lea.l      protocnf+32,a0
 		jsr        strcpy
 		pea.l      386(a4)
 		lea.l      402(a4),a1
@@ -4100,12 +4210,14 @@ ed_saveas_3:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Aed_saveas
 Aed_saveas:
 		movea.l    ACSblk,a0
 		movea.l    600(a0),a0
 		bsr        ed_saveas
 		rts
 
+		.globl Aed_selall
 Aed_selall:
 		move.l     a2,-(a7)
 		move.l     a4,-(a7)
@@ -4189,6 +4301,7 @@ Aed_selall_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aed_swap
 Aed_swap:
 		movem.l    a2-a4/a6,-(a7)
 		lea.l      -20(a7),a7
@@ -4260,6 +4373,7 @@ Aed_swap_1:
 		movem.l    (a7)+,a2-a4/a6
 		rts
 
+		.globl Aed_undo
 Aed_undo:
 		move.w     #$800F,d1
 		clr.w      d0
@@ -4268,6 +4382,7 @@ Aed_undo:
 		bsr        edit_key
 		rts
 
+		.globl Aed_option
 Aed_option:
 		movem.l    a2-a5,-(a7)
 		lea.l      -16(a7),a7
@@ -4430,6 +4545,7 @@ Aed_option_1:
 		movem.l    (a7)+,a2-a5
 		rts
 
+		.globl Aed_wrap
 Aed_wrap:
 		movem.l    d3-d4/a2-a5,-(a7)
 		lea.l      -42(a7),a7
@@ -4566,6 +4682,7 @@ Aed_wrap_1:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Aed_toclip
 Aed_toclip:
 		lea.l      -128(a7),a7
 		lea.l      xc861d,a1
@@ -4584,6 +4701,7 @@ Aed_toclip:
 		lea.l      128(a7),a7
 		rts
 
+		.globl Aed_fromclip
 Aed_fromclip:
 		lea.l      -128(a7),a7
 		lea.l      xc861d,a1
@@ -4601,6 +4719,7 @@ Aed_fromclip:
 		lea.l      128(a7),a7
 		rts
 
+		.globl Aed_saveoptions
 Aed_saveoptions:
 		movem.l    d3-d4/a2-a4,-(a7)
 		subq.w     #6,a7
@@ -5328,6 +5447,7 @@ term_fkey_4:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Aed_fkey
 Aed_fkey:
 		movem.l    d3/a2-a3,-(a7)
 		lea.l      -180(a7),a7
@@ -13384,6 +13504,7 @@ _07a_ED_WRAP:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl EDITOR
 EDITOR:
 		dc.b $00
 		dc.b $00
@@ -13468,6 +13589,7 @@ EDITOR:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WIED_FIND
 WIED_FIND:
 		dc.b $00
 		dc.b $00
@@ -13561,6 +13683,7 @@ WIED_FIND:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WIED_GOTOLINE
 WIED_GOTOLINE:
 		dc.b $00
 		dc.b $00
@@ -13653,6 +13776,7 @@ WIED_GOTOLINE:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WIED_INFO
 WIED_INFO:
 		dc.b $00
 		dc.b $00
@@ -13745,6 +13869,7 @@ WIED_INFO:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WIED_INFOBOX
 WIED_INFOBOX:
 		dc.b $00
 		dc.b $00
@@ -13837,6 +13962,7 @@ WIED_INFOBOX:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WIED_NEWFKEY
 WIED_NEWFKEY:
 		dc.b $00
 		dc.b $00
@@ -13929,6 +14055,7 @@ WIED_NEWFKEY:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WIED_OPTION
 WIED_OPTION:
 		dc.b $00
 		dc.b $00
@@ -14023,6 +14150,7 @@ WIED_OPTION:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WIED_REPLACE
 WIED_REPLACE:
 		dc.b $00
 		dc.b $00
@@ -14116,6 +14244,7 @@ WIED_REPLACE:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WIED_WRAP
 WIED_WRAP:
 		dc.b $00
 		dc.b $00

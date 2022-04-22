@@ -487,6 +487,7 @@ edin_textcol_1:
 		move.w     (a7)+,d3
 		rts
 
+		.globl init_inner
 init_inner:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -1344,6 +1345,7 @@ A_INNERFRAME06:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl POP_POSSEL
 POP_POSSEL:
 		dc.w $ffff
 		dc.b $00
@@ -1509,6 +1511,7 @@ _07_POP_POSSEL:
 		dc.b $05
 		dc.b $00
 		dc.b $01
+		.globl ED_INNER
 ED_INNER:
 		dc.w $ffff
 		dc.b $00

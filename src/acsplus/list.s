@@ -3142,6 +3142,7 @@ _09aT_LIST:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl LIST_WINDOW
 LIST_WINDOW:
 		dc.b $00
 		dc.b $00

@@ -1514,6 +1514,7 @@ _08aEDIT_TEDI:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WI_TEDI
 WI_TEDI:
 		dc.b $00
 		dc.b $00

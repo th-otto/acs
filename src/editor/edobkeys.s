@@ -10,6 +10,7 @@ compi:
 		jsr        Ast_cmp
 		rts
 
+		.globl key_code
 key_code:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -81,6 +82,7 @@ key_code_11:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl key_string
 key_string:
 		movem.l    d3-d5/a2-a3,-(a7)
 		move.w     d0,d3
@@ -146,6 +148,7 @@ key_string_6:
 
 	.data
 
+		.globl nktab
 nktab:
 		dc.l xc0998
 		dc.b $00

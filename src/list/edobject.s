@@ -1,4 +1,5 @@
 
+		.globl add_object
 add_object:
 		movem.l    a2-a5,-(a7)
 		movea.l    a0,a2
@@ -76,6 +77,7 @@ copy_obj_2:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+		.globl del_object
 del_object:
 		movem.l    d3-d4/a2-a5,-(a7)
 		movea.l    a0,a2
@@ -239,6 +241,7 @@ protoobject:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl list_object
 list_object:
 		dc.b $00
 		dc.b $00

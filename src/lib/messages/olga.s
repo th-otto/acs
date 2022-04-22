@@ -1,4 +1,5 @@
 
+		.globl Aev_InitOlga
 Aev_InitOlga:
 		subq.w     #2,a7
 		move.w     #$0001,(a7)
@@ -34,6 +35,7 @@ Aev_InitOlga_2:
 		addq.w     #2,a7
 		rts
 
+		.globl Aev_ExitOlga
 Aev_ExitOlga:
 		move.w     #$0001,phase
 		move.w     olga_id,d0
@@ -335,6 +337,7 @@ SendOlgaUpdate:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetOlgaInit
 Aev_GetOlgaInit:
 		lea.l      -10(a7),a7
 		move.l     a0,6(a7)
@@ -374,6 +377,7 @@ Aev_GetOlgaInit_3:
 		lea.l      10(a7),a7
 		rts
 
+		.globl Aev_GetOleExit
 Aev_GetOleExit:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -401,6 +405,7 @@ Aev_GetOleExit_2:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_GetOleNew
 Aev_GetOleNew:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -414,6 +419,7 @@ Aev_GetOleNew:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_GetOlgaAck
 Aev_GetOlgaAck:
 		move.l     a2,-(a7)
 		lea.l      -42(a7),a7
@@ -527,6 +533,7 @@ Aev_GetOlgaAck_12:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetOlgaUpdated
 Aev_GetOlgaUpdated:
 		move.l     a2,-(a7)
 		lea.l      -26(a7),a7
@@ -558,6 +565,7 @@ Aev_GetOlgaUpdated_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetOlgaGetInfo
 Aev_GetOlgaGetInfo:
 		move.l     a2,-(a7)
 		lea.l      -16(a7),a7
@@ -595,10 +603,12 @@ Aev_GetOlgaGetInfo_1:
 		movea.l    (a7)+,a2
 		rts
 
-Aev_GetOlgaClientTermi:
+		.globl Aev_GetOlgaClientTerminated
+Aev_GetOlgaClientTerminated:
 		moveq.l    #1,d0
 		rts
 
+		.globl Aev_GetOlgaIdle
 Aev_GetOlgaIdle:
 		move.l     a2,-(a7)
 		lea.l      -26(a7),a7
@@ -652,6 +662,7 @@ Aev_GetOlgaIdle_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_OleInit
 Aev_OleInit:
 		lea.l      -18(a7),a7
 		clr.w      16(a7)
@@ -688,6 +699,7 @@ Aev_OleInit_1:
 		lea.l      18(a7),a7
 		rts
 
+		.globl Aev_OleExit
 Aev_OleExit:
 		lea.l      -18(a7),a7
 		clr.w      16(a7)
@@ -727,6 +739,7 @@ Aev_OleExit_1:
 		lea.l      18(a7),a7
 		rts
 
+		.globl Aev_OlgaUpdate
 Aev_OlgaUpdate:
 		move.l     a2,-(a7)
 		lea.l      -48(a7),a7

@@ -1,4 +1,5 @@
 
+		.globl Acfg_create
 Acfg_create:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -33,6 +34,7 @@ Acfg_create_2:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Acfg_delete
 Acfg_delete:
 		move.l     a3,-(a7)
 		movea.l    a0,a3
@@ -56,6 +58,7 @@ Acfg_delete_1:
 		movea.l    (a7)+,a3
 		rts
 
+		.globl Acfg_flags
 Acfg_flags:
 		tst.w      d1
 		ble.s      Acfg_flags_1
@@ -82,6 +85,7 @@ InitConfigStruct:
 		movea.l    (a7)+,a3
 		rts
 
+		.globl Acfg_createInfo
 Acfg_createInfo:
 		move.l     a2,-(a7)
 		moveq.l    #18,d0
@@ -104,6 +108,7 @@ Acfg_createInfo_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_deleteInfo
 Acfg_deleteInfo:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -160,6 +165,7 @@ Acfg_initInfo_3:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_copyInfo
 Acfg_copyInfo:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -192,6 +198,7 @@ Acfg_copyInfo_3:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_setInfo
 Acfg_setInfo:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -203,6 +210,7 @@ Acfg_setInfo:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_getInfo
 Acfg_getInfo:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -212,6 +220,7 @@ Acfg_getInfo:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_clear
 Acfg_clear:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -223,6 +232,7 @@ Acfg_clear:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_clearAllGroups
 Acfg_clearAllGroups:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -294,6 +304,7 @@ Acfg_clearAllGroups_1:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Acfg_clearGroup
 Acfg_clearGroup:
 		movem.l    d3/a2-a4,-(a7)
 		lea.l      -18(a7),a7
@@ -601,6 +612,7 @@ ReadUntilNextGroup_3:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Acfg_load
 Acfg_load:
 		movem.l    d3-d5/a2-a4,-(a7)
 		lea.l      -20(a7),a7
@@ -857,6 +869,7 @@ WriteString_1:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Acfg_save
 Acfg_save:
 		movem.l    d3-d4/a2-a5,-(a7)
 		lea.l      -14(a7),a7
@@ -998,6 +1011,7 @@ Acfg_save_6:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Acfg_getValue
 Acfg_getValue:
 		movem.l    d3-d4/a2-a3/a5,-(a7)
 		lea.l      -18(a7),a7
@@ -1086,6 +1100,7 @@ Acfg_getValue_5:
 		movem.l    (a7)+,d3-d4/a2-a3/a5
 		rts
 
+		.globl Acfg_setValue
 Acfg_setValue:
 		movem.l    d3-d4/a2/a4-a5,-(a7)
 		lea.l      -18(a7),a7
@@ -1205,6 +1220,7 @@ Acfg_setValue_12:
 		movem.l    (a7)+,d3-d4/a2/a4-a5
 		rts
 
+		.globl Acfg_clearValue
 Acfg_clearValue:
 		movem.l    d3/a2-a3,-(a7)
 		lea.l      -18(a7),a7
@@ -1249,6 +1265,7 @@ Acfg_clearValue_3:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Acfg_getString
 Acfg_getString:
 		pea.l      s_val
 		move.l     8(a7),-(a7)
@@ -1256,6 +1273,7 @@ Acfg_getString:
 		addq.w     #8,a7
 		rts
 
+		.globl Acfg_getLong
 Acfg_getLong:
 		lea.l      -8192(a7),a7
 		pea.l      (a7)
@@ -1266,6 +1284,7 @@ Acfg_getLong:
 		lea.l      8192(a7),a7
 		rts
 
+		.globl Acfg_setLong
 Acfg_setLong:
 		move.l     a3,-(a7)
 		move.l     a4,-(a7)
@@ -1291,6 +1310,7 @@ Acfg_setLong:
 		movea.l    (a7)+,a3
 		rts
 
+		.globl Acfg_getChar
 Acfg_getChar:
 		lea.l      -8202(a7),a7
 		pea.l      (a7)
@@ -1308,6 +1328,7 @@ Acfg_getChar:
 		lea.l      8202(a7),a7
 		rts
 
+		.globl Acfg_setChar
 Acfg_setChar:
 		movem.l    a3-a5,-(a7)
 		lea.l      -62(a7),a7
@@ -1367,6 +1388,7 @@ Acfg_setChar_5:
 		movem.l    (a7)+,a3-a5
 		rts
 
+		.globl Acfg_getBool
 Acfg_getBool:
 		lea.l      -52(a7),a7
 		pea.l      (a7)
@@ -1377,6 +1399,7 @@ Acfg_getBool:
 		lea.l      52(a7),a7
 		rts
 
+		.globl Acfg_setBool
 Acfg_setBool:
 		subq.w     #2,a7
 		move.b     d0,(a7)
@@ -1389,6 +1412,7 @@ Acfg_setBool:
 		addq.w     #2,a7
 		rts
 
+		.globl Acfg_isChanged
 Acfg_isChanged:
 		move.l     a2,-(a7)
 		lea.l      -10(a7),a7
@@ -1413,6 +1437,7 @@ Acfg_isChanged_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_grpAnzahl
 Acfg_grpAnzahl:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -1445,14 +1470,17 @@ Acfg_grpAnzahl_4:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_grpName
 Acfg_grpName:
 		move.w     18(a0),d0
 		rts
 
+		.globl Acfg_strAnzahl
 Acfg_strAnzahl:
 		move.w     20(a0),d0
 		rts
 
+		.globl Acfg_isGroupPresent
 Acfg_isGroupPresent:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -1477,6 +1505,7 @@ Acfg_isGroupPresent_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_isStringPresent
 Acfg_isStringPresent:
 		tst.w      d0
 		bmi.s      Acfg_isStringPresent_1
@@ -1493,6 +1522,7 @@ Acfg_isStringPresent_1:
 		clr.w      d0
 		rts
 
+		.globl Acfg_strName
 Acfg_strName:
 		move.l     a2,-(a7)
 		lea.l      -18(a7),a7
@@ -1515,6 +1545,7 @@ Acfg_strName_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_strValue
 Acfg_strValue:
 		move.l     a2,-(a7)
 		lea.l      -18(a7),a7
@@ -1537,6 +1568,7 @@ Acfg_strValue_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Acfg_strIsComment
 Acfg_strIsComment:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -1583,6 +1615,7 @@ Acfg_strIsComment_1:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Acfg_clearHeader
 Acfg_clearHeader:
 		movem.l    d3-d4/a3-a4,-(a7)
 		move.w     d0,d3
@@ -1636,6 +1669,8 @@ Acfg_clearHeader_1:
 		movem.l    (a7)+,d3-d4/a3-a4
 		rts
 
+/* new function */
+	.globl x43198
 x43198:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -1681,6 +1716,8 @@ x43198_1:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+/* new function */
+	.globl x43200
 x43200:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -1706,10 +1743,12 @@ x43200_1:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Acfg_headAnzahl
 Acfg_headAnzahl:
 		move.w     28(a0),d0
 		rts
 
+		.globl Acfg_setHeader
 Acfg_setHeader:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a3
@@ -1757,6 +1796,7 @@ Acfg_setHeader_2:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Acfg_getHeader
 Acfg_getHeader:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a1,a3
@@ -1783,6 +1823,7 @@ Acfg_getHeader_1:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Acfg_isCfgfile
 Acfg_isCfgfile:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)

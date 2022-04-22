@@ -1,4 +1,5 @@
 
+		.globl add_image
 add_image:
 		movem.l    a2-a5,-(a7)
 		movea.l    a0,a2
@@ -74,6 +75,7 @@ copy_image_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl dup_image
 dup_image:
 		movem.l    d3/a2-a4,-(a7)
 		movea.l    a0,a3
@@ -115,6 +117,7 @@ dup_image_2:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl del_image
 del_image:
 		movem.l    a2-a5,-(a7)
 		movea.l    a0,a2
@@ -304,6 +307,7 @@ protoimage:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl list_image
 list_image:
 		dc.b $00
 		dc.b $00

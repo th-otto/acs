@@ -219,6 +219,7 @@ edti_trans:
 		jsr        Awi_obredraw
 		rts
 
+		.globl init_title
 init_title:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -816,6 +817,7 @@ A_TITLE01:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl ED_TITLE
 ED_TITLE:
 		dc.w $ffff
 		dc.b $00

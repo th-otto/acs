@@ -1,4 +1,5 @@
 
+		.globl Awi_keys
 Awi_keys:
 		jsr        Awi_keysend
 		cmp.w      #$FFFF,d0
@@ -11,6 +12,7 @@ Awi_keys_2:
 		move.w     d1,d0
 		rts
 
+		.globl Awi_nokey
 Awi_nokey:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -29,6 +31,7 @@ Awi_nokey_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aob_within
 Aob_within:
 		cmp.w      (a0),d0
 		blt.s      Aob_within_1
@@ -49,6 +52,7 @@ Aob_within_2:
 		moveq.l    #1,d0
 		rts
 
+		.globl alert_str
 alert_str:
 		movem.l    a2-a4,-(a7)
 		lea.l      -256(a7),a7
@@ -561,6 +565,7 @@ Aform_do_21:
 		movem.l    (a7)+,d3-d5/a2-a6
 		rts
 
+		.globl Act_save
 Act_save:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -583,6 +588,7 @@ Act_save:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Act_restore
 Act_restore:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -605,6 +611,7 @@ Act_restore:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl A_isModDia
 A_isModDia:
 		move.w     a_dialog_active,d0
 		ble.s      A_isModDia_1
@@ -884,16 +891,19 @@ A_exdialog_9:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl A_dialog
 A_dialog:
 		moveq.l    #1,d0
 		bsr        A_exdialog
 		rts
 
+		.globl A_dialog2
 A_dialog2:
 		clr.w      d0
 		bsr        A_exdialog
 		rts
 
+		.globl fitin
 fitin:
 		move.w     (a0),d0
 		cmp.w      (a1),d0
@@ -925,6 +935,7 @@ fitin_3:
 fitin_4:
 		rts
 
+		.globl intersect
 intersect:
 		move.w     (a0),d0
 		add.w      4(a0),d0
@@ -984,6 +995,7 @@ intersect_10:
 		moveq.l    #1,d0
 		rts
 
+		.globl xywh2array
 xywh2array:
 		move.w     (a1),(a0)+
 		move.w     2(a1),(a0)+
@@ -997,6 +1009,7 @@ xywh2array:
 		move.w     d0,(a0)
 		rts
 
+		.globl array2xywh
 array2xywh:
 		move.w     (a1),(a0)
 		move.w     2(a1),2(a0)
@@ -1069,6 +1082,7 @@ scrp_chg_5:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Ascrp_clear
 Ascrp_clear:
 		movem.l    a2-a5,-(a7)
 		lea.l      -384(a7),a7
@@ -1146,6 +1160,7 @@ Ascrp_clear_2:
 		movem.l    (a7)+,a2-a5
 		rts
 
+		.globl Ascrp_get
 Ascrp_get:
 		movem.l    d3-d4/a2-a6,-(a7)
 		lea.l      -388(a7),a7
@@ -1277,6 +1292,7 @@ Ascrp_get_2:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+		.globl Ascrp_put
 Ascrp_put:
 		movem.l    d3-d7/a2-a4,-(a7)
 		lea.l      -256(a7),a7
@@ -1381,6 +1397,7 @@ Ascrp_put_3:
 
 		.data
 
+		.globl a_dialog_active
 a_dialog_active:
 		dc.b $00
 		dc.b $00

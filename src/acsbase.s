@@ -794,21 +794,21 @@ ab_service_46:
 		jsr        Aob_gettext
 		bra.s      ab_service_47
 ab_service_43:
-		lea.l      x778fd,a1
+		lea.l      cfg+1,a1
 		moveq.l    #5,d0
 		movea.l    16(a7),a0
 		movea.l    20(a0),a0
 		jsr        Aob_gettext
 		bra.s      ab_service_47
 ab_service_44:
-		lea.l      x7797d,a1
+		lea.l      cfg+129,a1
 		moveq.l    #6,d0
 		movea.l    16(a7),a0
 		movea.l    20(a0),a0
 		jsr        Aob_gettext
 		bra.s      ab_service_47
 ab_service_45:
-		lea.l      x77988,a1
+		lea.l      cfg+140,a1
 		moveq.l    #7,d0
 		movea.l    16(a7),a0
 		movea.l    20(a0),a0
@@ -1205,7 +1205,7 @@ reg_me_1:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
-	.globl acs_register
+		.globl acs_register
 acs_register:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -1492,7 +1492,7 @@ crc16_1:
 		movem.l    (a7)+,d3-d5/a2
 		rts
 
-	.globl validate
+		.globl validate
 validate:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -1546,7 +1546,7 @@ validate_2:
 		movea.l    (a7)+,a2
 		rts
 
-	.globl demo_init
+		.globl demo_init
 demo_init:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a2
@@ -1576,7 +1576,7 @@ demo_init_2:
 		movem.l    (a7)+,a2-a4
 		rts
 
-	.globl demo_serv
+		.globl demo_serv
 demo_serv:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -2004,7 +2004,7 @@ regend:
 		dc.l x79eb4
 		dc.l 0
 
-	.globl runasdemo
+		.globl runasdemo
 runasdemo:
 		dc.w 1
 wdemo:
@@ -4283,7 +4283,8 @@ x7a219:                           dc.b $09,'Durch Angabe meiner EMail-Adresse er
 x7a25c:                           dc.b $09,'an meine oben angegebenen EMail-Adresse gesendet.',0
 x7a28f:                           dc.b $09,'Datum:',0
 x7a297:                           dc.b $09,'Unterschrift:',0
-x7a2a6:                           dc.b 'ACS',0
+x7a2a6:                           dc.b 'AC'
+x7a2a8:                           dc.b 'S',0
 x7a2aa:                           dc.w $2564
 x7a2ac:                           dc.b $00
 x7a2ad:                           dc.b $43
@@ -4310,3 +4311,15 @@ x7a33e:                           dc.b $00
 x7a33f:                           dc.b 'TIMES',0
 x7a345:                           dc.b 'DUTCH',0
 		.even
+
+	.bss
+
+oldabout: ds.l 1
+timer0: ds.l 1
+timer1: ds.l 1
+
+	.globl cews
+cews: ds.b 2116
+
+	.globl base_window
+base_window: ds.l 1

@@ -1,4 +1,5 @@
 
+		.globl del_alert
 del_alert:
 		movem.l    a2-a5,-(a7)
 		movea.l    a0,a2
@@ -30,6 +31,7 @@ del_alert_1:
 		movem.l    (a7)+,a2-a5
 		rts
 
+		.globl copy_alert
 copy_alert:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a2
@@ -52,6 +54,7 @@ copy_alert_2:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl serv_alert
 serv_alert:
 		movem.l    d3-d6/a3-a6,-(a7)
 		lea.l      -110(a7),a7
@@ -354,6 +357,7 @@ protoalert:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl list_alert
 list_alert:
 		dc.b $00
 		dc.b $00

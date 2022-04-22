@@ -4365,6 +4365,7 @@ _09_IM_POS:
 		dc.b $04
 		dc.b $00
 		dc.b $01
+		.globl WI_IMAGE
 WI_IMAGE:
 		dc.b $00
 		dc.b $00
@@ -4452,6 +4453,7 @@ WI_IMAGE:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WI_IMPOS
 WI_IMPOS:
 		dc.b $00
 		dc.b $00

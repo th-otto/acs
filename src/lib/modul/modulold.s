@@ -1,7 +1,5 @@
 
-noop:
-		rts
-
+		.globl Aus_create23x
 Aus_create23x:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -28,6 +26,7 @@ Aus_create23x_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aob_create23x
 Aob_create23x:
 		movem.l    d3/a2-a6,-(a7)
 		subq.w     #2,a7
@@ -139,6 +138,7 @@ Aob_create23x_11:
 		movem.l    (a7)+,d3/a2-a6
 		rts
 
+		.globl Awi_create23x
 Awi_create23x:
 		movem.l    d3/a2-a6,-(a7)
 		movea.l    a0,a3
@@ -284,16 +284,19 @@ Awi_create23x_15:
 		movem.l    (a7)+,d3/a2-a6
 		rts
 
+		.globl Awi_arrowed23x
 Awi_arrowed23x:
 		moveq.l    #1,d1
 		jsr        Awi_arrowed
 		rts
 
+		.globl Af_first230
 Af_first230:
 		suba.l     a1,a1
 		jsr        Af_first
 		rts
 
+		.globl Af_next230
 Af_next230:
 		suba.l     a0,a0
 		jsr        Af_next

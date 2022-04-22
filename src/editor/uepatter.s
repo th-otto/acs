@@ -82,6 +82,7 @@ edpa_pattern:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl init_pattern
 init_pattern:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -1722,6 +1723,7 @@ USER_051:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl ED_PATTERN
 ED_PATTERN:
 		dc.w $ffff
 		dc.b $00

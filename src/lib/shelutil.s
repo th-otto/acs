@@ -1,4 +1,5 @@
 
+		.globl Ash_error
 Ash_error:
 		movem.l    d3-d4/a2-a4,-(a7)
 		lea.l      -128(a7),a7
@@ -235,6 +236,7 @@ Ash_error_34:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Ash_getenv
 Ash_getenv:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)

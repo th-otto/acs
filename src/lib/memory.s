@@ -1,4 +1,5 @@
 
+		.globl INmemory
 INmemory:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -41,6 +42,7 @@ INmemory_1:
 		move.w     (a7)+,d3
 		rts
 
+		.globl TRmemory
 TRmemory:
 		movem.l    d3/a2-a4,-(a7)
 		lea.l      freeBlockList,a2
@@ -84,6 +86,7 @@ TRmemory_1:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Ax_malloc
 Ax_malloc:
 		move.l     d3,-(a7)
 		move.l     a2,-(a7)
@@ -150,6 +153,7 @@ _malloc_5:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Ax_ifree
 Ax_ifree:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a2
@@ -220,6 +224,7 @@ Ax_ifree_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Ax_free
 Ax_free:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a2
@@ -300,6 +305,7 @@ Ax_free_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Ax_release
 Ax_release:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -332,6 +338,7 @@ Ax_release_3:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ax_glmalloc
 Ax_glmalloc:
 		movem.l    d3-d4/a2-a3,-(a7)
 		move.l     d0,d4
@@ -369,6 +376,7 @@ Ax_glmalloc_4:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Ax_glfree
 Ax_glfree:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -399,6 +407,7 @@ handle_sigbus:
 		move.l     (a7)+,d2
 		rts
 
+		.globl Ax_memCheck
 Ax_memCheck:
 		movem.l    d3-d7/a2,-(a7)
 		subq.w     #4,a7
@@ -554,6 +563,7 @@ RecycleFreeBlocks_5:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ax_recycle
 Ax_recycle:
 		movem.l    d3/a2-a4,-(a7)
 		subq.w     #4,a7
@@ -746,6 +756,7 @@ deleteOldList_9:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Ax_setRecycleSize
 Ax_setRecycleSize:
 		movem.l    d3-d5/a2-a4,-(a7)
 		subq.w     #4,a7
@@ -825,6 +836,7 @@ Ax_setRecycleSize_2:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl Ax_getRecycleStat
 Ax_getRecycleStat:
 		movem.l    d3/a2-a5,-(a7)
 		movea.l    a0,a5
@@ -878,6 +890,7 @@ Ax_getRecycleStat_2:
 
 		.data
 
+		.globl in_use
 in_use:
 		dc.b $00
 		dc.b $00
@@ -1550,7 +1563,9 @@ xd3bc8:
 xd3bd0:
 		dc.b 'AUSERBLK',0
 xd3bd9:
-		dc.b 'CICONBLK',0
+		dc.b 'C'
+xd3bda:
+		dc.b 'ICONBLK',0
 xd3be2:
 		dc.b 'CICON',0
 xd3be8:

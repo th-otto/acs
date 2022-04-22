@@ -1,4 +1,5 @@
 
+		.globl Ax_mterm
 Ax_mterm:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -26,6 +27,7 @@ Ax_mterm_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ash_module
 Ash_module:
 		movem.l    d3-d4/a2-a5,-(a7)
 		movea.l    a0,a3
@@ -220,30 +222,11 @@ PushFuncLists_8:
 		movem.l    (a7)+,a2-a4
 		rts
 
+noop:
+		rts
+
 		.data
 
-xd632c:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.l Ax_free
-		dc.l x62f20
-		dc.l x62f4c
-		dc.l x62f74
-		dc.l x62f80
-		dc.l x62ef2
-xd6348:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.l Ax_free
-		dc.l x63030
-		dc.l x63066
-		dc.l x630be
-		dc.l x630cc
-		dc.l x63002
 oldbas:
 		dc.b $00
 		dc.b $00
@@ -1087,7 +1070,7 @@ func1Aes:
 		dc.l pdlg_new_settings
 		dc.l pdlg_open
 		dc.l pdlg_remove_printers
-		dc.l pdlg_remove_sub_dialog
+		dc.l pdlg_remove_sub_dialogs
 		dc.l pdlg_update
 		dc.l pdlg_use_settings
 		dc.l pdlg_validate_settings
@@ -1287,7 +1270,7 @@ func1MtAes:
 		dc.l mt_lbox_set_items
 		dc.l mt_lbox_update
 		dc.l mt_pdlg_add_printers
-		dc.l mt_pdlg_add_sub_dialog
+		dc.l mt_pdlg_add_sub_dialogs
 		dc.l mt_pdlg_close
 		dc.l mt_pdlg_create
 		dc.l mt_pdlg_delete
@@ -1298,11 +1281,11 @@ func1MtAes:
 		dc.l mt_pdlg_get_setsize
 		dc.l mt_pdlg_new_settings
 		dc.l mt_pdlg_open
-		dc.l mt_pdlg_remove_printer
-		dc.l mt_pdlg_remove_sub_dia
+		dc.l mt_pdlg_remove_printers
+		dc.l mt_pdlg_remove_sub_dialogs
 		dc.l mt_pdlg_update
 		dc.l mt_pdlg_use_settings
-		dc.l mt_pdlg_validate_setti
+		dc.l mt_pdlg_validate_settings
 		dc.l mt_edit_create
 		dc.l mt_edit_set_buf
 		dc.l mt_edit_open
@@ -1368,8 +1351,8 @@ func1Keytab:
 		dc.l Akt_getImpMaxNr
 		dc.l Akt_getExpNameFromNr
 		dc.l Akt_getImpNameFromNr
-		dc.l Akt_getExpShortNameFro
-		dc.l Akt_getImpShortNameFro
+		dc.l Akt_getExpShortNameFromNr
+		dc.l Akt_getImpShortNameFromNr
 		dc.l Akt_getExpNrFromId
 		dc.l Akt_getImpNrFromId
 		dc.l Akt_getExpIdFromNr
@@ -1409,6 +1392,7 @@ funcKeytab:
 funcAnzKeytab:
 		dc.b $00
 		dc.b $01
+		.globl funcs
 funcs:
 		dc.l funcAbp
 		dc.l funcAnzAbp
@@ -1460,11 +1444,13 @@ funcs:
 		dc.l funcAnzKeytab
 		dc.l funcMtAes
 		dc.l funcAnzMtAes
+		.globl funcsAnz
 funcsAnz:
 		dc.b $00
 		dc.b $00
 		dc.b $00
 		dc.b $19
+		.globl ACS233
 ACS233:
 		dc.l Awi_wid
 		dc.l Awi_root
@@ -1669,6 +1655,7 @@ ACS233:
 		dc.l noop
 		dc.l noop
 		dc.l noop
+		.globl ACS230
 ACS230:
 		dc.l Awi_wid
 		dc.l Awi_root

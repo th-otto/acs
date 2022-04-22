@@ -1,4 +1,4 @@
-
+		.globl fsmesshndler /* FIXME */
 fsmesshndler:
 		move.l     d2,-(a7)
 		movea.l    8(a7),a0
@@ -6,6 +6,7 @@ fsmesshndler:
 		move.l     (a7)+,d2
 		rts
 
+		.globl Af_select
 Af_select:
 		movem.l    d3-d4/a2-a6,-(a7)
 		lea.l      -66(a7),a7
@@ -192,6 +193,7 @@ Af_select_20:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+		.globl free_multidata
 free_multidata:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -224,6 +226,7 @@ free_multidata_1:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Af_first_fsel
 Af_first_fsel:
 		movem.l    d3-d4/a2-a5,-(a7)
 		movea.l    a0,a4
@@ -370,6 +373,7 @@ Af_first_fsel_11:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Af_next_fsel
 Af_next_fsel:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -410,6 +414,7 @@ Af_next_fsel_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ash_fileSetIcon
 Ash_fileSetIcon:
 		lea.l      WI_FILESEL,a1
 		move.l     a0,90(a1)
@@ -427,6 +432,7 @@ Ash_fileSetIcon_2:
 		andi.w     #$FFFD,84(a1)
 		rts
 
+		.globl Ash_fileselect
 Ash_fileselect:
 		movem.l    d3-d5/a2-a5,-(a7)
 		subq.w     #8,a7
@@ -880,6 +886,7 @@ MagiCSelect_5:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+		.globl Af_fileselect
 Af_fileselect:
 		movem.l    d3-d4/a2-a5,-(a7)
 		movea.l    a0,a5
@@ -2901,6 +2908,7 @@ _00aOB_FILESEL:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WI_FILESEL
 WI_FILESEL:
 		dc.b $00
 		dc.b $00
@@ -3747,4 +3755,9 @@ xd5bb7:
 		dc.b $00
 		dc.b $00
 		.even
+
+	.bss
+
+multi_opath: ds.b 128
+multi_pathend: ds.l 1
 

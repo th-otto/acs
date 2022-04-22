@@ -623,6 +623,7 @@ ed3d_trans:
 		jsr        (a1)
 		rts
 
+		.globl init_3Dbutton
 init_3Dbutton:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -1658,6 +1659,7 @@ A_SLIDER02:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl ED_3DBUTTON
 ED_3DBUTTON:
 		dc.w $ffff
 		dc.b $00

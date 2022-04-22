@@ -1,4 +1,5 @@
 
+		.globl INbackplan
 INbackplan:
 		move.w     init,d0
 		addq.w     #1,init
@@ -17,6 +18,7 @@ INbackplan:
 INbackplan_1:
 		rts
 
+		.globl Abp_create
 Abp_create:
 		movem.l    d3-d6/a2,-(a7)
 		move.w     d0,d3
@@ -54,6 +56,7 @@ Abp_create_1:
 		movem.l    (a7)+,d3-d6/a2
 		rts
 
+		.globl Abp_delete
 Abp_delete:
 		moveq.l    #20,d0
 		jsr        Ax_recycle
@@ -62,6 +65,7 @@ Abp_delete:
 ret:
 		rts
 
+		.globl Abp_start
 Abp_start:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -111,6 +115,7 @@ Abp_start_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Abp_end
 Abp_end:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -150,6 +155,7 @@ Abp_end:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Abp_mfdb2img
 Abp_mfdb2img:
 		movem.l    a2-a6,-(a7)
 		movea.l    a0,a2
@@ -553,6 +559,7 @@ vreplic_7:
 		movem.l    (a7)+,d3-d6/a2-a3
 		rts
 
+		.globl Abp_img2mfdb
 Abp_img2mfdb:
 		movem.l    d3-d5/a2-a6,-(a7)
 		lea.l      -36(a7),a7

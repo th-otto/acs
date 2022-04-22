@@ -1,4 +1,5 @@
 
+		.globl Akt_getKeyTab
 Akt_getKeyTab:
 		move.l     a2,-(a7)
 		lea.l      kt,a2
@@ -19,6 +20,7 @@ Akt_getKeyTab_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Akt_getExpMinNr
 Akt_getExpMinNr:
 		move.l     a2,-(a7)
 		bsr.w      Akt_getKeyTab
@@ -37,6 +39,7 @@ Akt_getExpMinNr_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Akt_getExpMaxNr
 Akt_getExpMaxNr:
 		move.l     a2,-(a7)
 		bsr.w      Akt_getKeyTab
@@ -52,6 +55,7 @@ Akt_getExpMaxNr_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Akt_getImpMinNr
 Akt_getImpMinNr:
 		move.l     a2,-(a7)
 		bsr.w      Akt_getKeyTab
@@ -70,6 +74,7 @@ Akt_getImpMinNr_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Akt_getImpMaxNr
 Akt_getImpMaxNr:
 		move.l     a2,-(a7)
 		bsr        Akt_getKeyTab
@@ -85,6 +90,7 @@ Akt_getImpMaxNr_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Akt_getExpNameFromNr
 Akt_getExpNameFromNr:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -116,6 +122,7 @@ Akt_getExpNameFromNr_3:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Akt_getImpNameFromNr
 Akt_getImpNameFromNr:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -147,7 +154,8 @@ Akt_getImpNameFromNr_3:
 		move.w     (a7)+,d3
 		rts
 
-Akt_getExpShortNameFro:
+		.globl Akt_getExpShortNameFromNr
+Akt_getExpShortNameFromNr:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
 		move.w     d0,d3
@@ -171,7 +179,8 @@ Akt_getExpShortNameFro_2:
 		move.w     (a7)+,d3
 		rts
 
-Akt_getImpShortNameFro:
+		.globl Akt_getImpShortNameFromNr
+Akt_getImpShortNameFromNr:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
 		move.w     d0,d3
@@ -195,6 +204,7 @@ Akt_getImpShortNameFro_2:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Akt_getRelease
 Akt_getRelease:
 		move.l     a2,-(a7)
 		bsr        Akt_getKeyTab
@@ -213,6 +223,7 @@ Akt_getRelease_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Akt_getExpNrFromId
 Akt_getExpNrFromId:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -233,6 +244,7 @@ Akt_getExpNrFromId_2:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Akt_getImpNrFromId
 Akt_getImpNrFromId:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -253,6 +265,7 @@ Akt_getImpNrFromId_2:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Akt_getExpIdFromNr
 Akt_getExpIdFromNr:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -276,6 +289,7 @@ Akt_getExpIdFromNr_2:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Akt_getImpIdFromNr
 Akt_getImpIdFromNr:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -299,6 +313,7 @@ Akt_getImpIdFromNr_2:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Akt_getExpNrFromName
 Akt_getExpNrFromName:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -322,6 +337,7 @@ Akt_getExpNrFromName_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Akt_getImpNrFromName
 Akt_getImpNrFromName:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -345,6 +361,7 @@ Akt_getImpNrFromName_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Akt_getEuro
 Akt_getEuro:
 		move.l     a2,-(a7)
 		subq.w     #4,a7
@@ -449,7 +466,7 @@ x5336e_3:
 		bra.s      x5336e_6
 x5336e_4:
 		move.w     d5,d0
-		bsr        Akt_getExpShortNameFro
+		bsr        Akt_getExpShortNameFromNr
 		movea.l    a0,a3
 		bra.s      x5336e_6
 x5336e_5:
@@ -483,6 +500,7 @@ x5336e_2:
 		movem.l    (a7)+,d3-d5/a2-a3
 		rts
 
+		.globl Akt_CharAtari2X
 Akt_CharAtari2X:
 		movem.l    d3-d4/a2,-(a7)
 		move.w     d0,d4
@@ -503,6 +521,7 @@ Akt_CharAtari2X_2:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Akt_CharX2Atari
 Akt_CharX2Atari:
 		movem.l    d3-d4/a2,-(a7)
 		move.w     d0,d4
@@ -523,6 +542,7 @@ Akt_CharX2Atari_2:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Akt_BlockAtari2X
 Akt_BlockAtari2X:
 		movem.l    d3-d5/a2-a4,-(a7)
 		movea.l    a0,a3
@@ -573,6 +593,7 @@ Akt_BlockAtari2X_2:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl Akt_BlockX2Atari
 Akt_BlockX2Atari:
 		movem.l    d3-d5/a2-a4,-(a7)
 		movea.l    a0,a3
@@ -623,6 +644,7 @@ Akt_BlockX2Atari_2:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl Akt_StringAtari2X
 Akt_StringAtari2X:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -639,6 +661,7 @@ Akt_StringAtari2X:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Akt_StringX2Atari
 Akt_StringX2Atari:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -655,6 +678,7 @@ Akt_StringX2Atari:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Akt_CharX2Unicode
 Akt_CharX2Unicode:
 		movem.l    d3-d4/a2,-(a7)
 		move.w     d0,d4
@@ -679,6 +703,7 @@ Akt_CharX2Unicode_2:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Akt_CharUnicode2X
 Akt_CharUnicode2X:
 		movem.l    d3-d4/a2,-(a7)
 		move.w     d0,d4
@@ -703,6 +728,7 @@ Akt_CharUnicode2X_2:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Akt_BlockX2Unicode
 Akt_BlockX2Unicode:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -738,6 +764,7 @@ Akt_BlockX2Unicode_3:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Akt_BlockUnicode2X
 Akt_BlockUnicode2X:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -768,6 +795,7 @@ Akt_BlockUnicode2X_3:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Akt_StringX2Unicode
 Akt_StringX2Unicode:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -784,6 +812,7 @@ Akt_StringX2Unicode:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Akt_BlockXUtf2Unicode
 Akt_BlockXUtf2Unicode:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -815,6 +844,7 @@ Akt_BlockXUtf2Unicode_3:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Akt_BlockUnicode2XUtf
 Akt_BlockUnicode2XUtf:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -844,6 +874,7 @@ Akt_BlockUnicode2XUtf_2:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Akt_BlockXUtf2U2XUtf
 Akt_BlockXUtf2U2XUtf:
 		movem.l    d3-d5/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -878,6 +909,7 @@ Akt_BlockXUtf2U2XUtf_3:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl Akt_BlockXUtf2XUtf
 Akt_BlockXUtf2XUtf:
 		movem.l    d3-d5/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -912,6 +944,7 @@ Akt_BlockXUtf2XUtf_3:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl Akt_StringXUtf2Unicode
 Akt_StringXUtf2Unicode:
 		movem.l    d3/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -931,6 +964,7 @@ Akt_StringXUtf2Unicode:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Akt_StringXUtf2U2XUtf
 Akt_StringXUtf2U2XUtf:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -952,6 +986,7 @@ Akt_StringXUtf2U2XUtf:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Akt_StringXUtf2XUtf
 Akt_StringXUtf2XUtf:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a4
@@ -973,6 +1008,7 @@ Akt_StringXUtf2XUtf:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+		.globl Akt_popExpName
 Akt_popExpName:
 		movem.l    d3-d5/a2-a5,-(a7)
 		movea.l    a0,a5
@@ -1044,6 +1080,7 @@ Akt_popExpName_2:
 		movem.l    (a7)+,d3-d5/a2-a5
 		rts
 
+		.globl Akt_popImpName
 Akt_popImpName:
 		movem.l    d3-d5/a2-a5,-(a7)
 		movea.l    a0,a5
@@ -1115,6 +1152,7 @@ Akt_popImpName_2:
 		movem.l    (a7)+,d3-d5/a2-a5
 		rts
 
+		.globl Akt_chooseExpNr
 Akt_chooseExpNr:
 		movem.l    d3-d5/a2-a3,-(a7)
 		subq.w     #2,a7
@@ -1161,6 +1199,7 @@ Akt_chooseExpNr_2:
 		movem.l    (a7)+,d3-d5/a2-a3
 		rts
 
+		.globl Akt_chooseImpNr
 Akt_chooseImpNr:
 		movem.l    d3-d5/a2-a3,-(a7)
 		subq.w     #2,a7

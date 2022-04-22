@@ -1,4 +1,5 @@
 
+		.globl Aev_InitXAcc
 Aev_InitXAcc:
 		lea.l      -16(a7),a7
 		movea.l    ACSblk,a0
@@ -45,10 +46,12 @@ Aev_InitXAcc_1:
 		lea.l      16(a7),a7
 		rts
 
+		.globl Aev_ExitXAcc
 Aev_ExitXAcc:
 		moveq.l    #1,d0
 		rts
 
+		.globl XAccDataDelete
 XAccDataDelete:
 		move.l     a2,-(a7)
 		subq.w     #4,a7
@@ -100,6 +103,7 @@ Aev_CheckXAccPart_3:
 		addq.w     #6,a7
 		rts
 
+		.globl Aev_GetAccID
 Aev_GetAccID:
 		move.l     a2,-(a7)
 		lea.l      -14(a7),a7
@@ -157,6 +161,7 @@ Aev_GetAccID_5:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetAccAck
 Aev_GetAccAck:
 		move.l     a2,-(a7)
 		lea.l      -16(a7),a7
@@ -231,6 +236,7 @@ Aev_GetAccAck_5:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetAccAcc
 Aev_GetAccAcc:
 		lea.l      -14(a7),a7
 		move.l     a0,10(a7)
@@ -297,6 +303,7 @@ Aev_GetAccAcc_6:
 		lea.l      14(a7),a7
 		rts
 
+		.globl Aev_GetAccKey
 Aev_GetAccKey:
 		lea.l      -14(a7),a7
 		move.l     a0,10(a7)
@@ -344,6 +351,7 @@ Aev_GetAccKey_2:
 		lea.l      14(a7),a7
 		rts
 
+		.globl Aev_GetAccText
 Aev_GetAccText:
 		lea.l      -12(a7),a7
 		move.l     a0,8(a7)
@@ -404,6 +412,7 @@ Aev_GetAccText_2:
 		lea.l      12(a7),a7
 		rts
 
+		.globl Aev_GetAccImg
 Aev_GetAccImg:
 		move.l     a2,-(a7)
 		lea.l      -20(a7),a7
@@ -575,6 +584,7 @@ Aev_GetAccImg_4:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetAccMeta
 Aev_GetAccMeta:
 		move.l     a2,-(a7)
 		lea.l      -20(a7),a7
@@ -736,6 +746,7 @@ Aev_GetAccMeta_4:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_AccID
 Aev_AccID:
 		lea.l      -24(a7),a7
 		move.w     d0,22(a7)
@@ -783,6 +794,7 @@ Aev_AccID_4:
 		lea.l      24(a7),a7
 		rts
 
+		.globl Aev_AccAcc
 Aev_AccAcc:
 		lea.l      -28(a7),a7
 		move.w     d0,26(a7)
@@ -848,6 +860,7 @@ Aev_AccAcc_6:
 		lea.l      28(a7),a7
 		rts
 
+		.globl Aev_AccExit
 Aev_AccExit:
 		lea.l      -24(a7),a7
 		move.w     d0,22(a7)
@@ -894,6 +907,7 @@ Aev_AccExit_4:
 		lea.l      24(a7),a7
 		rts
 
+		.globl Aev_AccAck
 Aev_AccAck:
 		lea.l      -20(a7),a7
 		move.w     d0,18(a7)
@@ -955,6 +969,7 @@ GetXAccData:
 		dc.b $00
 GetXAccID:
 		dc.w $ffff
+xd4898:
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -971,6 +986,7 @@ GetXAccID:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+xd48a8:
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -987,6 +1003,7 @@ GetXAccID:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+xd48b8:
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -1003,6 +1020,7 @@ GetXAccID:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+xd48c8:
 		dc.b $00
 		dc.b $00
 		dc.b $00

@@ -1,8 +1,10 @@
 
+		.globl Aev_InitDD
 Aev_InitDD:
 		moveq.l    #1,d0
 		rts
 
+		.globl Aev_ExitDD
 Aev_ExitDD:
 		moveq.l    #1,d0
 		rts
@@ -22,6 +24,7 @@ Aev_ddabort:
 		addq.w     #6,a7
 		rts
 
+		.globl Aev_GetAPDragDrop
 Aev_GetAPDragDrop:
 		move.l     a2,-(a7)
 		lea.l      -84(a7),a7

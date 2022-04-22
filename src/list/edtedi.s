@@ -1,4 +1,5 @@
 
+		.globl add_tedinfo
 add_tedinfo:
 		movem.l    d3-d4/a2-a5,-(a7)
 		subq.w     #8,a7
@@ -91,6 +92,7 @@ add_tedinfo_7:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl del_tedinfo
 del_tedinfo:
 		movem.l    a2-a4,-(a7)
 		movea.l    a0,a2
@@ -118,6 +120,7 @@ del_tedinfo_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl dup_tedinfo
 dup_tedinfo:
 		movem.l    a2-a5,-(a7)
 		movea.l    a0,a4
@@ -198,6 +201,7 @@ new_work:
 
 		.data
 
+		.globl list_tedi
 list_tedi:
 		dc.b $00
 		dc.b $00

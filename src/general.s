@@ -26,7 +26,7 @@ info_1:
 		movea.l    20(a2),a0
 		jsr        Aob_puttext
 		move.l     d3,-(a7)
-		lea.l      t2,a1
+		lea.l      x8e696,a1
 		lea.l      4(a7),a0
 		jsr        sprintf
 		addq.w     #4,a7
@@ -35,7 +35,7 @@ info_1:
 		movea.l    20(a2),a0
 		jsr        Aob_puttext
 		move.l     d4,-(a7)
-		lea.l      t2,a1
+		lea.l      x8e696,a1
 		lea.l      4(a7),a0
 		jsr        sprintf
 		addq.w     #4,a7
@@ -109,7 +109,7 @@ ge_save:
 		jsr        save
 		rts
 
-	.globl save
+		.globl save
 save:
 		movem.l    d3-d4/a2-a3/a5,-(a7)
 		lea.l      -128(a7),a7
@@ -1157,7 +1157,7 @@ exec_cmd_2:
 		movea.l    (a7)+,a2
 		rts
 
-	.globl newclose
+		.globl newclose
 newclose:
 		move.l     a2,-(a7)
 		suba.l     a1,a1
@@ -1200,7 +1200,7 @@ ACSinit0:
 ACSinit:
 		movem.l    d3/a2-a4,-(a7)
 		lea.l      -140(a7),a7
-		lea.l      debug,a0
+		lea.l      x8e68e,a0
 		lea.l      4(a7),a1
 		move.b     (a0)+,(a1)+
 		move.b     (a0)+,(a1)+
@@ -33453,6 +33453,7 @@ WI_INFO_GENERAL:
 x8e68e:
 		dc.b 'ACSpro',0
 		dc.b 0
+x8e696:
 		dc.b '%li',0
 x8e69a:
 		dc.b 'EWS',0

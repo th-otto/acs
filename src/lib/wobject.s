@@ -1,4 +1,5 @@
 
+		.globl Awi_diaend
 Awi_diaend:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -67,6 +68,7 @@ Awi_diaend_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_diastart
 Awi_diastart:
 		movem.l    a2-a5,-(a7)
 		lea.l      -26(a7),a7
@@ -327,6 +329,7 @@ Awi_self0_6:
 		movem.l    (a7)+,d3-d5/a2-a5
 		rts
 
+		.globl Awi_uoself
 Awi_uoself:
 		move.l     a2,-(a7)
 		lea.l      -10(a7),a7
@@ -350,6 +353,7 @@ Awi_uoself_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_obchange
 Awi_obchange:
 		movem.l    d3-d7/a2-a5,-(a7)
 		lea.l      -22(a7),a7
@@ -532,6 +536,7 @@ Awi_obchange_2:
 		movem.l    (a7)+,d3-d7/a2-a5
 		rts
 
+		.globl Awi_obredraw
 Awi_obredraw:
 		movem.l    d3/a2-a3,-(a7)
 		subq.w     #8,a7
@@ -581,6 +586,7 @@ Awi_obredraw_1:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Awi_redraw
 Awi_redraw:
 		movem.l    d3-d7/a2-a5,-(a7)
 		lea.l      -18(a7),a7
@@ -905,6 +911,7 @@ next_arrow_3:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_arrowed
 Awi_arrowed:
 		movem.l    d3-d6/a2-a3,-(a7)
 		lea.l      -12(a7),a7
@@ -1103,6 +1110,7 @@ Awi_arrowed_1:
 		movem.l    (a7)+,d3-d6/a2-a3
 		rts
 
+		.globl Awi_hslid
 Awi_hslid:
 		movem.l    d3-d4/a2,-(a7)
 		movea.l    a0,a2
@@ -1137,6 +1145,7 @@ Awi_hslid_1:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Awi_vslid
 Awi_vslid:
 		movem.l    d3-d4/a2,-(a7)
 		movea.l    a0,a2
@@ -1171,6 +1180,7 @@ Awi_vslid_1:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Awi_wheeled
 Awi_wheeled:
 		movem.l    d3-d7/a2-a4,-(a7)
 		subq.w     #8,a7
@@ -1358,6 +1368,7 @@ Awi_wheeled_1:
 		movem.l    (a7)+,d3-d7/a2-a4
 		rts
 
+		.globl Awi_obview
 Awi_obview:
 		movem.l    d3-d5/a2-a4,-(a7)
 		subq.w     #6,a7
@@ -1542,6 +1553,7 @@ Awi_obview_1:
 		movem.l    (a7)+,d3-d5/a2-a4
 		rts
 
+		.globl Aob_chdef
 Aob_chdef:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -1844,6 +1856,7 @@ Awi_lastedit_7:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Awi_focuschg
 Awi_focuschg:
 		movem.l    d3/a2-a5,-(a7)
 		lea.l      -10(a7),a7
@@ -2110,6 +2123,7 @@ Awi_nextsel_3:
 		movem.l    (a7)+,d3-d7/a2
 		rts
 
+		.globl Awi_help
 Awi_help:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -2363,6 +2377,7 @@ Awi_keyACSwitch_1:
 		rts
 
 Awi_keysend_66:
+		.globl Awi_keysend
 Awi_keysend:
 		movem.l    d3-d7/a2-a6,-(a7)
 		lea.l      -294(a7),a7
@@ -3307,6 +3322,7 @@ Awi_keysend_48:
 		movem.l    (a7)+,d3-d7/a2-a6
 		rts
 
+		.globl Awi_scroll
 Awi_scroll:
 		movem.l    d3-d5/a2-a6,-(a7)
 		lea.l      -32(a7),a7
@@ -3470,6 +3486,7 @@ Awi_scroll_1:
 		movem.l    (a7)+,d3-d5/a2-a6
 		rts
 
+		.globl Aob_flags
 Aob_flags:
 		movem.l    d3-d5/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -3533,6 +3550,7 @@ Aob_flags_7:
 		movem.l    (a7)+,d3-d5/a2-a3
 		rts
 
+		.globl Aob_state
 Aob_state:
 		movem.l    d3-d5/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -3597,6 +3615,7 @@ Aob_state_7:
 		movem.l    (a7)+,d3-d5/a2-a3
 		rts
 
+		.globl Aob_service
 Aob_service:
 		movem.l    d3-d4/a2-a5,-(a7)
 		movea.l    a0,a2
@@ -3648,6 +3667,7 @@ Aob_service_5:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Awi_observice
 Awi_observice:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -3684,6 +3704,7 @@ Awi_observice_4:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Aob_visible
 Aob_visible:
 		movem.l    d3-d4/a2,-(a7)
 		movea.l    a0,a2
@@ -3716,6 +3737,7 @@ Aob_visible_3:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Awi_obvisible
 Awi_obvisible:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)

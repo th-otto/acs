@@ -1,4 +1,5 @@
 
+		.globl nkc_gemks2n
 nkc_gemks2n:
 		move.w     d4,-(a7)
 		move.w     d0,d4
@@ -19,6 +20,7 @@ nkc_gemks2n:
 		move.w     (a7)+,d4
 		rts
 
+		.globl nkc_gem2n
 nkc_gem2n:
 		move.w     d3,-(a7)
 		move.w     d0,d3
@@ -28,6 +30,7 @@ nkc_gem2n:
 		move.w     (a7)+,d3
 		rts
 
+		.globl nkc_n2gemks
 nkc_n2gemks:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -56,6 +59,7 @@ nkc_n2gemks_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl nkc_n2gem
 nkc_n2gem:
 		jsr        nkc_n2to
 		move.w     d0,d1
@@ -67,6 +71,7 @@ nkc_n2gem:
 		move.w     d1,d0
 		rts
 
+		.globl nkc_n2kstate
 nkc_n2kstate:
 		jsr        nkc_n2to
 		and.l      #$FF000000,d0
@@ -74,6 +79,7 @@ nkc_n2kstate:
 		lsr.l      d1,d0
 		rts
 
+		.globl nkc_kstate
 nkc_kstate:
 		move.l     a2,-(a7)
 		lea.l      pshift,a2
@@ -94,6 +100,7 @@ nkc_kstate_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl nkc_cmp
 nkc_cmp:
 		movem.l    d3-d7,-(a7)
 		subq.w     #2,a7
@@ -235,6 +242,7 @@ nkc_cmp_20:
 		movem.l    (a7)+,d3-d7
 		rts
 
+		.globl nkc_exit
 nkc_exit:
 		clr.w      d0
 		rts

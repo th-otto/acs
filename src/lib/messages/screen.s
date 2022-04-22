@@ -1,4 +1,5 @@
 
+		.globl Aev_GetMnSelected
 Aev_GetMnSelected:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -13,6 +14,7 @@ Aev_GetMnSelected:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetWmRedraw
 Aev_GetWmRedraw:
 		move.l     a2,-(a7)
 		subq.w     #4,a7
@@ -30,6 +32,7 @@ Aev_GetWmRedraw:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetWmTopped
 Aev_GetWmTopped:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -72,6 +75,7 @@ Aev_GetWmTopped_2:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetWmClosed
 Aev_GetWmClosed:
 		move.l     a2,-(a7)
 		lea.l      -12(a7),a7
@@ -117,6 +121,7 @@ Aev_GetWmClosed_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetWmFulled
 Aev_GetWmFulled:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -130,6 +135,7 @@ Aev_GetWmFulled:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetWmArrowed
 Aev_GetWmArrowed:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -179,6 +185,7 @@ Aev_GetWmArrowed_2:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_GetWmMouseWheel
 Aev_GetWmMouseWheel:
 		lea.l      -40(a7),a7
 		move.l     a0,36(a7)
@@ -201,6 +208,7 @@ Aev_GetWmMouseWheel:
 		lea.l      40(a7),a7
 		rts
 
+		.globl Aev_GetWmHSlid
 Aev_GetWmHSlid:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -217,6 +225,7 @@ Aev_GetWmHSlid:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetWmVSlid
 Aev_GetWmVSlid:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -233,6 +242,7 @@ Aev_GetWmVSlid:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetWmSized
 Aev_GetWmSized:
 		move.l     a2,-(a7)
 		subq.w     #4,a7
@@ -250,6 +260,7 @@ Aev_GetWmSized:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetWmMoved
 Aev_GetWmMoved:
 		move.l     a2,-(a7)
 		subq.w     #4,a7
@@ -267,6 +278,7 @@ Aev_GetWmMoved:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetWmBottomed
 Aev_GetWmBottomed:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -277,6 +289,7 @@ Aev_GetWmBottomed:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetWmOnTop
 Aev_GetWmOnTop:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -296,14 +309,17 @@ Aev_GetWmOnTop_2:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetWmUnTopped
 Aev_GetWmUnTopped:
 		moveq.l    #1,d0
 		rts
 
+		.globl Aev_GetWmToolbar
 Aev_GetWmToolbar:
 		moveq.l    #1,d0
 		rts
 
+		.globl Aev_GetWmShaded
 Aev_GetWmShaded:
 		move.l     a2,-(a7)
 		subq.w     #4,a7
@@ -324,6 +340,7 @@ Aev_GetWmShaded:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetWmUnshaded
 Aev_GetWmUnshaded:
 		move.l     a2,-(a7)
 		subq.w     #8,a7
@@ -350,6 +367,7 @@ Aev_GetWmUnshaded:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetWmIconify
 Aev_GetWmIconify:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -364,6 +382,7 @@ Aev_GetWmIconify:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetWmAllIconify
 Aev_GetWmAllIconify:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -378,6 +397,7 @@ Aev_GetWmAllIconify:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetWmUnIconify
 Aev_GetWmUnIconify:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -391,6 +411,7 @@ Aev_GetWmUnIconify:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetApTerm
 Aev_GetApTerm:
 		jsr        Aev_quit
 		movea.l    ACSblk,a0
@@ -398,6 +419,7 @@ Aev_GetApTerm:
 		moveq.l    #1,d0
 		rts
 
+		.globl Aev_GetScChanged
 Aev_GetScChanged:
 		suba.l     a0,a0
 		moveq.l    #28,d0
@@ -405,6 +427,7 @@ Aev_GetScChanged:
 		moveq.l    #1,d0
 		rts
 
+		.globl Aev_GetFntChanged
 Aev_GetFntChanged:
 		lea.l      -114(a7),a7
 		clr.w      d1
@@ -431,6 +454,7 @@ Aev_GetFntChanged:
 		lea.l      114(a7),a7
 		rts
 
+		.globl Aev_GetPrnChanged
 Aev_GetPrnChanged:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -443,6 +467,7 @@ Aev_GetPrnChanged:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetColorsChanged
 Aev_GetColorsChanged:
 		movea.l    ACSblk,a0
 		cmpi.w     #$0008,28(a0)
@@ -457,6 +482,7 @@ Aev_GetColorsChanged_1:
 		moveq.l    #1,d0
 		rts
 
+		.globl Aev_GetAcClose
 Aev_GetAcClose:
 		subq.w     #4,a7
 		jsr        Awi_root
@@ -495,6 +521,7 @@ Aev_GetAcClose_2:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_GetAcOpen
 Aev_GetAcOpen:
 		subq.w     #4,a7
 		jsr        Awi_root
@@ -508,6 +535,7 @@ Aev_GetAcOpen_1:
 		addq.w     #4,a7
 		rts
 
+		.globl Aev_WmRedraw
 Aev_WmRedraw:
 		lea.l      -26(a7),a7
 		move.w     d0,24(a7)

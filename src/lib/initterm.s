@@ -1,4 +1,5 @@
 
+		.globl ACSinitialize
 ACSinitialize:
 		movem.l    d3/a2-a3,-(a7)
 		subq.w     #4,a7
@@ -112,6 +113,7 @@ ACSinitialize_8:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl ACSterminate
 ACSterminate:
 		move.w     aes_open,d0
 		beq.s      ACSterminate_1
@@ -1127,7 +1129,8 @@ dum_ob:
 		dc.b $00
 xd2d48:
 		dc.w $4653
-		dc.b $00
+xd2d4a:
+		dc.b 0
 xd2d4b:
 		dc.b 'IFS',0
 xd2d4f:

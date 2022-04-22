@@ -1,4 +1,5 @@
 
+		.globl INuserobj
 INuserobj:
 		movem.l    d3/a2-a4,-(a7)
 		lea.l      icn_tmp,a3
@@ -362,6 +363,7 @@ INuserobj_13:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl TRuserobj
 TRuserobj:
 		move.l     a2,-(a7)
 		lea.l      icn_rad_un,a2
@@ -713,6 +715,7 @@ g_stringLen_15:
 		movem.l    (a7)+,d3-d7/a2-a6
 		rts
 
+		.globl Auo_string
 Auo_string:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -800,6 +803,7 @@ Auo_string_10:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl A_radiobutton
 A_radiobutton:
 		move.l     d2,-(a7)
 		move.l     8(a7),-(a7)
@@ -808,6 +812,7 @@ A_radiobutton:
 		move.l     (a7)+,d2
 		rts
 
+		.globl A_checkbox
 A_checkbox:
 		movem.l    d2-d7/a2-a5,-(a7)
 		lea.l      -56(a7),a7
@@ -1808,6 +1813,7 @@ A_checkbox_51:
 		movem.l    (a7)+,d2-d7/a2-a5
 		rts
 
+		.globl A_innerframe
 A_innerframe:
 		movem.l    d2-d7/a2-a6,-(a7)
 		lea.l      -66(a7),a7
@@ -2272,6 +2278,7 @@ A_innerframe_29:
 		movem.l    (a7)+,d2-d7/a2-a6
 		rts
 
+		.globl A_3Dbutton
 A_3Dbutton:
 		movem.l    d2-d7/a2-a6,-(a7)
 		lea.l      -72(a7),a7
@@ -3049,6 +3056,7 @@ A_3Dbutton_76:
 		movem.l    (a7)+,d2-d7/a2-a6
 		rts
 
+		.globl A_title
 A_title:
 		movem.l    d2-d5/a2-a6,-(a7)
 		lea.l      -30(a7),a7
@@ -3365,3 +3373,7 @@ col2:
 xd4cd4:
 		dc.b $00
 		.even
+
+	.bss
+
+act: ds.l 1

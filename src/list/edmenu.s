@@ -1,4 +1,5 @@
 
+		.globl add_men
 add_men:
 		movem.l    a2-a5,-(a7)
 		movea.l    a0,a2
@@ -76,6 +77,7 @@ copy_men_2:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+		.globl del_men
 del_men:
 		movem.l    d3-d4/a2-a5,-(a7)
 		movea.l    a0,a2
@@ -1071,6 +1073,7 @@ protomenu:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl list_menu
 list_menu:
 		dc.b $00
 		dc.b $00

@@ -2325,6 +2325,7 @@ _38aEDIT_MOUSE:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WI_MOUSE
 WI_MOUSE:
 		dc.b $00
 		dc.b $00

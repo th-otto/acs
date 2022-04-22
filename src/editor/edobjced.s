@@ -1,4 +1,5 @@
 
+		.globl ob_make
 ob_make:
 		movem.l    d3/a2-a4,-(a7)
 		lea.l      -76(a7),a7

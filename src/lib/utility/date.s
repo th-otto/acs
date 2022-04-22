@@ -1,4 +1,5 @@
 
+		.globl Adate_getMonth
 Adate_getMonth:
 		movem.l    d3/a2-a4,-(a7)
 		movea.l    a0,a3

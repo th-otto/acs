@@ -10622,6 +10622,7 @@ _31aIC_POS:
 		dc.w $0000
 		dc.w $0000
 		dc.w $0000
+		.globl WI_ICON
 WI_ICON:
 		dc.w $0000
 		dc.w $0000
@@ -10682,6 +10683,7 @@ WI_ICON:
 		dc.w $0000
 		dc.w $0000
 		dc.w $0000
+		.globl WI_POS
 WI_POS:
 		dc.w $0000
 		dc.w $0000

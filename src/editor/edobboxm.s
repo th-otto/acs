@@ -314,6 +314,7 @@ edbo_ok:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl set_box
 set_box:
 		movem.l    d3/a2-a4,-(a7)
 		subq.w     #2,a7
@@ -519,14 +520,19 @@ COLOUR14:
 		dc.b '  Dunkelgelb',0
 COLOUR15:
 		dc.b '  Dunkelmagenta',0
+		.globl HPOS_TEXT1
 HPOS_TEXT1:
 		dc.b '  Links',0
+		.globl HPOS_TEXT2
 HPOS_TEXT2:
 		dc.b '  Mitte',0
+		.globl HPOS_TEXT3
 HPOS_TEXT3:
 		dc.b '  Rechts',0
+		.globl SIZE_TEXT0
 SIZE_TEXT0:
 		dc.b 'grož',0
+		.globl SIZE_TEXT1
 SIZE_TEXT1:
 		dc.b 'klein',0
 TEXT_003:
@@ -1330,6 +1336,7 @@ A_INNERFRAME05:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl POP_COLSEL
 POP_COLSEL:
 		dc.w $ffff
 		dc.b $00
@@ -2025,6 +2032,7 @@ _32_POP_COLSEL:
 		dc.b $02
 		dc.b $00
 		dc.b $01
+		.globl POP_HORPOSSEL
 POP_HORPOSSEL:
 		dc.w $ffff
 		dc.b $00
@@ -2108,6 +2116,7 @@ _03_POP_HORPOSSEL:
 		dc.b $0a
 		dc.b $00
 		dc.b $01
+		.globl POP_PATSEL
 POP_PATSEL:
 		dc.w $ffff
 		dc.b $00
@@ -2307,6 +2316,7 @@ _08_POP_PATSEL:
 		dc.b $12
 		dc.b $00
 		dc.b $01
+		.globl POP_SIZESEL
 POP_SIZESEL:
 		dc.w $ffff
 		dc.b $00
@@ -2453,6 +2463,7 @@ _03_POP_TYPESEL:
 		dc.b $0b
 		dc.b $00
 		dc.b $01
+		.globl ED_BOX
 ED_BOX:
 		dc.w $ffff
 		dc.b $00
@@ -3699,6 +3710,7 @@ _58_ED_BOX:
 		dc.b $01
 		dc.b $00
 		dc.b $01
+		.globl colour_text
 colour_text:
 		dc.l COLOUR00
 		dc.l COLOUR01

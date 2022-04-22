@@ -1,3 +1,4 @@
+		.globl init_slider
 init_slider:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)

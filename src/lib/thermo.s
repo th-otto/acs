@@ -1,4 +1,5 @@
 
+		.globl Ash_thermometer
 Ash_thermometer:
 		movem.l    d3-d4/a2-a6,-(a7)
 		subq.w     #4,a7
@@ -1322,6 +1323,7 @@ _04_ThermTObj:
 		dc.b $28
 		dc.b $00
 		dc.b $02
+		.globl ThermWind
 ThermWind:
 		dc.b $00
 		dc.b $00

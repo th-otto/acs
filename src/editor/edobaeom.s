@@ -7,7 +7,7 @@ edao_pal:
 		ori.w      #$0004,84(a2)
 		movea.l    (a2),a3
 		movea.l    (a3),a0
-		movea.l    $0007AEE8,a1
+		movea.l    WI_PALETTE+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a3
@@ -246,6 +246,7 @@ edao_list:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl set_aeo
 set_aeo:
 		movem.l    a2-a5,-(a7)
 		lea.l      -36(a7),a7

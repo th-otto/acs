@@ -1,4 +1,5 @@
 
+		.globl Ash_fontSetIcon
 Ash_fontSetIcon:
 		lea.l      FontSelWind,a1
 		move.l     a0,90(a1)
@@ -16,6 +17,7 @@ Ash_fontSetIcon_2:
 		andi.w     #$FFFD,84(a1)
 		rts
 
+		.globl Ash_font
 Ash_font:
 		movem.l    d3-d6/a2-a6,-(a7)
 		subq.w     #4,a7
@@ -1021,6 +1023,7 @@ _00aFontSelObj:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl FontSelWind
 FontSelWind:
 		dc.b $00
 		dc.b $00

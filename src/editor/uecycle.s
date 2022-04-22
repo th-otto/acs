@@ -1,4 +1,5 @@
 
+		.globl init_cycle
 init_cycle:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)

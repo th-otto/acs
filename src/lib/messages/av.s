@@ -1,4 +1,5 @@
 
+		.globl Aev_InitVA
 Aev_InitVA:
 		lea.l      -16(a7),a7
 		movea.l    ACSblk,a0
@@ -54,13 +55,16 @@ Aev_InitVA_1:
 		lea.l      16(a7),a7
 		rts
 
+		.globl Aev_ExitVA
 Aev_ExitVA:
 		moveq.l    #1,d0
 		rts
 
+		.globl VaDataDelete
 VaDataDelete:
 		rts
 
+		.globl Aev_GetAvExit
 Aev_GetAvExit:
 		lea.l      -12(a7),a7
 		move.l     a0,8(a7)
@@ -88,6 +92,7 @@ Aev_GetAvExit_1:
 		lea.l      12(a7),a7
 		rts
 
+		.globl Aev_GetVaProtoStatus
 Aev_GetVaProtoStatus:
 		move.l     a2,-(a7)
 		lea.l      -12(a7),a7
@@ -119,6 +124,7 @@ Aev_GetVaProtoStatus_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetVaStart
 Aev_GetVaStart:
 		move.l     a2,-(a7)
 		lea.l      -14(a7),a7
@@ -160,6 +166,7 @@ Aev_GetVaStart_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetAvStarted
 Aev_GetAvStarted:
 		move.l     a2,-(a7)
 		lea.l      -54(a7),a7
@@ -222,6 +229,7 @@ Aev_GetAvStarted_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_GetAvSendKey
 Aev_GetAvSendKey:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -265,6 +273,7 @@ Aev_GetAvSendKey_4:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_GetAvSendClick
 Aev_GetAvSendClick:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -300,6 +309,7 @@ Aev_GetAvSendClick_2:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_GetVaPathUpdate
 Aev_GetVaPathUpdate:
 		lea.l      -12(a7),a7
 		move.l     a0,8(a7)
@@ -323,6 +333,7 @@ Aev_GetVaPathUpdate_1:
 		lea.l      12(a7),a7
 		rts
 
+		.globl Aev_AvProtokoll
 Aev_AvProtokoll:
 		lea.l      -24(a7),a7
 		move.w     d0,22(a7)
@@ -369,6 +380,7 @@ Aev_AvProtokoll_4:
 		lea.l      24(a7),a7
 		rts
 
+		.globl Aev_AvExit
 Aev_AvExit:
 		lea.l      -24(a7),a7
 		move.w     d0,22(a7)
@@ -416,6 +428,7 @@ Aev_AvExit_4:
 		lea.l      24(a7),a7
 		rts
 
+		.globl Aev_VaStart
 Aev_VaStart:
 		lea.l      -32(a7),a7
 		move.w     d0,30(a7)
@@ -472,6 +485,7 @@ Aev_VaStart_4:
 		lea.l      32(a7),a7
 		rts
 
+		.globl Aev_AvStarted
 Aev_AvStarted:
 		lea.l      -22(a7),a7
 		move.w     d0,20(a7)
@@ -536,6 +550,7 @@ xd4a3c:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+xd4a4c:
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -568,6 +583,7 @@ xd4a3c:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+xd4a6c:
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -584,6 +600,7 @@ xd4a3c:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+xd4a7c:
 		dc.b $00
 		dc.b $00
 		dc.b $00

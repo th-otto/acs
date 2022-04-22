@@ -1,4 +1,5 @@
 
+		.globl init_boxed
 init_boxed:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -53,7 +54,7 @@ object_tree:
 		or.w       d1,10(a4)
 		movea.l    12(a4),a3
 		pea.l      (a7)
-		lea.l      x1b0a1a,a1
+		lea.l      xb0a1a,a1
 		movea.l    (a5),a0
 		jsr        sscanf
 		addq.w     #4,a7
@@ -3599,6 +3600,7 @@ _64aPOP_MASKSEL:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl ED_BOXED
 ED_BOXED:
 		dc.w $ffff
 		dc.b $00
@@ -4934,3 +4936,7 @@ xb0a21:
 		dc.b $25
 		dc.w $6400
 	.even
+
+	.bss
+
+parm: ds.b 34

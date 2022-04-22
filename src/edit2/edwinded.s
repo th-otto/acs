@@ -7547,6 +7547,7 @@ _165aEDIT_WINDOW:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WI_WINDOW
 WI_WINDOW:
 		dc.b $00
 		dc.b $00

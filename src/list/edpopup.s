@@ -41,6 +41,7 @@ copy_pup_2:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+		.globl del_pup
 del_pup:
 		movem.l    d3-d4/a2-a5,-(a7)
 		movea.l    a0,a2
@@ -205,6 +206,7 @@ protopopup:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl list_popup
 list_popup:
 		dc.b $00
 		dc.b $00

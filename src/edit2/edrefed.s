@@ -2301,6 +2301,7 @@ IC_REF:
 		dc.b $00
 		dc.b $08
 		dc.l _C4_IC_REF
+		.globl REF_TYPE
 REF_TYPE:
 		dc.w $ffff
 		dc.b $00
@@ -5046,6 +5047,7 @@ _122aREF_TYPE:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl EDIT_REF
 EDIT_REF:
 		dc.w $ffff
 		dc.b $00
@@ -5358,6 +5360,7 @@ _13aEDIT_REF:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl WI_REF
 WI_REF:
 		dc.b $00
 		dc.b $00
@@ -5445,6 +5448,7 @@ WI_REF:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl cross_type
 cross_type:
 		dc.b $00
 		dc.b $2c
@@ -5522,6 +5526,7 @@ cross_type:
 		dc.b $4c
 		dc.b $00
 		dc.b $4e
+		.globl cross_type_anz
 cross_type_anz:
 		dc.b $00
 		dc.b $26
@@ -5683,9 +5688,24 @@ x9f3ee:
 		dc.b $09,'%s:=Awi_iconify(wi, all);',$0d,$0a
 		dc.b 'End;',$0d,$0a,$0d,$0a,0
 x9f567:
-		dc.b '{ Window-Uniconify-Routine }',$0d,$0a,'Function %s( wi: AwindowPtr ) : Integer;',$0d,$0a,'Begin',$0d,$0a,$09,'%s:=Awi_uniconify(wi);',$0d,$0a,'End;',$0d,$0a,$0d,$0a,0
+		dc.b '{ Window-Uniconify-Routine }',$0d,$0a
+		dc.b 'Function %s( wi: AwindowPtr ) : Integer;',$0d,$0a
+		dc.b 'Begin',$0d,$0a
+		dc.b $09,'%s:=Awi_uniconify(wi);',$0d,$0a
+		dc.b 'End;',$0d,$0a,$0d,$0a,0
 x9f5d8:
-		dc.b '{ Window-GEMScript-Routine }',$0d,$0a,'Function %s( wi: AwindowPtr; anz: Integer; cmd: Pointer; antwort: A_GSAntwortPtr ) : Integer',$0d,$0a,'{',$0d,$0a,$09,'return Awi_gemscript(wi, anz, cmd, antwort);',$0d,$0a,'}',$0d,$0a,$0d,$0a,'{ System-Init-Routine }',$0d,$0a,'Function %s : Integer;',$0d,$0a,'{',$0d,$0a,$09,'%s:=OK;',$0d,$0a,'}',$0d,$0a,$0d,$0a,0
+		dc.b '{ Window-GEMScript-Routine }',$0d,$0a
+		dc.b 'Function %s( wi: AwindowPtr; anz: Integer; cmd: Pointer; antwort: A_GSAntwortPtr ) : Integer',$0d,$0a
+		dc.b '{',$0d,$0a
+		dc.b $09,'return Awi_gemscript(wi, anz, cmd, antwort);',$0d,$0a
+		dc.b '}',$0d,$0a
+		dc.b $0d,$0a
+x9f68b:
+		dc.b '{ System-Init-Routine }',$0d,$0a
+		dc.b 'Function %s : Integer;',$0d,$0a
+		dc.b '{',$0d,$0a
+		dc.b $09,'%s:=OK;',$0d,$0a
+		dc.b '}',$0d,$0a,$0d,$0a,0
 x9f6cf:
 		dc.b '{ System-Terminier-Routine }',$0d,$0a,'Procedure %s;',$0d,$0a,'{',$0d,$0a,'}',$0d,$0a,$0d,$0a,0
 x9f705:

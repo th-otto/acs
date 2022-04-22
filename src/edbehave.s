@@ -1,5 +1,48 @@
 		.text
 
+edbh_wi:
+		movem.l    d3/a2-a5,-(a7)
+		subq.w     #4,a7
+		movea.l    ACSblk,a0
+		movea.l    600(a0),a3
+		movea.l    20(a3),a4
+		movea.l    576(a0),a5
+		clr.w      584(a0)
+		jsr        Adr_next
+		move.w     d0,d3
+		ble.s      edbh_wi_1
+		ext.l      d0
+		move.l     d0,d1
+		add.l      d1,d1
+		add.l      d0,d1
+		lsl.l      #3,d1
+		movea.l    20(a5),a2
+		lea.l      24(a2,d1.l),a2
+		cmpi.w     #$2717,22(a2)
+		bne.s      edbh_wi_1
+		move.l     12(a2),(a7)
+		movea.l    (a7),a1
+		lea.l      22(a1),a1
+		movea.l    ACSblk,a0
+		move.w     608(a0),d0
+		movea.l    a4,a0
+		jsr        Aob_puttext
+		jsr        Awi_diaend
+		moveq.l    #-1,d1
+		movea.l    ACSblk,a0
+		move.w     608(a0),d0
+		movea.l    102(a3),a1
+		movea.l    a3,a0
+		jsr        (a1)
+		jsr        Awi_diastart
+		move.w     d3,d0
+		movea.l    a5,a0
+		jsr        Adr_del
+edbh_wi_1:
+		addq.w     #4,a7
+		movem.l    (a7)+,d3/a2-a5
+		rts
+
 edbh_list:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -5230,7 +5273,7 @@ WI_BEHAVE:
 		dc.l STGUIDE_02
 		dc.w 0
 		dc.w 0
-	.globl WI_MAINMOD
+		.globl WI_MAINMOD
 WI_MAINMOD:
 		dc.w 0
 		dc.w 0

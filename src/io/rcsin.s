@@ -823,6 +823,7 @@ objects_6:
 		movem.l    (a7)+,d3-d7/a2-a5
 		rts
 
+		.globl read_rsc
 read_rsc:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)

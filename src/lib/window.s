@@ -1,4 +1,5 @@
 
+		.globl INwindow
 INwindow:
 		movem.l    a2-a4,-(a7)
 		lea.l      Aroot_wi,a4
@@ -124,6 +125,7 @@ INwindow_11:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl TRwindow
 TRwindow:
 		movem.l    d3/a2-a5,-(a7)
 		lea.l      Aroot_wi,a3
@@ -187,6 +189,7 @@ TRwindow_1:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Awi_ontop
 Awi_ontop:
 		move.l     top_window,d0
 		bne.s      Awi_ontop_1
@@ -196,6 +199,7 @@ Awi_ontop_1:
 		movea.l    top_window,a0
 		rts
 
+		.globl Awi_setontop
 Awi_setontop:
 		move.l     a0,top_window
 		movea.l    a0,a0
@@ -292,6 +296,7 @@ Awi_icondelete_3:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_invalid
 Awi_invalid:
 		movem.l    d3/a2-a4,-(a7)
 		clr.w      d3
@@ -333,6 +338,7 @@ Awi_invalid_4:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Awi_wid
 Awi_wid:
 		tst.w      d0
 		bmi.s      Awi_wid_1
@@ -348,14 +354,17 @@ Awi_wid_2:
 		movea.l    0(a0,d1.w),a0
 		rts
 
+		.globl Awi_root
 Awi_root:
 		movea.l    Aroot_wi,a0
 		rts
 
+		.globl Awi_init
 Awi_init:
 		clr.w      d0
 		rts
 
+		.globl Ash_prog
 Ash_prog:
 		movem.l    d3-d6/a2-a5,-(a7)
 		lea.l      -866(a7),a7
@@ -1096,6 +1105,7 @@ Awi_catch_10:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+		.globl Awi_list
 Awi_list:
 		move.l     a2,-(a7)
 		clr.w      d0
@@ -1124,6 +1134,7 @@ Awi_list_3:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_sendall
 Awi_sendall:
 		movem.l    d3-d4/a2-a5,-(a7)
 		move.w     d0,d4
@@ -1150,6 +1161,7 @@ Awi_sendall_1:
 		movem.l    (a7)+,d3-d4/a2-a5
 		rts
 
+		.globl Awi_lateupdate
 Awi_lateupdate:
 		movem.l    d3/a2-a4,-(a7)
 		lea.l      _ACSv_winds,a2
@@ -1191,6 +1203,7 @@ Awi_lateupdate_1:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Awi_up
 Awi_up:
 		movem.l    d3/a2-a4,-(a7)
 		subq.w     #2,a7
@@ -1231,6 +1244,7 @@ Awi_up_2:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Awi_down
 Awi_down:
 		movem.l    d3/a2-a4,-(a7)
 		subq.w     #2,a7
@@ -1271,6 +1285,7 @@ Awi_down_2:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Awi_show
 Awi_show:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -1289,6 +1304,7 @@ Awi_show_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_selfcreate
 Awi_selfcreate:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -1492,6 +1508,7 @@ MakeOldMenu_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_layout
 Awi_layout:
 		movem.l    d3-d5/a2-a5,-(a7)
 		subq.w     #2,a7
@@ -1581,6 +1598,7 @@ Awi_layout_12:
 		movem.l    (a7)+,d3-d5/a2-a5
 		rts
 
+		.globl Awi_create
 Awi_create:
 		movem.l    d3/a2-a6,-(a7)
 		movea.l    a0,a3
@@ -1745,6 +1763,7 @@ Awi_create_19:
 		movem.l    (a7)+,d3/a2-a6
 		rts
 
+		.globl Awi_slider
 Awi_slider:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -1795,6 +1814,7 @@ Awi_slider_1:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Awi_open
 Awi_open:
 		movem.l    d3/a2-a5,-(a7)
 		lea.l      -34(a7),a7
@@ -2070,6 +2090,7 @@ Awi_open_5:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Awi_register
 Awi_register:
 		movem.l    d3/a2-a5,-(a7)
 		lea.l      -24(a7),a7
@@ -2245,6 +2266,7 @@ Awi_register_3:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Awi_backdrop
 Awi_backdrop:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -2265,6 +2287,7 @@ Awi_backdrop_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_modal
 Awi_modal:
 		moveq.l    #7,d0
 		lea.l      modwins,a0
@@ -2284,6 +2307,7 @@ Awi_modal_1:
 		suba.l     a0,a0
 		rts
 
+		.globl Awi_up_modal
 Awi_up_modal:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -2495,6 +2519,7 @@ Awi_set_modal_7:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Awi_show_menu
 Awi_show_menu:
 		movem.l    d3-d5/a2,-(a7)
 		move.w     _ACSv_wmenu,d1
@@ -2763,6 +2788,7 @@ Awi_ropen_3:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Awi_closed
 Awi_closed:
 		movem.l    d3/a2-a5,-(a7)
 		lea.l      -24(a7),a7
@@ -2936,6 +2962,7 @@ Awi_closed_2:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Awi_delete
 Awi_delete:
 		movem.l    d3/a2-a4,-(a7)
 		movea.l    a0,a2
@@ -3038,6 +3065,7 @@ Awi_delete_12:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Awi_topped
 Awi_topped:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
@@ -3067,6 +3095,7 @@ Awi_topped_1:
 		move.w     (a7)+,d3
 		rts
 
+		.globl Awi_fulled
 Awi_fulled:
 		movem.l    a2-a4,-(a7)
 		subq.w     #6,a7
@@ -3234,6 +3263,7 @@ Awi_fulled_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.globl Awi_sized
 Awi_sized:
 		movem.l    d3-d4/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -3313,6 +3343,7 @@ Awi_sized_1:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
 
+		.globl Awi_moved
 Awi_moved:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -3336,6 +3367,7 @@ Awi_moved_1:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_cleanup
 Awi_cleanup:
 		movem.l    d3-d7/a2-a6,-(a7)
 		lea.l      -24(a7),a7
@@ -4036,6 +4068,7 @@ Awi_oblist_1:
 		movem.l    (a7)+,d3-d7/a2-a5
 		rts
 
+		.globl Awi_iconify
 Awi_iconify:
 		movem.l    d3/a2-a5,-(a7)
 		movea.l    a0,a2
@@ -4190,6 +4223,7 @@ Awi_iconify_3:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Awi_uniconify
 Awi_uniconify:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -4272,6 +4306,7 @@ Awi_uniconify_3:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+		.globl Awi_service
 Awi_service:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
@@ -4290,6 +4325,7 @@ Awi_service_3:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_dialog
 Awi_dialog:
 		movem.l    d3-d4/a2-a6,-(a7)
 		lea.l      -42(a7),a7
@@ -4596,6 +4632,7 @@ Awi_dialog_7:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+		.globl Awi_doform
 Awi_doform:
 		movem.l    d3/a2-a5,-(a7)
 		movea.l    a0,a4
@@ -4658,11 +4695,13 @@ Awi_doform_5:
 		movem.l    (a7)+,d3/a2-a5
 		rts
 
+		.globl Awi_diaabort
 Awi_diaabort:
 		movea.l    ACSblk,a0
 		move.w     #$0001,616(a0)
 		rts
 
+		.globl Awi_shadow
 Awi_shadow:
 		move.l     a2,-(a7)
 		subq.w     #8,a7
@@ -4697,6 +4736,7 @@ Awi_shadow_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl _init_alert
 _init_alert:
 		movem.l    d3/a2-a4,-(a7)
 		subq.w     #8,a7
@@ -4771,6 +4811,7 @@ _init_alert_1:
 		movem.l    (a7)+,d3/a2-a4
 		rts
 
+		.globl Awi_alert
 Awi_alert:
 		movem.l    d3-d6/a2-a5,-(a7)
 		lea.l      -40(a7),a7
@@ -5312,6 +5353,7 @@ Awi_hotkey_5:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_update
 Awi_update:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
@@ -5413,6 +5455,7 @@ Awi_update_6:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Awi_obfind
 Awi_obfind:
 		movem.l    d3-d6/a2-a4,-(a7)
 		move.w     d0,d6
@@ -5602,6 +5645,7 @@ Awi_contstring_2:
 		movem.l    (a7)+,d3-d6/a2-a5
 		rts
 
+		.globl Awi_bubblegem
 Awi_bubblegem:
 		movem.l    d3-d4/a2,-(a7)
 		movea.l    a0,a2
@@ -5635,6 +5679,7 @@ Awi_bubblegem_2:
 		movem.l    (a7)+,d3-d4/a2
 		rts
 
+		.globl Awi_context
 Awi_context:
 		movem.l    d3-d6/a2-a4,-(a7)
 		lea.l      -10(a7),a7
@@ -5707,6 +5752,7 @@ Awi_context_1:
 		movem.l    (a7)+,d3-d6/a2-a4
 		rts
 
+		.globl Awi_name
 Awi_name:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a2
@@ -5762,6 +5808,7 @@ _gs_search:
 		jsr        Ast_icmp
 		rts
 
+		.globl gs_str2key
 gs_str2key:
 		movem.l    d3-d7/a2-a4,-(a7)
 		lea.l      -28(a7),a7
@@ -5853,6 +5900,7 @@ gs_str2key_9:
 		movem.l    (a7)+,d3-d7/a2-a4
 		rts
 
+		.globl Awi_gemscript
 Awi_gemscript:
 		movem.l    d3/a2-a6,-(a7)
 		movea.l    a0,a5
@@ -6276,6 +6324,7 @@ empty:
 		dc.b $f0
 		dc.b $00
 		dc.b $f0
+		.globl Aroot_wi
 Aroot_wi:
 		dc.b $00
 		dc.b $00

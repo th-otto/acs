@@ -1,4 +1,5 @@
 
+		.globl Ash_printSetIcon
 Ash_printSetIcon:
 		lea.l      PrintSelWind,a1
 		move.l     a0,90(a1)
@@ -16,6 +17,7 @@ Ash_printSetIcon_2:
 		andi.w     #$FFFD,84(a1)
 		rts
 
+		.globl Ash_print
 Ash_print:
 		movem.l    d3-d6/a2-a5,-(a7)
 		movea.l    a0,a3
@@ -248,7 +250,7 @@ pdlgGetSettings_6:
 		move.l     (a5),-(a7)
 		movea.l    a4,a1
 		movea.l    a3,a0
-		jsr        mt_pdlg_validate_setti
+		jsr        mt_pdlg_validate_settings
 		addq.w     #4,a7
 		tst.w      d0
 		bne.s      pdlgGetSettings_9
@@ -988,6 +990,7 @@ _00aPrintSelObj:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.globl PrintSelWind
 PrintSelWind:
 		dc.b $00
 		dc.b $00

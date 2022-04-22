@@ -1,4 +1,5 @@
 
+		.globl INMsgService
 INMsgService:
 		move.l     globProtData,d0
 		bne.s      INMsgService_1
@@ -21,6 +22,7 @@ INMsgService_1:
 		clr.w      d0
 		rts
 
+		.globl TRMsgService
 TRMsgService:
 		move.l     globProtData,d0
 		beq.s      TRMsgService_1
@@ -41,6 +43,7 @@ P2IntCmp:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_message
 Aev_message:
 		move.l     a2,-(a7)
 		lea.l      -40(a7),a7
@@ -263,6 +266,7 @@ Aev_message_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_CmpMsgInList
 Aev_CmpMsgInList:
 		lea.l      -10(a7),a7
 		move.l     a0,6(a7)
@@ -308,6 +312,7 @@ Aev_CmpMsgInList_2:
 		lea.l      10(a7),a7
 		rts
 
+		.globl Aev_CmpDestID
 Aev_CmpDestID:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -325,6 +330,7 @@ Aev_CmpDestID_2:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_SendMsg
 Aev_SendMsg:
 		move.l     a2,-(a7)
 		lea.l      -20(a7),a7
@@ -397,6 +403,7 @@ Aev_SendMsg_5:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_SendMsg2all
 Aev_SendMsg2all:
 		move.l     a2,-(a7)
 		subq.w     #8,a7
@@ -430,6 +437,7 @@ Aev_SendMsg2all_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_SendAllMsg
 Aev_SendAllMsg:
 		move.l     a2,-(a7)
 		lea.l      -24(a7),a7
@@ -471,6 +479,7 @@ DDCmpIDs_2:
 		addq.w     #8,a7
 		rts
 
+		.globl Aev_DDSearch
 Aev_DDSearch:
 		move.l     a2,-(a7)
 		subq.w     #8,a7
@@ -489,6 +498,7 @@ Aev_DDSearch:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_DDAdd
 Aev_DDAdd:
 		move.l     a2,-(a7)
 		lea.l      -16(a7),a7
@@ -568,6 +578,7 @@ Aev_DDAdd_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_DDDelete
 Aev_DDDelete:
 		move.l     a2,-(a7)
 		subq.w     #2,a7
@@ -591,6 +602,7 @@ Aev_DDDelete_2:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Aev_DDRemove
 Aev_DDRemove:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -649,6 +661,7 @@ Ash_chkDDtype_3:
 		addq.w     #8,a7
 		rts
 
+		.globl Ash_sendall
 Ash_sendall:
 		move.l     a2,-(a7)
 		lea.l      -24(a7),a7
@@ -714,6 +727,7 @@ Ash_sendall_5:
 		movea.l    (a7)+,a2
 		rts
 
+		.globl Ash_nextdd
 Ash_nextdd:
 		subq.w     #4,a7
 		move.l     a0,(a7)
@@ -1113,6 +1127,7 @@ dd_find_dest_8:
 		lea.l      36(a7),a7
 		rts
 
+		.globl GetImgIntoObj
 GetImgIntoObj:
 		lea.l      -18(a7),a7
 		move.l     a0,14(a7)
@@ -1149,6 +1164,7 @@ GetImgIntoObj_2:
 		lea.l      18(a7),a7
 		rts
 
+		.globl GetTxtIntoObj
 GetTxtIntoObj:
 		move.l     a2,-(a7)
 		lea.l      -1074(a7),a7
@@ -1409,6 +1425,7 @@ GetTxtIntoObj_11:
 
 		.data
 
+		.globl globProtData
 globProtData:
 		dc.b $00
 		dc.b $00
@@ -1559,7 +1576,7 @@ MsgListe:
 		dc.w $ff00
 		dc.w $ffff
 		dc.w $1255
-		dc.l Aev_GetOlgaClientTermi
+		dc.l Aev_GetOlgaClientTerminated
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ff00
@@ -1571,7 +1588,7 @@ MsgListe:
 		dc.w $ff00
 		dc.w $ffff
 		dc.w $baba
-		dc.l Aev_GetRequestBubbleGE
+		dc.l Aev_GetRequestBubbleGEM
 		dc.w $0304
 		dc.w $0504
 		dc.w $0500
