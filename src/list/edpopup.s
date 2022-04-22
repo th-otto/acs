@@ -92,7 +92,7 @@ del_pup_1:
 
 new_work:
 		move.w     #$2712,d0
-		movea.l    $000BCA74,a1
+		movea.l    WI_POPUP+90,a1
 		jsr        work_icon
 		rts
 

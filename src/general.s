@@ -546,7 +546,7 @@ ge_behave:
 		movea.l    600(a0),a2
 		ori.w      #$0004,84(a2)
 		movea.l    (a2),a0
-		movea.l    $0007E7AA,a1
+		movea.l    WI_BEHAVE+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a2
@@ -558,7 +558,7 @@ ge_mainmod:
 		movea.l    600(a0),a2
 		ori.w      #$0004,84(a2)
 		movea.l    (a2),a0
-		movea.l    $0007E84C,a1
+		movea.l    WI_MAINMOD+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a2
@@ -570,7 +570,7 @@ ge_palette:
 		movea.l    600(a0),a2
 		ori.w      #$0004,84(a2)
 		movea.l    (a2),a0
-		movea.l    $0007AEE8,a1
+		movea.l    WI_PALETTE+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 		movea.l    (a7)+,a2
@@ -941,7 +941,7 @@ openFile_9:
 		bra.s      openFile_7
 openFile_10:
 		suba.l     a0,a0
-		movea.l    $000C70BE,a1
+		movea.l    EDITOR+8,a1
 		jsr        (a1)
 		movea.l    a0,a5
 		move.l     a5,d0
@@ -1251,12 +1251,12 @@ ACSinit_4:
 		movea.l    4(a3),a4
 		jsr        (a4)
 		suba.l     a0,a0
-		movea.l    $000ADA1E,a1
+		movea.l    WI_PARTS+8,a1
 		jsr        (a1)
 		move.l     parts_window,d0
 		beq.s      ACSinit_3
 		suba.l     a0,a0
-		movea.l    $00079BA8,a1
+		movea.l    WI_COMMON+8,a1
 		jsr        (a1)
 		move.l     a0,base_window
 		move.l     a0,d0

@@ -195,7 +195,7 @@ copy_tedi_2:
 
 new_work:
 		move.w     #$271B,d0
-		movea.l    $000A758E,a1
+		movea.l    WI_TEDI+90,a1
 		jsr        work_icon
 		rts
 

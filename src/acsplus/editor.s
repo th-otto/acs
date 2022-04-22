@@ -3830,7 +3830,8 @@ edit_find_5:
 		blt.s      edit_find_7
 		cmp.b      #$7A,d5
 		bgt.s      edit_find_7
-		add.b      #$E0,d6
+		/* add.b      #$E0,d6 */
+		dc.w 0xdc3c,0xffe0
 		bra.s      edit_find_6
 edit_find_7:
 		cmp.b      #$41,d5

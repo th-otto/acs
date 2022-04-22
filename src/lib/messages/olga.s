@@ -17,10 +17,10 @@ Aev_InitOlga_1:
 		lea.l      idle_message,a0
 		jsr        memset
 		moveq.l    #1,d0
-		and.w      $0009BFD2,d0
+		and.w      ACSconfig+62,d0
 		beq.s      Aev_InitOlga_3
 		moveq.l    #2,d0
-		and.w      $0009BFD2,d0
+		and.w      ACSconfig+62,d0
 		beq.s      Aev_InitOlga_4
 		jsr        CheckOlga
 		move.w     d0,(a7)
@@ -680,7 +680,7 @@ Aev_OleInit:
 		movea.l    ACSblk,a0
 		move.w     (a0),2(a7)
 		move.w     #$0801,6(a7)
-		move.w     $0009BFD4,14(a7)
+		move.w     ACSconfig+64,14(a7)
 		movea.l    _globl,a1
 		lea.l      (a7),a0
 		moveq.l    #16,d1

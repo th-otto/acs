@@ -73,8 +73,8 @@ pu_make_1:
 		clr.w      10(a2)
 		clr.l      30(a2)
 		lea.l      22(a3),a1
-		move.l     a1,$000BCA68
-		movea.l    $000BCA74,a0
+		move.l     a1,WI_POPUP+78
+		movea.l    WI_POPUP+90,a0
 		move.l     a1,8(a0)
 		lea.l      WI_POPUP,a0
 		jsr        Awi_create

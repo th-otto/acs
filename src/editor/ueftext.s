@@ -466,13 +466,13 @@ font_sel_3:
 		blt.s      font_sel_5
 font_sel_4:
 		pea.l      (a4)
-		lea.l      $000B7E45,a1
+		lea.l      xb7e45,a1
 		moveq.l    #39,d0
 		movea.l    4(a7),a0
 		jsr        Aob_printf
 		addq.w     #4,a7
 		move.w     54(a7),-(a7)
-		lea.l      $000B7E4B,a1
+		lea.l      xb7e4b,a1
 		moveq.l    #40,d0
 		movea.l    2(a7),a0
 		jsr        Aob_printf

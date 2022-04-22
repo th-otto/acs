@@ -353,7 +353,7 @@ convert_6:
 		add.w      26(a0),d7
 convert_16:
 		move.w     d7,col
-		move.w     d7,$00106B92
+		move.w     d7,col+2
 		pea.l      col
 		move.l     a4,-(a7)
 		lea.l      punkt,a1
@@ -527,7 +527,7 @@ Aic_create_8:
 		jsr        Ax_malloc
 		movea.l    a0,a5
 		move.l     a5,d0
-		beq        Aic_create_4
+		beq.w      Aic_create_4
 		lea.l      6(a5),a1
 		move.l     a1,(a7)
 		move.w     #$0001,(a0)
@@ -924,7 +924,7 @@ Aob_offset_2:
 		asr.l      d1,d0
 		ext.w      d0
 		neg.w      d0
-		bra        Aob_offset_1
+		bra.w      Aob_offset_1
 Aob_offset_3:
 		movea.l    12(a0),a1
 		move.w     22(a1),d0

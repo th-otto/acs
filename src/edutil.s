@@ -938,7 +938,7 @@ convert_4:
 		add.w      26(a0),d7
 convert_14:
 		move.w     d7,col
-		move.w     d7,$000DA7EC
+		move.w     d7,col+2
 		pea.l      col
 		move.l     a2,-(a7)
 		lea.l      punkt,a1

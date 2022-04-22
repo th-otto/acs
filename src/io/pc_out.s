@@ -943,7 +943,7 @@ out_obj:
 		lea.l      -64(a7),a7
 		move.l     a0,60(a7)
 		move.l     a1,56(a7)
-		lea.l      $000FB442,a2
+		lea.l      mapX+2,a2
 		move.l     14(a0),d3
 		lsr.l      #2,d3
 		tst.w      d3
@@ -1816,7 +1816,7 @@ out_refs:
 		move.l     14(a0),d3
 		lsr.l      #2,d3
 		tst.w      d3
-		ble        out_refs_1
+		ble.w      out_refs_1
 		movea.l    4(a0),a2
 		lea.l      x99190,a3
 		lea.l      1805(a3),a0
@@ -2040,7 +2040,7 @@ out_declproto_20:
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
-		bra        out_declproto_26
+		bra.w      out_declproto_26
 out_declproto_21:
 		pea.l      22(a4)
 		lea.l      2609(a3),a1

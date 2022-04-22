@@ -57,7 +57,7 @@ _ACSaboutme_4:
 		clr.b      10(a3)
 _ACSaboutme_2:
 		pea.l      (a3)
-		lea.l      $000D2CB8,a1
+		lea.l      xd2cb8,a1
 		moveq.l    #6,d0
 		movea.l    20(a2),a0
 		jsr        Aob_printf
@@ -77,6 +77,7 @@ ok:
 		clr.w      d0
 		rts
 
+DEBUG_MEM:
 		move.l     a0,DEBUG_DEFECT_MEM
 		rts
 
@@ -118,7 +119,7 @@ get_acsblk:
 		jsr        memset
 		movea.l    (a2),a0
 		clr.l      1258(a0)
-		lea.l      $000D2CBF,a1
+		lea.l      xd2cbf,a1
 		movea.l    (a2),a0
 		lea.l      542(a0),a0
 		jsr        strcpy
@@ -138,7 +139,7 @@ get_acsblk:
 		movea.l    (a2),a0
 		clr.w      638(a0)
 		movea.l    (a2),a0
-		move.l     #$00107B18,640(a0)
+		move.l     #_GemParBlk+30,640(a0)
 		movea.l    (a2),a0
 		move.w     #$0100,580(a0)
 		movea.l    (a2),a0
@@ -269,12 +270,12 @@ get_acsblk_24:
 		movea.l    (a2),a0
 		move.w     #$0003,710(a0)
 		movea.l    (a2),a0
-		move.l     #$00040A56,722(a0)
+		move.l     #DEBUG_MEM,722(a0)
 		movea.l    (a2),a0
 		clr.l      992(a0)
 		movea.l    (a2),a0
 		move.w     #$0014,996(a0)
-		lea.l      $000D2CD3,a1
+		lea.l      xd2cd3,a1
 		movea.l    (a2),a0
 		lea.l      998(a0),a0
 		jsr        strcpy
@@ -21144,7 +21145,7 @@ _CHK_1D_U:
 _C8__CHK_3D_DS:
 		dc.b $00
 		dc.b $08
-		dc.l DATAS_119+6
+		dc.l DATAS_219+6
 		dc.l DATAS_220
 		dc.b $00
 		dc.b $00

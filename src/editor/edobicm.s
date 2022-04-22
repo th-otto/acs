@@ -58,7 +58,7 @@ edoic_edit:
 		move.l     (a3),(a7)
 		move.l     d0,4(a7)
 		lea.l      (a7),a0
-		movea.l    $000A488A,a1
+		movea.l    WI_ICON+8,a1
 		jsr        (a1)
 		andi.w     #$FFFB,84(a2)
 edoic_edit_1:

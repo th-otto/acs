@@ -100,7 +100,7 @@ ACSinitialize_7:
 		jsr        Awi_root
 		movea.l    (a2),a1
 		move.l     a0,600(a1)
-		movea.l    $0009BFDE,a0
+		movea.l    ACSconfig+74,a0 /* ACSinit */
 		jsr        (a0)
 		move.w     d0,d3
 		jsr        Amo_point

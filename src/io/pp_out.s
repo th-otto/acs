@@ -169,7 +169,7 @@ out_refs:
 		move.l     14(a0),d3
 		lsr.l      #2,d3
 		tst.w      d3
-		ble        out_refs_1
+		ble.w      out_refs_1
 		movea.l    4(a0),a2
 		lea.l      x99f7e,a3
 		lea.l      35(a3),a0
@@ -1067,7 +1067,7 @@ out_obj:
 		lea.l      -68(a7),a7
 		move.l     a0,64(a7)
 		move.l     a1,60(a7)
-		lea.l      $000FBC12,a2
+		lea.l      mapX+2,a2
 		move.l     14(a0),d3
 		lsr.l      #2,d3
 		tst.w      d3
@@ -2155,7 +2155,7 @@ x99f5e:
 		dc.b '                                '
 x99f7e:
 		dc.b $27,0
-x99f80:
+x99f80: /* unused */
 		dc.b $27,'#%i',$27,0
 x99f86:
 		dc.w $2727

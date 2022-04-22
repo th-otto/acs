@@ -1217,7 +1217,6 @@ xd6068:
 		dc.b $00
 		dc.b $00
 		dc.b $14
-xd60a8:
 		dc.b $00
 		dc.b $01
 		dc.b $00
@@ -1248,6 +1247,7 @@ xd60a8:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+xd60a8:
 		dc.b $00
 		dc.b $10
 		dc.b $00

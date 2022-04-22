@@ -189,7 +189,8 @@ nkc_cmp_16:
 		beq.s      nkc_cmp_3
 		move.w     d3,d0
 		jsr        nkc_toupper
-		and.b      #$FF,d0
+		/* and.b      #$FF,d0 */
+		dc.w 0xc03c,0xffff
 		move.b     (a7),d1
 		cmp.b      d0,d1
 		bne.s      nkc_cmp_18

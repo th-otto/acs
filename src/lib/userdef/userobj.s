@@ -1,3 +1,4 @@
+		.text
 
 		.globl INuserobj
 INuserobj:
@@ -286,7 +287,7 @@ INuserobj_23:
 		movea.l    (a1),a0
 		jsr        memset
 		move.l     #$00000080,d0
-		movea.l    _CHK_3D_S+34,a0
+		movea.l    _RD_3D_S+34,a0
 		movea.l    2(a0),a1
 		movea.l    (a3),a4
 		movea.l    (a4),a0
@@ -307,7 +308,7 @@ INuserobj_23:
 		movea.l    (a1),a0
 		jsr        memset
 		move.l     #$00000080,d0
-		movea.l    _CHK_3D_U+34,a0
+		movea.l    _RD_3D_U+34,a0
 		movea.l    2(a0),a1
 		movea.l    (a3),a4
 		movea.l    (a4),a0
@@ -326,7 +327,7 @@ INuserobj_23:
 		movea.l    (a1),a0
 		jsr        memset
 		move.l     #$00000080,d0
-		movea.l    _CHK_3D_DS+34,a0
+		movea.l    _RD_3D_DS+34,a0
 		movea.l    2(a0),a1
 		movea.l    (a3),a4
 		movea.l    (a4),a0
@@ -345,7 +346,7 @@ INuserobj_23:
 		movea.l    (a1),a0
 		jsr        memset
 		move.l     #$00000080,d0
-		movea.l    _CHK_3D_DU+34,a0
+		movea.l    _RD_3D_DU+34,a0
 		movea.l    2(a0),a1
 		movea.l    (a3),a4
 		movea.l    (a4),a0

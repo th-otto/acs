@@ -241,7 +241,7 @@ Af_first_fsel:
 		jsr        Ash_getcookie
 Af_first_fsel_1:
 		move.l     (a2),d0
-		beq        Af_first_fsel_2
+		beq.w      Af_first_fsel_2
 		move.l     (a3),d1
 		beq.s      Af_first_fsel_3
 		bsr        free_multidata

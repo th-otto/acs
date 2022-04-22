@@ -275,7 +275,7 @@ del_window_1:
 
 new_work:
 		move.w     #$2717,d0
-		movea.l    $000AB564,a1
+		movea.l    WI_WINDOW+90,a1
 		jsr        work_icon
 		rts
 

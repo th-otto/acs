@@ -406,7 +406,7 @@ del_icon_1:
 
 new_work:
 		move.w     #$2720,d0
-		movea.l    $000A48DC,a1
+		movea.l    WI_ICON+90,a1
 		jsr        work_icon
 		rts
 

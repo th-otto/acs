@@ -380,10 +380,10 @@ J50:
 		dc.w Auo_ftext_10-J50
 		dc.w Auo_ftext_1-J50
 Auo_ftext_2:
-		sub.w      #$012c,d0
-		cmp.w      #$0007,d0
+		sub.w      #$012c,d1
+		cmp.w      #$0007,d1
 		bhi        Auo_ftext_3
-		add.w      d0,d0
+		add.w      d1,d1
 		move.w     J51(pc,d1.w),d1
 		jmp        J51(pc,d1.w)
 J51:
@@ -404,7 +404,7 @@ Auo_ftext_4:
 Auo_ftext_24:
 		move.l     12(a2),d0
 		bne.s      Auo_ftext_25
-		lea.l      $000D4E26,a0
+		lea.l      xd4e26,a0
 		jsr        Ast_create
 		move.l     a0,12(a2)
 Auo_ftext_25:
@@ -444,7 +444,7 @@ Auo_ftext_7:
 		move.l     a0,12(a2)
 		move.l     a0,d0
 		bne        Auo_ftext_1
-		lea.l      $000D4E26,a0
+		lea.l      xd4e26,a0
 		jsr        Ast_create
 		move.l     a0,12(a2)
 		bra        Auo_ftext_1
@@ -491,7 +491,7 @@ Auo_ftext_26:
 Auo_ftext_16:
 		movea.l    (a7),a0
 		move.w     (a0),(a3)
-		bra        Auo_ftext_1
+		bra.w      Auo_ftext_1
 Auo_ftext_17:
 		movea.l    (a7),a0
 		move.w     (a0),d3
@@ -549,6 +549,6 @@ ftextproto:
 		dc.w $0000
 		dc.w $0000
 		dc.w $0000
-		dc.b $00
+xd4e26:
 		dc.b $00
 	.even

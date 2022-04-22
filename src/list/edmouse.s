@@ -109,7 +109,7 @@ del_mouse_1:
 
 new_work:
 		move.w     #$2722,d0
-		movea.l    $000A647E,a1
+		movea.l    WI_MOUSE+90,a1
 		jsr        work_icon
 		rts
 

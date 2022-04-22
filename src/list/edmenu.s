@@ -128,7 +128,7 @@ del_men_1:
 
 new_work:
 		move.w     #$2711,d0
-		movea.l    $000BC930,a1
+		movea.l    WI_MENU+90,a1
 		jsr        work_icon
 		rts
 

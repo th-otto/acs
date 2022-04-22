@@ -81,7 +81,8 @@ Abp_start_1:
 		move.l     16(a0),kb_mousevec
 		move.l     #ret,16(a0)
 		moveq.l    #-1,d0
-		movea.l    #$FFFFFFFF,a1
+		/* movea.l    #$FFFFFFFF,a1 */
+		dc.w 0x227c,-1,-1
 		movea.l    (a2),a0
 		jsr        Setscreen
 		lea.l      Vdiesc,a0
@@ -140,7 +141,8 @@ Abp_end:
 		move.w     d1,220(a1)
 		move.w     d1,6(a3)
 		moveq.l    #-1,d0
-		movea.l    #$FFFFFFFF,a1
+		/* movea.l    #$FFFFFFFF,a1 */
+		dc.w 0x227c,-1,-1
 		movea.l    -8(a2),a0
 		jsr        Setscreen
 		movea.l    6(a2),a0
@@ -326,7 +328,8 @@ compress_image_7:
 		beq.s      compress_image_6
 		clr.b      (a2)+
 		clr.b      (a2)+
-		move.b     #$FF,(a2)+
+		/* move.b     #$FF,(a2)+ */
+		dc.w 0x14fc,0xffff
 		move.b     132(a7),(a2)+
 compress_image_6:
 		clr.w      d4
@@ -453,7 +456,8 @@ compress_image_19:
 		add.l      d1,d5
 		move.l     a2,d2
 		beq.s      compress_image_9
-		move.b     #$80,(a2)+
+		/* move.b     #$80,(a2)+ */
+		dc.w 0x14fc,0xff80
 		move.b     d3,(a2)+
 		bra.s      compress_image_23
 compress_image_24:

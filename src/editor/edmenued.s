@@ -401,7 +401,7 @@ me_init_2:
 		moveq.l    #1,d0
 		add.w      d6,d0
 		cmp.w      d0,d7
-		beq        me_init_4
+		beq.w      me_init_4
 		move.w     d7,d1
 		ext.l      d1
 		move.l     d1,d2
@@ -522,8 +522,8 @@ me_make_1:
 		move.w     #$FFFF,10(a2)
 		clr.l      30(a2)
 		lea.l      22(a3),a0
-		move.l     a0,$000BC924
-		movea.l    $000BC930,a1
+		move.l     a0,WI_MENU+78
+		movea.l    WI_MENU+90,a1
 		move.l     a0,8(a1)
 		lea.l      WI_MENU,a0
 		jsr        Awi_create
@@ -662,7 +662,7 @@ make_title_3:
 		jsr        copysub_ob
 		addq.w     #4,a7
 		move.w     d0,d5
-		bra        make_title_6
+		bra.w      make_title_6
 make_title_5:
 		move.w     10(a5),d4
 		move.w     d4,d1

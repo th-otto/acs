@@ -128,7 +128,7 @@ del_object_1:
 
 new_work:
 		move.w     #$2710,d0
-		movea.l    $000BC9D2,a1
+		movea.l    WI_OBJECT+90,a1
 		jsr        work_icon
 		rts
 

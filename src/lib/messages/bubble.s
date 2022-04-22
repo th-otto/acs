@@ -3,7 +3,7 @@
 Aev_InitBubble:
 		subq.w     #2,a7
 		moveq.l    #8,d0
-		and.w      $0009BFD2,d0
+		and.w      ACSconfig+62,d0
 		beq.s      Aev_InitBubble_1
 		jsr        FindBubbleGEM
 Aev_InitBubble_1:

@@ -234,7 +234,8 @@ ParseGSCommands_9:
 		movea.l    20(a7),a0
 		move.b     (a0),d0
 		jsr        Ach_toupper
-		add.b      #$C9,d0
+		/* add.b      #$C9,d0 */
+		dc.w 0xd03c,0xffc9
 		movea.l    16(a7),a0
 		move.b     d0,(a0)
 ParseGSCommands_10:
@@ -268,7 +269,8 @@ ParseGSCommands_12:
 		movea.l    20(a7),a0
 		move.b     (a0),d0
 		jsr        Ach_toupper
-		add.b      #$C9,d0
+		/* add.b      #$C9,d0 */
+		dc.w 0xd03c,0xffc9
 		movea.l    16(a7),a0
 		or.b       d0,(a0)
 ParseGSCommands_11:

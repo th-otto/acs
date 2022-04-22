@@ -14,7 +14,7 @@ Awi_diaend:
 		jsr        Awi_find_edit
 		addq.w     #8,a7
 		tst.w      d0
-		beq        Awi_diaend_1
+		beq.w      Awi_diaend_1
 		moveq.l    #2,d0
 		movea.l    (a2),a0
 		and.w      86(a0),d0

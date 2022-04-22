@@ -9885,7 +9885,7 @@ IC_MENU:
 _C4_IC_OBJECT:
 		dc.b $00
 		dc.b $04
-		dc.l DATAS_11+6
+		dc.l DATAS_21+6
 		dc.l DATAS_22
 		dc.b $00
 		dc.b $00
@@ -15103,10 +15103,9 @@ ent01:
 		dc.w $ffff
 		dc.b $00
 		dc.b $18
-		dc.b $00
-		dc.b '@ 0',0
-		dc.b $0b
-		dc.w $cca4
+		dc.w $0040
+		dc.w $2030
+		dc.l control
 		dc.b $00
 		dc.b $00
 		dc.b $00

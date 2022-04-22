@@ -2195,7 +2195,7 @@ edit_make_2:
 		cmp.l      d0,d1
 		bne        edit_make_6
 		moveq.l    #0,d4
-		bra        edit_make_7
+		bra.w      edit_make_7
 edit_make_10:
 		movea.l    a6,a0
 		move.l     #$00000102,d1

@@ -310,7 +310,7 @@ bh_make:
 		movea.l    d0,a0
 		jsr        Awi_show
 		movea.l    328(a2),a0
-		bra        bh_make_2
+		bra.w      bh_make_2
 bh_make_1:
 		move.b     #$20,(a7)
 		lea.l      WI_BEHAVE,a4

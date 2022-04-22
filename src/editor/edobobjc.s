@@ -1769,7 +1769,7 @@ edob_pos:
 		move.w     24(a2),d0
 		bmi        edob_pos_1
 		lea.l      WI_POSITION,a0
-		movea.l    WI_POSITION+4,a1
+		movea.l    WI_POSITION+8,a1
 		jsr        (a1)
 		movea.l    a0,a3
 		move.l     a3,d0

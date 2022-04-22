@@ -443,7 +443,7 @@ make_popup:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
 		clr.l      (a0)
-		move.l     xd4e4a,4(a2)
+		move.l     #xd4e4a,4(a2)
 		bsr.w      next
 		movea.l    (a7)+,a2
 		rts
@@ -539,10 +539,10 @@ J52:
 		dc.w Auo_cycle_8-J52
 		dc.w Auo_cycle_8-J52
 Auo_cycle_2:
-		cmp.w      #$0190,d0
+		cmp.w      #$0190,d1
 		beq        Auo_cycle_90
 		bgt.s      Auo_cycle_91
-		sub.w      #$0013,d0
+		sub.w      #$0013,d1
 		beq        Auo_cycle_15
 		subq.w     #1,d1
 		beq        Auo_cycle_15

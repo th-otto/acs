@@ -10,7 +10,7 @@ acs.app
 ; in your shell directory settings,
 ; because that would be looked up first.
 ;
-.C[-IC:\src\acs\include]
+.C[-I..\include]
 .C[-IC:\pc\include]
 
 .C[ -A- ]		; no strict ANSI
@@ -179,7 +179,7 @@ lib\modul\modul.s
 lib\modul\modulold.s
 
 vdi\vdi_s.s
-vdi\vdi_c.c
+vdi\vdi_c.c [-J -M -R -Z]
 vdi\ctrl.c [-J -M -R -Z]
 vdi\output.c [-J -M -R -Z]
 vdi\attrib.c [-J -M -R -Z]

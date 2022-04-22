@@ -181,7 +181,8 @@ Ax_ifree:
 		movea.l    722(a1),a1
 		jsr        (a1)
 Ax_ifree_3:
-		cmpa.l     #$00001000,a2
+		/* cmpa.l     #$00001000,a2 */
+		dc.w 0xb5fc,0x0000,0x1000
 		bge.s      Ax_ifree_4
 		suba.l     a0,a0
 		moveq.l    #5,d0
@@ -252,7 +253,8 @@ Ax_free:
 		movea.l    722(a1),a1
 		jsr        (a1)
 Ax_free_3:
-		cmpa.l     #$00001000,a2
+		/* cmpa.l     #$00001000,a2 */
+		dc.w 0xb5fc,0x0000,0x1000
 		bge.s      Ax_free_4
 		suba.l     a0,a0
 		moveq.l    #5,d0

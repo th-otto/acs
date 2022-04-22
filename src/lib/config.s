@@ -938,7 +938,7 @@ Acfg_save_9:
 Acfg_save_10:
 		move.w     d0,(a7)
 		clr.w      d3
-		bra        Acfg_save_11
+		bra.w      Acfg_save_11
 Acfg_save_17:
 		move.w     d3,d0
 		ext.l      d0

@@ -1,3 +1,4 @@
+		.text
 
 		.globl INwindow
 INwindow:
@@ -3486,10 +3487,10 @@ Awi_cleanup_15:
 		move.w     d4,d1
 Awi_cleanup_16:
 		move.w     d1,d4
-		move.w     $00106FE4,d5
+		move.w     virt_desk+2,d5
 		sub.w      8(a7),d5
 		move.w     virt_desk,d0
-		add.w      $00106FE6,d0
+		add.w      virt_desk+4,d0
 		sub.w      d7,d0
 		move.w     14(a7),d2
 		cmp.w      d0,d2
@@ -3497,20 +3498,20 @@ Awi_cleanup_16:
 		bra.s      Awi_cleanup_18
 Awi_cleanup_17:
 		move.w     virt_desk,d2
-		add.w      $00106FE6,d2
+		add.w      virt_desk+4,d2
 		sub.w      d7,d2
 Awi_cleanup_18:
 		move.w     d2,14(a7)
-		move.w     $00106FE4,d0
-		add.w      $00106FE8,d0
+		move.w     virt_desk+2,d0
+		add.w      virt_desk+6,d0
 		sub.w      d4,d0
 		move.w     12(a7),d1
 		cmp.w      d0,d1
 		bge.s      Awi_cleanup_19
 		bra.s      Awi_cleanup_20
 Awi_cleanup_19:
-		move.w     $00106FE4,d1
-		add.w      $00106FE8,d1
+		move.w     virt_desk+2,d1
+		add.w      virt_desk+6,d1
 		sub.w      d4,d1
 Awi_cleanup_20:
 		move.w     d1,12(a7)
@@ -3522,7 +3523,7 @@ Awi_cleanup_21:
 		move.w     14(a7),d0
 Awi_cleanup_22:
 		move.w     d0,14(a7)
-		move.w     $00106FE4,d1
+		move.w     virt_desk+2,d1
 		cmp.w      12(a7),d1
 		ble.s      Awi_cleanup_23
 		bra.s      Awi_cleanup_24
@@ -4176,7 +4177,7 @@ Awi_iconify_6:
 		move.w     d1,28(a0)
 Awi_iconify_7:
 		tst.w      d3
-		beq        Awi_iconify_8
+		beq.w      Awi_iconify_8
 		jsr        Adr_unselect
 		moveq.l    #1,d3
 		bra.s      Awi_iconify_9

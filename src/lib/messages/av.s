@@ -567,6 +567,7 @@ xd4a4c:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+xd4a5c: /* unused */
 		dc.b $00
 		dc.b $00
 		dc.b $00

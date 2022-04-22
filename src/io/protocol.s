@@ -1,4 +1,5 @@
-
+		.text
+		
 prot_texte:
 		movem.l    d3-d4/a2-a6,-(a7)
 		subq.w     #2,a7
@@ -370,12 +371,13 @@ protocol_2:
 x97ecc:
 		dc.b '%-32s"'
 x97ed2:
-	dc.b 0
+		dc.b 0
 		dc.b $22
 		dc.w $5c00
-		dc.b '"',$0d,$0a
+		dc.b '"'
 x97ed7:
-	dc.b 0
+		dc.b $0d,$0a
+		dc.b 0
 x97eda:
 		dc.b $0d,$0a,$0d,$0a,0
 x97edf:

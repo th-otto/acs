@@ -116,7 +116,7 @@ del_data_1:
 
 new_work:
 		move.w     #$2724,d0
-		movea.l    $0009D01E,a1
+		movea.l    WI_DATA+90,a1
 		jsr        work_icon
 		rts
 

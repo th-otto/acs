@@ -233,7 +233,7 @@ Auo_wislider_37:
 		beq        Auo_wislider_19
 		move.w     d3,60(a2)
 		tst.w      d5
-		ble        Auo_wislider_19
+		ble.w      Auo_wislider_19
 		clr.w      -(a7)
 		clr.w      -(a7)
 		clr.w      -(a7)
