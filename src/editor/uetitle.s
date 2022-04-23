@@ -559,7 +559,7 @@ help_title:
 		dc.b 'Der Title-Editor',0
 title:
 		dc.b 'TITLE -',0
-		dc.b $00
+		.even
 A_3DBUTTON03:
 		dc.l A_3Dbutton
 		dc.w $29c1

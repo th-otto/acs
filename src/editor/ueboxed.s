@@ -931,7 +931,7 @@ PMT26:
 		dc.b '  max. 24 Stunden',0
 TEXT_005:
 		dc.b '  Datum             '
-		dc.w $0300
+		dc.b $03,0
 TEXT_009:
 		dc.b 'Abbruch',0
 TEXT_01:
@@ -976,7 +976,7 @@ TEXT_22:
 		dc.b 'rechts/',0
 TEXT_30:
 		dc.b '  Zahlen            '
-		dc.w $0300
+		dc.b $03,0
 TEXT_41:
 		dc.w $4f4b
 		dc.b $00
@@ -992,6 +992,7 @@ help_title:
 		dc.b 'Der BoxEdit-Editor',0
 title:
 		dc.b 'BOXEDIT -',0
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $09f1

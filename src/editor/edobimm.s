@@ -177,7 +177,7 @@ help_title:
 		dc.b 'Die Graphik-Zuordnung',0
 title:
 		dc.b ' BILD -',0
-		dc.b $00
+		.even
 TEDI_001:
 		dc.l TEXT_005
 		dc.l TEXT_002

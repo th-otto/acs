@@ -972,6 +972,7 @@ help_title:
 		dc.b 'Der Innerframe-Editor',0
 title:
 		dc.b 'INNERFRAME -',0
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $29c1

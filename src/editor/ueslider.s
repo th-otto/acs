@@ -402,7 +402,7 @@ help_title:
 		dc.b 'Der Slider-Editor',0
 title:
 		dc.b 'SLIDER -',0
-		dc.b $00
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $29f1

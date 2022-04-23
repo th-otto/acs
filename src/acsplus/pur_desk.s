@@ -1984,7 +1984,7 @@ TEXT_17:
 		dc.b '  Entfernen  ^D',0
 TEXT_18:
 		dc.b '  Wechseln   ^W',0
-		dc.b $00
+		.even
 DATAS_03:
 		dc.b $00
 		dc.b $00

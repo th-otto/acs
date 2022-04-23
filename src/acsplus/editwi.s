@@ -5527,8 +5527,7 @@ TEXT_006:
 TEXT_01:
 		dc.b 'RÅckwÑrts',0
 TEXT_013:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_018:
 		dc.b ' Suchen ',0
 TEXT_02:
@@ -5573,8 +5572,7 @@ TEXT_19:
 		dc.b '  Sichern         ^S',0
 TEXT_20:
 		dc.b '  Zum Klemmbrett   '
-		dc.w $015e
-		dc.w $4300
+		dc.b $01,$5e,$43,0
 TEXT_21:
 		dc.b '  Ersetzen...     ^R',0
 TEXT_22:
@@ -5589,9 +5587,7 @@ TEXT_26:
 		dc.b '  Zeile aussch.     ^Y',0
 TEXT_27:
 		dc.b '  Vom Klemmbrett   '
-		dc.b $01
-		dc.w $5e56
-		dc.b $00
+		dc.b $01,$5e,$56,0
 TEXT_28:
 		dc.b '  ôffnen...       ^O',0
 TEXT_29:
@@ -5610,20 +5606,17 @@ TEXT_35:
 		dc.b '  NÑchster        ^G',0
 TEXT_36:
 		dc.b '  Einstellungen...   '
-		dc.w $074f
-		dc.b $00
+		dc.b $07,$4f,0
 TEXT_37:
 		dc.b '  Zeichen tauschen  '
-		dc.b $07
-		dc.w $5400
+		dc.b $07,$54,0
 TEXT_38:
 		dc.b '  EinfÅgen          ^V',0
 TEXT_39:
 		dc.b 'Cursor:',0
 TEXT_40:
 		dc.b '  Schrift...         '
-		dc.w $0753
-		dc.b $00
+		dc.b $07,$53,0
 TEXT_41:
 		dc.b 'Control',0
 TEXT_42:
@@ -5632,21 +5625,17 @@ TEXT_43:
 		dc.b 'Umbruch:',0
 TEXT_44:
 		dc.b '  Block suchen  '
-		dc.w $0754
-		dc.w $4142
-		dc.b $00
+		dc.b $07,$54,$41,$42,0
 TEXT_45:
 		dc.b 'Balken|Strich|Block|Rahmen',0
 TEXT_46:
 		dc.b '  Umbrechen...       '
-		dc.b $07
-		dc.w $5500
+		dc.b $07,$55,0
 TEXT_47:
 		dc.b ' Funktionstaste ',0
 TEXT_48:
 		dc.b '  Funktionstasten... '
-		dc.w $0746
-		dc.b $00
+		dc.b $07,$46,0
 TEXT_49:
 		dc.b 'Taste:',0
 TEXT_50:
@@ -5654,8 +5643,7 @@ TEXT_50:
 TEXT_51:
 		dc.b 'Abbruch',0
 TEXT_52:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_53:
 		dc.b ' Bearbeiten ',0
 TEXT_54:
@@ -5684,7 +5672,7 @@ TEXT_66:
 		dc.b '  RÅckgÑngig      UNDO',0
 TEXT_67:
 		dc.b '  Alles auswÑhlen   ^A',0
-		dc.b $00
+		.even
 DATAS_01:
 		dc.b $00
 		dc.b $00
@@ -18076,13 +18064,11 @@ xc85fd:
 xc8601:
 		dc.b ' Neue Datei.',0
 xc860e:
-		dc.w $0d0a
-		dc.b $00
+		dc.b $0d,$0a,0
 xc8611:
 		dc.b '.$$$',0
 xc8616:
-		dc.w $2564
-		dc.b $00
+		dc.b '%d',0
 xc8619:
 		dc.b '%2d',0
 xc861d:

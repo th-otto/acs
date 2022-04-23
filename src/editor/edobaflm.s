@@ -816,6 +816,7 @@ title1:
 		dc.b ' STATUS -',0
 titlemore:
 		dc.b ' %d STATI -',0
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $29c1

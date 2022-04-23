@@ -13,6 +13,9 @@ acs.app
 .C[-I..\include]
 .C[-IC:\pc\include]
 
+; set this to 1 to remove the demo check
+.S[-DKILLDEMO=0]
+
 .C[ -A- ]		; no strict ANSI
 .C[ -C- ]		; no nested comments
 .C[ -T- ]		; no stack checking

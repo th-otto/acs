@@ -1135,8 +1135,7 @@ ABOUT:
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_006:
 		dc.b '1234567890123456789012345678901',0
 TEXT_008:
@@ -1149,8 +1148,7 @@ TEXT_010:
 		dc.b 'Lokal',0
 TEXT_02:
 		dc.b '  Scope...  '
-		dc.w $0743
-		dc.b $00
+		dc.b $07,$43,0
 TEXT_03:
 		dc.b '  Neu...    ^N',0
 TEXT_04:
@@ -1185,8 +1183,7 @@ TEXT_14:
 		dc.b ' Sichtbarkeit ',0
 TEXT_15:
 		dc.b '  Name...   '
-		dc.w $074e
-		dc.b $00
+		dc.b $07,$4e,0
 TEXT_170:
 		dc.b '  šber mich ...     ',0
 TEXT_171:
@@ -1295,7 +1292,7 @@ wi_list:
 		.globl wi_name
 wi_name:
 		dc.b 'FENSTER NAME',0
-		dc.b $00
+		.even
 TEDI_002:
 		dc.l TEXT_133
 		dc.l TEXT_002

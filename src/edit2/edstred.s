@@ -233,7 +233,7 @@ TEXT_01:
 		dc.b ' Text-Editor ',0
 TEXT_12:
 		dc.b 'TEXT',0
-		dc.b $00
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $29c1

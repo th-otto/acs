@@ -335,8 +335,7 @@ TEXT_06:
 TEXT_07:
 		dc.b ' Meldung ',0
 TEXT_08:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_09:
 		dc.b 'NKCC:',0
 TEXT_10:
@@ -355,7 +354,7 @@ TEXT_16:
 		dc.b 'Christian Felsch',0
 TEXT_222:
 		dc.b 'Stefan Bachert',0
-		dc.b $00
+		.even
 DATAS_01:
 		dc.b $00
 		dc.b $00

@@ -656,7 +656,7 @@ TEXT_05:
 		dc.b $00
 TEXT_06:
 		dc.b '100 %',0
-		dc.b $00
+		.even
 TEDINFO_02:
 		dc.l TEXT_01
 		dc.l TEXT_02

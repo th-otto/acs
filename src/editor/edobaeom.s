@@ -393,7 +393,7 @@ help_title:
 		dc.b 'Der AOBJECT-Editor',0
 title:
 		dc.b ' ERWEITERTE WERTE -',0
-		dc.b $00
+		.even
 TEDINFO_01:
 		dc.l TEXT_08
 		dc.l TEXT_09

@@ -1902,8 +1902,7 @@ STGUIDE_04:
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_006:
 		dc.b '1234567890123456789012345678901',0
 TEXT_01:
@@ -1920,7 +1919,7 @@ TEXT_03:
 		dc.b '  Objekt-Editor...',0
 TEXT_04:
 		dc.b '  Lerne Tasten       '
-		dc.w $074c
+		dc.b $07,$4c
 		dc.b $00
 TEXT_05:
 		dc.b '  Referenzen...',0
@@ -1944,7 +1943,7 @@ TEXT_089:
 		dc.b '  Entriegeln',0
 TEXT_09:
 		dc.b '  Test...            '
-		dc.w $0754
+		dc.b $07,$54
 		dc.b $00
 TEXT_090:
 		dc.b '  Rechts',0
@@ -1970,7 +1969,7 @@ TEXT_100:
 		dc.b '  FÅllen',0
 TEXT_11:
 		dc.b '  Sichtbarkeit    '
-		dc.w $0300
+		dc.b $03,0
 TEXT_13:
 		dc.b 'Ob_Y:',0
 TEXT_133:
@@ -1993,7 +1992,7 @@ TEXT_19:
 		dc.b '  Position...',0
 TEXT_20:
 		dc.b '  Ausrichtung     '
-		dc.w $0300
+		dc.b $03,0
 TEXT_21:
 		dc.b 'Ob_X:',0
 TEXT_22:
@@ -2014,7 +2013,7 @@ TEXT_27:
 		dc.b 'OBJEKTE',0
 TEXT_28:
 		dc.b '  Reihenfolge     '
-		dc.w $0300
+		dc.b $03,0
 TEXT_29:
 		dc.b 'Verriegeln',0
 TEXT_30:
@@ -2035,7 +2034,7 @@ TEXT_36:
 		dc.b 'nach Oben',0
 testmode:
 		dc.b ' TESTMODE -',0
-		dc.b $00
+		.even
 DATAS_01:
 		dc.b $00
 		dc.b $00

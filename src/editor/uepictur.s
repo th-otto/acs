@@ -403,7 +403,7 @@ help_title:
 		dc.b 'Der Picture-Editor',0
 title:
 		dc.b ' PICTURE -',0
-		dc.b $00
+		.even
 DATAS_01:
 		dc.b $00
 		dc.b $35

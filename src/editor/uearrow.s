@@ -892,6 +892,7 @@ help_title:
 		dc.b 'Der Arrows-Editor',0
 title:
 		dc.b 'PFEILE -',0
+		.even
 ARROW001:
 		dc.l A_arrows
 		dc.w $2251

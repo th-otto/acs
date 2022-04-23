@@ -2123,6 +2123,7 @@ _AL_STOP:
 		dc.b ' Stop ',0
 _AL_TIMER:
 		dc.b ' Meldung ',0
+		.even
 DATAS_07:
 		dc.w 0
 		dc.w 0

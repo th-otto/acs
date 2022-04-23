@@ -1723,13 +1723,13 @@ TEXT_43:
 TEXT_44:
 		dc.b 'Mover',0
 TEXT_45:
-		dc.w $0500
+		dc.b $05,0
 TEXT_46:
-		dc.w $0600
+		dc.b $06,0
 TEXT_47:
-		dc.w $0300
+		dc.b $03,0
 TEXT_48:
-		dc.w $0400
+		dc.b $04,0
 TEXT_49:
 		dc.b 'Iconify:',0
 TEXT_50:
@@ -1745,9 +1745,8 @@ TEXT_54:
 TEXT_55:
 		dc.b 'ST-Guide-Hilfe',0
 TEXT_56:
-		dc.b $fa
-		dc.b $00
-		dc.b $00
+		dc.b $fa,0
+		.even
 DATAS_27:
 		dc.b $00
 		dc.b $00

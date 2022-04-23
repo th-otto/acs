@@ -568,7 +568,7 @@ help_title:
 		dc.b 'Der Boxen-Editor',0
 title:
 		dc.b ' BOXEN -',0
-		dc.b $00
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $09f1

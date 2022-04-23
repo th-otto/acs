@@ -1245,9 +1245,13 @@ installdemo:
 		movem.l    a2-a4,-(a7)
 		lea.l      ACSblk,a2
 		lea.l      wdemo,a3
-		move.w     -2(a3),d0
+		move.w     runasdemo-wdemo(a3),d0
+		.IFNE KILLDEMO
+		bra.s      installdemo_1
+		.ELSE
 		beq.s      installdemo_1
-		clr.l      4(a3)
+		.ENDC
+		clr.l      stepper-wdemo(a3)
 		movea.l    (a2),a0
 		move.l     #demoabout,668(a0)
 		movea.l    (a2),a0
@@ -1498,12 +1502,12 @@ validate:
 		move.l     a3,-(a7)
 		lea.l      -12(a7),a7
 		lea.l      cfg,a2
-		move.l     -8(a2),d0
+		move.l     wdemo-cfg(a2),d0
 		bne.s      validate_1
 		lea.l      9030(a2),a0
 		movea.l    9038(a2),a1
 		jsr        (a1)
-		move.l     a0,-8(a2)
+		move.l     a0,wdemo-cfg(a2)
 		beq.s      validate_1
 		movea.l    ACSblk,a1
 		move.l     668(a1),oldabout
@@ -1511,7 +1515,11 @@ validate:
 		move.l     d0,timer1
 		move.l     d0,timer0
 validate_1:
-		move.w     #0x0001,-10(a2)
+		.IFNE KILLDEMO
+		move.w     #0x0000,runasdemo-cfg(a2)
+		.ELSE
+		move.w     #0x0001,runasdemo-cfg(a2)
+		.ENDC
 		move.b     1(a2),d0
 		beq.s      validate_2
 		lea.l      x79eb4,a3
@@ -1538,7 +1546,7 @@ validate_1:
 		jsr        Ast_cmp
 		tst.w      d0
 		bne.s      validate_2
-		clr.w      -10(a2)
+		clr.w      runasdemo-cfg(a2)
 validate_2:
 		bsr        installdemo
 		lea.l      12(a7),a7
@@ -2006,7 +2014,11 @@ regend:
 
 		.globl runasdemo
 runasdemo:
+		.IFNE KILLDEMO
+		dc.w 0
+		.ELSE
 		dc.w 1
+		.ENDC
 wdemo:
 		dc.l 0
 

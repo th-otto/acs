@@ -1560,7 +1560,7 @@ TEXT_006_2:
 		dc.b 'DATEN',0
 TEXT_01_2:
 		dc.b ' Data-Editor ',0
-		dc.b $00
+		.even
 DATAS_09:
 		dc.w $0000
 		dc.w $0000
