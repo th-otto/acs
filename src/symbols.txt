@@ -9196,7 +9196,7 @@
 000c2c54 D ListOfApps
 000c2c58 d copyright
 000c2c93 d _c_version
-000c2ca2 d compiler_date
+000c2ca1 d compiler_date
 000c2cad d lib_date
 000c2cf6 d ProtInit
 000c2cf8 d VdiInit

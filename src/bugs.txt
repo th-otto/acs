@@ -1,0 +1,7 @@
+ER_TRANS 9a797 missing zero
+COLOUR00 bb6ec missing zero
+COLOUR03 bb703 missing zero
+COLOUR14 bb778 missing zero
+HPOS_TEXT2 bb79d missing zero
+mf_name bf099 missing zero
+rf_name bf112 missing zero

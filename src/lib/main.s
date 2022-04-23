@@ -26049,9 +26049,8 @@ copyright:
 		dc.b '(c) 1991-2005 S.Bachert, O.Michalak & M.Els„sser ACS 3.0.0',0
 _c_version:
 		dc.b 'ACSpro V3.0.0',0
-		dc.b $46
 compiler_date:
-		dc.b 'eb  2 2005',0
+		dc.b 'Feb  2 2005',0
 lib_date:
 		dc.b $00
 		dc.b $00
