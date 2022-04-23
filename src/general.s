@@ -1,3 +1,7 @@
+		.include "country.inc"
+		
+		.text
+
 info:
 		movem.l    d3-d4/a2-a3,-(a7)
 		lea.l      -26(a7),a7
@@ -1092,7 +1096,7 @@ term:
 		movea.l    a0,a4
 		bra.s      term_4
 term_3:
-		lea.l      -93(a0),a4
+		lea.l      ERR_AMODIFIED-ERR_MODIFIED(a0),a4
 term_4:
 		moveq.l    #92,d0
 		movea.l    8(a3),a0
@@ -1316,6 +1320,7 @@ ACSinit_6:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 ERR_AMODIFIED:
 		dc.b '[2][ Die Datei ',$27,'%s',$27,' | wurde ver„ndert.| Wollen Sie diese speichern? ][ JA | Nein | Abbruch ]',0
 ERR_MODIFIED:
@@ -1379,6 +1384,76 @@ ttl_open:
 		dc.b 'ACS/RSC-Datei ”ffnen',0
 ttl_save:
 		dc.b 'ACS-Datei sichern',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+ERR_AMODIFIED:
+		dc.b '[2][ The file ',$27,'%s',$27,' | was modified. Do you | want to save it?][ Yes | No | Cancel ]',0
+ERR_MODIFIED:
+		dc.b '[2][ The file ',$27,'%s',$27,'| was modified. Do you | want to save it?][ Yes | No ]',0
+ERR_RENAME:
+		dc.b '[3][ The file ',$27,'%s',$27,' | could not be renamed | to ',$27,'.$$$',$27,'.][ Cancel ]',0
+STGUIDE_01:
+		dc.b 'Das Fenster "Generelles"',0
+TEXT_002:
+		dc.b $00
+TEXT_004:
+		dc.b '12345678901234567890123456789012',0
+TEXT_01:
+		dc.b 'ALERT-BOX',0
+TEXT_03:
+		dc.b 'DATAS',0
+TEXT_04:
+		dc.b 'ICONS',0
+TEXT_05:
+		dc.b 'PICTURES',0
+TEXT_06:
+		dc.b 'MOUSES',0
+TEXT_069:
+		dc.b 'File: ',0
+TEXT_07:
+		dc.b 'OBJECTS',0
+TEXT_08:
+		dc.b 'PALETTE',0
+TEXT_082:
+		dc.b '123456789012',0
+TEXT_09:
+		dc.b 'POPUP',0
+TEXT_10:
+		dc.b 'MAINMODUL',0
+TEXT_11:
+		dc.b 'TEXTS',0
+TEXT_12:
+		dc.b 'TEDINFO',0
+TEXT_13:
+		dc.b 'USER-BLOCK',0
+TEXT_133:
+		dc.b '123456',0
+TEXT_14:
+		dc.b 'WINDOW',0
+TEXT_15:
+		dc.b ' Information ',0
+TEXT_190:
+		dc.b 'Size:',0
+TEXT_195:
+		dc.b 'Objects:',0
+TEXT_207:
+		dc.b 'MENUS',0
+TEXT_33:
+		dc.b 'PROPERTIES',0
+TEXT_35:
+		dc.b 'REFERENCE',0
+_WGTITEL:
+		dc.b ' General ',0
+		dc.b $00
+		dc.b $00
+		dc.b $00
+ttl_open:
+		dc.b 'Open ACS/RSC-file',0
+ttl_save:
+		dc.b 'Save ACS-file',0
+		.ENDC
+
 		.even
 DATAS_01:
 		dc.w $0000
