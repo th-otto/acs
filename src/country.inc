@@ -1,0 +1,2 @@
+	COUNTRY_US equ 0
+	COUNTRY_DE equ 1

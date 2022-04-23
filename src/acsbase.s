@@ -1,3 +1,5 @@
+		.include "country.inc"
+
 		.text
 
 switch_opt:
@@ -1004,7 +1006,7 @@ reg_me:
 		jsr        Auo_boxed
 		lea.l      x79eb4,a3
 		lea.l      256(a7),a4
-		lea.l      1032(a3),a1
+		lea.l      x7a2bc-x79eb4(a3),a1
 		move.l     a1,-(a7)
 		movea.l    (a2),a1
 		lea.l      158(a1),a1
@@ -1024,9 +1026,9 @@ reg_me:
 		movea.l    388(a7),a1
 		move.b     (a1),d0
 		beq        reg_me_1
-		pea.l      1041(a3)
+		pea.l      x7a2c5-x79eb4(a3)
 		movea.l    a4,a1
-		lea.l      1045(a3),a0
+		lea.l      x7a2c9-x79eb4(a3),a0
 		jsr        Af_select
 		addq.w     #4,a7
 		move.l     a0,d0
@@ -1095,10 +1097,10 @@ reg_me_7:
 		jsr        Fseek
 		lea.l      (a7),a0
 		move.l     a0,-(a7)
-		pea.l      36(a3)
-		pea.l      36(a3)
-		pea.l      1063(a3)
-		lea.l      1054(a3),a1
+		pea.l      x79ed8-x79eb4(a3)
+		pea.l      x79ed8-x79eb4(a3)
+		pea.l      x7a2db-x79eb4(a3)
+		lea.l      x7a2d2-x79eb4(a3),a1
 		jsr        sprintf
 		lea.l      12(a7),a7
 		move.w     d0,d1
@@ -1113,7 +1115,7 @@ reg_me_7:
 		lea.l      (a7),a0
 		move.l     a0,-(a7)
 		move.l     404(a7),-(a7)
-		lea.l      1065(a3),a1
+		lea.l      x7a2dd-x79eb4(a3),a1
 		jsr        sprintf
 		addq.w     #4,a7
 		move.w     d0,d1
@@ -1128,7 +1130,7 @@ reg_me_7:
 		lea.l      (a7),a0
 		move.l     a0,-(a7)
 		move.l     400(a7),-(a7)
-		lea.l      1065(a3),a1
+		lea.l      x7a2dd-x79eb4(a3),a1
 		jsr        sprintf
 		addq.w     #4,a7
 		move.w     d0,d1
@@ -1143,7 +1145,7 @@ reg_me_7:
 		lea.l      (a7),a0
 		move.l     a0,-(a7)
 		move.l     396(a7),-(a7)
-		lea.l      1065(a3),a1
+		lea.l      x7a2dd-x79eb4(a3),a1
 		jsr        sprintf
 		addq.w     #4,a7
 		move.w     d0,d1
@@ -1158,7 +1160,7 @@ reg_me_7:
 		lea.l      (a7),a0
 		move.l     a0,-(a7)
 		move.l     392(a7),-(a7)
-		lea.l      1065(a3),a1
+		lea.l      x7a2dd-x79eb4(a3),a1
 		jsr        sprintf
 		addq.w     #4,a7
 		move.w     d0,d1
@@ -1176,7 +1178,7 @@ reg_me_7:
 		lea.l      (a7),a0
 		move.l     a0,-(a7)
 		move.l     388(a7),-(a7)
-		lea.l      1065(a3),a1
+		lea.l      x7a2dd-x79eb4(a3),a1
 		jsr        sprintf
 		addq.w     #4,a7
 		move.w     d0,d1
@@ -1189,7 +1191,7 @@ reg_me_8:
 		lea.l      (a7),a0
 		move.l     a0,-(a7)
 		pea.l      (a3)
-		lea.l      1065(a3),a1
+		lea.l      x7a2dd-x79eb4(a3),a1
 		jsr        sprintf
 		addq.w     #4,a7
 		move.w     d0,d1
@@ -1216,8 +1218,8 @@ acs_register:
 		movea.l    a0,a3
 		move.l     a3,d0
 		beq.s      acs_register_1
-		lea.l      -4160(a2),a1
-		movea.l    20(a3),a0
+		lea.l      rkind0-WI_REGISTER(a2),a1
+		movea.l    x79ec8-x79eb4(a3),a0
 		moveq.l    #23,d0
 		jsr        Aob_puttext
 		movea.l    a3,a0
@@ -1524,7 +1526,7 @@ validate_1:
 		beq.s      validate_2
 		lea.l      x79eb4,a3
 		moveq.l    #5,d0
-		lea.l      1146(a3),a1
+		lea.l      x7a32e-x79eb4(a3),a1
 		lea.l      129(a2),a0
 		jsr        strncmp
 		tst.w      d0
@@ -1532,12 +1534,12 @@ validate_1:
 		pea.l      (a7)
 		pea.l      129(a2)
 		pea.l      1(a2)
-		pea.l      1161(a3)
-		pea.l      36(a3)
-		pea.l      1063(a3)
-		lea.l      83(a3),a1
+		pea.l      x7a33d-x79eb4(a3)
+		pea.l      x79ed8-x79eb4(a3)
+		pea.l      x7a2db-x79eb4(a3)
+		lea.l      x79f07-x79eb4(a3),a1
 		clr.w      d1
-		lea.l      1152(a3),a0
+		lea.l      x7a334-x79eb4(a3),a0
 		clr.w      d0
 		bsr        ComputeKey
 		lea.l      24(a7),a7
@@ -1564,11 +1566,11 @@ demo_init:
 		ble.s      demo_init_1
 		jsr        Ash_gettimer
 		move.l     d0,(a3)
-		sub.l      -4(a3),d0
+		sub.l      timer0-timer1(a3),d0
 		moveq.l    #50,d1
 		cmp.l      d0,d1
 		bgt.s      demo_init_2
-		move.l     (a3),-4(a3)
+		move.l     (a3),timer0-timer1(a3)
 		addq.l     #4,stepper
 		lea.l      36(a2),a1
 		movea.l    a2,a0
@@ -1578,7 +1580,7 @@ demo_init:
 demo_init_1:
 		moveq.l    #0,d0
 		move.l     d0,(a3)
-		move.l     d0,-4(a3)
+		move.l     d0,timer0-timer1(a3)
 demo_init_2:
 		clr.w      d0
 		movem.l    (a7)+,a2-a4
@@ -1642,7 +1644,7 @@ ScrollServ_8:
 		move.w     d0,d4
 		move.b     32(a7),d1
 		beq.s      ScrollServ_5
-		lea.l      1163(a4),a1
+		lea.l      x7a33f-x79eb4(a4),a1
 		move.l     a1,-(a7)
 		lea.l      4(a7),a0
 		jsr        strupr
@@ -1650,7 +1652,7 @@ ScrollServ_8:
 		jsr        strstr
 		move.l     a0,d0
 		bne.s      ScrollServ_6
-		lea.l      1169(a4),a1
+		lea.l      x7a345-x79eb4(a4),a1
 		lea.l      (a7),a0
 		jsr        strstr
 		move.l     a0,d0
@@ -1862,16 +1864,16 @@ ScrollDemo_6:
 		lsl.w      #5,d0
 		add.w      16(a3),d0
 		ext.l      d0
-		move.l     -9520(a6),d1
+		move.l     stepper-demotext(a6),d1
 		cmp.l      d0,d1
 		ble.s      ScrollDemo_10
-		clr.l      -9520(a6)
+		clr.l      stepper-demotext(a6)
 ScrollDemo_10:
 		move.w     12(a3),d4
 		add.w      16(a3),d4
 		movea.l    (a2),a0
 		sub.w      20(a0),d4
-		sub.w      -9518(a6),d4
+		sub.w      stepper+2-demotext(a6),d4
 		clr.w      d5
 		bra        ScrollDemo_11
 ScrollDemo_16:
@@ -2051,6 +2053,8 @@ copyindex:
 	.globl refimages
 refimages:
 		dc.w 1
+		
+		.IFEQ COUNTRY-COUNTRY_DE
 A_DEMO:
 		dc.b '[4][ Dies ist eine Demoversion, | in der alle Funktionen| nutzbar sind, die jedoch | nur zwei Objekte in einer| Objektliste anlegen kann.][   OK   ]',0
 ERR_WICLOSE:
@@ -2236,7 +2240,198 @@ rkind1:
 		dc.b '  öberweisung',0
 rkind2:
 		dc.b '  Nachnahme',0
-		dc.b 0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+A_DEMO:
+		dc.b '[1][Alarmbox][ OK ]',0
+ERR_WICLOSE:
+		dc.b '[3][ This window cannot | be deleted.][  OK  ]',0
+BUBBLE_01:
+		dc.b 'Please enter your name.',0
+BUBBLE_02:
+		dc.b 'Please enter your serial number.',0
+BUBBLE_03:
+		dc.b 'Please enter your personal key for this ACS version.',0
+BUBBLE_04:
+		dc.b 'Please enter the name of your help accessory.',0
+BUBBLE_05:
+		dc.b 'The preferences are saved for the next start of the ACS-GUI-Editor.',0
+BUBBLE_06:
+		dc.b 'Please enter your name.',0
+BUBBLE_07:
+		dc.b 'Objects lock when moving or sizing in char positions.',0
+BUBBLE_08:
+		dc.b 'Copy the labels when object trees are copied.',0
+BUBBLE_09:
+		dc.b 'Copy the image data or when the object is copied in the same ACS file. Otherwise the data is only referenced.',0
+BUBBLE_10:
+		dc.b 'Autosave the config file of the ACS-GUI-Editor when terminating the GUI-Editor.',0
+BUBBLE_11:
+		dc.b 'During saving the editor windows remain opend (see online help for further inormation).',0
+BUBBLE_12:
+		dc.b 'The windows with the parts is moved when the window of the object tree is moved.',0
+BUBBLE_13:
+		dc.b 'This is the value of the raster for snapping.',0
+DEMOT01:
+		dc.b '*Welcome to ACSpro V3.0.0',0
+DEMOT02:
+		dc.b ' ',0
+DEMOT03:
+		dc.b 'This development-tool is an',0
+DEMOT04:
+		dc.b 'interactive application-builder',0
+DEMOT05:
+		dc.b 'and a well-suited library of',0
+DEMOT06:
+		dc.b 'useful and highly stable',0
+DEMOT07:
+		dc.b 'routines which helps you to design',0
+DEMOT08:
+		dc.b 'clean gem-applications rapidly.',0
+DEMOT09:
+		dc.b $00
+DEMOT10:
+		dc.b 'This release limits the amount',0
+DEMOT11:
+		dc.b 'within one object-list to two',0
+DEMOT12:
+		dc.b 'objects.',0
+DEMOT13:
+		dc.b $00
+DEMOT14:
+		dc.b 'In Order to obtain the full Version',0
+DEMOT15:
+		dc.b 'of ACSpro send your registration to:',0
+DEMOT16:
+		dc.b $00
+DEMOT17:
+		dc.b '*Martin ElsÑsser',0
+DEMOT18:
+		dc.b '*GartenÑcker 30',0
+DEMOT19:
+		dc.b '*D - 86938 Schondorf a.A.',0
+DEMOT20:
+		dc.b '*Germany',0
+DEMOT21:
+		dc.b $00
+DEMOT22:
+		dc.b 'or via email to:',0
+DEMOT23:
+		dc.b $00
+DEMOT24:
+		dc.b '*acspro@melsaesser.de',0
+DEMOT25:
+		dc.b $00
+DEMOT26:
+		dc.b 'The latest versions of ACSpro',0
+DEMOT27:
+		dc.b 'can always be found on my',0
+DEMOT28:
+		dc.b 'internet-site at:',0
+DEMOT29:
+		dc.b $00
+DEMOT30:
+		dc.b '*http://acspro.atari.org/',0
+DEMOT31:
+		dc.b $00
+DEMOT32:
+		dc.b 'Best regards ...      Martin ElsÑsser',0
+STGUIDE_01:
+		dc.b 'Die Einstellungen',0
+TEXT_002:
+		dc.b $00
+TEXT_005:
+		dc.b 'Save',0
+TEXT_01:
+		dc.b 'Imagegrid:',0
+TEXT_02:
+		dc.b 'fast saving    ',0
+TEXT_03:
+		dc.b ' Options ',0
+TEXT_04:
+		dc.b '.ACC',0
+TEXT_05:
+		dc.b 'Help:',0
+TEXT_06:
+		dc.b ' Information ',0
+TEXT_07:
+		dc.b 'glue toolbox-window   ',0
+TEXT_08:
+		dc.b 'Registration:',0
+TEXT_09:
+		dc.b 'Name:',0
+TEXT_10:
+		dc.b 'Serialnumber:',0
+TEXT_11:
+		dc.b '      Key:',0
+TEXT_12:
+		dc.b 'Reaction:',0
+TEXT_13:
+		dc.b ' Information ',0
+TEXT_14:
+		dc.b ' Window Info ',0
+TEXT_15:
+		dc.b 'Please register for ACSpro in order to remove the restrictions of two objects within one object-list.',0
+TEXT_16:
+		dc.b 'save registration...',0
+TEXT_17:
+		dc.b 'Name:',0
+TEXT_18:
+		dc.b 'Street:',0
+TEXT_19:
+		dc.b 'Town:',0
+TEXT_20:
+		dc.b 'Country:',0
+TEXT_21:
+		dc.b '   Payment:',0
+TEXT_218:
+		dc.b 'grid for objects ',0
+TEXT_22:
+		dc.b 'ST-GUIDE',0
+TEXT_220:
+		dc.b 'copy index   ',0
+TEXT_23:
+		dc.b 'Name',0
+TEXT_24:
+		dc.b 'Serial Number',0
+TEXT_25:
+		dc.b 'Key',0
+TEXT_26:
+		dc.b '$/delivery:',0
+TEXT_260:
+		dc.b 'This icon represents general parameters of the ACS-Builder.',0
+TEXT_265:
+		dc.b 'copy image-data ',0
+TEXT_27:
+		dc.b 'within or     ',0
+TEXT_28:
+		dc.b 'outside of germany.    ',0
+TEXT_29:
+		dc.b $33
+		dc.w $4400
+TEXT_30:
+		dc.b 'EMail:',0
+TEXT_31:
+		dc.b $33
+		dc.w $4400
+TEXT_32:
+		dc.b 'Titel',0
+TEXT_325:
+		dc.b 'autosave files     ',0
+TEXT_33:
+		dc.b 'PREFERENCES',0
+proto_winame:
+		dc.b ' Notice ',0
+rkind0:
+		dc.b '  cheque',0
+rkind1:
+		dc.b '  money order',0
+rkind2:
+		dc.b '  $/delivery',0
+		.ENDC
+
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w 0x2011
@@ -4269,59 +4464,224 @@ x79ea8:
 		dc.l rkind1
 		dc.l rkind2
 
-x79eb4:                          dc.b 0x00
-x79eb5:                          dc.b $09,'An',0
-x79eb9:                          dc.b $09,'Martin ElsÑsser',0
-x79eca:                          dc.b $09,'GartenÑcker 30',0
-x79eda:                          dc.b $09,'D - 86938 Schondorf a.A.',0
-x79ef4:                           dc.b $09,'Registrierung von ACSpro',0
-x79f0e:                           dc.b $09,'Hiermit beantrage ich die Registrierung von ACSpro Version ##### mit',0
-x79f54:                           dc.b $09,'folgenden Daten:',0
-x79f66:                           dc.b $09,'  Name: 123456789012345678901234567890123456789012345678901234567890',0
-x79fac:                           dc.b $09,'Straûe: 123456789012345678901234567890123456789012345678901234567890',0
-x79ff2:                           dc.b $09,'   Ort: 123456789012345678901234567890123456789012345678901234567890',0
-x7a038:                           dc.b $09,'  Land: 123456789012345678901234567890123456789012345678901234567890',0
-x7a07e:                           dc.b $09,' EMail: 123456789012345678901234567890123456789012345678901234567890',0
-x7a0c4:                           dc.b $09,'Die Zahlung erfolgt per beiliegendem Scheck Åber 50,- EUR.',0
-x7a100:                           dc.b $09,'Den Betrag von 50,- EUR Åberweise ich vorab - unter Angabe obigen Namens -',0
-x7a14c:                           dc.b $09,'auf das Konto:',0
-x7a15c:                           dc.b $09,$09,'Martin ElsÑsser',0
-x7a16e:                           dc.b $09,$09,'Postbank MÅnchen',0
-x7a181:                           dc.b $09,$09,'Kto: 1196 34 - 804',0
-x7a196:                           dc.b $09,$09,'BLZ: 700 100 80',0
-x7a1a8:                           dc.b $09,'Ich zahle den Betrag von 53,- DM per Inland-Nachnahme.',0
-x7a1e0:                           dc.b $09,'Ich zahle den Betrag von 63,- DM per Ausland-Nachnahme.',0
-x7a219:                           dc.b $09,'Durch Angabe meiner EMail-Adresse erhalte ich die Registrierdaten',0
-x7a25c:                           dc.b $09,'an meine oben angegebenen EMail-Adresse gesendet.',0
-x7a28f:                           dc.b $09,'Datum:',0
-x7a297:                           dc.b $09,'Unterschrift:',0
-x7a2a6:                           dc.b 'AC'
-x7a2a8:                           dc.b 'S',0
-x7a2aa:                           dc.w $2564
-x7a2ac:                           dc.b $00
-x7a2ad:                           dc.b $43
-x7a2ae:                           dc.b $00
-x7a2af:                           dc.b 'PAS',0
-x7a2b3:                           dc.b 'ACS',0
-x7a2b7:                           dc.b '%s',$0d,$0a,0
-x7a2bc:                           dc.b 'register.txt',0
-x7a2c9:                           dc.b 'Textname',0
-x7a2d2:                           dc.b '%s.%s.%s',0
-x7a2db:                           dc.b $33
-x7a2dc:                           dc.b $00
-x7a2dd:                           dc.b '%-60s',$0d,$0a,0
-x7a2e5:                           dc.b 'Plattform: ',0
-x7a2f1:                           dc.b ' Programm: ',0
-x7a2fd:                           dc.b ' Version ',0
-x7a307:                           dc.b ' Seriennummer: ',0
-x7a317:                           dc.b ' UserName: ',0
-x7a323:                           dc.b '          ',0
-x7a32e:                           dc.b '00121',0
-x7a334:                           dc.b 'Atari ST',0
-x7a33d:                           dc.b $78
-x7a33e:                           dc.b $00
-x7a33f:                           dc.b 'TIMES',0
-x7a345:                           dc.b 'DUTCH',0
+	
+		.IFEQ COUNTRY-COUNTRY_DE
+x79eb4:
+                          dc.b 0
+x79eb5:
+                          dc.b $09,'An',0
+x79eb9:
+                          dc.b $09,'Martin ElsÑsse'
+x79ec8:
+                          dc.b 'r',0
+x79eca:
+                          dc.b $09,'GartenÑcker 3'
+x79ed8:
+		dc.b '0',0
+x79eda:
+                          dc.b $09,'D - 86938 Schondorf a.A.',0
+x79ef4:
+                           dc.b $09,'Registrierung von '
+x79f07:
+		dc.b 'ACSpro',0
+x79f0e:
+                           dc.b $09,'Hiermit beantrage ich die Registrierung von ACSpro Version ##### mit',0
+x79f54:
+                           dc.b $09,'folgenden Daten:',0
+x79f66:
+                           dc.b $09,'  Name: 123456789012345678901234567890123456789012345678901234567890',0
+x79fac:
+                           dc.b $09,'Straûe: 123456789012345678901234567890123456789012345678901234567890',0
+x79ff2:
+                           dc.b $09,'   Ort: 123456789012345678901234567890123456789012345678901234567890',0
+x7a038:
+                           dc.b $09,'  Land: 123456789012345678901234567890123456789012345678901234567890',0
+x7a07e:
+                           dc.b $09,' EMail: 123456789012345678901234567890123456789012345678901234567890',0
+x7a0c4:
+                           dc.b $09,'Die Zahlung erfolgt per beiliegendem Scheck Åber 50,- EUR.',0
+x7a100:
+                           dc.b $09,'Den Betrag von 50,- EUR Åberweise ich vorab - unter Angabe obigen Namens -',0
+x7a14c:
+                           dc.b $09,'auf das Konto:',0
+x7a15c:
+                           dc.b $09,$09,'Martin ElsÑsser',0
+x7a16e:
+                           dc.b $09,$09,'Postbank MÅnchen',0
+x7a181:
+                           dc.b $09,$09,'Kto: 1196 34 - 804',0
+x7a196:
+                           dc.b $09,$09,'BLZ: 700 100 80',0
+x7a1a8:
+                           dc.b $09,'Ich zahle den Betrag von 53,- DM per Inland-Nachnahme.',0
+x7a1e0:
+                           dc.b $09,'Ich zahle den Betrag von 63,- DM per Ausland-Nachnahme.',0
+x7a219:
+                           dc.b $09,'Durch Angabe meiner EMail-Adresse erhalte ich die Registrierdaten',0
+x7a25c:
+                           dc.b $09,'an meine oben angegebenen EMail-Adresse gesendet.',0
+x7a28f:
+                           dc.b $09,'Datum:',0
+x7a297:
+                           dc.b $09,'Unterschrift:',0
+x7a2a6:
+                           dc.b 'AC'
+x7a2a8:
+                           dc.b 'S',0
+x7a2aa:
+                           dc.b '%d',0
+x7a2ad:
+                           dc.b 'C',0
+x7a2af:
+                           dc.b 'PAS',0
+x7a2b3:
+                           dc.b 'ACS',0
+x7a2b7:
+                           dc.b '%s',$0d,$0a,0
+x7a2bc:
+                           dc.b 'register.'
+x7a2c5:
+                           dc.b 'txt',0
+x7a2c9:
+                           dc.b 'Textname',0
+x7a2d2:
+                           dc.b '%s.%s.%s',0
+x7a2db:
+                           dc.b '3',0
+x7a2dd:
+                           dc.b '%-60s',$0d,$0a,0
+x7a2e5:
+                           dc.b 'Plattform: ',0
+x7a2f1:
+                           dc.b ' Programm: ',0
+x7a2fd:
+                           dc.b ' Version ',0
+x7a307:
+                           dc.b ' Seriennummer: ',0
+x7a317:
+                           dc.b ' UserName: ',0
+x7a323:
+                           dc.b '          ',0
+x7a32e:
+                           dc.b '00121',0
+x7a334:
+                           dc.b 'Atari ST',0
+x7a33d:
+                           dc.b 'x',0
+x7a33f:
+                           dc.b 'TIMES',0
+x7a345:
+                           dc.b 'DUTCH',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+x79eb4:
+		dc.b 0
+x79eb5:
+		dc.b $09,'An',0
+x79eb9:
+		dc.b $09,'Martin ElsÑsse'
+x79ec8:
+		dc.b 'r',0
+x79eca:
+		dc.b $09,'GartenÑcker 3'
+x79ed8:
+		dc.b '0',0
+x79eda:
+		dc.b $09,'D - 86938 Schondorf a.A.',0
+x79ef4:
+		dc.b $09,'Registrierung von ACSpro',0
+x79f0e:
+		dc.b $09,'Hiermit beantrage ich die Registrierung von ACSpro Version ##### mit',0
+x79f54:
+		dc.b $09,'folgenden Daten:',0
+x79f66:
+		dc.b $09,'  Name: 123456789012345678901234567890123456789012345678901234567890',0
+x79fac:
+		dc.b $09,'Straûe: 123456789012345678901234567890123456789012345678901234567890',0
+x79ff2:
+		dc.b $09,'   Ort: 123456789012345678901234567890123456789012345678901234567890',0
+x7a038:
+		dc.b $09,'  Land: 123456789012345678901234567890123456789012345678901234567890',0
+x7a07e:
+		dc.b $09,' EMail: 123456789012345678901234567890123456789012345678901234567890',0
+x7a0c4:
+		dc.b $09,'Die Zahlung erfolgt per beiliegendem Scheck Åber 50,- EUR.',0
+x7a100:
+		dc.b $09,'Den Betrag von 50,- EUR Åberweise ich vorab - unter Angabe obigen Namens -',0
+x7a14c:
+		dc.b $09,'auf das Konto:',0
+x7a15c:
+		dc.b $09,$09,'Martin ElsÑsser',0
+x7a16e:
+		dc.b $09,$09,'Postbank MÅnchen',0
+x7a181:
+		dc.b $09,$09,'Kto: 1196 34 - 804',0
+x7a196:
+		dc.b $09,$09,'BLZ: 700 100 80',0
+x7a1a8:
+		dc.b $09,'Ich zahle den Betrag von 53,- DM per Inland-Nachnahme.',0
+x7a1e0:
+		dc.b $09,'Ich zahle den Betrag von 63,- DM per Ausland-Nachnahme.',0
+x7a219:
+		dc.b $09,'Durch Angabe meiner EMail-Adresse erhalte ich die Registrierdaten',0
+x7a25c:
+		dc.b $09,'an meine oben angegebenen EMail-Adresse gesendet.',0
+x7a28f:
+		dc.b $09,'Datum:',0
+x7a297:
+		dc.b $09,'Unterschrift:',0
+x7a2a6:
+		dc.b 'AC'
+x7a2a8:
+		dc.b 'S',0
+x7a2aa:
+		dc.b '%d',0
+x7a2ad:
+		dc.b 'C',0
+x7a2af:
+		dc.b 'PAS',0
+x7a2b3:
+		dc.b 'ACS',0
+x7a2b7:
+		dc.b '%s',$0d,$0a,0
+x7a2bc:
+		dc.b 'register.'
+x7a2c5:
+		dc.b 'txt',0
+x7a2c9:
+		dc.b 'Textname',0
+x7a2d2:
+		dc.b '%s.%s.%s',0
+x7a2db:
+		dc.b '3',0
+x7a2dd:
+		dc.b '%-60s',$0d,$0a,0
+x7a2e5:
+		dc.b 'Plattform: ',0
+x7a2f1:
+		dc.b ' Programm: ',0
+x7a2fd:
+		dc.b ' Version ',0
+x7a307:
+		dc.b ' Seriennummer: ',0
+x7a317:
+		dc.b ' UserName: ',0
+x7a323:
+		dc.b '          ',0
+x7a32e:
+		dc.b '00121',0
+x7a334:
+		dc.b 'Atari ST',0
+x7a33d:
+		dc.b 'x',0
+x7a33f:
+		dc.b 'TIMES',0
+x7a345:
+		dc.b 'DUTCH',0
+
+		.ENDC
+
 		.even
 
 	.bss
