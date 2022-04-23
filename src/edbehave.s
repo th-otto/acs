@@ -1,3 +1,5 @@
+		.include "country.inc"
+
 		.text
 
 edbh_wi:
@@ -1835,6 +1837,7 @@ edmm_cancel:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 A_DELMESS:
 		dc.b '[2][ Sollen die Applikations-| Meldungen gel”scht werden, | die als Hauptmodul gltig| waren?][ Ja | Nein | Abbruch ]',0
 _A_COLREZ:
@@ -2123,6 +2126,301 @@ _AL_STOP:
 		dc.b ' Stop ',0
 _AL_TIMER:
 		dc.b ' Meldung ',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+A_DELMESS:
+		dc.b '[1][ Do you want to delete the | general messages, which are | used in your application | in main-module-mode?][ OK | Cancel ]',0
+_A_COLREZ:
+		dc.b '[1][ Wrong number of colors | on this screen!][ Cancel ]',0
+_A_CREATE_IO:
+		dc.b '[1][ Cannot create | this file.][ Cancel ]',0
+_A_CREATE_STR:
+		dc.b '[3][ Cannot create file | ',$27,'%s',$27,'!][ Cancel ]',0
+_A_DEFECTIVE_MEM:
+		dc.b '[1][ You accessed | foreign memory! ][ Cancel ]',0
+_A_ERR_ACC:
+		dc.b '[2][ | Do you want to load| >>               << | as a acessory?| ][ Yes | No ]',0
+_A_ERR_MESS:
+		dc.b '[2][ Unknown GEM-message| received.| ID = ',$27,'%s',$27,'| Continue displaying?][ Yes | No ]',0
+_A_ERR_WINDOW:
+		dc.b '[3][ No more free window-slots | available. Please close an | open GEM-Window.][  OK  ]',0
+_A_ERR_WISLOT:
+		dc.b '[3][ No more free ACS-window-slot | available, please delete an | ACS-window.][  OK  ]',0
+_A_GENERAL:
+		dc.b '[3][ A general error occured. ][ Cancel ]',0
+_A_GENERAL_STR:
+		dc.b '[1][ A general error occured:| %s][ Cancel ]',0
+_A_GEN_IO:
+		dc.b '[1][ A general i/o-error| occured.][ Cancel ]',0
+_A_GEN_MEM:
+		dc.b '[1][ An error within the | memory-management occurs. ][ Cancel ]',0
+_A_GEN_MOD:
+		dc.b '[1][ The module cannot | be loaded.][ Cancel ]',0
+_A_GEN_MOD_STR:
+		dc.b '[1][ The module ',$27,'%s',$27,'| cannot be loaded.][ Cancel ]',0
+_A_LOAD_MOD:
+		dc.b '[1][ An error occured while | loading the module with | Pexec-3.][ Cancel ]',0
+_A_LOAD_MOD_STR:
+		dc.b '[1][ An error occured while | loading the module | ',$27,'%s',$27,'.][ Cancel ]',0
+_A_MEM_MOD:
+		dc.b '[1][ The memory following the | module could not be freed.][ Cancel ]',0
+_A_MEM_MOD_STR:
+		dc.b '[1][ The memory, following the | module ',$27,'%s',$27,',| could not be freed.][ Cancel ]',0
+_A_ODD_MEM:
+		dc.b '[1][ The adress of a memory-| block is odd.][ Cancel ]',0
+_A_OPEN_IO:
+		dc.b '[1][ A file could not| be opened.][ Cancel ]',0
+_A_OPEN_STR:
+		dc.b '[1][ The file ',$27,'%s',$27,' | could not be opened.][ Cancel ]',0
+_A_OUT_OF_MEM:
+		dc.b '[1][ Not enough| memory aviable.][ Cancel ]',0
+_A_PORT:
+		dc.b '[1][ An error occured | on a i/o-channel.][ Cancel ]',0
+_A_RANGE_MEM:
+		dc.b '[1][ The memory-block is| out of the legal ranges.][ Cancel ]',0
+_A_READ_IO:
+		dc.b '[1][ An error occured while | reading from a file.][ Cancel ]',0
+_A_READ_STR:
+		dc.b '[1][ An error occured while | reading from the file| ',$27,'%s',$27,'.][ Cancel ]',0
+_A_VER_MOD:
+		dc.b '[1][ Wrong version-number | of the module.][ Cancel ]',0
+_A_VER_MOD_STR:
+		dc.b '[1][ Wrong version-number of | module ',$27,'%s',$27,'.][ Cancel ]',0
+_A_WRITE_IO:
+		dc.b '[1][ An error occured while | writing into a file. ][ Cancel ]',0
+_A_WRITE_STR:
+		dc.b '[1][ An error occured while | writing into the file| ',$27,'%s',$27,'.][ Cancel ]',0
+BUBBLE_01:
+		dc.b 'The changes are accepted an override the old values.',0
+BUBBLE_02:
+		dc.b 'The changes are lost, the old values remain.',0
+BUBBLE_03:
+		dc.b 'This Modul is the Main-Modul.',0
+BUBBLE_04:
+		dc.b 'Initialize the OLGA protocol when starting. When not running the OLGA-Manager is started.',0
+BUBBLE_05:
+		dc.b 'When starting the OLGA-Manager wait for the manager to be ready. The start of the application is retarded.',0
+BUBBLE_06:
+		dc.b 'Initialize the GEMScript-Protocol when starting?',0
+BUBBLE_07:
+		dc.b 'Initialize BubbleGEM when starting? BubleGEM will be started when not running.',0
+BUBBLE_08:
+		dc.b 'Switch the 3D-Modus on/off. This can be changed during runtime.',0
+BUBBLE_09:
+		dc.b 'Center modal (window-)dialoges. This can be changed during runtime.',0
+BUBBLE_10:
+		dc.b 'Acustic signal for errors. This can be changed during runtime.',0
+BUBBLE_11:
+		dc.b 'Load GDOS fonts at startup.',0
+BUBBLE_12:
+		dc.b 'Send a keypress first to the main menu and second to the window dialoge. This can be changed during runtime.',0
+BUBBLE_13:
+		dc.b 'Hide the mouse pointer when a keypress is reported. This can be changed during runtime.',0
+BUBBLE_14:
+		dc.b 'Open window menus on mouse clicks. Otherwise they are opend when touching them. This can be changed during runtime.',0
+BUBBLE_15:
+		dc.b 'Imported strings are created in ACS when they are not present.',0
+BUBBLE_16:
+		dc.b 'This is the XAC-Type of the application. Further informations about this type can be found in the XAcc documentation.',0
+BUBBLE_17:
+		dc.b 'Use optical signals - i.e. growing rectangles, message after termination of TOS applications. This can be changed during runtime.',0
+BUBBLE_18:
+		dc.b 'Check allocated and freed memory blocks. This can be changed during runtime.',0
+BUBBLE_19:
+		dc.b 'Use security checks - i.e. before Dsetdrv/Dsetpath. This can be changed during runtime.',0
+BUBBLE_20:
+		dc.b 'Here you can specify the platform in the future.',0
+BUBBLE_21:
+		dc.b 'The programming language used in this ACS module.',0
+BUBBLE_22:
+		dc.b 'This is the activ language of the GUI.',0
+BUBBLE_23:
+		dc.b 'You can create backups when saving an ACS file. Here you switch this backup on/off.',0
+BUBBLE_24:
+		dc.b 'This is the path for the automatic backup.',0
+BUBBLE_25:
+		dc.b 'All name of the objects are automatically converted into upper cases.',0
+BUBBLE_26:
+		dc.b 'Export the prototypes for the C compiler.',0
+BUBBLE_27:
+		dc.b 'All not global definitions are exported als local to this module. So same names can be used in differnt modules.',0
+BUBBLE_28:
+		dc.b 'Create automatically a list of the definitions and identifiers when saving this ACS module.',0
+BUBBLE_29:
+		dc.b 'The output for the specified compiler can be switched on/off.',0
+BUBBLE_30:
+		dc.b 'Please enter the name of the function.',0
+BUBBLE_31:
+		dc.b 'This defines the distance of the windows to the sides of the desktop.',0
+BUBBLE_32:
+		dc.b 'Use modern 3D-menues (like MagiC 6 with prop. Systemfont) in all windows.',0
+BUBBLE_33:
+		dc.b 'The strings of the selected language are integrated as default strings into the application.',0
+BUBBLE_34:
+		dc.b 'All strings are written into an ASCII file. Change this file for another language. The merging of the ASCII files into the globale file of the application must be done outside ACS.',0
+HELPFILE_01:
+		dc.b 'ACSPRO',0
+STGUIDE_01:
+		dc.b 'Der Hauptmodul-Dialog',0
+STGUIDE_02:
+		dc.b 'Der Eigenschaften-Dialog',0
+TEXT_002:
+		dc.b $00
+TEXT_003:
+		dc.w $4f4b
+		dc.b $00
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_009:
+		dc.b 'Load GDOS-Fonts',0
+TEXT_01:
+		dc.b 'Language, Titel',0
+TEXT_012:
+		dc.b 'dy:',0
+TEXT_014:
+		dc.b 'dx:',0
+TEXT_018:
+		dc.b 'Definitions as ',$27,'local',$27,'  ',0
+TEXT_02:
+		dc.b 'Output: ',0
+TEXT_03:
+		dc.b 'Keys to main menu ',0
+TEXT_04:
+		dc.b 'Behaviour:',0
+TEXT_05:
+		dc.b 'Options:',0
+TEXT_06:
+		dc.b 'Platform & Development System',0
+TEXT_07:
+		dc.b 'Frame:',0
+TEXT_08:
+		dc.b ' Pure-C / GNU-C | Pure-Pascal ',0
+TEXT_09:
+		dc.b 'ACS-Output',0
+TEXT_10:
+		dc.b ' Behaviour ',0
+TEXT_11:
+		dc.b '1. Language (D)|2. Language (E)|3. Language    |4. Language    ',0
+TEXT_110:
+		dc.b 'Language:',0
+TEXT_111:
+		dc.b 'Surface:',0
+TEXT_112:
+		dc.b 'Strings',0
+TEXT_118:
+		dc.b 'Pulldown menus',0
+TEXT_12:
+		dc.b 'Import',0
+TEXT_13:
+		dc.b 'Names',0
+TEXT_14:
+		dc.b 'Hide mouse    ',0
+TEXT_15:
+		dc.b 'List of definitions   ',0
+TEXT_16:
+		dc.b 'create backup ',0
+TEXT_17:
+		dc.b ' Atari ST | Macintosh | Windows | Linux ',0
+TEXT_18:
+		dc.b 'Platform',0
+TEXT_19:
+		dc.b ' Main module Preferences ',0
+TEXT_20:
+		dc.b 'Create new Import-Strings    ',0
+TEXT_21:
+		dc.b 'ACC-Fenster:',0
+TEXT_22:
+		dc.b 'ACC Entry:',0
+TEXT_23:
+		dc.w $4f4b
+		dc.b $00
+TEXT_24:
+		dc.b 'Cancel',0
+TEXT_25:
+		dc.b 'Functions & Data for Initializing',0
+TEXT_26:
+		dc.b 'module is main module',0
+TEXT_263:
+		dc.b 'Center dialogue ',0
+TEXT_27:
+		dc.b 'ACSinit0',0
+TEXT_28:
+		dc.b 'ACSinit',0
+TEXT_29:
+		dc.b 'ACSterm',0
+TEXT_30:
+		dc.b 'ACSaboutme',0
+TEXT_31:
+		dc.b 'ACSclose',0
+TEXT_32:
+		dc.b 'ACSmessage',0
+TEXT_33:
+		dc.b 'ACSmproto',0
+TEXT_331:
+		dc.b 'BEHAVIOUR',0
+TEXT_34:
+		dc.b 'ACStimer',0
+TEXT_345:
+		dc.b 'abc = ABC',0
+TEXT_347:
+		dc.b 'Prototypes',0
+TEXT_35:
+		dc.b 'ACSkey',0
+TEXT_350:
+		dc.b 'Sound on errors ',0
+TEXT_36:
+		dc.b 'ACSbutton',0
+TEXT_37:
+		dc.b 'ACSmouse',0
+TEXT_38:
+		dc.b 'ACSwikey',0
+TEXT_39:
+		dc.b 'ACSGEMScript',0
+TEXT_40:
+		dc.b 'Protocol function',0
+TEXT_41:
+		dc.b 'Communitation protocols',0
+TEXT_42:
+		dc.b '3D Display    ',0
+TEXT_43:
+		dc.b 'Other functions',0
+TEXT_44:
+		dc.b 'XAcc-Type',0
+TEXT_45:
+		dc.b '      none | WP - Word processing | DP - DTP | ED - Editor | DB - Database | SS - Sheet | RG - Raster graphic | VG - Vektor graphic | GG - Graphic | MU - Music | CD - CAD | DC - Data Communication | DT - Desktop | PE - Programming environment',0
+TEXT_46:
+		dc.b 'Initializing',0
+TEXT_47:
+		dc.b 'OLGA',0
+TEXT_48:
+		dc.b 'wait  ',0
+TEXT_49:
+		dc.b 'GEMScript',0
+TEXT_50:
+		dc.b 'BubbleGEM',0
+TEXT_51:
+		dc.b 'Optical feedback  ',0
+TEXT_52:
+		dc.b 'Memory check',0
+TEXT_53:
+		dc.b 'Security checks  ',0
+TEXT_54:
+		dc.b 'Modern 3D-Menues',0
+TEXT_55:
+		dc.b 'Swap Strings out of the App. ',0
+TEXT_56:
+		dc.b 'Use Default-Strings   ',0
+_AL_ATT:
+		dc.b ' Attention ',0
+_AL_QUEST:
+		dc.b ' Question ',0
+_AL_STOP:
+		dc.b ' Stop ',0
+_AL_TIMER:
+		dc.b ' Message ',0
+		.ENDC
+
 		.even
 DATAS_07:
 		dc.w 0
@@ -5373,11 +5671,9 @@ mlmess:
 x7e96e:
 	dc.b $00
 x7e96f:
-	dc.b $25
-	dc.w $6400
+	dc.b '%d',0
 x7e972:
-	dc.w $2020
-	dc.b $00
+	dc.b '  ',0
 x7e975:
 	dc.b '%3d',0
 	.even
