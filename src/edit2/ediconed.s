@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 edic_backcol:
 		move.w     d3,-(a7)
@@ -4169,6 +4172,7 @@ IcnCol_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 A_NOSTD:
 		dc.b '[1][ Die Grafik liegt nicht im | Standard-Format vor, eine | šbernahme ist unm”glich! ][ Abbruch ]',0
 BUBBLE_01:
@@ -4218,8 +4222,7 @@ TEXT_10:
 TEXT_11:
 		dc.b $59,$3a,0
 TEXT_12:
-		dc.b $57
-		dc.w $3a00
+		dc.b $57,$3a,0
 TEXT_13:
 		dc.b $48,$3a,0
 TEXT_14:
@@ -4249,6 +4252,91 @@ TEXT_25:
 		dc.b 'ICONS',0
 TEXT_27:
 		dc.b 'Ein/Aus',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+A_NOSTD:
+		dc.b '[1][ Accepting the grapic is | impossible since it is in | non-standard-format.][ Cancel ]',0
+BUBBLE_01:
+		dc.b 'The changes are ignored.',0
+BUBBLE_02:
+		dc.b 'The changes are accepted.',0
+BUBBLE_03:
+		dc.b 'Here you edit the text under the icon.',0
+BUBBLE_04:
+		dc.b 'Here you enter the char (i.e. char of the floppy).',0
+BUBBLE_05:
+		dc.b 'The size of the icon can be edited here.',0
+BUBBLE_06:
+		dc.b 'Here the icon can be constructed and modified.',0
+BUBBLE_07:
+		dc.b 'This button changes from the cunstruction window to the icon window.',0
+BUBBLE_08:
+		dc.b 'The size is adapted to a destop icon.',0
+TEXT_002:
+		dc.b $00
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b 'THINN',0
+TEXT_019:
+		dc.b 'Structure',0
+TEXT_02:
+		dc.b 'FAT',0
+TEXT_03:
+		dc.b 'new pattern',0
+TEXT_04:
+		dc.b 'Brush:',0
+TEXT_05:
+		dc.b 'Size:',0
+TEXT_06:
+		dc.b 'Move:',0
+TEXT_07:
+		dc.b 'delete',0
+TEXT_08:
+		dc.b 'ICON1212312121212122',0
+TEXT_09:
+		dc.b 'Back:',0
+TEXT_10:
+		dc.b 'front:',0
+TEXT_11:
+		dc.b $59,$3a,0
+TEXT_12:
+		dc.b $57,$3a,0
+TEXT_13:
+		dc.b $48,$3a,0
+TEXT_14:
+		dc.b 'Char:',0
+TEXT_15:
+		dc.b 'Icon:',0
+TEXT_16:
+		dc.b 'Text:',0
+TEXT_17:
+		dc.b ' Icon-Editor ',0
+TEXT_18:
+		dc.b 'Color:',0
+TEXT_19:
+		dc.b 'Edit...',0
+TEXT_20:
+		dc.b 'empty',0
+TEXT_21:
+		dc.b 'Size...',0
+TEXT_22:
+		dc.b $58,$3a,0
+TEXT_23:
+		dc.b $04
+		dc.b ' Deskicon',0
+TEXT_24:
+		dc.b ' Size ',0
+TEXT_25:
+		dc.b 'ICONS',0
+TEXT_27:
+		dc.b 'on/off',0
+		.ENDC
+
+		.even
 DATAS_01:
 		dc.w $0000
 		dc.w $0000
@@ -10778,8 +10866,7 @@ xa49f8:
 xa49fc:
 		dc.w $2000
 xa49fe:
-		dc.w $2564
-		dc.b $00
+		dc.b '%d',0
 xa4a01:	dc.b '0',0
 xa4a03:
 		dc.b '32',0

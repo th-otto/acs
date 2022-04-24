@@ -1,3 +1,5 @@
+		.include "country.inc"
+		
 		.text
 
 edwi_tme:
@@ -1494,6 +1496,7 @@ term_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 ERR_IC_DEL:
 		dc.b '[3][ Die Ikone| ',$27,'%s',$27,' | ist nicht (mehr) Teil | dieser Datei][    OK    ]',0
 ERR_ME_DEL:
@@ -1613,26 +1616,21 @@ STGUIDE_01:
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_004:
 		dc.b 'Abbruch',0
 TEXT_01:
 		dc.b ' Info',0
 TEXT_012:
-		dc.w $593a
-		dc.b $00
+		dc.b 'Y:',0
 TEXT_013:
-		dc.b $58
-		dc.w $3a00
+		dc.b 'X:',0
 TEXT_014:
-		dc.w $573a
-		dc.b $00
+		dc.b 'W:',0
 TEXT_015:
-		dc.b $48
-		dc.w $3a00
+		dc.b 'H:',0
 TEXT_02:
-		dc.w $0100
+		dc.b $01,0
 TEXT_03:
 		dc.b 'Liste',0
 TEXT_04:
@@ -1678,7 +1676,7 @@ TEXT_22:
 TEXT_23:
 		dc.b 'Service:',0
 TEXT_24:
-		dc.w $0200
+		dc.b $02,0
 TEXT_25:
 		dc.b 'Create:',0
 TEXT_26:
@@ -1746,6 +1744,260 @@ TEXT_55:
 		dc.b 'ST-Guide-Hilfe',0
 TEXT_56:
 		dc.b $fa,0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+ERR_IC_DEL:
+		dc.b '[3][ Icon ',$27,'%s',$27,' | is nomore a part of this | file.][    OK    ]',0
+ERR_ME_DEL:
+		dc.b '[3][ Menu ',$27,'%s',$27,' | is nomore a part of | this file. ][    OK    ]',0
+ERR_OB_DEL:
+		dc.b '[3][ The object ',$27,'%s',$27,' | is nomore a part | of this file.][    OK    ]',0
+WARN_CREATE:
+		dc.b '[1][ You didn',$27,'t specify the | create-routine. The default | ',$27,'Awi_selfcreate',$27,' will be | inserted.][   OK   ]',0
+BUBBLE_01:
+		dc.b 'Here you can edit the filename of the ST-Guide hypertext to use as online help.',0
+BUBBLE_02:
+		dc.b 'Here you edit the infoline of your window.',0
+BUBBLE_03:
+		dc.b 'The window is a list window.',0
+BUBBLE_04:
+		dc.b 'The window can',$27,'t be closed automatically by ACS.',0
+BUBBLE_05:
+		dc.b 'The window can be used in the background without topping it.',0
+BUBBLE_06:
+		dc.b 'The opened window owns a shadowed icon onto the desktop.',0
+BUBBLE_07:
+		dc.b 'The closed window owns a icon onto the desktop. ATTENTION: Closing the window with this flag cleared, deletes the window!',0
+BUBBLE_08:
+		dc.b 'The window accepts objects dragged onto the icon of it on the desktop.',0
+BUBBLE_09:
+		dc.b 'Here you edit the name of the window shown in the window title.',0
+BUBBLE_10:
+		dc.b 'Here you edit the help topic of this window. This topic is send to ST-Guide.',0
+BUBBLE_11:
+		dc.b 'Here you can add a window menu to this window. The name of the menu can be edited or it can be dragged out of th menu list.',0
+BUBBLE_12:
+		dc.b 'Here you can add a toolbar to the window. The name of the object tree can be edited or it can be dragged out of the object list.',0
+BUBBLE_13:
+		dc.b 'Here you can add the work object to the window. You can edit the name of the object tree or drag it out of the object list.',0
+BUBBLE_14:
+		dc.b 'Here you can add an icon to the window. The name of the icon can be edited or it can be dragged out of the icon list.',0
+BUBBLE_15:
+		dc.b 'The user pointer of the window may be assigned here (see online help).',0
+BUBBLE_16:
+		dc.b 'The raster can be edited here.',0
+BUBBLE_17:
+		dc.b 'The position and the size of the window is edited here.',0
+BUBBLE_18:
+		dc.b 'The y position of the window is edited here. If the y position is equal zero, a positon will be assigned by ACS when opening the window.',0
+BUBBLE_19:
+		dc.b 'The width of the window is edited here. If the y position is equal zero, a positon will be assigned by ACS when opening the window.',0
+BUBBLE_20:
+		dc.b 'The height of the window is edited here. If the y position is equal to zero, the position will be assigned by ACS when opening the window.',0
+BUBBLE_21:
+		dc.b 'The window has a CLOSER.',0
+BUBBLE_22:
+		dc.b 'The window has a MOVER.',0
+BUBBLE_23:
+		dc.b 'The window has a TITLE.',0
+BUBBLE_24:
+		dc.b 'The window has an infoline - the infoline must be edited.',0
+BUBBLE_25:
+		dc.b 'The widow has a FULLER.',0
+BUBBLE_26:
+		dc.b 'The window has ICONIFY.',0
+BUBBLE_27:
+		dc.b 'The window has BACKDROP. This should always be switched on - otherwise MagiC backdrops the window.',0
+BUBBLE_28:
+		dc.b 'The window has an ARROW UP.',0
+BUBBLE_29:
+		dc.b 'The window has an ARROW DOWN.',0
+BUBBLE_30:
+		dc.b 'The window has an ARROW RIGHT.',0
+BUBBLE_31:
+		dc.b 'The window has an ARROW LEFT.',0
+BUBBLE_32:
+		dc.b 'The window has a SIZER.',0
+BUBBLE_33:
+		dc.b 'The window has a vertical slider VSLIDE.',0
+BUBBLE_34:
+		dc.b 'THe window has a horizontal slider HSLIDE.',0
+BUBBLE_35:
+		dc.b 'You should add a create function to the window (default: Awi_selfcreate). THe name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_36:
+		dc.b 'You can add an open function to the window (default: Awi_open). THe name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_37:
+		dc.b 'You can add an service function to the window (default: Awi_service). THe name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_38:
+		dc.b 'You can add a change function to the window (default: Awi_obchange). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_39:
+		dc.b 'You can add a key function to the window (default: Awi_keys). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_40:
+		dc.b 'You can add an init function to the window (default: Awi_init). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_41:
+		dc.b 'You can add a redraw function to the window (default: Awi_redraw). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_42:
+		dc.b 'You can add a topped function to the window (default: Awi_topped). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_43:
+		dc.b 'You can add a closed function to the window (default: Awi_closed). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_44:
+		dc.b 'You can add a fulled function to the window (default: Awi_fulled). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_45:
+		dc.b 'You can add a arrowed function to the window (default: Awi_arrowed). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_46:
+		dc.b 'You can add a hslide function to the window (default: Awi_hslide). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_47:
+		dc.b 'You can add a vslide function to the window (default: Awi_vslide). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_48:
+		dc.b 'You can add a moved function to the window (default: Awi_moved). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_49:
+		dc.b 'You can add a sized function to the window (default: Awi_sized). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_50:
+		dc.b 'You can add an iconify function to the window (default: Awi_iconify). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_51:
+		dc.b 'You can add an uniconify function to the window (default: Awi_uniconify). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_52:
+		dc.b 'You can add a GEMScript function to the window (default: Awi_gemscript). The name can be entered oder the routine can be dragged from the reference list.',0
+BUBBLE_53:
+		dc.b 'The window has a HOTCLOSEBOX.',0
+STGUIDE_01:
+		dc.b 'Der Fenster-Editor',0
+TEXT_002:
+		dc.b $00
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b ' Info',0
+TEXT_012:
+		dc.b 'Y:',0
+TEXT_013:
+		dc.b 'X:',0
+TEXT_014:
+		dc.b 'W:',0
+TEXT_015:
+		dc.b 'X:',0
+TEXT_02:
+		dc.b $01,0
+TEXT_03:
+		dc.b 'List ',0
+TEXT_04:
+		dc.b 'Stays ',0
+TEXT_05:
+		dc.b 'Icon',0
+TEXT_06:
+		dc.b 'Ghosticon',0
+TEXT_07:
+		dc.b 'Accepting',0
+TEXT_08:
+		dc.b 'Backgrd.  ',0
+TEXT_09:
+		dc.b 'Toolbar:',0
+TEXT_10:
+		dc.b 'Position:',0
+TEXT_11:
+		dc.b 'Attributes:',0
+TEXT_12:
+		dc.b 'Name:',0
+TEXT_13:
+		dc.b 'Menu:',0
+TEXT_14:
+		dc.b 'Open:',0
+TEXT_15:
+		dc.b ' Window-Editor ',0
+TEXT_16:
+		dc.b 'Grid:',0
+TEXT_17:
+		dc.b 'Routines:',0
+TEXT_18:
+		dc.b 'Info:',0
+TEXT_19:
+		dc.b 'Objects:',0
+TEXT_20:
+		dc.b 'Work:',0
+TEXT_205:
+		dc.b 'WINDOW',0
+TEXT_21:
+		dc.b 'Icon:',0
+TEXT_22:
+		dc.b 'User:',0
+TEXT_23:
+		dc.b 'Service:',0
+TEXT_24:
+		dc.b $02
+		dc.b $00
+TEXT_25:
+		dc.b 'Create:',0
+TEXT_26:
+		dc.b 'Init:',0
+TEXT_27:
+		dc.b 'Keys:',0
+TEXT_28:
+		dc.b 'Change:',0
+TEXT_29:
+		dc.b 'Redraw:',0
+TEXT_30:
+		dc.b 'Topped:',0
+TEXT_31:
+		dc.b 'Closed:',0
+TEXT_32:
+		dc.b 'Fulled:',0
+TEXT_33:
+		dc.b 'Arrowed:',0
+TEXT_34:
+		dc.b 'H-Slide:',0
+TEXT_35:
+		dc.b 'V-Slide:',0
+TEXT_36:
+		dc.b 'Moved:',0
+TEXT_37:
+		dc.b 'Sized:',0
+TEXT_38:
+		dc.b 'Texts:',0
+TEXT_39:
+		dc.b 'Gadgets:',0
+TEXT_40:
+		dc.b $07,0
+TEXT_41:
+		dc.b $7f,0
+TEXT_42:
+		dc.b $1f,0
+TEXT_43:
+		dc.b 'Name',0
+TEXT_44:
+		dc.b 'Mover',0
+TEXT_45:
+		dc.b $05
+		dc.b $00
+TEXT_46:
+		dc.b $06
+		dc.b $00
+TEXT_47:
+		dc.b $03
+		dc.b $00
+TEXT_48:
+		dc.b $04
+		dc.b $00
+TEXT_49:
+		dc.b 'Iconify:',0
+TEXT_50:
+		dc.b '.HYP',0
+TEXT_51:
+		dc.b 'UnIcon.:',0
+TEXT_52:
+		dc.b 'GEMScr.:',0
+TEXT_53:
+		dc.b 'Title:',0
+TEXT_54:
+		dc.b 'File:',0
+TEXT_55:
+		dc.b 'ST-Guide-Help',0
+TEXT_56:
+		dc.b $fa,0
+		.ENDC
+
 		.even
 DATAS_27:
 		dc.b $00
@@ -7424,8 +7676,7 @@ _159aEDIT_WINDOW:
 _161_EDIT_WINDOW:
 		dc.b $00
 		dc.b $a3
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.b $00
 		dc.b $1c
@@ -7507,8 +7758,7 @@ _163aEDIT_WINDOW:
 _165_EDIT_WINDOW:
 		dc.b $00
 		dc.b $5c
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.b $00
 		dc.b $1c
@@ -7566,8 +7816,7 @@ WI_WINDOW:
 		dc.b $00
 		dc.b $00
 		dc.w $ffff
-		dc.b $61
-		dc.b $ff
+		dc.w $61ff
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -7592,8 +7841,7 @@ WI_WINDOW:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
@@ -7747,7 +7995,7 @@ xab5ee:
 		dc.b $00
 		dc.b $00
 xab630:
-		dc.w $2564
+		dc.b '%d'
 xab632:
 		dc.b $00
 	.even

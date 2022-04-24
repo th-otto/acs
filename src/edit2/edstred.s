@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 editstr_abort:
 		movea.l    ACSblk,a0
@@ -222,17 +225,32 @@ term_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_004:
 		dc.b 'Abbruch',0
 TEXT_01:
 		dc.b ' Text-Editor ',0
 TEXT_12:
 		dc.b 'TEXT',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+TEXT_002:
+		dc.b $00
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b ' Text-Editor ',0
+TEXT_12:
+		dc.b 'TEXT',0
+		.ENDC
+
 		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton

@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 omalloc:
 		movem.l    d3/a2-a3,-(a7)
@@ -768,6 +771,7 @@ go_pos_edit:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Dieser Button ruft den Flag-Editor auf.',0
 BUBBLE_02:
@@ -800,6 +804,44 @@ TEXT_258:
 		dc.b 'USERDEF',0
 VALID_001:
 		dc.b 'XXXX',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'This button calls the flag editor.',0
+BUBBLE_02:
+		dc.b 'This button calls th object editor.',0
+BUBBLE_03:
+		dc.b 'This button calls the reference editor.',0
+BUBBLE_04:
+		dc.b 'This button calls the position editor.',0
+STGUIDE_01:
+		dc.b 'Das Teile-Fenster',0
+TEMPLATE_001:
+		dc.b 'EDIT:____',0
+TEXT_002:
+		dc.b $00
+TEXT_02:
+		dc.b ' Toolbox ',0
+TEXT_024:
+		dc.b 'abc',0
+TEXT_030:
+		dc.b 'TEXT',0
+TEXT_038:
+		dc.b 'STRING',0
+TEXT_039:
+		dc.b 'BUTTON',0
+TEXT_040:
+		dc.b 'TITLE',0
+TEXT_065:
+		dc.b 'ICON',0
+TEXT_258:
+		dc.b 'USERDEF',0
+VALID_001:
+		dc.b 'XXXX',0
+		.ENDC
+
+		.even
 DATAS_01:
 		dc.b $00
 		dc.b $00
@@ -3575,8 +3617,7 @@ _IMG_IMAGE_001:
 		dc.w $1860
 		dc.w $187f
 		dc.w $f860
-		dc.b $18
-		dc.b $60
+		dc.w $1860
 		dc.w $187f
 		dc.w $f860
 		dc.w $1860
@@ -5496,8 +5537,7 @@ _88_PARTS:
 		dc.b $00
 		dc.b $57
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $19
 		dc.w $2000
@@ -5505,8 +5545,7 @@ _88_PARTS:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		dc.b $11
-		dc.b $01
+		dc.w $1101
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -5701,8 +5740,7 @@ _97_PARTS:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		dc.b $11
-		dc.b $01
+		dc.w $1101
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -5823,8 +5861,7 @@ _102_PARTS:
 _103_PARTS:
 		dc.b $00
 		dc.b $66
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.b $00
 		dc.b $19

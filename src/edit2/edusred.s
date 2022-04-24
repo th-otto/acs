@@ -1,3 +1,4 @@
+		.text
 
 editus_ok:
 		movea.l    ACSblk,a0
@@ -207,8 +208,7 @@ TEXT_006:
 TEXT_01:
 		dc.b 'Code:',0
 TEXT_011:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_02:
 		dc.b 'Parm:',0
 TEXT_03:
@@ -223,6 +223,7 @@ TEXT_07:
 		dc.b ' Userblk-Editor ',0
 TEXT_10:
 		dc.b 'USER-BLOCK',0
+		.even
 DATAS_25:
 		dc.b $00
 		dc.b $00

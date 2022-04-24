@@ -1,4 +1,5 @@
-
+		.text
+ 
 editte_ok:
 		movea.l    ACSblk,a0
 		movea.l    600(a0),a0
@@ -156,8 +157,7 @@ term_2:
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_01:
 		dc.b 'Text:',0
 TEXT_02:
@@ -170,6 +170,8 @@ TEXT_04:
 		dc.b ' Tedinfo-Editor ',0
 TEXT_13:
 		dc.b 'TEDINFO',0
+		
+		.even
 DATAS_01:
 		dc.b $00
 		dc.b $00

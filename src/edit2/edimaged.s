@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 edim_col:
 		move.w     d3,-(a7)
@@ -1643,13 +1646,13 @@ term_4:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 ERR_LARGE:
 		dc.b '[3][ Die Bilddaten umspannen| einen zu grossen Bereich | (Limit 196 x 196), oder| liegen nicht im| Standardformat vor.][ OK ]',0
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_004:
 		dc.b 'Abbruch',0
 TEXT_01:
@@ -1682,6 +1685,50 @@ TEXT_13:
 		dc.b 'FAT',0
 TEXT_208:
 		dc.b 'BILDER',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+ERR_LARGE:
+		dc.b '[3][ The image is too big (up | to 196*196) or is not in | the standard-format.][ OK ]',0
+TEXT_002:
+		dc.b $00
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b 'Color:',0
+TEXT_019:
+		dc.b 'Structure:',0
+TEXT_02:
+		dc.b 'Brush:',0
+TEXT_03:
+		dc.b 'Move:',0
+TEXT_04:
+		dc.b 'Size:',0
+TEXT_05:
+		dc.b ' Width:',0
+TEXT_06:
+		dc.b 'Height:',0
+TEXT_07:
+		dc.b ' Image-Editor ',0
+TEXT_08:
+		dc.b 'new pattern',0
+TEXT_09:
+		dc.b 'Edit...',0
+TEXT_10:
+		dc.b 'Size...',0
+TEXT_11:
+		dc.b ' Size ',0
+TEXT_12:
+		dc.b 'THINN',0
+TEXT_13:
+		dc.b 'FAT',0
+TEXT_208:
+		dc.b 'PICTURES',0
+		.ENDC
+
+		.even
 DATAS_13:
 		dc.b $00
 		dc.b $00

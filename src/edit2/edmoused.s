@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 edmo_backcol:
 		move.w     d3,-(a7)
@@ -823,14 +826,15 @@ term_2:
 		movea.l    (a7)+,a2
 		rts
 
-	.data
+		.data
+
+		.IFEQ COUNTRY-COUNTRY_DE
 TEXT_001:
 		dc.b 'Abbruch',0
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_01:
 		dc.b 'neues Muster',0
 TEXT_03:
@@ -847,7 +851,34 @@ TEXT_18:
 		dc.b 'Farbe:',0
 TEXT_210:
 		dc.b 'MŽUSE',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+TEXT_001:
+		dc.b 'Cancel',0
+TEXT_002:
 		dc.b $00
+TEXT_003:
+		dc.b 'OK',0
+TEXT_01:
+		dc.b 'new pattern',0
+TEXT_03:
+		dc.b 'Brush:',0
+TEXT_04:
+		dc.b ' Mouse-Editor ',0
+TEXT_05:
+		dc.b 'Example:',0
+TEXT_09:
+		dc.b 'back:',0
+TEXT_10:
+		dc.b 'front:',0
+TEXT_18:
+		dc.b 'Color:',0
+TEXT_210:
+		dc.b 'MOUSES',0
+		.ENDC
+
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $29c1
