@@ -281,6 +281,7 @@ new_work:
 		rts
 
 		.data
+
 NameObj:
 		dc.b $00
 		dc.b $00

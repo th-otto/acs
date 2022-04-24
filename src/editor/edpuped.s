@@ -466,6 +466,7 @@ set_menu_1:
 		rts
 
 	.data
+
 subtree:
 		dc.b $00
 		dc.b $00

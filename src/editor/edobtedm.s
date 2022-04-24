@@ -993,6 +993,7 @@ help_title:
 		dc.b 'Der TEDINFO-Editor',0
 title:
 		dc.b ' TEDINFOS -',0
+		.ENDC
 
 		.IFEQ COUNTRY-COUNTRY_US
 TEXT_003:

@@ -861,7 +861,7 @@ modul_make_2:
 		jsr        Fclose
 modul_make_3:
 		lea.l      PUR_MODULE,a4
-		movea.l    -88(a4),a0
+		movea.l    PUR_DESK+74-PUR_MODULE(a4),a0
 		cmpa.l     #NAME_PUR_DESK,a0
 		beq.s      modul_make_4
 		move.l     a0,74(a4)
@@ -869,7 +869,7 @@ modul_make_4:
 		movea.l    a4,a0
 		jsr        Awi_create
 		movea.l    a0,a5
-		move.l     a5,-3854(a4)
+		move.l     a5,module_window-PUR_MODULE(a4)
 		move.l     a5,d0
 		beq        modul_make_5
 		moveq.l    #4,d1
@@ -994,8 +994,6 @@ modul_make_12:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
-modul_serv_9:
-modul_serv_11:
 modul_serv:
 		movem.l    d3-d5/a2-a5,-(a7)
 		lea.l      -14(a7),a7
@@ -1376,7 +1374,7 @@ pd_make:
 		move.l     #Sep,12(a3)
 		bra.s      pd_make_2
 pd_make_1:
-		clr.w      -3688(a4)
+		clr.w      my_menu-PUR_DESK(a4)
 pd_make_2:
 		movea.l    ACSblk,a0
 		move.w     566(a0),d0

@@ -1,3 +1,4 @@
+		.text
 
 		.globl info_start
 info_start:

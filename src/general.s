@@ -1320,6 +1320,8 @@ ACSinit_6:
 
 	.data
 
+	.globl _WGTITEL
+
 		.IFEQ COUNTRY-COUNTRY_DE
 ERR_AMODIFIED:
 		dc.b '[2][ Die Datei ',$27,'%s',$27,' | wurde ver„ndert.| Wollen Sie diese speichern? ][ JA | Nein | Abbruch ]',0
@@ -1377,7 +1379,6 @@ TEXT_33:
 		dc.b 'EIGENSCHAFT',0
 TEXT_35:
 		dc.b 'REFERENZ',0
-	.globl _WGTITEL
 _WGTITEL:
 		dc.b ' Generelles ',0
 ttl_open:

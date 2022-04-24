@@ -458,8 +458,9 @@ prepair_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
-		.IFEQ COUNTRY-COUNTRY_DE
 	.data
+
+		.IFEQ COUNTRY-COUNTRY_DE
 A_ADAPTCYC:
 		dc.b '[2][ Dies ist wahrscheinlich ein| Objekt nach alter Definition.| Soll es auf den Standardwert| gesetzt werden?][OK| Abbruch ]',0
 BUBBLE_01:

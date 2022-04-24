@@ -1519,6 +1519,7 @@ title_dragsize_4:
 		rts
 
 	.data
+
 droptree:
 		dc.b $00
 		dc.b $00

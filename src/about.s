@@ -30,6 +30,7 @@ AboutGUIEditor:
 
 	
 	.data
+
 		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Es werden Informationen Åber die verwendete ACS-Version angezeigt.',0

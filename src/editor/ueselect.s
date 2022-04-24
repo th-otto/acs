@@ -45,6 +45,7 @@ abort:
 		rts
 
 	.data
+
 visual:
 		dc.w $ffff
 		dc.w $ffff

@@ -24,40 +24,68 @@ _ACSclose_2:
 _ACSaboutme:
 		movem.l    a2-a4,-(a7)
 		lea.l      lib_date,a3
-		lea.l      -417(a3),a0
-		movea.l    -409(a3),a1
+		lea.l      _W_ABOUT-lib_date(a3),a0
+		movea.l    _W_ABOUT+8-lib_date(a3),a1
 		jsr        (a1)
 		movea.l    a0,a2
 		move.l     a2,d0
 		beq        _ACSaboutme_1
-		lea.l      -26(a3),a1
+		lea.l      _c_version-lib_date(a3),a1
 		movea.l    20(a2),a0
 		moveq.l    #7,d0
 		jsr        Aob_puttext
 		move.b     (a3),d0
 		bne.s      _ACSaboutme_2
 		lea.l      -12(a3),a4
+
+		.IFEQ COUNTRY-COUNTRY_DE
 		move.b     4(a4),d0
 		ext.w      d0
 		jsr        isspace
 		tst.w      d0
 		beq.s      _ACSaboutme_3
-		moveq.l    #48,d0
+		moveq.l    #'0',d0
 		bra.s      _ACSaboutme_4
 _ACSaboutme_3:
 		move.b     4(a4),d0
 _ACSaboutme_4:
 		move.b     d0,(a3)
 		move.b     5(a4),1(a3)
-		move.b     #$2E,2(a3)
+		move.b     #'.',2(a3)
 		lea.l      3(a3),a1
 		movea.l    a4,a0
 		jsr        Adate_getMonth
-		move.b     #$2E,5(a3)
+		move.b     #'.',5(a3)
 		move.b     7(a4),6(a3)
 		move.b     8(a4),7(a3)
 		move.b     9(a4),8(a3)
 		move.b     10(a4),9(a3)
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+		move.b     7(a4),(a3)
+		move.b     8(a4),1(a3)
+		move.b     9(a4),2(a3)
+		move.b     10(a4),3(a3)
+		move.b     #'-',4(a3)
+		lea.l      5(a3),a1
+		movea.l    a4,a0
+		jsr        Adate_getMonth
+		move.b     #'-',7(a3)
+		move.b     4(a4),d0
+		ext.w      d0
+		jsr        isspace
+		tst.w      d0
+		beq.s      _ACSaboutme_3
+		moveq.l    #'0',d0
+		bra.s      _ACSaboutme_4
+_ACSaboutme_3:
+		move.b     4(a4),d0
+_ACSaboutme_4:
+		move.b     d0,8(a3)
+		move.b     5(a4),9(a3)
+		.ENDC
+
 		clr.b      10(a3)
 _ACSaboutme_2:
 		pea.l      (a3)

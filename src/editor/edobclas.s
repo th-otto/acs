@@ -2039,6 +2039,7 @@ TEXT_36:
 		dc.b 'nach Oben',0
 testmode:
 		dc.b ' TESTMODE -',0
+		.ENDC
 
 		.IFEQ COUNTRY-COUNTRY_US /* not everything translated */
 NEW_POPUP:

@@ -148,7 +148,7 @@ ab_make:
 		movem.l    d3-d4/a2-a3/a5,-(a7)
 		lea.l      -2384(a7),a7
 		lea.l      cfg,a5
-		lea.l      8868(a5),a0
+		lea.l      WI_COMMON-cfg(a5),a0
 		jsr        Awi_create
 		movea.l    a0,a2
 		move.l     a2,d0
@@ -257,12 +257,12 @@ ab_make_3:
 		and.w      174(a5),d2
 		or.w       d2,d1
 		move.w     d1,14(a1)
-		move.w     160(a5),2378(a5)
-		move.w     164(a5),2380(a5)
-		move.w     170(a5),2384(a5)
-		move.w     166(a5),2382(a5)
-		move.w     168(a5),2386(a5)
-		move.w     172(a5),2388(a5)
+		move.w     160(a5),gluepart-cfg(a5)
+		move.w     164(a5),dirtysave-cfg(a5)
+		move.w     170(a5),imagesnap-cfg(a5)
+		move.w     166(a5),snapping-cfg(a5)
+		move.w     168(a5),copyindex-cfg(a5)
+		move.w     172(a5),refimages-cfg(a5)
 		lea.l      176(a5),a1
 		movea.l    parts_window,a0
 		lea.l      36(a0),a0
@@ -294,23 +294,23 @@ ab_make_11:
 ab_make_9:
 		move.b     #0x33,(a5)
 		movea.l    20(a2),a3
-		move.w     2378(a5),d0
+		move.w     gluepart-cfg(a5),d0
 		beq.s      ab_make_13
 		ori.w      #0x0001,514(a3)
 ab_make_13:
-		move.w     2380(a5),d0
+		move.w     dirtysave-cfg(a5),d0
 		beq.s      ab_make_14
 		ori.w      #0x0001,466(a3)
 ab_make_14:
-		move.w     2382(a5),d0
+		move.w     snapping-cfg(a5),d0
 		beq.s      ab_make_15
 		ori.w      #0x0001,274(a3)
 ab_make_15:
-		move.w     2386(a5),d0
+		move.w     copyindex-cfg(a5),d0
 		beq.s      ab_make_16
 		ori.w      #0x0001,322(a3)
 ab_make_16:
-		move.w     2388(a5),d0
+		move.w     refimages-cfg(a5),d0
 		beq.s      ab_make_17
 		ori.w      #0x0001,370(a3)
 ab_make_17:
@@ -318,7 +318,7 @@ ab_make_17:
 		beq.s      ab_make_18
 		ori.w      #0x0001,418(a3)
 ab_make_18:
-		movea.l    2374(a5),a1
+		movea.l    helpacc-cfg(a5),a1
 		moveq.l    #24,d0
 		movea.l    a3,a0
 		jsr        Aob_puttext
@@ -344,7 +344,7 @@ ab_make_18:
 		moveq.l    #101,d0
 		lea.l      648(a3),a0
 		jsr        Auo_slider
-		move.w     2384(a5),d0
+		move.w     imagesnap-cfg(a5),d0
 		subq.w     #1,d0
 		beq.s      ab_make_19
 		subq.w     #1,d0
@@ -370,7 +370,7 @@ ab_make_23:
 		moveq.l    #17,d0
 		lea.l      648(a3),a0
 		jsr        Auo_slider
-		move.w     2384(a5),-(a7)
+		move.w     imagesnap-cfg(a5),-(a7)
 		lea.l      x7a2aa,a1
 		lea.l      14(a7),a0
 		jsr        sprintf
@@ -1506,8 +1506,8 @@ validate:
 		lea.l      cfg,a2
 		move.l     wdemo-cfg(a2),d0
 		bne.s      validate_1
-		lea.l      9030(a2),a0
-		movea.l    9038(a2),a1
+		lea.l      WI_DEMO-cfg(a2),a0
+		movea.l    WI_DEMO+8-cfg(a2),a1
 		jsr        (a1)
 		move.l     a0,wdemo-cfg(a2)
 		beq.s      validate_1
@@ -4590,7 +4590,9 @@ x79ed8:
 x79eda:
 		dc.b $09,'D - 86938 Schondorf a.A.',0
 x79ef4:
-		dc.b $09,'Registrierung von ACSpro',0
+		dc.b $09,'Registrierung von '
+x79f07:
+		dc.b 'ACSpro',0
 x79f0e:
 		dc.b $09,'Hiermit beantrage ich die Registrierung von ACSpro Version ##### mit',0
 x79f54:

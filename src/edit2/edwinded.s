@@ -1878,7 +1878,7 @@ TEXT_013:
 TEXT_014:
 		dc.b 'W:',0
 TEXT_015:
-		dc.b 'X:',0
+		dc.b 'H:',0
 TEXT_02:
 		dc.b $01,0
 TEXT_03:

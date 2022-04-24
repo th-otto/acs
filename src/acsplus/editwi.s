@@ -5759,7 +5759,7 @@ TEXT_26:
 TEXT_27:
 		dc.b '  from Clipboard   '
 		dc.b $01,$5e
-		dc.w $56,0
+		dc.b $56,0
 TEXT_28:
 		dc.b '  Open...         ^O',0
 TEXT_29:
