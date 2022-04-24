@@ -1,3 +1,7 @@
+		.include "country.inc"
+		
+		.text
+
 		.globl set_flag
 set_flag:
 		tst.w      d0

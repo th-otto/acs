@@ -39,14 +39,14 @@ prot_texte_4:
 		clr.b      (a5)
 		movea.l    a6,a0
 		jsr        save_string
-		lea.l      8(a4),a0
+		lea.l      x97ed4-x97ecc(a4),a0
 		jsr        save_string
 		lea.l      (a7),a0
 		jsr        save_string
 		move.b     (a7),(a5)
 		lea.l      1(a5),a6
 prot_texte_3:
-		lea.l      7(a4),a1
+		lea.l      x97ed3-x97ecc(a4),a1
 		movea.l    a6,a0
 		jsr        strpbrk
 		movea.l    a0,a5
@@ -54,13 +54,13 @@ prot_texte_3:
 		bne.s      prot_texte_4
 		movea.l    a6,a0
 		jsr        save_string
-		lea.l      10(a4),a0
+		lea.l      x97ed6-x97ecc(a4),a0
 		jsr        save_string
 		addq.w     #1,d4
 prot_texte_2:
 		cmp.w      d4,d3
 		bgt        prot_texte_5
-		lea.l      14(a4),a0
+		lea.l      x97eda-x97ecc(a4),a0
 		jsr        save_string
 prot_texte_1:
 		addq.w     #2,a7
@@ -229,11 +229,11 @@ prot_labellist:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a3
 		lea.l      x97ecc,a2
-		lea.l      311(a2),a0
+		lea.l      x98003-x97ecc(a2),a0
 		jsr        info_list
-		lea.l      311(a2),a0
+		lea.l      x98003-x97ecc(a2),a0
 		jsr        info_obj
-		lea.l      315(a2),a0
+		lea.l      x98007-x97ecc(a2),a0
 		jsr        save_string
 		moveq.l    #0,d3
 		move.l     d3,d4
@@ -244,17 +244,17 @@ prot_labellist_4:
 		moveq.l    #1,d0
 		and.l      d4,d0
 		beq.s      prot_labellist_2
-		lea.l      50(a2),a0
+		lea.l      x97efe-x97ecc(a2),a0
 		jsr        save_string
 		bra.s      prot_labellist_3
 prot_labellist_2:
-		lea.l      11(a2),a0
+		lea.l      x97ed7-x97ecc(a2),a0
 		jsr        save_string
 prot_labellist_3:
 		move.l     14(a3),-(a7)
 		move.w     54(a3),-(a7)
 		pea.l      22(a3)
-		lea.l      534(a2),a1
+		lea.l      x980e2-x97ecc(a2),a1
 		movea.l    a4,a0
 		jsr        sprintf
 		lea.l      10(a7),a7
@@ -266,11 +266,11 @@ prot_labellist_3:
 prot_labellist_1:
 		move.l     a3,d0
 		bne.s      prot_labellist_4
-		lea.l      550(a2),a0
+		lea.l      x980f2-x97ecc(a2),a0
 		jsr        save_string
 		move.l     d3,-(a7)
 		move.l     d4,-(a7)
-		lea.l      642(a2),a1
+		lea.l      x9814e-x97ecc(a2),a1
 		movea.l    a4,a0
 		jsr        sprintf
 		addq.w     #8,a7
@@ -292,7 +292,7 @@ protocol:
 		jsr        strrchr
 		movea.l    a0,a5
 		lea.l      x97ecc,a4
-		lea.l      689(a4),a1
+		lea.l      x9817d-x97ecc(a4),a1
 		movea.l    a5,a0
 		jsr        strcpy
 		clr.w      d0
@@ -314,7 +314,7 @@ protocol_1:
 		clr.b      (a5)
 		lea.l      (a7),a0
 		jsr        info_start
-		lea.l      694(a4),a0
+		lea.l      x98182-x97ecc(a4),a0
 		jsr        info_title
 		move.w     d3,d0
 		jsr        set_handle
@@ -348,10 +348,10 @@ protocol_3:
 		bsr        prot_clickdrag
 		movea.l    24(a2),a0
 		bsr        prot_clickdrag
-		lea.l      704(a4),a1
+		lea.l      x9818c-x97ecc(a4),a1
 		movea.l    52(a2),a0
 		bsr        prot_texte
-		lea.l      725(a4),a1
+		lea.l      x981a1-x97ecc(a4),a1
 		movea.l    36(a2),a0
 		bsr        prot_texte
 		movea.l    a2,a0
@@ -372,18 +372,24 @@ x97ecc:
 		dc.b '%-32s"'
 x97ed2:
 		dc.b 0
+x97ed3:
 		dc.b $22
-		dc.w $5c00
+x97ed4:
+		dc.b $5c
+x97ed5:
+		dc.b 0
+x97ed6:
 		dc.b '"'
 x97ed7:
-		dc.b $0d,$0a
-		dc.b 0
+		dc.b $0d,$0a,0
 x97eda:
 		dc.b $0d,$0a,$0d,$0a,0
 x97edf:
 		dc.b $0d,$0a,'====================',$0d,$0a,$0d,$0a,0
 x97efa:
-		dc.b 'free ',0
+		dc.b 'free'
+x97efe:
+		dc.b ' ',0
 x97f00:
 		dc.b 'extern ',0
 x97f08:

@@ -1,3 +1,4 @@
+		.text
 
 load_dfn:
 		movem.l    d3-d4/a2,-(a7)

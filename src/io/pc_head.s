@@ -1,3 +1,4 @@
+		.text
 
 out_acs:
 		move.w     6(a0),d0
@@ -88,7 +89,7 @@ out_obj_9:
 		lea.l      22(a5),a0
 		jsr        info_obj
 		pea.l      22(a5)
-		lea.l      37(a3),a1
+		lea.l      x98bd5-x98bb0(a3),a1
 		movea.l    a4,a0
 		jsr        sprintf
 		addq.w     #4,a7
@@ -108,7 +109,7 @@ out_obj_8:
 		move.w     d6,-(a7)
 		movea.l    d0,a0
 		pea.l      22(a0)
-		lea.l      59(a3),a1
+		lea.l      x98beb-x98bb0(a3),a1
 		movea.l    a4,a0
 		jsr        sprintf
 		addq.w     #6,a7
@@ -161,7 +162,7 @@ out_declproto:
 		jsr        info_list
 		movea.l    4(a2),a2
 		lea.l      x98bb0,a3
-		lea.l      81(a3),a0
+		lea.l      x98c01-x98bb0(a3),a0
 		jsr        save_string
 		clr.w      d4
 		lea.l      iostring,a5
@@ -230,84 +231,84 @@ J4:
 		dc.w out_declproto_25-J4
 out_declproto_7:
 		pea.l      22(a4)
-		lea.l      115(a3),a1
+		lea.l      x98c23-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_8:
 		pea.l      22(a4)
-		lea.l      141(a3),a1
+		lea.l      x98c3d-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_9:
 		pea.l      22(a4)
-		lea.l      181(a3),a1
+		lea.l      x98c65-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_10:
 		pea.l      22(a4)
-		lea.l      243(a3),a1
+		lea.l      x98ca3-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_11:
 		pea.l      22(a4)
-		lea.l      279(a3),a1
+		lea.l      x98cc7-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_12:
 		pea.l      22(a4)
-		lea.l      315(a3),a1
+		lea.l      x98ceb-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_13:
 		pea.l      22(a4)
-		lea.l      376(a3),a1
+		lea.l      x98d28-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_14:
 		pea.l      22(a4)
-		lea.l      436(a3),a1
+		lea.l      x98d64-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_15:
 		pea.l      22(a4)
-		lea.l      484(a3),a1
+		lea.l      x98d94-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_16:
 		pea.l      22(a4)
-		lea.l      519(a3),a1
+		lea.l      x98db7-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_17:
 		pea.l      22(a4)
-		lea.l      579(a3),a1
+		lea.l      x98df3-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_18:
 		pea.l      22(a4)
-		lea.l      625(a3),a1
+		lea.l      x98e21-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
@@ -317,49 +318,49 @@ out_declproto_6:
 		bra        out_declproto_26
 out_declproto_19:
 		pea.l      22(a4)
-		lea.l      687(a3),a1
+		lea.l      x98e5f-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra        out_declproto_26
 out_declproto_20:
 		pea.l      22(a4)
-		lea.l      734(a3),a1
+		lea.l      x98e8e-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra.w      out_declproto_26
 out_declproto_21:
 		pea.l      22(a4)
-		lea.l      815(a3),a1
+		lea.l      x98edf-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra.s      out_declproto_26
 out_declproto_22:
 		pea.l      22(a4)
-		lea.l      842(a3),a1
+		lea.l      x98efa-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra.s      out_declproto_26
 out_declproto_24:
 		pea.l      22(a4)
-		lea.l      879(a3),a1
+		lea.l      x98f1f-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra.s      out_declproto_26
 out_declproto_23:
 		pea.l      22(a4)
-		lea.l      930(a3),a1
+		lea.l      x98f52-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
 		bra.s      out_declproto_26
 out_declproto_25:
 		pea.l      22(a4)
-		lea.l      977(a3),a1
+		lea.l      x98f81-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #4,a7
@@ -369,7 +370,7 @@ out_declproto_5:
 		and.w      #$00FF,d0
 		move.w     d0,-(a7)
 		pea.l      22(a4)
-		lea.l      1043(a3),a1
+		lea.l      x98fc3-x98bb0(a3),a1
 		movea.l    a5,a0
 		jsr        sprintf
 		addq.w     #6,a7
@@ -381,7 +382,7 @@ out_declproto_4:
 out_declproto_2:
 		cmp.w      d4,d3
 		bgt        out_declproto_27
-		lea.l      27(a3),a0
+		lea.l      x98bcb-x98bb0(a3),a0
 		jsr        save_string
 out_declproto_1:
 		movem.l    (a7)+,d3-d5/a2-a5
@@ -408,12 +409,12 @@ pc_header:
 		lea.l      x98bb0,a5
 		move.l     a3,d0
 		beq.s      pc_header_1
-		lea.l      1065(a5),a1
+		lea.l      x98fd9-x98bb0(a5),a1
 		movea.l    a3,a0
 		jsr        strcpy
 		bra.s      pc_header_2
 pc_header_1:
-		lea.l      1065(a5),a1
+		lea.l      x98fd9-x98bb0(a5),a1
 		movea.l    a4,a0
 		jsr        strcat
 pc_header_2:
@@ -432,7 +433,7 @@ pc_header_2:
 pc_header_3:
 		movea.l    a4,a0
 		jsr        info_start
-		lea.l      1068(a5),a0
+		lea.l      x98fdc-x98bb0(a5),a0
 		jsr        info_title
 		move.w     d3,d0
 		jsr        set_handle
@@ -460,44 +461,44 @@ pc_header_5:
 		addq.w     #8,a7
 		movea.l    a3,a0
 		jsr        save_string
-		lea.l      1082(a5),a0
+		lea.l      x98fea-x98bb0(a5),a0
 		jsr        save_string
-		pea.l      1151(a5)
-		lea.l      1124(a5),a1
+		pea.l      x9902f-x98bb0(a5)
+		lea.l      x99014-x98bb0(a5),a1
 		movea.l    36(a2),a0
 		bsr        out_list
 		addq.w     #4,a7
-		pea.l      1151(a5)
-		lea.l      1175(a5),a1
+		pea.l      x9902f-x98bb0(a5)
+		lea.l      x99047-x98bb0(a5),a1
 		movea.l    52(a2),a0
 		bsr        out_list
 		addq.w     #4,a7
-		pea.l      1221(a5)
-		lea.l      1199(a5),a1
+		pea.l      x99075-x98bb0(a5)
+		lea.l      x9905f-x98bb0(a5),a1
 		movea.l    44(a2),a0
 		bsr        out_list
 		addq.w     #4,a7
-		pea.l      1266(a5)
-		lea.l      1243(a5),a1
+		pea.l      x990a2-x98bb0(a5)
+		lea.l      x9908b-x98bb0(a5),a1
 		movea.l    48(a2),a0
 		bsr        out_list
 		addq.w     #4,a7
-		lea.l      1286(a5),a1
+		lea.l      x990b6-x98bb0(a5),a1
 		movea.l    28(a2),a0
 		bsr        out_obj
-		lea.l      1313(a5),a1
+		lea.l      x990d1-x98bb0(a5),a1
 		movea.l    32(a2),a0
 		bsr        out_obj
-		lea.l      1341(a5),a1
+		lea.l      x990ed-x98bb0(a5),a1
 		movea.l    24(a2),a0
 		bsr        out_obj
-		pea.l      1394(a5)
-		lea.l      1370(a5),a1
+		pea.l      x99122-x98bb0(a5)
+		lea.l      x9910a-x98bb0(a5),a1
 		movea.l    20(a2),a0
 		bsr        out_list
 		addq.w     #4,a7
-		pea.l      1442(a5)
-		lea.l      1415(a5),a1
+		pea.l      x99152-x98bb0(a5)
+		lea.l      x99137-x98bb0(a5),a1
 		movea.l    64(a2),a0
 		bsr        out_list
 		addq.w     #4,a7
@@ -518,7 +519,9 @@ pc_header_4:
 	.data
 
 x98bb0:
-		dc.b $0d,$0a,$0d,$0a,'extern Adescr ACSdescr;',$0d,$0a,$0d,$0a,0
+		dc.b $0d,$0a,$0d,$0a,'extern Adescr ACSdescr;'
+x98bcb:
+		dc.b $0d,$0a,$0d,$0a,0
 x98bd0:
 		dc.b 'ACS(',0
 x98bd5:
@@ -603,4 +606,4 @@ x99137:
 		dc.b $0d,$0a,$0d,$0a,'/*',$09,$09,'MOUSEFORMS',$09,$09,'*/',$0d,$0a,$0d,$0a,0
 x99152:
 		dc.b 'extern MFORM %s;',$0d,$0a,0
-	.even
+		.even
