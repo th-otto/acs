@@ -1,3 +1,4 @@
+		.text
 
 		.globl char_x
 char_x:

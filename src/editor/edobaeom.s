@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 edao_pal:
 		move.l     a2,-(a7)
@@ -364,13 +367,13 @@ set_aeo_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 ERR_KEYCODE:
 		dc.b '[3][ | Unbekannter oder| falscher Tastencode | ',$27,'%s',$27,'][ OK ]',0
 TEXT_001:
 		dc.b 'Abbruch',0
 TEXT_003:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_01:
 		dc.b 'Index:',0
 TEXT_02:
@@ -393,6 +396,39 @@ help_title:
 		dc.b 'Der AOBJECT-Editor',0
 title:
 		dc.b ' ERWEITERTE WERTE -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+ERR_KEYCODE:
+		dc.b '[3][ Unknown or wrong shortcut | ',$27,'%s',$27,'.][ OK ]',0
+TEXT_001:
+		dc.b 'Cancel',0
+TEXT_003:
+		dc.b 'OK',0
+TEXT_01:
+		dc.b 'Index:',0
+TEXT_02:
+		dc.b 'Click:',0
+TEXT_03:
+		dc.b 'Drag:',0
+TEXT_04:
+		dc.b 'UserP1:',0
+TEXT_05:
+		dc.b 'UserP2:',0
+TEXT_06:
+		dc.b 'Type:',0
+TEXT_08:
+		dc.b 'Key:',0
+TEXT_09:
+		dc.b $00
+TEXT_136:
+		dc.b 'Mouseindex:',0
+help_title:
+		dc.b 'Der AOBJECT-Editor',0
+title:
+		dc.b ' EXTENDED VALUES -',0
+		.ENDC
+
 		.even
 TEDINFO_01:
 		dc.l TEXT_08
@@ -1229,9 +1265,7 @@ sm:
 		dc.b $00
 		dc.b $00
 xc08cc:
-		dc.w $2564
-		dc.b $00
+		dc.b '%d',0
 xc08cf:
 		dc.b 'INDEX NAME',0
 		.even
-

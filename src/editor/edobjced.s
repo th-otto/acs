@@ -1,3 +1,4 @@
+		.text
 
 		.globl ob_make
 ob_make:

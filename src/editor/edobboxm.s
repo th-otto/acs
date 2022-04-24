@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 edbo_framecol:
 		move.l     d3,-(a7)
@@ -484,6 +487,7 @@ edbo_update:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 COLOUR00:
 		dc.b '  Weiž',0
 COLOUR01:
@@ -568,6 +572,96 @@ help_title:
 		dc.b 'Der Boxen-Editor',0
 title:
 		dc.b ' BOXEN -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+COLOUR00:
+		dc.b '  White'
+COLOUR01:
+		dc.b '  Black',0
+		dc.b $00
+		dc.b $00
+COLOUR02:
+		dc.b '  Red',0
+COLOUR03:
+		dc.b '  Green'
+COLOUR04:
+		dc.b '  Blue',0
+COLOUR05:
+		dc.b '  Cyan',0
+COLOUR06:
+		dc.b '  Yellow',0
+COLOUR07:
+		dc.b '  Magenta',0
+COLOUR08:
+		dc.b '  Light grey',0
+COLOUR09:
+		dc.b '  Dark grey',0
+		dc.b $00
+COLOUR10:
+		dc.b '  Dark red',0
+		dc.b $00
+COLOUR11:
+		dc.b '  Dark green',0
+COLOUR12:
+		dc.b '  Dark blue',0
+		dc.b $00
+COLOUR13:
+		dc.b '  Dark cyan',0
+		dc.b $00
+COLOUR14:
+		dc.b '  Dark yellow'
+COLOUR15:
+		dc.b '  Dark magenta',0
+		dc.b $00
+HPOS_TEXT1:
+		dc.b '  Left',0
+		dc.b $00
+HPOS_TEXT2:
+		dc.b '  Center'
+HPOS_TEXT3:
+		dc.b '  Right',0
+		dc.b $00
+SIZE_TEXT0:
+		dc.b 'big',0
+		dc.b $00
+SIZE_TEXT1:
+		dc.b 'small',0
+TEXT_003:
+		dc.b $4f
+		dc.w $4b00
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b 'Pattern:',0
+TEXT_02:
+		dc.b ' Mode:',0
+TEXT_03:
+		dc.b '   Char:',0
+TEXT_04:
+		dc.b 'Type:',0
+TEXT_05:
+		dc.b 'Frame:',0
+TEXT_08:
+		dc.b 'Border:',0
+TEXT_11:
+		dc.b 'Text:',0
+TEXT_13:
+		dc.b 'Color:',0
+TEXT_16:
+		dc.b 'Interior:',0
+TYPE0:
+		dc.b '  Box',0
+TYPE1:
+		dc.b '  I-Box',0
+TYPE2:
+		dc.b '  BoxChar',0
+help_title:
+		dc.b 'Der Boxen-Editor',0
+title:
+		dc.b ' BOXES -',0
+		.ENDC
+
 		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton

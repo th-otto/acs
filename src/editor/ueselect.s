@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 		.globl init_select
 init_select:
@@ -175,6 +178,15 @@ xb0ad9:
 		dc.b '0x0L',0
 xb0ade:
 		dc.b 'SELECT |',0
+
+		.IFEQ COUNTRY-COUNTRY_DE
 xb0ae7:
 		dc.b 'Der Select-Editor',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US /* not translated */
+xb0ae7:
+		dc.b 'Der Select-Editor',0
+		.ENDC
+
 	.even

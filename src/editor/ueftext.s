@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 		.globl init_ftext
 init_ftext:
@@ -600,6 +603,7 @@ edf_effect_1:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 A_ADAPTFONT:
 		dc.b '[2][ Die Schriftgr”že ist negativ| und ist wahrscheinlich ein| Objekt nach alter Definition.| Soll es auf den Standardwert| gesetzt werden? ][OK| Abbruch ]',0
 BUBBLE_01:
@@ -635,8 +639,7 @@ BUBBLE_15:
 BUBBLE_16:
 		dc.b 'Hier wird der Text in bis zu zwei Zeilen eingegeben.',0
 TEXT_005:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_009:
 		dc.b 'Abbruch',0
 TEXT_01:
@@ -689,6 +692,100 @@ help_title:
 		dc.b 'Der FText-Editor',0
 title:
 		dc.b 'FTEXT -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+A_ADAPTFONT:
+		dc.b '[2][ The font-height is negative | and therefore probably | from the old definition. | Do you want to use the | default values instead?][OK| Cancel ]',0
+BUBBLE_01:
+		dc.b 'The changes are accepted, the old values are overridden.',0
+BUBBLE_02:
+		dc.b 'The changes are discarded, the old values are unchanged.',0
+BUBBLE_03:
+		dc.b 'Here the string is entered which is used for BubbleGEM.',0
+BUBBLE_04:
+		dc.b 'Here the string is entered which is used to create the context popup (see Ame_strpopup).',0
+BUBBLE_05:
+		dc.b 'In the font selector the font and the size can be selected.',0
+BUBBLE_06:
+		dc.b 'Draw the text boldface.',0
+BUBBLE_07:
+		dc.b 'Draw the text lightened.',0
+BUBBLE_08:
+		dc.b 'Draw the text italic.',0
+BUBBLE_09:
+		dc.b 'Draw the text underlined.',0
+BUBBLE_10:
+		dc.b 'Draw the text hollow.',0
+BUBBLE_11:
+		dc.b 'Draw the text shadowed.',0
+BUBBLE_12:
+		dc.b 'Adjust the text to the left.',0
+BUBBLE_13:
+		dc.b 'Adjust the text to the right.',0
+BUBBLE_14:
+		dc.b 'Adjust the text to be centered.',0
+BUBBLE_15:
+		dc.b 'Adjust the text to be a block.',0
+BUBBLE_16:
+		dc.b 'Here the text is entered.',0
+TEXT_005:
+		dc.b 'OK',0
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b 'Font:',0
+TEXT_02:
+		dc.b '12345',0
+TEXT_03:
+		dc.b '123456789012345678901234567890',0
+TEXT_04:
+		dc.b 'Size:',0
+TEXT_05:
+		dc.b 'Name:',0
+TEXT_06:
+		dc.b 'Effects:',0
+TEXT_07:
+		dc.b 'Text:',0
+TEXT_08:
+		dc.b 'fat ',0
+TEXT_09:
+		dc.b 'light',0
+TEXT_10:
+		dc.b 'italic',0
+TEXT_11:
+		dc.b 'underlined   ',0
+TEXT_12:
+		dc.b 'outlined',0
+TEXT_13:
+		dc.b 'shadowed  ',0
+TEXT_14:
+		dc.b 'left ',0
+TEXT_15:
+		dc.b 'Alignment:',0
+TEXT_16:
+		dc.b 'right ',0
+TEXT_17:
+		dc.b 'centered ',0
+TEXT_18:
+		dc.b 'blocked  ',0
+TEXT_19:
+		dc.b 'Sonstiges',0
+TEXT_20:
+		dc.b 'BubbleGEM-Text',0
+TEXT_21:
+		dc.b 'Context-Popup',0
+TEXT_22:
+		dc.b 'Schrift',0
+extra:
+		dc.b 'The quick brown fox jumps over the lazy dog',0
+help_title:
+		dc.b 'Der FText-Editor',0
+title:
+		dc.b 'FTEXT -',0
+		.ENDC
+
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $29f1
@@ -2377,7 +2474,7 @@ xb7dda:
 		dc.b $00
 		dc.b $00
 xb7e0c:
-		dc.b 'Guten Tag mit ACSpro'
+		dc.b 'Guten Tag mit ACSpro' /* not translated */
 xb7e20:
 		dc.b 0
 xb7e21:
@@ -2385,7 +2482,7 @@ xb7e21:
 xb7e2a:
 		dc.b 'Auo_ftext',0
 xb7e34:
-		dc.b 'Guten Tag',0
+		dc.b 'Guten Tag',0 /* not translated */
 xb7e3e:
 		dc.b '0x%lxL',0
 xb7e45:

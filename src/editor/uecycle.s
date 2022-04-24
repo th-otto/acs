@@ -1,4 +1,7 @@
+		.include "country.inc"
 
+		.text
+		
 		.globl init_cycle
 init_cycle:
 		move.l     a2,-(a7)
@@ -455,6 +458,7 @@ prepair_1:
 		movem.l    (a7)+,a2-a4
 		rts
 
+		.IFEQ COUNTRY-COUNTRY_DE
 	.data
 A_ADAPTCYC:
 		dc.b '[2][ Dies ist wahrscheinlich ein| Objekt nach alter Definition.| Soll es auf den Standardwert| gesetzt werden?][OK| Abbruch ]',0
@@ -475,8 +479,7 @@ BUBBLE_07:
 TEXT_001:
 		dc.b 'Weiû|Rot|GrÅn|Blau|Gelb|TÅrkis|Lila|Schwarz',0
 TEXT_005:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_008:
 		dc.b 'Probe',0
 TEXT_009:
@@ -505,6 +508,60 @@ help_title:
 		dc.b 'Der Cycle-Button-Editor',0
 title:
 		dc.b 'CYCLEBUTTON -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US /* not everything translated */
+A_ADAPTCYC:
+		dc.b '[2][ Die Schriftgrîûe ist negativ| und ist wahrscheinlich ein| Objekt nach alter Definition.| Soll es auf den Standardwert| gesetzt werden? ][OK| Abbruch ]',0
+BUBBLE_01:
+		dc.b 'The changes are accepted and override the old values.',0
+BUBBLE_02:
+		dc.b 'The changes are discarded, the old values are unchanged.',0
+BUBBLE_03:
+		dc.b 'Here the string is entered which is used for BubbleGEM.',0
+BUBBLE_04:
+		dc.b 'Here the string is entered which is used to create the context popup (see Ame_strpopup).',0
+BUBBLE_05:
+		dc.b 'Hier wird das Zeichen eingegeben, das ',0
+BUBBLE_06:
+		dc.b 'This button transfers the entered string to the example popup above to test the popup.',0
+BUBBLE_07:
+		dc.b 'The 3D mode is switched on and off by this checkbox.',0
+TEXT_001:
+		dc.b 'White|Red|Green|Blue|Yellow|Violet|Black',0
+TEXT_005:
+		dc.b 'OK',0
+TEXT_008:
+		dc.b 'Test',0
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b '3D mode ',0
+TEXT_02:
+		dc.b 'Cycle Char',0
+TEXT_05:
+		dc.b 'Sonstiges',0
+TEXT_08:
+		dc.b 'BubbleGEM-Text',0
+TEXT_09:
+		dc.b 'bottom',0
+TEXT_10:
+		dc.b 'Frame: ',0
+TEXT_16:
+		dc.b 'Context-Popup',0
+TEXT_19:
+		dc.b 'top:',0
+TEXT_21:
+		dc.b 'left/',0
+TEXT_22:
+		dc.b 'right/',0
+help_title:
+		dc.b 'Der Checkbox-/Radiobutton-Editor',0
+title:
+		dc.b 'CYCLEBUTTON -',0
+		.ENDC
+
+	.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $a9f1
@@ -1712,10 +1769,18 @@ data:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+
+
 xb3100:
 		dc.w $2000
+		.IFEQ COUNTRY-COUNTRY_DE
 xb3102:
 		dc.b 'Rot|GrÅn|Blau'
+		.ENDC
+		.IFEQ COUNTRY-COUNTRY_US
+xb3102: /* not translated */
+		dc.b 'Rot|GrÅn|Blau'
+		.ENDC
 xb310f:
 		dc.b 0
 xb3110:
@@ -1724,6 +1789,7 @@ xb3119:
 		dc.b 'Auo_cycle',0
 xb3123:
 		dc.b '0x%lxL',0
+
 		.even
 
 	.bss

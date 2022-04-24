@@ -1,3 +1,4 @@
+		.text
 
 		.globl copy_ob
 copy_ob:

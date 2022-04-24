@@ -1,3 +1,7 @@
+		.include "country.inc"
+
+		.text
+
 		.globl init_slider
 init_slider:
 		move.l     a2,-(a7)
@@ -365,6 +369,7 @@ edsl_slider:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Die énderungen werden Åbernommen und Åberschreiben die alten Einstellungen.',0
 BUBBLE_02:
@@ -382,8 +387,7 @@ BUBBLE_07:
 BUBBLE_08:
 		dc.b 'Der Slider wird als vertikaler Slider verwendet.',0
 TEXT_005:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_009:
 		dc.b 'Abbruch',0
 TEXT_01:
@@ -402,6 +406,47 @@ help_title:
 		dc.b 'Der Slider-Editor',0
 title:
 		dc.b 'SLIDER -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'The changes are accepted and override the old values.',0
+BUBBLE_02:
+		dc.b 'The changes are discarded, the old values are unchanged.',0
+BUBBLE_03:
+		dc.b 'Here the string is entered which is used for BubbleGEM.',0
+BUBBLE_04:
+		dc.b 'The 3D-Mode for the slider is switched on/off.',0
+BUBBLE_05:
+		dc.b 'Here the string is entered which is used to create the context popup (see Ame_strpopup).',0
+BUBBLE_06:
+		dc.b 'The slider can be switched off, only the arrows remain.',0
+BUBBLE_07:
+		dc.b 'Use a horizontal slider.',0
+BUBBLE_08:
+		dc.b 'Use a vertical slider.',0
+TEXT_005:
+		dc.b 'OK',0
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b '3D-Mode ',0
+TEXT_02:
+		dc.b 'Alignment:',0
+TEXT_04:
+		dc.b 'Slider',0
+TEXT_05:
+		dc.b 'Sonstiges',0
+TEXT_06:
+		dc.b 'BubbleGEM Text',0
+TEXT_07:
+		dc.b 'Context Popup',0
+help_title:
+		dc.b 'Der Slider-Editor',0
+title:
+		dc.b 'SLIDER -',0
+		.ENDC
+
 		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton

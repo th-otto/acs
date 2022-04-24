@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 edti_pos:
 		movem.l    a2-a4,-(a7)
@@ -528,6 +531,7 @@ ok_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Die énderungen werden Åbernommen und Åberschreiben die alten Einstellungen.',0
 BUBBLE_02:
@@ -537,8 +541,7 @@ BUBBLE_03:
 BUBBLE_05:
 		dc.b 'Hier kann der String eingegeben werden, der das aufzurufende Context-Popup beschreibt (siehe in der Dokumentation zu Ame_strpopup).',0
 TEXT_005:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_006:
 		dc.b 'TEXT',0
 TEXT_009:
@@ -559,6 +562,41 @@ help_title:
 		dc.b 'Der Title-Editor',0
 title:
 		dc.b 'TITLE -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'The changes are accepted and override the old values.',0
+BUBBLE_02:
+		dc.b 'The changes are discarded, the old values are unchanged.',0
+BUBBLE_03:
+		dc.b 'Here the string is entered which is used for BubbleGEM.',0
+BUBBLE_05:
+		dc.b 'Here the string is entered which is used to create the context popup (see Ame_strpopup).',0
+TEXT_005:
+		dc.b 'OK',0
+TEXT_006:
+		dc.b 'TEXT',0
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_04:
+		dc.b 'Position:',0
+TEXT_05:
+		dc.b 'Sonstiges',0 /* not translated */
+TEXT_06:
+		dc.b 'BubbleGEM Text',0
+TEXT_07:
+		dc.b 'Context Popup',0
+TEXT_12:
+		dc.b 'Size:',0
+TEXT_13:
+		dc.b 'Mode:',0
+help_title:
+		dc.b 'Der Title-Editor',0 /* not translated */
+title:
+		dc.b 'TITLE -',0
+		.ENDC
+
 		.even
 A_3DBUTTON03:
 		dc.l A_3Dbutton
@@ -1442,8 +1480,7 @@ visual:
 		dc.b $01
 logical:
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.b $00
 		dc.b $18

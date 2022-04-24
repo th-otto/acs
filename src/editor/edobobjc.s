@@ -1,3 +1,4 @@
+		.text
 
 		.globl ed_abort
 ed_abort:

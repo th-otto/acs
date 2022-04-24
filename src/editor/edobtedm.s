@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 edte_framecol:
 		move.l     d3,-(a7)
@@ -943,9 +946,9 @@ edte_xftext:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 TEXT_003:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_004:
 		dc.b 'Abbruch',0
 TEXT_01:
@@ -990,7 +993,57 @@ help_title:
 		dc.b 'Der TEDINFO-Editor',0
 title:
 		dc.b ' TEDINFOS -',0
-		dc.b $00
+
+		.IFEQ COUNTRY-COUNTRY_US
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b 'Position:',0
+TEXT_02:
+		dc.b '1234',0
+TEXT_03:
+		dc.b 'EDIT:____',0
+TEXT_04:
+		dc.b '9999',0
+TEXT_05:
+		dc.b 'Type:',0
+TEXT_06:
+		dc.b ' Mode:',0
+TEXT_07:
+		dc.b 'Pattern:',0
+TEXT_08:
+		dc.b 'Text:',0
+TEXT_09:
+		dc.b 'Frame:',0
+TEXT_11:
+		dc.b 'Tmp:',0
+TEXT_12:
+		dc.b 'Val:',0
+TEXT_13:
+		dc.b 'Border:',0
+TEXT_14:
+		dc.b 'Size:',0
+TEXT_15:
+		dc.b 'Color:',0
+TEXT_17:
+		dc.b 'Interior:',0
+TYPE0:
+		dc.b '  Text',0
+TYPE1:
+		dc.b '  BoxText',0
+TYPE2:
+		dc.b '  F-Text',0
+TYPE3:
+		dc.b '  F-BoxText',0
+help_title:
+		dc.b 'Der TEDINFO-Editor',0
+title:
+		dc.b ' TEDINFOS -',0
+		.ENDC
+
+		.even
 TEDINFO_01:
 		dc.l TEXT_02
 		dc.l TEXT_03
@@ -2487,8 +2540,7 @@ _47_ED_TEDI:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		dc.b $43
-		dc.b $01
+		dc.w $4301
 		dc.w $1371
 		dc.b $00
 		dc.b $10

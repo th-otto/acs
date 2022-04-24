@@ -1,3 +1,4 @@
+		.text
 
 align:
 		movem.l    d3-d7/a2,-(a7)

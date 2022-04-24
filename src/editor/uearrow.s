@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 edar_3d:
 		movea.l    ACSblk,a0
@@ -855,6 +858,7 @@ ok_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Hier wird angegeben, ob eine 3D-Darstellung verwendet werden soll.',0
 BUBBLE_02:
@@ -892,6 +896,48 @@ help_title:
 		dc.b 'Der Arrows-Editor',0
 title:
 		dc.b 'PFEILE -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'Here you specify if the control is drawed as 3D or not.',0
+BUBBLE_02:
+		dc.b 'Here you specify if the line should be thik or normal.',0
+BUBBLE_03:
+		dc.b 'Here you enter the string which is used as a bubble help text.',0
+BUBBLE_05:
+		dc.b 'Here you enter the string which is used to create the context popup (see the docu of Ame_strpopup).',0
+TEXT_005:
+		dc.w $4f4b
+		dc.b $00
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_05:
+		dc.b 'Strings',0
+TEXT_06:
+		dc.b '3D-Mode ',0
+TEXT_07:
+		dc.b 'Direction:',0
+TEXT_08:
+		dc.b 'fat  ',0
+TEXT_09:
+		dc.b 'Length:',0
+TEXT_10:
+		dc.b 'Ends:',0
+TEXT_11:
+		dc.b 'Color:',0
+TEXT_12:
+		dc.b 'Style:',0
+TEXT_13:
+		dc.b 'BubbleGEM-Text',0
+TEXT_14:
+		dc.b 'Context-Popup',0
+help_title:
+		dc.b 'Der Arrows-Editor',0
+title:
+		dc.b 'ARROWS -',0
+		.ENDC
+
 		.even
 ARROW001:
 		dc.l A_arrows

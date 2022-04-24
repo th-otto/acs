@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 edpa_col:
 		move.w     d3,-(a7)
@@ -225,6 +228,7 @@ ok:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Die énderungen werden Åbernommen und Åberschreiben die alten Einstellungen.',0
 BUBBLE_02:
@@ -244,7 +248,31 @@ help_title:
 		dc.b 'Der Pattern-Editor',0
 title:
 		dc.b 'PATTERN -',0
-		dc.b $00
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'The changes are accepted and override the old values.',0
+BUBBLE_02:
+		dc.b 'The changes are discarded, the old values are unchanged.',0
+TEXT_005:
+		dc.b $4f
+		dc.w $4b00
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_02:
+		dc.b 'Frame ',0
+TEXT_03:
+		dc.b 'Pattern:',0
+TEXT_11:
+		dc.b 'Color:',0
+help_title:
+		dc.b 'Der Pattern-Editor',0
+title:
+		dc.b 'PATTERN -',0
+		.ENDC
+
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $29c1
@@ -2592,8 +2620,7 @@ _42_ED_PATTERN:
 		dc.b $00
 		dc.b $2c
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $18
 		dc.b $00

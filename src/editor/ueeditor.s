@@ -1,3 +1,7 @@
+		.include "country.inc"
+
+		.text
+
 		.globl init_editor
 init_editor:
 		move.l     a2,-(a7)
@@ -178,6 +182,15 @@ xb0bb4:
 		dc.b 'Auo_editor',0
 xb0bbf:
 		dc.b ' EDITOR |',0
+
+		.IFEQ COUNTRY-COUNTRY_DE
 xb0bc9:
 		dc.b 'Der Editor',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US /* not translated */
+xb0bc9:
+		dc.b 'Der Editor',0
+		.ENDC
+
 	.even

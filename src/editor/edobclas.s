@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 		.globl make_a_window
 make_a_window:
@@ -1880,15 +1883,17 @@ user_dummy_3:
 	.data
 
 		.globl NEW_POPUP
+		.globl WARN_SAME
+		.globl WARN_XSHRINK
+		.globl WARN_YSHRINK
+
+		.IFEQ COUNTRY-COUNTRY_DE
 NEW_POPUP:
 		dc.b '[2][ Wollen Sie ein neues | PopUp-MenÅ erzeugen? ][OK| Abbruch ]',0
-		.globl WARN_SAME
 WARN_SAME:
 		dc.b '[2][| Das Objekt soll auf sich| selbst kopiert werden!| Operation abbrechen?][ JA | NEIN ]',0
-		.globl WARN_XSHRINK
 WARN_XSHRINK:
 		dc.b '[2][| Kindobjekt ist breiter | als das Elternobjekt.| Kind verkleinern ?][ JA | NEIN ]',0
-		.globl WARN_YSHRINK
 WARN_YSHRINK:
 		dc.b '[2][| Kindobjekt ist hîher| als das Elternobjekt. | Kind verkleinern ?][ JA | NEIN ]',0
 STGUIDE_01:
@@ -2034,6 +2039,162 @@ TEXT_36:
 		dc.b 'nach Oben',0
 testmode:
 		dc.b ' TESTMODE -',0
+
+		.IFEQ COUNTRY-COUNTRY_US /* not everything translated */
+NEW_POPUP:
+		dc.b '[2][ Wollen Sie ein neues | PopUp-MenÅ erzeugen? ][OK| Abbruch ]',0
+WARN_SAME:
+		dc.b '[2][| Das Objekt soll auf sich| selbst kopiert werden!| Operation abbrechen?][ JA | NEIN ]',0
+WARN_XSHRINK:
+		dc.b '[2][| Kindobjekt ist breiter | als das Elternobjekt.| Kind verkleinern ?][ JA | NEIN ]',0
+WARN_YSHRINK:
+		dc.b '[2][| Kindobjekt ist hîher| als das Elternobjekt. | Kind verkleinern ?][ JA | NEIN ]',0
+STGUIDE_01:
+		dc.b 'Der Objekt-Baum-Editor',0
+STGUIDE_02:
+		dc.b 'Der MenÅ-Editor',0
+STGUIDE_03:
+		dc.b 'Der Popup-Editor',0
+STGUIDE_04:
+		dc.b 'Eingabe der Objekt-Position',0
+TEXT_002:
+		dc.b $00
+TEXT_003:
+		dc.b 'OK',0
+TEXT_006:
+		dc.b '1234567890123456789012345678901',0
+TEXT_01:
+		dc.b 'Subobj:',0
+TEXT_010:
+		dc.b ' MENU EDITOR ',0
+TEXT_011:
+		dc.b ' OBJEKTTREE EDITOR ',0
+TEXT_012:
+		dc.b ' POPUP EDITOR ',0
+TEXT_02:
+		dc.b 'MENöS',0
+TEXT_03:
+		dc.b '  Object-Editor...',0
+TEXT_04:
+		dc.b '  Learn Shortcuts    '
+		dc.b $07
+		dc.w $4c00
+TEXT_05:
+		dc.b '  References...',0
+TEXT_06:
+		dc.b '  Information...     ^I',0
+TEXT_069:
+		dc.b ' File:',0
+TEXT_07:
+		dc.b '  Delete References ',0
+TEXT_071:
+		dc.b 'Object:',0
+TEXT_08:
+		dc.b 'Char:',0
+TEXT_086:
+		dc.b '  Hide     ',0
+TEXT_087:
+		dc.b '  Show again',0
+TEXT_088:
+		dc.b '  Lock Pos. ',0
+TEXT_089:
+		dc.b '  Unlock Pos.',0
+TEXT_09:
+		dc.b '  Test...            '
+		dc.b $07
+		dc.w $5400
+TEXT_090:
+		dc.b '  Right ',0
+TEXT_091:
+		dc.b '  Middle',0
+TEXT_092:
+		dc.b '  Left ',0
+TEXT_093:
+		dc.b '  Top ',0
+TEXT_094:
+		dc.b '-Vertical-',0
+TEXT_095:
+		dc.b '  Buttom',0
+TEXT_097:
+		dc.b '  Up',0
+TEXT_098:
+		dc.b '  Down',0
+TEXT_099:
+		dc.b 'Horicontal',0
+TEXT_10:
+		dc.b 'Pixel:',0
+TEXT_100:
+		dc.b '  Fill  ',0
+TEXT_11:
+		dc.b '  Visibility      '
+		dc.w $0300
+TEXT_13:
+		dc.b 'Ob_Y:',0
+TEXT_133:
+		dc.b '123456',0
+TEXT_14:
+		dc.b 'Ob_Width:',0
+TEXT_15:
+		dc.b 'Ob_Height:',0
+TEXT_16:
+		dc.b ' Object(s) selected ',0
+TEXT_17:
+		dc.b 'POPUP',0
+TEXT_170:
+		dc.b '  About me ...      ',0
+TEXT_171:
+		dc.b '--------------------',0
+TEXT_18:
+		dc.b '  Control-Window      K',0
+TEXT_19:
+		dc.b '  Position...',0
+TEXT_20:
+		dc.b '  Adjustment      '
+		dc.b $03
+		dc.b $00
+TEXT_21:
+		dc.b 'Ob_X:',0
+TEXT_22:
+		dc.b ' Information ',0
+TEXT_23:
+		dc.b ' Position ',0
+TEXT_239:
+		dc.b '  Call:',0
+TEXT_24:
+		dc.b 'Unhide   ',0
+TEXT_245:
+		dc.b 'Index:',0
+TEXT_25:
+		dc.b ' Object(s) received ',0
+TEXT_26:
+		dc.b '  State... ',0
+TEXT_27:
+		dc.b 'OBJECTS',0
+TEXT_28:
+		dc.b '  Order           '
+		dc.w $0300
+TEXT_29:
+		dc.b 'Lock      ',0
+TEXT_30:
+		dc.b 'vertical:',0
+TEXT_301:
+		dc.b 'Cancel',0
+TEXT_31:
+		dc.b 'horicontal:',0
+TEXT_32:
+		dc.b 'Down      ',0
+TEXT_339:
+		dc.b ' Tree ',0
+TEXT_34:
+		dc.b 'Hide      ',0
+TEXT_35:
+		dc.b 'Unlock    ',0
+TEXT_36:
+		dc.b 'Up       ',0
+testmode:
+		dc.b ' TESTMODE -',0
+		.ENDC
+
 		.even
 DATAS_01:
 		dc.b $00
@@ -2101,8 +2262,7 @@ DATAS_01:
 		dc.w $5fff
 		dc.w $ffff
 		dc.w $fffa
-		dc.b $5f
-		dc.b $ff
+		dc.w $5fff
 		dc.w $ffff
 		dc.w $fffa
 		dc.w $5fff
@@ -2209,8 +2369,7 @@ DATAS_01:
 		dc.w $5fff
 		dc.w $ffff
 		dc.w $fffa
-		dc.b $5f
-		dc.b $ff
+		dc.w $5fff
 		dc.w $ffff
 		dc.w $fffa
 		dc.w $5fff
@@ -4321,8 +4480,7 @@ DATAS_07:
 		dc.b $00
 		dc.b $00
 		dc.b $7f
-		dc.b $ff
-		dc.b $00
+		dc.w $ff00
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -4360,8 +4518,7 @@ DATAS_07:
 		dc.b $00
 		dc.b $7f
 		dc.w $ffff
-		dc.b $f0
-		dc.b $00
+		dc.w $f000
 		dc.b $00
 		dc.b $7f
 		dc.w $ffff
@@ -4477,26 +4634,22 @@ DATAS_07:
 		dc.b $00
 		dc.b $00
 		dc.b $7f
-		dc.b $ff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $7f
-		dc.b $ff
-		dc.b $00
+		dc.w $ff00
 		dc.b $00
 		dc.b $00
 		dc.b $00
 		dc.b $7f
-		dc.b $ff
-		dc.b $00
+		dc.w $ff00
 		dc.b $00
 		dc.b $00
 		dc.b $00
 		dc.b $7f
-		dc.b $ff
+		dc.w $ff00
 		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $7f
+		dc.w $ff00
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -4530,8 +4683,7 @@ DATAS_07:
 		dc.b $00
 		dc.b $7f
 		dc.w $ffff
-		dc.b $f0
-		dc.b $00
+		dc.w $f000
 		dc.b $00
 		dc.b $7f
 		dc.w $ff00
@@ -4631,8 +4783,7 @@ DATAS_07:
 		dc.b $00
 		dc.b $00
 		dc.b $40
-		dc.b $01
-		dc.b $80
+		dc.w $0180
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -4647,8 +4798,7 @@ DATAS_07:
 		dc.b $00
 		dc.b $00
 		dc.b $40
-		dc.b $01
-		dc.b $80
+		dc.w $0180
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -4658,8 +4808,7 @@ DATAS_07:
 		dc.b $00
 		dc.b $70
 		dc.w $0700
-		dc.b $18
-		dc.b $00
+		dc.w $1800
 		dc.b $00
 		dc.b $7f
 		dc.w $ff3f
@@ -4674,10 +4823,8 @@ DATAS_07:
 		dc.w $f800
 		dc.b $00
 		dc.b $40
-		dc.b $01
-		dc.b $c0
-		dc.b $78
-		dc.b $00
+		dc.w $01c0
+		dc.w $7800
 		dc.b $00
 		dc.b $40
 		dc.w $01ff
@@ -10610,8 +10757,7 @@ _IMG_IM_SORT_XY:
 		dc.w $e02f
 		dc.w $fe28
 		dc.w $1cff
-		dc.b $e0
-		dc.b $4f
+		dc.w $e04f
 		dc.w $fe38
 		dc.b $00
 		dc.b $00
@@ -10656,15 +10802,13 @@ _IMG_IM_SORT_YX:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		dc.b $08
-		dc.b $ff
+		dc.w $08ff
 		dc.w $e04f
 		dc.w $fe20
 		dc.w $08ff
 		dc.w $e02f
 		dc.w $fe28
-		dc.b $08
-		dc.b $ff
+		dc.w $08ff
 		dc.w $e1ff
 		dc.w $fe38
 		dc.w $08ff
@@ -10679,8 +10823,7 @@ _IMG_IM_SORT_YX:
 		dc.w $4000
 		dc.b $00
 		dc.b $04
-		dc.b $01
-		dc.b $00
+		dc.w $0100
 		dc.w $4000
 		dc.b $00
 		dc.b $04

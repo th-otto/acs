@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 edin_dither:
 		move.l     a2,-(a7)
@@ -911,6 +914,7 @@ ok_4:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Hier wird der Titel eingegeben',0
 BUBBLE_03:
@@ -932,8 +936,7 @@ POS_TEXT5:
 TEXT_001:
 		dc.b 'TITEL',0
 TEXT_005:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_009:
 		dc.b 'Abbruch',0
 TEXT_05:
@@ -972,6 +975,71 @@ help_title:
 		dc.b 'Der Innerframe-Editor',0
 title:
 		dc.b 'INNERFRAME -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'Here the title is entered.',0
+BUBBLE_03:
+		dc.b 'Here the string is entered which is used for BubbleGEM.',0
+BUBBLE_05:
+		dc.b 'Here the string is entered which is used to create the context popup (see Ame_strpopup).',0
+POS_TEXT0:
+		dc.b 'l/o',0
+POS_TEXT1:
+		dc.b 'm/o',0
+POS_TEXT2:
+		dc.b 'r/o',0
+POS_TEXT3:
+		dc.b 'l/u',0
+POS_TEXT4:
+		dc.b 'm/u',0
+POS_TEXT5:
+		dc.b 'r/u',0
+TEXT_001:
+		dc.b 'TITEL',0
+TEXT_005:
+		dc.b 'OK',0
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_05:
+		dc.b 'Sonstiges',0 /* not translated */
+TEXT_06:
+		dc.b 'BubbleGEM Text',0
+TEXT_07:
+		dc.b 'Context Popup',0
+TEXT_09:
+		dc.b 'down:',0
+TEXT_10:
+		dc.b 'Color:',0
+TEXT_12:
+		dc.b 'Size:',0
+TEXT_13:
+		dc.b 'Pattern:',0
+TEXT_14:
+		dc.b 'Frame-color:',0
+TEXT_15:
+		dc.b 'Interior:',0
+TEXT_16:
+		dc.b 'Text:',0
+TEXT_18:
+		dc.b 'Pos:',0
+TEXT_19:
+		dc.b 'up:',0
+TEXT_20:
+		dc.b 'Dither-Mode',0
+TEXT_21:
+		dc.b 'left/',0
+TEXT_22:
+		dc.b 'right/',0
+TEXT_23:
+		dc.b ' XXX ',0
+help_title:
+		dc.b 'Der Innerframe-Editor',0
+title:
+		dc.b 'INNERFRAME -',0
+		.ENDC
+
 		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
@@ -2887,7 +2955,7 @@ data:
 		dc.b $00
 		dc.b $00
 xb5be6:
-		dc.b 'Titel'
+		dc.b 'Titel' /* not translated */
 xb5beb:
 		dc.b 0
 xb5bec:

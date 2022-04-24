@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 ed3d_dither:
 		move.l     a2,-(a7)
@@ -1209,6 +1212,7 @@ live_thickness_1:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Die énderungen werden Åbernommen und Åberschreiben die alten Einstellungen.',0
 BUBBLE_02:
@@ -1224,8 +1228,7 @@ BUBBLE_07:
 CONTEXT_01:
 		dc.b 'Kopieren|EinfÅgen|Lîschen',0
 TEXT_005:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_009:
 		dc.b 'Abbruch',0
 TEXT_01:
@@ -1272,6 +1275,74 @@ help_title:
 		dc.b 'Der 3D-Button-Editor',0
 title:
 		dc.b '3D-Button -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'Sets the values',0
+BUBBLE_02:
+		dc.b 'Discards the values',0
+BUBBLE_03:
+		dc.b 'Here you enter the string which is used for BubbleGEM.',0
+BUBBLE_04:
+		dc.b 'Here you enter the text of the 3D button.',0
+BUBBLE_05:
+		dc.b 'Here you enter the string for the context-popup.',0
+BUBBLE_07:
+		dc.b 'Here you enter the size of the text.',0
+CONTEXT_01:
+		dc.b 'Copy|Paste|Delete',0
+TEXT_005:
+		dc.b 'OK',0
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b 'Offset:',0
+TEXT_02:
+		dc.b 'empty pattern    ',0
+TEXT_03:
+		dc.b '  Size:',0
+TEXT_037:
+		dc.b 'ABC',0
+TEXT_04:
+		dc.b 'Position:',0
+TEXT_05:
+		dc.b 'Titel',0
+TEXT_06:
+		dc.b 'BubbleGEM-Text',0
+TEXT_07:
+		dc.b 'Context-Popup',0
+TEXT_09:
+		dc.b 'down:',0
+TEXT_10:
+		dc.b 'Frame:',0
+TEXT_11:
+		dc.b 'Color:',0
+TEXT_12:
+		dc.b 'Size:',0
+TEXT_13:
+		dc.b ' Mode:',0
+TEXT_14:
+		dc.b 'Text:',0
+TEXT_15:
+		dc.b 'Interior:',0
+TEXT_17:
+		dc.b 'Pattern:',0
+TEXT_19:
+		dc.b 'up:',0
+TEXT_20:
+		dc.b 'DitherModus',0
+TEXT_21:
+		dc.b 'left/',0
+TEXT_22:
+		dc.b 'right/',0
+help_title:
+		dc.b 'Der 3D-Button-Editor',0
+title:
+		dc.b '3D-Button -',0
+		.ENDC
+
+		.even
 A_3DBUTTON04:
 		dc.l A_3Dbutton
 		dc.w $29c1

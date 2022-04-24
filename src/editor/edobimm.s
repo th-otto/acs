@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 edoim_new:
 		movem.l    d3/a2-a4,-(a7)
@@ -158,6 +161,7 @@ edoim_list:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 ERR_IM_DEL:
 		dc.b '[3][ Das Bild| ',$27,'%s',$27,' | ist nicht (mehr) Teil | dieser Datei][ OK ]',0
 TEXT_001:
@@ -177,6 +181,30 @@ help_title:
 		dc.b 'Die Graphik-Zuordnung',0
 title:
 		dc.b ' BILD -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+ERR_IM_DEL:
+		dc.b '[3][ Image ',$27,'%s',$27,' is | nomore a part of this file. ][ OK ]',0
+TEXT_001:
+		dc.b 'Cancel',0
+TEXT_002:
+		dc.b $00
+TEXT_003:
+		dc.b $4f
+		dc.w $4b00
+TEXT_004:
+		dc.b 'Edit',0
+TEXT_005:
+		dc.b '1234567890123456789012345678901',0
+TEXT_03:
+		dc.b 'Image (Drag from Image-Liste):',0
+help_title:
+		dc.b 'Die Graphik-Zuordnung',0
+title:
+		dc.b ' IMAGE -',0
+		.ENDC
+
 		.even
 TEDI_001:
 		dc.l TEXT_005

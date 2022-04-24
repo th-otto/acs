@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 edoic_new:
 		movem.l    d3/a2-a4,-(a7)
@@ -156,6 +159,7 @@ edoic_list:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 ERR_IC_DEL:
 		dc.b '[3][ Die Ikone| ',$27,'%s',$27,' | ist nicht (mehr) Teil | dieser Datei][ OK ]',0
 TEXT_001:
@@ -163,8 +167,7 @@ TEXT_001:
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_004:
 		dc.b 'Edit',0
 TEXT_005:
@@ -175,6 +178,29 @@ help_title:
 		dc.b 'Die Icon-Zuordnung',0
 title:
 		dc.b ' ICONS -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+ERR_IC_DEL:
+		dc.b '[3][ Icon ',$27,'%s',$27,' is | nomore part of this file. ][ OK ]',0
+TEXT_001:
+		dc.b 'Cancel',0
+TEXT_002:
+		dc.b $00
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Edit',0
+TEXT_005:
+		dc.b '1234567890123456789012345678901',0
+TEXT_02:
+		dc.b 'Icon (drag form icon-list):',0
+help_title:
+		dc.b 'Die Icon-Zuordnung',0
+title:
+		dc.b ' ICONS -',0
+		.ENDC
+
 		.even
 TEDI_001:
 		dc.l TEXT_005

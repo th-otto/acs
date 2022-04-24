@@ -1,4 +1,7 @@
-
+		.include "country.inc"
+		
+		.text
+		
 set_it:
 		movem.l    d4/a2-a3,-(a7)
 		movea.l    a0,a2
@@ -747,11 +750,11 @@ ea_duostate_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 TEXT_001:
 		dc.b 'Abbruch',0
 TEXT_003:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_01:
 		dc.b '   Edit',0
 TEXT_02:
@@ -816,6 +819,79 @@ title1:
 		dc.b ' STATUS -',0
 titlemore:
 		dc.b ' %d STATI -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+TEXT_001:
+		dc.b 'Cancel',0
+TEXT_003:
+		dc.b 'OK',0
+TEXT_01:
+		dc.b '   Edit',0
+TEXT_02:
+		dc.b '   Default',0
+TEXT_03:
+		dc.b '   Defaultable',0
+TEXT_04:
+		dc.b '   Selectable',0
+TEXT_05:
+		dc.b '   Accept',0
+TEXT_06:
+		dc.b '   Radiobutton',0
+TEXT_07:
+		dc.b '   Constant',0
+TEXT_08:
+		dc.b '   Dragable',0
+TEXT_09:
+		dc.b '   Silent',0
+TEXT_10:
+		dc.b '   Selected',0
+TEXT_11:
+		dc.b '   Crossed',0
+TEXT_12:
+		dc.b '   Disabled',0
+TEXT_13:
+		dc.b '   Outlined',0
+TEXT_14:
+		dc.b '   Checked',0
+TEXT_15:
+		dc.b '   Shadowed',0
+TEXT_16:
+		dc.b '   up',0
+TEXT_17:
+		dc.b '   right',0
+TEXT_18:
+		dc.b '   down',0
+TEXT_19:
+		dc.b 'Indicator',0
+TEXT_20:
+		dc.b '   Touchexit',0
+TEXT_21:
+		dc.b 'None',0
+TEXT_22:
+		dc.b 'AES-4-Flags:',0
+TEXT_23:
+		dc.b '   Exit',0
+TEXT_25:
+		dc.b 'State:',0
+TEXT_26:
+		dc.b 'Extra:',0
+TEXT_27:
+		dc.b 'Activator',0
+TEXT_28:
+		dc.b 'Background',0
+TEXT_29:
+		dc.b 'Flags:',0
+TEXT_30:
+		dc.b '   left',0
+help_title:
+		dc.b 'Der Objekt-Flag-Editor',0
+title1:
+		dc.b ' STATE -',0
+titlemore:
+		dc.b ' %d STATES -',0
+		.ENDC
+
 		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton

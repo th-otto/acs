@@ -1,3 +1,4 @@
+		.text
 
 		.globl pu_init
 pu_init:

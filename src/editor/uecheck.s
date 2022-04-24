@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 do3d:
 		move.l     a2,-(a7)
@@ -317,6 +320,7 @@ ok_4:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Die énderungen werden Åbernommen und Åberschreiben die alten Einstellungen.',0
 BUBBLE_02:
@@ -330,8 +334,7 @@ BUBBLE_05:
 BUBBLE_06:
 		dc.b 'Durch diese Checkbox kann die 3D-Darstellung ein- und ausgeschaltet werden. Das Ergebnis wird direkt an der Beispiel-Checkbox oben links dargestellt.',0
 TEXT_005:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_009:
 		dc.b 'Abbruch',0
 TEXT_02:
@@ -350,6 +353,44 @@ help_title:
 		dc.b 'Der Checkbox-/Radiobutton-Editor',0
 title:
 		dc.b 'CHECKBUTTON -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'The changes are accepted, the old values are overridden.',0
+BUBBLE_02:
+		dc.b 'The changes were discarded, the old values are unchanged.',0
+BUBBLE_03:
+		dc.b 'Here the string is entered, which is used for BubbleGEM',0
+BUBBLE_04:
+		dc.b 'Here the string is entered which is used to create the context popup (see Ame_strpopup).',0
+BUBBLE_05:
+		dc.b 'Here the label of the checkbox is entered.',0
+BUBBLE_06:
+		dc.b 'The 3D mode is switched on and off by this checkbox.',0
+TEXT_005:
+		dc.b 'OK',0
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_02:
+		dc.b 'Text:',0
+TEXT_05:
+		dc.b 'Sonstiges',0
+TEXT_06:
+		dc.b 'Text',0
+TEXT_08:
+		dc.b '3D-Mode (flat otherwise)    ',0
+TEXT_09:
+		dc.b 'BubbleGEM-Text',0
+TEXT_16:
+		dc.b 'Context-Popup',0
+help_title:
+		dc.b 'Der Checkbox-/Radiobutton-Editor',0
+title:
+		dc.b 'CHECKBUTTON -',0
+		.ENDC
+
+		.even
 A_3DBUTTON02:
 		dc.l A_3Dbutton
 		dc.w $29f1

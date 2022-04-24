@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 edpi_col:
 		move.w     d3,-(a7)
@@ -384,9 +387,9 @@ acc_1:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 TEXT_005:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_009:
 		dc.b 'Abbruch',0
 TEXT_01:
@@ -403,6 +406,29 @@ help_title:
 		dc.b 'Der Picture-Editor',0
 title:
 		dc.b ' PICTURE -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+TEXT_005:
+		dc.b 'OK',0
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b 'tile-mode   ',0
+TEXT_02:
+		dc.b 'Background:',0
+TEXT_04:
+		dc.b 'Dither-Mode ',0
+TEXT_05:
+		dc.b 'Pattern:',0
+TEXT_11:
+		dc.b 'Color:',0
+help_title:
+		dc.b 'Der Picture-Editor',0
+title:
+		dc.b ' PICTURE -',0
+		.ENDC
+
 		.even
 DATAS_01:
 		dc.b $00
@@ -480,8 +506,154 @@ DATAS_01:
 		dc.b $00
 		dc.b $01
 		dc.w $1020
-		dc.b $48
-		dc.b $80
+		dc.w $4880
+		dc.w $6c00
+		dc.w $8782
+		dc.w $3700
+		dc.w $1000
+		dc.w $1864
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $0c
+		dc.w $2010
+		dc.w $c000
+		dc.b $00
+		dc.b $02
+		dc.w $4009
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.w $4008
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.w $8004
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $0e
+		dc.w $8005
+		dc.w $c000
+		dc.b $00
+		dc.b $00
+		dc.w $8004
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.w $8004
+		dc.b $00
+		dc.b $00
+		dc.w $3f1c
+		dc.w $7878
+		dc.w $70f0
+		dc.b $00
+		dc.b $e3
+		dc.w $8787
+		dc.w $8f0c
+		dc.w $fe18
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.w $01e7
+		dc.b '8p<`',0
+		dc.b $00
+		dc.w $0787
+		dc.w $c39f
+		dc.w $fe1c
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.w $01e3
+		dc.w $9ce0
+		dc.w $e1e0
+		dc.b $00
+		dc.b $00
+		dc.w $030f
+		dc.w $1e1f
+		dc.w $0f07
+		dc.w $e000
+		dc.w $70c0
+		dc.w $30f8
+		dc.w $0ccf
+		dc.w $8f3c
+		dc.b $00
+		dc.b $00
+		dc.w $0300
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.w $2110
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.w $2110
+		dc.w $3700
+		dc.b $00
+		dc.b $01
+		dc.w $1020
+		dc.w $4880
 		dc.w $6c00
 		dc.w $8782
 		dc.w $3700
@@ -780,159 +952,6 @@ DATAS_01:
 		dc.w $8782
 		dc.w $3700
 		dc.w $1000
-		dc.w $1864
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0c
-		dc.w $2010
-		dc.w $c000
-		dc.b $00
-		dc.b $02
-		dc.w $4009
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.w $4008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.w $8004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0e
-		dc.w $8005
-		dc.w $c000
-		dc.b $00
-		dc.b $00
-		dc.w $8004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.w $8004
-		dc.b $00
-		dc.b $00
-		dc.b $3f
-		dc.b $1c
-		dc.w $7878
-		dc.w $70f0
-		dc.b $00
-		dc.b $e3
-		dc.w $8787
-		dc.w $8f0c
-		dc.w $fe18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.w $01e7
-		dc.b '8p<`',0
-		dc.b $00
-		dc.w $0787
-		dc.w $c39f
-		dc.w $fe1c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.w $01e3
-		dc.w $9ce0
-		dc.b $e1
-		dc.b $e0
-		dc.b $00
-		dc.b $00
-		dc.w $030f
-		dc.w $1e1f
-		dc.b $0f
-		dc.b $07
-		dc.w $e000
-		dc.w $70c0
-		dc.w $30f8
-		dc.w $0ccf
-		dc.w $8f3c
-		dc.b $00
-		dc.b $00
-		dc.w $0300
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $21
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $21
-		dc.b $10
-		dc.w $3700
-		dc.b $00
-		dc.b $01
-		dc.w $1020
-		dc.w $4880
-		dc.w $6c00
-		dc.w $8782
-		dc.w $3700
-		dc.b $10
-		dc.b $00
 		dc.w $1864
 		dc.b $00
 		dc.b $00

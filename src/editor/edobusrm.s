@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 edus_ok:
 		movem.l    a2-a6,-(a7)
@@ -281,11 +284,11 @@ set_user_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 ERR_MUST:
 		dc.b '[3][ | Es mÅssen Werte | eingegeben werden ][ OK ]',0
 TEXT_003:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_004:
 		dc.b 'Abbruch',0
 TEXT_01:
@@ -308,6 +311,37 @@ help_title:
 		dc.b 'Der USERDEF-Editor',0
 title:
 		dc.b ' USERBLK -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+ERR_MUST:
+		dc.b '[3][ You must specify | some values!][ OK ]',0
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b 'Code:',0
+TEXT_02:
+		dc.b 'Parm:',0
+TEXT_03:
+		dc.b 'Serv:',0
+TEXT_04:
+		dc.b 'Ptr1:',0
+TEXT_05:
+		dc.b 'Ptr2:',0
+TEXT_06:
+		dc.b 'Ptr3:',0
+TEXT_07:
+		dc.b 'Bubb:',0
+TEXT_08:
+		dc.b 'CMen:',0
+help_title:
+		dc.b 'Der USERDEF-Editor',0
+title:
+		dc.b ' USERBLK -',0
+		.ENDC
+		
 A_3DBUTTON02:
 		dc.l A_3Dbutton
 		dc.w $21f1

@@ -1,4 +1,7 @@
-
+		.include "country.inc"
+		
+		.text
+		
 edst_type:
 		movem.l    d3/a2-a4,-(a7)
 		subq.w     #8,a7
@@ -210,9 +213,9 @@ set_str_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 TEXT_003:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_004:
 		dc.b 'Abbruch',0
 TEXT_02:
@@ -231,6 +234,32 @@ help_title:
 		dc.b 'Der String-Editor',0
 title:
 		dc.b ' STRINGS -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_02:
+		dc.b 'Text:',0
+TEXT_03:
+		dc.b 'Type:',0
+TEXT_030:
+		dc.b 'TEXT',0
+TYPE0:
+		dc.b '  String',0
+TYPE1:
+		dc.b '  Button',0
+TYPE2:
+		dc.b '  Title',0
+help_title:
+		dc.b 'Der String-Editor',0
+title:
+		dc.b ' STRINGS -',0
+		.ENDC
+
+		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $29f1

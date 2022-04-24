@@ -1,3 +1,4 @@
+		.text
 
 comp:
 		movea.l    (a1),a1
@@ -248,8 +249,7 @@ nktab:
 		dc.b $00
 		dc.b $00
 xc0998:
-		dc.w $4253
-		dc.b $00
+		dc.b 'BS',0
 xc099b:
 		dc.b 'DEL',0
 xc099f:
@@ -257,8 +257,7 @@ xc099f:
 xc09a3:
 		dc.b 'HOME',0
 xc09a8:
-		dc.w $5550
-		dc.b $00
+		dc.b 'UP',0
 xc09ab:
 		dc.b 'DOWN',0
 xc09b0:
@@ -274,32 +273,23 @@ xc09cb:
 xc09cf:
 		dc.b 'ESC',0
 xc09d3:
-		dc.b $46
-		dc.w $3100
+		dc.b 'F1',0
 xc09d6:
-		dc.w $4632
-		dc.b $00
+		dc.b 'F2',0
 xc09d9:
-		dc.b $46
-		dc.w $3300
+		dc.b 'F3',0
 xc09dc:
-		dc.w $4634
-		dc.b $00
+		dc.b 'F4',0
 xc09df:
-		dc.b $46
-		dc.w $3500
+		dc.b 'F5',0
 xc09e2:
-		dc.w $4636
-		dc.b $00
+		dc.b 'F6',0
 xc09e5:
-		dc.b $46
-		dc.w $3700
+		dc.b 'F7',0
 xc09e8:
-		dc.w $4638
-		dc.b $00
+		dc.b 'F8',0
 xc09eb:
-		dc.b $46
-		dc.w $3900
+		dc.b 'F9',0
 xc09ee:
 		dc.b 'F10',0
 xc09f2:

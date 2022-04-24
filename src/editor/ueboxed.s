@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 		.globl init_boxed
 init_boxed:
@@ -867,6 +870,7 @@ edbe_textcol_1:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Die énderungen werden Åbernommen und Åberschreiben die alten Einstellungen.',0
 BUBBLE_02:
@@ -992,6 +996,137 @@ help_title:
 		dc.b 'Der BoxEdit-Editor',0
 title:
 		dc.b 'BOXEDIT -',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US /* not everything translated */
+BUBBLE_01:
+		dc.b 'öbernimmt die Einstellungen',0
+BUBBLE_02:
+		dc.b 'Verwirft die Einstellungen',0
+BUBBLE_03:
+		dc.b 'Hier kann der String, der fÅr BubbleGEM verwendet werden soll, eingegeben werden.',0
+BUBBLE_04:
+		dc.b 'Hier kann der String eingegeben werden, der das aufzurufende Context-Popup beschreibt (siehe in der Dokumentation zu Ame_strpopup).',0
+PMT00:
+		dc.b '  All Chars',0
+PMT01:
+		dc.b '  normal path',0
+PMT02:
+		dc.b '  normal file',0
+PMT03:
+		dc.b '  TOS file',0
+PMT04:
+		dc.b '  TOS file pattern',0
+PMT05:
+		dc.b '  TOS path',0
+PMT06:
+		dc.b '  TOS path pattern',0
+PMT07:
+		dc.b '  Normal',0
+PMT08:
+		dc.b '  Chars',0
+PMT09:
+		dc.b '  Chars & Numbers',0
+PMT10:
+		dc.b '  binary number',0
+PMT11:
+		dc.b '  neg. binary number',0
+PMT12:
+		dc.b '  octal number',0
+PMT13:
+		dc.b '  neg. octal number',0
+PMT14:
+		dc.b '  decimal number',0
+PMT15:
+		dc.b '  neg. decimal number',0
+PMT16:
+		dc.b '  hexadecimal number',0
+PMT17:
+		dc.b '  neg. hexadezimal number',0
+PMT18:
+		dc.b '  floatingpoint number',0
+PMT19:
+		dc.b '  neg. floating point number',0
+PMT20:
+		dc.b '  DD.MM.YYY',0
+PMT21:
+		dc.b '  DD/MM/YYY',0
+PMT22:
+		dc.b '  MM.DD.YYYY',0
+PMT23:
+		dc.b '  MM/DD/YYY',0
+PMT24:
+		dc.b '  hours unlimited',0
+PMT25:
+		dc.b '  max. 24 hours',0
+PMT26:
+		dc.b '  max. 12 hours',0
+TEXT_005:
+		dc.b '  Date              '
+		dc.b $03
+		dc.b $00
+TEXT_009:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b '3D-Mode ',0
+TEXT_02:
+		dc.b 'hidden text      ',0
+TEXT_05:
+		dc.b 'Sonstiges',0
+TEXT_06:
+		dc.b '  Time              '
+		dc.b $03
+		dc.b $00
+TEXT_07:
+		dc.b 'capitalize    ',0
+TEXT_08:
+		dc.b 'BubbleGEM-Text',0
+TEXT_09:
+		dc.b 'down:',0
+TEXT_10:
+		dc.b 'Frame:                 ',0
+TEXT_11:
+		dc.b 'Color:',0
+TEXT_12:
+		dc.b 'Size:',0
+TEXT_13:
+		dc.b 'Length:',0
+TEXT_14:
+		dc.b 'Text:',0
+TEXT_15:
+		dc.b 'Mask:',0
+TEXT_16:
+		dc.b 'Context Popup',0
+TEXT_18:
+		dc.b 'Input:',0
+TEXT_19:
+		dc.b 'up:',0
+TEXT_20:
+		dc.b 'Format: hrs:min:sec',0
+TEXT_21:
+		dc.b 'left/',0
+TEXT_22:
+		dc.b 'right/',0
+TEXT_30:
+		dc.b '  Numbers           '
+		dc.w $0300
+TEXT_41:
+		dc.w $4f4b
+		dc.b $00
+TXT0:
+		dc.b '  Path              '
+		dc.b $03
+		dc.b $00
+TXT1:
+		dc.b '  File              '
+		dc.b $03
+		dc.b $00
+help_title:
+		dc.b 'Der BoxEdit-Editor',0
+title:
+		dc.b 'BOXEDIT -',0
+		.ENDC
+
 		.even
 A_3DBUTTON01:
 		dc.l A_3Dbutton
@@ -4934,8 +5069,7 @@ xb0a15:
 xb0a1a:
 		dc.b '0x%lxL',0
 xb0a21:
-		dc.b $25
-		dc.w $6400
+		dc.b '%d',0
 	.even
 
 	.bss
