@@ -1,3 +1,4 @@
+		.text
 
 		.globl add_object
 add_object:

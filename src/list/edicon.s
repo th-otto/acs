@@ -1,3 +1,4 @@
+		.text
 
 		.globl add_icon
 add_icon:

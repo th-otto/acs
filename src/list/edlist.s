@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 		.globl find_entry
 find_entry:
@@ -1127,9 +1130,42 @@ li_scope_1:
 		.data
 
 		.globl proto_alert
+		.globl ABOUT
+		.globl al_list
+		.globl al_name
+		.globl ic_list
+		.globl ic_name
+		.globl if_list
+		.globl if_name
+		.globl im_list
+		.globl im_name
+		.globl me_list
+		.globl me_name
+		.globl mf_list
+		.globl mf_name
+		.globl ob_list
+		.globl ob_name
+		.globl proto_string
+		.globl proto_wihelpfile
+		.globl proto_wihelptitle
+		.globl proto_wiinfo
+		.globl proto_winame
+		.globl pu_list
+		.globl pu_name
+		.globl rf_list
+		.globl rf_name
+		.globl st_list
+		.globl st_name
+		.globl te_list
+		.globl te_name
+		.globl us_list
+		.globl us_name
+		.globl wi_list
+		.globl wi_name
+
+		.IFEQ COUNTRY-COUNTRY_DE
 proto_alert:
 		dc.b '[1][Alarmbox][ OK ]',0
-		.globl ABOUT
 ABOUT:
 		dc.b '  šber mich ...',0
 TEXT_002:
@@ -1196,102 +1232,234 @@ TEXT_192:
 		dc.b 'Nutzen:',0
 TEXT_195:
 		dc.b 'Objekte:',0
-		.globl al_list
 al_list:
 		dc.b ' ALARMBOX LISTE ',0
-		.globl al_name
 al_name:
 		dc.b 'ALARMBOX NAME',0
-		.globl ic_list
 ic_list:
 		dc.b ' IKONEN LISTE ',0
-		.globl ic_name
 ic_name:
 		dc.b 'IKONEN NAME',0
-		.globl if_list
 if_list:
 		dc.b ' DATEN LISTE ',0
-		.globl if_name
 if_name:
 		dc.b 'DATEN NAME',0
-		.globl im_list
 im_list:
 		dc.b ' BILDER LISTE ',0
-		.globl im_name
 im_name:
 		dc.b 'BILD NAME',0
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		.globl me_list
 me_list:
 		dc.b ' MENš LISTE ',0
-		.globl me_name
 me_name:
 		dc.b 'MENš NAME',0
-		.globl mf_list
 mf_list:
 		dc.b ' MAUSFORMEN LISTE ',0
-		.globl mf_name
 mf_name:
 		dc.b 'MAUSFORM NAME',0
-		.globl ob_list
 ob_list:
 		dc.b ' OBJEKTBŽUME LISTE ',0
-		.globl ob_name
 ob_name:
 		dc.b 'OBJEKTBAUM NAME',0
-		.globl proto_string
 proto_string:
 		dc.b 'Freier String',0
-		.globl proto_wihelpfile
 proto_wihelpfile:
 		dc.b $00
-		.globl proto_wihelptitle
 proto_wihelptitle:
 		dc.b $00
-		.globl proto_wiinfo
 proto_wiinfo:
 		dc.b $00
-		.globl proto_winame
 proto_winame:
 		dc.b ' Hinweis ',0
-		.globl pu_list
 pu_list:
 		dc.b ' POPUP LISTE ',0
-		.globl pu_name
 pu_name:
 		dc.b 'POPUP NAME',0
-		.globl rf_list
 rf_list:
 		dc.b ' REFERENZEN LISTE ',0
-		.globl rf_name
 rf_name:
 		dc.b 'REFERENZ NAME',0
-		.globl st_list
 st_list:
 		dc.b ' TEXTE LISTE ',0
-		.globl st_name
 st_name:
 		dc.b 'TEXT NAME',0
-		.globl te_list
 te_list:
 		dc.b ' TEDINFO LISTE ',0
-		.globl te_name
 te_name:
 		dc.b 'TEDINFO NAME',0
-		.globl us_list
 us_list:
 		dc.b ' USERBLK LISTE ',0
-		.globl us_name
 us_name:
 		dc.b 'USERBLK NAME',0
-		.globl wi_list
 wi_list:
 		dc.b ' FENSTER LISTE ',0
-		.globl wi_name
 wi_name:
 		dc.b 'FENSTER NAME',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+proto_alert:
+		dc.b '[1][Alarmbox][ OK ]',0
+ABOUT:
+		dc.b '  About me...',0
+		dc.b $00
+		dc.b $00
+TEXT_002:
+		dc.b $00
+TEXT_003:
+		dc.b $4f
+		dc.w $4b00
+TEXT_006:
+		dc.b '1234567890123456789012345678901',0
+TEXT_008:
+		dc.b 'Cancel',0
+TEXT_009:
+		dc.b 'Global',0
+TEXT_01:
+		dc.b '  Info...   ^I',0
+TEXT_010:
+		dc.b 'Local',0
+TEXT_02:
+		dc.b '  Scope...  '
+		dc.b $07
+		dc.w $4300
+TEXT_03:
+		dc.b '  New...    ^N',0
+TEXT_04:
+		dc.b '  free      ^F',0
+TEXT_05:
+		dc.b '  Open      ^O',0
+TEXT_059:
+		dc.b '12345678901234567890',0
+TEXT_069:
+		dc.b 'File:',0
+TEXT_07:
+		dc.b ' Referencetype-Collision ',0
+TEXT_070:
+		dc.b 'List:',0
+TEXT_071:
+		dc.b 'Object:',0
+TEXT_08:
+		dc.b 'new:',0
+TEXT_09:
+		dc.b ' Information ',0
+TEXT_10:
+		dc.b 'Old',0
+TEXT_11:
+		dc.b 'New',0
+TEXT_12:
+		dc.b 'old:',0
+TEXT_13:
+		dc.b ' List-Information ',0
+TEXT_133:
+		dc.b '123456',0
+TEXT_14:
+		dc.b ' Scope ',0
+TEXT_15:
+		dc.b '  Name...   '
+		dc.w $074e
+		dc.b $00
+TEXT_170:
+		dc.b '  About me ...     ',0
+TEXT_171:
+		dc.b '--------------------',0
+TEXT_176:
+		dc.b ' Options ',0
+TEXT_190:
+		dc.b 'Size:',0
+TEXT_192:
+		dc.b 'Usage:',0
+TEXT_195:
+		dc.b 'Objects:',0
+al_list:
+		dc.b ' ALARMBOX LIST ',0
+		dc.b $00
+al_name:
+		dc.b 'ALARMBOX NAME',0
+ic_list:
+		dc.b ' ICONS LIST ',0
+		dc.b $00
+		dc.b $00
+ic_name:
+		dc.b 'ICONS NAME',0
+		dc.b $00
+if_list:
+		dc.b ' DATA LIST ',0
+		dc.b $00
+		dc.b $00
+if_name:
+		dc.b 'DATA NAME',0
+		dc.b $00
+im_list:
+		dc.b ' PICTURE LIST ',0
+im_name:
+		dc.b 'PICTURE NAME',0
+me_list:
+		dc.b ' MENU LIST ',0
+		dc.b $00
+me_name:
+		dc.b 'MENU NAME',0
+mf_list:
+		dc.b ' MOUSEFORMS LIST ',0
+		dc.b $00
+mf_name:
+		dc.b 'MOUSEFORM NAME'
+ob_list:
+		dc.b ' OBJECTTREES LIST ',0
+		dc.b $00
+ob_name:
+		dc.b 'OBJECTTREE NAME',0
+proto_string:
+		dc.b 'Free String',0
+		dc.b $00
+		dc.b $00
+proto_wihelpfile:
+		dc.b $00
+proto_wihelptitle:
+		dc.b $00
+proto_wiinfo:
+		dc.b $00
+proto_winame:
+		dc.b ' Window ',0
+		dc.b $00
+pu_list:
+		dc.b ' POPUP LIST ',0
+		dc.b $00
+pu_name:
+		dc.b 'POPUP NAME',0
+rf_list:
+		dc.b ' REFERENCES LIST ',0
+		dc.b $00
+rf_name:
+		dc.b 'REFERENCE NAME'
+st_list:
+		dc.b ' TEXT LIST ',0
+		dc.b $00
+		dc.b $00
+st_name:
+		dc.b 'TEXT NAME',0
+te_list:
+		dc.b ' TEDINFO LIST ',0
+		dc.b $00
+te_name:
+		dc.b 'TEDINFO NAME',0
+us_list:
+		dc.b ' USERBLK LIST ',0
+		dc.b $00
+us_name:
+		dc.b 'USERBLK NAME',0
+wi_list:
+		dc.b ' WINDOW LIST ',0
+		dc.b $00
+		dc.b $00
+wi_name:
+		dc.b 'WINDOW NAME',0
+		dc.b $00
+		dc.b $00
+		.ENDC
+
 		.even
 TEDI_002:
 		dc.l TEXT_133
@@ -2539,8 +2707,7 @@ _06_INFO_LIST:
 		dc.b $00
 		dc.b $07
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $1c
 		dc.b $00
@@ -3716,7 +3883,6 @@ pra02:
 xc199a:
 		dc.b '%li',0
 xc199e:
-		dc.w $2569
-		dc.b $00
+		dc.w '%i',0
 		.even
 

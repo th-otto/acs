@@ -1,3 +1,4 @@
+		.text
 
 		.globl add_men
 add_men:

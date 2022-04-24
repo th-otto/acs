@@ -1,3 +1,4 @@
+		.text
 
 		.globl add_image
 add_image:

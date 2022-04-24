@@ -1,3 +1,4 @@
+		.text
 
 		.globl add_mouse
 add_mouse:

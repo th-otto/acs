@@ -1,3 +1,4 @@
+		.text
 
 		.globl add_ref
 add_ref:

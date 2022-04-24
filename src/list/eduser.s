@@ -1,3 +1,4 @@
+		.text
 
 add_2ref:
 		move.l     a2,-(a7)

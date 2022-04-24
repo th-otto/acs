@@ -1,3 +1,4 @@
+		.text
 
 copyref:
 		move.l     a2,-(a7)

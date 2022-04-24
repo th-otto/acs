@@ -1,3 +1,4 @@
+		.text
 
 		.globl add_tedinfo
 add_tedinfo:

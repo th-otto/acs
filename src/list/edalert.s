@@ -1,3 +1,4 @@
+		.text
 
 		.globl del_alert
 del_alert:
@@ -416,6 +417,6 @@ xc1a24:
 xc1a50:
 		dc.b '%.28s'
 		dc.b $01
-		dc.w $2564
-		dc.w $0100
+		dc.b '%d'
+		dc.b $01,0
 		.even

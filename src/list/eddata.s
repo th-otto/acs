@@ -1,3 +1,4 @@
+		.text
 
 		.globl add_data
 add_data:

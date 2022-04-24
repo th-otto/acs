@@ -1,3 +1,4 @@
+		.text
 
 copy_pup:
 		movem.l    d3-d4/a2-a6,-(a7)
@@ -219,8 +220,7 @@ list_popup:
 		dc.l WI_POPUP
 		dc.l pu_list
 		dc.l pu_name
-		dc.b $27
-		dc.b $12
+		dc.w $2712
 		dc.l protopopup
 		dc.l copy_pup
 		dc.l del_pup
