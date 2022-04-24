@@ -1,4 +1,5 @@
-
+		.text
+		
 		.globl Ast_create
 Ast_create:
 		movem.l    d3/a2-a3,-(a7)

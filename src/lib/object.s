@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aob_create
 Aob_create:

@@ -1,3 +1,4 @@
+		.text
 
 		.globl Akt_getKeyTab
 Akt_getKeyTab:
@@ -1045,7 +1046,7 @@ Akt_popExpName_7:
 		jsr        strcat
 		cmp.w      d4,d3
 		ble.s      Akt_popExpName_4
-		lea.l      2(a4),a1
+		lea.l      xd450a-xd4508(a4),a1
 		movea.l    a2,a0
 		jsr        strcat
 		bra.s      Akt_popExpName_5
@@ -1117,7 +1118,7 @@ Akt_popImpName_7:
 		jsr        strcat
 		cmp.w      d4,d3
 		ble.s      Akt_popImpName_4
-		lea.l      2(a4),a1
+		lea.l      xd450a-xd4508(a4),a1
 		movea.l    a2,a0
 		jsr        strcat
 		bra.s      Akt_popImpName_5
@@ -1257,6 +1258,7 @@ xd4508:
 		dc.b $20
 xd4509:
 		dc.b 0
+xd450a:
 		dc.w $207c
 		dc.b $00
 		.even

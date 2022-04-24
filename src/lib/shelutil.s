@@ -1,3 +1,4 @@
+		.text
 
 		.globl Ash_error
 Ash_error:

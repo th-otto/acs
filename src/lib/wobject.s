@@ -1,3 +1,4 @@
+		.text
 
 		.globl Awi_diaend
 Awi_diaend:

@@ -1,4 +1,5 @@
-	.text
+		.text
+
 nk_finds:
 		btst       #13,d0
 		beq.s      .search

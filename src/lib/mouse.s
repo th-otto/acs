@@ -1,3 +1,4 @@
+		.text
 
 		.globl INmouse
 INmouse:

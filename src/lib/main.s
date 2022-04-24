@@ -1,3 +1,7 @@
+		.include "country.inc"
+
+		.text
+
 _ACSmessage:
 		rts
 
@@ -307,15 +311,17 @@ main:
 		.data
 
 		.globl _A_ERR_ACC
+		.globl _A_ERR_MESS
+		.globl _A_ERR_WINDOW
+		.globl _A_ERR_WISLOT
+
+		.IFEQ COUNTRY-COUNTRY_DE
 _A_ERR_ACC:
 		dc.b '[2][ | Soll das Accessory | >>               << | gestartet werden?| ][Ja|  Nein  ]',0
-		.globl _A_ERR_MESS
 _A_ERR_MESS:
 		dc.b '[2][ Unbekannte GEM-Nachricht | erhalten.| ID = ',$27,'%s',$27,'| Weiterhin berichten?][Ja|  Nein  ]',0
-		.globl _A_ERR_WINDOW
 _A_ERR_WINDOW:
 		dc.b '[3][ Keine freie GEM-Fenster-ID | mehr vorhanden!| Abhilfe: Ein offenes| GEM-Fenster schliežen.][    OK    ]',0
-		.globl _A_ERR_WISLOT
 _A_ERR_WISLOT:
 		dc.b '[3][ Kein freier ACS-Fenster- | Platz mehr vorhanden!| Abhilfe: Ein ACS-Fenster| l”schen.][    OK    ]',0
 NULL_STRING:
@@ -354,6 +360,121 @@ TEXT_16:
 		dc.b 'Christian Felsch',0
 TEXT_222:
 		dc.b 'Stefan Bachert',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+_A_ERR_ACC:
+		dc.b '[2][ | Start the Accessory | >>               <<? | ][Yes| No ]',0
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+_A_ERR_MESS:
+		dc.b '[2][ Unknown GEM-Message | recieved.| ID = ',$27,'%s',$27,'| Continue reporting?][Yes| No ]',0
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+_A_ERR_WINDOW:
+		dc.b '[3][ There is no GEM-Window-ID | available! | ToDo: Close an unused | GEM-Window. ][    OK    ]',0
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+_A_ERR_WISLOT:
+		dc.b '[3][ No ACS-Window-Slot| available!| ToDo: Delete an| ACS-Window.][    OK    ]',0
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+NULL_STRING:
+		dc.b $00
+TEXT_01:
+		dc.b '123456789012345678901234567890',0
+TEXT_02:
+		dc.b 'Version:',0
+TEXT_03:
+		dc.b 'CoAutor:',0
+TEXT_04:
+		dc.b 'Oliver Michalak',0
+TEXT_05:
+		dc.b '(C) 1991-2005',0
+TEXT_06:
+		dc.b ' ACSpro ',0
+TEXT_07:
+		dc.b ' Notice ',0
+TEXT_08:
+		dc.b 'OK',0
+TEXT_09:
+		dc.b 'NKCC:',0
+TEXT_10:
+		dc.b 'Author:',0
+TEXT_11:
+		dc.b 'Harald Siegmund',0
+TEXT_12:
+		dc.b 'Jan 01 1999    ',0
+TEXT_13:
+		dc.b 'Martin Els„sser',0
+TEXT_14:
+		dc.b 'ACSpro V3.0.0  ',0
+TEXT_15:
+		dc.b 'Copyright:',0
+TEXT_16:
+		dc.b 'Christian Felsch',0
+TEXT_222:
+		dc.b 'Stefan Bachert',0
+		.ENDC
+
 		.even
 DATAS_01:
 		dc.b $00
@@ -9372,8 +9493,7 @@ DATAS_183:
 		dc.w $0aa0
 		dc.w $1410
 		dc.w $2800
-		dc.b $11
-		dc.b $44
+		dc.w $1144
 		dc.w $22a2
 		dc.w $4540
 		dc.w $22a2
@@ -10176,14 +10296,12 @@ DATAS_19:
 		dc.w $1c01
 		dc.w $1038
 		dc.w $3801
-		dc.b $20
-		dc.b $1c
+		dc.w $201c
 		dc.w $3801
 		dc.w $401c
 		dc.w $3801
 		dc.w $801c
-		dc.b $38
-		dc.b $01
+		dc.w $3801
 		dc.b $00
 		dc.b $1c
 		dc.w $3800
@@ -10198,8 +10316,7 @@ DATAS_19:
 		dc.w $1c00
 		dc.b $00
 		dc.b $38
-		dc.b $1c
-		dc.b $00
+		dc.w $1c00
 		dc.b $00
 		dc.b $38
 		dc.w $1e00
@@ -10210,15 +10327,13 @@ DATAS_19:
 		dc.b $f0
 		dc.w $0700
 		dc.w $01e0
-		dc.b $03
-		dc.b $80
+		dc.w $0380
 		dc.w $03e0
 		dc.w $01c0
 		dc.w $07c0
 		dc.b $00
 		dc.b $f0
-		dc.b $1f
-		dc.b $80
+		dc.w $1f80
 		dc.b $00
 		dc.b $ff
 		dc.w $fe00
@@ -10239,15 +10354,13 @@ DATAS_19:
 DATAS_190:
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $ff
-		dc.b $fe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
+		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
@@ -10264,8 +10377,7 @@ DATAS_191:
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
-		dc.b $bf
-		dc.b $fa
+		dc.w $bffa
 		dc.w $5ff4
 		dc.w $efee
 		dc.w $77dc
@@ -10287,13 +10399,11 @@ DATAS_191:
 		dc.w $efee
 		dc.w $77dc
 		dc.w $fbbe
-		dc.b $7d
-		dc.b $7c
+		dc.w $7d7c
 		dc.w $fefe
 		dc.w $7d7c
 		dc.w $fbbe
-		dc.b $77
-		dc.b $dc
+		dc.w $77dc
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
@@ -10305,12 +10415,10 @@ DATAS_191:
 		dc.w $5ff4
 		dc.w $efee
 		dc.w $77dc
-		dc.b $fb
-		dc.b $be
+		dc.w $fbbe
 		dc.w $7d7c
 		dc.w $fefe
-		dc.b $7d
-		dc.b $7c
+		dc.w $7d7c
 		dc.w $fbbe
 		dc.w $77dc
 		dc.w $efee
@@ -10324,16 +10432,14 @@ DATAS_191:
 		dc.w $a008
 		dc.w $1010
 		dc.w $8820
-		dc.b $04
-		dc.b $40
+		dc.w $0440
 		dc.w $8280
 		dc.w $0100
 		dc.w $8280
 		dc.w $0440
 		dc.w $8820
 		dc.w $1010
-		dc.b $a0
-		dc.b $08
+		dc.w $a008
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -13112,8 +13218,7 @@ DATAS_23:
 		dc.b $00
 		dc.b $00
 		dc.b $0f
-		dc.b $e0
-		dc.b $00
+		dc.w $e000
 		dc.b $00
 		dc.b $7f
 		dc.w $fc00
@@ -13473,14 +13578,12 @@ DATAS_27:
 		dc.w $e000
 		dc.b $00
 		dc.b $70
-		dc.b $1c
-		dc.b $00
+		dc.w $1c00
 		dc.b $00
 		dc.b $80
 		dc.w $0200
 		dc.w $030f
-		dc.b $e1
-		dc.b $80
+		dc.w $e180
 		dc.w $0631
 		dc.w $18c0
 		dc.w $0c41
@@ -13519,8 +13622,7 @@ DATAS_27:
 		dc.w $4800
 		dc.b $00
 		dc.b $24
-		dc.b $24
-		dc.b $00
+		dc.w $2400
 		dc.b $00
 		dc.b $48
 		dc.w $2400
@@ -13534,8 +13636,7 @@ DATAS_27:
 		dc.w $0880
 		dc.w $0220
 		dc.w $0c40
-		dc.b $04
-		dc.b $60
+		dc.w $0460
 		dc.w $0630
 		dc.w $18c0
 		dc.w $030f
@@ -13850,24 +13951,20 @@ DATAS_29:
 		dc.w $ff88
 		dc.w $2401
 		dc.w $ffc8
-		dc.b $24
-		dc.b $01
+		dc.w $2401
 		dc.w $ffc8
 		dc.w $4801
 		dc.w $ffe4
-		dc.b $48
-		dc.b $01
+		dc.w $4801
 		dc.w $ffe4
 		dc.w $4801
-		dc.b $ff
-		dc.b $e4
+		dc.w $ffe4
 		dc.w $4801
 		dc.w $ffe4
 		dc.w $4800
 		dc.b $00
 		dc.b $24
-		dc.b $48
-		dc.b $00
+		dc.w $4800
 		dc.b $00
 		dc.b $24
 		dc.w $4800
@@ -13885,8 +13982,7 @@ DATAS_29:
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
-		dc.b $02
-		dc.b $20
+		dc.w $0220
 		dc.w $0c40
 		dc.w $0460
 		dc.w $0630
@@ -14472,15 +14568,13 @@ DATAS_31:
 		dc.w $4000
 		dc.b $00
 		dc.b $12
-		dc.b $40
-		dc.b $00
+		dc.w $4000
 		dc.b $00
 		dc.b $12
 		dc.w $4000
 		dc.b $00
 		dc.b $1e
-		dc.b $40
-		dc.b $00
+		dc.w $4000
 		dc.b $00
 		dc.b $12
 		dc.w $4000
@@ -14500,8 +14594,7 @@ DATAS_31:
 		dc.w $4a00
 		dc.w $4092
 		dc.w $4a00
-		dc.b $40
-		dc.b $92
+		dc.w $4092
 		dc.w $7fff
 		dc.w $fffe
 		dc.b $00
@@ -14517,31 +14610,26 @@ DATAS_31:
 		dc.b $00
 		dc.b $00
 		dc.w $7fff
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
 		dc.w $4fff
 		dc.w $ff92
-		dc.b $4f
-		dc.b $ff
+		dc.w $4fff
 		dc.w $ff92
 		dc.w $7fff
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
 		dc.w $4000
 		dc.b $00
 		dc.b $12
 		dc.w $4000
 		dc.b $00
 		dc.b $12
-		dc.b $40
-		dc.b $00
+		dc.w $4000
 		dc.b $00
 		dc.b $1e
 		dc.w $4000
 		dc.b $00
 		dc.b $1e
-		dc.b $40
-		dc.b $00
+		dc.w $4000
 		dc.b $00
 		dc.b $1e
 		dc.w $4000
@@ -14574,8 +14662,7 @@ DATAS_31:
 		dc.w $4000
 		dc.b $00
 		dc.b $1e
-		dc.b $40
-		dc.b $00
+		dc.w $4000
 		dc.b $00
 		dc.b $12
 		dc.w $4000
@@ -14603,8 +14690,7 @@ DATAS_31:
 		dc.b $00
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $48
-		dc.b $00
+		dc.w $4800
 		dc.b $00
 		dc.b $92
 		dc.w $4800
@@ -16395,8 +16481,7 @@ DATAS_49:
 		dc.w $8100
 		dc.w $8280
 		dc.w $8440
-		dc.b $88
-		dc.b $20
+		dc.w $8820
 		dc.w $9010
 		dc.w $a008
 		dc.w $c004
@@ -16534,15 +16619,13 @@ DATAS_49:
 		dc.b $00
 DATAS_50:
 		dc.w $fffe
-		dc.b $ff
-		dc.b $fe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
+		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
@@ -16571,16 +16654,12 @@ DATAS_51:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $7ffc
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
 		dc.w $d554
 		dc.b $00
 		dc.b $00
 		dc.w $5556
 		dc.w $fffe
-		dc.b $7f
-		dc.b $fc
-		dc.w $fffe
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $7ffc
@@ -16588,8 +16667,9 @@ DATAS_51:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $7ffc
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
+		dc.w $7ffc
+		dc.w $fffe
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $d554
@@ -19066,13 +19146,11 @@ DATAS_81:
 		dc.w $5ff4
 		dc.w $efee
 		dc.w $77dc
-		dc.b $fb
-		dc.b $be
+		dc.w $fbbe
 		dc.w $7d7c
 		dc.w $fefe
 		dc.w $7d7c
-		dc.b $fb
-		dc.b $be
+		dc.w $fbbe
 		dc.w $77dc
 		dc.w $efee
 		dc.w $5ff4
@@ -19101,8 +19179,7 @@ DATAS_82:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
@@ -19122,8 +19199,7 @@ DATAS_83:
 		dc.b $00
 		dc.b $00
 		dc.w $0108
-		dc.b $aa
-		dc.b $aa
+		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
 		dc.w $5ff4
@@ -20080,8 +20156,7 @@ DATAS_95:
 		dc.w $fbbe
 		dc.w $7d7c
 		dc.w $fefe
-		dc.b $7d
-		dc.b $7c
+		dc.w $7d7c
 		dc.w $fbbe
 		dc.w $77dc
 		dc.w $efee
@@ -20108,8 +20183,7 @@ DATAS_95:
 		dc.b $00
 		dc.w $5554
 		dc.w $8000
-		dc.b $40
-		dc.b $04
+		dc.w $4004
 		dc.w $a008
 		dc.w $1010
 		dc.w $8820
@@ -20267,8 +20341,7 @@ DATAS_96:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
 		dc.w $fffe
 		dc.b $00
 		dc.b $00
@@ -20287,25 +20360,6 @@ DATAS_97:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $7ffc
-		dc.b $ff
-		dc.b $fe
-		dc.w $7ffc
-		dc.w $fffe
-		dc.w $7ffc
-		dc.w $fffe
-		dc.w $7ffc
-		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.w $aaaa
-		dc.w $7ffc
-		dc.w $fffe
-		dc.w $7ffc
-		dc.w $fffe
-		dc.w $7ffc
-		dc.w $fffe
-		dc.b $7f
-		dc.b $fc
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $fffe
@@ -20327,8 +20381,24 @@ DATAS_97:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $7ffc
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
+		dc.w $7ffc
+		dc.w $aaaa
+		dc.b $00
+		dc.b $00
+		dc.w $aaaa
+		dc.w $7ffc
+		dc.w $fffe
+		dc.w $7ffc
+		dc.w $fffe
+		dc.w $7ffc
+		dc.w $fffe
+		dc.w $7ffc
+		dc.w $fffe
+		dc.w $7ffc
+		dc.w $fffe
+		dc.w $7ffc
+		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
 		dc.b $00
@@ -20371,16 +20441,14 @@ DATAS_98:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $ff
-		dc.b $fe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
+		dc.w $fffe
 		dc.w $fffe
 		dc.b $00
 		dc.b $00
@@ -20411,8 +20479,7 @@ DATAS_99:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $7ffc
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $7ffc
@@ -20427,8 +20494,7 @@ DATAS_99:
 		dc.b $00
 		dc.w $aaea
 		dc.w $7ffc
-		dc.b $ff
-		dc.b $fe
+		dc.w $fffe
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $7ffc
@@ -20471,8 +20537,7 @@ DATAS_99:
 		dc.b $00
 		dc.b $00
 		dc.b $02
-		dc.b $55
-		dc.b $54
+		dc.w $5554
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -26051,19 +26116,17 @@ _c_version:
 compiler_date:
 		dc.b 'Feb  2 2005',0
 lib_date:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		ds.b 11
+
+		
 xd2cb8:
+		.IFEQ COUNTRY-COUNTRY_DE
 		dc.b 'vom %s',0
+		.ENDC
+		.IFEQ COUNTRY-COUNTRY_US
+		dc.b 'as of %s',0
+		.ENDC
+
 xd2cbf:
 		dc.b '                   ',0
 xd2cd3:

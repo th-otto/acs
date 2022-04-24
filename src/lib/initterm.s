@@ -1,3 +1,4 @@
+		.text
 
 		.globl ACSinitialize
 ACSinitialize:

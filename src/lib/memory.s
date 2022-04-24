@@ -1,3 +1,4 @@
+		.text
 
 		.globl INmemory
 INmemory:
@@ -1560,6 +1561,7 @@ freeBlockStat:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+/* not everything translated */
 xd3bc8:
 		dc.b 'Awindow',0
 xd3bd0:

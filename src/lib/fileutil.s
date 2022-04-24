@@ -1,3 +1,4 @@
+		.text
 
 		.globl Af_cfgfile
 Af_cfgfile:

@@ -1,3 +1,6 @@
+		.include "country.inc"
+		
+		.text
 
 		.globl Ash_thermometer
 Ash_thermometer:
@@ -646,12 +649,17 @@ ThermoGEMScript:
 		.data
 
 TEXT_01:
-		dc.w $3132
-		dc.b '345678901234567890123456789012345678901234567890',0
+		dc.b '12345678901234567890123456789012345678901234567890',0
 TEXT_02:
 		dc.b $00
+		.IFEQ COUNTRY-COUNTRY_DE
 TEXT_04:
 		dc.b 'Abbrechen',0
+		.ENDC
+		.IFEQ COUNTRY-COUNTRY_US
+TEXT_04:
+		dc.b 'Cancel',0
+		.ENDC
 TEXT_05:
 		dc.b $00
 TEXT_06:
@@ -811,8 +819,7 @@ A_3DBUTTON05:
 		dc.b $00
 A_3DBUTTON06:
 		dc.l A_3Dbutton
-		dc.b $29
-		dc.b $f1
+		dc.w $29f1
 		dc.w $0178
 		dc.l Auo_string
 		dc.b $00
@@ -989,8 +996,7 @@ _05_ThermAObj:
 		dc.b $00
 		dc.b $03
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $15
 		dc.b $00
@@ -1206,8 +1212,7 @@ _05aThermTAObj:
 		dc.b $00
 		dc.b $00
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $15
 		dc.b $00
@@ -1282,8 +1287,7 @@ _02_ThermTObj:
 		dc.b $00
 		dc.b $00
 		dc.b $0b
-		dc.b $04
-		dc.b $01
+		dc.w $0401
 _03_ThermTObj:
 		dc.b $00
 		dc.b $01
@@ -1374,8 +1378,7 @@ ThermWind:
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $00
 		dc.b $00

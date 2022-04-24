@@ -1,3 +1,4 @@
+		.text
 
 		.globl Avdi_getRGB
 Avdi_getRGB:
@@ -402,8 +403,7 @@ vdi_color:
 		dc.w $0258
 		dc.b $00
 		dc.b $c8
-		dc.b $03
-		dc.b $20
+		dc.w $0320
 		dc.w $0320
 		dc.b $00
 		dc.b $c8
@@ -474,8 +474,7 @@ vdi_color:
 		dc.w $0190
 		dc.b $00
 		dc.b $c8
-		dc.b $01
-		dc.b $90
+		dc.w $0190
 		dc.w $0190
 		dc.b $00
 		dc.b $c8
@@ -489,8 +488,7 @@ vdi_color:
 		dc.b $c8
 		dc.w $03e8
 		dc.w $0190
-		dc.b $01
-		dc.b $90
+		dc.w $0190
 		dc.b $00
 		dc.b $00
 		dc.w $0190
@@ -500,8 +498,7 @@ vdi_color:
 		dc.w $0190
 		dc.w $0190
 		dc.w $0190
-		dc.b $01
-		dc.b $90
+		dc.w $0190
 		dc.w $0190
 		dc.w $0258
 		dc.w $0190
@@ -525,8 +522,7 @@ vdi_color:
 		dc.w $0258
 		dc.w $0258
 		dc.w $0190
-		dc.b $02
-		dc.b $58
+		dc.w $0258
 		dc.w $0320
 		dc.w $0190
 		dc.w $0258
@@ -549,8 +545,7 @@ vdi_color:
 		dc.w $0320
 		dc.w $0320
 		dc.w $0190
-		dc.b $03
-		dc.b $20
+		dc.w $0320
 		dc.w $03e8
 		dc.w $0190
 		dc.w $03e8
@@ -563,8 +558,7 @@ vdi_color:
 		dc.w $0190
 		dc.w $03e8
 		dc.w $0190
-		dc.b $01
-		dc.b $90
+		dc.w $0190
 		dc.w $03e8
 		dc.w $0258
 		dc.w $0190
@@ -572,8 +566,7 @@ vdi_color:
 		dc.w $0320
 		dc.w $0190
 		dc.w $03e8
-		dc.b $03
-		dc.b $e8
+		dc.w $03e8
 		dc.w $0258
 		dc.b $00
 		dc.b $00
@@ -610,8 +603,7 @@ vdi_color:
 		dc.b $c8
 		dc.b $00
 		dc.b $c8
-		dc.b $02
-		dc.b $58
+		dc.w $0258
 		dc.b $00
 		dc.b $c8
 		dc.w $0190
@@ -626,8 +618,7 @@ vdi_color:
 		dc.w $0258
 		dc.b $00
 		dc.b $c8
-		dc.b $03
-		dc.b $e8
+		dc.w $03e8
 		dc.w $0258
 		dc.w $0190
 		dc.b $00
@@ -637,14 +628,12 @@ vdi_color:
 		dc.b $00
 		dc.b $c8
 		dc.w $0258
-		dc.b $01
-		dc.b $90
+		dc.w $0190
 		dc.w $0190
 		dc.w $0258
 		dc.w $0190
 		dc.w $0258
-		dc.b $02
-		dc.b $58
+		dc.w $0258
 		dc.w $0190
 		dc.w $0320
 		dc.w $0258

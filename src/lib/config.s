@@ -1,3 +1,4 @@
+		.text
 
 		.globl Acfg_create
 Acfg_create:

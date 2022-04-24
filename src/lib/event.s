@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aev_unhidepointer
 Aev_unhidepointer:

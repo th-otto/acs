@@ -1,3 +1,4 @@
+		.text
 
 		.globl nkc_gemks2n
 nkc_gemks2n:

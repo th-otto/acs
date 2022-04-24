@@ -1,3 +1,4 @@
+		.text
 
 		.globl dotted_xline
 dotted_xline:

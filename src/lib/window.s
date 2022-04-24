@@ -6822,7 +6822,7 @@ xd3fef:
 		dc.w $6600
 xd3ff2:
 		dc.b '[end]',0
-xd3ff8:
+xd3ff8: /* not translated */
 		dc.b '[4][Das Erzeugen eines|Dialoges ist fehlgeschlagen!][Abbrechen]',0
 xd4038:
 		dc.b 'GetFront',0

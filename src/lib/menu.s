@@ -1,3 +1,4 @@
+		.text
 
 call_click:
 		movem.l    d3/a2-a4,-(a7)
