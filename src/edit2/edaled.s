@@ -1,3 +1,7 @@
+		.include "country.inc"
+
+		.text
+
 edal_try:
 		lea.l      -256(a7),a7
 		lea.l      (a7),a1
@@ -116,7 +120,7 @@ get_alert_6:
 		movea.l    (a7),a0
 		move.b     (a0),d0
 		beq.s      get_alert_7
-		lea.l      5(a3),a1
+		lea.l      xa137d-xa1378(a3),a1
 		movea.l    a4,a0
 		jsr        strcat
 		movea.l    (a7),a1
@@ -129,7 +133,7 @@ get_alert_7:
 		movea.l    (a7),a0
 		move.b     (a0),d0
 		beq.s      get_alert_8
-		lea.l      5(a3),a1
+		lea.l      xa137d-xa1378(a3),a1
 		movea.l    a4,a0
 		jsr        strcat
 		movea.l    (a7),a1
@@ -142,7 +146,7 @@ get_alert_8:
 		movea.l    (a7),a0
 		move.b     (a0),d0
 		beq.s      get_alert_9
-		lea.l      5(a3),a1
+		lea.l      xa137d-xa1378(a3),a1
 		movea.l    a4,a0
 		jsr        strcat
 		movea.l    (a7),a1
@@ -155,13 +159,13 @@ get_alert_9:
 		movea.l    (a7),a0
 		move.b     (a0),d0
 		beq.s      get_alert_10
-		lea.l      5(a3),a1
+		lea.l      xa137d-xa1378(a3),a1
 		movea.l    a4,a0
 		jsr        strcat
 		movea.l    (a7),a1
 		jsr        strcat
 get_alert_10:
-		lea.l      2(a3),a1
+		lea.l      xa137a-xa1378(a3),a1
 		movea.l    a4,a0
 		jsr        strcat
 		lea.l      (a7),a1
@@ -182,7 +186,7 @@ get_alert_11:
 		movea.l    (a7),a0
 		move.b     (a0),d0
 		beq.s      get_alert_12
-		lea.l      5(a3),a1
+		lea.l      xa137d-xa1378(a3),a1
 		movea.l    a4,a0
 		jsr        strcat
 		movea.l    (a7),a1
@@ -195,13 +199,13 @@ get_alert_12:
 		movea.l    (a7),a0
 		move.b     (a0),d0
 		beq.s      get_alert_13
-		lea.l      5(a3),a1
+		lea.l      xa137d-xa1378(a3),a1
 		movea.l    a4,a0
 		jsr        strcat
 		movea.l    (a7),a1
 		jsr        strcat
 get_alert_13:
-		lea.l      7(a3),a1
+		lea.l      xa137f-xa1378(a3),a1
 		movea.l    a4,a0
 		jsr        strcat
 		addq.w     #4,a7
@@ -554,6 +558,7 @@ term_2:
 
 	.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Die énderungen werden Åbernommen.',0
 BUBBLE_02:
@@ -572,7 +577,30 @@ TEXT_01:
 		dc.b ' Alertbox-Editor ',0
 TEXT_08:
 		dc.b 'ALERT-BOX',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'The changes are accepted.',0
+BUBBLE_02:
+		dc.b 'The changes are ignored.',0
+BUBBLE_03:
+		dc.b 'Here you can test your new alert box.',0
+TEXT_001:
+		dc.b 'Cancel',0
+TEXT_002:
 		dc.b $00
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Test',0
+TEXT_01:
+		dc.b ' Alertbox-Editor ',0
+TEXT_08:
+		dc.b 'ALERT-BOX',0
+		.ENDC
+
+		.even
 DATAS_05:
 		dc.w $0000
 		dc.w $0000
@@ -2051,7 +2079,12 @@ WI_ALERT:
 		dc.w $0000
 		dc.w $0000
 xa1378:
-		dc.b '[0][',0
+		dc.b '[0'
+xa137a:
+		dc.b '][',0
+xa137d:
 		dc.b $7c
-		dc.w $005d
-		dc.w $0000
+		dc.b $00
+xa137f:
+		dc.b $5d,0
+		.even

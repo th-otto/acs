@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 editdat_abort:
 		movea.l    ACSblk,a0
@@ -133,18 +136,20 @@ term_2:
 	.data
 
 		.globl A_MISSENTRY
+		.globl ERR_FILETYP
+		.globl ERR_OPEN
+		.globl ERR_TRANS
+		.globl ERR_TYPE
+
+		.IFEQ COUNTRY-COUNTRY_DE
 A_MISSENTRY:
 		dc.b '[3][ Objekteintrag | nicht vorhanden! ][ Abbruch ]',0
-		.globl ERR_FILETYP
 ERR_FILETYP:
 		dc.b '[3][ Falscher Dateityp!][ Abbruch ]',0
-		.globl ERR_OPEN
 ERR_OPEN:
 		dc.b '[3][ | Konnte Datei ',$27,'%s',$27,' | nicht finden oder es trat | ein Fehler beim ™ffnen ein! | ][ Abbruch ]',0
-		.globl ERR_TRANS
 ERR_TRANS:
 		dc.b '[3][ Die Translationstabelle ist| bergelaufen! Bitte das ACS- | Modul in mehrere Module | aufteilen! ][ Abbruch ]',0
-		.globl ERR_TYPE
 ERR_TYPE:
 		dc.b '[1][ Ein unzul„ssiger Objekttyp | wurde importiert!][ Abbruch ]',0
 TEXT_002:
@@ -171,6 +176,73 @@ TEXT_10:
 		dc.b $31,0
 TEXT_191:
 		dc.b 'Name:',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+A_MISSENTRY:
+		dc.b '[3][ An object entry | does not exist!][ Cancel ]',0
+		dc.b $00
+ERR_FILETYP:
+		dc.b '[3][ Wrong file-type. ][ Cancel ]',0
+		dc.b $00
+		dc.b $00
+ERR_OPEN:
+		dc.b '[3][ Could not find file | ',$27,'%s',$27,' | or an error occured | while reading.][ Cancel ]',0
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+ERR_TRANS:
+		dc.b '[3][ An overflow occured within | the translation table. | Please split the ACS-file | in several parts.][ Cancel ]'
+ERR_TYPE:
+		dc.b '[1][ An unknown object-| type was imported!][ Cancel ]',0
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+		dc.b $00
+TEXT_002:
+		dc.b 0
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_006:
+		dc.b '1234567890123456789012345678901',0
+TEXT_01:
+		dc.b 'Saving...',0
+TEXT_02:
+		dc.b 'Output:',0
+TEXT_03:
+		dc.b 'File:',0
+TEXT_04:
+		dc.b 'List:',0
+TEXT_05:
+		dc.b 'Object:',0
+TEXT_07:
+		dc.b '12345*12345',0
+TEXT_10:
+		dc.b $31,0
+TEXT_191:
+		dc.b 'Name:',0
+		.ENDC
+		
 		.globl al1_obj
 al1_obj:
 		dc.b 'ML1-ALERT LIST',0
@@ -1474,6 +1546,8 @@ ACSconfig:
 		dc.w $0000
 		dc.l ACSinit0
 		dc.l ACSinit
+
+		.IFEQ COUNTRY-COUNTRY_DE
 x9bfe2:
 		dc.b '[3][ Es ist ein allgemeiner | Fehler aufgetreten! ][ Abbruch ]'
 x9c020:
@@ -1560,6 +1634,97 @@ TEXT_006_2:
 		dc.b 'DATEN',0
 TEXT_01_2:
 		dc.b ' Data-Editor ',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+x9bfe2:
+		dc.b '[3][ Es ist ein allgemeiner | Fehler aufgetreten! ][ Abbruch ]'
+x9c020:
+		dc.b 0
+x9c021:
+		dc.b '[1][ Ein Fehler ist aufgetreten! | %s][ Abbruch ]',0
+x9c053:
+		dc.b '[1][ Die Anzahl der momentan| darstellbaren Farben oder| die aktuelle Bildaufl”sung | ist nicht korrekt!][ Abbruch ]',0
+x9c0c8:
+		dc.b '[1][ Eine Datei liež sich | nicht erzeugen!][ Abbruch ]',0
+x9c100:
+		dc.b '[3][ Die Datei ',$27,'%s',$27,'| l„žt sich nicht erzeugen! ][ Abbruch ]',0
+x9c13c:
+		dc.b '[1][ Auf fremden Speicher | wurde zugegriffen!][ Abbruch ]',0
+x9c177:
+		dc.b '[2][ | Soll das Accessory | >>               << | gestartet werden?| ][Ja|  Nein  ]',0
+x9c1cb:
+		dc.b '[2][ Unbekannte GEM-Nachricht | erhalten.| ID = ',$27,'%s',$27,'| Weiterhin berichten?][Ja|  Nein  ]',0
+x9c224:
+		dc.b '[3][ Keine freie GEM-Fenster-ID | mehr vorhanden!| Abhilfe: Ein offenes| GEM-Fenster schliežen.][    OK    ]',0
+x9c291:
+		dc.b '[3][ Kein freier ACS-Fenster- | Platz mehr vorhanden!| Abhilfe: Ein ACS-Fenster| l”schen.][    OK    ]',0
+x9c2f8:
+		dc.b '[1][ Es ist ein Fehler bei der | Ein-/Ausgabe aufgetreten!][ Abbruch ]',0
+x9c33f:
+		dc.b '[1][ Es ist ein Fehler in| der Speicherverwaltung | aufgetreten!][ Abbruch ]',0
+x9c38c:
+		dc.b '[1][ Das Modul konnte nicht | geladen werden!][ Abbruch ]',0
+x9c3c6:
+		dc.b '[1][ Das Modul ',$27,'%s',$27,' | konnte nicht geladen werden! ][ Abbruch ]',0
+x9c406:
+		dc.b '[1][ Beim Laden des Moduls | (mit Pexec-3) ist ein| Fehler aufgetreten!][ Abbruch ]',0
+x9c45a:
+		dc.b '[1][ Beim Laden des Moduls | ',$27,'%s',$27,' ist ein | Fehler aufgetreten!][ Abbruch ]',0
+x9c4a6:
+		dc.b '[1][ Der dem Modul folgende| Restspeicher kann nicht | freigegeben werden!][ Abbruch ]',0
+x9c4fd:
+		dc.b '[1][ Der dem Modul ',$27,'%s',$27,' | folgenden Restspeicher kann | nicht freigegeben werden!][ Abbruch ]',0
+x9c55b:
+		dc.b '[1][ Die Adresse eines Speicher- | blocks ist ungerade!][ Abbruch ]',0
+x9c59f:
+		dc.b '[1][ Eine Datei liež sich| nicht korrekt ”ffnen! ][ Abbruch ]',0
+x9c5dd:
+		dc.b '[1][ Die Datei ',$27,'%s',$27,' | l„žt sich nicht ”ffnen!][ Abbruch ]',0
+x9c617:
+		dc.b '[1][ Es steht nicht gengend | Speicher zur Verfgung!][ Abbruch ]',0
+x9c65a:
+		dc.b '[1][ Ein Fehler trat auf einem| Ein-/Ausgabekanal auf!][ Abbruch ]',0
+x9c69d:
+		dc.b '[1][ Ein Speicherblock| befindet sich aužerhalb | der legalen Bereiche!][ Abbruch ]',0
+x9c6f1:
+		dc.b '[1][ Beim Lesen aus einer Datei| ist ein Fehler aufgetreten! ][ Abbruch ]',0
+x9c73b:
+		dc.b '[1][ Beim Lesen aus der Datei | ',$27,'%s',$27,' ist ein | Fehler aufgetreten!][ Abbruch ]',0
+x9c78a:
+		dc.b '[1][ Das Modul hat leider eine | falsche Versionsnummer!][ Abbruch ]',0
+x9c7cf:
+		dc.b '[1][Das Modul|',$27,'%s',$27,'|hat eine falsche|Versionsnummer!][ Abbruch ]',0
+x9c80f:
+		dc.b '[1][ Beim Schreiben in eine Datei | ist ein Fehler aufgetreten!][ Abbruch ]',0
+x9c85b:
+		dc.b '[1][ Beim Schreiben in die Datei | ',$27,'%s',$27,' ist ein | Fehler aufgetreten!][ Abbruch ]',0
+x9c8ad:
+		dc.b ' Achtung ',0
+x9c8b7:
+		dc.b ' Frage ',0
+x9c8bf:
+		dc.b ' Stop ',0
+x9c8c6:
+		dc.b ' Meldung ',0
+x9c8d0:
+		dc.b '%;',0
+x9c8d3:
+		dc.b 'PUR_DESK',0
+
+/* FIXME: does not belong here? */
+TEXT_002_2:
+		dc.b 0
+TEXT_003_2:
+		dc.b 'DATA-blocks are used by their respect objects and can therefore only edited by those.',0
+TEXT_005_2:
+		dc.b 'OK',0
+TEXT_006_2:
+		dc.b 'DATEN',0
+TEXT_01_2:
+		dc.b ' Data-Editor ',0
+		.ENDC
+
 		.even
 DATAS_09:
 		dc.w $0000

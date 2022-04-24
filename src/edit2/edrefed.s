@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 editref_abort:
 		movea.l    ACSblk,a0
@@ -490,6 +493,8 @@ editref_edit:
 		rts
 
 	.data
+
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Die énderungen werden Åbernommen.',0
 BUBBLE_02:
@@ -503,8 +508,7 @@ BUBBLE_05:
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.b $4f
-		dc.w $4b00
+		dc.b 'OK',0
 TEXT_004:
 		dc.b 'Abbruch',0
 TEXT_01:
@@ -540,20 +544,15 @@ TEXT_15:
 TEXT_16:
 		dc.b 'REFERENZ',0
 TEXT_17:
-		dc.b '  Objekt   '
-		dc.w $0300
+		dc.b '  Objekt   ',3,0
 TEXT_174:
 		dc.b '  UOservice',0
 TEXT_18:
-		dc.b '  Userdef  '
-		dc.b $03
-		dc.b $00
+		dc.b '  Userdef  ',3,0
 TEXT_19:
 		dc.b '  kein Typ',0
 TEXT_20:
-		dc.b '  Fenster  '
-		dc.b $03
-		dc.b $00
+		dc.b '  Fenster  ',3,0
 TEXT_21:
 		dc.b '  DrawCode',0
 TEXT_22:
@@ -561,9 +560,7 @@ TEXT_22:
 TEXT_23:
 		dc.b '  Closed',0
 TEXT_24:
-		dc.b '  System   '
-		dc.b $03
-		dc.b $00
+		dc.b '  System   ',3,0
 TEXT_25:
 		dc.b '  Fulled',0
 TEXT_26:
@@ -626,7 +623,140 @@ TEXT_43:
 		dc.b '  ACSmouse',0
 TEXT_44:
 		dc.b '  ACSwikey',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'The changes are accepted.',0
+BUBBLE_02:
+		dc.b 'The changes are ignored.',0
+BUBBLE_03:
+		dc.b 'The editor is called to change the function.',0
+BUBBLE_04:
+		dc.b 'The function is defined extern, i.e. in another module.',0
+BUBBLE_05:
+		dc.b 'In this popup you choose the type of the function.',0
+TEXT_002:
 		dc.b $00
+TEXT_003:
+		dc.b 'OK',0
+TEXT_004:
+		dc.b 'Cancel',0
+TEXT_01:
+		dc.b ' Closed',0
+TEXT_02:
+		dc.b 'Type:',0
+TEXT_03:
+		dc.b 'GEMScript',0
+TEXT_04:
+		dc.b '  Iconify',0
+TEXT_05:
+		dc.b ' Fulled',0
+TEXT_06:
+		dc.b ' Arrowed',0
+TEXT_07:
+		dc.b ' Hslid',0
+TEXT_08:
+		dc.b ' Vslid',0
+TEXT_09:
+		dc.b ' Moved',0
+TEXT_10:
+		dc.b ' Sized',0
+TEXT_11:
+		dc.b ' Reference-Editor ',0
+TEXT_12:
+		dc.b '  Uniconify',0
+TEXT_13:
+		dc.b '  GEMScript',0
+TEXT_14:
+		dc.b 'Edit',0
+TEXT_15:
+		dc.b 'extern',0
+TEXT_16:
+		dc.b 'REFERENCE',0
+TEXT_17:
+		dc.b '  Object   ',3,0
+TEXT_174:
+		dc.b '  UOservice',0
+TEXT_18:
+		dc.b '  Userdef  ',3,0
+TEXT_19:
+		dc.b '  no type',0
+TEXT_20:
+		dc.b '  Window   ',3,0
+TEXT_21:
+		dc.b '  DrawCode',0
+TEXT_22:
+		dc.b '  UO-Service',0
+TEXT_23:
+		dc.b '  Closed',0
+TEXT_24:
+		dc.b '  System   ',3,0
+TEXT_25:
+		dc.b '  Fulled',0
+TEXT_26:
+		dc.b '  Arrowed',0
+TEXT_27:
+		dc.b '  V-Slide',0
+TEXT_28:
+		dc.b '  Change',0
+TEXT_29:
+		dc.b '  Moved',0
+TEXT_30:
+		dc.b '  Sized',0
+TEXT_31:
+		dc.b '  H-Slide',0
+TEXT_32:
+		dc.b '  ACSinit',0
+TEXT_33:
+		dc.b '  ACSmessage',0
+TEXT_34:
+		dc.b '  ACSkey',0
+TEXT_35:
+		dc.b '  ACSbutton',0
+TEXT_357:
+		dc.b '  Drag',0
+TEXT_358:
+		dc.b '  Keys',0
+TEXT_359:
+		dc.b '  Service',0
+TEXT_36:
+		dc.b '  ACSGEMScript',0
+TEXT_360:
+		dc.b '  Create',0
+TEXT_364:
+		dc.b '  Click',0
+TEXT_365:
+		dc.b '  Open',0
+TEXT_366:
+		dc.b '  Topped',0
+TEXT_367:
+		dc.b '  Userdef',0
+TEXT_37:
+		dc.b '  ACSinit0',0
+TEXT_370:
+		dc.b '  Init',0
+TEXT_371:
+		dc.b '  Changed',0
+TEXT_372:
+		dc.b '  Redraw',0
+TEXT_38:
+		dc.b '  ACSterm',0
+TEXT_39:
+		dc.b '  ACSaboutme',0
+TEXT_40:
+		dc.b '  ACSclose',0
+TEXT_41:
+		dc.b '  ACSmproto',0
+TEXT_42:
+		dc.b '  ACStimer',0
+TEXT_43:
+		dc.b '  ACSmouse',0
+TEXT_44:
+		dc.b '  ACSwikey',0
+		.ENDC
+		
+		.even
 DATAS_05:
 		dc.b $00
 		dc.b $00

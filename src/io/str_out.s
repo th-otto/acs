@@ -1,3 +1,4 @@
+		.text
 
 out_string:
 		movem.l    d3-d4/a2-a5,-(a7)
@@ -168,4 +169,4 @@ x9b284:
 		dc.b '[%s]',$0d,$0a,0
 x9b28b:
 		dc.b 'GUI-LANGUAGE=ACS_LANG%d',$0d,$0a,0
-	.even
+		.even
