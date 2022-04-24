@@ -1,3 +1,7 @@
+	.include "country.inc"
+	
+	.text
+
 		.globl ShowACSVersion
 ShowACSVersion:
 		movea.l    OldAboutMe,a0
@@ -24,7 +28,9 @@ AboutGUIEditor:
 		movea.l    (a7)+,a2
 		rts
 
+	
 	.data
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Es werden Informationen Åber die verwendete ACS-Version angezeigt.',0
 BUBBLE_02:
@@ -75,7 +81,62 @@ TEXT_31:
 		dc.b 'Upgrades sind wesentliche Erweiterungen, die ein erneutes Registrieren notwendig machen. Dieses ist kostenpflichtig, es gibt gestaffelte Preise fÅr Benutzer einer Vorversion. Die Versionsnummer Ñndert sich dann vor dem zweiten Komma.',0
 TEXT_34:
 		dc.b ' ACSpro: Updates & Upgrades ',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'Show information about the ACS version',0
+BUBBLE_02:
+		dc.b 'Hints for Updates, Upgrades and Download-Infos are shown.',0
+BUBBLE_03:
+		dc.b 'Quit the Dialog',0
+BUBBLE_04:
+		dc.b 'Genauere Informationen zu Updates und Upgrades entnehmen Sie bitte der Online-Hilfe und dem Internet.',0
+TEXT_002:
 		dc.b $00
+TEXT_01:
+		dc.b 'http://acspro.atari.org',0
+TEXT_03:
+		dc.b '      Startup-Code by Stefan Kuhr',0
+TEXT_05:
+		dc.b '      NKCC by Harald Siegmund, modified by Christian Felsch',0
+TEXT_06:
+		dc.b '  (c) 1991-2005 by Stefan Bachert, Oliver Michalak, Martin ElsÑsser',0
+TEXT_16:
+		dc.b 'The GUI-Editor of ACSpro',0
+TEXT_17:
+		dc.b 'This is the ACSpro-GUI-Editor. The Program was written using ACSpro and the compiler Pure-C.',0
+TEXT_18:
+		dc.b 'Legal Remarks',0
+TEXT_19:
+		dc.b 'The ACSpro-GUI-Editor is as a part of the development systems ACSpro Shareware. It may only be distributed in form of the original archives, if the costs don',$27,'t exceed the usual costs for the floppies or CDs and the stamps.',0
+TEXT_20:
+		dc.b $4f
+		dc.w $4b00
+TEXT_22:
+		dc.b 'Updates & Upgrades',0
+TEXT_23:
+		dc.b ' About the GUI-Editor of ACSpro ',0
+TEXT_24:
+		dc.b 'Version',0
+TEXT_25:
+		dc.b 'Updates & Upgrades',0
+TEXT_26:
+		dc.b 'Updates are improvements of ACSpro. The version number changes only in the second position after the point. The Update is free for users of the actual basic version (the version with second position after the point equals 0).',0
+TEXT_27:
+		dc.b 'ACSpro can be downloaded ...',0
+TEXT_28:
+		dc.b '... from the Maus LL (Nr. ++49-8192-99 6 99 99, Gruppenprogrammteil ACSpro) or in the Internet from http://www.atari-computer.de/martin_elsaesser/',0
+TEXT_29:
+		dc.b $4f
+		dc.w $4b00
+TEXT_31:
+		dc.b 'Upgrades are essential additions, so a new registration is necessary and is to be paid. There are special/lower prices for users of former versions. The version number changes before the point or in the first position after it.',0
+TEXT_34:
+		dc.b ' ACSpro: Updates & Upgrades ',0
+		.ENDC
+
+		.even
 DATAS_100:
 		dc.b $00
 		dc.b $00
