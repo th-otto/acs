@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aev_InitDD
 Aev_InitDD:

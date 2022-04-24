@@ -1,3 +1,5 @@
+		.text
+
 	.globl Aev_InitSSP
 Aev_InitSSP:
 		moveq.l    #1,d0

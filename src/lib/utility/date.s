@@ -1,3 +1,4 @@
+		.text
 
 		.globl Adate_getMonth
 Adate_getMonth:

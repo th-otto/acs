@@ -1,3 +1,5 @@
+		.text
+
 	.globl Aev_InitSE
 Aev_InitSE:
 		moveq.l    #1,d0

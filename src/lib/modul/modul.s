@@ -1,3 +1,4 @@
+		.text
 
 		.globl Ax_mterm
 Ax_mterm:

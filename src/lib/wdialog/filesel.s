@@ -1,3 +1,5 @@
+		.text
+
 		.globl fsmesshndler /* FIXME */
 fsmesshndler:
 		move.l     d2,-(a7)

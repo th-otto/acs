@@ -1,3 +1,4 @@
+		.text
 
 		.globl A_picture
 A_picture:

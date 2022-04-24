@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aev_InitSTGuide
 Aev_InitSTGuide:

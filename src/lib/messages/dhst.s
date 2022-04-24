@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aev_InitDHST
 Aev_InitDHST:

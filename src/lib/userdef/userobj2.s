@@ -1,3 +1,4 @@
+		.text
 
 		.globl A_pattern
 A_pattern:

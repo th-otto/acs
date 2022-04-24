@@ -1,3 +1,4 @@
+		.text
 
 		.globl Ash_printSetIcon
 Ash_printSetIcon:

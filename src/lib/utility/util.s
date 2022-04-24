@@ -1,3 +1,4 @@
+		.text
 
 		.globl Awi_keys
 Awi_keys:

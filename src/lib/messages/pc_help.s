@@ -1,3 +1,5 @@
+		.text
+
 		.globl Aev_InitPCHelp
 Aev_InitPCHelp:
 		moveq.l    #1,d0
@@ -202,18 +204,11 @@ Aev_AcHelp_4:
 		.data
 
 help_string:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.l 0
 help_version:
-		dc.b $00
-		dc.b $00
+		dc.w 0
 help_meldung:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.l 0
 help_name:
 		dc.b $00
 		dc.b $00

@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aev_InitGEMScript
 Aev_InitGEMScript:
@@ -1213,15 +1214,9 @@ gs_GetAllCommands_2:
 		.data
 
 gs_infodata:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.l 0
 gs_connect:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.l 0
 xd4b4a:
 		dc.b $00
 		dc.b $00

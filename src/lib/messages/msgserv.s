@@ -1,3 +1,4 @@
+		.text
 
 		.globl INMsgService
 INMsgService:
@@ -1443,8 +1444,7 @@ MsgListe:
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ff00
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $0500
 		dc.l Aev_GetAccAck
 		dc.w $ffff
@@ -1454,8 +1454,7 @@ MsgListe:
 		dc.w $0502
 		dc.l Aev_GetAccKey
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ff01
 		dc.w $ffff
 		dc.w $0501
@@ -1477,35 +1476,30 @@ MsgListe:
 		dc.w $ffff
 		dc.w $ff02
 		dc.w $ffff
-		dc.b $47
-		dc.b $01
+		dc.w $4701
 		dc.l Aev_GetVaProtoStatus
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ff00
 		dc.w $ffff
-		dc.b $47
-		dc.b $36
+		dc.w $4736
 		dc.l Aev_GetAvExit
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $ff
-		dc.b $00
+		dc.w $ff00
 		dc.w $ffff
 		dc.w $4711
 		dc.l Aev_GetVaStart
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ff00
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $4738
 		dc.l Aev_GetAvStarted
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ff00
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $4710
 		dc.l Aev_GetAvSendKey
 		dc.w $ffff
@@ -1527,8 +1521,7 @@ MsgListe:
 		dc.b $00
 		dc.b $3f
 		dc.l Aev_GetAPDragDrop
-		dc.b $03
-		dc.b $ff
+		dc.w $03ff
 		dc.w $ffff
 		dc.w $ff02
 		dc.w $ffff
@@ -1543,8 +1536,7 @@ MsgListe:
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ff00
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $4952
 		dc.l Aev_GetOleNew
 		dc.w $ffff
@@ -1850,14 +1842,11 @@ MsgListe:
 		dc.w $ff00
 		dc.w $ffff
 MsgListeLen:
-		dc.b $00
-xd4877:
-	dc.b '>'
+		dc.w 62
 xd4878:
 		dc.b 'ARGS',0
 xd487d:
-		dc.b $0a
-		dc.w $0d00
+		dc.b $0a,$0d,0
 xd4880:
 		dc.b 'XAccTxt',0
 xd4888:

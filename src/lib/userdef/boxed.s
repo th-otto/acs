@@ -1,3 +1,4 @@
+		.text
 
 boxed_insert:
 		movem.l    d3-d5/a2-a4,-(a7)
@@ -3206,7 +3207,6 @@ xd501c:
 xd501e:
 		dc.b '%ld',0
 xd5022:
-		dc.w $2563
-		dc.b $00
+		dc.b '%c',0
 		.even
 

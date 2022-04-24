@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 		.globl Aev_InitXAcc
 Aev_InitXAcc:
@@ -1039,6 +1042,8 @@ xd48c8:
 		dc.b $00
 xd48d8:
 		dc.b 'XAccTxt',0
+
+/* not translated */
 xd48e0:
 		dc.b '[4][Bei einem XAcc-Transfer|konnte auf den Speicher|nicht zugegriffen|werden (Speicherschutz)!][OK]',0
 xd4944:

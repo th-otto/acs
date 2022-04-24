@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aev_InitVA
 Aev_InitVA:
@@ -428,6 +429,55 @@ Aev_AvExit_4:
 		lea.l      24(a7),a7
 		rts
 
+	.IFNE 0 /* only in lib */
+Aev_VaProtoStatus:
+		lea.l     -$0018(a7),a7
+		move.w    d0,$0016(a7)
+		move.l    a0,$0012(a7)
+		move.w    d1,$0010(a7)
+		lea.l     xd4a5c,a0
+		lea.l     (a7),a1
+		moveq.l   #$0f,d0
+Aev_VaProtoStatus1:
+		move.b    (a0)+,(a1)+
+		dbra      d0,aev_vaprotostatus1
+		movea.l   acsblk,a0
+		move.w    $0016(a7),d0
+		cmp.w     (a0),d0
+		beq.b     aev_vaprotostatus
+		move.w    #$4701,(a7)
+		movea.l   acsblk,a0
+		move.w    (a0),$0002(a7)
+		clr.w     $0004(a7)
+		move.w    #$4736,$0006(a7)
+		clr.w     $0008(a7)
+		clr.w     $000a(a7)
+		movea.l   acsblk,a0
+		move.l    $03dc(a0),$000c(a7)
+		move.w    $0016(a7),d0
+		bmi.b     aev_vaprotostatus2
+		move.w    $0010(a7),d2
+		movea.l   $0012(a7),a1
+		lea.l     (a7),a0
+		moveq.l   #$01,d1
+		move.w    $0016(a7),d0
+		jsr       aev_sendmsg
+		bra.b     aev_vaprotostatus4
+		bra.b     aev_vaprotostatus3
+Aev_VaProtoStatus2:
+		move.w    $0010(a7),d1
+		movea.l   $0012(a7),a1
+		moveq.l   #$01,d0
+		lea.l     (a7),a0
+		jsr       aev_sendallmsg
+		bra.b     aev_vaprotostatus4
+Aev_VaProtoStatus3:
+		clr.w     d0
+Aev_VaProtoStatus4:
+		lea.l     $0018(a7),a7
+		rts
+	.ENDC
+
 		.globl Aev_VaStart
 Aev_VaStart:
 		lea.l      -32(a7),a7
@@ -567,7 +617,7 @@ xd4a4c:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-xd4a5c: /* unused */
+xd4a5c:
 		dc.b $00
 		dc.b $00
 		dc.b $00

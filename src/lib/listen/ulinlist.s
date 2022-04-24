@@ -1,3 +1,4 @@
+		.text
 
 		.globl Alu_create
 Alu_create:

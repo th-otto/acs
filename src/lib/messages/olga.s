@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aev_InitOlga
 Aev_InitOlga:
@@ -875,10 +876,7 @@ Aev_OlgaInfo_1:
 		.data
 
 olga_connection:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.l 0
 olga_id:
 		dc.w $ffff
 olga_infos:

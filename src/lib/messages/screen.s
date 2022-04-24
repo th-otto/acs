@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aev_GetMnSelected
 Aev_GetMnSelected:

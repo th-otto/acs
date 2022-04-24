@@ -155,7 +155,7 @@ lib\thermo.s
 lib\keytab.s [-M-]
 lib\messages\msgserv.s [-M-]
 lib\messages\screen.s
-lib\messages\xacc.s [-M-]
+lib\messages\xacc.s [-M]
 lib\messages\av.s
 lib\messages\dd.s
 lib\messages\dhst.s

@@ -1,3 +1,4 @@
+		.text
 
 		.globl A_ftext
 A_ftext:

@@ -1,3 +1,4 @@
+		.text
 
 		.globl A_cycle
 A_cycle:

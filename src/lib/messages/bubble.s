@@ -1,3 +1,4 @@
+		.text
 
 		.globl Aev_InitBubble
 Aev_InitBubble:
@@ -232,10 +233,7 @@ Aev_ShowBubbleGEM_2:
 		.data
 
 bubble_string:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.l 0
 phase:
 		dc.w $ffff
 xd4b24:

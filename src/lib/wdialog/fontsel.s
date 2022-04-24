@@ -1,3 +1,4 @@
+		.text
 
 		.globl Ash_fontSetIcon
 Ash_fontSetIcon:
