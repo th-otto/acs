@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 		.globl Apd_close
 Apd_close:
@@ -1931,13 +1934,11 @@ purGEMScript_2:
 
 		.globl module_window
 module_window:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.l 0
 my_menu:
-		dc.b $00
-		dc.b $01
+		dc.w 1
+
+		.IFEQ COUNTRY-COUNTRY_DE
 BUBBLE_01:
 		dc.b 'Hier wird ein ACS-Modul nachgeladen.',0
 BUBBLE_02:
@@ -1984,6 +1985,57 @@ TEXT_17:
 		dc.b '  Entfernen  ^D',0
 TEXT_18:
 		dc.b '  Wechseln   ^W',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+BUBBLE_01:
+		dc.b 'Here an ACS-Module can be loaded.',0
+BUBBLE_02:
+		dc.b 'Informations about the selected objects or about ACS.',0
+BUBBLE_03:
+		dc.b 'Delete the selected objects.',0
+HELPFILE_01:
+		dc.b 'ACSPRO',0
+HELPFILE_02:
+		dc.b 'ACSPRO',0
+MODUL_LOAD_TITEL:
+		dc.b 'Load Modules',0
+NAME_MODULE:
+		dc.b ' Module ',0
+NAME_PUR_DESK:
+		dc.b ' Pure Dexktop ',0
+STGUIDE_01:
+		dc.b 'Der ACSpro-GUI-Editor',0
+STGUIDE_02:
+		dc.b 'Der ACSpro-GUI-Editor',0
+TEXT_02:
+		dc.b '  Module...       ^M',0
+TEXT_04:
+		dc.b '  Open...         ^O',0
+TEXT_05:
+		dc.b '  Information...  ^I',0
+TEXT_06:
+		dc.b $00
+TEXT_07:
+		dc.b '  About me...',0
+TEXT_08:
+		dc.b '  New...          ^N',0
+TEXT_09:
+		dc.b '--------------------',0
+TEXT_11:
+		dc.b ' File ',0
+TEXT_13:
+		dc.b '  Quit...         ^Q ',0
+TEXT_14:
+		dc.b '  Close      ^U',0
+TEXT_15:
+		dc.b ' Window ',0
+TEXT_17:
+		dc.b '  Delete     ^D',0
+TEXT_18:
+		dc.b '  Cycle      ^W',0
+		.ENDC
+
 		.even
 DATAS_03:
 		dc.b $00
@@ -2020,8 +2072,7 @@ DATAS_03:
 		dc.w $4000
 		dc.b $00
 		dc.b $1e
-		dc.b $40
-		dc.b $00
+		dc.w $4000
 		dc.b $00
 		dc.b $1e
 		dc.w $4000
@@ -2199,8 +2250,7 @@ DATAS_03:
 		dc.w $fffe
 		dc.w $4fff
 		dc.w $ff92
-		dc.b $4f
-		dc.b $ff
+		dc.w $4fff
 		dc.w $ff92
 		dc.w $7fff
 		dc.w $fffe
@@ -2272,8 +2322,7 @@ DATAS_03:
 		dc.w $4000
 		dc.b $00
 		dc.b $13
-		dc.b $40
-		dc.b $00
+		dc.w $4000
 		dc.b $00
 		dc.b $13
 		dc.w $7fff
@@ -2285,8 +2334,7 @@ DATAS_03:
 		dc.b $00
 		dc.b $93
 		dc.w $7fff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $3fff
 		dc.w $ffff
 		dc.b $00
@@ -4942,8 +4990,7 @@ xc4048:
 		dc.b 'A:\',0
 		dc.b 'C:\',0
 xc405c:
-		dc.w $414d
-		dc.b $00
+		dc.b 'AM',0
 xc405f:
 		dc.b 'AMA',0
 xc4063:

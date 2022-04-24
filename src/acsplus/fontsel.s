@@ -1,3 +1,6 @@
+		.include "country.inc"
+
+		.text
 
 mod_height:
 		movem.l    d3/a2-a5,-(a7)
@@ -616,6 +619,7 @@ A_fontsel_3:
 
 		.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 TEXT_002:
 		dc.b $00
 TEXT_01:
@@ -635,11 +639,35 @@ TEXT_05:
 		dc.b 'Test:',0
 TEXT_06:
 		dc.b ' Schrift-Auswahl ',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+TEXT_002:
+		dc.b $00
+TEXT_01:
+		dc.b 'ÑîÅéôöû The quick brown fox jumps over the lazy dog',0
+TEXT_013:
+		dc.b $4f
+		dc.w $4b00
+TEXT_02:
+		dc.b 'Pixel:',0
+TEXT_026:
+		dc.b 'Cancel',0
+TEXT_03:
+		dc.b 'Height:',0
+TEXT_04:
+		dc.b 'Font:',0
+TEXT_05:
+		dc.b 'Test:',0
+TEXT_06:
+		dc.b ' Font-Selector ',0
+		.ENDC
+		
+		.even
 A_3DBUTTON02:
 		dc.l A_3Dbutton
 		dc.w $29f1
-		dc.b $01
-		dc.b $78
+		dc.w $0178
 		dc.l Auo_string
 		dc.b $00
 		dc.b $00
@@ -783,8 +811,7 @@ A_FTEXT01:
 		dc.b $00
 A_INNERFRAME02:
 		dc.l A_innerframe
-		dc.b $10
-		dc.b $00
+		dc.w $1000
 		dc.w $8f19
 		dc.l Auo_string
 		dc.l TEXT_04
@@ -1091,8 +1118,7 @@ _09_FONTSEL:
 _10_FONTSEL:
 		dc.b $00
 		dc.b $0c
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.b $00
 		dc.b $18
@@ -1239,8 +1265,7 @@ _15aFONTSEL:
 _17_FONTSEL:
 		dc.b $00
 		dc.b $13
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.b $00
 		dc.b $18

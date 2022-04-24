@@ -1,3 +1,4 @@
+		.text
 
 AddItem:
 		movem.l    d3-d4/a2-a5,-(a7)
@@ -1419,6 +1420,8 @@ TEXT_002:
 		dc.b $00
 TEXT_01:
 		dc.b $00
+		
+		.even
 DATAS_05:
 		dc.b $00
 		dc.b $00

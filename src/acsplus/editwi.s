@@ -1,4 +1,6 @@
-	.text
+		.include "country.inc"
+
+		.text
 	
 set_icon:
 		movem.l    a2-a5,-(a7)
@@ -5508,6 +5510,7 @@ Aed_fkey_3:
 
 		.data
 
+		.IFEQ COUNTRY-COUNTRY_DE
 ASK_SELECT:
 		dc.b '[2][ | Nur den selektierten | Block speichern?| ][Ja|   Nein   ]',0
 A_FKEYDBL:
@@ -5672,6 +5675,184 @@ TEXT_66:
 		dc.b '  RÅckgÑngig      UNDO',0
 TEXT_67:
 		dc.b '  Alles auswÑhlen   ^A',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+ASK_SELECT:
+		dc.b '[2][ | Save only the | selected block?| ][ Yes | No ]',0
+A_FKEYDBL:
+		dc.b '[1][ This functionkey is already | used. Overwrite the key | with the new text?][Yes| No ]',0
+WARN_2SAVED:
+		dc.b '[2][ Should the modified text | ',$27,'%s',$27,'| be saved?][ Yes | No | Cancel ]',0
+WARN_SAVED:
+		dc.b '[2][ Should the modified| ',$27,'%s',$27,'| be saved?][ Yes | No ]',0
+FK_TITLE:
+		dc.b ' Functionkeys ',0
+TEXT_002:
+		dc.b $00
+TEXT_004:
+		dc.b '--------------------',0
+TEXT_006:
+		dc.b ' File ',0
+TEXT_01:
+		dc.b 'backwards',0
+TEXT_013:
+		dc.b 'OK',0
+TEXT_018:
+		dc.b ' Search ',0
+TEXT_02:
+		dc.b 'all  ',0
+TEXT_026:
+		dc.b 'Cancel',0
+TEXT_03:
+		dc.b '     Tab-Width:',0
+TEXT_032:
+		dc.b ' Options',0
+TEXT_04:
+		dc.b ' F 1 | F 2 | F 3 | F 4 | F 5 | F 6 | F 7 | F 8 | F 9 | F10 ',0
+TEXT_05:
+		dc.b 'Lines:',0
+TEXT_06:
+		dc.b 'Text:',0
+TEXT_07:
+		dc.b 'Bytes:',0
+TEXT_08:
+		dc.b '  Go to...        ^L',0
+TEXT_09:
+		dc.b '1234567',0
+TEXT_10:
+		dc.b 'Replace:',0
+TEXT_11:
+		dc.b ' Options ',0
+TEXT_12:
+		dc.b ' Go to ',0
+TEXT_13:
+		dc.b 'Shift',0
+TEXT_14:
+		dc.b 'Appearance:',0
+TEXT_15:
+		dc.b '  ...save',0
+TEXT_16:
+		dc.b '  Save as...      ^M',0
+TEXT_17:
+		dc.b '  Insert...',0
+TEXT_18:
+		dc.b '  Information...  ^I',0
+TEXT_19:
+		dc.b '  Save            ^S',0
+TEXT_20:
+		dc.b '  to Clipboard     '
+		dc.b $01,$5e
+		dc.b $43,0
+TEXT_21:
+		dc.b '  Replace...      ^R',0
+TEXT_22:
+		dc.b 'continous     ',0
+TEXT_23:
+		dc.b 'EDITOR',0
+TEXT_24:
+		dc.b 'This fulltext-editor-class is part of the ACSpro-Library.',0
+TEXT_25:
+		dc.b '  Copy              ^C',0
+TEXT_26:
+		dc.b '  Cut line          ^Y',0
+TEXT_27:
+		dc.b '  from Clipboard   '
+		dc.b $01,$5e
+		dc.w $56,0
+TEXT_28:
+		dc.b '  Open...         ^O',0
+TEXT_29:
+		dc.b '  Cut               ^X',0
+TEXT_30:
+		dc.b '  öber mich...',0
+TEXT_31:
+		dc.b 'Mode:',0
+TEXT_32:
+		dc.b ' Line:',0
+TEXT_33:
+		dc.b '  Replace next    ^T',0
+TEXT_34:
+		dc.b '  Find...         ^F',0
+TEXT_35:
+		dc.b '  Find next       ^G',0
+TEXT_36:
+		dc.b '  Options..          '
+		dc.b $07,$4f
+		dc.b $00
+TEXT_37:
+		dc.b '  Swap character    '
+		dc.b $07
+		dc.b $54,0
+TEXT_38:
+		dc.b '  Paste             ^V',0
+TEXT_39:
+		dc.b 'Cursor:',0
+TEXT_40:
+		dc.b '  Fonts...           '
+		dc.b $07,$53
+		dc.b $00
+TEXT_41:
+		dc.b 'Control',0
+TEXT_42:
+		dc.b 'Text:',0
+TEXT_43:
+		dc.b '   Wrap:',0
+TEXT_44:
+		dc.b '  Find block    '
+		dc.b $07,$54
+		dc.b $41,$42
+		dc.b $00
+TEXT_45:
+		dc.b 'line|underscore|block|frame',0
+TEXT_46:
+		dc.b '  Wordwrap..         '
+		dc.b $07,$55
+		dc.b $00
+TEXT_47:
+		dc.b ' F-Key ',0
+TEXT_48:
+		dc.b '  Functionkeys...    '
+		dc.b $07,$46
+		dc.b $00
+TEXT_49:
+		dc.b ' Key:',0
+TEXT_50:
+		dc.b 'ABC=abc',0
+TEXT_51:
+		dc.b 'Cancel',0
+TEXT_52:
+		dc.b 'OK',0
+TEXT_53:
+		dc.b ' Edit ',0
+TEXT_54:
+		dc.b ' Search ',0
+TEXT_55:
+		dc.b ' Information ',0
+TEXT_56:
+		dc.b 'word-wrap',0
+TEXT_57:
+		dc.b ' Wordwrap ',0
+TEXT_58:
+		dc.b ' Online-Help:',0
+TEXT_59:
+		dc.b ' Replace ',0
+TEXT_60:
+		dc.b 'Filetype:',0
+TEXT_61:
+		dc.b '     Selection:',0
+TEXT_62:
+		dc.b '  Separator:',0
+TEXT_63:
+		dc.b '  Delete          ^D',0
+TEXT_64:
+		dc.b 'colum       ',0
+TEXT_66:
+		dc.b '  Undo            UNDO',0
+TEXT_67:
+		dc.b '  Select all        ^A',0
+		.ENDC
+
 		.even
 DATAS_01:
 		dc.b $00
@@ -7190,8 +7371,7 @@ DATAS_21:
 		dc.w $45a3
 		dc.w $4813
 		dc.w $4ff3
-		dc.b $40
-		dc.b $03
+		dc.w $4003
 		dc.w $41f3
 		dc.w $411b
 		dc.w $4117
@@ -7238,8 +7418,7 @@ DATAS_23:
 		dc.w $7f16
 		dc.w $7f1e
 		dc.w $7f06
-		dc.b $7f
-		dc.b $06
+		dc.w $7f06
 		dc.w $7f06
 		dc.w $7ffe
 		dc.b $00
@@ -7311,8 +7490,7 @@ DATAS_24:
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 DATAS_25:
 		dc.b $00
@@ -7323,21 +7501,16 @@ DATAS_25:
 		dc.b $96
 		dc.b $00
 		dc.b $00
-		dc.b $7f
-		dc.b $fe
 		dc.w $7ffe
-		dc.b $68
-		dc.b $16
-		dc.w $6bd6
-		dc.b $68
-		dc.b $16
+		dc.w $7ffe
 		dc.w $6816
-		dc.b $68
-		dc.b $16
+		dc.w $6bd6
+		dc.w $6816
+		dc.w $6816
+		dc.w $6816
 		dc.w $67e6
 		dc.w $6006
-		dc.b $67
-		dc.b $f6
+		dc.w $67f6
 		dc.w $6796
 		dc.w $6796
 		dc.w $7ffe
@@ -7357,8 +7530,7 @@ DATAS_25:
 		dc.w $6006
 		dc.w $67f6
 		dc.w $6796
-		dc.b $67
-		dc.b $96
+		dc.w $6796
 		dc.w $7ffe
 		dc.w $7ffe
 		dc.b $00
@@ -7367,16 +7539,14 @@ DATAS_25:
 		dc.b $00
 		dc.w $7ffe
 		dc.w $7ffe
-		dc.b $78
-		dc.b $1e
+		dc.w $781e
 		dc.w $7bde
 		dc.w $781e
 		dc.w $781e
 		dc.w $781e
 		dc.w $7ffe
 		dc.w $7ffe
-		dc.b $7f
-		dc.b $fe
+		dc.w $7ffe
 		dc.w $7f9e
 		dc.w $7f9e
 		dc.w $7ffe
@@ -7401,13 +7571,11 @@ DATAS_25:
 		dc.w $1ffd
 		dc.b $00
 		dc.b $01
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 DATAS_26:
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
@@ -7431,12 +7599,10 @@ DATAS_27:
 		dc.b $00
 		dc.b $00
 		dc.w $7ffe
-		dc.b $7f
-		dc.b $fe
+		dc.w $7ffe
 		dc.w $6816
 		dc.w $6bd6
-		dc.b $68
-		dc.b $16
+		dc.w $6816
 		dc.w $6816
 		dc.w $6816
 		dc.w $67e6
@@ -9232,8 +9398,7 @@ _MSK__ED_ICON:
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
@@ -9483,8 +9648,7 @@ _05__ED_MENU:
 _06__ED_MENU:
 		dc.b $00
 		dc.b $07
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.b $00
 		dc.b $20
@@ -12016,8 +12180,7 @@ _10a_ED_NEWFKEY:
 		dc.b $00
 		dc.b $00
 		dc.w $8000
-		dc.b $88
-		dc.b $4f
+		dc.w $884f
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -12224,8 +12387,7 @@ _07__ED_OPTION:
 		dc.b $00
 		dc.b $08
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $1c
 		dc.b $00
@@ -13596,8 +13758,7 @@ WIED_FIND:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $0b
 		dc.b $00
@@ -14062,8 +14223,7 @@ WIED_OPTION:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $0b
 		dc.b $00
@@ -14091,8 +14251,7 @@ WIED_OPTION:
 		dc.b $00
 		dc.b $00
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
 		dc.b $00
@@ -14187,8 +14346,7 @@ WIED_REPLACE:
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $ff
-		dc.b $ff
+		dc.w $ffff
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -14351,44 +14509,12 @@ protocnf:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		dc.b 'namenlos.txt',0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		.IFEQ COUNTRY-COUNTRY_DE
+		dc.b 'namenlos.txt',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		.ENDC
+		.IFEQ COUNTRY-COUNTRY_US
+		dc.b 'noname.txt',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		.ENDC
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -15634,61 +15760,16 @@ proto:
 		dc.b $00
 		dc.b $00
 		dc.b $00
-		dc.b 'Datei îffnen',0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b 'Datei hinzufÅgen',0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b 'Datei sichern',0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		.IFEQ COUNTRY-COUNTRY_DE
+		dc.b 'Datei îffnen',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		dc.b 'Datei hinzufÅgen',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		dc.b 'Datei sichern',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		.ENDC
+		.IFEQ COUNTRY-COUNTRY_US
+		dc.b 'Open text',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		dc.b 'Insert text',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		dc.b 'Save text',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		.ENDC
 		dc.b ' %s (EDITOR) ',0
 		dc.b $00
 		dc.b $00
@@ -18044,6 +18125,8 @@ xc8510:
 		dc.l mess_fkey
 		dc.l print_fkey
 		dc.l term_fkey
+
+		.IFEQ COUNTRY-COUNTRY_DE
 xc85c4:
 		dc.b $00
 xc85c5:
@@ -18096,9 +18179,69 @@ xc864b:
 xc864f:
 		dc.b $20
 xc8650:
-		dc.w $2000
+		dc.b $20,0
 xc8652:
 		dc.b '%s:%-0.*s',0
+		.ENDC
+
+		.IFEQ COUNTRY-COUNTRY_US
+xc85c4:
+		dc.b $00
+xc85c5:
+		dc.b $09
+		dc.b $00
+xc85c7:
+		dc.b ' No bracket.',0
+xc85d7:
+		dc.b ' %2ld,%2ld /'
+xc85e3:
+		dc.b ' %2ld,%2ld',0
+xc85ee:
+		dc.b 'EDITOR',0
+xc85f5:
+		dc.b 'Fonts',0
+xc85fd:
+		dc.b '%ld',0
+xc8601:
+		dc.b ' New text.',0
+xc860e:
+		dc.b $0d,$0a,0
+xc8611:
+		dc.b '.$$$',0
+xc8616:
+		dc.b '%d',0
+xc8619:
+		dc.b '%2d',0
+xc861d:
+		dc.b 'scrap.txt',0
+xc8627:
+		dc.b 'F 1',0
+xc862b:
+		dc.b 'F 2',0
+xc862f:
+		dc.b 'F 3',0
+xc8633:
+		dc.b 'F 4',0
+xc8637:
+		dc.b 'F 5',0
+xc863b:
+		dc.b 'F 6',0
+xc863f:
+		dc.b 'F 7',0
+xc8643:
+		dc.b 'F 8',0
+xc8647:
+		dc.b 'F 9',0
+xc864b:
+		dc.b 'F10',0
+xc864f:
+		dc.b $20
+xc8650:
+		dc.b $20,0
+xc8652:
+		dc.b '%s:%-0.*s',0
+		.ENDC
+
 		.even
 
 	.bss

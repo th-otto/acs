@@ -1,3 +1,4 @@
+		.text
 
 		.globl A_wislider
 A_wislider:

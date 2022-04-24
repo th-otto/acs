@@ -1,3 +1,4 @@
+		.text
 
 dr_3dbut:
 		movem.l    d3/a2-a3,-(a7)

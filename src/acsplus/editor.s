@@ -1,3 +1,4 @@
+		.text
 
 untab:
 		movem.l    d3-d4/a2-a3,-(a7)
@@ -6021,6 +6022,8 @@ proto:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+
+/* not translated */
 xc2f4e:
 		dc.b $00
 xc2f4f:
