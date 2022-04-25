@@ -16,7 +16,7 @@ nkc_gemks2n:
 		moveq.l    #24,d2
 		lsl.l      d2,d1
 		or.l       d1,d0
-		jsr        nkc_tos2
+		jsr        nkc_tos2n
 		and.w      #$BFFF,d0
 		move.w     (a7)+,d4
 		rts
@@ -37,7 +37,7 @@ nkc_n2gemks:
 		move.l     a3,-(a7)
 		movea.l    a0,a3
 		movea.l    a1,a2
-		jsr        nkc_n2to
+		jsr        nkc_n2tos
 		move.l     a2,d1
 		beq.s      nkc_n2gemks_1
 		move.w     d0,d2
@@ -62,7 +62,7 @@ nkc_n2gemks_2:
 
 		.globl nkc_n2gem
 nkc_n2gem:
-		jsr        nkc_n2to
+		jsr        nkc_n2tos
 		move.w     d0,d1
 		and.w      #$00FF,d1
 		move.l     d0,d2
@@ -74,7 +74,7 @@ nkc_n2gem:
 
 		.globl nkc_n2kstate
 nkc_n2kstate:
-		jsr        nkc_n2to
+		jsr        nkc_n2tos
 		and.l      #$FF000000,d0
 		moveq.l    #24,d1
 		lsr.l      d1,d0

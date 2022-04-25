@@ -538,8 +538,8 @@ Alu_doForElem_1:
 		rts
 
 /* new function */
-	.globl x62eaa
-x62eaa:
+	.globl As_create
+As_create:
 		move.l     a2,-(a7)
 		moveq.l    #28,d0
 		jsr        Ax_malloc
@@ -560,8 +560,8 @@ x62eaa_2:
 		rts
 
 /* new function */
-	.globl x62ed6
-x62ed6:
+	.globl As_delete
+As_delete:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
 		move.l     a2,d0
@@ -662,8 +662,8 @@ x62f80_1:
 		rts
 
 /* new function */
-	.globl x62f90
-x62f90:
+	.globl Aqu_create
+Aqu_create:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
 		moveq.l    #28,d0
@@ -696,8 +696,8 @@ x62f90_3:
 		rts
 
 /* new function */
-	.globl x62fde
-x62fde:
+	.globl Aqu_delete
+Aqu_delete:
 		move.l     a2,-(a7)
 		movea.l    a0,a2
 		move.l     a2,d0

@@ -392,8 +392,8 @@ Akt_getEuro_2:
 		rts
 
 /* new function */
-	.globl x53320
-x53320:
+	.globl Akt_getInfoShort
+Akt_getInfoShort:
 		movem.l    d3-d4/a2-a3,-(a7)
 		move.w     d0,d4
 		move.w     d1,d3
@@ -432,8 +432,8 @@ x53320_2:
 		rts
 
 /* new function */
-	.globl x5336e
-x5336e:
+	.globl Akt_getInfoString
+Akt_getInfoString:
 		movem.l    d3-d5/a2-a3,-(a7)
 		move.w     d0,d5
 		move.w     d1,d4

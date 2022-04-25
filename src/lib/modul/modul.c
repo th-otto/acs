@@ -1,4 +1,7 @@
+#define __COMPATIBLE_FKT__
 #include "acs_i.h"
+#include "acsvdi.h"
+
 
 static void *oldbas = NULL;
 static char nix[4] = "\0\0\0";
@@ -10,7 +13,7 @@ struct ACSmod {
 	Ablk *acsblk;
 	GlobalArray *global; /* only in 2005 version */
 	long funcsAnz;
-	void **funcs;
+	funcVersion funcs[];
 };
 
 struct ACSoldmod {
@@ -22,6 +25,7 @@ struct ACSoldmod {
 
 
 static boolean PushFuncLists(struct ACSmod *mod);
+
 
 
 void Ax_mterm(void *bas)
@@ -50,7 +54,8 @@ int16 Ash_module(const char *path)
 	PD *pd;
 	struct ACSmod *mod;
 	int16 (*entry)(void);
-
+	int32 res;
+	
 	if (!ACSblk->application && !ACSblk->multitask)
 		mygemdos = TRUE;
 	else
@@ -58,32 +63,43 @@ int16 Ash_module(const char *path)
 	if (mygemdos)
 		accgemdos();
 	/* just load, dont't go */
-	pd = (PD *)Pexec(3, path, (void *)nix, nix);
+	res = Pexec(3, path, (void *)nix, (void *)nix);
+	pd = (PD *)res;
+	/*
+	 * FIXME: assumes that entry point is just behind basepage,
+	 * which is not true for binutils
+	 */
 	mod = (struct ACSmod *)(pd + 1);
-	if ((long)pd < 0 || (long)pd == 0xffffL)
+	if (res < 0 || res == 0xffffL)
 	{
 		if (mygemdos)
 			oldgemdos();
 		ACSblk->ACSerror(AE_LOAD_MOD, path);
 		return FAIL;
 	}
+	/*
+	 * BUG: why +1024? that may exceed TPA size
+	 */
 	if (Mshrink(0, pd, pd->p_tlen + pd->p_dlen + pd->p_blen + 1024) != 0)
 		ACSblk->ACSerror(AE_MEM_MOD, path);
 	if (mod->magic1 >= 0x41435336L && mod->magic1 <= 0x41435337L) /* 'ACS6', 'ACS7' */
 	{
 		oldmodule = TRUE;
-	} else if ((mod->magic1 >= 0x41435330L && mod->magic1 <= 0x41435338l) || /* 'ACS0' .. 'ACS8' */
+	} else if ((mod->magic1 < 0x41435330L || mod->magic1 > 0x41435338l) && /* 'ACS0', 'ACS8' */
 		/* this is clr.w -(a7); trap #1 */
 		(mod->magic1 == 0x42674E41L && mod->magic2 == 0x41435339L)) /* ACS9 */
 	{
 		oldmodule = FALSE;
 	} else
 	{
-		goto mfree;
+		Mfree(pd);
+		if (mygemdos)
+			oldgemdos();
+		ACSblk->ACSerror(AE_VER_MOD, path);
+		return FAIL;
 	}
 	if (!oldmodule && PushFuncLists(mod) == FALSE)
 	{
-	mfree:
 		Mfree(pd);
 		if (mygemdos)
 			oldgemdos();
@@ -118,4 +134,37 @@ int16 Ash_module(const char *path)
 		mod->global = _globl;
 	}
 	return entry();
+}
+
+
+static boolean PushFuncLists(struct ACSmod *mod)
+{
+	funcVersion *modfuncs;
+	const funcListe *liste;
+	int i;
+	int16 version;
+	int j;
+	const funcVersion *myfuncs;
+
+	modfuncs = mod->funcs;
+	liste = funcs;
+	if (mod->funcsAnz != funcsAnz)
+		return FALSE;
+	for (i = 0; i < funcsAnz; i++, modfuncs++, liste++)
+	{
+		version = modfuncs->version;
+		modfuncs->funcs = NULL;
+		j = 0;
+		myfuncs = liste->funcs;
+		while (modfuncs->funcs == NULL && j < *liste->versionen)
+		{
+			if (myfuncs->version == version)
+				modfuncs->funcs = myfuncs->funcs;
+			j++;
+			myfuncs++;
+		}
+		if (modfuncs->funcs == NULL)
+			return FALSE;
+	}
+	return TRUE;
 }
