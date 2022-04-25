@@ -229,15 +229,9 @@ noop:
 		.data
 
 oldbas:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.l 0
 nix:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.b 0,0,0,0
 func1Abp:
 		dc.l Abp_create
 		dc.l Abp_delete
@@ -247,11 +241,9 @@ func1Abp:
 		dc.l Abp_img2mfdb
 funcAbp:
 		dc.l func1Abp
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAbp:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Acfg:
 		dc.l Acfg_create
 		dc.l Acfg_delete
@@ -260,27 +252,27 @@ func1Acfg:
 		dc.l Acfg_clearGroup
 		dc.l Acfg_load
 		dc.l Acfg_save
-		dc.l Acfg_grpName
+		dc.l Acfg_isChanged
 		dc.l Acfg_getValue
 		dc.l Acfg_setValue
 		dc.l Acfg_clearValue
-		dc.l Acfg_getBool
-		dc.l Acfg_setBool
+		dc.l Acfg_getChar
+		dc.l Acfg_setChar
 		dc.l Acfg_getLong
 		dc.l Acfg_setLong
 		dc.l Acfg_getString
-		dc.l Acfg_isChanged
-		dc.l Acfg_grpAnzahl
-		dc.l x43200
+		dc.l Acfg_getBool
+		dc.l Acfg_setBool
+		dc.l Acfg_clearHeader
 		dc.l Acfg_headAnzahl
 		dc.l Acfg_setHeader
 		dc.l Acfg_getHeader
+		dc.l Acfg_grpAnzahl
+		dc.l Acfg_grpName
 		dc.l Acfg_strAnzahl
-		dc.l Acfg_isGroupPresent
-		dc.l Acfg_isStringPresent
+		dc.l Acfg_strName
+		dc.l Acfg_strValue
 		dc.l Acfg_strIsComment
-		dc.l Acfg_clearHeader
-		dc.l x43198
 		dc.l Acfg_isCfgfile
 		dc.l Acfg_createInfo
 		dc.l Acfg_deleteInfo
@@ -288,28 +280,24 @@ func1Acfg:
 		dc.l Acfg_getInfo
 		dc.l Acfg_copyInfo
 		dc.l Acfg_flags
-		dc.l Acfg_strName
-		dc.l Acfg_strValue
-		dc.l Acfg_getChar
-		dc.l Acfg_setChar
+		dc.l Acfg_isGroupPresent
+		dc.l Acfg_isStringPresent
+		dc.l Acfg_getDouble
+		dc.l Acfg_setDouble
 funcAcfg:
 		dc.l func1Acfg
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAcfg:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Ach:
 		dc.l Ach_tolower
 		dc.l Ach_toupper
 		dc.l Ach_isWhite
 funcAch:
 		dc.l func1Ach
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAch:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Adr:
 		dc.l Adr_box
 		dc.l Adr_drag
@@ -320,11 +308,9 @@ func1Adr:
 		dc.l Adr_start
 funcAdr:
 		dc.l func1Adr
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAdr:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Aev:
 		dc.l Aev_quit
 		dc.l Aev_release
@@ -335,11 +321,9 @@ func1Aev:
 		dc.l Aev_WmRedraw
 funcAev:
 		dc.l func1Aev
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAev:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Af:
 		dc.l Af_cfgfile
 		dc.l Af_select
@@ -361,31 +345,25 @@ func1Af:
 		dc.l Af_unquote
 funcAf:
 		dc.l func1Af
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAf:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Aic:
 		dc.l Aic_create
 		dc.l Aic_delete
 funcAic:
 		dc.l func1Aic
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAic:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Aim:
 		dc.l Aim_create
 		dc.l Aim_delete
 funcAim:
 		dc.l func1Aim
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAim:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Alu:
 		dc.l Alu_create
 		dc.l Alu_delete
@@ -395,21 +373,17 @@ func1Alu:
 		dc.l x62fde
 funcAlu:
 		dc.l func1Alu
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAlu:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Ame:
 		dc.l Ame_namefix
 		dc.l Ame_popup
 funcAme:
 		dc.l func1Ame
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAme:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Amo:
 		dc.l Amo_new
 		dc.l Amo_busy
@@ -418,11 +392,9 @@ func1Amo:
 		dc.l Amo_show
 funcAmo:
 		dc.l func1Amo
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAmo:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Aob:
 		dc.l Aob_create
 		dc.l Aob_delete
@@ -447,22 +419,18 @@ func1Aob:
 		dc.l Aob_count
 funcAob:
 		dc.l func1Aob
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAob:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Ascrp:
 		dc.l Ascrp_clear
 		dc.l Ascrp_get
 		dc.l Ascrp_put
 funcAscrp:
 		dc.l func1Ascrp
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAscrp:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Ash:
 		dc.l Ash_prog
 		dc.l Ash_error
@@ -489,11 +457,9 @@ func1Ash:
 		dc.l Ash_getMagiCAESVars
 funcAsh:
 		dc.l func1Ash
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAsh:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Ast:
 		dc.l Ast_create
 		dc.l Ast_delete
@@ -517,21 +483,17 @@ func1Ast:
 		dc.l Ast_istr
 funcAst:
 		dc.l func1Ast
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAst:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Ate:
 		dc.l Ate_create
 		dc.l Ate_delete
 funcAte:
 		dc.l func1Ate
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAte:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Auo:
 		dc.l Auo_ftext
 		dc.l Auo_string
@@ -540,11 +502,9 @@ func1Auo:
 		dc.l Auo_boxed
 funcAuo:
 		dc.l func1Auo
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAuo:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Aus:
 		dc.l Aus_create
 		dc.l Aus_delete
@@ -552,11 +512,9 @@ func1Aus:
 		dc.l Aus_cycle
 funcAus:
 		dc.l func1Aus
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAus:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Awi:
 		dc.l Awi_wid
 		dc.l Awi_root
@@ -603,11 +561,9 @@ func1Awi:
 		dc.l Awi_obvisible
 funcAwi:
 		dc.l func1Awi
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAwi:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1A:
 		dc.l A_dialog
 		dc.l A_checkbox
@@ -625,11 +581,9 @@ func1A:
 		dc.l A_boxed
 funcA:
 		dc.l func1A
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzA:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Sonst:
 		dc.l Ax_malloc
 		dc.l Ax_free
@@ -662,11 +616,9 @@ func1Sonst:
 		dc.l Ax_memCheck
 funcSonst:
 		dc.l func1Sonst
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzSonst:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Vdi:
 		dc.l vdi
 		dc.l vdi_
@@ -915,11 +867,9 @@ func1Vdi:
 		dc.l v_setrgb
 funcVdi:
 		dc.l func1Vdi
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzVdi:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Aes:
 		dc.l aes
 		dc.l appl_init
@@ -1128,11 +1078,9 @@ func1Aes:
 		dc.l graf_rubbbox
 funcAes:
 		dc.l func1Aes
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzAes:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1MtAes:
 		dc.l mt_appl_init
 		dc.l mt_appl_read
@@ -1339,11 +1287,9 @@ func1MtAes:
 		dc.l mt_graf_rubbbox
 funcMtAes:
 		dc.l func1MtAes
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzMtAes:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 func1Keytab:
 		dc.l Akt_getKeyTab
 		dc.l Akt_getRelease
@@ -1388,11 +1334,9 @@ func1Keytab:
 		dc.l x5336e
 funcKeytab:
 		dc.l func1Keytab
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 funcAnzKeytab:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 		.globl funcs
 funcs:
 		dc.l funcAbp
@@ -1447,10 +1391,8 @@ funcs:
 		dc.l funcAnzMtAes
 		.globl funcsAnz
 funcsAnz:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $19
+		dc.w $0000
+		dc.w $0019
 		.globl ACS233
 ACS233:
 		dc.l Awi_wid
@@ -1609,18 +1551,18 @@ ACS233:
 		dc.l Acfg_clearGroup
 		dc.l Acfg_load
 		dc.l Acfg_save
-		dc.l Acfg_grpName
+		dc.l Acfg_isChanged
 		dc.l Acfg_getValue
 		dc.l Acfg_setValue
 		dc.l Acfg_clearValue
-		dc.l x43200
+		dc.l Acfg_clearHeader
 		dc.l Acfg_headAnzahl
 		dc.l Acfg_setHeader
 		dc.l Acfg_getHeader
+		dc.l Acfg_grpAnzahl
+		dc.l Acfg_grpName
 		dc.l Acfg_strAnzahl
-		dc.l Acfg_isGroupPresent
-		dc.l Acfg_isStringPresent
-		dc.l Acfg_strIsComment
+		dc.l Acfg_strName
 		dc.l Acfg_isCfgfile
 		dc.l Acfg_createInfo
 		dc.l Acfg_deleteInfo
@@ -1814,18 +1756,18 @@ ACS230:
 		dc.l Acfg_clearGroup
 		dc.l Acfg_load
 		dc.l Acfg_save
-		dc.l Acfg_grpName
+		dc.l Acfg_isChanged
 		dc.l Acfg_getValue
 		dc.l Acfg_setValue
 		dc.l Acfg_clearValue
-		dc.l x43200
+		dc.l Acfg_clearHeader
 		dc.l Acfg_headAnzahl
 		dc.l Acfg_setHeader
 		dc.l Acfg_getHeader
+		dc.l Acfg_grpAnzahl
+		dc.l Acfg_grpName
 		dc.l Acfg_strAnzahl
-		dc.l Acfg_isGroupPresent
-		dc.l Acfg_isStringPresent
-		dc.l Acfg_strIsComment
+		dc.l Acfg_strName
 		dc.l Acfg_isCfgfile
 		dc.l Acfg_createInfo
 		dc.l Acfg_deleteInfo

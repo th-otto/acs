@@ -763,6 +763,20 @@ typedef struct {
 	const int16 *versionen;
 } funcListe;
 
+
+/*
+ * lib/modul/modul.c
+ */
+void Ax_mterm(void *);
+
+
+/*
+ * lib/mygemdos.s
+ */
+void accgemdos(void);
+void oldgemdos(void);
+
+ 
 /*
  * messages/msgserv.c
  */
@@ -772,3 +786,4 @@ extern ULinListe *globProtData;
  * list/edmouse.c
  */
 extern LISTPARM list_mouse;
+

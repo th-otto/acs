@@ -229,7 +229,7 @@ Acfg_clear:
 		movea.l    a2,a0
 		jsr        Acfg_clearAllGroups
 		movea.l    a2,a0
-		jsr        x43200
+		jsr        Acfg_clearHeader
 		movea.l    (a7)+,a2
 		rts
 
@@ -629,7 +629,7 @@ Acfg_load_2:
 		movea.l    a2,a0
 		bsr        Acfg_clearAllGroups
 		movea.l    a2,a0
-		jsr        x43200
+		jsr        Acfg_clearHeader
 		clr.w      18(a2)
 		move.l     #$00004004,d0
 		jsr        Ax_malloc
@@ -1311,8 +1311,9 @@ Acfg_setLong:
 		movea.l    (a7)+,a3
 		rts
 
-		.globl Acfg_getChar
-Acfg_getChar:
+/* new function in 2005 */
+		.globl Acfg_getDouble
+Acfg_getDouble:
 		lea.l      -8202(a7),a7
 		pea.l      (a7)
 		move.l     8214(a7),-(a7)
@@ -1329,8 +1330,9 @@ Acfg_getChar:
 		lea.l      8202(a7),a7
 		rts
 
-		.globl Acfg_setChar
-Acfg_setChar:
+/* new function in 2005 */
+		.globl Acfg_setDouble
+Acfg_setDouble:
 		movem.l    a3-a5,-(a7)
 		lea.l      -62(a7),a7
 		movea.l    a0,a5
@@ -1353,24 +1355,24 @@ Acfg_setChar:
 		lea.l      (a7),a0
 		jsr        strrchr
 		subq.w     #1,a0
-		bra.s      Acfg_setChar_1
-Acfg_setChar_3:
+		bra.s      Acfg_setDouble_1
+Acfg_setDouble_3:
 		subq.w     #1,a0
-Acfg_setChar_1:
+Acfg_setDouble_1:
 		cmpi.b     #$30,(a0)
-		bne.s      Acfg_setChar_2
+		bne.s      Acfg_setDouble_2
 		cmpa.l     a0,a3
-		bcs.s      Acfg_setChar_3
-Acfg_setChar_2:
+		bcs.s      Acfg_setDouble_3
+Acfg_setDouble_2:
 		cmpa.l     a0,a3
-		bcc.s      Acfg_setChar_4
+		bcc.s      Acfg_setDouble_4
 		clr.b      1(a0)
-		bra.s      Acfg_setChar_5
-Acfg_setChar_4:
+		bra.s      Acfg_setDouble_5
+Acfg_setDouble_4:
 		cmpa.l     a0,a3
-		bne.s      Acfg_setChar_5
+		bne.s      Acfg_setDouble_5
 		clr.b      (a0)
-Acfg_setChar_5:
+Acfg_setDouble_5:
 		pea.l      (a7)
 		move.l     86(a7),-(a7)
 		movea.l    a4,a1
@@ -1389,8 +1391,8 @@ Acfg_setChar_5:
 		movem.l    (a7)+,a3-a5
 		rts
 
-		.globl Acfg_getBool
-Acfg_getBool:
+		.globl Acfg_getChar
+Acfg_getChar:
 		lea.l      -52(a7),a7
 		pea.l      (a7)
 		move.l     60(a7),-(a7)
@@ -1400,8 +1402,8 @@ Acfg_getBool:
 		lea.l      52(a7),a7
 		rts
 
-		.globl Acfg_setBool
-Acfg_setBool:
+		.globl Acfg_setChar
+Acfg_setChar:
 		subq.w     #2,a7
 		move.b     d0,(a7)
 		clr.b      1(a7)
@@ -1413,8 +1415,8 @@ Acfg_setBool:
 		addq.w     #2,a7
 		rts
 
-		.globl Acfg_isChanged
-Acfg_isChanged:
+		.globl Acfg_getBool
+Acfg_getBool:
 		move.l     a2,-(a7)
 		lea.l      -10(a7),a7
 		movea.l    a1,a2
@@ -1428,18 +1430,18 @@ Acfg_isChanged:
 		movea.l    (a7)+,a1
 		jsr        Ast_icmp
 		tst.w      d0
-		bne.s      Acfg_isChanged_1
+		bne.s      Acfg_getBool_1
 		moveq.l    #1,d0
-		bra.s      Acfg_isChanged_2
-Acfg_isChanged_1:
+		bra.s      Acfg_getBool_2
+Acfg_getBool_1:
 		clr.w      d0
-Acfg_isChanged_2:
+Acfg_getBool_2:
 		lea.l      10(a7),a7
 		movea.l    (a7)+,a2
 		rts
 
-		.globl Acfg_grpAnzahl
-Acfg_grpAnzahl:
+		.globl Acfg_setBool
+Acfg_setBool:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
 		movea.l    a0,a3
@@ -1447,11 +1449,11 @@ Acfg_grpAnzahl:
 		lea.l      xd3655,a1
 		move.l     a1,-(a7)
 		tst.w      d0
-		beq.s      Acfg_grpAnzahl_1
-		bra.s      Acfg_grpAnzahl_2
-Acfg_grpAnzahl_1:
+		beq.s      Acfg_setBool_1
+		bra.s      Acfg_setBool_2
+Acfg_setBool_1:
 		lea.l      xd365a,a1
-Acfg_grpAnzahl_2:
+Acfg_setBool_2:
 		move.l     a1,-(a7)
 		move.l     20(a7),-(a7)
 		movea.l    a2,a1
@@ -1461,36 +1463,36 @@ Acfg_grpAnzahl_2:
 		movea.l    (a7)+,a1
 		jsr        Ast_icmp
 		tst.w      d0
-		bne.s      Acfg_grpAnzahl_3
+		bne.s      Acfg_setBool_3
 		moveq.l    #1,d0
-		bra.s      Acfg_grpAnzahl_4
-Acfg_grpAnzahl_3:
+		bra.s      Acfg_setBool_4
+Acfg_setBool_3:
 		clr.w      d0
-Acfg_grpAnzahl_4:
+Acfg_setBool_4:
 		movea.l    (a7)+,a3
 		movea.l    (a7)+,a2
 		rts
 
-		.globl Acfg_grpName
-Acfg_grpName:
+		.globl Acfg_isChanged
+Acfg_isChanged:
 		move.w     18(a0),d0
 		rts
 
-		.globl Acfg_strAnzahl
-Acfg_strAnzahl:
+		.globl Acfg_grpAnzahl
+Acfg_grpAnzahl:
 		move.w     20(a0),d0
 		rts
 
-		.globl Acfg_isGroupPresent
-Acfg_isGroupPresent:
+		.globl Acfg_grpName
+Acfg_grpName:
 		move.l     a2,-(a7)
 		move.l     a3,-(a7)
 		movea.l    a1,a3
 		movea.l    a0,a2
 		tst.w      d0
-		bmi.s      Acfg_isGroupPresent_1
+		bmi.s      Acfg_grpName_1
 		cmp.w      20(a2),d0
-		bge.s      Acfg_isGroupPresent_1
+		bge.s      Acfg_grpName_1
 		ext.l      d0
 		lsl.l      #2,d0
 		movea.l    22(a2),a1
@@ -1498,20 +1500,20 @@ Acfg_isGroupPresent:
 		movea.l    (a0),a1
 		movea.l    a3,a0
 		jsr        strcpy
-		bra.s      Acfg_isGroupPresent_2
-Acfg_isGroupPresent_1:
+		bra.s      Acfg_grpName_2
+Acfg_grpName_1:
 		suba.l     a0,a0
-Acfg_isGroupPresent_2:
+Acfg_grpName_2:
 		movea.l    (a7)+,a3
 		movea.l    (a7)+,a2
 		rts
 
-		.globl Acfg_isStringPresent
-Acfg_isStringPresent:
+		.globl Acfg_strAnzahl
+Acfg_strAnzahl:
 		tst.w      d0
-		bmi.s      Acfg_isStringPresent_1
+		bmi.s      Acfg_strAnzahl_1
 		cmp.w      20(a0),d0
-		bge.s      Acfg_isStringPresent_1
+		bge.s      Acfg_strAnzahl_1
 		move.w     d0,d1
 		ext.l      d1
 		lsl.l      #2,d1
@@ -1519,12 +1521,12 @@ Acfg_isStringPresent:
 		movea.l    0(a1,d1.l),a1
 		move.w     4(a1),d0
 		rts
-Acfg_isStringPresent_1:
+Acfg_strAnzahl_1:
 		clr.w      d0
 		rts
 
-		.globl Acfg_strName
-Acfg_strName:
+		.globl Acfg_isGroupPresent
+Acfg_isGroupPresent:
 		move.l     a2,-(a7)
 		lea.l      -18(a7),a7
 		movea.l    a0,a2
@@ -1536,18 +1538,18 @@ Acfg_strName:
 		movea.l    a2,a0
 		jsr        SearchGruppe
 		move.l     a0,d0
-		bne.s      Acfg_strName_1
+		bne.s      Acfg_isGroupPresent_1
 		clr.w      d0
-		bra.s      Acfg_strName_2
-Acfg_strName_1:
+		bra.s      Acfg_isGroupPresent_2
+Acfg_isGroupPresent_1:
 		moveq.l    #1,d0
-Acfg_strName_2:
+Acfg_isGroupPresent_2:
 		lea.l      18(a7),a7
 		movea.l    (a7)+,a2
 		rts
 
-		.globl Acfg_strValue
-Acfg_strValue:
+		.globl Acfg_isStringPresent
+Acfg_isStringPresent:
 		move.l     a2,-(a7)
 		lea.l      -18(a7),a7
 		movea.l    a0,a2
@@ -1559,18 +1561,18 @@ Acfg_strValue:
 		movea.l    a2,a0
 		jsr        SearchCfgString
 		cmpi.w     #$FFFF,16(a7)
-		bne.s      Acfg_strValue_1
+		bne.s      Acfg_isStringPresent_1
 		clr.w      d0
-		bra.s      Acfg_strValue_2
-Acfg_strValue_1:
+		bra.s      Acfg_isStringPresent_2
+Acfg_isStringPresent_1:
 		moveq.l    #1,d0
-Acfg_strValue_2:
+Acfg_isStringPresent_2:
 		lea.l      18(a7),a7
 		movea.l    (a7)+,a2
 		rts
 
-		.globl Acfg_strIsComment
-Acfg_strIsComment:
+		.globl Acfg_strName
+Acfg_strName:
 		movem.l    d3-d4/a2-a4,-(a7)
 		movea.l    a0,a4
 		move.w     d0,d3
@@ -1578,21 +1580,21 @@ Acfg_strIsComment:
 		movea.l    a1,a2
 		clr.b      (a1)
 		tst.w      d0
-		bmi.s      Acfg_strIsComment_1
+		bmi.s      Acfg_strName_1
 		cmp.w      20(a0),d0
-		bge.s      Acfg_strIsComment_1
+		bge.s      Acfg_strName_1
 		ext.l      d0
 		lsl.l      #2,d0
 		movea.l    22(a0),a1
 		movea.l    0(a1,d0.l),a3
 		tst.w      d1
-		bmi.s      Acfg_strIsComment_1
+		bmi.s      Acfg_strName_1
 		cmp.w      4(a3),d1
-		bge.s      Acfg_strIsComment_1
+		bge.s      Acfg_strName_1
 		move.w     d3,d0
-		jsr        x43198
+		jsr        Acfg_strIsComment
 		tst.w      d0
-		bne.s      Acfg_strIsComment_1
+		bne.s      Acfg_strName_1
 		move.w     d4,d0
 		ext.l      d0
 		lsl.l      #2,d0
@@ -1603,7 +1605,7 @@ Acfg_strIsComment:
 		jsr        strchr
 		movea.l    a0,a4
 		move.l     a4,d0
-		beq.s      Acfg_strIsComment_1
+		beq.s      Acfg_strName_1
 		sub.l      a3,d0
 		movea.l    a3,a1
 		movea.l    a2,a0
@@ -1611,34 +1613,34 @@ Acfg_strIsComment:
 		movea.l    a4,a0
 		suba.l     a3,a0
 		clr.b      0(a2,a0.l)
-Acfg_strIsComment_1:
+Acfg_strName_1:
 		movea.l    a2,a0
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
-		.globl Acfg_clearHeader
-Acfg_clearHeader:
+		.globl Acfg_strValue
+Acfg_strValue:
 		movem.l    d3-d4/a3-a4,-(a7)
 		move.w     d0,d3
 		move.w     d1,d4
 		movea.l    a1,a3
 		clr.b      (a1)
 		tst.w      d0
-		bmi.s      Acfg_clearHeader_1
+		bmi.s      Acfg_strValue_1
 		cmp.w      20(a0),d0
-		bge.s      Acfg_clearHeader_1
+		bge.s      Acfg_strValue_1
 		ext.l      d0
 		lsl.l      #2,d0
 		movea.l    22(a0),a1
 		movea.l    0(a1,d0.l),a4
 		tst.w      d1
-		bmi.s      Acfg_clearHeader_1
+		bmi.s      Acfg_strValue_1
 		cmp.w      4(a4),d1
-		bge.s      Acfg_clearHeader_1
+		bge.s      Acfg_strValue_1
 		move.w     d3,d0
-		jsr        x43198
+		jsr        Acfg_strIsComment
 		tst.w      d0
-		beq.s      Acfg_clearHeader_2
+		beq.s      Acfg_strValue_2
 		move.w     d4,d0
 		ext.l      d0
 		lsl.l      #2,d0
@@ -1648,8 +1650,8 @@ Acfg_clearHeader:
 		jsr        strcpy
 		movea.l    a3,a0
 		jsr        Ast_alltrim
-		bra.s      Acfg_clearHeader_1
-Acfg_clearHeader_2:
+		bra.s      Acfg_strValue_1
+Acfg_strValue_2:
 		move.w     d4,d0
 		ext.l      d0
 		lsl.l      #2,d0
@@ -1660,72 +1662,70 @@ Acfg_clearHeader_2:
 		jsr        strchr
 		movea.l    a0,a4
 		move.l     a4,d0
-		beq.s      Acfg_clearHeader_1
+		beq.s      Acfg_strValue_1
 		addq.w     #1,a4
 		movea.l    a4,a1
 		movea.l    a3,a0
 		jsr        strcpy
-Acfg_clearHeader_1:
+Acfg_strValue_1:
 		movea.l    a3,a0
 		movem.l    (a7)+,d3-d4/a3-a4
 		rts
 
-/* new function */
-	.globl x43198
-x43198:
+	.globl Acfg_strIsComment
+Acfg_strIsComment:
 		movem.l    d3/a2-a3,-(a7)
 		movea.l    a0,a2
 		clr.w      d3
 		tst.w      d0
-		bmi.s      x43198_1
+		bmi.s      Acfg_strIsComment_1
 		cmp.w      20(a2),d0
-		bge.s      x43198_1
+		bge.s      Acfg_strIsComment_1
 		move.w     d0,d2
 		ext.l      d2
 		lsl.l      #2,d2
 		movea.l    22(a2),a1
 		movea.l    0(a1,d2.l),a0
 		tst.w      d1
-		bmi.s      x43198_1
+		bmi.s      Acfg_strIsComment_1
 		cmp.w      4(a0),d1
-		bge.s      x43198_1
+		bge.s      Acfg_strIsComment_1
 		move.w     d1,d0
 		ext.l      d0
 		lsl.l      #2,d0
 		movea.l    6(a0),a1
 		movea.l    0(a1,d0.l),a3
-		bra.s      x43198_2
-x43198_4:
+		bra.s      Acfg_strIsComment_2
+Acfg_strIsComment_4:
 		addq.w     #1,a3
-x43198_2:
+Acfg_strIsComment_2:
 		move.b     (a3),d0
-		beq.s      x43198_3
+		beq.s      Acfg_strIsComment_3
 		jsr        Ach_isWhite
 		tst.w      d0
-		bne.s      x43198_4
-x43198_3:
+		bne.s      Acfg_strIsComment_4
+Acfg_strIsComment_3:
 		move.b     (a3),d0
-		beq.s      x43198_1
+		beq.s      Acfg_strIsComment_1
 		ext.w      d0
 		movea.l    4(a2),a0
 		jsr        strchr
 		move.l     a0,d0
-		beq.s      x43198_1
+		beq.s      Acfg_strIsComment_1
 		moveq.l    #1,d3
-x43198_1:
+Acfg_strIsComment_1:
 		move.w     d3,d0
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
-/* new function */
-	.globl x43200
-x43200:
+	.globl Acfg_clearHeader
+Acfg_clearHeader:
 		move.w     d3,-(a7)
 		move.l     a2,-(a7)
 		movea.l    a0,a2
 		clr.w      d3
-		bra.s      x43200_1
-x43200_2:
+		bra.s      Acfg_clearHeader_1
+Acfg_clearHeader_2:
 		move.w     d3,d0
 		ext.l      d0
 		lsl.l      #2,d0
@@ -1733,9 +1733,9 @@ x43200_2:
 		movea.l    0(a0,d0.l),a0
 		jsr        Ast_delete
 		addq.w     #1,d3
-x43200_1:
+Acfg_clearHeader_1:
 		cmp.w      28(a2),d3
-		blt.s      x43200_2
+		blt.s      Acfg_clearHeader_2
 		movea.l    30(a2),a0
 		jsr        Ax_free
 		clr.l      30(a2)
@@ -1756,7 +1756,7 @@ Acfg_setHeader:
 		move.w     d0,d3
 		movea.l    a1,a4
 		movea.l    a0,a2
-		bsr.w      x43200
+		bsr.w      Acfg_clearHeader
 		move.w     d3,d0
 		ext.l      d0
 		lsl.l      #2,d0
