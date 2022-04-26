@@ -22,7 +22,7 @@ acs.app
 .C[ -K- ]		; Default Char is signed
 .C[ -P  ]		; Absolute calls
 .C[ -G- ]		; optimize for speed
-.C[ -S- ]		; no standard stack frames
+.C[ -S- ]       ; no standard stack frames
 
 ; Flags for the Debug-Version
 ;.C[ -D_DEBUG -DDEBUG ]
@@ -38,6 +38,7 @@ acs.app
 .C[ -R- ]		; Register Variables
 
 ; For other localizations, change the COUNTRY code below
+; (and don't forget to change acslib.prj, too)
 ; supported:
 ; 0=english
 ; 1=german
