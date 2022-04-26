@@ -1,5 +1,12 @@
 		.text
 
+	.IFNE 0 /* only in lib */
+Adate_ymd2dow:
+		bsr.w      ~_232
+		bsr.w      ~_233
+		rts
+	.ENDC
+
 		.globl Adate_getMonth
 Adate_getMonth:
 		movem.l    d3/a2-a4,-(a7)

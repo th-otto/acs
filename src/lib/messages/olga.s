@@ -219,6 +219,65 @@ DelConnect_2:
 		movea.l    (a7)+,a2
 		rts
 
+	.IFNE 0 /* only in lib */
+A_OlgaCreate:
+		move.l     a2,-(a7)
+		lea.l      -32(a7),a7
+		move.l     a0,28(a7)
+		move.l     a1,24(a7)
+		move.w     d0,22(a7)
+		move.l     28(a7),(a7)
+		move.l     24(a7),6(a7)
+		move.l     40(a7),12(a7)
+		move.w     22(a7),16(a7)
+		lea.l      (a7),a0
+		bsr.w      ~_188
+		move.l     a0,18(a7)
+		move.l     18(a7),d0
+		bne.s      A_OlgaCreate_1
+		suba.l     a0,a0
+		bra.s      A_OlgaCreate_2
+A_OlgaCreate_1:
+		movea.l    18(a7),a1
+		movea.l    ~_880,a0
+		movea.l    ~_880,a2
+		movea.l    12(a2),a2
+		jsr        (a2)
+		movea.l    18(a7),a0
+A_OlgaCreate_2:
+		lea.l      32(a7),a7
+		movea.l    (a7)+,a2
+		rts
+	.ENDC
+
+	.IFNE 0 /* only in lib */
+A_OlgaDelete:
+		subq.w     #6,a7
+		move.w     d0,4(a7)
+		move.w     4(a7),d0
+		jsr        ~_199
+		move.l     a0,(a7)
+		move.l     (a7),d0
+		bne.s      A_OlgaDelete_1
+		moveq.l    #1,d0
+		bra.s      A_OlgaDelete_2
+A_OlgaDelete_1:
+		movea.l    (a7),a0
+		cmpi.w     #$FFFF,26(a0)
+		beq.s      A_OlgaDelete_3
+		movea.l    (a7),a0
+		move.w     #$0001,30(a0)
+		bra.s      A_OlgaDelete_4
+A_OlgaDelete_3:
+		movea.l    (a7),a0
+		bsr.w      ~_189
+A_OlgaDelete_4:
+		moveq.l    #1,d0
+A_OlgaDelete_2:
+		addq.w     #6,a7
+		rts
+	.ENDC
+
 CmpIDConnect:
 		subq.w     #8,a7
 		move.l     a0,4(a7)
@@ -337,6 +396,42 @@ SendOlgaUpdate:
 		addq.w     #8,a7
 		movea.l    (a7)+,a2
 		rts
+
+	.IFNE 0 /* only in lib */
+Awi_saved:
+		move.l     a2,-(a7)
+		lea.l      -30(a7),a7
+		move.l     a0,26(a7)
+		move.l     a1,22(a7)
+		move.l     26(a7),4(a7)
+		move.l     22(a7),10(a7)
+		pea.l      ~_195(pc)
+		lea.l      8(a7),a1
+		movea.l    ~_880,a0
+		movea.l    ~_880,a2
+		movea.l    32(a2),a2
+		jsr        (a2)
+		addq.w     #4,a7
+		move.l     a0,(a7)
+		move.l     (a7),d0
+		bne.s      Awi_saved_1
+		bra.s      Awi_saved_2
+Awi_saved_1:
+		pea.l      ~_200(pc)
+		pea.l      ~_196(pc)
+		movea.l    8(a7),a1
+		movea.l    ~_880,a0
+		movea.l    ~_880,a2
+		movea.l    64(a2),a2
+		jsr        (a2)
+		addq.w     #8,a7
+		movea.l    22(a7),a0
+		jsr        Aev_OlgaUpdate
+Awi_saved_2:
+		lea.l      30(a7),a7
+		movea.l    (a7)+,a2
+		rts
+	.ENDC
 
 		.globl Aev_GetOlgaInit
 Aev_GetOlgaInit:
@@ -740,6 +835,43 @@ Aev_OleExit_1:
 		lea.l      18(a7),a7
 		rts
 
+	.IFNE 0 /* only in lib */
+Aev_OlgaIdle:
+		subq.w     #2,a7
+		clr.w      (a7)
+		bsr.w      ~_187
+		tst.w      d0
+		beq.s      Aev_OlgaIdle_1
+		moveq.l    #16,d1
+		clr.w      d0
+		lea.l      ~_886,a0
+		jsr        memset
+		move.w     #$1249,~_886
+		movea.l    ACSblk,a0
+		move.w     (a0),~_886+$00000002
+		move.w     #$4143,~_886+$00000008
+		move.w     #$5370,~_886+$0000000A
+		move.w     #$726F,~_886+$0000000C
+		move.w     #$4D45,~_886+$0000000E
+		movea.l    _globl,a1
+		lea.l      ~_886,a0
+		moveq.l    #16,d1
+		move.w     ~_881,d0
+		jsr        mt_appl_write
+		tst.w      d0
+		beq.s      Aev_OlgaIdle_2
+		moveq.l    #1,d0
+		bra.s      Aev_OlgaIdle_3
+Aev_OlgaIdle_2:
+		clr.w      d0
+Aev_OlgaIdle_3:
+		move.w     d0,(a7)
+Aev_OlgaIdle_1:
+		move.w     (a7),d0
+		addq.w     #2,a7
+		rts
+	.ENDC
+
 		.globl Aev_OlgaUpdate
 Aev_OlgaUpdate:
 		move.l     a2,-(a7)
@@ -836,6 +968,46 @@ Aev_OlgaUpdate_10:
 		movea.l    (a7)+,a2
 		rts
 
+	.IFNE 0 /* only in lib */
+Aev_OlgaGetInfo:
+		move.l     a2,-(a7)
+		lea.l      -22(a7),a7
+		move.w     d0,20(a7)
+		move.w     20(a7),d0
+		bsr.w      ~_199
+		move.l     a0,(a7)
+		move.l     (a7),d0
+		bne.s      Aev_OlgaGetInfo_1
+		clr.w      d0
+		bra.s      Aev_OlgaGetInfo_2
+Aev_OlgaGetInfo_1:
+		moveq.l    #16,d1
+		clr.w      d0
+		lea.l      4(a7),a0
+		jsr        memset
+		move.w     #$1247,4(a7)
+		movea.l    ACSblk,a0
+		move.w     (a0),6(a7)
+		movea.l    (a7),a0
+		move.w     24(a0),14(a7)
+		movea.l    _globl,a1
+		lea.l      4(a7),a0
+		moveq.l    #16,d1
+		movea.l    (a7),a2
+		move.w     22(a2),d0
+		jsr        mt_appl_write
+		tst.w      d0
+		beq.s      Aev_OlgaGetInfo_3
+		moveq.l    #1,d0
+		bra.s      Aev_OlgaGetInfo_2
+Aev_OlgaGetInfo_3:
+		clr.w      d0
+Aev_OlgaGetInfo_2:
+		lea.l      22(a7),a7
+		movea.l    (a7)+,a2
+		rts
+	.ENDC
+
 Aev_OlgaInfo:
 		lea.l      -24(a7),a7
 		move.w     d0,22(a7)
@@ -872,6 +1044,231 @@ Aev_OlgaInfo_1:
 		move.w     (a7),d0
 		lea.l      24(a7),a7
 		rts
+
+	.IFNE 0 /* only in lib */
+Aev_OlgaRename:
+		move.l     a2,-(a7)
+		lea.l      -56(a7),a7
+		move.l     a0,52(a7)
+		move.l     a1,48(a7)
+		clr.w      46(a7)
+		bsr.w      ~_187
+		tst.w      d0
+		beq        Aev_OlgaRename_1
+		move.l     52(a7),14(a7)
+		move.w     #$0002,24(a7)
+		lea.l      8(a7),a0
+		bsr.w      ~_198
+		move.l     a0,26(a7)
+		moveq.l    #16,d1
+		clr.w      d0
+		lea.l      30(a7),a0
+		jsr        memset
+		move.w     #$123A,30(a7)
+		movea.l    ACSblk,a0
+		move.w     (a0),32(a7)
+		move.l     26(a7),d0
+		bne.s      Aev_OlgaRename_2
+		movea.l    26(a7),a0
+		move.w     30(a0),d0
+		beq        Aev_OlgaRename_3
+Aev_OlgaRename_2:
+		movea.l    48(a7),a0
+		jsr        strlen
+		addq.l     #1,d0
+		jsr        Ax_glmalloc
+		move.l     a0,(a7)
+		move.l     (a7),d0
+		bne.s      Aev_OlgaRename_4
+		clr.w      d0
+		bra        Aev_OlgaRename_5
+Aev_OlgaRename_4:
+		movea.l    48(a7),a1
+		movea.l    (a7),a0
+		jsr        strcpy
+		movea.l    26(a7),a0
+		move.l     6(a0),4(a7)
+		movea.l    26(a7),a0
+		move.l     (a7),6(a0)
+		movea.l    4(a7),a1
+		movea.l    globProtData,a0
+		movea.l    globProtData,a2
+		movea.l    12(a2),a2
+		jsr        (a2)
+		movea.l    26(a7),a0
+		movea.l    12(a0),a0
+		jsr        Ast_isEmpty
+		tst.w      d0
+		beq.s      Aev_OlgaRename_6
+		clr.w      d0
+		bra.s      Aev_OlgaRename_7
+Aev_OlgaRename_6:
+		movea.l    26(a7),a0
+		move.w     4(a0),d0
+Aev_OlgaRename_7:
+		move.w     d0,40(a7)
+		move.l     4(a7),36(a7)
+		move.l     (a7),40(a7)
+		movea.l    26(a7),a0
+		cmpi.w     #$123A,26(a0)
+		bne.s      Aev_OlgaRename_8
+		movea.l    26(a7),a0
+		addq.w     #1,28(a0)
+		bra.s      Aev_OlgaRename_9
+Aev_OlgaRename_8:
+		movea.l    26(a7),a0
+		clr.w      28(a0)
+Aev_OlgaRename_9:
+		movea.l    26(a7),a0
+		move.w     #$123A,26(a0)
+		bra        Aev_OlgaRename_10
+Aev_OlgaRename_3:
+		movea.l    52(a7),a0
+		jsr        strlen
+		addq.l     #1,d0
+		jsr        Ax_glmalloc
+		move.l     a0,4(a7)
+		move.l     4(a7),d0
+		bne.s      Aev_OlgaRename_11
+		clr.w      d0
+		bra        Aev_OlgaRename_5
+Aev_OlgaRename_11:
+		movea.l    4(a7),a1
+		movea.l    globProtData,a0
+		movea.l    globProtData,a2
+		movea.l    12(a2),a2
+		jsr        (a2)
+		movea.l    52(a7),a1
+		movea.l    4(a7),a0
+		jsr        strcpy
+		movea.l    48(a7),a0
+		jsr        strlen
+		addq.l     #1,d0
+		jsr        Ax_glmalloc
+		move.l     a0,(a7)
+		move.l     (a7),d0
+		bne.s      Aev_OlgaRename_12
+		movea.l    4(a7),a0
+		jsr        Ax_glfree
+		clr.w      d0
+		bra.s      Aev_OlgaRename_5
+Aev_OlgaRename_12:
+		movea.l    (a7),a1
+		movea.l    globProtData,a0
+		movea.l    globProtData,a2
+		movea.l    12(a2),a2
+		jsr        (a2)
+		movea.l    48(a7),a1
+		movea.l    (a7),a0
+		jsr        strcpy
+		move.l     4(a7),36(a7)
+		move.l     (a7),40(a7)
+		clr.w      40(a7)
+Aev_OlgaRename_10:
+		movea.l    _globl,a1
+		lea.l      30(a7),a0
+		moveq.l    #16,d1
+		move.w     ~_881,d0
+		jsr        mt_appl_write
+		tst.w      d0
+		beq.s      Aev_OlgaRename_13
+		moveq.l    #1,d0
+		bra.s      Aev_OlgaRename_14
+Aev_OlgaRename_13:
+		clr.w      d0
+Aev_OlgaRename_14:
+		move.w     d0,46(a7)
+Aev_OlgaRename_1:
+		move.w     46(a7),d0
+Aev_OlgaRename_5:
+		lea.l      56(a7),a7
+		movea.l    (a7)+,a2
+		rts
+	.ENDC
+
+	.IFNE 0 /* only in lib */
+Aev_OlgaBreaklink:
+		move.l     a2,-(a7)
+		lea.l      -48(a7),a7
+		move.l     a0,44(a7)
+		clr.w      42(a7)
+		bsr.w      ~_187
+		tst.w      d0
+		beq        Aev_OlgaBreaklink_1
+		move.l     44(a7),10(a7)
+		move.w     #$0002,20(a7)
+		lea.l      4(a7),a0
+		bsr.w      ~_198
+		move.l     a0,22(a7)
+		moveq.l    #16,d1
+		clr.w      d0
+		lea.l      26(a7),a0
+		jsr        memset
+		move.w     #$1244,26(a7)
+		movea.l    ACSblk,a0
+		move.w     (a0),28(a7)
+		move.l     22(a7),d0
+		bne.s      Aev_OlgaBreaklink_2
+		movea.l    22(a7),a0
+		move.w     30(a0),d0
+		beq.s      Aev_OlgaBreaklink_3
+Aev_OlgaBreaklink_2:
+		movea.l    22(a7),a0
+		move.l     6(a0),32(a7)
+		movea.l    22(a7),a0
+		cmpi.w     #$1244,26(a0)
+		bne.s      Aev_OlgaBreaklink_4
+		movea.l    22(a7),a0
+		addq.w     #1,28(a0)
+		bra.s      Aev_OlgaBreaklink_5
+Aev_OlgaBreaklink_4:
+		movea.l    22(a7),a0
+		clr.w      28(a0)
+Aev_OlgaBreaklink_5:
+		movea.l    22(a7),a0
+		move.w     #$1244,26(a0)
+		bra.s      Aev_OlgaBreaklink_6
+Aev_OlgaBreaklink_3:
+		movea.l    44(a7),a0
+		jsr        strlen
+		addq.l     #1,d0
+		jsr        Ax_glmalloc
+		move.l     a0,(a7)
+		move.l     (a7),d0
+		bne.s      Aev_OlgaBreaklink_7
+		clr.w      d0
+		bra.s      Aev_OlgaBreaklink_8
+Aev_OlgaBreaklink_7:
+		movea.l    (a7),a1
+		movea.l    globProtData,a0
+		movea.l    globProtData,a2
+		movea.l    12(a2),a2
+		jsr        (a2)
+		movea.l    44(a7),a1
+		movea.l    (a7),a0
+		jsr        strcpy
+		move.l     (a7),32(a7)
+Aev_OlgaBreaklink_6:
+		movea.l    _globl,a1
+		lea.l      26(a7),a0
+		moveq.l    #16,d1
+		move.w     ~_881,d0
+		jsr        mt_appl_write
+		tst.w      d0
+		beq.s      Aev_OlgaBreaklink_9
+		moveq.l    #1,d0
+		bra.s      Aev_OlgaBreaklink_10
+Aev_OlgaBreaklink_9:
+		clr.w      d0
+Aev_OlgaBreaklink_10:
+		move.w     d0,42(a7)
+Aev_OlgaBreaklink_1:
+		move.w     42(a7),d0
+Aev_OlgaBreaklink_8:
+		lea.l      48(a7),a7
+		movea.l    (a7)+,a2
+		rts
+	.ENDC
 
 		.data
 

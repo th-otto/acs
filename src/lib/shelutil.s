@@ -237,6 +237,160 @@ Ash_error_34:
 		movem.l    (a7)+,d3-d4/a2-a4
 		rts
 
+	.IFNE 0 /* only in lib */
+		.globl Ash_cmdParsen
+Ash_cmdParsen:
+		movem.l    d3-d6/a2-a5,-(a7)
+		subq.w     #8,a7
+		movea.l    a0,a2
+		move.w     d0,d5
+		move.l     a1,4(a7)
+		movea.l    44(a7),a5
+		movea.l    56(a7),a3
+		moveq.l    #1,d3
+		clr.w      d4
+		bra.s      Ash_cmdParsen_1
+Ash_cmdParsen_2:
+		move.w     d4,d0
+		ext.l      d0
+		lsl.l      #2,d0
+		clr.l      0(a2,d0.l)
+		addq.w     #1,d4
+Ash_cmdParsen_1:
+		cmp.w      #$0100,d4
+		blt.s      Ash_cmdParsen_2
+		clr.w      d4
+		bra.s      Ash_cmdParsen_3
+Ash_cmdParsen_4:
+		move.w     d4,d0
+		ext.l      d0
+		lsl.l      #2,d0
+		movea.l    4(a7),a0
+		movea.l    0(a0,d0.l),a0
+		jsr        Ast_alltrim
+		addq.w     #1,d4
+Ash_cmdParsen_3:
+		cmp.w      d4,d5
+		bgt.s      Ash_cmdParsen_4
+		moveq.l    #1,d4
+		bra        Ash_cmdParsen_5
+Ash_cmdParsen_19:
+		move.w     d4,d0
+		ext.l      d0
+		lsl.l      #2,d0
+		movea.l    4(a7),a0
+		move.l     0(a0,d0.l),(a7)
+		movea.l    (a7),a1
+		move.b     (a1),d0
+		ext.w      d0
+		movea.l    a5,a0
+		jsr        strchr
+		move.l     a0,d0
+		beq        Ash_cmdParsen_6
+		clr.b      d6
+		movea.l    (a7),a4
+		addq.w     #1,a4
+		bra        Ash_cmdParsen_7
+Ash_cmdParsen_18:
+		move.b     (a4),d6
+		move.b     d6,d0
+		ext.w      d0
+		movea.l    48(a7),a0
+		jsr        strchr
+		move.l     a0,d0
+		beq        Ash_cmdParsen_8
+		move.b     (a4),d0
+		ext.w      d0
+		movea.l    52(a7),a0
+		jsr        strchr
+		move.l     a0,d0
+		beq.s      Ash_cmdParsen_9
+		move.b     1(a4),d0
+		beq.s      Ash_cmdParsen_10
+		lea.l      1(a4),a0
+		move.b     d6,d1
+		ext.w      d1
+		ext.l      d1
+		lsl.l      #2,d1
+		move.l     a0,0(a2,d1.l)
+		bra        Ash_cmdParsen_11
+Ash_cmdParsen_10:
+		moveq.l    #-1,d0
+		add.w      d5,d0
+		cmp.w      d0,d4
+		bge.s      Ash_cmdParsen_12
+		move.w     d4,d1
+		ext.l      d1
+		lsl.l      #2,d1
+		movea.l    4(a7),a0
+		movea.l    4(a0,d1.l),a4
+		bra.s      Ash_cmdParsen_13
+Ash_cmdParsen_12:
+		movea.l    a5,a4
+Ash_cmdParsen_13:
+		move.b     (a4),d0
+		ext.w      d0
+		movea.l    a5,a0
+		jsr        strchr
+		move.l     a0,d0
+		beq.s      Ash_cmdParsen_14
+		move.l     a3,d0
+		beq.s      Ash_cmdParsen_15
+		move.b     d6,d0
+		jsr        (a3)
+		tst.w      d0
+		beq.s      Ash_cmdParsen_16
+Ash_cmdParsen_15:
+		clr.w      d3
+		move.w     d5,d4
+		bra.s      Ash_cmdParsen_11
+Ash_cmdParsen_14:
+		move.b     d6,d0
+		ext.w      d0
+		ext.l      d0
+		lsl.l      #2,d0
+		move.l     a4,0(a2,d0.l)
+		bra.s      Ash_cmdParsen_11
+Ash_cmdParsen_9:
+		move.b     d6,d0
+		ext.w      d0
+		ext.l      d0
+		lsl.l      #2,d0
+		move.l     #~_808+$0000002B,0(a2,d0.l)
+		bra.s      Ash_cmdParsen_16
+Ash_cmdParsen_8:
+		move.l     a3,d0
+		beq.s      Ash_cmdParsen_17
+		move.b     d6,d0
+		jsr        (a3)
+		tst.w      d0
+		beq.s      Ash_cmdParsen_11
+Ash_cmdParsen_17:
+		clr.w      d3
+		bra.s      Ash_cmdParsen_11
+Ash_cmdParsen_16:
+		addq.w     #1,a4
+Ash_cmdParsen_7:
+		move.b     (a4),d0
+		bne        Ash_cmdParsen_18
+		bra.s      Ash_cmdParsen_11
+Ash_cmdParsen_6:
+		movea.l    (a7),a1
+		movea.l    60(a7),a0
+		movea.l    60(a7),a4
+		movea.l    12(a4),a4
+		jsr        (a4)
+Ash_cmdParsen_11:
+		addq.w     #1,d4
+Ash_cmdParsen_5:
+		cmp.w      d4,d5
+		bgt        Ash_cmdParsen_19
+		move.w     d3,d0
+		addq.w     #8,a7
+		movem.l    (a7)+,d3-d6/a2-a5
+		rts
+	.ENDC
+
 		.globl Ash_getenv
 Ash_getenv:
 		move.l     a2,-(a7)

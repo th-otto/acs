@@ -2171,6 +2171,15 @@ Awi_help_3:
 		movea.l    (a7)+,a2
 		rts
 
+	.IFNE 0 /* only in lib */
+	.globl Aus_help
+Aus_help:
+		movea.l    ACSblk,a0
+		movea.l    600(a0),a0
+		bsr.w      Awi_help
+		rts
+	.ENDC
+
 Awi_keyACWork:
 		movem.l    d3-d5/a2-a3,-(a7)
 		movea.l    a0,a3
@@ -3704,6 +3713,15 @@ Awi_observice_2:
 Awi_observice_4:
 		movem.l    (a7)+,d3-d4/a2-a3
 		rts
+
+	.IFNE 0 /* only in lib */
+		.globl Aob_help
+Aob_help:
+		movea.l    ACSblk,a0
+		movea.l    600(a0),a0
+		bsr.w      Awi_help
+		rts
+	.ENDC
 
 		.globl Aob_visible
 Aob_visible:

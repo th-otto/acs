@@ -328,6 +328,48 @@ Af_buildname_8:
 		movem.l    (a7)+,d3-d4/a2-a6
 		rts
 
+	.IFNE 0 /* only in lib */
+	.globl Af_chgExt
+Af_chgExt:
+		movem.l    a2-a5,-(a7)
+		subq.w     #2,a7
+		movea.l    a0,a2
+		movea.l    a1,a5
+		lea.l      ~_756+$00000008,a0
+		lea.l      (a7),a1
+		move.b     (a0)+,(a1)+
+		move.b     (a0)+,(a1)+
+		moveq.l    #92,d0
+		movea.l    a2,a0
+		jsr        strrchr
+		movea.l    a0,a3
+		moveq.l    #46,d0
+		movea.l    a2,a0
+		jsr        strrchr
+		movea.l    a0,a4
+		move.l     a4,d0
+		beq.s      Af_chgExt_1
+		cmp.l      a3,d0
+		bcc.s      Af_chgExt_2
+Af_chgExt_1:
+		lea.l      (a7),a1
+		movea.l    a2,a0
+		jsr        strcat
+		movea.l    a5,a1
+		movea.l    a2,a0
+		jsr        strcat
+		bra.s      Af_chgExt_3
+Af_chgExt_2:
+		movea.l    a5,a1
+		lea.l      1(a4),a0
+		jsr        strcpy
+Af_chgExt_3:
+		movea.l    a2,a0
+		addq.w     #2,a7
+		movem.l    (a7)+,a2-a5
+		rts
+	.ENDC
+
 		.globl Af_length
 Af_length:
 		movem.l    d3-d4/a2-a3,-(a7)
@@ -948,6 +990,58 @@ Af_next_6:
 		movea.l    (a7)+,a3
 		movea.l    (a7)+,a2
 		rts
+
+		.IFNE 0 /* only in lib */
+		.globl Af_pathconf
+Af_pathconf:
+		movem.l    d3-d4/a3,-(a7)
+		subq.w     #4,a7
+		move.w     d0,d3
+		move.w     d1,d4
+		lea.l      ~_759,a3
+		lea.l      2(a3),a0
+		lea.l      (a7),a1
+		move.b     (a0)+,(a1)+
+		move.b     (a0)+,(a1)+
+		move.b     (a0)+,(a1)+
+		move.b     (a0)+,(a1)+
+		tst.w      d3
+		ble.s      Af_pathconf_1
+		moveq.l    #-1,d0
+		add.b      d3,d0
+		bra.s      Af_pathconf_2
+Af_pathconf_1:
+		jsr        Dgetdrv
+Af_pathconf_2:
+		add.b      d0,(a7)
+		cmpi.w     #$FFFF,(a3)
+		bge.s      Af_pathconf_3
+		moveq.l    #-1,d0
+		lea.l      (a7),a0
+		jsr        Dpathconf
+		moveq.l    #-32,d1
+		cmp.l      d0,d1
+		beq.s      Af_pathconf_4
+		moveq.l    #-1,d2
+		and.w      d0,d2
+		move.w     d2,(a3)
+		bra.s      Af_pathconf_3
+Af_pathconf_4:
+		move.w     #$FFFF,(a3)
+Af_pathconf_3:
+		cmp.w      (a3),d4
+		bgt.s      Af_pathconf_5
+		move.w     d4,d0
+		lea.l      (a7),a0
+		jsr        Dpathconf
+		bra.s      Af_pathconf_6
+Af_pathconf_5:
+		moveq.l    #-32,d0
+Af_pathconf_6:
+		addq.w     #4,a7
+		movem.l    (a7)+,d3-d4/a3
+		rts
+	.ENDC
 
 		.globl Af_quote
 Af_quote:

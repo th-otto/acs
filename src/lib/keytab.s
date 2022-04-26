@@ -813,6 +813,84 @@ Akt_StringX2Unicode:
 		movem.l    (a7)+,d3/a2-a3
 		rts
 
+	.IFNE 0 /* only in lib */
+Akt_CharXUtf2Unicode:
+		movem.l    d3-d4/a2-a4,-(a7)
+		move.w     d0,d4
+		movea.l    a0,a4
+		move.l     d1,d3
+		movea.l    a1,a3
+		bsr.w      Akt_getKeyTab
+		movea.l    a0,a2
+		move.l     a2,d0
+		beq.s      Akt_CharXUtf2Unicode_1
+		moveq.l    #104,d1
+		cmp.l      4(a2),d1
+		bgt.s      Akt_CharXUtf2Unicode_1
+		move.l     a3,-(a7)
+		move.l     d3,-(a7)
+		move.l     a4,-(a7)
+		move.w     d4,-(a7)
+		movea.l    112(a2),a0
+		jsr        (a0)
+		lea.l      14(a7),a7
+		bra.s      Akt_CharXUtf2Unicode_2
+Akt_CharXUtf2Unicode_1:
+		move.l     a3,d0
+		beq.s      Akt_CharXUtf2Unicode_3
+		move.w     #$0001,(a3)
+Akt_CharXUtf2Unicode_3:
+		move.b     (a4),d1
+		move.w     d4,d0
+		bsr.w      Akt_CharX2Unicode
+		ext.l      d0
+Akt_CharXUtf2Unicode_2:
+		movem.l    (a7)+,d3-d4/a2-a4
+		rts
+	.ENDC
+
+	.IFNE 0 /* only in lib */
+Akt_CharUnicode2XUtf:
+		movem.l    d3-d4/a2-a4,-(a7)
+		move.w     d0,d4
+		move.l     d1,d3
+		movea.l    a0,a4
+		movea.l    a1,a3
+		bsr.w      Akt_getKeyTab
+		movea.l    a0,a2
+		move.l     a2,d0
+		beq.s      Akt_CharUnicode2XUtf_1
+		moveq.l    #104,d1
+		cmp.l      4(a2),d1
+		bgt.s      Akt_CharUnicode2XUtf_1
+		move.l     a3,-(a7)
+		move.l     a4,-(a7)
+		move.l     d3,-(a7)
+		move.w     d4,-(a7)
+		movea.l    116(a2),a0
+		jsr        (a0)
+		lea.l      14(a7),a7
+		movea.l    d0,a0
+		bra.s      Akt_CharUnicode2XUtf_2
+Akt_CharUnicode2XUtf_1:
+		move.l     a3,d0
+		beq.s      Akt_CharUnicode2XUtf_3
+		move.w     #$0001,(a3)
+Akt_CharUnicode2XUtf_3:
+		move.l     a4,d0
+		beq.s      Akt_CharUnicode2XUtf_4
+		moveq.l    #-1,d1
+		and.w      d3,d1
+		move.w     d4,d0
+		bsr.w      Akt_CharUnicode2X
+		move.b     d0,(a4)
+Akt_CharUnicode2XUtf_4:
+		movea.l    a4,a0
+Akt_CharUnicode2XUtf_2:
+		movem.l    (a7)+,d3-d4/a2-a4
+		rts
+	.ENDC
+
 		.globl Akt_BlockXUtf2Unicode
 Akt_BlockXUtf2Unicode:
 		movem.l    d3-d4/a2-a4,-(a7)

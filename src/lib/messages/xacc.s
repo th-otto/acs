@@ -963,6 +963,160 @@ Aev_AccAck_6:
 		lea.l      20(a7),a7
 		rts
 
+	.IFNE 0 /* only in lib */
+Aev_AccKey:
+		lea.l      -30(a7),a7
+		move.w     d0,28(a7)
+		move.w     d1,26(a7)
+		move.l     a0,22(a7)
+		move.w     d2,20(a7)
+		move.w     28(a7),d0
+		bsr.w      ~_160
+		move.l     a0,d0
+		bne.s      Aev_AccKey_1
+		clr.w      d0
+		bra        Aev_AccKey_2
+Aev_AccKey_1:
+		movea.l    ACSblk,a0
+		move.w     28(a7),d0
+		cmp.w      (a0),d0
+		beq        Aev_AccKey_3 ; possibly optimized to short
+		moveq.l    #16,d1
+		clr.w      d0
+		lea.l      4(a7),a0
+		jsr        memset
+		move.w     #$0502,4(a7)
+		movea.l    ACSblk,a0
+		move.w     (a0),6(a7)
+		move.w     26(a7),d0
+		jsr        nkc_n2tos
+		move.l     d0,(a7)
+		move.l     (a7),d0
+		moveq.l    #16,d1
+		asr.l      d1,d0
+		and.w      #$00FF,d0
+		move.w     d0,10(a7)
+		move.l     (a7),d0
+		moveq.l    #24,d1
+		asr.l      d1,d0
+		and.w      #$00FF,d0
+		move.w     d0,12(a7)
+		move.w     28(a7),d0
+		bmi.s      Aev_AccKey_4
+		move.w     20(a7),d2
+		movea.l    22(a7),a1
+		lea.l      4(a7),a0
+		moveq.l    #2,d1
+		move.w     28(a7),d0
+		jsr        Aev_SendMsg
+		bra.s      Aev_AccKey_2
+		bra.s      Aev_AccKey_3
+Aev_AccKey_4:
+		move.w     20(a7),d1
+		movea.l    22(a7),a1
+		moveq.l    #2,d0
+		lea.l      4(a7),a0
+		jsr        Aev_SendAllMsg
+		bra.s      Aev_AccKey_2
+Aev_AccKey_3:
+		moveq.l    #1,d0
+Aev_AccKey_2:
+		lea.l      30(a7),a7
+		rts
+	.ENDC
+
+	.IFNE 0 /* only in lib */
+Aev_AccText:
+		move.l     a2,-(a7)
+		lea.l      -36(a7),a7
+		move.w     d0,34(a7)
+		move.l     a0,30(a7)
+		move.l     a1,26(a7)
+		move.w     d1,24(a7)
+		move.w     34(a7),d0
+		bsr.w      ~_160
+		move.l     a0,(a7)
+		move.l     (a7),d0
+		bne.s      Aev_AccText_1
+		clr.w      d0
+		bra        Aev_AccText_2
+Aev_AccText_1:
+		movea.l    ACSblk,a0
+		move.w     34(a7),d0
+		cmp.w      (a0),d0
+		beq        Aev_AccText_3
+		movea.l    (a7),a0
+		move.w     22(a0),d0
+		beq.s      Aev_AccText_4
+		movea.l    (a7),a0
+		move.l     24(a0),d0
+		move.l     d0,-(a7)
+		jsr        Ash_gettimer
+		add.l      #$000001F4,d0
+		move.l     (a7)+,d1
+		cmp.l      d0,d1
+		bcc.s      Aev_AccText_5
+		clr.w      d0
+		bra        Aev_AccText_2
+Aev_AccText_5:
+		movea.l    (a7),a0
+		lea.l      22(a0),a0
+		bsr.w      XAccDataDelete
+Aev_AccText_4:
+		moveq.l    #1,d0
+		movea.l    30(a7),a0
+		jsr        Ast_copy
+		move.l     a0,4(a7)
+		move.l     4(a7),d0
+		bne.s      Aev_AccText_6
+		clr.w      d0
+		bra        Aev_AccText_2
+Aev_AccText_6:
+		movea.l    4(a7),a1
+		movea.l    globProtData,a0
+		movea.l    globProtData,a2
+		movea.l    12(a2),a2
+		jsr        (a2)
+		moveq.l    #16,d1
+		clr.w      d0
+		lea.l      8(a7),a0
+		jsr        memset
+		move.w     #$0501,8(a7)
+		movea.l    ACSblk,a0
+		move.w     (a0),10(a7)
+		move.l     4(a7),16(a7)
+		movea.l    (a7),a0
+		move.w     #$0501,22(a0)
+		jsr        Ash_gettimer
+		movea.l    (a7),a0
+		move.l     d0,24(a0)
+		movea.l    (a7),a0
+		move.l     4(a7),28(a0)
+		move.w     34(a7),d0
+		bmi.s      Aev_AccText_7
+		move.w     24(a7),d2
+		movea.l    26(a7),a1
+		lea.l      8(a7),a0
+		moveq.l    #2,d1
+		move.w     34(a7),d0
+		jsr        Aev_SendMsg
+		bra.s      Aev_AccText_2
+		bra.s      Aev_AccText_3
+Aev_AccText_7:
+		move.w     24(a7),d1
+		movea.l    26(a7),a1
+		moveq.l    #2,d0
+		lea.l      8(a7),a0
+		jsr        Aev_SendAllMsg
+		bra.s      Aev_AccText_2
+Aev_AccText_3:
+		moveq.l    #1,d0
+Aev_AccText_2:
+		lea.l      36(a7),a7
+		movea.l    (a7)+,a2
+		rts
+	.ENDC
+
 		.data
 
 GetXAccData:

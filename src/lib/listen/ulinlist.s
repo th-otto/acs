@@ -252,6 +252,66 @@ Alu_ptrCmp_1:
 		clr.w      d0
 		rts
 
+	.IFNE 0 /* only in lib */
+Alu_longCmp:
+		move.l     (a0),d0
+		cmp.l      (a1),d0
+		bne.s      Alu_longCmp_1
+		moveq.l    #1,d0
+		rts
+Alu_longCmp_1:
+		clr.w      d0
+		rts
+	.ENDC
+
+	.IFNE 0 /* only in lib */
+Alu_intCmp:
+		move.w     (a0),d0
+		cmp.w      (a1),d0
+		bne.s      Alu_intCmp_1
+		moveq.l    #1,d0
+		rts
+Alu_intCmp_1:
+		clr.w      d0
+		rts
+	.ENDC
+
+	.IFNE 0 /* only in lib */
+Alu_charCmp:
+		move.b     (a0),d0
+		cmp.b      (a1),d0
+		bne.s      Alu_charCmp_1
+		moveq.l    #1,d0
+		rts
+Alu_charCmp_1:
+		clr.w      d0
+		rts
+	.ENDC
+
+	.IFNE 0 /* only in lib */
+Alu_strCmp:
+		jsr        Ast_cmp
+		tst.w      d0
+		bne.s      Alu_strCmp_1
+		moveq.l    #1,d0
+		rts
+Alu_strCmp_1:
+		clr.w      d0
+		rts
+	.ENDC
+
+	.IFNE 0 /* only in lib */
+Alu_striCmp:
+		jsr        Ast_icmp
+		tst.w      d0
+		bne.s      Alu_striCmp_1
+		moveq.l    #1,d0
+		rts
+Alu_striCmp_1:
+		clr.w      d0
+		rts
+	.ENDC
+
 Alu_deleteForElem:
 		movem.l    d3/a2-a5,-(a7)
 		subq.w     #8,a7

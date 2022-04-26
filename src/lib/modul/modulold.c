@@ -1086,6 +1086,47 @@ static funcVersion const funcKeytab[] = { { func1Keytab, 0 } };
 static int16 const funcAnzKeytab = NUMFUNCS(funcKeytab);
 
 
+/*
+missing exports:
+
+Af_chgExt
+Af_pathconf
+Akt_CharXUtf2Unicode
+Akt_CharUnicode2XUtf
+Ash_cmdParsen
+Aus_help
+Aob_help
+Aev_SearchMsg
+Aev_DeleteMsg
+Ash_sendmsg
+Aev_AccKey
+Aev_AccText
+Aev_APDragDropMemory
+Aev_GetAskFontBubbleGEM
+Aev_FontBubbleGEM
+Aev_HideBubbleGEM
+Aev_VaProtoStatus
+A_OlgaCreate
+A_OlgaDelete
+Awi_saved
+Aev_OlgaIdle
+Aev_OlgaGetInfo
+Aev_OlgaRename
+Aev_OlgaBreaklink
+Aev_PCHelpVersion
+Aev_AcVersion
+Aev_AcCopy
+Aud_boxed
+Awi_sendkey
+Adate_ymd2dow
+Alu_longCmp
+Alu_intCmp
+Alu_charCmp
+Alu_strCmp
+Alu_striCmp
+*/
+
+
 funcListe funcs[] = {
 	{ funcAbp,    &funcAnzAbp },
 	{ funcAcfg,   &funcAnzAcfg },

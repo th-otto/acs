@@ -331,6 +331,47 @@ Aev_CmpDestID_2:
 		addq.w     #8,a7
 		rts
 
+	.IFNE 0 /* only in lib */
+Aev_SearchMsg:
+		move.l     a2,-(a7)
+		subq.w     #4,a7
+		move.l     a0,(a7)
+		pea.l      Aev_CmpMsgInList(pc)
+		movea.l    4(a7),a1
+		movea.l    SentMsg,a0
+		movea.l    SentMsg,a2
+		movea.l    32(a2),a2
+		jsr        (a2)
+		addq.w     #4,a7
+		addq.w     #4,a7
+		movea.l    (a7)+,a2
+		rts
+	.ENDC
+
+	.IFNE 0 /* only in lib */
+Aev_DeleteMsg:
+		move.l     a2,-(a7)
+		subq.w     #4,a7
+		move.l     a0,(a7)
+		pea.l      Aev_CmpMsgInList(pc)
+		movea.l    4(a7),a1
+		movea.l    SentMsg,a0
+		movea.l    SentMsg,a2
+		movea.l    24(a2),a2
+		jsr        (a2)
+		addq.w     #4,a7
+		tst.l      d0
+		ble.s      Aev_DeleteMsg_1
+		moveq.l    #1,d0
+		bra.s      Aev_DeleteMsg_2
+Aev_DeleteMsg_1:
+		clr.w      d0
+Aev_DeleteMsg_2:
+		addq.w     #4,a7
+		movea.l    (a7)+,a2
+		rts
+	.ENDC
+
 		.globl Aev_SendMsg
 Aev_SendMsg:
 		move.l     a2,-(a7)
@@ -639,6 +680,22 @@ Aev_DDRemove_2:
 		moveq.l    #1,d0
 		addq.w     #4,a7
 		rts
+
+	.IFNE 0 /* only in lib */
+Ash_sendmsg:
+		subq.w     #8,a7
+		move.w     d0,6(a7)
+		move.w     d1,4(a7)
+		move.l     a0,(a7)
+		moveq.l    #-1,d2
+		suba.l     a1,a1
+		movea.l    (a7),a0
+		move.w     4(a7),d1
+		move.w     6(a7),d0
+		bsr.w      Aev_SendMsg
+		addq.w     #8,a7
+		rts
+	.ENDC
 
 Ash_chkDDtype:
 		subq.w     #8,a7

@@ -318,6 +318,154 @@ Aev_GetAPDragDrop_3:
 		movea.l    (a7)+,a2
 		rts
 
+	.IFNE 0 /* only in lib */
+Aev_APDragDropMemory:
+		lea.l      -150(a7),a7
+		move.w     d0,148(a7)
+		move.w     d1,146(a7)
+		move.w     d2,144(a7)
+		move.l     a0,140(a7)
+		move.l     a1,136(a7)
+		lea.l      ~_866+$00000019,a0
+		lea.l      116(a7),a1
+		moveq.l    #19,d0
+Aev_APDragDropMemory_1:
+		move.b     (a0)+,(a1)+
+		dbf        d0,Aev_APDragDropMemory_1
+		clr.w      44(a7)
+		jsr        Dgetdrv
+		jsr        Dsetdrv
+		and.l      #$00100000,d0
+		beq        Aev_APDragDropMemory_2
+		lea.l      64(a7),a1
+		lea.l      ~_867+$00000022,a0
+		clr.w      d0
+		jsr        Fxattr
+		tst.l      d0
+		bne        Aev_APDragDropMemory_2
+		lea.l      116(a7),a0
+		bsr.w      ~_164
+		move.l     d0,36(a7)
+		move.l     36(a7),d0
+		bmi        Aev_APDragDropMemory_2
+		move.w     38(a7),34(a7)
+		clr.w      d0
+		jsr        Awi_update
+		move.w     #$003F,48(a7)
+		movea.l    ACSblk,a0
+		move.w     (a0),50(a7)
+		move.w     146(a7),54(a7)
+		move.w     144(a7),d0
+		bmi.s      Aev_APDragDropMemory_3
+		move.w     144(a7),d0
+		bra.s      Aev_APDragDropMemory_4
+Aev_APDragDropMemory_3:
+		movea.l    ACSblk,a0
+		move.w     610(a0),d0
+Aev_APDragDropMemory_4:
+		move.w     d0,56(a7)
+		move.w     154(a7),d0
+		bmi.s      Aev_APDragDropMemory_5
+		move.w     154(a7),d0
+		bra.s      Aev_APDragDropMemory_6
+Aev_APDragDropMemory_5:
+		movea.l    ACSblk,a0
+		move.w     612(a0),d0
+Aev_APDragDropMemory_6:
+		move.w     d0,58(a7)
+		move.w     156(a7),60(a7)
+		move.b     133(a7),d0
+		ext.w      d0
+		lsl.w      #8,d0
+		move.b     134(a7),d1
+		ext.w      d1
+		or.w       d1,d0
+		move.w     d0,62(a7)
+		movea.l    _globl,a1
+		lea.l      48(a7),a0
+		moveq.l    #16,d1
+		move.w     148(a7),d0
+		jsr        mt_appl_write
+		tst.w      d0
+		beq        Aev_APDragDropMemory_7
+		lea.l      (a7),a0
+		move.w     34(a7),d0
+		bsr.w      ~_162
+		tst.w      d0
+		bne        Aev_APDragDropMemory_7
+		movea.l    #$00000001,a0
+		moveq.l    #13,d0
+		jsr        Psignal
+		move.l     d0,40(a7)
+		move.w     #$000A,46(a7)
+		moveq.l    #4,d0
+		movea.l    140(a7),a1
+		lea.l      (a7),a0
+		jsr        strncpy
+		clr.b      4(a7)
+		lea.l      ~_867+$0000002A,a1
+		lea.l      (a7),a0
+		jsr        strcat
+		move.l     158(a7),d0
+		moveq.l    #24,d1
+		asr.l      d1,d0
+		and.b      #$FF,d0
+		move.b     d0,4(a7)
+		move.l     158(a7),d0
+		moveq.l    #16,d1
+		asr.l      d1,d0
+		and.b      #$FF,d0
+		move.b     d0,5(a7)
+		move.l     158(a7),d0
+		asr.l      #8,d0
+		and.b      #$FF,d0
+		move.b     d0,6(a7)
+		moveq.l    #-1,d0
+		and.b      161(a7),d0
+		move.b     d0,7(a7)
+		lea.l      (a7),a0
+		move.w     46(a7),d1
+		move.w     34(a7),d0
+		bsr.w      ~_163
+		tst.w      d0
+		bne.s      Aev_APDragDropMemory_8
+		lea.l      ~_867+$00000031,a1
+		movea.l    140(a7),a0
+		jsr        Ast_icmp
+		tst.w      d0
+		beq.s      Aev_APDragDropMemory_9
+		movea.l    136(a7),a0
+		move.l     158(a7),d1
+		move.w     34(a7),d0
+		jsr        Fwrite
+		cmp.l      158(a7),d0
+		bne.s      Aev_APDragDropMemory_10
+		move.w     #$0001,44(a7)
+Aev_APDragDropMemory_10:
+		bra.s      Aev_APDragDropMemory_8
+Aev_APDragDropMemory_9:
+		movea.l    136(a7),a0
+		move.l     158(a7),d1
+		move.w     34(a7),d0
+		jsr        Fread
+		cmp.l      158(a7),d0
+		bne.s      Aev_APDragDropMemory_8
+		move.w     #$0001,44(a7)
+Aev_APDragDropMemory_8:
+		movea.l    40(a7),a0
+		moveq.l    #13,d0
+		jsr        Psignal
+Aev_APDragDropMemory_7:
+		move.w     34(a7),d0
+		jsr        Fclose
+		moveq.l    #1,d0
+		jsr        Awi_update
+Aev_APDragDropMemory_2:
+		move.w     44(a7),d0
+		lea.l      150(a7),a7
+		rts
+	.ENDC
+
 		.data
 
 xd4aba:

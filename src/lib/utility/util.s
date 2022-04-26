@@ -13,6 +13,31 @@ Awi_keys_2:
 		move.w     d1,d0
 		rts
 
+	.IFNE 0 /* only in lib */
+Awi_sendkey:
+		move.l     a2,-(a7)
+		movea.l    a0,a2
+		tst.w      d1
+		bpl.s      Awi_sendkey_1
+		move.b     d1,d0
+		ext.w      d0
+		sub.w      #$000E,d0
+		beq.s      Awi_sendkey_2
+		bra.s      Awi_sendkey_1
+Awi_sendkey_2:
+		movea.l    a2,a0
+		jsr        Awi_help
+		tst.w      d0
+		beq.s      Awi_sendkey_1
+		moveq.l    #-1,d0
+		bra.s      Awi_sendkey_3
+Awi_sendkey_1:
+		moveq.l    #-2,d0
+Awi_sendkey_3:
+		movea.l    (a7)+,a2
+		rts
+	.ENDC
+
 		.globl Awi_nokey
 Awi_nokey:
 		move.l     a2,-(a7)

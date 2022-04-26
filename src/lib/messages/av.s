@@ -430,51 +430,52 @@ Aev_AvExit_4:
 		rts
 
 	.IFNE 0 /* only in lib */
+	.globl Aev_VaProtoStatus
 Aev_VaProtoStatus:
-		lea.l     -$0018(a7),a7
-		move.w    d0,$0016(a7)
-		move.l    a0,$0012(a7)
-		move.w    d1,$0010(a7)
-		lea.l     xd4a5c,a0
-		lea.l     (a7),a1
-		moveq.l   #$0f,d0
-Aev_VaProtoStatus1:
-		move.b    (a0)+,(a1)+
-		dbra      d0,aev_vaprotostatus1
-		movea.l   acsblk,a0
-		move.w    $0016(a7),d0
-		cmp.w     (a0),d0
-		beq.b     aev_vaprotostatus
-		move.w    #$4701,(a7)
-		movea.l   acsblk,a0
-		move.w    (a0),$0002(a7)
-		clr.w     $0004(a7)
-		move.w    #$4736,$0006(a7)
-		clr.w     $0008(a7)
-		clr.w     $000a(a7)
-		movea.l   acsblk,a0
-		move.l    $03dc(a0),$000c(a7)
-		move.w    $0016(a7),d0
-		bmi.b     aev_vaprotostatus2
-		move.w    $0010(a7),d2
-		movea.l   $0012(a7),a1
-		lea.l     (a7),a0
-		moveq.l   #$01,d1
-		move.w    $0016(a7),d0
-		jsr       aev_sendmsg
-		bra.b     aev_vaprotostatus4
-		bra.b     aev_vaprotostatus3
-Aev_VaProtoStatus2:
-		move.w    $0010(a7),d1
-		movea.l   $0012(a7),a1
-		moveq.l   #$01,d0
-		lea.l     (a7),a0
-		jsr       aev_sendallmsg
-		bra.b     aev_vaprotostatus4
-Aev_VaProtoStatus3:
-		clr.w     d0
-Aev_VaProtoStatus4:
-		lea.l     $0018(a7),a7
+		lea.l      -24(a7),a7
+		move.w     d0,22(a7)
+		move.l     a0,18(a7)
+		move.w     d1,16(a7)
+		lea.l      xd4a5c,a0
+		lea.l      (a7),a1
+		moveq.l    #15,d0
+Aev_VaProtoStatus_1:
+		move.b     (a0)+,(a1)+
+		dbf        d0,Aev_VaProtoStatus_1
+		movea.l    ACSblk,a0
+		move.w     22(a7),d0
+		cmp.w      (a0),d0
+		beq.s      Aev_VaProtoStatus_2
+		move.w     #$4701,(a7)
+		movea.l    ACSblk,a0
+		move.w     (a0),2(a7)
+		clr.w      4(a7)
+		move.w     #$4736,6(a7)
+		clr.w      8(a7)
+		clr.w      10(a7)
+		movea.l    ACSblk,a0
+		move.l     988(a0),12(a7)
+		move.w     22(a7),d0
+		bmi.s      Aev_VaProtoStatus_3
+		move.w     16(a7),d2
+		movea.l    18(a7),a1
+		lea.l      (a7),a0
+		moveq.l    #1,d1
+		move.w     22(a7),d0
+		jsr        Aev_SendMsg
+		bra.s      Aev_VaProtoStatus_4
+		bra.s      Aev_VaProtoStatus_2
+Aev_VaProtoStatus_3:
+		move.w     16(a7),d1
+		movea.l    18(a7),a1
+		moveq.l    #1,d0
+		lea.l      (a7),a0
+		jsr        Aev_SendAllMsg
+		bra.s      Aev_VaProtoStatus_4
+Aev_VaProtoStatus_2:
+		clr.w      d0
+Aev_VaProtoStatus_4:
+		lea.l      24(a7),a7
 		rts
 	.ENDC
 

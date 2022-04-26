@@ -2869,6 +2869,77 @@ A_boxed_18:
 		movem.l    (a7)+,d2-d7/a2-a6
 		rts
 
+	.IFNE 0 /* only in lib */
+Aud_boxed:
+		movem.l    d3/a2-a4,-(a7)
+		movea.l    ACSblk,a0
+		movea.l    576(a0),a2
+		suba.l     a3,a3
+		jsr        Adr_start
+		bra.s      Aud_boxed_1
+Aud_boxed_8:
+		move.w     d3,d0
+		and.w      #$1000,d0
+		beq.s      Aud_boxed_2
+		move.w     d3,d2
+		and.w      #$0FFF,d2
+		ext.l      d2
+		move.l     d2,d1
+		add.l      d1,d1
+		add.l      d2,d1
+		lsl.l      #3,d1
+		movea.l    24(a2),a4
+		adda.l     d1,a4
+		bra.s      Aud_boxed_3
+Aud_boxed_2:
+		move.w     d3,d1
+		and.w      #$0FFF,d1
+		ext.l      d1
+		move.l     d1,d0
+		add.l      d0,d0
+		add.l      d1,d0
+		lsl.l      #3,d0
+		movea.l    20(a2),a4
+		adda.l     d0,a4
+Aud_boxed_3:
+		moveq.l    #32,d0
+		and.w      8(a4),d0
+		beq.s      Aud_boxed_4
+		move.w     32(a4),d1
+		and.w      #$8000,d1
+		beq.s      Aud_boxed_5
+Aud_boxed_4:
+		lea.l      24(a4),a0
+		bra.s      Aud_boxed_6
+Aud_boxed_5:
+		suba.l     a0,a0
+Aud_boxed_6:
+		move.l     a0,d0
+		beq.s      Aud_boxed_1
+		move.w     22(a0),d1
+		sub.w      #$000B,d1
+		beq.s      Aud_boxed_7
+		bra.s      Aud_boxed_1
+Aud_boxed_7:
+		movea.l    12(a0),a3
+Aud_boxed_1:
+		jsr        Adr_next
+		move.w     d0,d3
+		addq.w     #1,d0
+		bne.s      Aud_boxed_8
+		move.l     a3,d1
+		beq.s      Aud_boxed_9
+		movea.l    a3,a1
+		movea.l    ACSblk,a0
+		move.w     608(a0),d0
+		movea.l    604(a0),a0
+		moveq.l    #4,d1
+		jsr        Aob_service
+Aud_boxed_9:
+		movem.l    (a7)+,d3/a2-a4
+		rts
+	.ENDC
+
 		.data
 
 CHARLIST:
