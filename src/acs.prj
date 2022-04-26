@@ -56,7 +56,7 @@ acsbase.s
 palette.s
 edbehave.s
 general.s
-about.s
+about.c
 edutil.s
 
 io\protocol.s
