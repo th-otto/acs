@@ -17,8 +17,8 @@ Avdi_getRGB_1:
 		suba.l     a0,a0
 		rts
 
-		.globl ACSInitLinea
-ACSInitLinea:
+		.globl ACSInitLineA
+ACSInitLineA:
 		movem.l    d3-d7/a2-a6,-(a7)
 		ALINE      #$0000
 		lea.l      Linea,a3

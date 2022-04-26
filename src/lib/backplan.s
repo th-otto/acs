@@ -8,7 +8,7 @@ INbackplan:
 		bne.s      INbackplan_1
 		jsr        Logbase
 		move.l     a0,screen
-		jsr        ACSInitLinea
+		jsr        ACSInitLineA
 		lea.l      Vdiesc,a0
 		movea.l    (a0),a1
 		move.w     908(a1),bytes_lin
