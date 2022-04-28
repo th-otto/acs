@@ -1772,3 +1772,6 @@ char *Af_next230(void)
 {
 	return Af_next(NULL);
 }
+
+/* FIXME: Ast_filter in 3.0.0 has extra parameter */
+/* FIXME: Ast_cleargroup in 3.0.0 has extra parameter */
