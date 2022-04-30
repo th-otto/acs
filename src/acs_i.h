@@ -146,8 +146,16 @@ struct _ACS_HEAD {
 /*
  * ACS_HEAD.flags
  */
-#define ACS_8000      0x8000
+#define ACS_CHANGED   0x0001
+#define ACS_0010      0x0010
+#define ACS_0020      0x0020
+#define ACS_0040      0x0040
+#define ACS_0080      0x0080
+#define ACS_0800      0x0800
+#define ACS_1000      0x1000
 #define ACS_2000      0x2000
+#define ACS_4000      0x4000
+#define ACS_8000      0x8000
 
 
 typedef struct {
@@ -819,14 +827,12 @@ void objfree(ACS_HEAD *acs, AOBJECT *obj);
 Obj_Head *objmalloc(ACS_HEAD *acs, size_t size);
 int16 objextent(ACS_HEAD *acs, size_t size);
 int16 uniquename(ACS_HEAD *acs, Obj_Head *obj);
-void objname(ACS_HEAD *acs, Obj_Head *obj, void *);
+void objname(ACS_HEAD *acs, Obj_Head *obj, const char *listname, const char *objname);
 
 
 /*
  * io/rscin.c
  */
-extern char iostring[1024];
-
 void read_rsc(ACS_HEAD *acs);
 
 
@@ -859,6 +865,48 @@ void pp_output(ACS_HEAD *acs);
 void str_output(ACS_HEAD *acs);
 
 
+
+/*
+ * edit2/edrefed.c
+ */
+#define REF_NONE           0
+#define REF_OBJ_CLICK      1
+#define REF_OBJ_DRAG       2
+#define REF_USER_DRAW      3
+#define REF_USER_SERVICE   4
+#define REF_WIN_UNUSED1    5
+#define REF_WIN_OPEN       6
+#define REF_WIN_CREATE     7
+#define REF_WIN_INIT       8
+#define REF_WIN_KEYS       9
+#define REF_WIN_CHANGE    10
+#define REF_WIN_REDRAW    11
+#define REF_WIN_TOPPED    12
+#define REF_WIN_UNUSED2   13
+#define REF_WIN_CLOSED    14
+#define REF_WIN_ARROWED   15
+#define REF_WIN_HSLIDE    16
+#define REF_WIN_VSLIDE    17
+#define REF_WIN_MOVED     18
+#define REF_WIN_SIZED     19
+#define REF_WIN_FULLED    20
+#define REF_WIN_SERVICE   21
+#define REF_WIN_ICONIFY   22
+#define REF_WIN_UNICONIFY 23
+#define REF_WIN_GEMSCRIPT 24
+#define REF_SYS_ACSINIT0  25
+#define REF_SYS_ACSINIT   26
+#define REF_SYS_TERM      27
+#define REF_SYS_ABOUTME   28
+#define REF_SYS_CLOSE     29
+#define REF_SYS_MESSAGE   30
+#define REF_SYS_MPROTO    31
+#define REF_SYS_TIMER     32
+#define REF_SYS_KEY       33
+#define REF_SYS_BUTTON    34
+#define REF_SYS_MOUSE     35
+#define REF_SYS_WIKEY     36
+#define REF_SYS_GEMSCRIPT 37
 
 
 
@@ -937,3 +985,21 @@ extern LISTPARM list_mouse;
  * list/edlist.c
  */
 Obj_Head *find_entry(Obj_Head *obj, const char *str);
+Obj_Head *copy_str(ACS_HEAD *acs, const Obj_Head *src);
+int16 add_entry(Obj_Head *obj, Obj_Head *str);
+
+
+/*
+ * list/edalert.c
+ */
+void del_alert(ACS_HEAD *acs, Obj_Head *str);
+Obj_Head *copy_alert(ACS_HEAD *acs, const Obj_Head *str);
+void serv_alert(ACS_HEAD *acs, int16 task, Obj_Head *str);
+
+
+/*
+ * list/edstring.c
+ */
+void del_string(ACS_HEAD *acs, Obj_Head *str);
+Obj_Head *copy_str(ACS_HEAD *acs, const Obj_Head *str);
+void serv_str(ACS_HEAD *acs, int16 task, Obj_Head *str);
