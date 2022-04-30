@@ -938,7 +938,6 @@ x98bab:
 		.even
 
 	.bss
-	.globl mapX
 mapX: ds.w 1024
 iobuf: ds.b 131072
 	.globl iostring

@@ -64,9 +64,10 @@ io\fixacs.s
 io\acsio.s
 io\rcsin.s
 io\pc_head.c
-io\pc_out.s
+io\pc_out.c
 io\pp_out.s
 io\str_out.c
+io\workout.c
 
 edit2\eddataed.s
 edit2\edrefed.s

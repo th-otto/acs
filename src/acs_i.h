@@ -8,6 +8,7 @@
 #define MAX_ACS   16
 #define MAX_WINDS 256
 #define PATH_SEP  '\\'
+#define MAX_LANGS 3
 
 /*
  * sometimes we have to cast away constness
@@ -69,9 +70,9 @@ struct _Obj_Head {
 	/*  66 */
 };
 /* OBJ_HEAD.flags */
-#define OBJ_0100      0x0100
-#define OBJ_0200      0x0200
-#define OBJ_0400      0x0400
+#define OBJ_GLOBAL           0x0100
+#define OBJ_USERDEFINED      0x0200
+#define OBJ_LOCAL            0x0400
 
 
 typedef struct {
@@ -96,8 +97,8 @@ typedef struct {
 	/*  12 */ int16 dy;
 	/*  14 */ int16 flags;
 	/*  16 */ char acc_reg[32];
-	/*  48 */ Awindow *root;
-	/*  52 */ Awindow *acc;
+	/*  48 */ Obj_Head *root;
+	/*  52 */ Obj_Head *acc;
 	/*  56 */ Amouse mouse[32];
 	/* 248 */
 } Aolddescr;
@@ -121,7 +122,7 @@ struct _ACS_HEAD {
 	/*  56 */ Obj_Head *us_list;  /* userdefs */
 	/*  60 */ Obj_Head *rf_list;  /* references */
 	/*  64 */ Obj_Head *mo_list;  /* mouses */
-	/*  68 */ Obj_Head *if_list;
+	/*  68 */ Obj_Head *if_list;  /* data */
 	/*  72 */ Obj_Head *list_3;
 	/*  76 */ Aolddescr descr; /* does not include mess[AD_COUNT] */
 	/* 324 */ Awindow *wi_palette;
@@ -134,8 +135,8 @@ struct _ACS_HEAD {
 	/* 368 */ long extflags;
 	/* 372 */ char backup[__PS__];
 	/* 500 */ int16 language;
-	/* 502 */ Obj_Head *mlst_list[3];
-	/* 514 */ Obj_Head *mlal_list[3];
+	/* 502 */ Obj_Head *mlst_list[MAX_LANGS];
+	/* 514 */ Obj_Head *mlal_list[MAX_LANGS];
 	/* 526 */ int16 src_lang;
 	/* 528 */ Awindow *wi_config;
 	/* 532 */ Aconfig config;
@@ -146,6 +147,7 @@ struct _ACS_HEAD {
  * ACS_HEAD.flags
  */
 #define ACS_8000      0x8000
+#define ACS_2000      0x2000
 
 
 typedef struct {
@@ -786,6 +788,19 @@ extern void (*OldAboutMe)(void);
 
 
 /*
+ * edbehave.c
+ */
+extern const char *const mlmess[ /* AD_COUNT */ ];
+
+
+/*
+ * edutil.c
+ */
+void chk_new_label(void);
+
+
+
+/*
  * io/protocol.c
  */
 void protocol(ACS_HEAD *acs);
@@ -842,6 +857,8 @@ void pp_output(ACS_HEAD *acs);
  * io/str_out.c
  */
 void str_output(ACS_HEAD *acs);
+
+
 
 
 
@@ -914,3 +931,9 @@ void Amo_return(int16 busy, Amouse *mouse);
  * list/edmouse.c
  */
 extern LISTPARM list_mouse;
+
+
+/*
+ * list/edlist.c
+ */
+Obj_Head *find_entry(Obj_Head *obj, const char *str);
