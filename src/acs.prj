@@ -60,7 +60,7 @@ about.c
 edutil.s
 
 io\protocol.s
-io\fixacs.s
+io\fixacs.c
 io\acsio.c
 io\rcsin.s
 io\pc_head.c

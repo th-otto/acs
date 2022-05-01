@@ -167,25 +167,6 @@ typedef struct {
 } OBJ_ENTRY;
 
 typedef struct {
-	/*   0 */ void *windows;
-	/*   4 */ void *objects;
-	/*   8 */ void *menus;
-	/*  12 */ void *popups;
-	/*  16 */ void *alerts;
-	/*  20 */ void *tedinfos;
-	/*  24 */ void *iconblks;
-	/*  28 */ void *images;
-	/*  32 */ void *strings;
-	/*  36 */ void *users;
-	/*  40 */ void *references;
-	/*  44 */ void *mouses;
-	/*  48 */ void *int_list;
-	/*  52 */ void *m_strings;
-	/*  56 */ void *m_alerts;
-	/*  60 */
-} FixUnfixFkt;
-
-typedef struct {
 	/*   0 */ CICONBLK cicon;
 	/*  38 */ CICON c16;
 	/*  60 */ CICON c256;
@@ -805,6 +786,7 @@ extern const char *const mlmess[ /* AD_COUNT */ ];
  * edutil.c
  */
 void chk_new_label(void);
+void newlabel(ACS_HEAD *acs, Obj_Head *obj, const char *objname);
 
 
 
@@ -823,10 +805,10 @@ void wr_all(ACS_HEAD *acs);
 void rd_all(ACS_HEAD *acs);
 void release_err(void);
 void free_acs(ACS_HEAD *acs);
-void objfree(ACS_HEAD *acs, AOBJECT *obj);
+void objfree(ACS_HEAD *acs, Obj_Head *obj);
 Obj_Head *objmalloc(ACS_HEAD *acs, size_t size);
-int16 objextent(ACS_HEAD *acs, size_t size);
-int16 uniquename(ACS_HEAD *acs, Obj_Head *obj);
+int16 objextent(Obj_Head *obj, size_t size);
+int16 uniquename(ACS_HEAD *acs, Obj_Head *obj, Obj_Head ***list);
 void objname(ACS_HEAD *acs, Obj_Head *obj, const char *listname, const char *objname);
 
 
