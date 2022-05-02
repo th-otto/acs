@@ -65,7 +65,7 @@ io\acsio.c
 io\rcsin.s
 io\pc_head.c
 io\pc_out.c
-io\pp_out.s
+io\pp_out.c
 io\str_out.c
 io\workout.c
 
