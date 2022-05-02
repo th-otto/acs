@@ -494,8 +494,12 @@ int16 read_acs(const char *filename, ACS_HEAD *acs)
 	proto.filename = (char *)NO_CONST(filename);
 	memcpy(acs, &proto, sizeof(*acs));
 	proto.filename = NULL;
+#if WITH_FIXES
+	if (Af_length(filename) <= 0)
+#else
 	/* BUG: Af_length returns negative value if file does not exist */
 	if (Af_length(filename) == 0)
+#endif
 	{
 		init_acs(acs);
 	} else

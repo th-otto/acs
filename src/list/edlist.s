@@ -1406,6 +1406,9 @@ mf_list:
 		dc.b $00
 mf_name:
 		dc.b 'MOUSEFORM NAME'
+		.IFNE WITH_FIXES
+		dc.b 0
+		.ENDC
 ob_list:
 		dc.b ' OBJECTTREES LIST ',0
 		dc.b $00
@@ -1434,6 +1437,9 @@ rf_list:
 		dc.b $00
 rf_name:
 		dc.b 'REFERENCE NAME'
+		.IFNE WITH_FIXES
+		dc.b 0
+		.ENDC
 st_list:
 		dc.b ' TEXT LIST ',0
 		dc.b $00
