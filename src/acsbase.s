@@ -2268,7 +2268,11 @@ BUBBLE_09:
 BUBBLE_10:
 		dc.b 'Autosave the config file of the ACS-GUI-Editor when terminating the GUI-Editor.',0
 BUBBLE_11:
+		.IFNE WITH_FIXES
+		dc.b 'During saving the editor windows remain open (see online help for further information).',0
+		.ELSE
 		dc.b 'During saving the editor windows remain opend (see online help for further inormation).',0
+		.ENDC
 BUBBLE_12:
 		dc.b 'The windows with the parts is moved when the window of the object tree is moved.',0
 BUBBLE_13:
@@ -2288,7 +2292,11 @@ DEMOT06:
 DEMOT07:
 		dc.b 'routines which helps you to design',0
 DEMOT08:
+		.IFNE WITH_FIXES
+		dc.b 'clean GEM applications rapidly.',0
+		.ELSE
 		dc.b 'clean gem-applications rapidly.',0
+		.ENDC
 DEMOT09:
 		dc.b $00
 DEMOT10:
@@ -2300,7 +2308,11 @@ DEMOT12:
 DEMOT13:
 		dc.b $00
 DEMOT14:
+		.IFNE WITH_FIXES
+		dc.b 'In Order to obtain the full version',0
+		.ELSE
 		dc.b 'In Order to obtain the full Version',0
+		.ENDC
 DEMOT15:
 		dc.b 'of ACSpro send your registration to:',0
 DEMOT16:
@@ -2416,7 +2428,11 @@ TEXT_31:
 		dc.b $33
 		dc.w $4400
 TEXT_32:
+		.IFNE WITH_FIXES
+		dc.b 'Title',0
+		.ELSE
 		dc.b 'Titel',0
+		.ENDC
 TEXT_325:
 		dc.b 'autosave files     ',0
 TEXT_33:
@@ -2424,7 +2440,11 @@ TEXT_33:
 proto_winame:
 		dc.b ' Notice ',0
 rkind0:
+		.IFNE WITH_FIXES
+		dc.b '  check ',0
+		.ELSE
 		dc.b '  cheque',0
+		.ENDC
 rkind1:
 		dc.b '  money order',0
 rkind2:

@@ -2168,13 +2168,21 @@ _A_MEM_MOD:
 _A_MEM_MOD_STR:
 		dc.b '[1][ The memory, following the | module ',$27,'%s',$27,',| could not be freed.][ Cancel ]',0
 _A_ODD_MEM:
+		.IFNE WITH_FIXES
+		dc.b '[1][ The address of a memory| block is odd.][ Cancel ]',0
+		.ELSE
 		dc.b '[1][ The adress of a memory-| block is odd.][ Cancel ]',0
+		.ENDC
 _A_OPEN_IO:
 		dc.b '[1][ A file could not| be opened.][ Cancel ]',0
 _A_OPEN_STR:
 		dc.b '[1][ The file ',$27,'%s',$27,' | could not be opened.][ Cancel ]',0
 _A_OUT_OF_MEM:
+		.IFNE WITH_FIXES
+		dc.b '[1][ Not enough | free memory.  ][ Cancel ]',0
+		.ELSE
 		dc.b '[1][ Not enough| memory aviable.][ Cancel ]',0
+		.ENDC
 _A_PORT:
 		dc.b '[1][ An error occured | on a i/o-channel.][ Cancel ]',0
 _A_RANGE_MEM:
@@ -2196,35 +2204,71 @@ BUBBLE_01:
 BUBBLE_02:
 		dc.b 'The changes are lost, the old values remain.',0
 BUBBLE_03:
+		.IFNE WITH_FIXES
+		dc.b 'This Module is Main-Module.  ',0
+		.ELSE
 		dc.b 'This Modul is the Main-Modul.',0
+		.ENDC
 BUBBLE_04:
 		dc.b 'Initialize the OLGA protocol when starting. When not running the OLGA-Manager is started.',0
 BUBBLE_05:
+		.IFNE WITH_FIXES
+		dc.b 'When starting the OLGA-Manager wait for the manager to be ready. The start of the application is delayed. ',0
+		.ELSE
 		dc.b 'When starting the OLGA-Manager wait for the manager to be ready. The start of the application is retarded.',0
+		.ENDC
 BUBBLE_06:
 		dc.b 'Initialize the GEMScript-Protocol when starting?',0
 BUBBLE_07:
 		dc.b 'Initialize BubbleGEM when starting? BubleGEM will be started when not running.',0
 BUBBLE_08:
+		.IFNE WITH_FIXES
+		dc.b 'Switch the 3D-Mode on/off. This can be changed during runtime. ',0
+		.ELSE
 		dc.b 'Switch the 3D-Modus on/off. This can be changed during runtime.',0
+		.ENDC
 BUBBLE_09:
+		.IFNE WITH_FIXES
+		dc.b 'Center modal (window-)dialogs. This can be changed during runtime. ',0
+		.ELSE
 		dc.b 'Center modal (window-)dialoges. This can be changed during runtime.',0
+		.ENDC
 BUBBLE_10:
+		.IFNE WITH_FIXES
+		dc.b 'Audible signal for errors. This can be changed during runtime.',0
+		.ELSE
 		dc.b 'Acustic signal for errors. This can be changed during runtime.',0
+		.ENDC
 BUBBLE_11:
 		dc.b 'Load GDOS fonts at startup.',0
 BUBBLE_12:
+		.IFNE WITH_FIXES
+		dc.b 'Send a keypress first to the main menu and second to the window dialog. This can be changed during runtime. ',0
+		.ELSE
 		dc.b 'Send a keypress first to the main menu and second to the window dialoge. This can be changed during runtime.',0
+		.ENDC
 BUBBLE_13:
 		dc.b 'Hide the mouse pointer when a keypress is reported. This can be changed during runtime.',0
 BUBBLE_14:
+		.IFNE WITH_FIXES
+		dc.b 'Open window menus on mouse clicks. Otherwise they are opened when touching them. This can be changed at runtime.   ',0
+		.ELSE
 		dc.b 'Open window menus on mouse clicks. Otherwise they are opend when touching them. This can be changed during runtime.',0
+		.ENDC
 BUBBLE_15:
 		dc.b 'Imported strings are created in ACS when they are not present.',0
 BUBBLE_16:
+		.IFNE WITH_FIXES
+		dc.b 'This is the XACC-Type of the application. Further information about this type can be found in the XAcc documentation.',0
+		.ELSE
 		dc.b 'This is the XAC-Type of the application. Further informations about this type can be found in the XAcc documentation.',0
+		.ENDC
 BUBBLE_17:
+		.IFNE WITH_FIXES
+		dc.b 'Use visual clues such as expanding rectangles, message after termination of TOS applications. This can be changed during runtime.',0
+		.ELSE
 		dc.b 'Use optical signals - i.e. growing rectangles, message after termination of TOS applications. This can be changed during runtime.',0
+		.ENDC
 BUBBLE_18:
 		dc.b 'Check allocated and freed memory blocks. This can be changed during runtime.',0
 BUBBLE_19:
@@ -2234,19 +2278,35 @@ BUBBLE_20:
 BUBBLE_21:
 		dc.b 'The programming language used in this ACS module.',0
 BUBBLE_22:
+		.IFNE WITH_FIXES
+		dc.b 'This is the language used by the GUI. ',0
+		.ELSE
 		dc.b 'This is the activ language of the GUI.',0
+		.ENDC
 BUBBLE_23:
 		dc.b 'You can create backups when saving an ACS file. Here you switch this backup on/off.',0
 BUBBLE_24:
 		dc.b 'This is the path for the automatic backup.',0
 BUBBLE_25:
+		.IFNE WITH_FIXES
+		dc.b 'All names of the objects are automatically converted into upper case.',0
+		.ELSE
 		dc.b 'All name of the objects are automatically converted into upper cases.',0
+		.ENDC
 BUBBLE_26:
 		dc.b 'Export the prototypes for the C compiler.',0
 BUBBLE_27:
+		.IFNE WITH_FIXES
+		dc.b 'All definitions not global are exported as local to this module. So same names can be used in differnt modules. ',0
+		.ELSE
 		dc.b 'All not global definitions are exported als local to this module. So same names can be used in differnt modules.',0
+		.ENDC
 BUBBLE_28:
+		.IFNE WITH_FIXES
+		dc.b 'Automatically create a list of the definitions and identifiers when saving this ACS module.',0
+		.ELSE
 		dc.b 'Create automatically a list of the definitions and identifiers when saving this ACS module.',0
+		.ENDC
 BUBBLE_29:
 		dc.b 'The output for the specified compiler can be switched on/off.',0
 BUBBLE_30:
@@ -2254,11 +2314,19 @@ BUBBLE_30:
 BUBBLE_31:
 		dc.b 'This defines the distance of the windows to the sides of the desktop.',0
 BUBBLE_32:
+		.IFNE WITH_FIXES
+		dc.b 'Use modern 3D-menus (like MagiC 6 with prop. Systemfont) in all windows. ',0
+		.ELSE
 		dc.b 'Use modern 3D-menues (like MagiC 6 with prop. Systemfont) in all windows.',0
+		.ENDC
 BUBBLE_33:
 		dc.b 'The strings of the selected language are integrated as default strings into the application.',0
 BUBBLE_34:
+		.IFNE WITH_FIXES
+		dc.b 'All strings are written into an ASCII file. Change this file for another language. The merging of the ASCII files into the global file of the application must be done outside ACS. ',0
+		.ELSE
 		dc.b 'All strings are written into an ASCII file. Change this file for another language. The merging of the ASCII files into the globale file of the application must be done outside ACS.',0
+		.ENDC
 HELPFILE_01:
 		dc.b 'ACSPRO',0
 STGUIDE_01:
@@ -2268,14 +2336,17 @@ STGUIDE_02:
 TEXT_002:
 		dc.b $00
 TEXT_003:
-		dc.w $4f4b
-		dc.b $00
+		dc.b 'OK',0
 TEXT_004:
 		dc.b 'Cancel',0
 TEXT_009:
 		dc.b 'Load GDOS-Fonts',0
 TEXT_01:
+		.IFNE WITH_FIXES
+		dc.b 'Language, Title',0
+		.ELSE
 		dc.b 'Language, Titel',0
+		.ENDC
 TEXT_012:
 		dc.b 'dy:',0
 TEXT_014:
@@ -2380,7 +2451,11 @@ TEXT_39:
 TEXT_40:
 		dc.b 'Protocol function',0
 TEXT_41:
+		.IFNE WITH_FIXES
+		dc.b 'Communication protocols',0
+		.ELSE
 		dc.b 'Communitation protocols',0
+		.ENDC
 TEXT_42:
 		dc.b '3D Display    ',0
 TEXT_43:
@@ -2400,13 +2475,21 @@ TEXT_49:
 TEXT_50:
 		dc.b 'BubbleGEM',0
 TEXT_51:
+		.IFNE WITH_FIXES
+		dc.b 'Visual feedback   ',0
+		.ELSE
 		dc.b 'Optical feedback  ',0
+		.ENDC
 TEXT_52:
 		dc.b 'Memory check',0
 TEXT_53:
 		dc.b 'Security checks  ',0
 TEXT_54:
+		.IFNE WITH_FIXES
+		dc.b 'Modern 3D-Menus ',0
+		.ELSE
 		dc.b 'Modern 3D-Menues',0
+		.ENDC
 TEXT_55:
 		dc.b 'Swap Strings out of the App. ',0
 TEXT_56:

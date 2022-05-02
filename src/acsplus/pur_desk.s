@@ -1989,7 +1989,11 @@ TEXT_18:
 BUBBLE_01:
 		dc.b 'Here an ACS-Module can be loaded.',0
 BUBBLE_02:
+		.IFNE WITH_FIXES
+		dc.b 'Information about the selected objects or about ACS.',0
+		.ELSE
 		dc.b 'Informations about the selected objects or about ACS.',0
+		.ENDC
 BUBBLE_03:
 		dc.b 'Delete the selected objects.',0
 HELPFILE_01:
@@ -2001,7 +2005,11 @@ MODUL_LOAD_TITEL:
 NAME_MODULE:
 		dc.b ' Module ',0
 NAME_PUR_DESK:
+		.IFNE WITH_FIXES
+		dc.b ' Pure Desktop ',0
+		.ELSE
 		dc.b ' Pure Dexktop ',0
+		.ENDC
 STGUIDE_01:
 		dc.b 'Der ACSpro-GUI-Editor',0
 STGUIDE_02:

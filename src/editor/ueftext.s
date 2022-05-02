@@ -770,13 +770,21 @@ TEXT_17:
 TEXT_18:
 		dc.b 'blocked  ',0
 TEXT_19:
+		.IFNE WITH_FIXES
+		dc.b 'Misc.    ',0
+		.ELSE
 		dc.b 'Sonstiges',0
+		.ENDC
 TEXT_20:
 		dc.b 'BubbleGEM-Text',0
 TEXT_21:
 		dc.b 'Context-Popup',0
 TEXT_22:
+		.IFNE WITH_FIXES
+		dc.b 'Example',0
+		.ELSE
 		dc.b 'Schrift',0
+		.ENDC
 extra:
 		dc.b 'The quick brown fox jumps over the lazy dog',0
 help_title:

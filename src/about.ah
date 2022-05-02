@@ -37,8 +37,13 @@ static char TEXT_34[] = " ACSpro: Updates & Upgrades ";
 #if COUNTRY == COUNTRY_US
 static char BUBBLE_01[] = "Show information about the ACS version";
 static char BUBBLE_02[] = "Hints for Updates, Upgrades and Download-Infos are shown.";
+#if WITH_FIXES
+static char BUBBLE_03[] = "Quit the dialog";
+static char BUBBLE_04[] = "For more informationon updates and upgrades, please refer to the online help and the Internet.";
+#else
 static char BUBBLE_03[] = "Quit the Dialog";
 static char BUBBLE_04[] = "Genauere Informationen zu Updates und Upgrades entnehmen Sie bitte der Online-Hilfe und dem Internet.";
+#endif
 static char TEXT_002[] = "";
 static char TEXT_01[] = "http://acspro.atari.org";
 static char TEXT_03[] = "      Startup-Code by Stefan Kuhr";

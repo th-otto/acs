@@ -182,7 +182,11 @@ title:
 
 		.IFEQ COUNTRY-COUNTRY_US
 ERR_IC_DEL:
+		.IFNE WITH_FIXES
+		dc.b '[3][ Icon ',$27,'%s',$27,' is |  removed from this file.  ][ OK ]',0
+		.ELSE
 		dc.b '[3][ Icon ',$27,'%s',$27,' is | nomore part of this file. ][ OK ]',0
+		.ENDC
 TEXT_001:
 		dc.b 'Cancel',0
 TEXT_002:
@@ -194,7 +198,11 @@ TEXT_004:
 TEXT_005:
 		dc.b '1234567890123456789012345678901',0
 TEXT_02:
+		.IFNE WITH_FIXES
+		dc.b 'Icon (drag from icon-list):',0
+		.ELSE
 		dc.b 'Icon (drag form icon-list):',0
+		.ENDC
 help_title:
 		dc.b 'Die Icon-Zuordnung',0
 title:

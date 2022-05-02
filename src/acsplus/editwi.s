@@ -5765,7 +5765,11 @@ TEXT_28:
 TEXT_29:
 		dc.b '  Cut               ^X',0
 TEXT_30:
+		.IFNE WITH_FIXES
+		dc.b '  About me... ',0
+		.ELSE
 		dc.b '  šber mich...',0
+		.ENDC
 TEXT_31:
 		dc.b 'Mode:',0
 TEXT_32:
@@ -5846,7 +5850,11 @@ TEXT_62:
 TEXT_63:
 		dc.b '  Delete          ^D',0
 TEXT_64:
+		.IFNE WITH_FIXES
+		dc.b 'column      ',0
+		.ELSE
 		dc.b 'colum       ',0
+		.ENDC
 TEXT_66:
 		dc.b '  Undo            UNDO',0
 TEXT_67:

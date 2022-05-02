@@ -900,9 +900,17 @@ title:
 
 		.IFEQ COUNTRY-COUNTRY_US
 BUBBLE_01:
+		.IFNE WITH_FIXES
+		dc.b 'Here you specify if the control is drawn as 3D or not.',0
+		.ELSE
 		dc.b 'Here you specify if the control is drawed as 3D or not.',0
+		.ENDC
 BUBBLE_02:
+		.IFNE WITH_FIXES
+		dc.b 'Here you specify if the line should be thick or normal.',0
+		.ELSE
 		dc.b 'Here you specify if the line should be thik or normal.',0
+		.ENDC
 BUBBLE_03:
 		dc.b 'Here you enter the string which is used as a bubble help text.',0
 BUBBLE_05:

@@ -414,6 +414,9 @@ _A_ERR_ACC:
 		dc.b $00
 		dc.b $00
 _A_ERR_MESS:
+		.IFNE WITH_FIXES
+		dc.b '[2][ Unknown GEM-Message | received.| ID = ',$27,'%s',$27,'| Continue reporting?][Yes| No ]',0
+		.ELSE
 		dc.b '[2][ Unknown GEM-Message | recieved.| ID = ',$27,'%s',$27,'| Continue reporting?][Yes| No ]',0
 		dc.b $00
 		dc.b $00
@@ -424,6 +427,7 @@ _A_ERR_MESS:
 		dc.b $00
 		dc.b $00
 		dc.b $00
+		.ENDC
 _A_ERR_WINDOW:
 		dc.b '[3][ There is no GEM-Window-ID | available! | ToDo: Close an unused | GEM-Window. ][    OK    ]',0
 		dc.b $00

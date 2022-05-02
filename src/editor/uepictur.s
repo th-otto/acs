@@ -414,7 +414,11 @@ TEXT_005:
 TEXT_009:
 		dc.b 'Cancel',0
 TEXT_01:
+		.IFNE WITH_FIXES
+		dc.b 'tile mode   ',0
+		.ELSE
 		dc.b 'tile-mode   ',0
+		.ENDC
 TEXT_02:
 		dc.b 'Background:',0
 TEXT_04:

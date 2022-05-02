@@ -1748,11 +1748,23 @@ TEXT_56:
 
 		.IFEQ COUNTRY-COUNTRY_US
 ERR_IC_DEL:
+		.IFNE WITH_FIXES
+		dc.b '[3][ Icon ',$27,'%s',$27,' | is no longer part of the | file.][    OK    ]',0
+		.ELSE
 		dc.b '[3][ Icon ',$27,'%s',$27,' | is nomore a part of this | file.][    OK    ]',0
+		.ENDC
 ERR_ME_DEL:
+		.IFNE WITH_FIXES
+		dc.b '[3][ Menu ',$27,'%s',$27,' | is removed from the | this file. ][    OK    ]',0
+		.ELSE
 		dc.b '[3][ Menu ',$27,'%s',$27,' | is nomore a part of | this file. ][    OK    ]',0
+		.ENDC
 ERR_OB_DEL:
+		.IFNE WITH_FIXES
+		dc.b '[3][ The object ',$27,'%s',$27,' | is removed from  | this file.   ][    OK    ]',0
+		.ELSE
 		dc.b '[3][ The object ',$27,'%s',$27,' | is nomore a part | of this file.][    OK    ]',0
+		.ENDC
 WARN_CREATE:
 		dc.b '[1][ You didn',$27,'t specify the | create-routine. The default | ',$27,'Awi_selfcreate',$27,' will be | inserted.][   OK   ]',0
 BUBBLE_01:
@@ -1776,7 +1788,11 @@ BUBBLE_09:
 BUBBLE_10:
 		dc.b 'Here you edit the help topic of this window. This topic is send to ST-Guide.',0
 BUBBLE_11:
+		.IFNE WITH_FIXES
+		dc.b 'Here you can add a window menu to this window. The name of the menu can be edited or it can be dragged from the menu list..',0
+		.ELSE
 		dc.b 'Here you can add a window menu to this window. The name of the menu can be edited or it can be dragged out of th menu list.',0
+		.ENDC
 BUBBLE_12:
 		dc.b 'Here you can add a toolbar to the window. The name of the object tree can be edited or it can be dragged out of the object list.',0
 BUBBLE_13:
@@ -1824,41 +1840,113 @@ BUBBLE_33:
 BUBBLE_34:
 		dc.b 'THe window has a horizontal slider HSLIDE.',0
 BUBBLE_35:
+		.IFNE WITH_FIXES
+		dc.b 'You should add a create function to the window (default: Awi_selfcreate). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You should add a create function to the window (default: Awi_selfcreate). THe name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_36:
+		.IFNE WITH_FIXES
+		dc.b 'You can add an open function to the window (default: Awi_open). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add an open function to the window (default: Awi_open). THe name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_37:
+		.IFNE WITH_FIXES
+		dc.b 'You can add an service function to the window (default: Awi_service). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add an service function to the window (default: Awi_service). THe name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_38:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a change function to the window (default: Awi_obchange). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a change function to the window (default: Awi_obchange). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_39:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a key function to the window (default: Awi_keys). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a key function to the window (default: Awi_keys). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_40:
+		.IFNE WITH_FIXES
+		dc.b 'You can add an init function to the window (default: Awi_init). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add an init function to the window (default: Awi_init). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_41:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a redraw function to the window (default: Awi_redraw). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a redraw function to the window (default: Awi_redraw). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_42:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a topped function to the window (default: Awi_topped). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a topped function to the window (default: Awi_topped). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_43:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a closed function to the window (default: Awi_closed). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a closed function to the window (default: Awi_closed). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_44:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a fulled function to the window (default: Awi_fulled). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a fulled function to the window (default: Awi_fulled). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_45:
+		.IFNE WITH_FIXES
+		dc.b 'You can add an arrowed function to the window (default: Awi_arrowed). The name can be entered or the routine can be dragged from the reference list. ',0
+		.ELSE
 		dc.b 'You can add a arrowed function to the window (default: Awi_arrowed). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_46:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a hslide function to the window (default: Awi_hslide). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a hslide function to the window (default: Awi_hslide). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_47:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a vslide function to the window (default: Awi_vslide). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a vslide function to the window (default: Awi_vslide). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_48:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a moved function to the window (default: Awi_moved). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a moved function to the window (default: Awi_moved). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_49:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a sized function to the window (default: Awi_sized). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a sized function to the window (default: Awi_sized). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_50:
+		.IFNE WITH_FIXES
+		dc.b 'You can add an iconify function to the window (default: Awi_iconify). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add an iconify function to the window (default: Awi_iconify). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_51:
+		.IFNE WITH_FIXES
+		dc.b 'You can add an uniconify function to the window (default: Awi_uniconify). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add an uniconify function to the window (default: Awi_uniconify). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_52:
+		.IFNE WITH_FIXES
+		dc.b 'You can add a GEMScript function to the window (default: Awi_gemscript). The name can be entered or the routine can be dragged from the reference list.  ',0
+		.ELSE
 		dc.b 'You can add a GEMScript function to the window (default: Awi_gemscript). The name can be entered oder the routine can be dragged from the reference list.',0
+		.ENDC
 BUBBLE_53:
 		dc.b 'The window has a HOTCLOSEBOX.',0
 STGUIDE_01:

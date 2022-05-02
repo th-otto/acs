@@ -1680,7 +1680,11 @@ TEXT_10:
 TEXT_11:
 		dc.b ' Ausmaže ',0
 TEXT_12:
+		.IFNE WITH_FIXES
+		dc.b 'THIN',0
+		.ELSE
 		dc.b 'THINN',0
+		.ENDC
 TEXT_13:
 		dc.b 'FAT',0
 TEXT_208:
@@ -1721,7 +1725,11 @@ TEXT_10:
 TEXT_11:
 		dc.b ' Size ',0
 TEXT_12:
+		.IFNE WITH_FIXES
+		dc.b 'THIN',0
+		.ELSE
 		dc.b 'THINN',0
+		.ENDC
 TEXT_13:
 		dc.b 'FAT',0
 TEXT_208:
@@ -2321,10 +2329,12 @@ TEDINFO_01:
 		dc.b $00
 		dc.b $00
 		dc.w $ffff
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $01
+		.IFNE WITH_FIXES
+		dc.w 5
+		.ELSE
+		dc.w 6
+		.ENDC
+		dc.w 1
 TEDINFO_02:
 		dc.l TEXT_13
 		dc.l TEXT_002

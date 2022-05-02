@@ -576,7 +576,11 @@ title:
 
 		.IFEQ COUNTRY-COUNTRY_US
 COLOUR00:
+		.IFNE WITH_FIXES
+		dc.b '  White',0
+		.ELSE
 		dc.b '  White'
+		.ENDC
 COLOUR01:
 		dc.b '  Black',0
 		dc.b $00
@@ -610,7 +614,11 @@ COLOUR13:
 		dc.b '  Dark cyan',0
 		dc.b $00
 COLOUR14:
+		.IFNE WITH_FIXES
+		dc.b '  Dark yellow',0
+		.ELSE
 		dc.b '  Dark yellow'
+		.ENDC
 COLOUR15:
 		dc.b '  Dark magenta',0
 		dc.b $00

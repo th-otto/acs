@@ -185,7 +185,11 @@ title:
 
 		.IFEQ COUNTRY-COUNTRY_US
 ERR_IM_DEL:
+		.IFNE WITH_FIXES
+		dc.b '[3][ Image ',$27,'%s',$27,' is | now removed from this file. ][ OK ]',0
+		.ELSE
 		dc.b '[3][ Image ',$27,'%s',$27,' is | nomore a part of this file. ][ OK ]',0
+		.ENDC
 TEXT_001:
 		dc.b 'Cancel',0
 TEXT_002:
@@ -198,7 +202,11 @@ TEXT_004:
 TEXT_005:
 		dc.b '1234567890123456789012345678901',0
 TEXT_03:
+		.IFNE WITH_FIXES
+		dc.b 'Image (Drag from Image-List): ',0
+		.ELSE
 		dc.b 'Image (Drag from Image-Liste):',0
+		.ENDC
 help_title:
 		dc.b 'Die Graphik-Zuordnung',0
 title:

@@ -375,7 +375,11 @@ TEXT_009:
 TEXT_02:
 		dc.b 'Text:',0
 TEXT_05:
+		.IFNE WITH_FIXES
+		dc.b 'Misc.    ',0
+		.ELSE
 		dc.b 'Sonstiges',0
+		.ENDC
 TEXT_06:
 		dc.b 'Text',0
 TEXT_08:

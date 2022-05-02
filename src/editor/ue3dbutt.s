@@ -1307,7 +1307,11 @@ TEXT_037:
 TEXT_04:
 		dc.b 'Position:',0
 TEXT_05:
+		.IFNE WITH_FIXES
+		dc.b 'Title',0
+		.ELSE
 		dc.b 'Titel',0
+		.ENDC
 TEXT_06:
 		dc.b 'BubbleGEM-Text',0
 TEXT_07:
@@ -1331,7 +1335,11 @@ TEXT_17:
 TEXT_19:
 		dc.b 'up:',0
 TEXT_20:
+		.IFNE WITH_FIXES
+		dc.b 'Dither Mode',0
+		.ELSE
 		dc.b 'DitherModus',0
+		.ENDC
 TEXT_21:
 		dc.b 'left/',0
 TEXT_22:

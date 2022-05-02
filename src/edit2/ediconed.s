@@ -4198,7 +4198,11 @@ TEXT_003:
 TEXT_004:
 		dc.b 'Abbruch',0
 TEXT_01:
+		.IFNE WITH_FIXES
+		dc.b 'THIN',0
+		.ELSE
 		dc.b 'THINN',0
+		.ENDC
 TEXT_019:
 		dc.b 'Struktur',0
 TEXT_02:
@@ -4256,7 +4260,11 @@ TEXT_27:
 
 		.IFEQ COUNTRY-COUNTRY_US
 A_NOSTD:
+		.IFNE WITH_FIXES
+		dc.b '[1][ Accepting the graphics  | impossible since it is in | non-standard-format.][ Cancel ]',0
+		.ELSE
 		dc.b '[1][ Accepting the grapic is | impossible since it is in | non-standard-format.][ Cancel ]',0
+		.ENDC
 BUBBLE_01:
 		dc.b 'The changes are ignored.',0
 BUBBLE_02:
@@ -4270,9 +4278,17 @@ BUBBLE_05:
 BUBBLE_06:
 		dc.b 'Here the icon can be constructed and modified.',0
 BUBBLE_07:
+		.IFNE WITH_FIXES
+		dc.b 'This button changes from the construction window to the icon window.',0
+		.ELSE
 		dc.b 'This button changes from the cunstruction window to the icon window.',0
+		.ENDC
 BUBBLE_08:
+		.IFNE WITH_FIXES
+		dc.b 'Size is adapted to a desktop icon.',0
+		.ELSE
 		dc.b 'The size is adapted to a destop icon.',0
+		.ENDC
 TEXT_002:
 		dc.b $00
 TEXT_003:
@@ -4280,7 +4296,11 @@ TEXT_003:
 TEXT_004:
 		dc.b 'Cancel',0
 TEXT_01:
+		.IFNE WITH_FIXES
+		dc.b 'THIN',0
+		.ELSE
 		dc.b 'THINN',0
+		.ENDC
 TEXT_019:
 		dc.b 'Structure',0
 TEXT_02:
@@ -5257,7 +5277,11 @@ TEDINFO_01:
 		dc.w $1180
 		dc.w $0000
 		dc.w $ffff
-		dc.w $0006
+		.IFNE WITH_FIXES
+		dc.w 5
+		.ELSE
+		dc.w 6
+		.ENDC
 		dc.w $0001
 TEDINFO_02:
 		dc.l TEXT_02

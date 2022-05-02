@@ -1003,7 +1003,11 @@ TEXT_005:
 TEXT_009:
 		dc.b 'Cancel',0
 TEXT_05:
-		dc.b 'Sonstiges',0 /* not translated */
+		.IFNE WITH_FIXES
+		dc.b 'Misc.    ',0
+		.ELSE
+		dc.b 'Sonstiges',0
+		.ENDC
 TEXT_06:
 		dc.b 'BubbleGEM Text',0
 TEXT_07:
