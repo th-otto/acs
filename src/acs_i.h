@@ -760,6 +760,16 @@ typedef struct {
 } funcListe;
 
 
+/* characters to mark key modifiers */
+#define ALT_C      '\007'
+#define ALT_S      "\007"
+#define CONTROL_C  '^'
+#define CONTROL_S  "^"
+#define SHIFT_C    '\001'
+#define SHIFT_S    "\001"
+
+
+
 /*
  * about.c
  */
@@ -772,6 +782,12 @@ void AboutGUIEditor(void);
  * general.c
  */
 extern void (*OldAboutMe)(void);
+extern char const _WGTITEL[];
+extern Awindow WI_GENERAL;
+extern Awindow WI_INFO_GENERAL;
+
+void save(ACS_HEAD *acs);
+void newclose(void);
 
 
 /*
