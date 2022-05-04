@@ -250,7 +250,7 @@ static void out_acs(ACS_HEAD *acs)
 	Obj_Head *entry;
 	char *str;
 	
-	if (!(acs->flags & ACS_8000))
+	if (!(acs->flags & ACS_SUBMODUL))
 	{
 		save_string(NL NL "ACSdescr: Adescr = " NL "\t(" NL);
 		sprintf(iostring, "\t\tmagic: '%s'#0; version: %d; dx: %2d; dy: %2d; flags: $%04x;" NL " \t\tacc_reg: ",
@@ -1020,7 +1020,7 @@ void pp_output(ACS_HEAD *acs)
 			save_string(NL);
 			save_string(iostring); /* BUG */
 			
-			if (acs->flags & ACS_2000)
+			if (acs->flags & ACS_PROTOTYPES)
 				out_declproto(acs);
 			
 			save_string("Const" NL);
@@ -1086,7 +1086,7 @@ void pp_output(ACS_HEAD *acs)
 			out_window(acs->wi_list);
 			out_mouse(acs->mo_list);
 			out_acs(acs);
-			if (acs->flags & ACS_2000)
+			if (acs->flags & ACS_PROTOTYPES)
 				out_refs(acs);
 			close_buf();
 		}

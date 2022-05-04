@@ -67,7 +67,8 @@ edutil.s
 io\protocol.s
 io\fixacs.c
 io\acsio.c
-io\rcsin.s
+io\rcsin.c
+io\rcsins.s
 io\pc_head.c
 io\pc_out.c
 io\pp_out.c
