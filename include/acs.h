@@ -1952,7 +1952,7 @@ void Ax_ifree( void *memory );
 int16 Ax_memCheck( const char *buffer, int32 len, int16 write );
 
 /* Liste fÅr recyclebaren Speicher erzeugen/Ñndern/lîschen */
-int16 Ax_setRecycleSize( int32 size, int16 amount, char *beschreibung );
+int16 Ax_setRecycleSize( int32 size, int16 amount, const char *beschreibung );
 
 /* Akt. Statistik Åber freie Listen zusammenstellen und liefern */
 MemFreeBlockStat *Ax_getRecycleStat( int16 *anzahl );

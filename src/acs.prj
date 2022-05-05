@@ -60,7 +60,7 @@ stupargv.s
 acsbase.s
 palette.s
 edbehave.s
-general.s
+general.c
 about.c
 edutil.s
 
