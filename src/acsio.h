@@ -11,7 +11,6 @@ extern char const str_welcome[];
 extern char iobuf[];
 extern char iostring[1024];
 
-void acs_closewi(ACS_HEAD *acs, boolean all);
 void assert_error(int16 error, void *para);
 jmp_buf *set_handle(int16 h);
 void save_buf(const void *data, size_t len);

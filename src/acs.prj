@@ -59,7 +59,7 @@ acs.app
 
 acsbase.c
 palette.s
-edbehave.s
+edbehave.c
 general.c
 about.c
 edutil.s
