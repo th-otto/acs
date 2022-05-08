@@ -62,7 +62,7 @@ palette.c
 edbehave.c
 general.c
 about.c
-edutil.s
+edutil.c
 
 io\protocol.c
 io\fixacs.c
