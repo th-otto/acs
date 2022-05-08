@@ -58,7 +58,7 @@ acs.app
 ..\lib\stupargv.s
 
 acsbase.c
-palette.s
+palette.c
 edbehave.c
 general.c
 about.c
