@@ -117,7 +117,7 @@ editor\edobaeom.s
 editor\edobkeys.s
 
 list\edlist.c
-list\edalert.s
+list\edalert.c
 list\eddata.s
 list\edwind.s
 list\edicon.s
