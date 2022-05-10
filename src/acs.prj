@@ -119,7 +119,7 @@ editor\edobkeys.s
 list\edlist.c
 list\edalert.c
 list\eddata.c
-list\edwind.s
+list\edwind.c
 list\edicon.s
 list\edimage.s
 list\eduser.s
