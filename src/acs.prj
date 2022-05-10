@@ -120,7 +120,7 @@ list\edlist.c
 list\edalert.c
 list\eddata.c
 list\edwind.c
-list\edicon.s
+list\edicon.c
 list\edimage.s
 list\eduser.s
 list\edmenu.s
