@@ -121,7 +121,7 @@ list\edalert.c
 list\eddata.c
 list\edwind.c
 list\edicon.c
-list\edimage.s
+list\edimage.c
 list\eduser.s
 list\edmenu.s
 list\edmouse.s
