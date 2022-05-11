@@ -122,7 +122,7 @@ list\eddata.c
 list\edwind.c
 list\edicon.c
 list\edimage.c
-list\eduser.s
+list\eduser.c
 list\edmenu.s
 list\edmouse.s
 list\edobject.s
