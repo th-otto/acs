@@ -39,25 +39,25 @@ static void edmp_acc(void)
 	if ((next = Adr_next()) > 0)
 	{
 		asel = (AOBJECT *)&select->work[next] + 1;
-		if (asel->type == 10018 || asel->type == 10019)
+		if (asel->type == LIST_MOUSE || asel->type == LIST_AMOUSE)
 		{
 			aobj = (AOBJECT *)&tree[obnr] + 1;
 			Adr_del(select, next);
 			acs = self->user;
-			if (asel->type == 10018)
+			if (asel->type == LIST_MOUSE)
 			{
-				mouse = add_mouse(acs, asel->userp1);
+				mouse = (MFORM *)add_mouse(acs, (Obj_Head *)asel->userp1);
 			} else
 			{
 				mform = asel->userp1;
 				if (mform->number == USER_DEF)
-					mouse = add_mouse(acs, mform->form);
+					mouse = (MFORM *)add_mouse(acs, (Obj_Head *)mform->form);
 				else
 					mouse = NULL;
 			}
 			oldform = aobj->userp1;
 			if (oldform->number == USER_DEF)
-				del_mouse(acs, oldform->form);
+				del_mouse(acs, (Obj_Head *)oldform->form);
 			if (mouse != NULL)
 			{
 				oldform->number = USER_DEF;
@@ -170,7 +170,7 @@ static void set_mouse(Awindow *win)
 		atree[idx].userp1 = mouse;
 		atree[idx].userp2 = (void *)mo_index;
 		mo_index++;
-		atree[idx].type = 10019;
+		atree[idx].type = LIST_AMOUSE;
 		switch (mouse->number)
 		{
 		case ARROW:
