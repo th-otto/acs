@@ -123,7 +123,7 @@ list\edwind.c
 list\edicon.c
 list\edimage.c
 list\eduser.c
-list\edmenu.s
+list\edmenu.c
 list\edmouse.s
 list\edobject.s
 list\edpopup.s
