@@ -127,7 +127,7 @@ list\edmenu.c
 list\edmouse.c
 list\edobject.c
 list\edpopup.c
-list\edref.s
+list\edref.c
 list\edstring.s
 list\edtedi.s
 

@@ -1,7 +1,5 @@
 #include "acs_i.h"
 
-#define STATIC
-
 static Obj_Head aboutme = {
 	NULL,
 	ABOUT,
@@ -104,8 +102,8 @@ static Obj_Head protomenu = {
 	{ 0, 0, 0, 0 }
 };
 
-STATIC Obj_Head *copy_menu(ACS_HEAD *acs, const Obj_Head *obj);
-STATIC OBJECT *new_work(Obj_Head *objlist);
+static Obj_Head *copy_menu(ACS_HEAD *acs, const Obj_Head *obj);
+static OBJECT *new_work(Obj_Head *objlist);
 
 LISTPARM list_menu = {
 	NULL,
@@ -142,7 +140,7 @@ Obj_Head *add_menu(ACS_HEAD *acs, Obj_Head *menu)
 
 /* -------------------------------------------------------------------------- */
 
-STATIC Obj_Head *copy_menu(ACS_HEAD *acs, const Obj_Head *obj)
+static Obj_Head *copy_menu(ACS_HEAD *acs, const Obj_Head *obj)
 {
 	Obj_Head *newmenu;
 	OBJ_ENTRY *dst;
@@ -185,7 +183,7 @@ void del_menu(ACS_HEAD *acs, Obj_Head *menu)
 
 /* -------------------------------------------------------------------------- */
 
-STATIC OBJECT *new_work(Obj_Head *objlist)
+static OBJECT *new_work(Obj_Head *objlist)
 {
 	return work_icon(objlist, WI_MENU.iconblk, LIST_MENU);
 }

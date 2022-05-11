@@ -5656,7 +5656,6 @@ cross_type:
 		dc.b $4c
 		dc.b $00
 		dc.b $4e
-		.globl cross_type_anz
 cross_type_anz:
 		dc.b $00
 		dc.b $26
