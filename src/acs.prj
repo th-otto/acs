@@ -128,7 +128,7 @@ list\edmouse.c
 list\edobject.c
 list\edpopup.c
 list\edref.c
-list\edstring.s
+list\edstring.c
 list\edtedi.s
 
 acsplus\slider.s
