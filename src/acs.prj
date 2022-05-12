@@ -75,7 +75,7 @@ io\str_out.c
 io\workout.c
 
 edit2\eddataed.s
-edit2\edrefed.s
+edit2\edrefed.c
 edit2\edaled.s
 edit2\ediconed.s
 edit2\edimaged.s
