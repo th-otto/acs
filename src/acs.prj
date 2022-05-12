@@ -129,7 +129,7 @@ list\edobject.c
 list\edpopup.c
 list\edref.c
 list\edstring.c
-list\edtedi.s
+list\edtedi.c
 
 acsplus\slider.s
 acsplus\wislider.s
