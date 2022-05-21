@@ -87,7 +87,7 @@ edit2\edstred.c
 edit2\edwinded.c
 edit2\edparts.c
 
-editor\edobjced.s
+editor\edobjced.c
 editor\edmenued.s
 editor\edpuped.s
 editor\ueboxed.s
