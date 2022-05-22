@@ -89,7 +89,7 @@ edit2\edparts.c
 
 editor\edobjced.c
 editor\edmenued.c
-editor\edpuped.s
+editor\edpuped.c
 editor\ueboxed.s
 editor\ueselect.s
 editor\ueeditor.s
