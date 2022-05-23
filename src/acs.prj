@@ -94,7 +94,7 @@ editor\ueboxed.c
 editor\ueselect.c
 editor\ueeditor.c
 editor\ueslider.c
-editor\uepictur.s
+editor\uepictur.c
 editor\uecycle.s
 editor\uearrow.s
 editor\uepatter.s
