@@ -93,7 +93,7 @@ editor\edpuped.c
 editor\ueboxed.c
 editor\ueselect.c
 editor\ueeditor.c
-editor\ueslider.s
+editor\ueslider.c
 editor\uepictur.s
 editor\uecycle.s
 editor\uearrow.s
