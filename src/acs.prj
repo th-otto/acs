@@ -91,7 +91,7 @@ editor\edobjced.c
 editor\edmenued.c
 editor\edpuped.c
 editor\ueboxed.c
-editor\ueselect.s
+editor\ueselect.c
 editor\ueeditor.s
 editor\ueslider.s
 editor\uepictur.s
