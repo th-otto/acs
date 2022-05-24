@@ -98,7 +98,7 @@ editor\uepictur.c
 editor\uecycle.c
 editor\uearrow.c
 editor\uepatter.c
-editor\ueinner.s
+editor\ueinner.c
 editor\ue3dbutt.s
 editor\uecheck.s
 editor\ueftext.s
