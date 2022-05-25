@@ -101,7 +101,7 @@ editor\uepatter.c
 editor\ueinner.c
 editor\ue3dbutt.c
 editor\uecheck.c
-editor\ueftext.s
+editor\ueftext.c
 editor\uetitle.s [-M-]
 editor\edobclas.s
 editor\edobstru.s
