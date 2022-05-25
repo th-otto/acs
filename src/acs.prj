@@ -100,7 +100,7 @@ editor\uearrow.c
 editor\uepatter.c
 editor\ueinner.c
 editor\ue3dbutt.c
-editor\uecheck.s
+editor\uecheck.c
 editor\ueftext.s
 editor\uetitle.s [-M-]
 editor\edobclas.s
