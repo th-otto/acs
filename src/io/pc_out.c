@@ -1042,7 +1042,7 @@ void pc_output(ACS_HEAD *acs)
 	{
 		info_start(filename);
 		info_title("ANSI C Code");
-		if (setjmp(*set_handle(fd)) != 0)
+		if (setjmp(*set_handle((int16)fd)) != 0)
 		{
 			ACSblk->ACSerror(AE_WRITE_IO, NULL);
 		} else
@@ -1135,6 +1135,6 @@ void pc_output(ACS_HEAD *acs)
 			close_buf();
 		}
 		info_end();
-		Fclose(fd);
+		Fclose((int16)fd);
 	}
 }
