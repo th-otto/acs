@@ -103,7 +103,7 @@ editor\ue3dbutt.c
 editor\uecheck.c
 editor\ueftext.c
 editor\uetitle.c
-editor\edobclas.s
+editor\edobclas.c
 editor\edobstru.s
 editor\edobsurf.s
 editor\edobobjc.s
