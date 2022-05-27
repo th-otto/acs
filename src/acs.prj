@@ -104,7 +104,7 @@ editor\uecheck.c
 editor\ueftext.c
 editor\uetitle.c
 editor\edobclas.c
-editor\edobstru.s
+editor\edobstru.c
 editor\edobsurf.s
 editor\edobobjc.s
 editor\edobusrm.s
