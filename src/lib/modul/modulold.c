@@ -671,11 +671,19 @@ static void *func1Aes[] = {
 	form_center,
 	form_keybd,
 	form_button,
+#ifdef __GNUC__
+	graf_rubberbox,
+#else
 	graf_rubbox,
+#endif
 	graf_rubberbox,
 	graf_dragbox,
 	graf_mbox,
+#ifdef __GNUC__
+	graf_mbox,
+#else
 	graf_movebox,
+#endif
 	graf_growbox,
 	graf_shrinkbox,
 	graf_watchbox,
@@ -733,7 +741,11 @@ static void *func1Aes[] = {
 	fnts_remove,
 	fnts_update,
 	lbox_ascroll_to,
+#ifdef __GNUC__
+	lbox_ascroll_to,
+#else
 	lbox_scroll_to,
+#endif
 	lbox_bscroll_to,
 	lbox_cnt_items,
 	lbox_create,
@@ -742,8 +754,16 @@ static void *func1Aes[] = {
 	lbox_free_items,
 	lbox_free_list,
 	lbox_get_afirst,
+#ifdef __GNUC__
+	lbox_get_afirst,
+#else
 	lbox_get_first,
+#endif
+#ifdef __GNUC__
+	lbox_get_visible,
+#else
 	lbox_get_avis,
+#endif
 	lbox_get_visible,
 	lbox_get_bentries,
 	lbox_get_bfirst,
@@ -755,7 +775,11 @@ static void *func1Aes[] = {
 	lbox_get_tree,
 	lbox_get_udata,
 	lbox_set_asldr,
+#ifdef __GNUC__
+	lbox_set_asldr,
+#else
 	lbox_set_slider,
+#endif
 	lbox_set_bentries,
 	lbox_set_bsldr,
 	lbox_set_items,
@@ -787,7 +811,11 @@ static void *func1Aes[] = {
 	edit_get_buf,
 	edit_get_format,
 	edit_get_colour,
+#ifdef __GNUC__
+	edit_get_colour,
+#else
 	edit_get_color,
+#endif
 	edit_get_font,
 	edit_get_cursor,
 	edit_get_dirty,
@@ -827,7 +855,11 @@ static void *func1Aes[] = {
 	wind_draw,
 	scrp_clear,
 	objc_xedit,
-	graf_rubbbox
+#ifdef __GNUC__
+	graf_rubberbox,
+#else
+	graf_rubbbox,
+#endif
 };
 static funcVersion const funcAes[] = { { func1Aes, 0 } };
 static int16 const funcAnzAes = NUMFUNCS(funcAes);
@@ -880,11 +912,19 @@ static void *func1MtAes[] = {
 	mt_form_center,
 	mt_form_keybd,
 	mt_form_button,
+#ifdef __GNUC__
+	mt_graf_rubberbox,
+#else
 	mt_graf_rubbox,
+#endif
 	mt_graf_rubberbox,
 	mt_graf_dragbox,
 	mt_graf_mbox,
+#ifdef __GNUC__
+	mt_graf_mbox,
+#else
 	mt_graf_movebox,
+#endif
 	mt_graf_growbox,
 	mt_graf_shrinkbox,
 	mt_graf_watchbox,
@@ -942,7 +982,11 @@ static void *func1MtAes[] = {
 	mt_fnts_remove,
 	mt_fnts_update,
 	mt_lbox_ascroll_to,
+#ifdef __GNUC__
+	mt_lbox_ascroll_to,
+#else
 	mt_lbox_scroll_to,
+#endif
 	mt_lbox_bscroll_to,
 	mt_lbox_cnt_items,
 	mt_lbox_create,
@@ -951,8 +995,16 @@ static void *func1MtAes[] = {
 	mt_lbox_free_items,
 	mt_lbox_free_list,
 	mt_lbox_get_afirst,
+#ifdef __GNUC__
+	mt_lbox_get_afirst,
+#else
 	mt_lbox_get_first,
+#endif
+#ifdef __GNUC__
+	mt_lbox_get_visible,
+#else
 	mt_lbox_get_avis,
+#endif
 	mt_lbox_get_visible,
 	mt_lbox_get_bentries,
 	mt_lbox_get_bfirst,
@@ -964,7 +1016,11 @@ static void *func1MtAes[] = {
 	mt_lbox_get_tree,
 	mt_lbox_get_udata,
 	mt_lbox_set_asldr,
+#ifdef __GNUC__
+	mt_lbox_set_asldr,
+#else
 	mt_lbox_set_slider,
+#endif
 	mt_lbox_set_bentries,
 	mt_lbox_set_bsldr,
 	mt_lbox_set_items,
@@ -996,7 +1052,11 @@ static void *func1MtAes[] = {
 	mt_edit_get_buf,
 	mt_edit_get_format,
 	mt_edit_get_colour,
+#ifdef __GNUC__
+	mt_edit_get_colour,
+#else
 	mt_edit_get_color,
+#endif
 	mt_edit_get_font,
 	mt_edit_get_cursor,
 	mt_edit_get_dirty,
@@ -1035,7 +1095,11 @@ static void *func1MtAes[] = {
 	mt_wind_draw,
 	mt_scrp_clear,
 	mt_objc_xedit,
-	mt_graf_rubbbox
+#ifdef __GNUC__
+	mt_graf_rubberbox,
+#else
+	mt_graf_rubbbox,
+#endif
 };
 static funcVersion const funcMtAes[] = { { func1MtAes, 0 } };
 static int16 const funcAnzMtAes = NUMFUNCS(funcMtAes);
