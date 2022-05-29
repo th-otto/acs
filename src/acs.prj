@@ -109,7 +109,7 @@ editor\edobsurf.c
 editor\edobobjc.c
 editor\edobusrm.c
 editor\edobboxm.c
-editor\edobicm.s
+editor\edobicm.c
 editor\edobimm.s
 editor\edobstrm.s
 editor\edobtedm.s
