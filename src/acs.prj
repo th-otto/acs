@@ -107,7 +107,7 @@ editor\edobclas.c
 editor\edobstru.c
 editor\edobsurf.c
 editor\edobobjc.c
-editor\edobusrm.s
+editor\edobusrm.c
 editor\edobboxm.s
 editor\edobicm.s
 editor\edobimm.s
