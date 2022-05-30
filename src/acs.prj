@@ -111,7 +111,7 @@ editor\edobusrm.c
 editor\edobboxm.c
 editor\edobicm.c
 editor\edobimm.c
-editor\edobstrm.s
+editor\edobstrm.c
 editor\edobtedm.s
 editor\edobaflm.s
 editor\edobaeom.s
