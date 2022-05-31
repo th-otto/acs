@@ -115,7 +115,7 @@ editor\edobstrm.c
 editor\edobtedm.c
 editor\edobaflm.c
 editor\edobaeom.c
-editor\edobkeys.s
+editor\edobkeys.c
 
 list\edlist.c
 list\edalert.c
