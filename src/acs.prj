@@ -113,7 +113,7 @@ editor\edobicm.c
 editor\edobimm.c
 editor\edobstrm.c
 editor\edobtedm.c
-editor\edobaflm.s
+editor\edobaflm.c
 editor\edobaeom.s
 editor\edobkeys.s
 
