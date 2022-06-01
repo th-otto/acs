@@ -132,7 +132,7 @@ list\edref.c
 list\edstring.c
 list\edtedi.c
 
-acsplus\slider.s
+acsplus\slider.c
 acsplus\wislider.s
 acsplus\editor.s
 acsplus\pur_desk.s
