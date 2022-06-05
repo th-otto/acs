@@ -134,7 +134,7 @@ list\edtedi.c
 
 acsplus\slider.c
 acsplus\wislider.c
-acsplus\editor.s
+acsplus\editor.c
 acsplus\pur_desk.s
 acsplus\editwi.s
 acsplus\fontsel.s [-M-]
