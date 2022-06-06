@@ -137,7 +137,7 @@ acsplus\wislider.c
 acsplus\editor.c
 acsplus\pur_desk.c
 acsplus\editwi.s
-acsplus\fontsel.s [-M-]
+acsplus\fontsel.c
 acsplus\list.s
 acsplus\proto.s
 
