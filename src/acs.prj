@@ -138,7 +138,7 @@ acsplus\editor.c
 acsplus\pur_desk.c
 acsplus\editwi.s
 acsplus\fontsel.c
-acsplus\list.s
+acsplus\list.c
 acsplus\proto.s
 
 lib\acslib.prj
