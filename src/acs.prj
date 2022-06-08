@@ -139,7 +139,7 @@ acsplus\pur_desk.c
 acsplus\editwi.s
 acsplus\fontsel.c
 acsplus\list.c
-acsplus\proto.s
+acsplus\proto.c
 
 lib\acslib.prj
 
