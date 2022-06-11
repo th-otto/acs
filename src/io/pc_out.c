@@ -27,6 +27,10 @@ static char const xacc_types[][3] = {
 	"PE"
 };
 
+#ifdef __GNUC__
+#pragma GCC diagnostic ignored "-Wclobbered"
+#endif
+
 
 void info_start(const char *filename)
 {

@@ -606,7 +606,7 @@ static void *openFile(void *para, void *filename)
 	{
 		Ash_module(filename);
 		/* BUG: win not set */
-#if WITH_FIXES || defined(__GNUC__)
+#if WITH_FIXES
 		win = NULL;
 #endif
 	} else
