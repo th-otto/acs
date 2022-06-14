@@ -669,738 +669,452 @@ TEDINFO_02:
 		dc.l TEXT_01
 		dc.l TEXT_02
 		dc.l TEXT_02
-		dc.b $00
-		dc.b $05
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $00
+		dc.w $0005
+		dc.w $0006
+		dc.w $0000
 		dc.w $1100
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $33
-		dc.b $00
-		dc.b $01
+		dc.w $0033
+		dc.w $0001
 TEDINFO_03:
 		dc.l TEXT_06
 		dc.l TEXT_02
 		dc.l TEXT_02
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $02
+		dc.w $0003
+		dc.w $0006
+		dc.w $0002
 		dc.w $1100
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0006
+		dc.w $0001
 TEDINFO_04:
 		dc.l TEXT_06
 		dc.l TEXT_02
 		dc.l TEXT_02
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $02
+		dc.w $0003
+		dc.w $0006
+		dc.w $0002
 		dc.w $1100
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $01
+		dc.w $0006
+		dc.w $0001
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $29f1
 		dc.w $0178
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON02:
 		dc.l A_3Dbutton
 		dc.w $2001
 		dc.w $9178
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON04:
 		dc.l A_3Dbutton
 		dc.w $2901
 		dc.w $0178
 		dc.l Auo_string
 		dc.l TEXT_04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON05:
 		dc.l A_3Dbutton
 		dc.w $29f1
 		dc.w $0178
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON06:
 		dc.l A_3Dbutton
 		dc.w $29f1
 		dc.w $0178
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON07:
 		dc.l A_3Dbutton
 		dc.w $29f1
 		dc.w $0178
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON08:
 		dc.l A_3Dbutton
 		dc.w $29f1
 		dc.w $0178
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 ThermAObj:
 		dc.w $ffff
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0001
+		dc.w $0003
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON01
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $29
+		dc.w $0000
+		dc.w $0000
+		dc.w $0029
 		dc.w $0404
 _01_ThermAObj:
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $ffff
 		dc.b $ff
 		dc.b $ff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $45
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0045
+		dc.w $0000
 		dc.l A_3DBUTTON04
-		dc.b $00
-		dc.b $0d
+		dc.w $000d
 		dc.w $0c02
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $01
+		dc.w $0010
+		dc.w $0001
 _01aThermAObj:
 		dc.l ThermCancel
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $8000
 		dc.w $8841
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _03_ThermAObj:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $05
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0004
+		dc.w $0005
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $27
+		dc.w $0001
+		dc.w $0001
+		dc.w $0027
 		dc.w $0401
 _04_ThermAObj:
-		dc.b $00
-		dc.b $05
+		dc.w $0005
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON05
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0b
+		dc.w $0000
+		dc.w $0000
+		dc.w $000b
 		dc.w $0401
 _05_ThermAObj:
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0020
+		dc.w $0000
 		dc.l TEDINFO_04
-		dc.b $00
-		dc.b $11
+		dc.w $0011
 		dc.w $0200
-		dc.b $00
-		dc.b $05
-		dc.b $00
-		dc.b $01
+		dc.w $0005
+		dc.w $0001
 ThermObj:
 		dc.w $ffff
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0001
+		dc.w $0001
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON01
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $29
+		dc.w $0000
+		dc.w $0000
+		dc.w $0029
 		dc.w $0403
 _01_ThermObj:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0002
+		dc.w $0003
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $27
+		dc.w $0001
+		dc.w $0001
+		dc.w $0027
 		dc.w $0401
 _02_ThermObj:
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON06
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0b
+		dc.w $0000
+		dc.w $0000
+		dc.w $000b
 		dc.w $0401
 _03_ThermObj:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0020
+		dc.w $0000
 		dc.l TEDINFO_04
-		dc.b $00
-		dc.b $11
+		dc.w $0011
 		dc.w $0200
-		dc.b $00
-		dc.b $05
-		dc.b $00
-		dc.b $01
+		dc.w $0005
+		dc.w $0001
 ThermTAObj:
 		dc.w $ffff
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0001
+		dc.w $0006
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON01
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $29
+		dc.w $0000
+		dc.w $0000
+		dc.w $0029
 		dc.w $0405
 _01_ThermTAObj:
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0004
+		dc.w $0002
+		dc.w $0003
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $27
+		dc.w $0001
+		dc.w $0002
+		dc.w $0027
 		dc.w $0401
 _02_ThermTAObj:
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON07
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0b
+		dc.w $0000
+		dc.w $0000
+		dc.w $000b
 		dc.w $0401
 _03_ThermTAObj:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0000
+		dc.w $0000
 		dc.l TEDINFO_04
-		dc.b $00
-		dc.b $11
+		dc.w $0011
 		dc.w $0200
-		dc.b $00
-		dc.b $05
-		dc.b $00
-		dc.b $01
+		dc.w $0005
+		dc.w $0001
 _04_ThermTAObj:
-		dc.b $00
-		dc.b $06
+		dc.w $0006
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $45
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0045
+		dc.w $0000
 		dc.l A_3DBUTTON04
-		dc.b $00
-		dc.b $0d
+		dc.w $000d
 		dc.w $0c03
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $01
+		dc.w $0010
+		dc.w $0001
 _05_ThermTAObj:
 		dc.l ThermCancel
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $8000
 		dc.w $8841
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _05aThermTAObj:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0020
+		dc.w $0000
 		dc.l TEDINFO_02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $28
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0000
+		dc.w $0028
+		dc.w $0002
 ThermTObj:
 		dc.w $ffff
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0001
+		dc.w $0004
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON01
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $29
+		dc.w $0000
+		dc.w $0000
+		dc.w $0029
 		dc.w $0404
 _01_ThermTObj:
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0004
+		dc.w $0002
+		dc.w $0003
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $27
+		dc.w $0001
+		dc.w $0002
+		dc.w $0027
 		dc.w $0401
 _02_ThermTObj:
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0000
+		dc.w $0000
 		dc.l A_3DBUTTON08
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0b
+		dc.w $0000
+		dc.w $0000
+		dc.w $000b
 		dc.w $0401
 _03_ThermTObj:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0000
+		dc.w $0000
 		dc.l TEDINFO_03
-		dc.b $00
-		dc.b $11
+		dc.w $0011
 		dc.w $0200
-		dc.b $00
-		dc.b $05
-		dc.b $00
-		dc.b $01
+		dc.w $0005
+		dc.w $0001
 _04_ThermTObj:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0020
+		dc.w $0000
 		dc.l TEDINFO_02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $28
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0000
+		dc.w $0028
+		dc.w $0002
 		.globl ThermWind
 ThermWind:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.l ThermoService
 		dc.l ThermoCreate
 		dc.l Awi_open
 		dc.l ThermoInit
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
 		dc.w $2009
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $78
-		dc.b $00
-		dc.b $32
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0078
+		dc.w $0032
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $f8f8
 		dc.l TEXT_05
 		dc.l TEXT_02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l Awi_keys
 		dc.l Awi_obchange
 		dc.l Awi_redraw
@@ -1415,14 +1129,10 @@ ThermWind:
 		dc.l Awi_iconify
 		dc.l Awi_uniconify
 		dc.l ThermoGEMScript
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 ThermObjs:
 		dc.l ThermObj
 		dc.l ThermTObj
@@ -1430,38 +1140,24 @@ ThermObjs:
 		dc.l ThermTAObj
 textNr:
 		dc.w $ffff
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.w $ffff
-		dc.b $00
-		dc.b $06
+		dc.w $0006
 laufBNr:
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0002
 fixBNr:
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0001
+		dc.w $0003
+		dc.w $0001
 prozNr:
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $05
-		dc.b $00
-		dc.b $03
+		dc.w $0003
+		dc.w $0003
+		dc.w $0005
+		dc.w $0003
 xd44fe:
 		dc.b '%i %%',0
 		.even

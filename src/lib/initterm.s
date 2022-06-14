@@ -665,10 +665,10 @@ InitPaths_15:
 		movea.l    (a2),a0
 		movea.l    572(a0),a1
 		lea.l      16(a1),a1
-		lea.l      _A_ERR_ACC+30,a0
+		lea.l      _ALIB_ERR_ACC+30,a0
 		jsr        strncpy
 		movea.l    (a3),a1
-		lea.l      _A_ERR_ACC,a0
+		lea.l      _ALIB_ERR_ACC,a0
 		moveq.l    #1,d0
 		jsr        mt_form_alert
 		move.w     d0,(a6)

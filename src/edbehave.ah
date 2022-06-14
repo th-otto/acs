@@ -59,6 +59,7 @@ static char _A_COLREZ[] = "[1][ Die Anzahl der momentan| darstellbaren Farben od
 static char _A_CREATE_IO[] = "[1][ Eine Datei liež sich | nicht erzeugen!][ Abbruch ]";
 static char _A_CREATE_STR[] = "[3][ Die Datei '%s'| l„žt sich nicht erzeugen! ][ Abbruch ]";
 static char _A_DEFECTIVE_MEM[] = "[1][ Auf fremden Speicher | wurde zugegriffen!][ Abbruch ]";
+/* FIXME: same as _ALIB_ERR_ACC */
 static char _A_ERR_ACC[] = "[2][ | Soll das Accessory | >>               << | gestartet werden?| ][Ja|  Nein  ]";
 static char _A_ERR_MESS[] = "[2][ Unbekannte GEM-Nachricht | erhalten.| ID = '%s'| Weiterhin berichten?][Ja|  Nein  ]";
 static char _A_ERR_WINDOW[] = "[3][ Keine freie GEM-Fenster-ID | mehr vorhanden!| Abhilfe: Ein offenes| GEM-Fenster schliežen.][    OK    ]";
@@ -211,6 +212,7 @@ static char _A_COLREZ[] = "[1][ Wrong number of colors | on this screen!][ Cance
 static char _A_CREATE_IO[] = "[1][ Cannot create | this file.][ Cancel ]";
 static char _A_CREATE_STR[] = "[3][ Cannot create file | '%s'!][ Cancel ]";
 static char _A_DEFECTIVE_MEM[] = "[1][ You accessed | foreign memory! ][ Cancel ]";
+/* FIXME: same as _ALIB_ERR_ACC */
 static char _A_ERR_ACC[] = "[2][ | Do you want to load| >>               << | as a acessory?| ][ Yes | No ]";
 static char _A_ERR_MESS[] = "[2][ Unknown GEM-message| received.| ID = '%s'| Continue displaying?][ Yes | No ]";
 static char _A_ERR_WINDOW[] = "[3][ No more free window-slots | available. Please close an | open GEM-Window.][  OK  ]";

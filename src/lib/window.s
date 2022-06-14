@@ -1096,7 +1096,7 @@ Awi_catch_6:
 		bra.s      Awi_catch_10
 Awi_catch_9:
 		movea.l    _globl,a1
-		lea.l      _A_ERR_WINDOW,a0
+		lea.l      _ALIB_ERR_WINDOW,a0
 		moveq.l    #1,d0
 		jsr        mt_form_alert
 Awi_catch_5:
@@ -1755,7 +1755,7 @@ Awi_create_15:
 		cmp.w      #$0100,d3
 		blt.w      Awi_create_20
 		movea.l    _globl,a1
-		lea.l      _A_ERR_WISLOT,a0
+		lea.l      _ALIB_ERR_WISLOT,a0
 		moveq.l    #1,d0
 		jsr        mt_form_alert
 Awi_create_10:

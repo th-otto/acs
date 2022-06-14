@@ -347,7 +347,7 @@ main:
 _A_ERR_ACC:
 		dc.b '[2][ | Soll das Accessory | >>               << | gestartet werden?| ][Ja|  Nein  ]',0
 _A_ERR_MESS:
-		dc.b '[2][ Unbekannte GEM-Nachricht | erhalten.| ID = ',$27,'%s',$27,'| Weiterhin berichten?][Ja|  Nein  ]',0
+		dc.b "[2][ Unbekannte GEM-Nachricht | erhalten.| ID = '%s'| Weiterhin berichten?][Ja|  Nein  ]",0
 _A_ERR_WINDOW:
 		dc.b '[3][ Keine freie GEM-Fenster-ID | mehr vorhanden!| Abhilfe: Ein offenes| GEM-Fenster schliežen.][    OK    ]',0
 _A_ERR_WISLOT:
@@ -415,9 +415,9 @@ _A_ERR_ACC:
 		dc.b $00
 _A_ERR_MESS:
 		.IFNE WITH_FIXES
-		dc.b '[2][ Unknown GEM-Message | received.| ID = ',$27,'%s',$27,'| Continue reporting?][Yes| No ]',0
+		dc.b '[2][ Unknown GEM-Message | received.| ID = '%s'| Continue reporting?][Yes| No ]',0
 		.ELSE
-		dc.b '[2][ Unknown GEM-Message | recieved.| ID = ',$27,'%s',$27,'| Continue reporting?][Yes| No ]',0
+		dc.b '[2][ Unknown GEM-Message | recieved.| ID = '%s'| Continue reporting?][Yes| No ]',0
 		dc.b $00
 		dc.b $00
 		dc.b $00
@@ -509,18 +509,12 @@ TEXT_222:
 
 		.even
 DATAS_01:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -533,14 +527,10 @@ DATAS_01:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -553,14 +543,10 @@ DATAS_01:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -573,10 +559,8 @@ DATAS_01:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -591,11 +575,9 @@ DATAS_01:
 		dc.w $1878
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_02:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -610,79 +592,55 @@ DATAS_02:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_03:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $01c8
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4fff
@@ -691,79 +649,54 @@ DATAS_03:
 		dc.w $ff92
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4fff
@@ -772,55 +705,54 @@ DATAS_03:
 		dc.w $ff92
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $1e
-		dc.b 'UUU^@',0
-		dc.b $00
-		dc.b $1e
-		dc.b 'UUU^@',0
-		dc.b $00
-		dc.b $1e
-		dc.b 'UUU^@',0
-		dc.b $00
-		dc.b $1e
-		dc.b 'UUU^@',0
-		dc.b $00
-		dc.b $1e
-		dc.b 'UUU^@',0
-		dc.b $00
-		dc.b $1e
-		dc.b 'UUU^@',0
-		dc.b $00
-		dc.b $1e
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $12
+		dc.w $0012
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $001e
+		dc.w $5555
+		dc.w $555e
+		dc.w $4000
+		dc.w $001e
+		dc.w $5555
+		dc.w $555e
+		dc.w $4000
+		dc.w $001e
+		dc.w $5555
+		dc.w $555e
+		dc.w $4000
+		dc.w $001e
+		dc.w $5555
+		dc.w $555e
+		dc.w $4000
+		dc.w $001e
+		dc.w $5555
+		dc.w $555e
+		dc.w $4000
+		dc.w $001e
+		dc.w $5555
+		dc.w $555e
+		dc.w $4000
+		dc.w $001e
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4fff
@@ -829,18 +761,12 @@ DATAS_03:
 		dc.w $ff92
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4fff
@@ -850,77 +776,54 @@ DATAS_03:
 		dc.w $7fff
 		dc.w $ffff
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $1f
+		dc.w $001f
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $1f
+		dc.w $001f
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $4000
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $7fff
 		dc.w $ffff
 		dc.w $4800
-		dc.b $00
-		dc.b $93
+		dc.w $0093
 		dc.w $4800
-		dc.b $00
-		dc.b $93
+		dc.w $0093
 		dc.w $7fff
 		dc.w $ffff
 		dc.w $3fff
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_04:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $7fff
@@ -973,21 +876,14 @@ DATAS_04:
 		dc.w $ffff
 		dc.w $3fff
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_05:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -1002,10 +898,8 @@ DATAS_05:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -1020,10 +914,8 @@ DATAS_05:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -1038,25 +930,24 @@ DATAS_05:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7ffe
 		dc.w $6002
 		dc.w $7006
 		dc.w $580c
 		dc.w $4c18
-		dc.b 'F0C`A'
-		dc.b $c0
+		dc.w $4630
+		dc.w $4360
 		dc.w $41c0
-		dc.b 'C`F0L'
-		dc.b $18
+		dc.w $41c0
+		dc.w $4360
+		dc.w $4630
+		dc.w $4c18
 		dc.w $580c
 		dc.w $7006
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_06:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -1073,16 +964,11 @@ DATAS_06:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_07:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -1097,10 +983,8 @@ DATAS_07:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -1115,10 +999,8 @@ DATAS_07:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -1133,25 +1015,24 @@ DATAS_07:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7ffe
 		dc.w $6002
 		dc.w $7006
 		dc.w $580c
 		dc.w $4c18
-		dc.b 'F0C`A'
-		dc.b $c0
+		dc.w $4630
+		dc.w $4360
 		dc.w $41c0
-		dc.b 'C`F0L'
-		dc.b $18
+		dc.w $41c0
+		dc.w $4360
+		dc.w $4630
+		dc.w $4c18
 		dc.w $580c
 		dc.w $7006
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_08:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -1168,23 +1049,16 @@ DATAS_08:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_09:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -1232,35 +1106,23 @@ DATAS_09:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -1273,31 +1135,26 @@ DATAS_09:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
 		dc.w $8024
 		dc.w $4800
-		dc.b '@$H',0
-		dc.b ' $$',0
+		dc.w $4024
+		dc.w $4800
+		dc.w $2024
+		dc.w $2400
 		dc.w $1048
 		dc.w $2400
 		dc.w $0848
@@ -1313,35 +1170,23 @@ DATAS_09:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -1354,31 +1199,26 @@ DATAS_09:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
 		dc.w $8024
 		dc.w $4800
-		dc.b '@$H',0
-		dc.b ' $$',0
+		dc.w $4024
+		dc.w $4800
+		dc.w $2024
+		dc.w $2400
 		dc.w $1048
 		dc.w $2400
 		dc.w $0848
@@ -1394,39 +1234,25 @@ DATAS_09:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $01f1
 		dc.w $1f00
@@ -1435,29 +1261,21 @@ DATAS_09:
 		dc.w $0781
 		dc.w $03c0
 		dc.w $0f01
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1e01
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
 		dc.w $801c
 		dc.w $3800
@@ -1478,39 +1296,26 @@ DATAS_09:
 		dc.w $03e0
 		dc.w $01c0
 		dc.w $07c0
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_10:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $03ff
 		dc.w $ff80
@@ -1558,23 +1363,16 @@ DATAS_10:
 		dc.w $ffc0
 		dc.w $03ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_100:
 		dc.w $fffe
 		dc.w $fffe
@@ -1591,15 +1389,11 @@ DATAS_100:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_101:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $8e
+		dc.w $0000
+		dc.w $0000
+		dc.w $008e
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -1615,8 +1409,7 @@ DATAS_101:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -1632,8 +1425,7 @@ DATAS_101:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -1649,8 +1441,7 @@ DATAS_101:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -1665,10 +1456,8 @@ DATAS_101:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_102:
 		dc.w $fffe
 		dc.w $fffe
@@ -1685,13 +1474,10 @@ DATAS_102:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_103:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
@@ -1708,8 +1494,7 @@ DATAS_103:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -1725,8 +1510,7 @@ DATAS_103:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -1742,8 +1526,7 @@ DATAS_103:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -1758,138 +1541,72 @@ DATAS_103:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_104:
 		dc.w $fffe
 		dc.w $fffe
@@ -1906,15 +1623,11 @@ DATAS_104:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_105:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -1930,8 +1643,7 @@ DATAS_105:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -1947,8 +1659,7 @@ DATAS_105:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -1964,8 +1675,7 @@ DATAS_105:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -1980,10 +1690,8 @@ DATAS_105:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_106:
 		dc.w $fffe
 		dc.w $fffe
@@ -2000,13 +1708,10 @@ DATAS_106:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_107:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
@@ -2023,8 +1728,7 @@ DATAS_107:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -2040,8 +1744,7 @@ DATAS_107:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -2057,8 +1760,7 @@ DATAS_107:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -2073,138 +1775,72 @@ DATAS_107:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_108:
 		dc.w $fffe
 		dc.w $fffe
@@ -2221,17 +1857,12 @@ DATAS_108:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_109:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -2246,10 +1877,8 @@ DATAS_109:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -2264,10 +1893,8 @@ DATAS_109:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -2282,52 +1909,30 @@ DATAS_109:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_11:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -2340,14 +1945,10 @@ DATAS_11:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -2360,14 +1961,10 @@ DATAS_11:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -2380,10 +1977,8 @@ DATAS_11:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -2398,8 +1993,7 @@ DATAS_11:
 		dc.w $1878
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_110:
 		dc.w $fffe
 		dc.w $fffe
@@ -2416,16 +2010,12 @@ DATAS_110:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_111:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -2440,10 +2030,8 @@ DATAS_111:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -2458,10 +2046,8 @@ DATAS_111:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -2476,167 +2062,87 @@ DATAS_111:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_112:
 		dc.w $fffe
 		dc.w $fffe
@@ -2653,15 +2159,11 @@ DATAS_112:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_113:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $8e
+		dc.w $0000
+		dc.w $0000
+		dc.w $008e
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -2677,8 +2179,7 @@ DATAS_113:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -2694,8 +2195,7 @@ DATAS_113:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -2711,39 +2211,23 @@ DATAS_113:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_114:
 		dc.w $fffe
 		dc.w $fffe
@@ -2760,13 +2244,10 @@ DATAS_114:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_115:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaea
 		dc.w $7ffc
@@ -2783,8 +2264,7 @@ DATAS_115:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -2800,8 +2280,7 @@ DATAS_115:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -2817,167 +2296,87 @@ DATAS_115:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_116:
 		dc.w $fffe
 		dc.w $fffe
@@ -2994,17 +2393,12 @@ DATAS_116:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_117:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -3017,14 +2411,10 @@ DATAS_117:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -3037,14 +2427,10 @@ DATAS_117:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -3057,14 +2443,10 @@ DATAS_117:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1e08
@@ -3079,11 +2461,9 @@ DATAS_117:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_118:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -3098,16 +2478,12 @@ DATAS_118:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_119:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11e8
@@ -3120,14 +2496,10 @@ DATAS_119:
 		dc.w $3db0
 		dc.w $2fe0
 		dc.w $17c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11e8
@@ -3140,14 +2512,10 @@ DATAS_119:
 		dc.w $3db0
 		dc.w $2fe0
 		dc.w $17c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11e8
@@ -3160,14 +2528,10 @@ DATAS_119:
 		dc.w $3db0
 		dc.w $2fe0
 		dc.w $17c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1e18
@@ -3182,10 +2546,8 @@ DATAS_119:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -3198,14 +2560,10 @@ DATAS_119:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -3218,14 +2576,10 @@ DATAS_119:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -3238,14 +2592,10 @@ DATAS_119:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -3258,15 +2608,11 @@ DATAS_119:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_12:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -3281,11 +2627,9 @@ DATAS_12:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_120:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -3300,17 +2644,12 @@ DATAS_120:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_121:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -3325,10 +2664,8 @@ DATAS_121:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -3343,10 +2680,8 @@ DATAS_121:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -3361,10 +2696,8 @@ DATAS_121:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $1400
@@ -3375,17 +2708,13 @@ DATAS_121:
 		dc.w $22a2
 		dc.w $4540
 		dc.w $2280
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $08
+		dc.w $0004
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_122:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -3400,16 +2729,12 @@ DATAS_122:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_123:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -3424,10 +2749,8 @@ DATAS_123:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -3442,10 +2765,8 @@ DATAS_123:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -3460,10 +2781,8 @@ DATAS_123:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $1410
@@ -3475,14 +2794,11 @@ DATAS_123:
 		dc.w $4540
 		dc.w $2280
 		dc.w $1004
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -3493,18 +2809,12 @@ DATAS_123:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -3515,18 +2825,12 @@ DATAS_123:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -3537,18 +2841,12 @@ DATAS_123:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -3559,19 +2857,13 @@ DATAS_123:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_124:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -3586,17 +2878,12 @@ DATAS_124:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_125:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $8e
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $008e
+		dc.w $0000
 		dc.w $0280
 		dc.w $0550
 		dc.w $0be8
@@ -3611,10 +2898,8 @@ DATAS_125:
 		dc.w $17d8
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0550
 		dc.w $0be8
@@ -3629,10 +2914,8 @@ DATAS_125:
 		dc.w $17d8
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0550
 		dc.w $0be8
@@ -3647,33 +2930,25 @@ DATAS_125:
 		dc.w $17d8
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
 		dc.w $2008
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0004
+		dc.w $0002
 		dc.w $4004
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4004
 		dc.w $2008
-		dc.b $00
-		dc.b $14
+		dc.w $0014
 		dc.w $0828
 		dc.w $0550
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_126:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -3688,16 +2963,12 @@ DATAS_126:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_127:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -3712,10 +2983,8 @@ DATAS_127:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -3730,10 +2999,8 @@ DATAS_127:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -3748,150 +3015,89 @@ DATAS_127:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0410
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
+		dc.w $0008
+		dc.w $0004
 		dc.w $2000
 		dc.w $4004
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4004
-		dc.b $00
-		dc.b $0a
-		dc.b $00
-		dc.b $04
+		dc.w $000a
+		dc.w $0004
 		dc.w $2008
 		dc.w $1050
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_128:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -3906,20 +3112,14 @@ DATAS_128:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_129:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -3932,14 +3132,10 @@ DATAS_129:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -3952,14 +3148,10 @@ DATAS_129:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -3972,10 +3164,8 @@ DATAS_129:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -3990,142 +3180,82 @@ DATAS_129:
 		dc.w $1878
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_13:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -4173,35 +3303,23 @@ DATAS_13:
 		dc.w $f8c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -4214,44 +3332,31 @@ DATAS_13:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1101
 		dc.w $0110
 		dc.w $0881
@@ -4262,35 +3367,23 @@ DATAS_13:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -4303,44 +3396,31 @@ DATAS_13:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1101
 		dc.w $0110
 		dc.w $0881
@@ -4351,39 +3431,25 @@ DATAS_13:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $01f1
 		dc.w $1f00
@@ -4392,79 +3458,55 @@ DATAS_13:
 		dc.w $0781
 		dc.w $03c0
 		dc.w $0f01
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1e01
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1e01
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $0f01
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $0701
 		dc.w $01e0
 		dc.w $0381
 		dc.w $03e0
 		dc.w $01c1
 		dc.w $07c0
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_130:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -4479,17 +3521,12 @@ DATAS_130:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_131:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $90
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0090
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -4504,10 +3541,8 @@ DATAS_131:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -4522,10 +3557,8 @@ DATAS_131:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -4540,10 +3573,8 @@ DATAS_131:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $1400
@@ -4554,17 +3585,13 @@ DATAS_131:
 		dc.w $22a2
 		dc.w $4540
 		dc.w $2280
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $08
+		dc.w $0004
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_132:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -4579,16 +3606,12 @@ DATAS_132:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_133:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -4603,10 +3626,8 @@ DATAS_133:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -4621,10 +3642,8 @@ DATAS_133:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -4639,10 +3658,8 @@ DATAS_133:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $1410
@@ -4654,14 +3671,11 @@ DATAS_133:
 		dc.w $4540
 		dc.w $2280
 		dc.w $1004
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -4672,18 +3686,12 @@ DATAS_133:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -4694,18 +3702,12 @@ DATAS_133:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -4716,18 +3718,12 @@ DATAS_133:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -4738,19 +3734,13 @@ DATAS_133:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_134:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -4765,17 +3755,12 @@ DATAS_134:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_135:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -4788,14 +3773,10 @@ DATAS_135:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -4808,14 +3789,10 @@ DATAS_135:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -4828,14 +3805,10 @@ DATAS_135:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1e08
@@ -4850,11 +3823,9 @@ DATAS_135:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_136:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -4869,16 +3840,12 @@ DATAS_136:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_137:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -4893,10 +3860,8 @@ DATAS_137:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -4911,10 +3876,8 @@ DATAS_137:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -4929,10 +3892,8 @@ DATAS_137:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $1410
@@ -4944,14 +3905,11 @@ DATAS_137:
 		dc.w $4540
 		dc.w $2280
 		dc.w $1004
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -4962,18 +3920,12 @@ DATAS_137:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -4984,18 +3936,12 @@ DATAS_137:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -5006,18 +3952,12 @@ DATAS_137:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -5028,19 +3968,13 @@ DATAS_137:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_138:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -5055,21 +3989,14 @@ DATAS_138:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_139:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -5082,14 +4009,10 @@ DATAS_139:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -5102,14 +4025,10 @@ DATAS_139:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -5122,10 +4041,8 @@ DATAS_139:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -5140,21 +4057,15 @@ DATAS_139:
 		dc.w $1878
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_14:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $03ff
 		dc.w $ff80
@@ -5202,26 +4113,18 @@ DATAS_14:
 		dc.w $ffc0
 		dc.w $03ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_140:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -5236,16 +4139,12 @@ DATAS_140:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_141:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -5260,10 +4159,8 @@ DATAS_141:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -5278,10 +4175,8 @@ DATAS_141:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -5296,150 +4191,89 @@ DATAS_141:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0410
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
+		dc.w $0008
+		dc.w $0004
 		dc.w $2000
 		dc.w $4004
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4004
-		dc.b $00
-		dc.b $0a
-		dc.b $00
-		dc.b $04
+		dc.w $000a
+		dc.w $0004
 		dc.w $2008
 		dc.w $1050
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_142:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -5454,16 +4288,12 @@ DATAS_142:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_143:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11e8
@@ -5476,14 +4306,10 @@ DATAS_143:
 		dc.w $3db0
 		dc.w $2fe0
 		dc.w $17c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11e8
@@ -5496,14 +4322,10 @@ DATAS_143:
 		dc.w $3db0
 		dc.w $2fe0
 		dc.w $17c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11e8
@@ -5516,14 +4338,10 @@ DATAS_143:
 		dc.w $3db0
 		dc.w $2fe0
 		dc.w $17c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1e18
@@ -5538,10 +4356,8 @@ DATAS_143:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -5554,14 +4370,10 @@ DATAS_143:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -5574,14 +4386,10 @@ DATAS_143:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -5594,14 +4402,10 @@ DATAS_143:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -5614,15 +4418,11 @@ DATAS_143:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_144:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -5637,17 +4437,12 @@ DATAS_144:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_145:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -5662,10 +4457,8 @@ DATAS_145:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -5680,10 +4473,8 @@ DATAS_145:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -5698,39 +4489,23 @@ DATAS_145:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_146:
 		dc.w $fffe
 		dc.w $fffe
@@ -5747,16 +4522,12 @@ DATAS_146:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_147:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -5771,10 +4542,8 @@ DATAS_147:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -5789,10 +4558,8 @@ DATAS_147:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -5807,167 +4574,87 @@ DATAS_147:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_148:
 		dc.w $fffe
 		dc.w $fffe
@@ -5984,21 +4671,14 @@ DATAS_148:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_149:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -6011,14 +4691,10 @@ DATAS_149:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -6031,14 +4707,10 @@ DATAS_149:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -6051,10 +4723,8 @@ DATAS_149:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -6069,26 +4739,18 @@ DATAS_149:
 		dc.w $1878
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_15:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -6136,35 +4798,23 @@ DATAS_15:
 		dc.w $f8c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -6177,40 +4827,31 @@ DATAS_15:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4802
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4804
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4808
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2410
-		dc.b $00
-		dc.b 'H$ ',0
-		dc.b 'H"@',0
-		dc.b $88
+		dc.w $0048
+		dc.w $2420
+		dc.w $0048
+		dc.w $2240
+		dc.w $0088
 		dc.w $1180
 		dc.w $0110
 		dc.w $0880
@@ -6221,35 +4862,23 @@ DATAS_15:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -6262,40 +4891,31 @@ DATAS_15:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4802
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4804
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4808
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2410
-		dc.b $00
-		dc.b 'H$ ',0
-		dc.b 'H"@',0
-		dc.b $88
+		dc.w $0048
+		dc.w $2420
+		dc.w $0048
+		dc.w $2240
+		dc.w $0088
 		dc.w $1180
 		dc.w $0110
 		dc.w $0880
@@ -6306,39 +4926,25 @@ DATAS_15:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $01f1
 		dc.w $1f00
@@ -6347,79 +4953,55 @@ DATAS_15:
 		dc.w $0781
 		dc.w $03c0
 		dc.w $0f01
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1e01
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3802
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3804
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3808
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $1c10
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c20
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1e40
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $0f80
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $0700
 		dc.w $01e0
 		dc.w $0380
 		dc.w $03e0
 		dc.w $01c0
 		dc.w $07c0
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_150:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -6434,20 +5016,14 @@ DATAS_150:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_151:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -6460,14 +5036,10 @@ DATAS_151:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -6480,14 +5052,10 @@ DATAS_151:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -6500,10 +5068,8 @@ DATAS_151:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -6518,127 +5084,73 @@ DATAS_151:
 		dc.w $1878
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_152:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -6653,17 +5165,12 @@ DATAS_152:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_153:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -6676,14 +5183,10 @@ DATAS_153:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -6696,14 +5199,10 @@ DATAS_153:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -6716,14 +5215,10 @@ DATAS_153:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1e08
@@ -6738,11 +5233,9 @@ DATAS_153:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_154:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -6757,16 +5250,12 @@ DATAS_154:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_155:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11e8
@@ -6779,14 +5268,10 @@ DATAS_155:
 		dc.w $3db0
 		dc.w $2fe0
 		dc.w $17c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11e8
@@ -6799,14 +5284,10 @@ DATAS_155:
 		dc.w $3db0
 		dc.w $2fe0
 		dc.w $17c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11e8
@@ -6819,14 +5300,10 @@ DATAS_155:
 		dc.w $3db0
 		dc.w $2fe0
 		dc.w $17c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1e18
@@ -6841,10 +5318,8 @@ DATAS_155:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -6857,14 +5332,10 @@ DATAS_155:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -6877,14 +5348,10 @@ DATAS_155:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -6897,14 +5364,10 @@ DATAS_155:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -6917,15 +5380,11 @@ DATAS_155:
 		dc.w $2180
 		dc.w $2000
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_156:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -6940,15 +5399,11 @@ DATAS_156:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_157:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -6964,8 +5419,7 @@ DATAS_157:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -6981,8 +5435,7 @@ DATAS_157:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -6998,39 +5451,23 @@ DATAS_157:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_158:
 		dc.w $fffe
 		dc.w $fffe
@@ -7047,13 +5484,10 @@ DATAS_158:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_159:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaea
 		dc.w $7ffc
@@ -7070,8 +5504,7 @@ DATAS_159:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -7087,8 +5520,7 @@ DATAS_159:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -7104,180 +5536,95 @@ DATAS_159:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_16:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $03ff
 		dc.w $ff80
@@ -7325,23 +5672,16 @@ DATAS_16:
 		dc.w $ffc0
 		dc.w $03ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_160:
 		dc.w $fffe
 		dc.w $fffe
@@ -7358,21 +5698,14 @@ DATAS_160:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_161:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -7385,14 +5718,10 @@ DATAS_161:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -7405,14 +5734,10 @@ DATAS_161:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -7425,10 +5750,8 @@ DATAS_161:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -7443,11 +5766,9 @@ DATAS_161:
 		dc.w $1878
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_162:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -7462,20 +5783,14 @@ DATAS_162:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_163:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -7488,14 +5803,10 @@ DATAS_163:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -7508,14 +5819,10 @@ DATAS_163:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $01e8
 		dc.w $07f4
 		dc.w $0ffc
@@ -7528,10 +5835,8 @@ DATAS_163:
 		dc.w $1788
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -7546,127 +5851,73 @@ DATAS_163:
 		dc.w $1878
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0004
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0004
+		dc.w $0004
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_164:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -7681,17 +5932,12 @@ DATAS_164:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_165:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
 		dc.w $0280
 		dc.w $0550
 		dc.w $0be8
@@ -7706,10 +5952,8 @@ DATAS_165:
 		dc.w $17d8
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0550
 		dc.w $0be8
@@ -7724,10 +5968,8 @@ DATAS_165:
 		dc.w $17d8
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0550
 		dc.w $0be8
@@ -7742,33 +5984,25 @@ DATAS_165:
 		dc.w $17d8
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
 		dc.w $2008
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0004
+		dc.w $0002
 		dc.w $4004
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4004
 		dc.w $2008
-		dc.b $00
-		dc.b $14
+		dc.w $0014
 		dc.w $0828
 		dc.w $0550
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_166:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -7783,16 +6017,12 @@ DATAS_166:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_167:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -7807,10 +6037,8 @@ DATAS_167:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -7825,10 +6053,8 @@ DATAS_167:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -7843,150 +6069,89 @@ DATAS_167:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0410
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
+		dc.w $0008
+		dc.w $0004
 		dc.w $2000
 		dc.w $4004
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4004
-		dc.b $00
-		dc.b $0a
-		dc.b $00
-		dc.b $04
+		dc.w $000a
+		dc.w $0004
 		dc.w $2008
 		dc.w $1050
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_168:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -8001,15 +6166,11 @@ DATAS_168:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_169:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -8025,8 +6186,7 @@ DATAS_169:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -8042,8 +6202,7 @@ DATAS_169:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -8059,8 +6218,7 @@ DATAS_169:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -8075,28 +6233,19 @@ DATAS_169:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_17:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -8144,35 +6293,23 @@ DATAS_17:
 		dc.w $f8c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -8185,44 +6322,31 @@ DATAS_17:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4fff
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -8233,35 +6357,23 @@ DATAS_17:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -8274,44 +6386,31 @@ DATAS_17:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4fff
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -8322,39 +6421,25 @@ DATAS_17:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $01f1
 		dc.w $1f00
@@ -8363,76 +6448,53 @@ DATAS_17:
 		dc.w $0781
 		dc.w $03c0
 		dc.w $0f01
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1e01
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3fff
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1e00
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $0f00
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $0700
 		dc.w $01e0
 		dc.w $0380
 		dc.w $03e0
 		dc.w $01c0
 		dc.w $07c0
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_170:
 		dc.w $fffe
 		dc.w $fffe
@@ -8449,13 +6511,10 @@ DATAS_170:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_171:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
@@ -8472,8 +6531,7 @@ DATAS_171:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -8489,8 +6547,7 @@ DATAS_171:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -8506,8 +6563,7 @@ DATAS_171:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -8522,138 +6578,72 @@ DATAS_171:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_172:
 		dc.w $fffe
 		dc.w $fffe
@@ -8670,17 +6660,12 @@ DATAS_172:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_173:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -8695,10 +6680,8 @@ DATAS_173:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -8713,10 +6696,8 @@ DATAS_173:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -8731,8 +6712,7 @@ DATAS_173:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $e00c
@@ -8747,10 +6727,8 @@ DATAS_173:
 		dc.w $9830
 		dc.w $b018
 		dc.w $e00c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_174:
 		dc.w $fffe
 		dc.w $fffe
@@ -8767,16 +6745,12 @@ DATAS_174:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_175:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -8791,10 +6765,8 @@ DATAS_175:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -8809,10 +6781,8 @@ DATAS_175:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -8827,8 +6797,7 @@ DATAS_175:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $e00c
@@ -8843,12 +6812,9 @@ DATAS_175:
 		dc.w $9830
 		dc.w $b018
 		dc.w $e00c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -8862,12 +6828,9 @@ DATAS_175:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -8881,12 +6844,9 @@ DATAS_175:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -8900,12 +6860,9 @@ DATAS_175:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -8919,10 +6876,8 @@ DATAS_175:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_176:
 		dc.w $fffe
 		dc.w $fffe
@@ -8939,15 +6894,11 @@ DATAS_176:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_177:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -8963,8 +6914,7 @@ DATAS_177:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -8980,8 +6930,7 @@ DATAS_177:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -8997,39 +6946,23 @@ DATAS_177:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_178:
 		dc.w $fffe
 		dc.w $fffe
@@ -9046,13 +6979,10 @@ DATAS_178:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_179:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaea
 		dc.w $7ffc
@@ -9069,8 +6999,7 @@ DATAS_179:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -9086,8 +7015,7 @@ DATAS_179:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -9103,180 +7031,95 @@ DATAS_179:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_18:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $03ff
 		dc.w $ff80
@@ -9324,23 +7167,16 @@ DATAS_18:
 		dc.w $ffc0
 		dc.w $03ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_180:
 		dc.w $fffe
 		dc.w $fffe
@@ -9357,17 +7193,12 @@ DATAS_180:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_181:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -9382,10 +7213,8 @@ DATAS_181:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -9400,10 +7229,8 @@ DATAS_181:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -9418,10 +7245,8 @@ DATAS_181:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $1400
@@ -9432,17 +7257,13 @@ DATAS_181:
 		dc.w $22a2
 		dc.w $4540
 		dc.w $2280
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $08
+		dc.w $0004
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_182:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -9457,16 +7278,12 @@ DATAS_182:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_183:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -9481,10 +7298,8 @@ DATAS_183:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -9499,10 +7314,8 @@ DATAS_183:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1be8
@@ -9517,10 +7330,8 @@ DATAS_183:
 		dc.w $17d0
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $1410
@@ -9532,14 +7343,11 @@ DATAS_183:
 		dc.w $4540
 		dc.w $2280
 		dc.w $1004
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -9550,18 +7358,12 @@ DATAS_183:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -9572,18 +7374,12 @@ DATAS_183:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -9594,18 +7390,12 @@ DATAS_183:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -9616,19 +7406,13 @@ DATAS_183:
 		dc.w $02a0
 		dc.w $4140
 		dc.w $2080
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_184:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -9643,17 +7427,12 @@ DATAS_184:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_185:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
 		dc.w $0280
 		dc.w $0550
 		dc.w $0be8
@@ -9668,10 +7447,8 @@ DATAS_185:
 		dc.w $17d8
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0550
 		dc.w $0be8
@@ -9686,10 +7463,8 @@ DATAS_185:
 		dc.w $17d8
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0550
 		dc.w $0be8
@@ -9704,33 +7479,25 @@ DATAS_185:
 		dc.w $17d8
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
 		dc.w $2008
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0004
+		dc.w $0002
 		dc.w $4004
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4004
 		dc.w $2008
-		dc.b $00
-		dc.b $14
+		dc.w $0014
 		dc.w $0828
 		dc.w $0550
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_186:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -9745,16 +7512,12 @@ DATAS_186:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_187:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -9769,10 +7532,8 @@ DATAS_187:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -9787,10 +7548,8 @@ DATAS_187:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -9805,150 +7564,89 @@ DATAS_187:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0410
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
+		dc.w $0008
+		dc.w $0004
 		dc.w $2000
 		dc.w $4004
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4004
-		dc.b $00
-		dc.b $0a
-		dc.b $00
-		dc.b $04
+		dc.w $000a
+		dc.w $0004
 		dc.w $2008
 		dc.w $1050
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_188:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -9963,15 +7661,11 @@ DATAS_188:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_189:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -9987,8 +7681,7 @@ DATAS_189:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -10004,8 +7697,7 @@ DATAS_189:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -10021,8 +7713,7 @@ DATAS_189:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -10037,28 +7728,19 @@ DATAS_189:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_19:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -10083,26 +7765,19 @@ DATAS_19:
 		dc.w $4801
 		dc.w $8024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -10113,35 +7788,23 @@ DATAS_19:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -10166,26 +7829,19 @@ DATAS_19:
 		dc.w $4801
 		dc.w $8024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -10196,35 +7852,23 @@ DATAS_19:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -10249,26 +7893,19 @@ DATAS_19:
 		dc.w $4801
 		dc.w $8024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -10279,39 +7916,25 @@ DATAS_19:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $01f1
 		dc.w $1f00
@@ -10334,55 +7957,39 @@ DATAS_19:
 		dc.w $3801
 		dc.w $801c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1e00
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $0f00
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $0700
 		dc.w $01e0
 		dc.w $0380
 		dc.w $03e0
 		dc.w $01c0
 		dc.w $07c0
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_190:
 		dc.w $fffe
 		dc.w $fffe
@@ -10399,13 +8006,10 @@ DATAS_190:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_191:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
@@ -10422,8 +8026,7 @@ DATAS_191:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -10439,8 +8042,7 @@ DATAS_191:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -10456,8 +8058,7 @@ DATAS_191:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -10472,138 +8073,72 @@ DATAS_191:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_192:
 		dc.w $fffe
 		dc.w $fffe
@@ -10620,15 +8155,11 @@ DATAS_192:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_193:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -10644,8 +8175,7 @@ DATAS_193:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -10661,8 +8191,7 @@ DATAS_193:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -10678,8 +8207,7 @@ DATAS_193:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -10694,10 +8222,8 @@ DATAS_193:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_194:
 		dc.w $fffe
 		dc.w $fffe
@@ -10714,13 +8240,10 @@ DATAS_194:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_195:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
@@ -10737,8 +8260,7 @@ DATAS_195:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -10754,8 +8276,7 @@ DATAS_195:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -10771,8 +8292,7 @@ DATAS_195:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -10787,138 +8307,72 @@ DATAS_195:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_196:
 		dc.w $fffe
 		dc.w $fffe
@@ -10935,17 +8389,12 @@ DATAS_196:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_197:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -10960,10 +8409,8 @@ DATAS_197:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -10978,10 +8425,8 @@ DATAS_197:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -10996,39 +8441,23 @@ DATAS_197:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_198:
 		dc.w $fffe
 		dc.w $fffe
@@ -11045,16 +8474,12 @@ DATAS_198:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_199:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -11069,10 +8494,8 @@ DATAS_199:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -11087,10 +8510,8 @@ DATAS_199:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -11105,180 +8526,95 @@ DATAS_199:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_20:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $03ff
 		dc.w $ff80
@@ -11326,23 +8662,16 @@ DATAS_20:
 		dc.w $ffc0
 		dc.w $03ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_200:
 		dc.w $fffe
 		dc.w $fffe
@@ -11359,17 +8688,12 @@ DATAS_200:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_201:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -11384,10 +8708,8 @@ DATAS_201:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -11402,10 +8724,8 @@ DATAS_201:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -11420,8 +8740,7 @@ DATAS_201:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $e00c
@@ -11436,10 +8755,8 @@ DATAS_201:
 		dc.w $9830
 		dc.w $b018
 		dc.w $e00c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_202:
 		dc.w $fffe
 		dc.w $fffe
@@ -11456,16 +8773,12 @@ DATAS_202:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_203:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -11480,10 +8793,8 @@ DATAS_203:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -11498,10 +8809,8 @@ DATAS_203:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -11516,8 +8825,7 @@ DATAS_203:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $e00c
@@ -11532,12 +8840,9 @@ DATAS_203:
 		dc.w $9830
 		dc.w $b018
 		dc.w $e00c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -11551,12 +8856,9 @@ DATAS_203:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -11570,12 +8872,9 @@ DATAS_203:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -11589,12 +8888,9 @@ DATAS_203:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -11608,10 +8904,8 @@ DATAS_203:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_204:
 		dc.w $fffe
 		dc.w $fffe
@@ -11628,15 +8922,11 @@ DATAS_204:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_205:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -11652,8 +8942,7 @@ DATAS_205:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -11669,8 +8958,7 @@ DATAS_205:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -11686,39 +8974,23 @@ DATAS_205:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_206:
 		dc.w $fffe
 		dc.w $fffe
@@ -11735,13 +9007,10 @@ DATAS_206:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_207:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaea
 		dc.w $7ffc
@@ -11758,8 +9027,7 @@ DATAS_207:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -11775,8 +9043,7 @@ DATAS_207:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -11792,167 +9059,87 @@ DATAS_207:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_208:
 		dc.w $fffe
 		dc.w $fffe
@@ -11969,26 +9156,18 @@ DATAS_208:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_21:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -12036,35 +9215,23 @@ DATAS_21:
 		dc.w $f8c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -12077,42 +9244,31 @@ DATAS_21:
 		dc.w $1181
 		dc.w $0110
 		dc.w $2241
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2421
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2411
-		dc.b $00
-		dc.b 'HH',$09,0
-		dc.b $24
+		dc.w $0048
+		dc.w $4809
+		dc.w $0024
 		dc.w $4805
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4803
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -12123,35 +9279,23 @@ DATAS_21:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -12164,42 +9308,31 @@ DATAS_21:
 		dc.w $1181
 		dc.w $0110
 		dc.w $2241
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2421
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2411
-		dc.b $00
-		dc.b 'HH',$09,0
-		dc.b $24
+		dc.w $0048
+		dc.w $4809
+		dc.w $0024
 		dc.w $4805
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4803
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -12210,39 +9343,25 @@ DATAS_21:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $01f1
 		dc.w $1f00
@@ -12251,83 +9370,58 @@ DATAS_21:
 		dc.w $0781
 		dc.w $03c0
 		dc.w $0f81
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1e41
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1c21
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c11
-		dc.b $00
-		dc.b '88',$09,0
-		dc.b $1c
+		dc.w $0038
+		dc.w $3809
+		dc.w $001c
 		dc.w $3805
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3803
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1e00
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $0f00
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $0700
 		dc.w $01e0
 		dc.w $0380
 		dc.w $03e0
 		dc.w $01c0
 		dc.w $07c0
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_213:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -12342,10 +9436,8 @@ DATAS_213:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -12360,10 +9452,8 @@ DATAS_213:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -12378,8 +9468,7 @@ DATAS_213:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $e00c
@@ -12394,10 +9483,8 @@ DATAS_213:
 		dc.w $9830
 		dc.w $b018
 		dc.w $e00c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_214:
 		dc.w $fffe
 		dc.w $fffe
@@ -12414,16 +9501,12 @@ DATAS_214:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_215:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -12438,10 +9521,8 @@ DATAS_215:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -12456,10 +9537,8 @@ DATAS_215:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -12474,8 +9553,7 @@ DATAS_215:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $e00c
@@ -12490,12 +9568,9 @@ DATAS_215:
 		dc.w $9830
 		dc.w $b018
 		dc.w $e00c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -12509,12 +9584,9 @@ DATAS_215:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -12528,12 +9600,9 @@ DATAS_215:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -12547,12 +9616,9 @@ DATAS_215:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -12566,10 +9632,8 @@ DATAS_215:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_216:
 		dc.w $fffe
 		dc.w $fffe
@@ -12586,15 +9650,11 @@ DATAS_216:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_217:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -12610,8 +9670,7 @@ DATAS_217:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -12627,8 +9686,7 @@ DATAS_217:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -12644,8 +9702,7 @@ DATAS_217:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -12660,10 +9717,8 @@ DATAS_217:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_218:
 		dc.w $fffe
 		dc.w $fffe
@@ -12680,13 +9735,10 @@ DATAS_218:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_219:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
@@ -12703,8 +9755,7 @@ DATAS_219:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -12720,8 +9771,7 @@ DATAS_219:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -12737,8 +9787,7 @@ DATAS_219:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -12753,151 +9802,80 @@ DATAS_219:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_22:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $03ff
 		dc.w $ff80
@@ -12945,23 +9923,16 @@ DATAS_22:
 		dc.w $ffc0
 		dc.w $03ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_220:
 		dc.w $fffe
 		dc.w $fffe
@@ -12978,26 +9949,18 @@ DATAS_220:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_23:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -13045,35 +10008,23 @@ DATAS_23:
 		dc.w $f8c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -13086,44 +10037,31 @@ DATAS_23:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -13134,35 +10072,23 @@ DATAS_23:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -13175,44 +10101,31 @@ DATAS_23:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -13223,39 +10136,25 @@ DATAS_23:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $01f1
 		dc.w $1f00
@@ -13264,89 +10163,61 @@ DATAS_23:
 		dc.w $0781
 		dc.w $03c0
 		dc.w $0f01
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1e01
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1e00
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $0f00
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $0700
 		dc.w $01e0
 		dc.w $0380
 		dc.w $03e0
 		dc.w $01c0
 		dc.w $07c0
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_24:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $03ff
 		dc.w $ff80
@@ -13394,34 +10265,22 @@ DATAS_24:
 		dc.w $ffc0
 		dc.w $03ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_25:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -13436,10 +10295,8 @@ DATAS_25:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -13454,10 +10311,8 @@ DATAS_25:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -13472,25 +10327,24 @@ DATAS_25:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7ffe
 		dc.w $6002
 		dc.w $7006
 		dc.w $580c
 		dc.w $4c18
-		dc.b 'F0C`A'
-		dc.b $c0
+		dc.w $4630
+		dc.w $4360
 		dc.w $41c0
-		dc.b 'C`F0L'
-		dc.b $18
+		dc.w $41c0
+		dc.w $4360
+		dc.w $4630
+		dc.w $4c18
 		dc.w $580c
 		dc.w $7006
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_26:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -13507,23 +10361,16 @@ DATAS_26:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_27:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -13536,44 +10383,31 @@ DATAS_27:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -13584,35 +10418,23 @@ DATAS_27:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -13625,44 +10447,31 @@ DATAS_27:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -13673,35 +10482,23 @@ DATAS_27:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -13714,44 +10511,31 @@ DATAS_27:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -13762,39 +10546,25 @@ DATAS_27:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $01f1
 		dc.w $1f00
@@ -13803,89 +10573,61 @@ DATAS_27:
 		dc.w $0781
 		dc.w $03c0
 		dc.w $0f01
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1e01
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1e00
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $0f00
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $0700
 		dc.w $01e0
 		dc.w $0380
 		dc.w $03e0
 		dc.w $01c0
 		dc.w $07c0
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_28:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $03ff
 		dc.w $ff80
@@ -13933,41 +10675,27 @@ DATAS_28:
 		dc.w $ffc0
 		dc.w $03ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_29:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -13994,23 +10722,17 @@ DATAS_29:
 		dc.w $4801
 		dc.w $ffe4
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -14021,35 +10743,23 @@ DATAS_29:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -14062,43 +10772,31 @@ DATAS_29:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
 		dc.w $ffe4
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -14109,35 +10807,23 @@ DATAS_29:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
 		dc.w $030f
 		dc.w $e180
@@ -14150,43 +10836,31 @@ DATAS_29:
 		dc.w $1101
 		dc.w $0110
 		dc.w $2201
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2401
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4801
 		dc.w $ffe4
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $4800
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2400
-		dc.b $00
-		dc.b $48
+		dc.w $0048
 		dc.w $2200
-		dc.b $00
-		dc.b $88
+		dc.w $0088
 		dc.w $1100
 		dc.w $0110
 		dc.w $0880
@@ -14197,39 +10871,25 @@ DATAS_29:
 		dc.w $18c0
 		dc.w $030f
 		dc.w $e180
-		dc.b $00
-		dc.b $80
+		dc.w $0080
 		dc.w $0200
-		dc.b $00
-		dc.b $70
+		dc.w $0070
 		dc.w $1c00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $01f1
 		dc.w $1f00
@@ -14238,88 +10898,61 @@ DATAS_29:
 		dc.w $0781
 		dc.w $03c0
 		dc.w $0f01
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1e01
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c01
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3801
 		dc.w $ffdc
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1c00
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $1e00
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $0f00
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $0700
 		dc.w $01e0
 		dc.w $0380
 		dc.w $03e0
 		dc.w $01c0
 		dc.w $07c0
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_30:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
 		dc.w $03ff
 		dc.w $ff80
@@ -14367,98 +11000,66 @@ DATAS_30:
 		dc.w $ffc0
 		dc.w $03ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_31:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0388
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4a00
@@ -14467,79 +11068,54 @@ DATAS_31:
 		dc.w $4092
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4a00
@@ -14548,79 +11124,54 @@ DATAS_31:
 		dc.w $4092
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4a00
@@ -14629,18 +11180,12 @@ DATAS_31:
 		dc.w $4092
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4fff
@@ -14650,56 +11195,39 @@ DATAS_31:
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4e00
@@ -14708,79 +11236,54 @@ DATAS_31:
 		dc.w $7f92
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4a00
@@ -14789,79 +11292,54 @@ DATAS_31:
 		dc.w $4092
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4a00
@@ -14870,79 +11348,54 @@ DATAS_31:
 		dc.w $4092
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4a00
@@ -14951,79 +11404,54 @@ DATAS_31:
 		dc.w $4092
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $1e
+		dc.w $001e
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $4000
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4a00
@@ -15032,19 +11460,13 @@ DATAS_31:
 		dc.w $4092
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_32:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $7fff
@@ -15095,21 +11517,14 @@ DATAS_32:
 		dc.w $fffe
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_33:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -15124,10 +11539,8 @@ DATAS_33:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -15142,10 +11555,8 @@ DATAS_33:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -15160,40 +11571,24 @@ DATAS_33:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
 		dc.w $3fff
 DATAS_34:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -15210,13 +11605,10 @@ DATAS_34:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_35:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $010e
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -15231,10 +11623,8 @@ DATAS_35:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -15249,10 +11639,8 @@ DATAS_35:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -15267,8 +11655,7 @@ DATAS_35:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $a008
@@ -15283,138 +11670,72 @@ DATAS_35:
 		dc.w $9010
 		dc.w $a008
 		dc.w $c004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_36:
 		dc.w $fffe
 		dc.w $fffe
@@ -15431,19 +11752,13 @@ DATAS_36:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_37:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -15458,10 +11773,8 @@ DATAS_37:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -15476,10 +11789,8 @@ DATAS_37:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -15494,40 +11805,24 @@ DATAS_37:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
 		dc.w $3fff
 DATAS_38:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -15544,10 +11839,8 @@ DATAS_38:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_39:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $5556
 		dc.w $fffe
@@ -15564,8 +11857,7 @@ DATAS_39:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $d554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5556
 		dc.w $fffe
 		dc.w $7ffc
@@ -15581,8 +11873,7 @@ DATAS_39:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $d554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5556
 		dc.w $fffe
 		dc.w $7ffc
@@ -15598,167 +11889,87 @@ DATAS_39:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $d554
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
 		dc.w $2aaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_40:
 		dc.w $fffe
 		dc.w $fffe
@@ -15775,19 +11986,13 @@ DATAS_40:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_41:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -15802,10 +12007,8 @@ DATAS_41:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -15820,10 +12023,8 @@ DATAS_41:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -15838,40 +12039,24 @@ DATAS_41:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
 		dc.w $3fff
 DATAS_42:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -15888,13 +12073,10 @@ DATAS_42:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_43:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -15909,10 +12091,8 @@ DATAS_43:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -15927,10 +12107,8 @@ DATAS_43:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -15945,167 +12123,87 @@ DATAS_43:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_44:
 		dc.w $fffe
 		dc.w $fffe
@@ -16122,16 +12220,12 @@ DATAS_44:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_45:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -16146,10 +12240,8 @@ DATAS_45:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -16164,10 +12256,8 @@ DATAS_45:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -16182,8 +12272,7 @@ DATAS_45:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $a008
@@ -16198,138 +12287,72 @@ DATAS_45:
 		dc.w $9010
 		dc.w $a008
 		dc.w $c004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_46:
 		dc.w $fffe
 		dc.w $fffe
@@ -16346,19 +12369,13 @@ DATAS_46:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_47:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -16373,10 +12390,8 @@ DATAS_47:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -16391,10 +12406,8 @@ DATAS_47:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -16409,25 +12422,24 @@ DATAS_47:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7ffe
 		dc.w $6002
 		dc.w $7006
 		dc.w $580c
 		dc.w $4c18
-		dc.b 'F0C`A'
-		dc.b $c0
+		dc.w $4630
+		dc.w $4360
 		dc.w $41c0
-		dc.b 'C`F0L'
-		dc.b $18
+		dc.w $41c0
+		dc.w $4360
+		dc.w $4630
+		dc.w $4c18
 		dc.w $580c
 		dc.w $7006
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_48:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -16444,13 +12456,10 @@ DATAS_48:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_49:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $010e
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -16465,10 +12474,8 @@ DATAS_49:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -16483,10 +12490,8 @@ DATAS_49:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -16501,8 +12506,7 @@ DATAS_49:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $a008
@@ -16517,138 +12521,72 @@ DATAS_49:
 		dc.w $9010
 		dc.w $a008
 		dc.w $c004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_50:
 		dc.w $fffe
 		dc.w $fffe
@@ -16665,13 +12603,10 @@ DATAS_50:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_51:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $5556
 		dc.w $fffe
@@ -16688,8 +12623,7 @@ DATAS_51:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $d554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5556
 		dc.w $fffe
 		dc.w $7ffc
@@ -16705,8 +12639,7 @@ DATAS_51:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $d554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5556
 		dc.w $fffe
 		dc.w $7ffc
@@ -16722,167 +12655,87 @@ DATAS_51:
 		dc.w $7ffc
 		dc.w $fffe
 		dc.w $d554
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
 		dc.w $2aaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_52:
 		dc.w $fffe
 		dc.w $fffe
@@ -16899,19 +12752,13 @@ DATAS_52:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_53:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -16926,10 +12773,8 @@ DATAS_53:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -16944,10 +12789,8 @@ DATAS_53:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -16962,25 +12805,24 @@ DATAS_53:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7ffe
 		dc.w $6002
 		dc.w $7006
 		dc.w $580c
 		dc.w $4c18
-		dc.b 'F0C`A'
-		dc.b $c0
+		dc.w $4630
+		dc.w $4360
 		dc.w $41c0
-		dc.b 'C`F0L'
-		dc.b $18
+		dc.w $41c0
+		dc.w $4360
+		dc.w $4630
+		dc.w $4c18
 		dc.w $580c
 		dc.w $7006
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_54:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -16997,13 +12839,10 @@ DATAS_54:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_55:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -17018,10 +12857,8 @@ DATAS_55:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -17036,10 +12873,8 @@ DATAS_55:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -17054,8 +12889,7 @@ DATAS_55:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $e00c
@@ -17070,12 +12904,9 @@ DATAS_55:
 		dc.w $9830
 		dc.w $b018
 		dc.w $e00c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -17089,12 +12920,9 @@ DATAS_55:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -17108,12 +12936,9 @@ DATAS_55:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -17127,12 +12952,9 @@ DATAS_55:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -17146,10 +12968,8 @@ DATAS_55:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_56:
 		dc.w $fffe
 		dc.w $fffe
@@ -17166,16 +12986,12 @@ DATAS_56:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_57:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $010e
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -17190,10 +13006,8 @@ DATAS_57:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -17208,10 +13022,8 @@ DATAS_57:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0140
 		dc.w $0aa0
 		dc.w $15f8
@@ -17226,150 +13038,89 @@ DATAS_57:
 		dc.w $1fa8
 		dc.w $0d70
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0280
 		dc.w $0410
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
+		dc.w $0008
+		dc.w $0004
 		dc.w $2000
 		dc.w $4004
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4004
-		dc.b $00
-		dc.b $0a
-		dc.b $00
-		dc.b $04
+		dc.w $000a
+		dc.w $0004
 		dc.w $2008
 		dc.w $1050
 		dc.w $0aa0
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0008
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0004
+		dc.w $0000
 		dc.w $1000
 		dc.w $0820
 		dc.w $0140
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_58:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -17384,17 +13135,12 @@ DATAS_58:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_59:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -17407,14 +13153,10 @@ DATAS_59:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -17427,14 +13169,10 @@ DATAS_59:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $11f8
@@ -17447,14 +13185,10 @@ DATAS_59:
 		dc.w $3db0
 		dc.w $3fe0
 		dc.w $1780
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1e08
@@ -17469,11 +13203,9 @@ DATAS_59:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_60:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -17488,19 +13220,13 @@ DATAS_60:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_61:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -17515,10 +13241,8 @@ DATAS_61:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -17533,10 +13257,8 @@ DATAS_61:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -17551,25 +13273,24 @@ DATAS_61:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7ffe
 		dc.w $6002
 		dc.w $7006
 		dc.w $580c
 		dc.w $4c18
-		dc.b 'F0C`A'
-		dc.b $c0
+		dc.w $4630
+		dc.w $4360
 		dc.w $41c0
-		dc.b 'C`F0L'
-		dc.b $18
+		dc.w $41c0
+		dc.w $4360
+		dc.w $4630
+		dc.w $4c18
 		dc.w $580c
 		dc.w $7006
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_62:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -17586,13 +13307,10 @@ DATAS_62:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_63:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -17607,10 +13325,8 @@ DATAS_63:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -17625,10 +13341,8 @@ DATAS_63:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -17643,8 +13357,7 @@ DATAS_63:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $a008
@@ -17659,134 +13372,72 @@ DATAS_63:
 		dc.w $9010
 		dc.w $a008
 		dc.w $c004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0100
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0100
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0100
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $0100
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_64:
 		dc.w $fffe
 		dc.w $fffe
@@ -17803,19 +13454,13 @@ DATAS_64:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_65:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -17830,10 +13475,8 @@ DATAS_65:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -17848,10 +13491,8 @@ DATAS_65:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -17866,25 +13507,24 @@ DATAS_65:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7ffe
 		dc.w $6002
 		dc.w $7006
 		dc.w $580c
 		dc.w $4c18
-		dc.b 'F0C`A'
-		dc.b $c0
+		dc.w $4630
+		dc.w $4360
 		dc.w $41c0
-		dc.b 'C`F0L'
-		dc.b $18
+		dc.w $41c0
+		dc.w $4360
+		dc.w $4630
+		dc.w $4c18
 		dc.w $580c
 		dc.w $7006
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_66:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -17901,13 +13541,10 @@ DATAS_66:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_67:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -17922,10 +13559,8 @@ DATAS_67:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -17940,10 +13575,8 @@ DATAS_67:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $3ff8
 		dc.w $5ff4
 		dc.w $6fec
@@ -17958,8 +13591,7 @@ DATAS_67:
 		dc.w $5ff4
 		dc.w $3ff8
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $a008
@@ -17974,138 +13606,72 @@ DATAS_67:
 		dc.w $9010
 		dc.w $a008
 		dc.w $c004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_68:
 		dc.w $fffe
 		dc.w $fffe
@@ -18122,19 +13688,13 @@ DATAS_68:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_69:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -18149,10 +13709,8 @@ DATAS_69:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -18167,10 +13725,8 @@ DATAS_69:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -18185,40 +13741,24 @@ DATAS_69:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
 		dc.w $3fff
 DATAS_70:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -18235,10 +13775,8 @@ DATAS_70:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_71:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaea
 		dc.w $7ffc
@@ -18255,8 +13793,7 @@ DATAS_71:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -18272,8 +13809,7 @@ DATAS_71:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -18289,167 +13825,87 @@ DATAS_71:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_72:
 		dc.w $fffe
 		dc.w $fffe
@@ -18466,19 +13922,13 @@ DATAS_72:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_73:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -18493,10 +13943,8 @@ DATAS_73:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -18511,10 +13959,8 @@ DATAS_73:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $3ffe
@@ -18529,40 +13975,24 @@ DATAS_73:
 		dc.w $3ffe
 		dc.w $3ffe
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
+		dc.w $0001
 		dc.w $3fff
 DATAS_74:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -18579,13 +14009,10 @@ DATAS_74:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_75:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $010e
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -18600,10 +14027,8 @@ DATAS_75:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -18618,10 +14043,8 @@ DATAS_75:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -18636,167 +14059,87 @@ DATAS_75:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_76:
 		dc.w $fffe
 		dc.w $fffe
@@ -18813,19 +14156,13 @@ DATAS_76:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_77:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -18840,10 +14177,8 @@ DATAS_77:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -18858,10 +14193,8 @@ DATAS_77:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $01
+		dc.w $0000
+		dc.w $0001
 		dc.w $3ffe
 		dc.w $1ffc
 		dc.w $2ffa
@@ -18876,25 +14209,24 @@ DATAS_77:
 		dc.w $37f6
 		dc.w $2ffa
 		dc.w $4000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7ffe
 		dc.w $6002
 		dc.w $7006
 		dc.w $580c
 		dc.w $4c18
-		dc.b 'F0C`A'
-		dc.b $c0
+		dc.w $4630
+		dc.w $4360
 		dc.w $41c0
-		dc.b 'C`F0L'
-		dc.b $18
+		dc.w $41c0
+		dc.w $4360
+		dc.w $4630
+		dc.w $4c18
 		dc.w $580c
 		dc.w $7006
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_78:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $7fff
 		dc.w $7fff
 		dc.w $7fff
@@ -18911,10 +14243,8 @@ DATAS_78:
 		dc.w $7fff
 		dc.w $7fff
 DATAS_79:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
@@ -18931,8 +14261,7 @@ DATAS_79:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -18948,8 +14277,7 @@ DATAS_79:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -18965,8 +14293,7 @@ DATAS_79:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -18981,138 +14308,72 @@ DATAS_79:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_80:
 		dc.w $fffe
 		dc.w $fffe
@@ -19129,15 +14390,11 @@ DATAS_80:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_81:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $90
+		dc.w $0000
+		dc.w $0000
+		dc.w $0090
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -19153,8 +14410,7 @@ DATAS_81:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -19170,8 +14426,7 @@ DATAS_81:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -19187,8 +14442,7 @@ DATAS_81:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -19203,10 +14457,8 @@ DATAS_81:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_82:
 		dc.w $fffe
 		dc.w $fffe
@@ -19223,13 +14475,10 @@ DATAS_82:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_83:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
@@ -19246,8 +14495,7 @@ DATAS_83:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -19263,8 +14511,7 @@ DATAS_83:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -19280,8 +14527,7 @@ DATAS_83:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -19296,138 +14542,72 @@ DATAS_83:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_84:
 		dc.w $fffe
 		dc.w $fffe
@@ -19444,17 +14624,12 @@ DATAS_84:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_85:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $8e
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $008e
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -19469,10 +14644,8 @@ DATAS_85:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -19487,10 +14660,8 @@ DATAS_85:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -19505,39 +14676,23 @@ DATAS_85:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_86:
 		dc.w $fffe
 		dc.w $fffe
@@ -19554,16 +14709,12 @@ DATAS_86:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_87:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -19578,10 +14729,8 @@ DATAS_87:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -19596,10 +14745,8 @@ DATAS_87:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $7ffc
@@ -19614,167 +14761,87 @@ DATAS_87:
 		dc.w $7ffc
 		dc.w $7ffc
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
+		dc.w $0002
 		dc.w $7ffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_88:
 		dc.w $fffe
 		dc.w $fffe
@@ -19791,17 +14858,12 @@ DATAS_88:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_89:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -19816,10 +14878,8 @@ DATAS_89:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -19834,10 +14894,8 @@ DATAS_89:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -19852,8 +14910,7 @@ DATAS_89:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $e00c
@@ -19868,10 +14925,8 @@ DATAS_89:
 		dc.w $9830
 		dc.w $b018
 		dc.w $e00c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_90:
 		dc.w $fffe
 		dc.w $fffe
@@ -19888,16 +14943,12 @@ DATAS_90:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_91:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -19912,10 +14963,8 @@ DATAS_91:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -19930,10 +14979,8 @@ DATAS_91:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0002
 		dc.w $7ffc
 		dc.w $3ff8
 		dc.w $5ff4
@@ -19948,8 +14995,7 @@ DATAS_91:
 		dc.w $6fec
 		dc.w $5ff4
 		dc.w $8000
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $fffc
 		dc.w $c004
 		dc.w $e00c
@@ -19964,12 +15010,9 @@ DATAS_91:
 		dc.w $9830
 		dc.w $b018
 		dc.w $e00c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -19983,12 +15026,9 @@ DATAS_91:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -20002,12 +15042,9 @@ DATAS_91:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -20021,12 +15058,9 @@ DATAS_91:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $4004
 		dc.w $2008
 		dc.w $1010
@@ -20040,10 +15074,8 @@ DATAS_91:
 		dc.w $1010
 		dc.w $2008
 		dc.w $4004
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_92:
 		dc.w $fffe
 		dc.w $fffe
@@ -20060,15 +15092,11 @@ DATAS_92:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_93:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -20084,8 +15112,7 @@ DATAS_93:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -20101,8 +15128,7 @@ DATAS_93:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -20118,8 +15144,7 @@ DATAS_93:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -20134,10 +15159,8 @@ DATAS_93:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 DATAS_94:
 		dc.w $fffe
 		dc.w $fffe
@@ -20154,13 +15177,10 @@ DATAS_94:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_95:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaaa
 		dc.w $7ffc
@@ -20177,8 +15197,7 @@ DATAS_95:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -20194,8 +15213,7 @@ DATAS_95:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $bffa
@@ -20211,8 +15229,7 @@ DATAS_95:
 		dc.w $efee
 		dc.w $5ff4
 		dc.w $a2aa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $5554
 		dc.w $8000
 		dc.w $4004
@@ -20227,138 +15244,72 @@ DATAS_95:
 		dc.w $8820
 		dc.w $1010
 		dc.w $a008
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 DATAS_96:
 		dc.w $fffe
 		dc.w $fffe
@@ -20375,15 +15326,11 @@ DATAS_96:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_97:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $88
+		dc.w $0000
+		dc.w $0000
+		dc.w $0088
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -20399,8 +15346,7 @@ DATAS_97:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -20416,8 +15362,7 @@ DATAS_97:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaaa
 		dc.w $7ffc
 		dc.w $fffe
@@ -20433,39 +15378,23 @@ DATAS_97:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_98:
 		dc.w $fffe
 		dc.w $fffe
@@ -20482,13 +15411,10 @@ DATAS_98:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 DATAS_99:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $0108
 		dc.w $aaea
 		dc.w $7ffc
@@ -20505,8 +15431,7 @@ DATAS_99:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -20522,8 +15447,7 @@ DATAS_99:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $aaea
 		dc.w $7ffc
 		dc.w $fffe
@@ -20539,428 +15463,243 @@ DATAS_99:
 		dc.w $fffe
 		dc.w $7ffc
 		dc.w $aaaa
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
+		dc.w $0000
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
+		dc.w $0000
+		dc.w $0002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 TEDINFO_02:
 		dc.l TEXT_01
 		dc.l NULL_STRING
 		dc.l NULL_STRING
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $00
+		dc.w $0003
+		dc.w $0006
+		dc.w $0000
 		dc.w $1180
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $01
+		dc.w $001f
+		dc.w $0001
 A_3DBUTTON01:
 		dc.l A_3Dbutton
 		dc.w $2041
 		dc.w $9178
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON02:
 		dc.l A_3Dbutton
 		dc.w $29f1
 		dc.w $01f8
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON03:
 		dc.l A_3Dbutton
 		dc.w $29c1
 		dc.w $0178
 		dc.l Auo_string
 		dc.l TEXT_08
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON04:
 		dc.l A_3Dbutton
 		dc.w $29f1
 		dc.w $9178
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_3DBUTTON11:
 		dc.l A_3Dbutton
 		dc.w $2021
 		dc.w $9178
 		dc.l Auo_string
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_TITLE01:
 		dc.l A_title
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0004
 		dc.l Auo_string
 		dc.l TEXT_03
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_TITLE02:
 		dc.l A_title
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0004
 		dc.l Auo_string
 		dc.l TEXT_10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_TITLE03:
 		dc.l A_title
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0004
 		dc.l Auo_string
 		dc.l TEXT_09
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_TITLE04:
 		dc.l A_title
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0004
 		dc.l Auo_string
 		dc.l TEXT_02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 A_TITLE05:
 		dc.l A_title
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $04
+		dc.w $0000
+		dc.w $0004
 		dc.l Auo_string
 		dc.l TEXT_15
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		.globl _MSK__CHK_1D_DS
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__CHK_1D_DS:
 		dc.w $fffe
 		dc.w $fffe
@@ -20977,62 +15716,42 @@ _MSK__CHK_1D_DS:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__CHK_1D_DS:
 		dc.w $5554
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _CHK_1D_DS
 _CHK_1D_DS:
 		dc.l _MSK__CHK_1D_DS
 		dc.l _DAT__CHK_1D_DS
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0002
+		dc.w $0002
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__CHK_1D_DU:
 		dc.w $fffe
 		dc.w $fffe
@@ -21049,62 +15768,42 @@ _MSK__CHK_1D_DU:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__CHK_1D_DU:
 		dc.w $5554
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $8002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _CHK_1D_DU
 _CHK_1D_DU:
 		dc.l _MSK__CHK_1D_DU
 		dc.l _DAT__CHK_1D_DU
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0002
+		dc.w $0002
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__CHK_1D_S:
 		dc.w $fffe
 		dc.w $fffe
@@ -21121,8 +15820,7 @@ _MSK__CHK_1D_S:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__CHK_1D_S:
 		dc.w $fffe
 		dc.w $c006
@@ -21139,39 +15837,25 @@ _DAT__CHK_1D_S:
 		dc.w $a00a
 		dc.w $c006
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _CHK_1D_S
 _CHK_1D_S:
 		dc.l _MSK__CHK_1D_S
 		dc.l _DAT__CHK_1D_S
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		.globl _MSK__CHK_1D_U
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0002
+		dc.w $0002
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__CHK_1D_U:
 		dc.w $fffe
 		dc.w $fffe
@@ -21188,8 +15872,7 @@ _MSK__CHK_1D_U:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__CHK_1D_U:
 		dc.w $fffe
 		dc.w $8002
@@ -21206,68 +15889,43 @@ _DAT__CHK_1D_U:
 		dc.w $8002
 		dc.w $8002
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _CHK_1D_U
 _CHK_1D_U:
 		dc.l _MSK__CHK_1D_U
 		dc.l _DAT__CHK_1D_U
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0002
+		dc.w $0002
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C8__CHK_3D_DS:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.l DATAS_219+6
 		dc.l DATAS_220
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__CHK_3D_DS:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_217+6
 		dc.l DATAS_218
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l _C8__CHK_3D_DS
 _MSK__CHK_3D_DS:
 		dc.w $fffe
@@ -21285,81 +15943,59 @@ _MSK__CHK_3D_DS:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__CHK_3D_DS:
 		dc.w $5554
 		dc.w $aaaa
 		dc.w $4000
 		dc.w $9012
-		dc.b 'H „BB'
-		dc.b $80
+		dc.w $4820
+		dc.w $8442
+		dc.w $4280
 		dc.w $8102
 		dc.w $4280
-		dc.b '„BH '
+		dc.w $8442
+		dc.w $4820
 		dc.w $9012
 		dc.w $4000
 		dc.w $8002
 		dc.w $5554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _CHK_3D_DS
 _CHK_3D_DS:
 		dc.l _MSK__CHK_3D_DS
 		dc.l _DAT__CHK_3D_DS
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0002
+		dc.w $0002
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__CHK_3D_DS
 _C8__CHK_3D_DU:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.l DATAS_207+6
 		dc.l DATAS_208
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__CHK_3D_DU:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_205+6
 		dc.l DATAS_206
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l _C8__CHK_3D_DU
 _MSK__CHK_3D_DU:
 		dc.w $fffe
@@ -21377,89 +16013,59 @@ _MSK__CHK_3D_DU:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__CHK_3D_DU:
 		dc.w $5554
 		dc.w $8002
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.w $8002
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.w $8002
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.w $8002
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.w $8002
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.w $8002
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.w $aaaa
 		dc.w $5554
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _CHK_3D_DU
 _CHK_3D_DU:
 		dc.l _MSK__CHK_3D_DU
 		dc.l _DAT__CHK_3D_DU
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0002
+		dc.w $0002
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__CHK_3D_DU
 _C8__CHK_3D_S:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.l DATAS_215+6
 		dc.l DATAS_216
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__CHK_3D_S:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_213+6
 		dc.l DATAS_214
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l _C8__CHK_3D_S
 _MSK__CHK_3D_S:
 		dc.w $fffe
@@ -21477,8 +16083,7 @@ _MSK__CHK_3D_S:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__CHK_3D_S:
 		dc.w $fffe
 		dc.w $fffa
@@ -21495,65 +16100,42 @@ _DAT__CHK_3D_S:
 		dc.w $d012
 		dc.w $8002
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _CHK_3D_S
 _CHK_3D_S:
 		dc.l _MSK__CHK_3D_S
 		dc.l _DAT__CHK_3D_S
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0002
+		dc.w $0002
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__CHK_3D_S
 _C8__CHK_3D_U:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.l DATAS_199+6
 		dc.l DATAS_200
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__CHK_3D_U:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_197+6
 		dc.l DATAS_198
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l _C8__CHK_3D_U
 _MSK__CHK_3D_U:
 		dc.w $fffe
@@ -21571,8 +16153,7 @@ _MSK__CHK_3D_U:
 		dc.w $fffe
 		dc.w $fffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__CHK_3D_U:
 		dc.w $fffe
 		dc.w $8002
@@ -21589,57 +16170,38 @@ _DAT__CHK_3D_U:
 		dc.w $8006
 		dc.w $bffe
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _CHK_3D_U
 _CHK_3D_U:
 		dc.l _MSK__CHK_3D_U
 		dc.l _DAT__CHK_3D_U
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0002
+		dc.w $0002
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__CHK_3D_U
-		.globl _MSK__IM_EXCLAM
 _MSK__IM_EXCLAM:
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $c000
-		dc.b $00
-		dc.b $07
+		dc.w $0007
 		dc.w $e000
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $f000
-		dc.b $00
-		dc.b $1f
+		dc.w $001f
 		dc.w $f800
-		dc.b $00
-		dc.b $3f
+		dc.w $003f
 		dc.w $fc00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fe00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $ff00
 		dc.w $01ff
 		dc.w $ff80
@@ -21677,48 +16239,34 @@ _MSK__IM_EXCLAM:
 		dc.w $ffc0
 		dc.w $01ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fe00
-		dc.b $00
-		dc.b $3f
+		dc.w $003f
 		dc.w $fc00
-		dc.b $00
-		dc.b $1f
+		dc.w $001f
 		dc.w $f800
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $f000
-		dc.b $00
-		dc.b $07
+		dc.w $0007
 		dc.w $e000
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $c000
 _DAT__IM_EXCLAM:
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $c000
-		dc.b $00
-		dc.b $06
+		dc.w $0006
 		dc.w $6000
-		dc.b $00
-		dc.b $0d
+		dc.w $000d
 		dc.w $b000
-		dc.b $00
-		dc.b $1b
+		dc.w $001b
 		dc.w $d800
-		dc.b $00
-		dc.b $37
+		dc.w $0037
 		dc.w $ec00
-		dc.b $00
-		dc.b $6f
+		dc.w $006f
 		dc.w $f600
-		dc.b $00
-		dc.b $df
+		dc.w $00df
 		dc.w $fb00
 		dc.w $01bc
 		dc.w $3d80
@@ -21756,57 +16304,37 @@ _DAT__IM_EXCLAM:
 		dc.w $3ec0
 		dc.w $01bc
 		dc.w $3d80
-		dc.b $00
-		dc.b $dc
+		dc.w $00dc
 		dc.w $3b00
-		dc.b $00
-		dc.b $6f
+		dc.w $006f
 		dc.w $f600
-		dc.b $00
-		dc.b $37
+		dc.w $0037
 		dc.w $ec00
-		dc.b $00
-		dc.b $1b
+		dc.w $001b
 		dc.w $d800
-		dc.b $00
-		dc.b $0d
+		dc.w $000d
 		dc.w $b000
-		dc.b $00
-		dc.b $06
+		dc.w $0006
 		dc.w $6000
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $c000
 _IM_EXCLAM:
 		dc.l _MSK__IM_EXCLAM
 		dc.l _DAT__IM_EXCLAM
 		dc.l NULL_STRING
 		dc.w $4000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		.globl _MSK__IM_QUEST
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_QUEST:
 		dc.w $3fff
 		dc.w $fffc
@@ -21846,51 +16374,37 @@ _MSK__IM_QUEST:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fe00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fe00
-		dc.b $00
-		dc.b $3f
+		dc.w $003f
 		dc.w $fc00
-		dc.b $00
-		dc.b $3f
+		dc.w $003f
 		dc.w $fc00
-		dc.b $00
-		dc.b $1f
+		dc.w $001f
 		dc.w $f800
-		dc.b $00
-		dc.b $1f
+		dc.w $001f
 		dc.w $f800
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $f000
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $f000
-		dc.b $00
-		dc.b $07
+		dc.w $0007
 		dc.w $e000
-		dc.b $00
-		dc.b $07
+		dc.w $0007
 		dc.w $e000
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $c000
 _DAT__IM_QUEST:
 		dc.w $3fff
 		dc.w $fffc
 		dc.w $c000
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $9fff
 		dc.w $fff9
 		dc.w $bfff
@@ -21925,81 +16439,53 @@ _DAT__IM_QUEST:
 		dc.w $3e80
 		dc.w $01bf
 		dc.w $fd80
-		dc.b $00
-		dc.b $bf
+		dc.w $00bf
 		dc.w $fd00
-		dc.b $00
-		dc.b $dc
+		dc.w $00dc
 		dc.w $3b00
-		dc.b $00
-		dc.b $5c
+		dc.w $005c
 		dc.w $3a00
-		dc.b $00
-		dc.b $6c
+		dc.w $006c
 		dc.w $3600
-		dc.b $00
-		dc.b $2f
+		dc.w $002f
 		dc.w $f400
-		dc.b $00
-		dc.b $37
+		dc.w $0037
 		dc.w $ec00
-		dc.b $00
-		dc.b $17
+		dc.w $0017
 		dc.w $e800
-		dc.b $00
-		dc.b $1b
+		dc.w $001b
 		dc.w $d800
-		dc.b $00
-		dc.b $0b
+		dc.w $000b
 		dc.w $d000
-		dc.b $00
-		dc.b $0d
+		dc.w $000d
 		dc.w $b000
-		dc.b $00
-		dc.b $05
+		dc.w $0005
 		dc.w $a000
-		dc.b $00
-		dc.b $06
+		dc.w $0006
 		dc.w $6000
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $c000
 _IM_QUEST:
 		dc.l _MSK__IM_QUEST
 		dc.l _DAT__IM_QUEST
 		dc.l NULL_STRING
 		dc.w $3000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		.globl _MSK__IM_STOP
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_STOP:
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fe00
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $ff00
 		dc.w $01ff
 		dc.w $ff80
@@ -22057,18 +16543,14 @@ _MSK__IM_STOP:
 		dc.w $ffc0
 		dc.w $01ff
 		dc.w $ff80
-		dc.b $00
-		dc.b $ff
+		dc.w $00ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fe00
 _DAT__IM_STOP:
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fe00
-		dc.b $00
-		dc.b $c0
+		dc.w $00c0
 		dc.w $0300
 		dc.w $01bf
 		dc.w $fd80
@@ -22126,69 +16608,43 @@ _DAT__IM_STOP:
 		dc.w $fec0
 		dc.w $01bf
 		dc.w $fd80
-		dc.b $00
-		dc.b $c0
+		dc.w $00c0
 		dc.w $0300
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fe00
 _IM_STOP:
 		dc.l _MSK__IM_STOP
 		dc.l _DAT__IM_STOP
 		dc.l NULL_STRING
 		dc.w $2000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		.globl _C4__IM_TIME0
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__IM_TIME0:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_27+6
 		dc.l DATAS_28
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_TIME0:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -22240,30 +16696,20 @@ _MSK__IM_TIME0:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DAT__IM_TIME0:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -22276,50 +16722,35 @@ _DAT__IM_TIME0:
 		dc.w $1f01
 		dc.w $01f0
 		dc.w $1e01
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $3c01
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $3801
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3801
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $7001
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7001
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7001
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7001
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7000
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7000
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7000
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3800
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3c00
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1e00
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f00
 		dc.w $01f0
 		dc.w $0f80
@@ -22330,74 +16761,46 @@ _DAT__IM_TIME0:
 		dc.w $1f80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _IM_TIME0:
 		dc.l _MSK__IM_TIME0
 		dc.l _DAT__IM_TIME0
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__IM_TIME0
-		.globl _C4__IM_TIME1
 _C4__IM_TIME1:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_19+6
 		dc.l DATAS_20
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_TIME1:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -22449,30 +16852,20 @@ _MSK__IM_TIME1:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DAT__IM_TIME1:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -22499,29 +16892,21 @@ _DAT__IM_TIME1:
 		dc.w $7001
 		dc.w $801c
 		dc.w $7001
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7000
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7000
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7000
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3800
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3c00
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1e00
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f00
 		dc.w $01f0
 		dc.w $0f80
@@ -22532,74 +16917,46 @@ _DAT__IM_TIME1:
 		dc.w $1f80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _IM_TIME1:
 		dc.l _MSK__IM_TIME1
 		dc.l _DAT__IM_TIME1
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__IM_TIME1
-		.globl _C4__IM_TIME2
 _C4__IM_TIME2:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_29+6
 		dc.l DATAS_30
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_TIME2:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -22651,30 +17008,20 @@ _MSK__IM_TIME2:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DAT__IM_TIME2:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -22703,26 +17050,19 @@ _DAT__IM_TIME2:
 		dc.w $7001
 		dc.w $ffdc
 		dc.w $7000
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7000
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $7000
-		dc.b $00
-		dc.b $1c
+		dc.w $001c
 		dc.w $3800
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3800
-		dc.b $00
-		dc.b $38
+		dc.w $0038
 		dc.w $3c00
-		dc.b $00
-		dc.b $78
+		dc.w $0078
 		dc.w $1e00
-		dc.b $00
-		dc.b $f0
+		dc.w $00f0
 		dc.w $1f00
 		dc.w $01f0
 		dc.w $0f80
@@ -22733,74 +17073,46 @@ _DAT__IM_TIME2:
 		dc.w $1f80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _IM_TIME2:
 		dc.l _MSK__IM_TIME2
 		dc.l _DAT__IM_TIME2
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__IM_TIME2
-		.globl _C4__IM_TIME3
 _C4__IM_TIME3:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_09+6
 		dc.l DATAS_10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_TIME3:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -22852,30 +17164,20 @@ _MSK__IM_TIME3:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DAT__IM_TIME3:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -22927,74 +17229,46 @@ _DAT__IM_TIME3:
 		dc.w $1f80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _IM_TIME3:
 		dc.l _MSK__IM_TIME3
 		dc.l _DAT__IM_TIME3
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__IM_TIME3
-		.globl _C4__IM_TIME4
 _C4__IM_TIME4:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_13+6
 		dc.l DATAS_14
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_TIME4:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23046,30 +17320,20 @@ _MSK__IM_TIME4:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DAT__IM_TIME4:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23121,74 +17385,46 @@ _DAT__IM_TIME4:
 		dc.w $1f80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _IM_TIME4:
 		dc.l _MSK__IM_TIME4
 		dc.l _DAT__IM_TIME4
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__IM_TIME4
-		.globl _C4__IM_TIME5
 _C4__IM_TIME5:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_15+6
 		dc.l DATAS_16
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_TIME5:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23240,30 +17476,20 @@ _MSK__IM_TIME5:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DAT__IM_TIME5:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23315,74 +17541,46 @@ _DAT__IM_TIME5:
 		dc.w $1f80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _IM_TIME5:
 		dc.l _MSK__IM_TIME5
 		dc.l _DAT__IM_TIME5
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__IM_TIME5
-		.globl _C4__IM_TIME6
 _C4__IM_TIME6:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_17+6
 		dc.l DATAS_18
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_TIME6:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23434,30 +17632,20 @@ _MSK__IM_TIME6:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DAT__IM_TIME6:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23509,74 +17697,46 @@ _DAT__IM_TIME6:
 		dc.w $1f80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _IM_TIME6:
 		dc.l _MSK__IM_TIME6
 		dc.l _DAT__IM_TIME6
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__IM_TIME6
-		.globl _C4__IM_TIME7
 _C4__IM_TIME7:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_21+6
 		dc.l DATAS_22
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_TIME7:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23628,30 +17788,20 @@ _MSK__IM_TIME7:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DAT__IM_TIME7:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23703,74 +17853,46 @@ _DAT__IM_TIME7:
 		dc.w $1f80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _IM_TIME7:
 		dc.l _MSK__IM_TIME7
 		dc.l _DAT__IM_TIME7
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__IM_TIME7
-		.globl _C4__IM_TIME8
 _C4__IM_TIME8:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_23+6
 		dc.l DATAS_24
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__IM_TIME8:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23822,30 +17944,20 @@ _MSK__IM_TIME8:
 		dc.w $ff80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DAT__IM_TIME8:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
 		dc.w $01ff
 		dc.w $ff00
@@ -23897,49 +18009,32 @@ _DAT__IM_TIME8:
 		dc.w $1f80
 		dc.w $01ff
 		dc.w $ff00
-		dc.b $00
-		dc.b $7f
+		dc.w $007f
 		dc.w $fc00
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $e000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _IM_TIME8:
 		dc.l _MSK__IM_TIME8
 		dc.l _DAT__IM_TIME8
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0020
+		dc.w $0010
+		dc.w $0010
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__IM_TIME8
 _MSK__RD_1D_DS:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -23954,11 +18049,9 @@ _MSK__RD_1D_DS:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__RD_1D_DS:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
@@ -23970,45 +18063,30 @@ _DAT__RD_1D_DS:
 		dc.w $4550
 		dc.w $22a0
 		dc.w $0144
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _RD_1D_DS
 _RD_1D_DS:
 		dc.l _MSK__RD_1D_DS
 		dc.l _DAT__RD_1D_DS
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0004
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__RD_1D_DU:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -24023,65 +18101,44 @@ _MSK__RD_1D_DU:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__RD_1D_DU:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
 		dc.w $2000
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0004
+		dc.w $0002
 		dc.w $4000
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4000
 		dc.w $2000
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $08
+		dc.w $0004
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _RD_1D_DU
 _RD_1D_DU:
 		dc.l _MSK__RD_1D_DU
 		dc.l _DAT__RD_1D_DU
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0004
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__RD_1D_S:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -24096,11 +18153,9 @@ _MSK__RD_1D_S:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__RD_1D_S:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -24115,41 +18170,27 @@ _DAT__RD_1D_S:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _RD_1D_S
 _RD_1D_S:
 		dc.l _MSK__RD_1D_S
 		dc.l _DAT__RD_1D_S
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0004
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _MSK__RD_1D_U:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -24164,11 +18205,9 @@ _MSK__RD_1D_U:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__RD_1D_U:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -24183,72 +18222,46 @@ _DAT__RD_1D_U:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _RD_1D_U
 _RD_1D_U:
 		dc.l _MSK__RD_1D_U
 		dc.l _DAT__RD_1D_U
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0004
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C8__RD_3D_DS:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.l DATAS_183+6
 		dc.l DATAS_184
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__RD_3D_DS:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_181+6
 		dc.l DATAS_182
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l _C8__RD_3D_DS
 _MSK__RD_3D_DS:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -24263,11 +18276,9 @@ _MSK__RD_3D_DS:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__RD_3D_DS:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $0140
 		dc.w $0920
 		dc.w $1280
@@ -24278,75 +18289,49 @@ _DAT__RD_3D_DS:
 		dc.w $12a2
 		dc.w $4540
 		dc.w $3280
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $08
+		dc.w $0004
+		dc.w $0008
 		dc.w $0410
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _RD_3D_DS
 _RD_3D_DS:
 		dc.l _MSK__RD_3D_DS
 		dc.l _DAT__RD_3D_DS
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0004
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__RD_3D_DS
 _C8__RD_3D_DU:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.l DATAS_187+6
 		dc.l DATAS_188
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__RD_3D_DU:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_185+6
 		dc.l DATAS_186
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l _C8__RD_3D_DU
 _MSK__RD_3D_DU:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -24361,92 +18346,62 @@ _MSK__RD_3D_DU:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__RD_3D_DU:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $0140
 		dc.w $0820
 		dc.w $1000
 		dc.w $2000
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0004
+		dc.w $0002
 		dc.w $4008
-		dc.b $00
-		dc.b $02
+		dc.w $0002
 		dc.w $4008
 		dc.w $2010
-		dc.b $00
-		dc.b $24
+		dc.w $0024
 		dc.w $0148
 		dc.w $0490
 		dc.w $0280
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _RD_3D_DU
 _RD_3D_DU:
 		dc.l _MSK__RD_3D_DU
 		dc.l _DAT__RD_3D_DU
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0004
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__RD_3D_DU
 _C8__RD_3D_S:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.l DATAS_155+6
 		dc.l DATAS_156
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__RD_3D_S:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_153+6
 		dc.l DATAS_154
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l _C8__RD_3D_S
 _MSK__RD_3D_S:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -24461,11 +18416,9 @@ _MSK__RD_3D_S:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__RD_3D_S:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0d70
 		dc.w $1aa8
@@ -24480,69 +18433,45 @@ _DAT__RD_3D_S:
 		dc.w $1008
 		dc.w $0c30
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _RD_3D_S
 _RD_3D_S:
 		dc.l _MSK__RD_3D_S
 		dc.l _DAT__RD_3D_S
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0004
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__RD_3D_S
 _C8__RD_3D_U:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.l DATAS_163+6
 		dc.l DATAS_164
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__RD_3D_U:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_161+6
 		dc.l DATAS_162
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l _C8__RD_3D_U
 _MSK__RD_3D_U:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0ff0
 		dc.w $1ff8
@@ -24557,11 +18486,9 @@ _MSK__RD_3D_U:
 		dc.w $1ff8
 		dc.w $0ff0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 _DAT__RD_3D_U:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $03c0
 		dc.w $0c30
 		dc.w $1008
@@ -24576,75 +18503,48 @@ _DAT__RD_3D_U:
 		dc.w $1558
 		dc.w $0eb0
 		dc.w $03c0
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		.globl _RD_3D_U
 _RD_3D_U:
 		dc.l _MSK__RD_3D_U
 		dc.l _DAT__RD_3D_U
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0010
+		dc.w $0004
+		dc.w $0004
+		dc.w $0000
+		dc.w $0000
 		dc.l _C4__RD_3D_U
 _C8__WIN:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.l DATAS_31+6
 		dc.l DATAS_32
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _C4__WIN:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.l DATAS_03+6
 		dc.l DATAS_04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l _C8__WIN
 _MSK__WIN:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $7fff
@@ -24695,19 +18595,13 @@ _MSK__WIN:
 		dc.w $fffe
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 _DAT__WIN:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4fff
@@ -24717,1210 +18611,733 @@ _DAT__WIN:
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4000
-		dc.b $00
-		dc.b $12
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $1e
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $12
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $12
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $12
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $12
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $12
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $1e
-		dc.b 'UUUR@',0
-		dc.b $00
-		dc.b $12
+		dc.w $0012
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $001e
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $0012
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $0012
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $0012
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $0012
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $0012
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $001e
+		dc.w $5555
+		dc.w $5552
+		dc.w $4000
+		dc.w $0012
 		dc.w $7fff
 		dc.w $fffe
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $4800
-		dc.b $00
-		dc.b $92
+		dc.w $0092
 		dc.w $7fff
 		dc.w $fffe
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 _WIN:
 		dc.l _MSK__WIN
 		dc.l _DAT__WIN
 		dc.l NULL_STRING
 		dc.w $1000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $08
+		dc.w $0000
+		dc.w $0000
+		dc.w $0010
+		dc.w $0000
+		dc.w $0020
+		dc.w $001c
+		dc.w $0000
+		dc.w $001c
+		dc.w $0040
+		dc.w $0008
 		dc.l _C4__WIN
-		.globl _ABOUT_ME
 _ABOUT_ME:
 		dc.w $ffff
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $42
-		dc.b $00
-		dc.b $00
+		dc.w $0002
+		dc.w $0002
+		dc.w $0018
+		dc.w $0042
+		dc.w $0000
 		dc.l A_3DBUTTON02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $17
-		dc.b $00
-		dc.b $0f
+		dc.w $0000
+		dc.w $0000
+		dc.w $0017
+		dc.w $000f
 _00a_ABOUT_ME:
 		dc.l Awi_diaabort
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _02__ABOUT_ME:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $10
+		dc.w $0000
+		dc.w $0003
+		dc.w $0003
+		dc.w $0018
+		dc.w $0040
+		dc.w $0010
 		dc.l A_3DBUTTON11
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $13
-		dc.b $00
-		dc.b $0d
+		dc.w $0002
+		dc.w $0001
+		dc.w $0013
+		dc.w $000d
 _03__ABOUT_ME:
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $14
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0002
+		dc.w $0004
+		dc.w $0010
+		dc.w $0014
+		dc.w $0040
+		dc.w $0000
+		dc.w $0000
 		dc.w $1101
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $13
-		dc.b $00
-		dc.b $0d
+		dc.w $0000
+		dc.w $0000
+		dc.w $0013
+		dc.w $000d
 _04__ABOUT_ME:
-		dc.b $00
-		dc.b $05
+		dc.w $0005
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001c
+		dc.w $0040
+		dc.w $0000
 		dc.l TEXT_11
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $0b
-		dc.b $00
-		dc.b $0f
-		dc.b $00
-		dc.b $01
+		dc.w $0002
+		dc.w $000b
+		dc.w $000f
+		dc.w $0001
 _05__ABOUT_ME:
-		dc.b $00
-		dc.b $06
+		dc.w $0006
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0040
+		dc.w $0000
 		dc.l A_TITLE03
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $0a
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $000a
+		dc.w $0004
+		dc.w $0001
 _06__ABOUT_ME:
-		dc.b $00
-		dc.b $07
+		dc.w $0007
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001c
+		dc.w $0040
+		dc.w $0000
 		dc.l TEXT_12
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $09
-		dc.b $00
-		dc.b $0f
-		dc.b $00
-		dc.b $01
+		dc.w $0002
+		dc.w $0009
+		dc.w $000f
+		dc.w $0001
 _07__ABOUT_ME:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001c
+		dc.w $0040
+		dc.w $0000
 		dc.l TEXT_14
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $0f
-		dc.b $00
-		dc.b $01
+		dc.w $0002
+		dc.w $0008
+		dc.w $000f
+		dc.w $0001
 _08__ABOUT_ME:
-		dc.b $00
-		dc.b $09
+		dc.w $0009
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0040
+		dc.w $0000
 		dc.l A_TITLE04
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $07
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0007
+		dc.w $0006
+		dc.w $0001
 _09__ABOUT_ME:
-		dc.b $00
-		dc.b $0a
+		dc.w $000a
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $001c
+		dc.w $0000
+		dc.w $0000
 		dc.l TEXT_13
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $0f
-		dc.b $00
-		dc.b $01
+		dc.w $0002
+		dc.w $0006
+		dc.w $000f
+		dc.w $0001
 _10__ABOUT_ME:
-		dc.b $00
-		dc.b $0b
+		dc.w $000b
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001c
+		dc.w $0040
+		dc.w $0000
 		dc.l TEXT_04
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $05
-		dc.b $00
-		dc.b $0f
-		dc.b $00
-		dc.b $01
+		dc.w $0002
+		dc.w $0005
+		dc.w $000f
+		dc.w $0001
 _11__ABOUT_ME:
-		dc.b $00
-		dc.b $0c
+		dc.w $000c
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0040
+		dc.w $0000
 		dc.l A_TITLE01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0004
+		dc.w $0006
+		dc.w $0001
 _12__ABOUT_ME:
-		dc.b $00
-		dc.b $0d
+		dc.w $000d
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001c
+		dc.w $0040
+		dc.w $0000
 		dc.l TEXT_222
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $0e
-		dc.b $00
-		dc.b $01
+		dc.w $0002
+		dc.w $0003
+		dc.w $000e
+		dc.w $0001
 _13__ABOUT_ME:
-		dc.b $00
-		dc.b $0e
+		dc.w $000e
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0040
+		dc.w $0000
 		dc.l A_TITLE02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $05
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0002
+		dc.w $0005
+		dc.w $0001
 _14__ABOUT_ME:
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0018
+		dc.w $0040
+		dc.w $0000
 		dc.l A_TITLE05
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $08
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0000
+		dc.w $0008
+		dc.w $0001
 _15__ABOUT_ME:
-		dc.b $00
-		dc.b $10
+		dc.w $0010
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001c
+		dc.w $0040
+		dc.w $0000
 		dc.l TEXT_05
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $0d
-		dc.b $00
-		dc.b $01
+		dc.w $0002
+		dc.w $0001
+		dc.w $000d
+		dc.w $0001
 _16__ABOUT_ME:
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1c
-		dc.b $00
-		dc.b $60
-		dc.b $00
-		dc.b $00
+		dc.w $001c
+		dc.w $0060
+		dc.w $0000
 		dc.l TEXT_16
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $0c
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $01
-		.globl _ALERT
+		dc.w $0002
+		dc.w $000c
+		dc.w $0010
+		dc.w $0001
 _ALERT:
 		dc.w $ffff
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $19
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $ff
+		dc.w $0001
+		dc.w $0001
+		dc.w $0019
+		dc.w $0000
+		dc.w $0000
+		dc.w $00ff
 		dc.w $1141
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $2a
-		dc.b $00
-		dc.b $0a
+		dc.w $0000
+		dc.w $0000
+		dc.w $002a
+		dc.w $000a
 _01__ALERT:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $19
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0002
+		dc.w $0019
+		dc.w $0018
+		dc.w $0040
+		dc.w $0000
 		dc.l A_3DBUTTON02
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $2a
-		dc.b $00
-		dc.b $0a
+		dc.w $0000
+		dc.w $0000
+		dc.w $002a
+		dc.w $000a
 _02__ALERT:
-		dc.b $00
-		dc.b $03
+		dc.w $0003
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_STOP
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _03__ALERT:
-		dc.b $00
-		dc.b $04
+		dc.w $0004
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_EXCLAM
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _04__ALERT:
-		dc.b $00
-		dc.b $05
+		dc.w $0005
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_QUEST
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _05__ALERT:
-		dc.b $00
-		dc.b $06
+		dc.w $0006
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_TIME0
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _06__ALERT:
-		dc.b $00
-		dc.b $07
+		dc.w $0007
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_TIME1
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _07__ALERT:
-		dc.b $00
-		dc.b $08
+		dc.w $0008
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_TIME2
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _08__ALERT:
-		dc.b $00
-		dc.b $09
+		dc.w $0009
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_TIME3
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _09__ALERT:
-		dc.b $00
-		dc.b $0a
+		dc.w $000a
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_TIME4
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _10__ALERT:
-		dc.b $00
-		dc.b $0b
+		dc.w $000b
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_TIME5
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _11__ALERT:
-		dc.b $00
-		dc.b $0c
+		dc.w $000c
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_TIME6
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _12__ALERT:
-		dc.b $00
-		dc.b $0d
+		dc.w $000d
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_TIME7
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _13__ALERT:
-		dc.b $00
-		dc.b $0e
+		dc.w $000e
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _IM_TIME8
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0002
 _14__ALERT:
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $0f
-		dc.b $00
-		dc.b $0f
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $10
+		dc.w $0015
+		dc.w $000f
+		dc.w $000f
+		dc.w $0018
+		dc.w $0040
+		dc.w $0010
 		dc.l A_3DBUTTON01
-		dc.b $00
-		dc.b $07
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $05
+		dc.w $0007
+		dc.w $0001
+		dc.w $0020
+		dc.w $0005
 _15__ALERT:
-		dc.b $00
-		dc.b $0e
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $14
-		dc.b $00
-		dc.b $14
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $fd
+		dc.w $000e
+		dc.w $0010
+		dc.w $0014
+		dc.w $0014
+		dc.w $0040
+		dc.w $0000
+		dc.w $00fd
 		dc.w $0101
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $05
+		dc.w $0000
+		dc.w $0000
+		dc.w $0020
+		dc.w $0005
 _16__ALERT:
-		dc.b $00
-		dc.b $11
+		dc.w $0011
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0040
+		dc.w $0000
 		dc.l TEDINFO_02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $1e
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0000
+		dc.w $001e
+		dc.w $0001
 _17__ALERT:
-		dc.b $00
-		dc.b $12
+		dc.w $0012
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0040
+		dc.w $0000
 		dc.l TEDINFO_02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $1e
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0001
+		dc.w $001e
+		dc.w $0001
 _18__ALERT:
-		dc.b $00
-		dc.b $13
+		dc.w $0013
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0040
+		dc.w $0000
 		dc.l TEDINFO_02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $1e
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0002
+		dc.w $001e
+		dc.w $0001
 _19__ALERT:
-		dc.b $00
-		dc.b $14
+		dc.w $0014
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0040
+		dc.w $0000
 		dc.l TEDINFO_02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $03
-		dc.b $00
-		dc.b $1e
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0003
+		dc.w $001e
+		dc.w $0001
 _20__ALERT:
-		dc.b $00
-		dc.b $0f
+		dc.w $000f
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $15
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0015
+		dc.w $0040
+		dc.w $0000
 		dc.l TEDINFO_02
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $1e
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0004
+		dc.w $001e
+		dc.w $0001
 _21__ALERT:
-		dc.b $00
-		dc.b $17
+		dc.w $0017
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
+		dc.w $0018
 		dc.w $4005
-		dc.b $00
-		dc.b $10
+		dc.w $0010
 		dc.l A_3DBUTTON03
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $07
-		dc.b $00
-		dc.b $0c
-		dc.b $00
-		dc.b $02
+		dc.w $0001
+		dc.w $0007
+		dc.w $000c
+		dc.w $0002
 _21a_ALERT:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $8000
 		dc.w $8010
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _23__ALERT:
-		dc.b $00
-		dc.b $19
+		dc.w $0019
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
+		dc.w $0018
 		dc.w $4005
-		dc.b $00
-		dc.b $10
+		dc.w $0010
 		dc.l A_3DBUTTON03
-		dc.b $00
-		dc.b $0f
-		dc.b $00
-		dc.b $07
-		dc.b $00
-		dc.b $0c
-		dc.b $00
-		dc.b $02
+		dc.w $000f
+		dc.w $0007
+		dc.w $000c
+		dc.w $0002
 _23a_ALERT:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $8000
 		dc.w $8011
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _25__ALERT:
-		dc.b $00
-		dc.b $01
+		dc.w $0001
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $18
+		dc.w $0018
 		dc.w $4005
-		dc.b $00
-		dc.b $10
+		dc.w $0010
 		dc.l A_3DBUTTON03
-		dc.b $00
-		dc.b $1d
-		dc.b $00
-		dc.b $07
-		dc.b $00
-		dc.b $0c
-		dc.b $00
-		dc.b $02
+		dc.w $001d
+		dc.w $0007
+		dc.w $000c
+		dc.w $0002
 _25a_ALERT:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $8020
 		dc.w $8012
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		.globl _DDD
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _DDD:
 		dc.w $ffff
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $02
-		dc.b $00
-		dc.b $14
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $10
-		dc.b $00
-		dc.b $02
+		dc.w $0002
+		dc.w $0002
+		dc.w $0014
+		dc.w $0000
+		dc.w $0010
+		dc.w $0002
 		dc.w $1100
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $06
-		dc.b $00
-		dc.b $03
+		dc.w $0000
+		dc.w $0000
+		dc.w $0006
+		dc.w $0003
 _00a_DDD:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $8000
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $0b
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $000b
 _02__DDD:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $14
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $ff
+		dc.w $0014
+		dc.w $0000
+		dc.w $0000
+		dc.w $00ff
 		dc.w $1101
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $04
-		dc.b $00
-		dc.b $01
+		dc.w $0001
+		dc.w $0001
+		dc.w $0004
+		dc.w $0001
 _02a_DDD:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $8020
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $14
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0014
 		.globl _ICO
 _ICO:
 		dc.w $ffff
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $01
-		dc.b $00
-		dc.b $18
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $0001
+		dc.w $0001
+		dc.w $0018
+		dc.w $0040
+		dc.w $0000
 		dc.l A_3DBUTTON04
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $09
-		dc.b $00
-		dc.b $03
+		dc.w $0000
+		dc.w $0000
+		dc.w $0009
+		dc.w $0003
 _01__ICO:
-		dc.b $00
-		dc.b $00
+		dc.w $0000
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $1f
-		dc.b $00
-		dc.b $40
-		dc.b $00
-		dc.b $00
+		dc.w $001f
+		dc.w $0040
+		dc.w $0000
 		dc.l _WIN
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $09
-		dc.b $00
-		dc.b $03
+		dc.w $0000
+		dc.w $0000
+		dc.w $0009
+		dc.w $0003
 _01a_ICO:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $8020
-		dc.b $00
-		dc.b $20
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0020
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		.globl _WDD
 _WDD:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.l Awi_service
 		dc.l Awi_selfcreate
 		dc.l Awi_open
 		dc.l Awi_init
 		dc.l _DDD
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $0a
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $78
-		dc.b $00
-		dc.b $32
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $000a
+		dc.w $0000
+		dc.w $0000
+		dc.w $0078
+		dc.w $0032
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $f8f8
 		dc.l NULL_STRING
 		dc.l NULL_STRING
 		dc.w $2710
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l Awi_keys
 		dc.l Awi_obchange
 		dc.l Awi_redraw
@@ -25935,85 +19352,53 @@ _WDD:
 		dc.l Awi_iconify
 		dc.l Awi_uniconify
 		dc.l Awi_gemscript
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		.globl _W_ABOUT
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 _W_ABOUT:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.l Awi_service
 		dc.l Awi_selfcreate
 		dc.l Awi_open
 		dc.l Awi_init
 		dc.l _ABOUT_ME
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $0b
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $78
-		dc.b $00
-		dc.b $32
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $000b
+		dc.w $0000
+		dc.w $0000
+		dc.w $0078
+		dc.w $0032
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $fcf8
 		dc.l TEXT_06
 		dc.l NULL_STRING
 		dc.w $2710
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l Awi_keys
 		dc.l Awi_obchange
 		dc.l Awi_redraw
@@ -26028,85 +19413,54 @@ _W_ABOUT:
 		dc.l Awi_iconify
 		dc.l Awi_uniconify
 		dc.l Awi_gemscript
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		.globl _W_ALERT
 _W_ALERT:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.l Awi_service
 		dc.l Awi_selfcreate
 		dc.l Awi_open
 		dc.l _init_alert
 		dc.l _ALERT
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $09
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $78
-		dc.b $00
-		dc.b $32
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0009
+		dc.w $0000
+		dc.w $0000
+		dc.w $0078
+		dc.w $0032
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $fcf8
 		dc.l TEXT_07
 		dc.l NULL_STRING
 		dc.w $2710
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		dc.w $ffff
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
 		dc.l Awi_keys
 		dc.l Awi_obchange
 		dc.l Awi_redraw
@@ -26121,26 +19475,19 @@ _W_ALERT:
 		dc.l Awi_iconify
 		dc.l Awi_uniconify
 		dc.l Awi_gemscript
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+		dc.w $0000
+
 		.globl SentMsg
 SentMsg:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 		.globl ListOfApps
 ListOfApps:
-		dc.b $00
-		dc.b $00
-		dc.b $00
-		dc.b $00
+		dc.w $0000
+		dc.w $0000
 copyright:
 		dc.b '(c) 1991-2005 S.Bachert, O.Michalak & M.Els„sser ACS 3.0.0',0
 _c_version:
