@@ -65,17 +65,10 @@ LINEA_FUNP *Linea_funp;
 /* -------------------------------------------------------------------------- */
 /******************************************************************************/
 
-#ifdef __PUREC__
-#pragma warn -par
-#endif
-
 static void _ACSmessage(int16 *ev_mmgpbuf)
 {
+	UNUSED(ev_mmgpbuf);
 }
-
-#ifdef __PUREC__
-#pragma warn .par
-#endif
 
 /* -------------------------------------------------------------------------- */
 
@@ -231,6 +224,6 @@ int main(int argc, char **argv, char **envp)
 
 /* -------------------------------------------------------------------------- */
 
-#if defined(__PUREC__) && !WITH_FIXES
+#if defined(__PUREC__) && WITH_UNUSED_ICONS
 #pragma warn -use
 #endif
