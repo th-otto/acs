@@ -64,9 +64,10 @@ window.s
 shelutil.s
 thermo.c
 keytab.s [-M-]
+
 messages\msgserv.s [-M-]
 messages\screen.s
-messages\xacc.s [-M]
+messages\xacc.c [-J -Z -M -R]
 messages\av.s
 messages\dd.s
 messages\dhst.s
@@ -77,17 +78,22 @@ messages\stguide.s [-M]
 messages\seproto.s
 messages\ssp.s
 messages\pc_help.s [-M]
+
 userdef\userobj.s
 userdef\userobj2.s
 userdef\ftext.s [-M-]
 userdef\cycle.s [-M-]
 userdef\picture.s
 userdef\boxed.s [-M-]
+
 utility\util.s
 utility\date.s
+
 wdialog\filesel.c
 wdialog\printsel.s
 wdialog\fontsel.s
+
 listen\ulinlist.s
+
 modul\modul.c
 modul\modulold.c
