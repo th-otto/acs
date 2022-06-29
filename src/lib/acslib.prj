@@ -55,7 +55,7 @@ thermo.c
 keytab.c
 
 messages\msgserv.c [-J -Z -M -R]
-messages\screen.s
+messages\screen.c [-J -Z -M -R]
 messages\xacc.c [-J -Z -M -R]
 messages\av.s
 messages\dd.s
