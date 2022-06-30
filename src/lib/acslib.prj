@@ -59,7 +59,7 @@ messages\screen.c [-J -Z -M -R]
 messages\xacc.c [-J -Z -M -R]
 messages\av.c [-J -Z -M -R]
 messages\dd.c [-J -Z -M -R]
-messages\dhst.s
+messages\dhst.c [-J -Z -M -R]
 messages\bubble.s [-M-]
 messages\gemscr.s
 messages\olga.s
