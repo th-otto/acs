@@ -60,7 +60,7 @@ messages\xacc.c [-J -Z -M -R]
 messages\av.c [-J -Z -M -R]
 messages\dd.c [-J -Z -M -R]
 messages\dhst.c [-J -Z -M -R]
-messages\bubble.s [-M-]
+messages\bubble.c [-J -Z -M -R]
 messages\gemscr.s
 messages\olga.s
 messages\stguide.s [-M]
