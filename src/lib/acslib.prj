@@ -70,7 +70,7 @@ messages\pc_help.c [-J -Z -M -R]
 
 userdef\userobj.c
 userdef\userobj2.c
-userdef\ftext.s [-M-]
+userdef\ftext.c
 userdef\cycle.s [-M-]
 userdef\picture.s
 userdef\boxed.s [-M-]
