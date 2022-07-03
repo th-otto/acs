@@ -69,7 +69,7 @@ messages\ssp.c [-J -Z -M -R]
 messages\pc_help.c [-J -Z -M -R]
 
 userdef\userobj.c
-userdef\userobj2.s
+userdef\userobj2.c
 userdef\ftext.s [-M-]
 userdef\cycle.s [-M-]
 userdef\picture.s
