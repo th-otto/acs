@@ -72,7 +72,7 @@ userdef\userobj.c
 userdef\userobj2.c
 userdef\ftext.c
 userdef\cycle.c
-userdef\picture.s
+userdef\picture.c
 userdef\boxed.s [-M-]
 
 utility\util.s
