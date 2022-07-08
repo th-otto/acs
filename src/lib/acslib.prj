@@ -1,4 +1,4 @@
-acslib.lib
+acs.lib
 
 .C[-I..\..\include]
 .C[-I..]
@@ -85,6 +85,3 @@ wdialog\fontsel.c
 listen\ulinlist.c
 listen\stack.c
 listen\queue.c
-
-modul\modul.c
-modul\modulold.c
