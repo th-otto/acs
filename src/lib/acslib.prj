@@ -31,6 +31,7 @@ acs.lib
 .L[-J] ; generate library
 
 =
+acsinit0.c
 main.c
 initterm.c
 vdi_data.c
