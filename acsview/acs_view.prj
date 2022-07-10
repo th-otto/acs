@@ -1,0 +1,19 @@
+acs-view.app
+.C[-I..\include]
+.C[-IC:\pc\include]
+.C[ -P ]
+.L[ -S=20480 ]
+=
+..\lib\stupargv.o		; Startup-Code vpn Stefan Kuhr @ OS
+
+acs_view.c
+
+..\lib\acs.lib
+..\lib\acsmod.lib
+..\lib\acsplus.lib
+
+..\lib\pcgem.lib
+..\lib\pctos.lib
+
+..\lib\pcfltlib.lib
+..\lib\pcstdlib.lib

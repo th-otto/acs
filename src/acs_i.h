@@ -30,17 +30,6 @@
 #endif
 
 
-/*
- * For other localizations, change the COUNTRY code below
- * supported:
- * 0=english
- * 1=german
- */
-#ifndef COUNTRY
-#  define COUNTRY 1
-#endif
-
-
 #ifdef __GNUC__
 /* no need to attempt to generate identical image */
 #undef WITH_FIXES
