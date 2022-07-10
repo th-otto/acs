@@ -267,7 +267,7 @@ static void setflag (OBJECT *obj, int16 flag)
 static Awindow *ab_make (void *para)
 {	Awindow	*wi;
 
-	if (NULL == (wi = Awi_create ((Awindow *)&F_CFG)))
+	if (NULL == (wi = Awi_create (&F_CFG)))
 		return NULL;
 	setflag (wi->work+CFG0, ACSblk->description->flags & AB_CLICKMENU);
 	setflag (wi->work+CFG1, ACSblk->description->flags & AB_MOVIES);

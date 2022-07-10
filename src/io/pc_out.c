@@ -135,6 +135,21 @@ static void out_label3(Obj_Head *obj, const char *str_default)
 }
 
 
+#if WITH_FIXES
+static void out_rootlabel(Obj_Head *obj)
+{
+	if (obj != NULL)
+	{
+		sprintf(iostring, "&%s.root", obj->label);
+		save_string(iostring);
+	} else
+	{
+		save_string("NULL");
+	}
+}
+#endif
+
+
 static void out_acs(ACS_HEAD *acs)
 {
 	int i;
@@ -166,7 +181,11 @@ static void out_acs(ACS_HEAD *acs)
 			save_string(iostring);
 			mouse++;
 		}
+#if WITH_FIXES
+		save_string(NL "\t\t}," NL "\t\t{" NL);
+#else
 		save_string(NL "\t\t}," NL);
+#endif
 		for (i = 0; i < AD_COUNT; i++)
 		{
 			sprintf(buf, "ACS(%02d)", i);
@@ -185,7 +204,11 @@ static void out_acs(ACS_HEAD *acs)
 				save_string(",");
 			save_string(NL);
 		}
+#if WITH_FIXES
+		save_string("\t\t}" NL "\t};" NL);
+#else
 		save_string("\t};" NL);
+#endif
 		save_string(NL NL " Aconfig ACSconfig =");
 		save_string(NL "\t{" NL "\t\t");
 		save_string("{\"");
@@ -227,9 +250,12 @@ static void out_acs(ACS_HEAD *acs)
 		save_string(", ");
 		sprintf(iostring, "%i, ", acs->config.init_prot);
 		save_string(iostring);
-		/* FIXME: outputs a multi-character character constant */
 		if (acs->config.XAccType > 0)
+#if WITH_FIXES
+			sprintf(iostring, "0x%04x, ", xacc_types[acs->config.XAccType]);
+#else
 			sprintf(iostring, "'%s', ", xacc_types[acs->config.XAccType]);
+#endif
 		else
 			strcpy(iostring, "0, ");
 		save_string(iostring);
@@ -509,6 +535,87 @@ static void out_obj(Obj_Head *list, const char *title)
 				else
 					index += 2;
 			}
+
+#if WITH_FIXES
+			for (entry = (OBJ_ENTRY *)tree->object, j = 0; j < entrycount; entry++, j++)
+			{
+				if (j == 0)
+				{
+					if ((tree->flags & (OBJ_GLOBAL | OBJ_LOCAL)) != OBJ_GLOBAL)
+						save_string("static ");
+					save_string("struct {" NL "\tOBJECT root;" NL);
+				} else
+				{
+					sprintf(iostring, "\tOBJECT  _%02d_%s;" NL, mapptr[j], tree->label);
+					save_string(iostring);
+				}
+				if (mapptr[j + 1] == mapptr[j] + 2)
+				{
+					sprintf(iostring, "\tAOBJECT _%02da%s;" NL, mapptr[j], tree->label);
+					save_string(iostring);
+				}
+			}
+			sprintf(iostring, "} %s = {" NL, tree->label);
+			save_string(iostring);
+			
+			for (entry = (OBJ_ENTRY *)tree->object, j = 0; j < entrycount; entry++, j++)
+			{
+				memcpy(&object, &entry->obj, sizeof(object));
+				memcpy(&aobject, &entry->aobj, sizeof(aobject));
+				object.ob_next = mapptr[object.ob_next];
+				object.ob_head = mapptr[object.ob_head];
+				object.ob_tail = mapptr[object.ob_tail];
+				if (j == entrycount - 1)
+				{
+					if (mapptr[j + 1] == mapptr[j] + 2)
+						aobject.ob_flags |= OF_LASTOB;
+					else
+						object.ob_flags |= OF_LASTOB;
+				}
+				sprintf(iostring, "\t{ %2d, %2d, %2d, %2d, %#6x, %#6x, ",
+					object.ob_next,
+					object.ob_head,
+					object.ob_tail,
+					object.ob_type,
+					object.ob_flags,
+					object.ob_state);
+				save_string(iostring);
+				if ((char)object.ob_type == G_BOX ||
+					(char)object.ob_type == G_IBOX ||
+					(char)object.ob_type == G_BOXCHAR)
+				{
+					sprintf(iostring, " C_UNION(%#010lxL)\t\t\t\t", (long)object.ob_spec.index);
+				} else if ((char)object.ob_type == G_TITLE ||
+					(char)object.ob_type == G_STRING ||
+					(char)object.ob_type == G_BUTTON)
+				{
+					sprintf(iostring, "C_UNION(%-12s)", ((Obj_Head *)object.ob_spec.free_string)->label);
+				} else
+				{
+					sprintf(iostring, "C_UNION(&%-12s)", ((Obj_Head *)object.ob_spec.tedinfo)->label);
+				}
+				save_string(iostring);
+				sprintf(iostring, " , %2d, %2d, %2d, %2d }," NL, object.ob_x, object.ob_y, object.ob_width, object.ob_height);
+				save_string(iostring);
+				if (mapptr[j + 1] == mapptr[j] + 2)
+				{
+					save_string("\t{");
+					out_label((Obj_Head *)aobject.click, "NULL\t\t ");
+					save_string(", ");
+					out_label((Obj_Head *)aobject.drag, "NULL\t\t ");
+					sprintf(iostring, ", %#6x, %#6x, ", aobject.ob_flags, aobject.key);
+					save_string(iostring);
+					out_label((Obj_Head *)aobject.userp1, "NULL\t\t\t\t");
+					save_string(", ");
+					out_label((Obj_Head *)aobject.userp2, "NULL\t\t\t\t");
+					sprintf(iostring, ", %#6x, ", aobject.mo_index);
+					save_string(iostring);
+					out_label(entry->type, "0\t\t\t\t\t");
+					save_string("}," NL);
+				}
+			}
+			save_string("};" NL);
+#else
 			entry = (OBJ_ENTRY *)tree->object;
 			for (j = 0; j < entrycount; entry++, j++)
 			{
@@ -579,6 +686,7 @@ static void out_obj(Obj_Head *list, const char *title)
 					save_string("};" NL);
 				}
 			}
+#endif
 			save_string(NL);
 		}
 	}
@@ -819,9 +927,17 @@ static void out_window(Obj_Head *list)
 			save_string("," NL "\t\t");
 			out_label((Obj_Head *)win->init, "Awi_init");
 			save_string("," NL "\t\t");
+#if WITH_FIXES
+			out_rootlabel((Obj_Head *)win->work);
+#else
 			out_label2((Obj_Head *)win->work, "NULL");
+#endif
 			save_string(", ");
+#if WITH_FIXES
+			out_rootlabel((Obj_Head *)win->toolbar);
+#else
 			out_label2((Obj_Head *)win->toolbar, "NULL");
+#endif
 			save_string(", 0, 0, -1," NL "\t\t");
 			sprintf(iostring, "%#6x, {%2i, %2i, %2i, %2i}," NL "\t\t",
 				win->wi_kind, win->wi_act.x, win->wi_act.y, win->wi_act.w, win->wi_act.h);
@@ -837,7 +953,11 @@ static void out_window(Obj_Head *list)
 			save_string(iostring);
 			out_label2((Obj_Head *)win->iconblk, "NULL");
 			save_string("," NL "\t\t");
+#if WITH_FIXES
+			out_rootlabel((Obj_Head *)win->menu);
+#else
 			out_label2((Obj_Head *)win->menu, "NULL");
+#endif
 			save_string("," NL "\t\t");
 			out_label((Obj_Head *)win->keys, "Awi_keys");
 			save_string("," NL "\t\t");

@@ -21,7 +21,7 @@
  * if set to 0, attempt to compile the original version
  */
 #ifndef WITH_FIXES
-#  define WITH_FIXES 0
+#  define WITH_FIXES 1
 #endif
 
 /* set this to 1 to remove the demo check */
