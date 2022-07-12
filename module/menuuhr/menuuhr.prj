@@ -1,4 +1,4 @@
-memshow.am
+menuuhr.am
 .C[-I..\..\include]
 .C[-IC:\pc\include]
 .C[-D__ACS_MODULE__]
@@ -7,5 +7,6 @@ memshow.am
 .C[-J- -Z- -M- -R-]
 =
 ..\..\src\lib\modul\acs_load.s
-memshow.c
+menuuhr.c
+..\..\lib\pcstdlib.lib
 ..\..\lib\pctos.lib
