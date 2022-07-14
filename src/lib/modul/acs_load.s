@@ -1404,6 +1404,15 @@ indirect:
 		bra        indirect
 		ENDMOD
 
+		.IFNE WITH_EXTENSIONS
+	.globl Auo_wislider
+		MODULE Auo_wislider
+		pea        20
+		move.l     funcAuo(pc),-(a7)
+		bra        indirect
+		ENDMOD
+		.ENDC
+
 
 /* user services */
 	.globl Aus_create
@@ -1438,6 +1447,13 @@ indirect:
 	.globl Aus_help
 		MODULE Aus_help
 		pea        16
+		move.l     funcAus(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl Aus_slider
+		MODULE Aus_slider
+		pea        20
 		move.l     funcAus(pc),-(a7)
 		bra        indirect
 		ENDMOD
@@ -1862,6 +1878,14 @@ indirect:
 		bra        indirect
 		ENDMOD
 
+		.IFNE WITH_EXTENSIONS
+	.globl A_slider
+		MODULE A_slider
+		pea        56
+		move.l     funcA(pc),-(a7)
+		bra        indirect
+		ENDMOD
+		.ENDC
 
 /* misc */
 	.globl Ax_malloc
@@ -2084,6 +2108,76 @@ indirect:
 	.globl Adate_ymd2dow
 		MODULE Adate_ymd2dow
 		pea        120
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl get_desktop
+		MODULE get_desktop
+		pea        124
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl get_pur_desk
+		MODULE get_pur_desk
+		pea        128
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl get_module_window
+		MODULE get_module_window
+		pea        132
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl get_editor
+		MODULE get_editor
+		pea        136
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl get_list
+		MODULE get_list
+		pea        140
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl get_protocol
+		MODULE get_protocol
+		pea        144
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl get_plotter
+		MODULE get_plotter
+		pea        148
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl wprintf
+		MODULE wprintf
+		pea        152
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl wvprintf
+		MODULE wvprintf
+		pea        156
+		move.l     funcSonst(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl wputs
+		MODULE wputs
+		pea        160
 		move.l     funcSonst(pc),-(a7)
 		bra        indirect
 		ENDMOD
@@ -5629,1344 +5723,1344 @@ indirect:
 
 	.globl mt_evnt_keybd
 		MODULE mt_evnt_keybd
-		pea        820
+		pea        44
 		move.l     funcAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_evnt_button
 		MODULE mt_evnt_button
-		pea        44
+		pea        48
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_evnt_mouse
 		MODULE mt_evnt_mouse
-		pea        48
+		pea        52
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_evnt_mesag
 		MODULE mt_evnt_mesag
-		pea        52
+		pea        56
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_evnt_timer
 		MODULE mt_evnt_timer
-		pea        56
+		pea        60
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_evnt_event
 		MODULE mt_evnt_event
-		pea        60
+		pea        64
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_evnt_multi
 		MODULE mt_evnt_multi
-		pea        64
+		pea        68
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_evnt_dclick
 		MODULE mt_evnt_dclick
-		pea        68
+		pea        72
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_bar
 		MODULE mt_menu_bar
-		pea        72
+		pea        76
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_icheck
 		MODULE mt_menu_icheck
-		pea        76
+		pea        80
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_ienable
 		MODULE mt_menu_ienable
-		pea        80
+		pea        84
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_tnormal
 		MODULE mt_menu_tnormal
-		pea        84
+		pea        88
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_text
 		MODULE mt_menu_text
-		pea        88
+		pea        92
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_register
 		MODULE mt_menu_register
-		pea        92
+		pea        96
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_unregister
 		MODULE mt_menu_unregister
-		pea        96
+		pea        100
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_click
 		MODULE mt_menu_click
-		pea        100
+		pea        104
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_attach
 		MODULE mt_menu_attach
-		pea        104
+		pea        108
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_istart
 		MODULE mt_menu_istart
-		pea        108
+		pea        112
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_popup
 		MODULE mt_menu_popup
-		pea        112
+		pea        116
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_menu_settings
 		MODULE mt_menu_settings
-		pea        116
+		pea        120
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_add
 		MODULE mt_objc_add
-		pea        120
+		pea        124
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_delete
 		MODULE mt_objc_delete
-		pea        124
+		pea        128
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_draw
 		MODULE mt_objc_draw
-		pea        824
+		pea        132
 		move.l     funcAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_find
 		MODULE mt_objc_find
-		pea        128
+		pea        136
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_offset
 		MODULE mt_objc_offset
-		pea        132
+		pea        140
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_order
 		MODULE mt_objc_order
-		pea        136
+		pea        144
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_edit
 		MODULE mt_objc_edit
-		pea        140
+		pea        148
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_change
 		MODULE mt_objc_change
-		pea        144
+		pea        152
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_sysvar
 		MODULE mt_objc_sysvar
-		pea        148
+		pea        156
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_do
 		MODULE mt_form_do
-		pea        152
+		pea        160
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_dial
 		MODULE mt_form_dial
-		pea        156
+		pea        164
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_alert
 		MODULE mt_form_alert
-		pea        160
+		pea        168
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_error
 		MODULE mt_form_error
-		pea        164
+		pea        172
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_center
 		MODULE mt_form_center
-		pea        168
+		pea        176
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_keybd
 		MODULE mt_form_keybd
-		pea        172
+		pea        180
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_button
 		MODULE mt_form_button
-		pea        176
+		pea        184
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_rubbox
 		MODULE mt_graf_rubbox
-		pea        180
+		pea        188
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_rubberbox
 		MODULE mt_graf_rubberbox
-		pea        184
+		pea        192
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_dragbox
 		MODULE mt_graf_dragbox
-		pea        188
+		pea        196
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_mbox
 		MODULE mt_graf_mbox
-		pea        192
+		pea        200
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_movebox
 		MODULE mt_graf_movebox
-		pea        196
+		pea        204
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_growbox
 		MODULE mt_graf_growbox
-		pea        200
+		pea        208
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_shrinkbox
 		MODULE mt_graf_shrinkbox
-		pea        204
+		pea        212
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_watchbox
 		MODULE mt_graf_watchbox
-		pea        208
+		pea        216
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_slidebox
 		MODULE mt_graf_slidebox
-		pea        212
+		pea        220
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_handle
 		MODULE mt_graf_handle
-		pea        216
+		pea        224
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_mouse
 		MODULE mt_graf_mouse
-		pea        220
+		pea        228
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_mkstate
 		MODULE mt_graf_mkstate
-		pea        224
+		pea        232
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_multirubber
 		MODULE mt_graf_multirubber
-		pea        228
+		pea        236
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_scrp_read
 		MODULE mt_scrp_read
-		pea        232
+		pea        240
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_scrp_write
 		MODULE mt_scrp_write
-		pea        236
+		pea        244
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fsel_input
 		MODULE mt_fsel_input
-		pea        240
+		pea        248
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fsel_exinput
 		MODULE mt_fsel_exinput
-		pea        244
+		pea        252
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fsel_boxinput
 		MODULE mt_fsel_boxinput
-		pea        248
+		pea        256
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fslx_open
 		MODULE mt_fslx_open
-		pea        252
+		pea        260
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fslx_close
 		MODULE mt_fslx_close
-		pea        256
+		pea        264
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fslx_getnxtfile
 		MODULE mt_fslx_getnxtfile
-		pea        260
+		pea        268
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fslx_evnt
 		MODULE mt_fslx_evnt
-		pea        264
+		pea        272
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fslx_do
 		MODULE mt_fslx_do
-		pea        268
+		pea        276
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fslx_set_flags
 		MODULE mt_fslx_set_flags
-		pea        272
+		pea        280
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_create
 		MODULE mt_wind_create
-		pea        828
+		pea        284
 		move.l     funcAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_open
 		MODULE mt_wind_open
-		pea        276
+		pea        288
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_close
 		MODULE mt_wind_close
-		pea        280
+		pea        292
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_delete
 		MODULE mt_wind_delete
-		pea        284
+		pea        296
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_get
 		MODULE mt_wind_get
-		pea        288
+		pea        300
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_getQSB
 		MODULE mt_wind_getQSB
-		pea        292
+		pea        304
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_set
 		MODULE mt_wind_set
-		pea        296
+		pea        308
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_find
 		MODULE mt_wind_find
-		pea        300
+		pea        312
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_update
 		MODULE mt_wind_update
-		pea        304
+		pea        316
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_calc
 		MODULE mt_wind_calc
-		pea        308
+		pea        320
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_new
 		MODULE mt_wind_new
-		pea        312
+		pea        324
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_rsrc_load
 		MODULE mt_rsrc_load
-		pea        316
+		pea        328
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_rsrc_free
 		MODULE mt_rsrc_free
-		pea        320
+		pea        332
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_rsrc_gaddr
 		MODULE mt_rsrc_gaddr
-		pea        324
+		pea        336
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_rsrc_saddr
 		MODULE mt_rsrc_saddr
-		pea        328
+		pea        340
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_rsrc_obfix
 		MODULE mt_rsrc_obfix
-		pea        332
+		pea        344
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_rsrc_rcfix
 		MODULE mt_rsrc_rcfix
-		pea        336
+		pea        348
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_shel_read
 		MODULE mt_shel_read
-		pea        340
+		pea        352
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_shel_write
 		MODULE mt_shel_write
-		pea        344
+		pea        356
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_shel_get
 		MODULE mt_shel_get
-		pea        348
+		pea        360
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_shel_put
 		MODULE mt_shel_put
-		pea        352
+		pea        364
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_shel_find
 		MODULE mt_shel_find
-		pea        356
+		pea        368
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_shel_envrn
 		MODULE mt_shel_envrn
-		pea        360
+		pea        372
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_shel_help
 		MODULE mt_shel_help
-		pea        364
+		pea        376
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_add
 		MODULE mt_fnts_add
-		pea        368
+		pea        380
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_close
 		MODULE mt_fnts_close
-		pea        372
+		pea        384
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_create
 		MODULE mt_fnts_create
-		pea        376
+		pea        388
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_delete
 		MODULE mt_fnts_delete
-		pea        380
+		pea        392
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_do
 		MODULE mt_fnts_do
-		pea        384
+		pea        396
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_evnt
 		MODULE mt_fnts_evnt
-		pea        388
+		pea        400
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_get_info
 		MODULE mt_fnts_get_info
-		pea        392
+		pea        404
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_get_name
 		MODULE mt_fnts_get_name
-		pea        396
+		pea        408
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_get_no_styles
 		MODULE mt_fnts_get_no_styles
-		pea        400
+		pea        412
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_get_style
 		MODULE mt_fnts_get_style
-		pea        404
+		pea        406
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_open
 		MODULE mt_fnts_open
-		pea        408
+		pea        420
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_remove
 		MODULE mt_fnts_remove
-		pea        412
+		pea        424
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_fnts_update
 		MODULE mt_fnts_update
-		pea        416
+		pea        428
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_ascroll_to
 		MODULE mt_lbox_ascroll_to
-		pea        420
+		pea        432
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_scroll_to
 		MODULE mt_lbox_scroll_to
-		pea        424
+		pea        436
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_bscroll_to
 		MODULE mt_lbox_bscroll_to
-		pea        428
+		pea        440
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_cnt_items
 		MODULE mt_lbox_cnt_items
-		pea        432
+		pea        444
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_create
 		MODULE mt_lbox_create
-		pea        436
+		pea        448
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_delete
 		MODULE mt_lbox_delete
-		pea        440
+		pea        452
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_do
 		MODULE mt_lbox_do
-		pea        444
+		pea        456
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_free_items
 		MODULE mt_lbox_free_items
-		pea        448
+		pea        460
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_free_list
 		MODULE mt_lbox_free_list
-		pea        452
+		pea        464
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_afirst
 		MODULE mt_lbox_get_afirst
-		pea        456
+		pea        468
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_first
 		MODULE mt_lbox_get_first
-		pea        460
+		pea        472
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_avis
 		MODULE mt_lbox_get_avis
-		pea        464
+		pea        476
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_visible
 		MODULE mt_lbox_get_visible
-		pea        468
+		pea        480
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_bentries
 		MODULE mt_lbox_get_bentries
-		pea        472
+		pea        484
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_bfirst
 		MODULE mt_lbox_get_bfirst
-		pea        476
+		pea        488
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_idx
 		MODULE mt_lbox_get_idx
-		pea        480
+		pea        492
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_item
 		MODULE mt_lbox_get_item
-		pea        484
+		pea        496
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_items
 		MODULE mt_lbox_get_items
-		pea        488
+		pea        500
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_slct_idx
 		MODULE mt_lbox_get_slct_idx
-		pea        492
+		pea        504
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_slct_item
 		MODULE mt_lbox_get_slct_item
-		pea        496
+		pea        508
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_tree
 		MODULE mt_lbox_get_tree
-		pea        500
+		pea        512
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_get_udata
 		MODULE mt_lbox_get_udata
-		pea        504
+		pea        516
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_set_asldr
 		MODULE mt_lbox_set_asldr
-		pea        508
+		pea        520
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_set_slider
 		MODULE mt_lbox_set_slider
-		pea        512
+		pea        524
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_set_bentries
 		MODULE mt_lbox_set_bentries
-		pea        516
+		pea        528
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_set_bsldr
 		MODULE mt_lbox_set_bsldr
-		pea        520
+		pea        532
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_set_items
 		MODULE mt_lbox_set_items
-		pea        524
+		pea        536
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_lbox_update
 		MODULE mt_lbox_update
-		pea        528
+		pea        540
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_add_printers
 		MODULE mt_pdlg_add_printers
-		pea        532
+		pea        544
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_add_sub_dialogs
 		MODULE mt_pdlg_add_sub_dialogs
-		pea        536
+		pea        548
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_close
 		MODULE mt_pdlg_close
-		pea        540
+		pea        552
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_create
 		MODULE mt_pdlg_create
-		pea        544
+		pea        556
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_delete
 		MODULE mt_pdlg_delete
-		pea        548
+		pea        560
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_dflt_settings
 		MODULE mt_pdlg_dflt_settings
-		pea        552
+		pea        564
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_do
 		MODULE mt_pdlg_do
-		pea        556
+		pea        568
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_evnt
 		MODULE mt_pdlg_evnt
-		pea        560
+		pea        572
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_free_settings
 		MODULE mt_pdlg_free_settings
-		pea        564
+		pea        576
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_get_setsize
 		MODULE mt_pdlg_get_setsize
-		pea        568
+		pea        580
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_new_settings
 		MODULE mt_pdlg_new_settings
-		pea        572
+		pea        584
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_open
 		MODULE mt_pdlg_open
-		pea        576
+		pea        588
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_remove_printers
 		MODULE mt_pdlg_remove_printers
-		pea        580
+		pea        592
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_remove_sub_dialogs
 		MODULE mt_pdlg_remove_sub_dialogs
-		pea        584
+		pea        596
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_update
 		MODULE mt_pdlg_update
-		pea        588
+		pea        600
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_use_settings
 		MODULE mt_pdlg_use_settings
-		pea        592
+		pea        604
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_pdlg_validate_settings
 		MODULE mt_pdlg_validate_settings
-		pea        596
+		pea        608
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_create
 		MODULE mt_edit_create
-		pea        600
+		pea        612
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_set_buf
 		MODULE mt_edit_set_buf
-		pea        604
+		pea        616
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_open
 		MODULE mt_edit_open
-		pea        608
+		pea        620
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_close
 		MODULE mt_edit_close
-		pea        612
+		pea        624
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_delete
 		MODULE mt_edit_delete
-		pea        616
+		pea        628
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_cursor
 		MODULE mt_edit_cursor
-		pea        620
+		pea        632
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_evnt
 		MODULE mt_edit_evnt
-		pea        624
+		pea        636
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_get_buf
 		MODULE mt_edit_get_buf
-		pea        628
+		pea        640
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_get_format
 		MODULE mt_edit_get_format
-		pea        632
+		pea        644
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_get_colour
 		MODULE mt_edit_get_colour
-		pea        636
+		pea        648
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_get_color
 		MODULE mt_edit_get_color
-		pea        640
+		pea        652
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_get_font
 		MODULE mt_edit_get_font
-		pea        644
+		pea        656
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_get_cursor
 		MODULE mt_edit_get_cursor
-		pea        648
+		pea        660
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_get_dirty
 		MODULE mt_edit_get_dirty
-		pea        652
+		pea        664
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_get_sel
 		MODULE mt_edit_get_sel
-		pea        656
+		pea        668
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_get_scrollinfo
 		MODULE mt_edit_get_scrollinfo
-		pea        660
+		pea        672
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_set_format
 		MODULE mt_edit_set_format
-		pea        664
+		pea        676
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_set_colour
 		MODULE mt_edit_set_colour
-		pea        668
+		pea        680
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_set_color
 		MODULE mt_edit_set_color
-		pea        672
+		pea        684
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_set_font
 		MODULE mt_edit_set_font
-		pea        676
+		pea        688
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_set_cursor
 		MODULE mt_edit_set_cursor
-		pea        680
+		pea        692
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_resized
 		MODULE mt_edit_resized
-		pea        684
+		pea        696
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_set_dirty
 		MODULE mt_edit_set_dirty
-		pea        688
+		pea        700
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_edit_scroll
 		MODULE mt_edit_scroll
-		pea        692
+		pea        704
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_EvntMulti
 		MODULE mt_EvntMulti
-		pea        696
+		pea        708
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_wbutton
 		MODULE mt_form_wbutton
-		pea        700
+		pea        712
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_xdial
 		MODULE mt_form_xdial
-		pea        704
+		pea        716
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_xdo
 		MODULE mt_form_xdo
-		pea        708
+		pea        720
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_form_xerr
 		MODULE mt_form_xerr
-		pea        712
+		pea        724
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_wwatchbox
 		MODULE mt_graf_wwatchbox
-		pea        716
+		pea        728
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_xhandle
 		MODULE mt_graf_xhandle
-		pea        720
+		pea        732
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_create
 		MODULE mt_wdlg_create
-		pea        724
+		pea        736
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_open
 		MODULE mt_wdlg_open
-		pea        728
+		pea        740
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_close
 		MODULE mt_wdlg_close
-		pea        732
+		pea        744
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_delete
 		MODULE mt_wdlg_delete
-		pea        736
+		pea        748
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_get_tree
 		MODULE mt_wdlg_get_tree
-		pea        740
+		pea        752
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_get_edit
 		MODULE mt_wdlg_get_edit
-		pea        744
+		pea        756
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_get_udata
 		MODULE mt_wdlg_get_udata
-		pea        748
+		pea        760
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_get_handle
 		MODULE mt_wdlg_get_handle
-		pea        752
+		pea        764
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_set_edit
 		MODULE mt_wdlg_set_edit
-		pea        756
+		pea        768
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_set_tree
 		MODULE mt_wdlg_set_tree
-		pea        760
+		pea        772
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_set_size
 		MODULE mt_wdlg_set_size
-		pea        764
+		pea        776
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_set_iconify
 		MODULE mt_wdlg_set_iconify
-		pea        768
+		pea        780
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_set_uniconify
 		MODULE mt_wdlg_set_uniconify
-		pea        772
+		pea        784
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_evnt
 		MODULE mt_wdlg_evnt
-		pea        776
+		pea        788
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wdlg_redraw
 		MODULE mt_wdlg_redraw
-		pea        780
+		pea        792
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_wind_draw
 		MODULE mt_wind_draw
-		pea        784
+		pea        796
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_scrp_clear
 		MODULE mt_scrp_clear
-		pea        788
+		pea        800
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_objc_xedit
 		MODULE mt_objc_xedit
-		pea        792
+		pea        804
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
 
 	.globl mt_graf_rubbbox
 		MODULE mt_graf_rubbbox
-		pea        796
+		pea        808
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD

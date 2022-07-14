@@ -304,7 +304,10 @@ static void *func1Auo[] = {
 	Auo_string,
 	Auo_cycle,
 	Auo_picture,
-	Auo_boxed
+	Auo_boxed,
+#if WITH_FIXES
+	Auo_wislider,
+#endif
 };
 static funcVersion const funcAuo[] = { { func1Auo, 0 } };
 static int16 const funcAnzAuo = NUMFUNCS(funcAuo);
@@ -316,6 +319,7 @@ static void *func1Aus[] = {
 	Aus_cycle,
 #if WITH_FIXES
 	Aus_help,
+	Aus_slider,
 #endif
 };
 static funcVersion const funcAus[] = { { func1Aus, 0 } };
@@ -388,6 +392,9 @@ static void *func1A[] = {
 	A_picture,
 	A_dialog2,
 	A_boxed,
+#if WITH_FIXES
+	A_slider,
+#endif
 };
 static funcVersion const funcA[] = { { func1A, 0 } };
 static int16 const funcAnzA = NUMFUNCS(funcA);
@@ -427,6 +434,16 @@ static void *func1Sonst[] = {
 #if WITH_FIXES
 	Adate_getMonth,
 	Adate_ymd2dow,
+	get_desktop,
+	get_pur_desk,
+	get_module_window,
+	get_editor,
+	get_list,
+	get_protocol,
+	get_plotter,
+	wprintf,
+	wvprintf,
+	wputs,
 #endif
 };
 static funcVersion const funcSonst[] = { { func1Sonst, 0 } };

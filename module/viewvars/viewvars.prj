@@ -8,8 +8,5 @@ viewvars.am
 =
 ..\..\src\lib\modul\acs_load.s
 viewvars.c
-wislider.c
-editor.c
-proto.c
 ..\..\lib\pcstdlib.lib
 ..\..\lib\pctos.lib
