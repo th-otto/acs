@@ -2356,6 +2356,7 @@ static void edit_find(EDITTEXT *editor, const char *str)
 				text = lineptr->text + offset;
 				while (offset >= 0)
 				{
+					/* FIXME: wrong logic */
 					if ((*text == c || *text == otherc) &&
 						((casesensitive && strncmp(str, text, searchlen) == 0) ||
 						 strnicmp(str, text, searchlen) == 0) &&
@@ -2390,6 +2391,7 @@ static void edit_find(EDITTEXT *editor, const char *str)
 				offset = col;
 				while (*text != '\0')
 				{
+					/* FIXME: wrong logic */
 					if ((*text == c || *text == otherc) &&
 						((casesensitive && strncmp(str, text, searchlen) == 0) ||
 						 strnicmp(str, text, searchlen) == 0) &&

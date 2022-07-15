@@ -1411,6 +1411,13 @@ indirect:
 		move.l     funcAuo(pc),-(a7)
 		bra        indirect
 		ENDMOD
+
+	.globl Auo_editor
+		MODULE Auo_editor
+		pea        24
+		move.l     funcAuo(pc),-(a7)
+		bra        indirect
+		ENDMOD
 		.ENDC
 
 
@@ -1454,6 +1461,13 @@ indirect:
 	.globl Aus_slider
 		MODULE Aus_slider
 		pea        20
+		move.l     funcAus(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl Aus_editor
+		MODULE Aus_editor
+		pea        24
 		move.l     funcAus(pc),-(a7)
 		bra        indirect
 		ENDMOD
@@ -1882,6 +1896,20 @@ indirect:
 	.globl A_slider
 		MODULE A_slider
 		pea        56
+		move.l     funcA(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl A_wislider
+		MODULE A_wislider
+		pea        60
+		move.l     funcA(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl A_editor
+		MODULE A_editor
+		pea        64
 		move.l     funcA(pc),-(a7)
 		bra        indirect
 		ENDMOD

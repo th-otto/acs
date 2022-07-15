@@ -307,6 +307,7 @@ static void *func1Auo[] = {
 	Auo_boxed,
 #if WITH_FIXES
 	Auo_wislider,
+	Auo_editor,
 #endif
 };
 static funcVersion const funcAuo[] = { { func1Auo, 0 } };
@@ -320,6 +321,7 @@ static void *func1Aus[] = {
 #if WITH_FIXES
 	Aus_help,
 	Aus_slider,
+	Aus_editor,
 #endif
 };
 static funcVersion const funcAus[] = { { func1Aus, 0 } };
@@ -394,6 +396,8 @@ static void *func1A[] = {
 	A_boxed,
 #if WITH_FIXES
 	A_slider,
+	A_wislider,
+	A_editor,
 #endif
 };
 static funcVersion const funcA[] = { { func1A, 0 } };

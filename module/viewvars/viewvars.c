@@ -18,7 +18,7 @@ static boolean proto_service(Awindow *self, int16 task, void *in_out)
 	serv = get_protocol()->service;
 	if (task == AS_TERM)
 	{
-		ret = serv(self, AS_TERM, in_out);
+		ret = serv(self, AS_TERM, self);
 		ACSmoduleterm();
 		return ret;
 	}
