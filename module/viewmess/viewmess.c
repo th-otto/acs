@@ -51,7 +51,7 @@ static void myproto(int16 *msg)
 	switch (msg[0])
 	{
 	case MN_SELECTED:
-		wprintf(proto, "MN_SELECTED\n");
+		wprintf(proto, "MN_SELECTED: title=%d item=%d\n", msg[3], msg[4]);
 		break;
 	case WM_REDRAW:
 		wprintf(proto, "WM_REDRAW: WiName='%s' X=%d Y=%d W=%d H=%d\n", name, msg[3], msg[4], msg[5], msg[6]);
@@ -107,8 +107,8 @@ static void myproto(int16 *msg)
 	case AP_TERM:
 		wprintf(proto, "AP_TERM\n");
 		break;
-	case 0x1234:
-		wprintf(proto_win, "SC_CHANGED\n");
+	case SC_CHANGED:
+		wprintf(proto, "SC_CHANGED\n");
 		break;
 	case AC_OPEN:
 		wprintf(proto, "AC_OPEN\n");
