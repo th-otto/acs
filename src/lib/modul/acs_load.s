@@ -1412,9 +1412,16 @@ indirect:
 		bra        indirect
 		ENDMOD
 
+	.globl Auo_slider
+		MODULE Auo_slider
+		pea        24
+		move.l     funcAuo(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
 	.globl Auo_editor
 		MODULE Auo_editor
-		pea        24
+		pea        28
 		move.l     funcAuo(pc),-(a7)
 		bra        indirect
 		ENDMOD
