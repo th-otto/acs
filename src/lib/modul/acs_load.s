@@ -5372,6 +5372,20 @@ indirect:
 		bra        indirect
 		ENDMOD
 
+	.globl wind_set_str
+		MODULE wind_set_str
+		pea        820
+		move.l     funcAes(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl wind_set_int
+		MODULE wind_set_int
+		pea        824
+		move.l     funcAes(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
 
 /* keytab */
 	.globl Akt_getKeyTab
@@ -6409,7 +6423,7 @@ indirect:
 
 	.globl mt_fnts_get_style
 		MODULE mt_fnts_get_style
-		pea        406
+		pea        416
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
@@ -7096,6 +7110,20 @@ indirect:
 	.globl mt_graf_rubbbox
 		MODULE mt_graf_rubbbox
 		pea        808
+		move.l     funcMtAes(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl mt_wind_set_str
+		MODULE mt_wind_set_str
+		pea        812
+		move.l     funcMtAes(pc),-(a7)
+		bra        indirect
+		ENDMOD
+
+	.globl mt_wind_set_int
+		MODULE mt_wind_set_int
+		pea        816
 		move.l     funcMtAes(pc),-(a7)
 		bra        indirect
 		ENDMOD
