@@ -1,0 +1,735 @@
+!begin_node Download von ACSpro
+
+(!I)ACSpro(!i) ist im MausNet im Gruppenprogrammteil ACSpro der Maus LL und im
+Internet verfÅgbar.
+
+Neue Versionen, Beispiele und Module erscheinen jedoch zuerst in der
+Maus LL, die hier einen "Heim-Vorteil" genieût - sie wird von mir
+betrieben und steht unter meinem Schreibtisch... ;-)
+
+Das (!I)ACSpro(!i)-Paket besteht aus mehreren Archiven. Diese werden auf den
+unten aufgelisteten Seiten mit ihrer Installation nÑher erlÑutert.
+Dort sind auch Links zum Download sowie nÑhere Angaben dazu zu finden.
+
+Jedes Archiv ist von mir mittels PGP signiert worden. Damit kann die
+AuthentizitÑt der Archive durch PGP geprÅft werden. Mein dazu nîtiger
+(!link [îffentlicher SchlÅssel] [Mein îffentlicher PGP-SchlÅssel]) kann auch von der Seite
+
+!begin_itemize
+     (!url [http://acspro.atari.org/] [])
+!end_itemize
+
+geladen werden.
+
+(!I)Falls Sie auf Archive stoûen, die nicht mit der hier zur VerfÅgung
+stehenden Signatur-Datei Åbereinstimmen, so liegt eine nicht von mir
+herausgegebene Version vor. VerstÑndigen Sie mich bitte in diesem
+Falle so bald als mîglich.(!i)
+
+(!B)Hinweis:(!b) Als besonderes Angebot gibt es einige Archive, die sich noch
+im (!link ["Beta-Stadium"] [Archive im Beta-Test]) befindliche Programme, Bibliotheken, Module,
+Beispiele, Dokumentationen o.Ñ. enthalten.
+
+(!B)Hinweis:(!b) FÅr ganz Eilige ;-) gibt es aber auch die "Download-Link-
+Sammlung".
+
+!subtoc [all] !depth 1
+
+!begin_node Mein îffentlicher PGP-SchlÅssel
+
+Mit meinem îffentlicher PGP-SchlÅssel kînnen Sie die AuthentizitÑt
+dieser und aller irgendwo gespeicherten Archive ÅberprÅfen. Auûerdem
+kînnen Sie mir damit eine verschlÅsselte E-Mail zukommen lassen. Mein
+îffentlicher SchlÅssel lautet:
+
+!begin_preformatted
+Type Bits/KeyID    Date       User ID
+pub  2048/3FF38621 1998/02/20 Martin Elsaesser <martin@melsaesser.de>
+                              Martin Elsaesser <Martin Elsaesser @ LL>
+                              Martin Elsaesser
+<Martin_Elsaesser@ll.maus.de>
+                              Martin Elsaesser <martin@melsaesser.de>
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: 2.6.3i
+
+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
+=aI2r
+-----END PGP PUBLIC KEY BLOCK-----
+!end_preformatted
+
+!end_node
+
+
+!begin_node Der GUI-Editor
+
+!begin_blist [Beschreibung]
+ !item [Name]          (!I)ACSpro(!i)-(!I)GUI-Editor(!i) ((!url [(!I)ACSpro(!i)-(!I)GUI-Editor(!i)] [Download/ACSpro3.0.0/guiedit.lzh]))
+
+ !item [Datum]         01.01.2001
+
+ !item [Grîûe]         261,7 kByte
+
+ !item [Verzeichnis]   (!url [http://acspro.atari.org/] [])
+
+ !item [Beschreibung]  Der (!I)ACSpro(!i)-(!I)GUI-Editor(!i) ist die Anwendung, in der die
+               graphische BenutzeroberflÑche entworfen wird
+!end_blist
+
+Das Archiv enthÑlt den (!I)ACSpro(!i)-(!I)GUI-Editor(!i) ACS.APP, den Text
+HISTORY.TXT, der Åber die énderungen an (!I)ACSpro(!i) informiert, sowie die
+Upload-Beschreibung BUILDER.UPL, die Sie bitte fÅr einen Upload
+verwenden sollten.
+
+Entpacken Sie dieses Archiv bitte in das Verzeichnis, wo Sie den
+(!I)ACSpro(!i)-(!I)GUI-Editor(!i) haben mîchten (bei mir z.B. ist es D:\ACSPRO\).
+
+!end_node
+
+
+!begin_node Die Pure-C-Bibliothek
+
+!label Pure-C-Bibliothek
+!label ACS.LIB
+!begin_blist [Beschreibung]
+ !item [Name]          C-Grund-Bibliothek (Download/ACSpro3.0.0/clib.lzh
+
+ !item [Datum]         01.01.2001
+
+ !item [Grîûe]         144,0 kByte
+
+ !item [Verzeichnis]   (!url [http://acspro.atari.org/] [])
+
+ !item [Beschreibung]  Die C-Grund-Bibliothek ist die Hauptbibliothek und
+               enthÑlt die wesentlichen Kernroutinen von (!I)ACSpro(!i).
+!end_blist
+
+Das Archiv enthÑlt die Bibliothek ACS.LIB, die fÅr Module als
+Startup-Code zu verwendende Datei ACSLOAD.O, die Header-Dateien ACS.H
+und UO_ACS.H sowie die Upload-Beschreibung CLIB.UPL, die Sie bitte fÅr
+einen Upload verwenden sollten.
+
+Entpacken Sie dieses Archiv bitte in ein gesondertes Verzeichnis (bei
+mir z.B. ist es D:\ACSPRO\PC\). Die Bibliothek ACS.LIB sowie den
+Startup-Code ACSLOAD.O kopieren Sie bitte zu Ihren Pure-C-Bibliotheken
+(bei mir z.B. D:\PURE_C\LIB\), die Header-Dateien ACS.H und UO_ACS.H
+zu Ihren Pure-C-Headerdateien (bei mir z.B. D:\PURE_C\INCLUDE\).
+
+!end_node
+
+
+!begin_node Die C-Erweiterungs-Bibliothek
+
+!label C-Erweiterungs-Bibliothek
+!label ACSPLUS.LIB
+!begin_blist [Beschreibung]
+ !item [Name]          (!I)ACSpro(!i)-(!I)GUI-Editor(!i) (Download/ACSpro3.0.0/guiedit.lzh)
+
+ !item [Datum]         01.01.2001
+
+ !item [Grîûe]         88,1 kByte
+
+ !item [Verzeichnis]   (!url [http://acspro.atari.org/] [])
+
+ !item [Beschreibung]  Die C-Erweiterungs-Biliothek ist die
+               ErgÑnzungsbibliothek und enthÑlt vordefinierte (!I)ACSpro(!i)-
+               Objekte wie etwa Desktop-Fenster, Editor, (!link [Protokoll] [Protokoll])-
+               Fenster etc., die Sie leicht in eigenen Anwendungen
+               einsetzen kînnen.
+!end_blist
+
+Das Archiv enthÑlt die Bibliothek ACSPLUS.LIB, die Header-Datei
+ACSPLUS.H sowie die Upload-Beschreibung CPLUSLIB.UPL, die Sie bitte
+fÅr einen Upload verwenden sollten.
+
+Entpacken Sie dieses Archiv bitte in ein gesondertes Verzeichnis (bei
+mir z.B. ist es ebenfalls D:\ACSPRO\PC\). Die Bibliothek ACSPLUS.LIB
+kopieren Sie bitte zu Ihren Pure-C-Bibliotheken (bei mir z.B.
+D:\PURE_C\LIB\) und die Header-Datei ACSPLUS.H zu Ihren Pure-C-
+Headerdateien (bei mir z.B. D:\PURE_C\INCLUDE\).
+
+!end_node
+
+
+!begin_node Die Pascal-Bibliothek
+
+!label Pascal-Bibliothek
+!label PPACS.LIB
+!begin_blist [Beschreibung]
+ !item [Name]          Pascal-Bibliothek (Download/ACSpro3.0.0/paslib.lzh)
+
+ !item [Datum]         01.01.2001
+
+ !item [Grîûe]         205,0 kByte
+
+ !item [Verzeichnis]   (!url [http://acspro.atari.org/] [])
+
+ !item [Beschreibung]  Die Pascal-Bibliothek ist die Pascal-Bibliothek und
+               enthÑlt alle (!I)ACSpro(!i)-Routinen der beiden C-Bibliotheken.
+!end_blist
+
+Das Archiv enthÑlt die Bibliothek PPACS.LIB, die Interface-Datei
+ACS.PAS sowie die Upload-Beschreibung PASLIB.UPL, die Sie bitte fÅr
+einen Upload verwenden sollten.
+
+Entpacken Sie dieses Archiv bitte in ein gesondertes Verzeichnis (bei
+mir z.B. ist es D:\ACSPRO\PPASCAL\). Die Bibliothek PPACS.LIB kopieren
+Sie bitte zu Ihren Pure-Pascal-Bibliotheken (bei mir z.B. D:\PP\), die
+Header-Dateien ACS.PAS zu Ihren Pure-Pascal-Interface-Dateien (bei mir
+z.B. ebefalls D:\PP\).
+
+!end_node
+
+
+!begin_node ACSpro - die englische Version
+
+!begin_blist [Beschreibung]
+ !item [Name]          (!I)ACSpro(!i) in englischer Sprache
+               (Download/ACSpro3.0.0/guiedit.lzh)
+
+ !item [Datum]         01.01.2001
+
+ !item [Grîûe]         587,1 kByte
+
+ !item [Verzeichnis]   (!url [http://acspro.atari.org/] [])
+
+ !item [Beschreibung]  Das gesamte (!I)ACSpro(!i)-Paket liegt hier in englischer
+               Sprache vor - allerdings nur komplett in einem einzigen
+               groûen Archiv.
+
+               The whole (!I)ACSpro(!i) in its english version is here
+               available in one big archive.
+!end_blist
+
+Das Archiv enthÑlt den gesamten Inhalt der deutschen Distribution,
+d.h. (!link [den ACS-GUI-Editor] [Der ACSpro-GUI-Editor]), (!link [die Pure-C-Bibliothek] [Die Pure-C-Bibliothek]),
+(!link [die C-Erweiterungsbibliothek] [Die C-Erweiterungs-Bibliothek]) sowie (!link [die Pascal-Bibliothek] [Die Pascal-Bibliothek]) in englischer
+Sprache.
+
+Wie die Dateien installiert werden, ist bei den betreffenden Archiven
+der deutschen Distribution beschrieben.
+
+!end_node
+
+
+!begin_node Die Dokumentation
+
+(!I)Da ich momentan noch an der neuen Dokumentation arbeite, ist hier nur
+die alte fÅr die Version V2.3 verfÅgbar.(!i)
+
+Die neuen Funktionen werden bis dahin entweder in der History oder in
+der Pure-C-Include-Datei erlÑutert. Da (!I)ACSpro(!i) komplett mittels Pure-C
+entwickelt wird, mÅssen die Pure-Pascal-Anwender leider damit leben,
+hierfÅr in die Pure-C-Headerdatei schauen zu mÅssen. Da sich C und
+Pascal aber recht nahe sind, dÅrfte das VerstÑndnis kein Problem
+bereiten! (wer die neuen Dinge natÅrlich nicht braucht und nur von den
+Bugfixes profitieren will, der braucht das natÅrlich nicht ;-)
+Ungeduldige kînnen aber auch die noch nicht fertige Hilfe der Version
+3.0.0 benutzen, die bei den @{"\"Beta-Archive(!link [] [Archive im Beta-Test]) geladen werden kann.
+
+Dank UDO6 gibt es die Dokumentation zu (!I)ACSpro(!i) im Verzeichnis
+(!url [http://acspro.atari.org/] []) in mehreren Formaten:
+
+!begin_enumerate
+  !item die Pure-C-Online-Hilfe unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_pc.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_pc.asc
+          !end_itemize
+
+  !item die Pure-Pascal-Online-Hilfe unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_pp.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_pp.asc
+          !end_itemize
+
+  !item die ST-Guide-Online-Hilfe
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_stg.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_stg.asc
+          !end_itemize
+
+  !item die LaTeX-Dokumentation unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_tex.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_tex.asc
+          !end_itemize
+!end_enumerate
+
+Zur Installation kopieren Sie bitte
+
+!begin_enumerate
+  !item die Pure-C-Online-Hilfe (Beachten Sie bitte, daû Pure-C nur eine
+     benutzerdefinierte Hilfe verwalten kann) USR.HLP in Ihr Pure-C-
+     Verzeichnis.
+
+  !item die Pure-Pascal-Online-Hilfe (Beachten Sie bitte, daû Pure-Pascal
+     nur eine benutzerdefinierte Hilfe verwalten kann) USR.HLP in Ihr
+     Pure-Pascal-Verzeichnis.
+
+  !item die ST-Guide-Online-Hilfe ACSPRO.HYP zusammen mit der Referenz-
+     Datei ACSPRO.REF in das Verzeichnis, wo sich Ihre ST-Guide-
+     Hypertexte befinden.
+
+  !item die LaTeX-Dokumentation ACSPRO.DVI in das Verzeichnis, in dem Ihr
+     Druckertreiber (bzw. Previewer) die TeX-Dateien erwartet. Ferner
+     mÅssen die Bilder in das Verzeichnis kopiert werden, in dem Ihr
+     Druckertreiber (bzw. Previewer) die Graphiken sucht.
+!end_enumerate
+
+!end_node
+
+
+!begin_node ACS-View - der Viewer mit integriertem Editor
+
+!begin_blist [Beschreibung]
+ !item [Name]          ACS-Viewer (Download/ACSpro3.0.0/acsview.lzh)
+
+ !item [Datum]         01.01.2001
+
+ !item [Grîûe]         120,6 kByte
+
+ !item [Verzeichnis]   (!url [http://acspro.atari.org/] [])
+
+ !item [Beschreibung]  Editor fÅr *.TXT, *.DOC, *.ASC, Anzeige *.IMG,
+               rudimentÑrer Dump fÅr alle anderen Dateien LauffÑhig
+               als APP und ACC.
+!end_blist
+
+Der ACS-Viewer ist ein Programm (oder Accessory), das als Datei-
+betrachter TXT-, DOC- und ASC-Dateien in einem vollwertigen Text-
+Editor darstellt, IMG-Dateien als Grafik in ein Fenster lÑdt und alle
+restlichen Dateien als rudimentÑren Dump ausgibt.
+
+Entpacken Sie dieses Archiv bitte in das Verzeichnis, wo Sie den ACS-
+Viewer haben mîchten (bei mir z.B. ist es D:\ACSPRO\ACS-View\).
+
+!end_node
+
+
+!begin_node Module fÅr ACSpro
+
+!begin_blist [Beschreibung]
+ !item [Name]          Module (Download/ACSpro3.0.0/module.lzh)
+
+ !item [Datum]         28.07.2000
+
+ !item [Grîûe]         154,8 kByte
+
+ !item [Verzeichnis]   (!url [http://acspro.atari.org/] [])
+
+ !item [Beschreibung]  Einige îffentliche Module fÅr (!I)ACSpro(!i), die von (!I)ACSpro(!i)
+               und jeder damit erstellten Anwendung geladen werden
+               kann - sofern die Modul-Schnittstelle verwendet wird
+               ... ;-)
+!end_blist
+
+Das Archiv enthÑlt die îffentlichen Module, die mit (!I)ACSpro(!i)
+ausgeliefert werden. Die Sourcen dieser Module sind zum Teil in den
+(!link [Beispielen] [Beispiele zu ACSpro]) enthalten.
+
+Entpacken Sie dieses Archiv bitte in das Verzeichnis, wo Sie die
+Beispiele haben mîchten (bei mir z.B. ist es D:\ACSPRO\Module\).
+
+!end_node
+
+
+!begin_node Beispiele zu ACSpro
+
+!begin_blist [Beschreibung]
+ !item [Name]          Beispiele (Download/ACSpro3.0.0/beispiel.lzh)
+
+ !item [Datum]         13.06.2000
+
+ !item [Grîûe]         244,8 kByte
+
+ !item [Verzeichnis]   (!url [http://acspro.atari.org/] [])
+
+ !item [Beschreibung]  Einige Beispiele zur Anwendungsentwicklung mit (!I)ACSpro(!i) -
+               natÅrlich die Sourcen
+!end_blist
+
+Das Archiv enthÑlt die Sourcen einiger Beispiele zur
+Anwendungsentwicklung mit (!I)ACSpro(!i).
+
+Entpacken Sie dieses Archiv bitte in das Verzeichnis, wo Sie die
+Beispiele haben mîchten (bei mir z.B. ist es D:\ACSPRO\Beispiel\).
+
+!end_node
+
+
+!begin_node Die Link-Sammlung fÅr den Download
+
+!label Download-Link-Sammlung
+Hier sind alle Links fÅr den Download zusammengestellt.
+
+Zum Download stehen im Verzeichnis (!url [http://acspro.atari.org/] []) bereit
+
+!begin_enumerate
+  !item der (!I)ACSpro(!i)-(!I)GUI-Editor(!i) unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/guiedit.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/guiedit.asc
+          !end_itemize
+
+     vom 09.04.1999 mit einer Grîûe von ca. 234,8 kByte.
+
+  !item die C-Grund-Bibliothek unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/clib.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/clib.asc
+          !end_itemize
+
+     vom 09.04.1999 mit einer Grîûe von ca. 108,2 kByte.
+
+  !item die C-Erweiterungs-Biliothek unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/cpluslib.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/cpluslib.asc
+          !end_itemize
+
+     vom 09.04.1999 mit einer Grîûe von ca. 63,9 kByte.
+
+  !item die (!link [Pascal-Bibliothek] [Pascal-Bibliothek]) (Diese schlieût die beiden C-Bibliotheken
+     ein) unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/paslib.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/paslib.asc
+          !end_itemize
+
+     vom 09.04.1999 mit einer Grîûe von ca. 174,4 kByte.
+
+  !item die Pure-C-Online-Hilfe unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_pc.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_pc.asc
+          !end_itemize
+
+     Diese ist momentan noch die Online-Hilfe zur Version V2.3 (siehe
+     ErlÑuterung zur (!link [Dokumentation] [Die Dokumentation]))
+
+  !item die Pure-Pascal-Online-Hilfe unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_pp.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_pp.asc
+          !end_itemize
+
+     Diese ist momentan noch die Online-Hilfe zur Version V2.3 (siehe
+     ErlÑuterung zur (!link [Dokumentation] [Die Dokumentation]))
+
+  !item die ST-Guide-Online-Hilfe
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_stg.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_stg.asc
+          !end_itemize
+
+     Diese ist momentan noch die Online-Hilfe zur Version V2.3 (siehe
+     ErlÑuterung zur (!link [Dokumentation] [Die Dokumentation]))
+
+  !item die LaTeX-Dokumentation (Handbuch) unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_tex.lzh
+          !end_itemize
+
+     und die Signatur unter
+
+          !begin_itemize
+          Download/ACSpro3.0.0/doku_tex.asc
+          !end_itemize
+
+     Diese ist momentan noch die Dokumentation zur Version V2.3 (siehe
+     ErlÑuterung zur (!link [Dokumentation] [Die Dokumentation]))
+!end_enumerate
+
+Jedes Archiv ist von mir mittels PGP signiert worden. Damit kann die
+AuthentizitÑt der Archive durch PGP geprÅft werden. Mein dazu nîtiger
+(!link [îffentlicher SchlÅssel] [Mein îffentlicher PGP-SchlÅssel]) kann (!link [hier] [Mein îffentlicher PGP-SchlÅssel]) und auch von der Seite
+
+!begin_itemize
+     (!url [http://acspro.atari.org/] [])
+!end_itemize
+
+geladen werden. (!I)Falls Sie auf Archive stoûen, die nicht mit der hier
+zur VerfÅgung stehenden Signatur-Datei Åbereinstimmen, so liegt eine
+nicht von mir herausgegebene Version vor. VerstÑndigen Sie mich bitte
+in diesem Falle so bald als mîglich.(!i)
+
+!end_node
+
+
+!begin_node Archive im Beta-Test
+!alias Beta-Stadium
+!alias Beta-Test
+!alias Betatest
+
+Sie kînnen direkt von den (!I)ACSpro(!i)-Seiten im Internet unter der URL
+
+!begin_itemize
+     (!url [http://acspro.atari.org/] [])
+!end_itemize
+
+Archive laden, deren Inhalt noch nicht freigegeben ist und der noch
+unvollstÑndig oder fehlerhaft sein kann. Sie kînnen die darin
+enthaltenen Daten, Informationen und Programme nutzen, so wie sie
+sind. Es gibt allerdigs keinerlei Support oder Garantie dafÅr.
+
+Falls Sie Fehler finden sollten oder Anmerkungen machen bzw.
+Anregungen geben mîchten, so nehmen Sie bitte mit mir (!link [Kontakt] [Kontakt-Aufnahme]) auf.
+Vielen Dank!
+
+!end_node
+
+
+!begin_node Maus LL
+
+!subtoc [all] !depth 1
+
+Die Maus LL ist eine im (!link [MausNet] [Das MausNet]) vernetzte Mailbox und wird von mir
+betrieben und gewartet. Sie ist unter der Nummer (!B)(0 81 92) 99 6 99 99(!b)
+per analogem Modem (bis 33600 bps) oder ISDN (X.75) erreichbar.
+
+Login-Zeiten der Maus LL pro Anruf (in Minuten)
+
+
+!begin_table [cccccl]
+      Uhrzeit     !! GÑste  !! User  !! Zahler  !! Geizhals  !! Hinweise
+!hline
+   00:00 - 23:59  !!  30    !!  30   !!   60    !!    30     !! Gastzugang mîglich
+!end_table
+
+Es gibt einige Uhrzeiten, zu denen ein Anruf nicht angenommen werden
+kann, da die Maus LL mit diversen Aktionen beschÑftigt ist. Die Zeiten
+sind normalerweise "Brutto-Zeiten", d.h. die Maus LL kann durchaus
+einen Login zulassen, da sie evtl. mit der Aktion bereits fertig ist.
+
+
+!begin_table [crl]
+      Beginn zwischen !!    Dauer  !! Aktion
+!hline
+       02:52 - 02:57  !!   5 min.  !! Warten auf Nacht-Neustart
+       03:05 - 03:25  !!  15 min.  !! MausNet mit Berlin (1)
+       03:35 - 04:10  !!  15 min.  !! MausNet mit Berlin (2)
+       05:00 - 05:10  !!   5 min.  !! Arbeit fÅr den Wahl-DÑmon
+       05:15 - 05:25  !!   5 min.  !! Arbeit fÅr den Hilfe-DÑmon
+       08:45 - 08:55  !!  15 min.  !! Vormittags-Netz mit Berlin (1)
+       11:52 - 11:57  !!   5 min.  !! Warten auf Mittag-Neustart
+       12:30 - 13:00  !!  15 min.  !! Viren-Check des Maus-Rechners
+       16:00 - 16:20  !!  15 min.  !! Nachmittags-Netz mit Berlin (2)
+       17:22 - 17:27  !!   5 min.  !! Warten auf Abend-Neustart
+       17:30 - 18:00  !!  15 min.  !! Abend-Netz mit Berlin (1)
+       19:20 - 19:50  !!  15 min.  !! Abend-Netz mit Berlin (2)
+       23:30 - 23:45  !!  15 min.  !! Mitternachts-Netz mit Berlin
+       23:45 - 23:59  !!  15 min.  !! Autoservice (MausPutz, Backup)
+!end_table
+
+
+!begin_node Der Hilfe-DÑmon der Maus LL
+
+In der Maus LL ist ein Hilfe-DÑmon installiert. Der DÑmon wird
+komplett per eMail bedient, er antwortet dann per eMail.
+
+Und so bedienen Sie den Hilfe-DÑmon aus dem MausNet heraus:
+
+!begin_enumerate
+  !item (!I)Hilfe zum DÑmon anfordern:(!i)
+
+      PM an:   Hilfe DÑmon @ LL
+
+      Betreff: Hilfe
+
+  !item (!I)Liste der verfÅgbaren Texte:(!i)
+
+      PM an:   Hilfe DÑmon @ LL
+
+      Betreff: Hilfe Liste
+
+  !item (!I)Hilfe-Text anfordern:(!i)
+
+      PM an:   Hilfe DÑmon @ LL
+
+      Betreff: (!I)<Text-Titel>(!i)
+
+     Die hinterlegten Titel der Hilfetexte kînnen sich jederzeit
+     Ñndern, da Texte bei Erreichen einer Grîûe von ca. 16 kByte -
+     etwa die History - bekanntlich in mehrere Teile gesplittet werden
+     mÅssen. Die verfÅgbaren Texte werden jedoch in der Liste der
+     verfÅgbaren Texte angegeben.
+!end_enumerate
+
+Da die Maus LL von mir betrieben wird und unter meinem Schreibtisch
+steht, sind die dort hinterlegten Texte i.a. aktueller als die Listen
+auf dem Internet - und vor allem auch fÅr (!I)ACSpro(!i)-Anwender ohne
+Internet-Zugang aber mit MausNet-Account zugÑnglich.
+
+(!B)Da es sich bei (!I)ACSpro(!i) um (!link [Shareware] [Shareware]) handelt, ist dieser Service
+auûerhalb des MausNet (!I)nicht(!i) mîglich - ich bitte hierfÅr um
+VerstÑndnis!(!b)
+
+!end_node
+
+!end_node
+
+
+!begin_node Das MausNet
+
+Das MausNet ist ein privat betriebenes Mailbox-Netzwerk. Es sind um
+die 60 Mailboxen in Deutschland in einem hierarchischen Netz
+zusammengeschlossen.
+
+Abgesehen davon, daû sich im MausNet auûer fÑhigen und kompetenten
+"Atarianern" auch bekannte Grîûen der Atari-Szene tummeln, ist
+mindestens eine Gruppen fÅr alle interessant, die (!I)ACSpro(!i) zur
+Programmentwicklung verwenden, und zwar die im MausNet vernetzte
+Gruppe Maus.Computer.Atari.Programmieren.
+
+!subtoc [all] !depth 1
+
+
+!begin_node Liste der Maus-Boxen
+
+
+!begin_table [rllll]
+ Nr.  !! KÅrzel  !! Name                          !! Telefon         !! Komm.-Typ
+!hline
+  23  !! B       !! MAUS Berlin                   !! 030-82701142    !! Analog, ISDN X.75
+      !!         !!                               !! 030-82701167    !! Analog, ISDN X.75
+  92  !! B3      !! MAUS Berlin 3                 !! 030-82701143    !! Analog
+      !!         !!                               !! 030-82701166    !! ISDN X.75
+  27  !! BI      !! MAUS Bielefeld                !! 0521-287799     !! Analog, ISDN X.75
+  65  !! BM      !! MAUS BrÅhl/Rhein-Erft-Kreis   !! 02232-9499186   !! Analog, ISDN X.75
+  77  !! CLP     !! MAUS Bunnen/Lîningen          !! 05434-3797      !! Analog, ISDN X.75
+  46  !! BB      !! MAUS Bîblingen                !! 07031-4109911   !! Analog, ISDN X.75
+  17  !! DO      !! MAUS Ex-Maus DO 8-) Dortmund  !! 0231-4441510    !! Analog, ISDN X.75
+  10  !! F       !! MAUS Frankfurt                !! 069-96206127    !! Analog, ISDN X.75
+  47  !! Fö      !! MAUS FÅrth                    !! 09101-997119    !! Analog
+ 106  !! GI      !! MAUS Gieûen                   !! 06420-960367    !! Analog, ISDN X.75
+ 129  !! GR      !! MAUS Gîrlitz                  !! 03581-303988    !! Analog
+  75  !! IZ      !! MAUS Itzehoe                  !! 04821-883681    !! Analog, ISDN X.75
+   6  !! KI      !! MAUS Kiel                     !! 04555-714855    !! Analog, ISDN X.75
+ 112  !! LB      !! MAUS Ludwigsburg              !! 07141-280479    !! Analog, ISDN X.75
+  15  !! LU      !! MAUS Ludwigshafen/Mannheim    !! 0621-4842051    !! Analog, ISDN X.75
+   1  !! MS      !! MAUS MÅnster                  !! <unbekannt>     !! Analog, ISDN X.75
+  55  !! MS2     !! MAUS MÅnster 2                !! 0251-77262      !! Analog, ISDN X.75
+  83  !! NF      !! MAUS Nordfriesland            !! 04671-930321    !! Analog, ISDN X.75
+  41  !! OTR     !! MAUS On The Road              !! <unbekannt>     !!
+  13  !! R       !! MAUS Regensburg               !! 0941-22090      !! Analog, ISDN X.75
+ 119  !! LL      !! MAUS Schondorf/Landsberg      !! 08192-9969999   !! Analog, ISDN X.75
+ 120  !! SHA     !! MAUS SchwÑbisch Hall          !! 0791-49949433   !! Analog, ISDN X.75
+  39  !! UN      !! MAUS Unna                     !! 02103-334009    !! Analog, ISDN X.75
+  45  !! WI      !! MAUS Wiesbaden                !! 0611-547307     !! Analog, ISDN X.75
+  28  !! WI2     !! MAUS Wiesbaden 2              !! 0611-9419126    !! Analog, ISDN X.75
+  61  !! WUN     !! MAUS Wunsiedel                !! 09232-91031     !! Analog, ISDN X.75
+  54  !! ZW      !! MAUS ZweibrÅcken              !! 06332-16629     !! Analog
+      !!         !!                               !! 06332-903090    !! ISDN X.75
+  70  !! B2      !! QUARK Berlin                  !! 030-628 04 408  !! Analog,ISDN X.75
+  89  !! B5      !! QUARK Berlin 5                !!                 !!
+ 110  !! DU3     !! QUARK Duisburg 3              !! 0203-735844     !! Analog
+      !!         !!                               !! 0203-773816     !! ISDN X.75
+!end_table
+
+!end_node
+
+!end_node
+
+
+!end_node

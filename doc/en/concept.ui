@@ -1,0 +1,98 @@
+!begin_node The ACS system concept
+
+!subtoc [all] !depth 1
+
+Here there is something missing...
+
+
+!begin_node Click Routine & Drag Routine
+
+!label Click-Routine
+!label Drag Routine
+An essential concept of (!I)ACSpro(!i) is to deposit Click & Drag routines
+directly to GEM AES objects that are invoked when appropriate user
+actions occur and which then take corresponding action.
+
+These routines can be defined and edited in the (!I)GUI-Editor(!i) and
+(!I)ACSpro(!i) adjusts the generated GEM object tree in such a way that
+in the field of AES objects behind an object tree, for example, with
+a button object, there is an AOBJECT whose contents include, among
+other things, the two Click & Drag routines. To test if there is an
+AOBJECT behind an object, the object flags constant (!link [AEO] [Object flags]) exists.
+
+If selected objects in (!I)ACSpro(!i) are grabbed and moved via Drag&Drop
+then the target object's drag routine is called when the mouse button
+is released. This routine should then evaluate the so-called selection
+list ACSblk->Aselect in which the object with the type and the data
+are stored.
+
+!end_node
+
+
+!begin_node ACSpro UserDefs
+
+!label User defined objects
+UserDefs are a powerful concept to extend GEM. However, this is 
+limited to the graphical appearance. The parameters are put in a
+32-bit word.
+
+(!I)ACSpro(!i) now extends this concepts in an object-oriented way through
+various ways:
+
+!begin_itemize
+   !item The data structure is extended and is now called AUSERBLK. It
+     has 3 user pointers and a pointer to the service routine. The
+     user pointers allow other parameters such as strings to be
+     passed.
+
+   !item The service routine is similiar to the typical service routine
+     of windows in that it allows service requests or messages to
+     be sent to the UserDef (object). When created by means of
+     Aob_create the message (!link [AUO_CREATE] [AUO_CREATE]) is sent to the UserDef.
+     Then the UserDef object may request additional memory and/or
+     initialize itself if necessary. A user pointer is utilized to
+     reference this additional memory. Likewise, when releasing with
+     Aob_delete, the UserDefs will receive the message (!link [AUO_TERM] [AUO_TERM]).
+!end_itemize
+
+If the UserDef is created differently the programmer must take care
+to send the (!link [AUO_CREATE] [AUO_CREATE]) or (!link [AUO_TERM] [AUO_TERM]) respectively.
+
+UserDefs can receive additional messages. This way the functionality
+can be extended. How far that can go can be seen in the UserDef
+editor.
+
+There are messages that should be handled by all UserDefs.
+
+(!I)ACSpro(!i) includes the following UserDefs for your use.
+
+!begin_table [llll]
+ Reference      !! Click       !! Service       !! Comment
+ A_boxed        !! Aus_boxed   !! Auo_boxed     !! Input field with block selection.
+ A_checkbox     !! -           !! Auo_string    !! Checkbox with text
+ (!link [A_radiobutton] [A_checkbox])  !! -           !! Auo_string    !! Selectable circle with text
+ A_innerframe   !! -           !! Auo_string    !! Frame with text
+ A_pattern      !! -           !! -             !! Draws VDI fill pattern
+ A_arrows       !! -           !! -             !! Draws VDI lines/arrows
+ A_select       !! -           !! -             !! Selected with frame instead of inverted
+ A_ftext        !! -           !! Auo_ftext     !! Outputs formatted multi-line text
+ A_3Dbutton     !! -           !! Auo_string    !! Button in 3D style
+ A_cycle        !! Aus_cycle   !! Auo_cycle     !! Cycle button, generates Popup when selected
+ A_picture      !! -           !! Auo_picture   !! Draws a color picture
+ A_editor       !! Aus_editor  !! Auo_editor    !! Outputs texts (Editor, Selectors, Logs)
+ A_slider       !! Aus_slider  !! Auo_slider    !! Horizontal or Vertical Slider
+ A_wislider     !! -           !! Auo_wislider  !! Simulates an A_slider with the GEM window sliders
+ A_title        !! -           !! Auo_string    !! Underlined text
+!end_table
+
+!end_node
+
+
+!begin_node The Context Menu
+!alias Context-Menu
+
+Here there is something missing...
+
+!end_node
+
+!end_node

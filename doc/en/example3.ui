@@ -1,0 +1,257 @@
+!begin_node Text input: Greetings (Pure-C, ACSpro 3.0.0)
+
+For the third example program we will make a simple program
+that greets the user personally after entering the name.
+
+(!B)Note:(!b) For this example there is no archive with the
+sources - it is still too easy for that... ;-)
+
+!subtoc [all] !depth 1
+
+
+!begin_node Step III-01: Create the ACS files
+
+Start (!I)ACSpro(!i) and create a new ACS file, e.g.
+"D:\ACSPRO\EXAMPLE\GREET.C\GREET.ACS"
+
+
+!image (!IMAGES)snap_56.img  New ACS file
+
+!end_node
+
+
+!begin_node Step III-02: The properties of the ACS file
+
+Change the properties of the ACS file as in (!link [Example I] [Step I-41: The input values of the properties dialog]). However,
+this time set the ACC entry to "Greeting".
+
+(!B)Note:(!b) Please note that in (!I)ACSpro(!i) versions prior to 3.0.0 an ACC
+entry should begin with two spaces! Starting with version 3.0.0
+(!I)ACSpro(!i) will do this automatically.
+
+
+!image (!IMAGES)snap_73.img
+
+!image (!IMAGES)snap_58.img  The ACS file properties
+
+!end_node
+
+
+!begin_node Step III-03: The object tree
+
+Create a new window as before, but this time with the name
+GreetWind. Also as before create an object tree as a work
+object. Give it the name GreetObj for this example. Please
+set up this object tree as shown.
+
+(!B)Note:(!b) The input field is a (!link [BoxEdit] [Userdef-BoxEdit]) object.
+
+
+!image (!IMAGES)snap_63.img The object tree of the work object
+
+!end_node
+
+
+!begin_node Step III-04: Invoke the "Extended Values" editor
+
+The input field has to be addressable by the program in order to
+output the string that was entered. For this a symbolic name,
+which is a constant, should be given. Double-click on the
+input field and select the item "References" from the pop-up
+that appears.
+
+
+!image (!IMAGES)snap_60.img   Invoke the "Extended Values" editor
+
+!end_node
+
+
+!begin_node Step III-05: Assign a symbolic name (index) for the input field
+
+Now set the index to USERNAME as shown and close the dialog
+with the OK button.
+
+(!B)Note:(!b) The label of the field is "Index" because the
+generated constant USERNAME is used as the array index for
+the object tree in order to get to the input field object
+itself.
+
+
+!image (!IMAGES)snap_61.img  Assign a symbolic name (index)
+
+!end_node
+
+
+!begin_node Step III-06: Shortcut for the button "Greet" - short for Alt
+
+Now as before, select the "References" item from the "Greet!" button to
+invoke the Extended Values editor.  Click on the field "Key" or use the
+TAB key to get to it.
+
+Our button should get the keyboard shortcut Alt-S. By pressing
+the INSERT key (With (!link [MagiCMac] [Mag!X]) on the Mac it is Apple-E) you
+will get a pop-up with all the ASCII characters to choose from.
+Now select the character shown in the image which is the symbol
+that represents the ALT key.
+
+
+!image (!IMAGES)snap_64.img  Shortcut for the button "Greet"
+
+!end_node
+
+
+!begin_node Step III-07: Shortcut for the button "Greet"
+
+Then enter the character 'S'. Your screen should now appear
+like the image below.
+
+
+!image (!IMAGES)snap_65.img  Shortcut for the button "Greet"
+
+!end_node
+
+
+!begin_node Step III-08: Click routine for the button "Greet"
+
+By clicking on the button "Greet!" the user should get the
+welcome message. For this purpose, the ShowGreet function
+is entered as the Click routine as shown.
+
+Now please exit the dialog with OK.
+
+
+!image (!IMAGES)snap_66.img  Click routine for the button "Greet"
+
+!end_node
+
+
+!begin_node Step III-09: Create an alert box
+
+Now open the ALERTBOX list and create a new alert box with the
+name GreetUser as shown.
+
+(!B)Note:(!b) If you are trying out this example with the restricted
+(!link [Shareware] [ACSpro is shareware]) version of (!I)ACSpro(!i) you will get (!link [Shareware] [ACSpro is shareware]) reminder
+since you can only create 2 objects per list. This limit is
+already exceeded by the built-in alert boxes of the (!I)ACSpro(!i)
+system.
+
+(!B)Tip:(!b) You can bypass this (!link [Shareware] [ACSpro is shareware]) reminder temporarily by
+deactivating the "main module" button in the properties of the
+ASC file which then clears the system alert boxes. After
+creating the new alert box, switch the "main module" option
+back on.
+
+(!B)Note:(!b) This tip only works for alert boxes and only if you have
+not created 2 alert boxes yourself... ;-)
+
+
+!image (!IMAGES)snap_67.img  Create a new alert box
+
+!end_node
+
+
+!begin_node Step III-10: The alert box text
+
+Enter the text for the alert box as shown.
+
+(!B)Note:(!b) The parameter string '%s' will be replaced later
+by the function alert_str using whatever name is entered.
+
+
+!image (!IMAGES)snap_68.img  The alert box text
+
+!end_node
+
+
+!begin_node Step III-11: The alert box icon
+
+If you click on the icon in the upper left corner of the
+alert box editor you will be presented with the available
+icons. The first four options (no icon, exclamation mark,
+question mark and stop sign) are available for use with the
+AES function form_alert. The last icon is unique to (!I)ACSpro(!i).
+It is a timer icon used only with the (!I)ACSpro(!i) functions
+Awi_alert and alert_str. Once the timer expires, the alert
+box dialog will close.
+
+For this example please select the timer icon.
+
+(!B)Note:(!b) With the button "Test" you can test out the alert
+box right away - of course without the substition of the
+parameter '%s'.
+
+
+!image (!IMAGES)snap_69.img  The alert box icon
+
+!end_node
+
+
+!begin_node Step III-12: The Pure-C project
+
+Start up Pure-C and create a project file, for example,
+"D:\ACSPRO\EXAMPLE\GREET.C\GREET.PRJ". Now enter the project
+file as shown and save it.
+
+
+!image (!IMAGES)snap_72.img  The Pure-C project
+
+!end_node
+
+
+!begin_node Step III-13: The Pure-C main program - part 1/2
+
+Now create the main Pure-C program, for example,
+"D:\ACSPRO\EXAMPLE\GREET.C\GREET.C". Enter the first part
+of the program as shown below.
+
+
+!image (!IMAGES)snap_70.img  The Pure-C main program - part 1/2
+
+!end_node
+
+
+!begin_node Step III-14: The Pure-C main program - part 2/2
+
+Next enter the second part of the program as shown and save
+the program. Finally, compile and link the program as in the
+previous examples.
+
+
+!image (!IMAGES)snap_71.img  The Pure-C main program - part 2/2
+
+!end_node
+
+
+!begin_node Step III-15: The finished program - part 1/2
+
+Start the program, enter your name and press the button
+"Greet!". In response you will be greeted with your name
+along with a short message.
+
+(!B)Note:(!b) The image here shows the program in 2D mode which
+is (!I)not(!i) enabled by default. Use the NO3D or ON3D module
+to toggle between 2D and 3D mode.
+
+
+!image (!IMAGES)snap_76.img  The finished program - part 1/2
+
+!end_node
+
+
+!begin_node Step III-16: The finished program - part 2/2
+
+If you don't close the alert box with the OK button you can
+see how the timer works. As soon as the timer runs out the
+alert box will close automatically.
+
+(!B)Note:(!b) The image here shows the program in 2D mode which
+is (!I)not(!i) enabled by default. Use the NO3D or ON3D module
+to toggle between 2D and 3D mode.
+
+
+!image (!IMAGES)snap_75.img  The finished program - part 2/2
+
+!end_node
+
+!end_node

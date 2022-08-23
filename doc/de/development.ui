@@ -1,0 +1,31 @@
+!begin_node Entwicklung mittels ACSpro
+
+!subtoc [all] !depth 1
+
+Hier fehlt noch etwas...
+
+!begin_node Der Cookie Jar
+!alias Cookie Jar
+!alias Cookie
+!alias Cookies
+
+Der Cookie Jar (engl. 'Keksdose') ist eine global fr alle
+Applikationen verfgbare Informationsquelle fr verschiedene
+Einstellungen in Ihrem Computer. Dort werden z.B. Werte fr die
+momentan benutzte Hardware eingetragen (Programme sollten dann nur
+diesen Cookie auswerten und keine eigenen Annahmen ber die Hardware
+durchfhren), aber auch viele residente Programme, die automatisch
+beim Einschalten des Computers abgearbeitet werden (Auto-Ordner),
+tragen einen Cookie (engl. 'Keks') ein, um damit anderen Programme
+Informationen oder Routinen zur Verfgung zu stellen.
+
+Ein Cookie besitzt immer einen (hoffentlich) eindeutigen Namen und
+einen Wert, der per Ash_getcookie ermittelt werden kann.
+
+Beispielsweise wird von SELECTRIC oder BoxKite ein 'FSEL'-Cookie
+angelegt, anhand dessen Existenz (!I)ACSpro(!i) intern berprft, ob es die
+Multi-Dateiauswahl berhaupt anbieten kann.
+
+!end_node
+
+!end_node

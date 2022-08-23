@@ -1,0 +1,75 @@
+!code_source [tos]
+
+# language independent macros
+!include ../macros.ui
+# version numbers
+!include version.ui
+# switches
+!include header.ui
+# language macros
+!include lang.ui
+
+# ---------------------------------------------
+# The title of this documentation depends on
+# the destination format
+# ---------------------------------------------
+!docinfo [title] Das Entwicklungs-System (Pure-C und Pure Pascal)
+!docinfo [program] ACSpro
+!docinfo [author] Martin Els„sser
+!docinfo [address] Garten„cker 30
+!docinfo [address] 86938 Schondorf a.A.
+!docinfo [address] Deutschland
+!docinfo [programimage] (!IMAGES)img00866
+
+!macro PROGRAM ACSpro
+
+!table_alignment left
+
+# ------------------------------------------------------
+# Set the subject for the ST-Guide
+# ------------------------------------------------------
+!docinfo [stgdatabase] Programmieren/ACSpro
+!ifdest [stg,amg]
+!begin_raw
+@subject "Programmieren/Atari"
+@options "+i +z -t3"
+!end_raw
+!endif
+
+# ------------------------------------------------------------------------------
+# the Document structure
+# ------------------------------------------------------------------------------
+
+!begin_document
+
+!html_keywords Atari
+!html_keywords TOS
+
+!raw [tex] \sloppy
+
+# create title page + table of contents
+!maketitle
+!raw [stg] @noref
+!tableofcontents !depth 1
+
+!include navigation.ui
+!include introduction.ui
+!include concept.ui
+!include examples.ui
+!include gui.ui
+!include development.ui
+!include reference.ui
+!include history.ui
+
+!begin_appendix
+
+!include legal.ui
+!include shareware.ui
+!include ml.ui
+!include contact.ui
+!include download.ui
+!include alpharef.ui
+
+!end_appendix
+
+!end_document

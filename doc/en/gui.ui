@@ -1,0 +1,1501 @@
+!begin_node The ACSpro GUI editor
+
+Providing visually sophisticated and intuitive user interfaces
+require a design program that takes into account the special
+requirements needed while being easy to use and configurable
+without impeding the developer with unnecessary restrictions:
+
+                            (!B)  Welcome to(!b)
+
+
+!image (!IMAGES)img00866.img
+
+Since I developed the (!I)GUI editor(!i) itself with (!I)ACSpro(!i) it offers
+all of its advantages and so accordingly can be modularly extended
+or used as an accessory. It has the menu bar of PUR_DESK and places
+a window structure in the module window as the Preferences icon.
+This window can be opened by double-clicking the icon and contains
+the (!I)ACSpro(!i) (!link [Options] [Options window]).
+
+(!I)ACSpro(!i) offers the possibility of integrating your own editors
+into the (!I)GUI editor(!i). These must be located in the folder from
+from which the builder is started and must have the extenstion
+"AME". The (!I)GUI editor(!i) loads all editors at start up. If you want
+to load an editor after start up then just select the desktop menu
+item "Reload Module" and select the editor you wish to load.
+
+!subtoc [all] !depth 1
+
+
+!begin_node Options window
+
+Double-clicking the Preferences icon from the Module window displays
+the Options window where the (!I)ACSpro(!i) settings can be changed.
+
+
+!image (!IMAGES)snap_77.img  Options Window
+(!nl)
+
+!begin_xlist [glue toolbox-window]
+ !item [Registration]            Enter the exact data from the registration
+                         form in these fields to take advantage of the
+                         full functionality of the (!I)ACSpro(!i) (!I)GUI editor(!i).
+
+ !item [grid for objects]        The grid-snap button determines whether or not
+                         objects in dialogs snap to character positions
+                         during size or position changes.
+
+ !item [copy index]              When copying object trees, the identifiers for
+                         the indexes can also be copied. This can be
+                         very annoying when copying within the same file
+                         since duplicate indexes are not allowed and so
+                         a new identifier is required by the user. If
+                         this flag is not set, the indexes will not be
+                         copied.
+
+ !item [copy image-data]         If icons or images are copied within the same
+                         file, you have the option of copying the object
+                         or just referencing it. This switch allows you
+                         to set the desired mode of operation.
+
+ !item [autosave files]          With this flag you can determine whether or not
+                         a configuration file (see Save below) is saved
+                         automatically when exiting the builder.
+
+ !item [fast saving]             Normally before saving an ACS file, all open
+                         editor windows are closed with an "OK" in
+                         order to avoid inconsistancies. If this flag
+                         is set then that will not happen; all windows
+                         remain open. However, changes that have not yet
+                         been confirmed with "OK" are not taken into
+                         account when saving.
+
+ !item [glue toolbox-window]     The toolbox containing all of the available
+                         objects can be automatically attached to the
+                         left side of the object window. In this way
+                         the toolbox will always be accessible at the
+                         object tree that is currently being processed.
+
+ !item [Imagegrid]               Here you can set the grid value, which is what
+                         determines the multiple of character positons
+                         that are snapped-to during any icon and image
+                         operations. Possible values are 1 (no snap), 2,
+                         4 and 8.
+
+ !item [Help]                    With the HELP key you can access online help via
+                         an external program from within almost all of
+                         the dialogs. Here you can configure which help
+                         program will be loaded on demand. Normally the
+                         ST-GUIDE by Holger Weets will be entered which
+                         can be downloaded from the Maus LL or from the
+                         (!I)ACSpro(!i) website.
+
+ !item [Save]                    The current state of the (!I)GUI editor(!i) can be
+                         saved with this button. The (!I)GUI editor(!i) saves
+                         the file names of all open (!I)ACSpro(!i) files as well
+                         as the settings of the individual editors in
+                         a configuration file. Then, after a restart of
+                         the (!I)GUI editor(!i), the saved state will be
+                         exactly restored.
+!end_xlist
+
+!end_node
+
+
+!begin_node The General window
+
+Each (!I)ACSpro(!i) interface file that is being edited is represented by a
+"General" window which is divided into two sections: the (!link [toolbar] [The General window toolbar]) and
+a selection of icon objects.
+
+
+!image (!IMAGES)snap_78.img  The General window
+(!nl)
+
+This window represents the "control center" for each (!I)ACSpro(!i) file.
+By clicking on the icons in the object list you can access additional
+dialogs or branch to another object list. The icons are represented
+as follows:
+
+!begin_xlist [OBJECTS, MENUS, POPUP]
+ !item [(!link [MAINMODUL] [The Main Module dialog])]              This icon invokes the main module dialog.
+                        There the properties of the main module can
+                        be entered.
+
+ !item [(!link [PROPERTIES] [The Behavior dialog])]             This icon brings up the Behavior dialog.
+
+ !item [(!link [WINDOW] [The Window editor])]                 The object list of all the windows is shown.
+                        Through the list the window editor can be
+                        invoked.
+
+ !item [(!link [OBJECTS] [The Object Tree editor]), (!link [MENUS] [The Menu editor]), (!link [POPUP] [The Popup editor])]  The object lists for the Work, Menu and
+                        Popup objects are displayed which can then
+                        branch into the individual object editors.
+
+ !item [REFERENCE]              The object list of references will appear,
+                        from which you can develop your structures
+                        and routines with the integrated editor.
+
+ !item [ICONS]                  This shows the object list of (color-) icons.
+                        Each icon can be edited with the icon editor.
+
+ !item [PICTURES]               Brings up the object list for the pictures
+                        (monochrome graphics) from which you can then
+                        branch into the picture editor.
+
+ !item [ALERT]-BOX              Shows the object list for the alert messages.
+                        Each message is designed with the Alert editor.
+
+ !item [TEXTS]                  The object list for all text for the interface
+                        appears. The texts are partially referenced
+                        from other objects or manually created. Each
+                        string/text can be changed later in the string
+                        editor.
+
+ !item [MOUSES]                 Displays the object list of your mouse forms.
+                        Each mouse shape is designed in the mouse form
+                        editor.
+
+ !item [PALETTE]                The main module allows you to assign new mouse
+                        shapes to the 32 positions of the Adescr
+                        structure.
+
+ !item [TEDINFO]                Show the object list for the TEDINFO structures.
+                        These can only be viewed in the TEDINFO editor.
+
+ !item [USER]-BLOCK             All USERBLK structures are accessible through
+                        this object list. The respective USERBLK editor
+                        gives only some indications.
+
+ !item [DATAS]                  This object list contains internal data. The
+                        DATA editor accordingly only shows a note.
+!end_xlist
+
+As an alternative to using the mouse,the following keys can be used:
+
+
+!begin_table [|ll|ll|] !hline
+  H      !! (!link [Main module dialog] [The Main Module dialog])     !! B        !! Picture editor
+  E      !! (!link [Behavior dialog] [The Behavior dialog])           !! A        !! Alert box editor
+  F      !! (!link [Window editor] [The Window editor])               !! T        !! Text editor
+  O      !! Object Tree editor                                        !! Shift-M  !! Mouse form editor
+  M      !! Menu editor                                               !! Shift-P  !! Mouse forms palette
+  P      !! Popup editor                                              !! Shift-T  !! TEDINFO editor
+  R      !! Reference list with editor                                !! U        !! USERBLK editor
+  I      !! Icon Editor                                               !! D        !! Data editor
+!hline
+!end_table
+
+
+!end_node
+
+
+!begin_node The General window toolbar
+
+
+!image (!IMAGES)img00790.png  The General window toolbar
+(!nl)
+
+!begin_xlist [ACS File to CEWS]
+ !item [Save]               Used to save the current file. If the flag
+                    "fast saving" is not set in the preferences
+                    module then any open editors are first closed
+                    with OK to ensure any changes that were made
+                    are accounted for and then the file is saved.
+                    (keyboard - Ctrl-S)
+
+ !item [Save as]            Used to save the current file under a new name.
+                    This will bring up a file selector. If a valid
+                    filename is entered,then it will be use to save
+                    the file under. The original file is retained.
+                    Otherwise, this item behaves like "Save".
+                    (keyboard: Ctrl-M).
+
+ !item [Create Backup]      Create a backup copy of the file - for the format
+                    of the filenames and the configuration of the
+                    paths please see the explanation under Backup.
+                    (keyboard: Ctrl-B).
+
+ !item [Create Log]         This will create a log of the ACS file containing
+                    the information for the current file. The log is
+                    written to the file with the extension "LST".
+                    (keyboard: Alt-P).
+
+ !item [Compiler Output]    This item is used to output the files needed for
+                    the translation of the project. The old files
+                    are simply overwritten.
+                    (keyboard: Alt-C).
+
+ !item [ACS File to CEWS]   If an EWS file exists for a loaded CEWS module that
+                    has the name of the ACS file, then it will be
+                    automatically transferred to the CEWS module.
+!end_xlist
+
+!end_node
+
+
+!begin_node The Main Module dialog
+
+In the Main module dialog the data for the main module is set.
+
+!image (!IMAGES)snap_119.img
+(!nl)
+
+The individual sections in detail:
+
+!image (!IMAGES)mainmodul.img
+
+     If the (!I)ACSpro(!i) file is set as the main module then all
+     the input possibilities are allowed, otherwise they are
+     greyed-out. If you want to use a main module as a normal
+     module again, you will be asked at the end of the dialog
+     whether the automatically generated alerts for the main
+     module should be deleted. Up to now, this has happened
+     by clicking the checkbox (in the properties dialog).
+
+
+!image (!IMAGES)names.img
+
+     Here the menu entry is entered for accessory operation.
+     The (!I)ACSpro(!i) (!I)GUI editor(!i) will automatically add two
+     leading spaces to the accessory name before entering it.
+     This is to correctly align the name when it is used as an
+     accessory. So you don't have to worry about it.
+
+     The root window takes a special position in (!I)ACSpro(!i).
+     You can enter the root window for use as an application
+     or as an accessory or Drag&Drop one from the window list.
+     The window list can be opened by clicking on label
+     "ACC-Fenster" (English - ACC Window) or "Surface".
+	 
+     If the "Surface" entry is left blank, the pure desktop is
+     used (PUR_DESK). Otherwise, enter the name of a window
+     structure or Drag&Drop one from the window list.
+
+     As a rule, the root window should take care of the basic
+     functions of the program, the menu bar and the icon
+     management.
+
+     It may be desireable for the program in accessory mode
+     to use another window other than the root window. For
+     this you can enter the window name in the "ACC-Fenster"
+     field.
+
+
+!image (!IMAGES)functions.img
+
+     In this area the names of the initialization routines can
+     be conveniently specified. Even if the two input fields
+     are left empty the functions ACSinit and ACSinit0 (optional)
+     are still required. With the popup you can specify the XAcc
+     type (see the XAcc documentation) for your application.
+     The type is automatically communicated to other applications
+     by the XAcc-(!link [Protocol] [External communication]).
+
+
+!image (!IMAGES)otherfunctions.img
+
+     In this area the function names are entered which are to be
+     written to the corresponsing entries of the Ablk structure
+     via the pointer ACSblk. The functions are then automatically
+     entered into the reference list. From this list, the code of
+     the function can be directly implemented in the integrated
+     editor.
+
+
+!image (!IMAGES)protocol.img
+
+     The functions entered here are placed in the corresponding
+     parts of the Ablk structure via the ACSblk pointer. They
+     are called before the associated events for logging and/or
+     manipulation. The functions are then automatically entered
+     into the reference list. From this list, the code for the
+     function can be directly implemented in the integrated
+     editor.
+
+
+!image (!IMAGES)communication.img
+
+     In this section the function for communication with other
+     applications is entered. The function is entered in
+     the reference list. From this list, the code for the
+     function can be directly implemented in the integrated
+     editor.
+
+     At the moment there is only the global GEMScript function.
+
+
+!image (!IMAGES)initializing.img
+
+     The check boxes in this area control the initialization of
+     the corresponding communication protocols at the start of
+     your program.
+
+     In case the OLGA manager has been specifically restarted
+     for the OLGA protocol, you can keep your application waiting
+     until it can be addressed. This only delays the start up
+     of your application and is actually unnecessary since the
+     OLGA manager itself logs into all applications as it
+     reboots, according to the OLGA documentation. But for
+     "safety fanatics" this option is still available...;-)
+
+!image (!IMAGES)behavior.img
+
+     The options in this area are used for the initialization of
+     behavior flags in the Adescr structure (ACSblk->description).
+     Via BubbleGEM there are short descriptions available for each
+     flag.
+
+     (!B)Note:(!b) Please keep in mind that the AB_SMARTREDRAW flag is
+     always set when starting your application to prevent any
+     problems with the smart redraw feature of MagiC.
+	 
+
+!image (!IMAGES)frame.img
+
+     The two values in this area indicate the dimensions of a
+     virtual frame around the desktop. (!I)ACSpro(!i) does not put a
+     window outside of this frame. Positive values result in a
+     frame within the desktop and negative values allow windows
+     to be pushed out of the desktop.
+
+     (!B)Note:(!b) Please note that if a frame outside of the desktop
+     is too small, your application will no longer be hidden
+     under MagiC - MagiC will hide an application be moving all
+     its windows outside of the visible area....
+	 
+(!B)Note:(!b) Knowing the data structure Aconfig, it is striking that
+the data in the Aconfig structure containing the UCfgInfo
+structure cannot yet be entered at the moment. Since the
+configuration strings are not currently automatically loaded
+and evaluated, this ends up being not too bad. In one of the
+next (!I)ACSpro(!i) versions, both the evaluation of the config strings
+as well as the settings in UCfgInfo will be included in the
+(!I)GUI editor(!i).
+
+!end_node
+
+
+!begin_node The Behavior dialog
+
+In this dialog you can set some options and general values for each
+ACS file.
+
+
+!image (!IMAGES)snap_114.img  The behavior dialog
+(!nl)
+
+The individual sections in detail:
+
+
+!image (!IMAGES)platform.img
+!image (!IMAGES)language.img
+
+!begin_itemize
+   !item For the output you can choose between C and Pascal syntax. If the
+     output is activated with the check box, the source code will be
+     generated at the same time the ACS file is saved.
+
+   !item There are four options to choose between for the currant language
+     used by the user interface. If the language is changed, then the
+     dialog must be exited with the OK button then all relevant windows
+     are closed and the internal text objects are exchanged.
+
+     This behavior will change in the future. As described in the ToDO
+     list, the next versions of (!I)ACSpro(!i) will export all the languages
+     and a compiler switch will be used to switch between them.
+!end_itemize
+
+!image (!IMAGES)acsoutput.img
+
+!begin_itemize
+   !item if you want the compiler to export the prototypes and routines
+     for your project at the same time, then the prototypes switch must
+     be activated.
+
+   !item With 'local' all definitions are exported as static so that the
+     identifiers do not overlap in multiple modules. In Pascal this
+     switch has no meaning.
+
+   !item You can additionally have a list of definitions and identifiers
+     automatically created each time you save.
+!end_itemize
+
+
+!image (!IMAGES)options.img
+
+!begin_itemize
+   !item With 'abc=ABC' you can instruct ACSpro to automatically convert
+     the object names to uppercase letters.
+
+   !item If you want a backup to be created, then this switch must be on
+     and a valid path entered in the field next to it. Then each time
+     the ACS file is saved, a backup file is automatically created in
+     the folder. You can manually create a backup at any time using
+     the relevant icon in the (!link [toolbar] [The General window toolbar]) of the General window.
+!end_itemize
+
+!end_node
+
+
+!begin_node The Window editor
+
+The Window editor allows you to define the appearance and
+functionality of your windows. It is divided into several smaller
+sections:
+
+!image (!IMAGES)snap_82.img
+
+The individual sections in detail:
+
+
+!image (!IMAGES)position.img
+
+     With the above fields, the position and size of the window can
+     be set in character increments. If the Y position is 0, the
+     window is automatically assigned a space on the desktop when it
+     is opened.
+
+
+!image (!IMAGES)grid.img
+
+     The grid values are what steps (in pixels) the window content is
+     moved when the scroll arrows are pressed. You can choose between
+     very fine, but slower, or coarse, but faster, scrolling for each
+     direction individually.
+
+
+!image (!IMAGES)gadgets.img
+
+     The gadgets correspond to the GEM window attributes. For
+     example, here you can specify whether the window has an info
+     line or not.
+
+
+!image (!IMAGES)attributes.img
+
+     (!I)ACSpro(!i) windows have additional functionalities that can be
+     set in this area. For example, the window can be represented
+     as an icon on the desktop when in the closed state.
+
+!begin_xlist [Ghosticon]
+      !item [List]       The window content (the work object) is handled as
+                 a list.
+
+      !item [Stays]      The window cannot be automatically closed by the
+                 (!I)ACSpro(!i) mechanism. Attention: The window can
+                 still be forced closed.
+
+      !item [Icon]       The window is represented by an icon on the default
+                 desktop when in the closed state. If this flag is not
+                 set, then the window will be deleted immediately
+                 upon closing.
+
+      !item [Ghosticon]  After opening a window by double-clicking its icon
+                 on the desktop, the icon is displayed without a
+                 mask (shaded grey).
+
+      !item [Accepting]  The window icon on the default desktop is inverted
+                 when objects are dragged on and accepted by the
+                 window. The window that owns the icon then gets
+                 the message (AS_DRAGGED) that an object was dragged
+                 onto it.
+
+      !item [Backgrd].   The window is not topped (brought up) if its content
+                 is clicked - it can operate in the background. This
+                 is especially important for toolbox windows because
+                 the user can drag objects from them without topping
+                 the window. For AES versions that do not support
+                 this, the toolbox behavior is simulated.
+!end_xlist
+
+
+!image (!IMAGES)texts.img
+
+     The name and info line can be specified in this section. Make
+     sure that you enter a string here if the corresponding part
+     in the Gadgets section is selected.
+
+
+!image (!IMAGES)stguide.img
+
+     The title and filename for a ST-Guide hypertext can be assigned
+     directly to the window here. The standard key routines will
+     forward the title to ST-Guide, if one is entered.
+
+
+!image (!IMAGES)objects.img
+
+     These window objects are important references for a window.
+     Here you can specify the name of the window menu bar, the
+     window toolbar object, the inner (work) object, the window
+     icon and a reference to a user structure. Clicking on the
+     label for each field (for example, Work) will open the
+     corresponding list window from which you can then drag an
+     object into the entry field. The entry field is inverted
+     when an object is dragged and accepted by it to give the
+     user a visual indication.
+
+
+!image (!IMAGES)routines.img
+
+     The (!I)ACSpro(!i) window manager provides some default routines that
+     are automatically used for a window structure. Here you can
+     specify routines that you define yourself to override the
+     default routines. If you click on the label of the routine,
+     the reference list will open, from which you can drag the
+     desired routine into the entry field. The "Create" routine
+     should always be specified otherwise Awi_selfcreate will be
+     used. The meanings for each of the routines can be looked up
+     in the window routines.
+
+!end_node
+
+
+!begin_node The Object Tree editor
+
+The object tree editor described in this section is closely related
+to the menu and popup editors. Here their similarities should be
+explained.
+
+When the first editor is opened (for example, by double-clicking on
+an object in the object list), the toolbox window that contains all
+the individual components for the object tree will appear along with
+the working window that represents the object. The appearance of one
+of these GEM objects can be changed in the associated object editor.
+
+!subtoc [all] !depth 1
+
+Additional functions are offered by a popup menu and from the menu
+bar of the object list window.
+
+So that the operation is further simplified and accelerated for
+the experienced user, the individual objects can be sequentially
+selected in their way by the Tab key.
+
+
+!begin_node Selecting objects
+
+
+!image (!IMAGES)img00768.img
+
+Selecting objects follows conventional GEM operations. You can select
+an object simply by clicking on it with the mouse and deselect
+previously selected objects by holding the Shift key while clicking
+on the object. Selected objects can be recognized by their dotted
+outline and a small rectangle in the bottom right corner.
+
+To add additional objects to the selection list, press the Shift key
+while clicking on the desired object. However, objects that you want
+to add to the list must be located in the same object tree. Also,
+parent and child objects cannot be selected simultaneously this way
+since the parent objects always include the child objects anyway. If
+the parent object is covered by child objects and you wish to select
+it, hold down the Control key during selection.
+
+!end_node
+
+
+!begin_node Selecting by drawing a rectangle
+
+
+!image (!IMAGES)img00767.img
+
+To select several ojects at the same time, you can draw a rectangle
+around them by holding down the Alternate key while clicking and
+dragging with the mouse.
+
+!end_node
+
+
+!begin_node Resizing objects
+
+
+!image (!IMAGES)img00766.img
+
+To resize an object, first select the one you want to change. You
+will notice a small black rectangle in the bottom right corner of
+the object's frame. Click on this rectangle and hold the button
+while dragging the mouse to reduce or enlarge the object. If the
+"grid for objects" flag is set in the Options dialog, then the
+object will be resized in character-sized increments only. While
+resizing, the dimensions are checked against the following rules
+to make sure it is acceptable:
+
+!begin_itemize
+   !item It must not be smaller than the minumum size allowed for the
+     object. This minimum value depends of the type of object being
+     resized. For example, a button with text six characters long
+     needs to be at least six characters wide.
+
+   !item The object must not exceed the boundaries of the parent object.
+     The parent object represents a framework within which the child
+     object must remain.
+
+   !item The resized object must not cover any 'sibling' objects.
+!end_itemize
+
+There are cases when adhering to these rules may interfere with the
+design. So, by holding down the Control key, the object can be freely
+reduced or enlarged. The only limitation is that a minimum size of
+one character must be maintained.
+
+!end_node
+
+
+!begin_node Positioning objects
+
+
+!image (!IMAGES)img00765.img
+
+After having selected the object with the mouse, you can reposition it
+by holding the mouse button down on the object while dragging it to
+the desired position. If multiple objects have been selected, they
+will also be moved at the same time.
+
+If the "grid for objects" flag is set in the Options dialog then the
+objects are moved in such a way that the top left corner will be grid
+aligned. If the positioning of an object would be cause it to fall
+outside of the parent object, it will be be moved back in such a way
+that it will be as close as possible to the boundary of the parent
+object while still remaining inside it.
+
+!end_node
+
+
+!begin_node Copying objects
+
+
+!image (!IMAGES)img00764.img
+
+If you want to copy an object inside the same work window then you
+must select it, move it to the new position and then press and hold
+the Shift key before releasing the mouse button. When the Shift key
+is pressed, the "hand" mouse form will change to indicate it is in
+copy mode as shown in the image above. (!B)Note that the individual
+components of the copied object are referenced!(!b). This means that,
+for example, no new text is created for a text box copied this way,
+but instead the text of the original object is referenced. So changes
+to a component of any instances of the object will be reflected in
+all of them.
+
+!end_node
+
+
+!begin_node Duplication and deletion of objects
+
+
+!image (!IMAGES)img00763.img
+
+On the other hand, if you want to completely duplicate an object and
+all of its components, then you must hold down the Shift and Control
+keys before releasing the mouse button. The "hand" mouse form will
+change to include a double-plus as shown above to indicate this type
+of object duplication.
+
+If you want to copy an object from another working window, it is
+enough to simply select and drag it there to the desired position.
+The original object will remain in its place.
+
+To delete an object, select the object and then click the desktop
+menu item "Delete". This will normally delete any child objects as
+well. If you only want to delete the parent object, also known as
+"flattening", then hold down the Control key while clicking the
+desktop menu item. Alternatively, the key combination Ctrl-D can
+also be used. This will keep any child objects in the same position
+as they were. The root object can be deleted, but only if it has
+exactly one child object. The child object then becomes the new root
+object.
+
+!end_node
+
+
+!begin_node Epilogue to the object tree, menu and popup editors
+
+For a better understanding of the internal object structure of an
+(!I)ACSpro(!i) file we present a small digression here:
+
+GEM objects, especially the USERDEF object, create additional data
+along with the OBJECT structure - chiefly as text (as title text,
+identifiers, etc.). The (!I)ACSpro(!i) (!I)GUI editor(!i) makes these text objects
+accessible to the user through the text list that can be opened by
+clicking on the General window "TEXTS" icon. These text objects can
+be selected from the text list and edited in the text object editor.
+To keep memory usage low and to be able to change all occurances
+of any identically named objects at the same time, references are
+used for objects of the same name without have to duplicate them.
+This allows changes made to a text object to be immediately applied
+to all objects that have references to the text.
+
+However, this means that objects cannot be so easily copied into
+completely new instances since all copies are the so-called virtual
+copies. What should you do then if you want to create several objects
+with different text? You should drag an object from the toolbox into
+the object tree and immediately (!B)edit(!b) it. Then move the next object
+from the toolbox and edit it. And so on and so forth.
+
+Background: with multiple languages possible, such text objects have
+three 'invisible' components that are also created and managed. Any
+object that contains text will only reference this text if the three
+invisible components are identical and vice versa.
+
+!end_node
+
+!end_node
+
+
+!begin_node The Popup editor
+
+In the Popup editor you can edit the popups for your program that are
+not strings (present for Ame_strpopup). The Popup editor (given the
+restrictions and limitations surrounding a popup) is fairly similiar
+to the (!link [Object Tree editor] [The Object Tree editor]). With this in mind, you can refer to that
+particular section for detailed information about Selecting objects,
+Selecting by drawing a rectangle, Resizing objects,
+Positioning objects, Copying objects and
+Duplication and deletion of objects.
+
+!end_node
+
+
+!begin_node The Menu editor
+
+With the Menu editor you can edit the menus of your program. The
+Menu editor (given the limitations inherent to a menu) is similar
+to the (!link [Object Tree editor] [The Object Tree editor]). With this in mind, you can refer to that
+particular section for detailed information about Selecting objects,
+Selecting by drawing a rectangle, Resizing objects,
+Positioning objects, Copying objects and
+Duplication and deletion of objects.
+
+!end_node
+
+
+!begin_node The Toolbox window
+
+Each object tree is populated by objects from the Toolbox window or
+perhaps by Drag&Drop from other object trees. The toolbox attaches to
+the side of the active object editor if the "glue toolbox-window"
+flag is set in the Options window. Otherwise it can be placed freely.
+Once the last object editor is closed, the Toolbox window will close
+automatically.
+
+
+!image (!IMAGES)snap_110.img
+
+The upper section of the Toolbox window consists of an icon bar which
+corresponds to selecting the Object-Editor dialog, State dialog,
+References dialog and Position dialog respectively for the currently
+selected object in the object editor.
+
+
+!image (!IMAGES)toolbar_description.img
+
+!end_node
+
+!begin_node The Toolbox window objects
+
+A newly created object tree initially consists only of a large box.
+This represents the active workspace (for example, the interior of a
+window) on which objects from the toolbox can be placed. Each object
+from the toolbox has its own object editor which is used to set the
+appearance and values of the object.
+
+All visible ACS objects are part of the ACS library, The table below
+summarizes the default objects:
+
+Symbol~~~~~~Object~~~~~~~~Description
+
+!raw [stg] @image images/button_object.img 1
+~~~~~~~~~~~~Button~~~~~~~~Clickable~button
+
+!raw [stg] @image images/string_object.img 1
+~~~~~~~~~~~~String~~~~~~~~Text~string
+
+!raw [stg] @image images/f-text_object.img 1
+~~~~~~~~~~~~F-Text~~~~~~~~Formatted~text~input
+
+!raw [stg] @image images/f-textbox_object.img 1
+~~~~~~~~~~~~F-BoxText~~~~~Formatted~text~input~with~a~border
+
+!raw [stg] @image images/ibox_object.img 1
+~~~~~~~~~~~~I-Box~~~~~~~~~Box~object~displaying~only~the~border
+
+!raw [stg] @image images/box_object.img 1
+~~~~~~~~~~~~Box~~~~~~~~~~~Box~object
+
+!raw [stg] @image images/text_object.img 1
+~~~~~~~~~~~~Text~~~~~~~~~~Text~output
+
+!raw [stg] @image images/c-box_object.img 1
+~~~~~~~~~~~~BoxChar~~~~~~~Box~object~displaying~an~optional~character
+
+!raw [stg] @image images/textbox_object.img 1
+~~~~~~~~~~~~BoxText~~~~~~~Text~output~with~a~border
+
+!raw [stg] @image images/titlebox_object.img 1
+~~~~~~~~~~~~MenuTitle~~~~~Menu~title~string
+
+!raw [stg] @image images/image_object.img 1
+~~~~~~~~~~~~Image~~~~~~~~~Image~object
+
+
+!raw [stg] @image images/icon_object.img 1
+~~~~~~~~~~~~Icon~~~~~~~~~~Icon~object
+
+
+!raw [stg] @image images/userdef_object.img 1
+~~~~~~~~~~~~UserDef~~~~~~~User~Defined~object
+
+
+!raw [stg] @image images/boxedit_object.img 1
+~~~~~~~~~~~~(!link [BoxEdit] [Userdef-BoxEdit])~~~~~~~Box~that~allows~text~input~and~editing.
+
+!raw [stg] @image images/title_object.img 1
+~~~~~~~~~~~~(!link [Title] [Userdef-Title])~~~~~~~~~An~underlined~title~or~heading
+
+!raw [stg] @image images/3dbutton_object.img 1
+~~~~~~~~~~~~(!link [3D~button] [Userdef-3D-Button])~~~~~Button~with~a~3D~appearance
+
+
+!raw [stg] @image images/checkbox_object.img 1
+~~~~~~~~~~~~(!link [Checkbox] [Userdef-Checkbox])~~~~~~Small~square~box~that~can~be~set~or~cleared
+
+!raw [stg] @image images/radiobutton_object.img 1
+~~~~~~~~~~~~(!link [Radio~button] [Userdef-Checkbox])~~Round~circle~that~can~be~set~or~cleared.
+
+!raw [stg] @image images/cyclebox_object.img 1
+~~~~~~~~~~~~(!link [Cycle~button] [Userdef-Cycle])~~Generates~a~popup~whose~entries~can~be
+~~~~~~~~~~~~~~~~~~~~~~~~~~selected.~Also~can~click~the~small~button
+~~~~~~~~~~~~~~~~~~~~~~~~~~on~the~right~side~of~the~object~to~'cycle'
+~~~~~~~~~~~~~~~~~~~~~~~~~~through~the~entries.
+
+!raw [stg] @image images/slider_object.img 1
+~~~~~~~~~~~~(!link [Slider] [Userdef-Slider])~~~~~~~~Horizontal~or~vertical~sliders
+
+!raw [stg] @image images/ftext_object.img 1
+~~~~~~~~~~~~(!link [FText] [Userdef-FText])~~~~~~~~~Multi-line~text~box~which~automatically
+~~~~~~~~~~~~~~~~~~~~~~~~~~adapts~the~text~to~the~size~of~the~object.
+
+
+!raw [stg] @image images/innerframe_object.img 1
+~~~~~~~~~~~~(!link [Innerframe] [Userdef-Innerframe])~~~~Frame~for~grouping~objects~within~it,
+~~~~~~~~~~~~~~~~~~~~~~~~~~Includes~a~configurable~text~title.
+
+
+!raw [stg] @image images/picture_object.img 1
+~~~~~~~~~~~~(!link [Picture] [Userdef-Picture])~~~~~~~Multicolored~picture~object
+
+
+!raw [stg] @image images/editor_object.img 1
+~~~~~~~~~~~~Editor~~~~~~~~Outputs~texts
+
+
+!raw [stg] @image images/pattern_object.img 1
+~~~~~~~~~~~~(!link [Pattern] [Userdef-Pattern])~~~~~~~Customizable~fill~pattern~object
+
+
+!raw [stg] @image images/arrow_object.img 1
+~~~~~~~~~~~~(!link [Arrow] [Userdef-Arrows])~~~~~~~~~Arrow~object
+
+!raw [stg] @image images/line_object.img 1
+~~~~~~~~~~~~(!link [Line] [Userdef-Arrows])~~~~~~~~~~Line~object
+
+!raw [stg] @image images/selectbox_object.img 1
+~~~~~~~~~~~~Select~~~~~~~~Selected~with~frame~instead~of~inverted
+
+!end_node
+
+
+!begin_node The Object editors
+
+For each object in the toolbox there is a special editor which allows
+the appearance of the object to be easily configured. For UserDef
+objects, pressing the Control key invokes a dialog box through which
+you can selectively change the entries for the object.
+
+(!B)Object(!b)~~~~~~~~~~~~(!B)Object name(!b)~~~~~~~~~~(!B)Editor(!b)
+!raw [stg] @line 1 0 60 0 1
+!raw [stg] @line 71 0 60 0 1
+!hline
+
+!raw [stg] @image images/button_object.img 2
+(!nl)
+!raw [stg] @image images/titlebox_object.img 2
+(!nl)
+!raw [stg] @image images/string_object.img 2
+~~~~~~~~~~~~~~Button,~MenuTitle,~String~~~~~~~~~~~~~The~String~editor
+
+!hline
+
+!raw [stg] @image images/box_object.img 2
+(!nl)
+!raw [stg] @image images/ibox_object.img 2
+(!nl)
+!raw [stg] @image images/c-box_object.img 2
+~~~~~~~~~~~~~~Box,~IBox,~BoxChar~~~~~~~~~~~~~~~~~~~~~~The~Box~editor
+
+!hline
+
+!raw [stg] @image images/f-text_object.img 2
+(!nl)
+!raw [stg] @image images/f-textbox_object.img 2
+(!nl)
+!raw [stg] @image images/text_object.img 2
+(!nl)
+!raw [stg] @image images/textbox_object.img 2
+~~~~~~~~~~~~~~FText,~FBoxText,~Text,~BoxText~~~~~~~The~TEDINFO~editor
+
+!hline
+
+!raw [stg] @image images/boxedit_object.img 2
+~~~~~~~~~~~~~~(!link~[BoxEdit]~[Userdef-BoxEdit])~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~BoxEdit~editor
+
+!hline
+
+!raw [stg] @image images/checkbox_object.img 2
+(!nl)
+!raw [stg] @image images/radiobutton_object.img 2
+~~~~~~~~~~~~~~(!link [Checkbox] [Userdef-Checkbox]),~(!link [Radiobutton] [Userdef-Checkbox])~~~The~Checkbox/Radiobutton~editor
+
+!hline
+
+!raw [stg] @image images/innerframe_object.img 2
+~~~~~~~~~~~~~~(!link [Innerframe] [Userdef-Innerframe])~~~~~~~~~~~~~~~~~~~~~~~~The~Innerframe~editor
+
+
+!hline
+
+!raw [stg] @image images/pattern_object.img 2
+~~~~~~~~~~~~~~(!link [Pattern] [Userdef-Pattern])~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~Pattern~editor
+
+
+!hline
+
+!raw [stg] @image images/line_object.img 2
+(!nl)
+!raw [stg] @image images/arrow_object.img 2
+~~~~~~~~~~~~~~(!link [Line] [Userdef-Arrows]),~(!link [Arrow] [Userdef-Arrows])~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~Arrow~editor
+
+!hline
+
+!raw [stg] @image images/ftext_object.img 2
+~~~~~~~~~~~~~~(!link [FText] [Userdef-FText])~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~FText~editor
+
+
+!hline
+
+!raw [stg] @image images/3dbutton_object.img 2
+~~~~~~~~~~~~~~(!link [3D Button] [Userdef-3D-Button])~~~~~~~~~~~~~~~~~~~~~~~~~~The~3D~button~editor
+
+
+!hline
+
+!raw [stg] @image images/cyclebox_object.img 2
+~~~~~~~~~~~~~~(!link [Cyclebox] [Userdef-Cycle])~~~~~~~~~~~~~~~~~~~~~~~~The~Cycle~button~editor
+
+!hline
+
+!raw [stg] @image images/picture_object.img 2
+~~~~~~~~~~~~~~(!link [Picture] [Userdef-Picture])~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~Picture~editor
+
+
+!hline
+
+!raw [stg] @image images/slider_object.img 2
+~~~~~~~~~~~~~~(!link [Slider] [Userdef-Slider])~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~Slider~editor
+
+!hline
+
+!raw [stg] @image images/title_object.img 2
+~~~~~~~~~~~~~~(!link [Title] [Userdef-Title])~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~Title~editor
+
+!hline
+
+!raw [stg] @image images/image_object.img 2
+~~~~~~~~~~~~~~Image~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~Image~selector
+
+
+!hline
+
+!raw [stg] @image images/icon_object.img 2
+~~~~~~~~~~~~~~Icons~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~Icon~selector
+
+
+!hline
+
+!raw [stg] @image images/userdef_object.img 2
+~~~~~~~~~~~~~~UserDef~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~The~UserDef~editor
+
+
+!hline
+
+The editors were designed so that there are some similarities between
+them.
+
+!begin_itemize
+   !item For example, each editor has a sample representation of the
+     object in the upper left hand corner that allows you to follow
+     changes as you make them. The text character "Mode" that can be
+     selected in some objects determines whether the character sits
+     directly on the background or if it has opaque white box around
+     it.
+
+   !item With the "Color" popup shown below you can choose which color a
+     component will have. So that they can be set under a monochrome
+     resolution, the colors are specified with names from the system
+     color palette.
+!end_itemize
+
+
+!image (!IMAGES)colors.img
+
+!begin_itemize
+   !item Some components allow the selection of a "Pattern" that allows
+     for a different visual appearance when combined together with
+     the color.
+!end_itemize
+
+
+!image (!IMAGES)img00761.img
+
+!begin_itemize
+   !item The popup below is used to control the horizontal alignment of
+     some text within the object.
+!end_itemize
+
+
+!image (!IMAGES)orientation.img
+
+
+
+!begin_node The FText editor
+
+This object allows multi-line text output that automatically adapts
+to fit the object according to the size of the object. Depending on
+the orientation, the text can be left-aligned or right-aligned,
+centered or displayed as justified text. If you want to override the
+automatic line-break and manually place a break in the text, then the
+delimiter '|' must be placed at that spot.
+
+Additionally, there are several text effects that you can assign and
+combine together. Although keep in mind that some effects tend to
+result in illegible text and some effects may not be implemented in
+the VDI.
+
+Using the 'Font' button you can invoke the font selector, from which
+you can select the desired font and its size (maximum 255).
+
+
+!image (!IMAGES)snap_87.img The FText editor
+(!nl)
+
+!end_node
+
+
+!begin_node The Innerframe editor
+
+
+!image (!IMAGES)snap_117.img
+
+This object is used as a frame to group other objects within it. To
+that end, it can be given a title text. The text can be assigned
+any color or size and may be displayed at any one of six possible
+positions on the frame.
+
+The frame can be given a three-dimensional appearance by selecting
+frame colors for the left/up and right/down options in the editor.
+
+The interior of the frame has a "Dither-Mode". When the full-fill
+pattern and the light grey color are selected, then the display is
+optimized for monochrome resolution in such a way that a grey pattern
+is 'simulated'.
+
+!end_node
+
+
+!begin_node The BoxEdit editor
+
+With this object you have a configurable text input box. Again, you
+can choose your own colors for both the frame and the text. Using
+separate colors for the frame is really only effective if you select
+the 3D mode and are using at least 16 colors for the program. In
+addition to entering some default text, you can choose between large
+and small text size and give a value for the maximum input length.
+The object is only drawn as wide as the text length.
+
+The input is very easy to configure. If 'capitalize' is set, the text
+entered is always converted to uppercase letters. If you would like
+to keep the text hidden i.e. for password input, your can set this
+with the 'hidden text' flag.
+
+
+!image (!IMAGES)snap_118.img  The BoxEdit editor
+(!nl)
+
+The popup 'Mask' has the following selections:
+
+!image (!IMAGES)boxmasks.img  The Mask selections
+(!nl)
+
+
+!begin_table [|l|l|l|] !hline
+ (!B)Mask(!b)         !! (!B)Symbol(!b)    !! (!B)Meaning(!b)
+!hline
+ All Chars            !! BEM_ALL           !! all characters
+ Normal               !! BEM_NORM          !! all characters minus spaces
+ Chars                !! BEM_ALPHA         !! letters and spaces
+ Chars & Numbers      !! BEM_ALPHADIGIT    !! letters, spaces and digits
+!hline
+ # Path               !!                   !!
+ normal path          !! BEM_PATH          !! all characters
+ TOS path             !! BEM_TOSPATH       !! TOS filename characters and \:
+ TOS path pattern     !! BEM_TOSPATHSPEC   !! TOS filename characters and \:*?
+!hline
+ # File               !!                   !!
+ normal file          !! BEM_FILE          !! all characters except \:
+ TOS file             !! BEM_TOSFILE       !! letters and digits and the
+                      !!                   !! characters ._!@#$%^&()+-=~';",
+                      !!                   !! <>|[]{}
+ TOS file pattern     !! BEM_TOSFILESPEC   !! TOS filename characters and *?
+!hline
+ # Numbers            !!                   !!
+ binary number        !! BEM_BIN           !! 0 and 1
+ neg. binary number   !! BEM_NEGBIN        !! 0 and 1 and -
+ octal number         !! BEM_OC            !! 0 to 7
+ neg. Octal number    !! BEM_NEGOCT        !! 0 to 7 and -
+ decimal number       !! BEM_DEC           !! 0 to 9
+ neg. decimal number  !! BEM_NEGDEC        !! 0 to 9 and -
+ hexadecimal number   !! BEM_HEX           !! 0 to 9 and A to Z
+ neg. hexadecimal num !! BEM_NEGHEX        !! 0 to 9 and A to Z and -
+ floatingpoint number !! BEM_FLOAT         !! 0 to 9 and .
+ neg. floating point  !! BEM_NEGFLOAT      !! 0 to 9 and . and -
+!hline
+ # Date               !!                   !!
+ DD.MM.YYYY           !! BEM_DATEEURO      !! DD.MM.YYYY
+                      !!                   !! (Day, Month, Year; Separator .)
+ DD/MM/YYYY           !! BEM_DATEEURO_SEP  !! DD/MM/YYYY
+                      !!                   !! (Day, Month, Year; Separator /)
+ MM.DD.YYYY           !! BEM_DATEUS        !! MM.DD.YYYY
+                      !!                   !! (Month, Day, Year; Separator .)
+ MM/DD/YYYY           !! BEM_DATEUS_SEP    !! MM/DD/YYYY
+                      !!                   !! (Month, Day, Year; Separator /)
+!hline
+ # Time               !!                   !!
+ hours unlimited      !! BEM_TIME          !! HH:MM:SS
+                      !!                   !! (Hours, Minutes, Seconds)
+ max. 24 hours        !! BEM_TIME24        !! HH:MM:SS
+                      !!                   !! (max. 23) Hours
+ max. 12 hours        !! BEM_TIME12        !! HH:MM:SS
+                      !!                   !! (max. 11) Hours
+!hline
+!end_table
+
+!end_node
+
+
+!begin_node The Checkbox/Radiobutton editor
+
+This object is a small box that can be filled (set) or cleared by
+the user to turn an option or feature on or off. Depending on the
+'Radiobutton' option in the State editor for this object, the small,
+clickable box may be displayed as a round radio button or as a square
+checkbox. The object can also be given a descriptive label. The '3D'
+mode option causes a three-dimensional rendering that is similar to
+the look of MagiC 6 objects.
+
+
+!image (!IMAGES)snap_97.img  The Checkbox editor
+(!nl)
+
+!end_node
+
+
+!begin_node The Cycle button editor
+
+This object generates a popup whose entries are defined by a string.
+The (!link [Click-Routine] [Click Routine & Drag Routine]) Aus_cycle will move to the next entry when the
+(!link [Cycle] [Userdef-Cycle]) button on the right-hand side of the object is clicked.
+Otherwise, the Ame_strpopup routine is called. The character for the
+cycle button can be chosen freely. In 3D mode, the colors for the
+frame of the buttons within the popup can be selected - otherwise a
+'flat' popup will be displayed.
+
+
+!image (!IMAGES)snap_98.img  The Cycle button editor
+(!nl)
+
+!end_node
+
+
+!begin_node The 3D button editor
+
+This object is used to display a button with a 3D appearance. The text
+attributes of color, position, size and character mode can be changed.
+
+The two part frame can have its color, thickness and offset relative
+to the object dimensions configured. One should use positive offsets
+sparingly, since, in some cases, AES only takes the object dimensions
+into account when redrawing.
+
+For the interior, the dithering mode will optimize the appearance for
+monochrome resolutions, but only with a full-fill pattern and a light
+grey color. The interior surface will not be drawn at all if an empty
+fill pattern is selected.
+
+!image (!IMAGES)snap_99.img  The 3D button editor
+(!nl)
+
+!end_node
+
+
+!begin_node The Picture editor
+
+This object displays multicolored images. This object requires lots of
+memory so it should be used carefully. Selecting 'tile-mode' fills
+the object completely with repeated copies of the image. Otherwise,
+the image will be centered in the object and the rest of the area
+will be drawn with the selected fill pattern.
+
+You can create new images with the IMG-EDIT module which can then be
+saved to the example in the upper left corner by Drag&Drop.
+
+
+!image (!IMAGES)snap_101.img  The Picture editor
+(!nl)
+
+!end_node
+
+
+!begin_node The Slider editor
+
+These sliders can be used both horizontally and vertically. Also, the
+3D mode displays them with a three dimensional appearance. You can
+display only the arrow icons by turning off the 'Slider' option. For
+instance, you may do this if you wish to use text in between the
+arrows instead.
+
+
+!image (!IMAGES)snap_102.img  The Slider editor
+(!nl)
+
+!end_node
+
+
+!begin_node The Title editor
+
+This object provides underlined titles or headings. In addition to
+the horizontal positioning, the size and character drawing mode can
+be selected.
+
+
+!image (!IMAGES)snap_103.img  The Title editor
+(!nl)
+
+!end_node
+
+
+!begin_node The Pattern editor
+
+With this object you can draw a variety of rectangular fill patterns.
+You can select the color of the fill pattern and whether it has a
+frame or not.
+
+
+!image (!IMAGES)snap_104.img  The Pattern editor
+(!nl)
+
+!end_node
+
+
+!begin_node The Arrow editor
+
+Many types of lines can be drawn with this object. The ends of the
+lines are configurable to give the appearance of arrows or simple
+lines. The direction that the arrow points is also selectable as well
+as the length. Color and style of the line including the thickness
+can be changed. The 3D mode draws a white 'shadow' one pixel down and
+to the right of the arrow to give a three dimensional appearance.
+
+
+!image (!IMAGES)snap_105.img  The Arrow editor
+(!nl)
+
+
+!image (!IMAGES)img00747.img
+
+With the 'Direction' option you can specify the orientation of the
+start and end points.
+
+
+!image (!IMAGES)img00746.img
+
+The 'Length' option allows you to choose between short and longs ends
+to both sides of the object (up to the edge of the object).
+
+
+!image (!IMAGES)img00745.img
+
+The 'Ends' options let you select the type of ending separately for
+each side to determine whether an arrow will be drawn or not.
+
+
+!image (!IMAGES)img00744.img
+
+The look of the line can be selected from various styles with the
+'Style' option.
+
+!end_node
+
+
+!begin_node The String editor
+
+This object displays the text that is entered for it. Additionally,
+the 'Type' popup specifies exactly what type of text it is.
+
+
+!image (!IMAGES)snap_106.img  The String editor
+(!nl)
+
+A 'String' type is simply text. It has no background associated with
+it. The 'Button' type, does have a background. And the 'Title' type
+is used in menu titles and need not be manually set.
+
+
+!image (!IMAGES)types.img  The Type popup
+(!nl)
+
+!end_node
+
+
+!begin_node The TEDINFO editor
+
+This object was formerly used for text input or for formatted output.
+It should be used sparingly and as an input object only in modal
+dialogs (A_dialog). (!I)ACSpro(!i) cannot perform correct cursor control
+with this object if used in windowed dialogs. For input using windowed
+dialogs, the much more convenient (!link [BoxEdit] [Userdef-BoxEdit]) is available.
+
+
+!image (!IMAGES)snap_108.img  The TEDINFO editor
+(!nl)
+
+In addition to the colors for the text, border and interior surface,
+you can also choose the thickness and size of the frame as well as
+the pattern used for the interior surface.
+
+The normal Text type doesn't allow any input, but the F-Text type
+does. Both types can have a border (BoxText or F-BoxText).
+
+
+!image (!IMAGES)types.img  The Type popup for TEDINFO objects
+(!nl)
+
+With text input, the three lines 'Text', 'Tmp' and 'Val' have a
+special meaning. 'Text' is the default text and can be changed later.
+'Tmp' is a template; the cursor will be placed at the first occurance
+of the '_' character for editing. 'Val' is the validation string and
+serves as a mask. It is applied successively starting from the left
+to each corresponding '_' character in the 'Tmp' template. 'Val' can
+have the following values:
+
+
+!begin_table [|l|l|] !hline
+         (!B)Value(!b) (!B)Valid Inputs(!b)
+!hline
+           9   digits
+!hline
+           A   uppercase letters and spaces
+!hline
+           a   letters and spaces
+!hline
+           N   uppercase Letters, digits and spaces
+!hline
+           n   letter, digits and spaces
+!hline
+           F   all filename characters
+!hline
+           f   like 'F' but without ? and * and :
+!hline
+           P   all pathname characters
+!hline
+           p   like 'P' but without ? and *
+!hline
+           X   all characters
+!hline
+           x   all characters, letters converted to uppercase
+!hline
+!end_table
+
+!end_node
+
+
+!begin_node The Box editor
+
+This object presents a varied rectangular box. You may display one
+character optionally. The text, border and interior colors can be
+independently selected. The frame can have several thicknesses. The
+'Mode' option determines whether any applied character is blended
+with the interior color or has a white, opaque background.
+
+
+!begin_center
+!image (!IMAGES)snap_109.img  The Box editor
+!end_center
+(!nl)
+
+The 'Type' popup offers three selections. A 'Box' type is complete
+but without the optional character. An 'I-Box' displays only the
+frame or border of the box. And the 'BoxChar' displays the full box
+including the optional character.
+
+
+!begin_center
+!image (!IMAGES)boxtypes.img  The Typ popup for the Box editor
+!end_center
+(!nl)
+
+!end_node
+
+
+!begin_node The UserDef editor
+
+
+!begin_center
+!image (!IMAGES)snap_111.img  The general Userdef editor
+!end_center
+(!nl)
+
+!end_node
+
+
+!begin_node The Icon selector
+
+Here you simply Drag&Drop an icon from the icon list to the window
+to assign it to the object.
+
+
+!begin_center
+!image (!IMAGES)snap_112.img  The Icon selector
+!end_center
+(!nl)
+
+!end_node
+
+
+!begin_node The Image selector
+
+Here you simply Drag&Drop an image from the image list to the window
+to assign it to the object.
+
+
+!begin_center
+!image (!IMAGES)snap_113.img The Image selector
+!end_center
+(!nl)
+
+!end_node
+
+!end_node
+
+!end_node

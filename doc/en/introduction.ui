@@ -1,0 +1,655 @@
+!begin_node Introduction to ACSpro
+
+You can read here about the (!link [basic idea] [The basic idea of ACSpro]) behind (!I)ACSpro(!i) as well as the
+development history of the program starting with the (!link [first] [The first version of ACS]) version
+and moving on to the (!link [current] [The new ACSpro]) one.
+
+In addition to the (!link [prerequisites] [Prerequisites for ACSpro]) for using this convenient development
+tool you can also find information about the NKCC from Harald
+Siegmund that are used by (!I)ACSpro(!i).
+
+!subtoc [all] !depth 1
+
+!begin_node The basic idea of ACSpro
+
+The Atari ST was one of the first computers to integrate a graphical
+user interface in the operating system. Though this familiar GEM was
+neglected by many programmers annoyed by the fact that the interface
+of the program must be attended to first which put implementation of
+the true purpose of the program in the background.
+
+The first attempts to remedy this situation were function libraries
+created by some GEM programming experts and which were made available
+to other programmers. The resulting problem was that the WYSIWYG
+principle was neglected, especially since the functionality of the
+individual objects was no longer verifyable in something such as a
+resource construction set. It was at this point that the first
+generation of the ACS (!I)GUI editor(!i) started. It provided the programmer
+with an extensive library in addtion to an interactive (!I)GUI editor(!i) that
+allowed one to work on all the resources i.e. windows, popups, object
+trees, etc. Each object could then be assigned routines which would
+be invoked when called upon.
+
+However, the refinements to the user interface did not stop. So, for
+example, it is now common to use the so-called FlyDials dialogs under
+GEM. In addition, newer systems are coming to the market that have
+interfaces with a three dimensional appearance. Then consider the
+NeXTSTEP, the most exemplary of all the graphical operating systems,
+elements of which (such as the InterfaceBuilder) are quite worthy of
+imitation.
+
+!end_node
+
+
+!begin_node The first version of ACS
+
+The idea for ACS originated from the desire to quickly and easily
+provide one's own programs with a clean GEM interface. The book
+"Vom Anf‰nger zum GEM-Profi" (Eng. "From beginner to GEM pro") by
+the Geiss brothers was an attempt to approach the subject. However,
+despite the sources that were provided, it was a far cry from what
+(!link [Stefan Bachert] [Stefan Bachert]) imagined. The learning curve was disproportionately
+high and support and updates were not and are not guaranteed. So the
+idea was born to write such a tool.
+
+For (!link [Stefan Bachert] [Stefan Bachert]), a graphical editor and a clear concept were very
+important. One should quickly attain results without having to jump
+through too many hoops. So within 10 months ACS 1.00 was born - the
+baby was overdue...;-)
+
+Based on the collection of various reports and feedback from diehard
+ACS users (and ACS critics), a new and improved second-generation
+(!I)ACSpro(!i) has been developed. The premise of this second generation
+was to develop a tool that was easier and more intuitive to use, but
+also one that could be greatly expandable. The most important thing
+though was to avoid imposing a concept on the programmer that they
+did not like. All features of (!I)ACSpro(!i) may or may not be used as one
+prefers. So it is now easily possible to write programs that are no
+different from those created with a RCS. Additionally, the manual
+and online-help have been updated to accomodate a tool like (!I)ACSpro(!i).
+
+!end_node
+
+
+!begin_node The new ACSpro
+
+The premise of the new (!I)ACSpro(!i) versions was always to develop a tool
+that is much easier and more intuitive to use but on the other hand
+would be greatly expandable. At the same time it was important to
+avoid imposing concepts on the programmer that they do not like or
+would not apply to the scope of their program. All features of (!I)ACSpro(!i)
+may or may not be used as one prefers.
+
+Consequently, in versions starting from 3.0.0 this philosophy has
+been consistently followed. All (!I)ACSpro(!i) capabilities, e.g. the 
+transparent support of ST-Guide or BubbleGEM, can be used quickly,
+easily and intuitively, but can also be modified, deactivated and/or
+switched off.
+
+The development of a program under (!I)ACSpro(!i) is divided into three
+phases: the creation of the graphical elements using the (!I)GUI editor(!i),
+specification of the references that connect the graphical elements
+to the program itself and the development of the actual program. But
+this order of sequence is not mandatory and you can easily create a
+user interface even for an existing, finished program.
+
+!end_node
+
+
+!begin_node The graphical elements
+
+The graphical elements that can be linked to a resource file in the
+(!I)GUI editor(!i) are the familiar GEM objects of course. Since these differ
+slightly from the GEM-only objects through extensions in their usage
+within (!I)ACSpro(!i), their functionality and operation will be described
+precisely here.
+
+!subtoc [all] !depth 1
+
+!begin_node Windows
+
+Windows have a central importance under (!I)ACSpro(!i) as well as under GEM.
+They display appropriate file contents and perform operations.
+Windows also display non-modal dialog boxes. Windows which are closed
+but not terminated are represented in (!I)ACSpro(!i) by an icon shown in the
+module window of the pure desktop if it is installed. A window can
+also have a menu bar. The interior of the window is a GEM object;
+the work object. The work object allows you to display a dialog box
+as well as other complex objects such as images or text.
+
+(!I)ACSpro(!i) also supports two special forms of windows: the list window
+and the toolbox. A list window arranges objects within the work
+object to optimally fit them with regard to the width of the window.
+A toolbox is a window that is not topped when clicked (note that this
+functionality is only available from AES 4.0, but (!I)ACSpro(!i) simulates
+this behavior for AES < 4.0 so that the usage is consistent).
+
+!end_node
+
+
+!begin_node Objects
+
+Under GEM any visible part of the user interface consists of a GEM
+object (for example, a button or text box). These are linked together
+in an object tree. Each object in the object tree is then uniquely
+determined by its index (position in the object tree).
+
+GEM ojects are extended in their way by (!I)ACSpro(!i) so that in addition to
+a purely visual meaning, they contain functionality which allows one
+to specify during the creation of the interface what the object will
+do when, for example, it is clicked on.
+
+In addtion to the previously known object types, you can also use
+buttons that appear three dimensional with (!I)ACSpro(!i) - this visual look
+can be switched on or off by a flag. The radio and check buttons
+familiar from the FlyDials software are also available. Of course,
+all button types can also be operated with the keyboard. In doing
+so, (!I)ACSpro(!i) adheres to the conventions which have been established on
+the Atari. GEM offers an object type (G_USERDEF) with which it is
+possible to define one's own particular object types. (!I)ACSpro(!i) actually
+used this feature very intensively in the first version. However, it
+turned out that the programming of these userdefs was simply too
+cumbersome and so a new object type has been defined: this extended
+userdef includes the actual drawing routine and also the service
+routine and various, freely assignable pointers.
+
+!end_node
+
+
+!begin_node Menus
+
+Menus under (!I)ACSpro(!i) are object trees with limited structure. They
+can also be operated via keys as usual. You can place a menu both on
+the desktop and in windows. There are two types of menus in windows:
+the drop-down and the pull-down menus. The former work when simply
+touched by the mouse pointer and the latter only when clicked upon.
+
+Popup menus are also supported by (!I)ACSpro(!i). Popups are more flexible
+than traditional menus because they allow submenus. There are also
+two versions of popup menus: one type of which is called completely
+freely by the program, for example, by clicking the mouse button.
+The other type of popup is available in dialogs as the so-called
+(!link [Cycle] [Userdef-Cycle])"Cycle"} button. This is a special button that invokes the popup menu
+when clicked.
+
+!end_node
+
+
+!begin_node Extended Objects
+
+In contrast to a RSC program, (!I)ACSpro(!i) allows you to declare and define
+actions that will occur when, for example, you click on an object.
+This means that not only, as in the first version of (!I)ACSpro(!i), can you
+specify the function that you wish to run, but that you can also
+immediately fill in pre-made code for the function body using the
+internal text editor of (!I)ACSpro(!i) . This code is then written to the
+resource file during output. This mechanism, inspired by the NeXT
+InterfaceBuilder, has been further extended so with (!I)ACSpro(!i) it is
+possible to have different types of functions (for example, for the
+click or create routine) and different function parameters for each.
+
+!end_node
+
+
+!begin_node Modules
+
+One of the most important innovations of this version of (!I)ACSpro(!i) is
+certainly the openness of the system. So it is easily possible to
+take parts of programs which are not always needed and combine them
+into modules. You might argue that this was already possible in the
+first version of (!I)ACSpro(!i). However, now you can dynamically reload
+these modules during the runtime of an (!I)ACSpro(!i) program. Used in this
+way, your development time can be reduced as editors (a powerful text
+editor is included with the software), drawing modules and similar
+applications can be used again and again without writing a single
+additional line of code. These modules can then communicate via
+messages with the main program as well as with each other.
+
+To increase the flexibility and ease of use of the (!I)ACSpro(!i) (!I)GUI editor(!i)
+we decided to include the option to accept user-defined, complex,
+extended objects within the (!I)GUI editor(!i) itself. For example, you could
+now include your bar graph as an extended object in the (!I)GUI editor(!i).
+Then it will be located in the toolbox window and can be placed like
+any other object inside a dialog box or window, etc.
+
+We then went one step further: it is even possible to write an editor
+for your own objects. This will then be called from the (!I)ACSpro(!i) (!I)GUI 
+editor(!i) as soon as the object needs to be modified. This leads to the
+possibility, as under NeXTSTEP, for objects to be sold to others or
+made available free of charge.
+
+!end_node
+
+!end_node
+
+
+!begin_node Prerequisites for ACSpro
+
+(!I)ACSpro(!i) is a tool for programmers. Therefore, it is not surprising
+that the system configuration is a little more demanding. Generally,
+it is possible to work with an Atari 520ST, 1 megabyte RAM and a
+double-sided floppy drive - but the (!I)GUI editor(!i) (version 3.0.0) by
+itself takes up about 700KB of memory. So for most projects it makes
+sense to have at least two megabytes of memory and a hard drive.
+Working without a hard disk is not recommended simply because of the
+C or Pascal compiler themselves. The full extent of the (!I)ACSpro(!i)
+package is approximately three megabytes. Also, the monitor should
+have a minimum resolution of 640x400 pixels. It doesn't matter if it
+is a color or monochrome monitor.
+
+Another key point is the programming language support. The current
+version of (!I)ACSpro(!i) is configured for two languages: C and Pascal.
+Currently, Pure-C and its predecessor (!link [Turbo-C] [Pure-C]) as well as Pure-Pascal
+are supported - support for GNU-C is being prepared.
+
+In addition to the purely material requirements, working with the
+(!I)ACSpro(!i) package requires a basic familiarity with the programming
+language itself as well as the compiler used.
+
+Also, you should keep in mind that we are discussing the creation of
+user interfaces (UI) using (!I)ACSpro(!i) here and general discourse on the
+topic of UI can not and should not be expected. So you should have
+already dealt with the issues of user interface creation or be able
+to pick this up on your own. This implies that in order to become an
+absolute interface pro you should read additional reference material
+such as any of the various GEM books.
+
+!subtoc [all] !depth 1
+
+
+!begin_node Pure-C
+
+(!I)ACSpro(!i) supports the languages (!xlink [Pure-C] [pc.hyp/main]) and its predecessor Turbo-C.
+The following instructions should be observed as far as possible.
+
+(!B)Important Compiler Options(!b)
+
+!begin_xlist [-A (Ansi keywords only)]
+ !item [-A (Ansi keywords only)]  This switch should (!B)never(!b) be turned on
+                          otherwise USERDEFs are not allowed.
+
+ !item [-T (Stack checking)]      This switch may (!B)not(!b) be turned on for your
+                          own USERDEFs because the stack check
+                          will cause a crash. When the draw routine
+                          is called the processor is in supervisor
+                          mode which the check routine does not 
+                          account for.
+
+ !item [-P (Use absolute calls)]  Be sure to (!B)turn on(!b) this switch or the
+                          message '16 Bit Overflow' will appear on
+                          the left side for larger programs.
+
+ !item [-M (No string merging)]   This switch must be set, otherwise text
+                          strings will be incorrectly merged.
+!end_xlist
+
+(!B)Debugger(!b)
+Working with (!I)ACSpro(!i) accessories during debugging of programs (the
+editor in particular) may lead to a crash because the debugger does
+not expect the memory accesses of the accesories and attributes them
+to the program being debugged. So please do (!B)not(!b) do this.
+
+!end_node
+
+
+!begin_node Pure-Pascal
+
+(!I)ACSpro(!i) supports the language Pure-Pascal. The following instructions
+should be observed as far as possible.
+
+Pascal is unfortunately excessively type-strict so that illegible
+code may result in sometimes quite meaningful cases. Pascal does not
+know pointer arithmetic.
+
+C-Strings are represented as follows:
+
+!begin_sourcecode
+PACKED ARRAY [0..3] OF CHAR = 'ABC'#0;
+!end_sourcecode
+
+In C, a 16-bit value is used to represent TRUE(=1) and FALSE(=0).
+In Pascal therefore, you must check the numerical value for the
+variables application, multitask and dia_abort.
+
+(!B)ACS Accessories(!b) (!nl)
+Currently, the memory accesses of the (!I)ACSpro(!i) accessories conflict
+with Pure-Pascal because is also logs memory accesses. This analogue
+problem is also present with the Pure-C debugger. So please (!B)don't(!b) do this
+at the moment.
+
+(!B)Reloadable Modules(!b) (!nl)
+Unfortunately, Pure-Pascal does (!B)not(!b) allow you to specify your own
+startup code for the program. Therefore, Pure-Pascal can (!B)not(!b) create
+reloadable modules.
+
+!label ImpCVars
+(!B)Global (!I)ACSpro(!i) Variables(!b) (!nl)
+Pure-Pascal can not import Pure-C variables. Since (!I)ACSpro(!i) has been
+developed completey using Pure-C, all global (!I)ACSpro(!i) variables must
+be accessed either through the pointer ACSblk or via functions.
+
+(!B)Simple Conversions C -> Pascal(!b)
+The following simple rules help to convert C to Pascal.
+(e.g. for the examples)
+
+
+!begin_table [lll]
+     C         !! Pascal             !! Comment
+!hline
+     ->        !! ^.                 !! member access using pointer
+     =         !! :=                 !! assignment
+     ==        !! =                  !! comparison
+     !=        !! <>                 !! comparison
+     &         !! @                  !! address operator
+     {         !! Begin              !! start block
+     }         !! End                !! end block
+     (void)    !! - omitted -        !! without parameter
+     return X  !! Functionname := X  !! return value
+     if( x )   !! If x Then          !! condition
+     switch    !! case               !! selection
+!end_table
+
+!end_node
+
+
+!begin_node GNU-C
+
+A port of the (!I)ACSpro(!i) libraries for GNU-C is current in the works
+and will be released in version 3.0.0.
+
+!end_node
+
+!end_node
+
+
+!begin_node NKCC - The "Normalized Key-Code Converter"
+!alias NKCC
+
+(!I)ACSpro(!i) uses the country-independent key codes generated with the
+established NKCC routines by Harald Siegmund in the revision by
+Christian Felsch. Therefore, the former AO_SCANCODE flag is now
+invalid and is not supported anymore!
+
+Harald Siegmund writes about it in his documentation for NKCC:
+
+!begin_xlist []
+     NKCC is a NMI (Necessity is the Mother of Invention) product
+     that originated in a desperate attempt to write a flexible
+     and country-independent key macro manager.
+
+     The idea was to be able to capture (!B)all(!b) combinations of
+     Shift (left/right), Control and Alternate keys along with
+     another key regardless of whether the application was written
+     in German, Saudi Arabian, Icelandic or whatever TOS is used
+     with its corresponding key assignment.
+
+     No problem? Hold on! When you look at the key codes returned
+     by TOS/GEM, a cold dread may grip you.
+
+     !begin_xlist [a)]
+      !item [a)]   Alternate plus a letter key returns only the scan code
+           of the key, which depends on the assignment of the
+           keyboard (national language!). As an ASCII code, the
+           OS will always report a 0.
+
+      !item [b)]   For some keys, the scan code depends on which additional
+           keys are pressed! An example: the German keyboard has
+           the key "1!" with a scan code of 2. If the Alternate key
+           is also pressed, the scan code changes to $78 and the
+           ASCII code gets a 0.
+
+      !item [c)]   The cursor keypad is a disaster. Here one can only hope
+           that the same scan codes are returned on all keyboards.
+           For some keys - not all - the scan code changes if the
+           Control key is also pressed! The ASCII code depends on
+           the state of additional keys (Shift, Control) as well as
+           the current phase of the moon and defies every rule.
+
+      !item [d)]   Some key combinations can not be easily distinguished
+           because they produce the same key code. So in most cases
+           the key codes for Alternate+key are the same as for
+           Alternate+Shift+key.
+      !end_xlist
+
+     The solution to all these problems is NKCC. Ok, to not be too
+     dramatic, (!B)one(!b) solution to all these problems is NKCC. ;-)
+
+     The main task of NKCC is the conversion of key codes into NKCC
+     key codes, a meaningful format independent of the scan code and
+     therefore of the national language. With NKCC virtually all key
+     combinations can be distinguished. Exceptions are only those
+     combinations that are used for special purposes by the operating
+     system (think of the well-known Alternate+Help which calls up
+     the system's hardcopy routine).
+!end_xlist
+
+
+(!B)Note:(!b) Detailed documentation on NKCC and the NKCC key codes are
+located in the 'NKCC.DOC' file supplied with (!I)ACSpro(!i) - some remarks
+and technical details:
+
+!begin_itemize
+     !item (!I)ACSpro(!i) does not use the NKCC GEM library, but translates
+     'only' the normal codes from the event loop into NKCC codes.
+     Handling dead keys, ButtonEventHandler, etc is not possible
+     with NKCC. From version 3.0.0, the handling of dead keys is
+     implemented within (!I)ACSpro(!i) itself.
+
+     !item Unfortunately, the routines from the NKCC library are not
+     available to Pascal users due to the length restriction of
+     eight characters!
+!end_itemize
+
+
+(!B)Note:(!b) The NKCC library version used by (!I)ACSpro(!i) is available together
+with (!I)ACSpro(!i): see (!link [downloading] [Downloading ACSpro]). But since the NKCC routines required
+by (!I)ACSpro(!i) are already linked to the (!I)ACSpro(!i) library, the NKCC library
+itself is no longer needed.
+
+!subtoc [all] !depth 1
+
+
+!begin_node NKCC key codes
+
+Key codes, such as ev_mkreturn, are returned by NKCC and thus also
+by (!I)ACSpro(!i) as 16-bit integers. The low-order byte contains the ASCII
+part of the key code and the high-order byte contains a series of
+flags. The exact assignment looks like this:
+
+!begin_table [|lll|] !hline
+       Bit  !! Symbolic Name      !! Content
+!hline
+     0...7  !!                    !! ASCII code/Functions code
+         8  !! NKF_RSH            !! Flag for right Shift key
+         9  !! NKF_LSH            !! Flag for left Shift key
+        10  !! NKF_CTRL           !! Flag for Control key
+        11  !! NKF_ALT            !! Flag for Alternate key
+        12  !! NKF_CAPS           !! CapsLock status
+        13  !! NKF_NUM            !! Flag: Numeric keypad
+        14  !! NKF_IGNUM          !! Reserved, must be ignored!
+        15  !! NKF_FUNC           !! Function flag
+!hline
+!end_table
+
+Bits 8...11 indicate whether the respective key was pressed. Bit 12
+tells whether CapsLock is currently active or not. If bit 13 is set,
+then the key is from the numeric keypad. Bit 14's purpose is for
+internal use and has special meaning only in the first parameter of
+the function nkc_cmp().
+
+Lastly, there is bit 15 that indicates whether the key pressed is a
+(!link [function-related key] [NKCC function keys]) (bit set) or a printable character (cleared).
+
+Some (!link [key combinations] [Key combinations not available from NKCC]) can never be returned by NKCC.
+
+Meaningful constants for the 'legible' recognition of the codes can
+be found in ACS.H or ACS.PAS respectively.
+
+!end_node
+
+
+!begin_node NKCC function keys
+
+This bit is set in the following cases:
+
+  !begin_enumerate
+  !item One of the following 'function keys' has been pressed:
+
+     Esc, Tab, Backspace, Delete, Return, Help, Undo, Insert, ClrHome,
+     Cursor up, Cursor down, Cursor left, Cursor right, Enter,
+     F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, Page up, Page down, End,
+     F11, F12, F14 (only on the Mac keyboard!)
+
+     The ASCII code of such keys is always less than 32 and defined
+     as NK_... in the header files (e.g. NK_ESC for the escape key).
+
+  !item Any key is pressed together with Alternate and/or Control.
+
+     In this case, the CapsLock version of the key is always returned
+     as the ASCII part. For example, with Control+A, an 'A' is
+     returned as the ASCII code and never as 'a'.
+  !end_enumerate
+
+The function flag is intentionally placed in bit 15 so that key codes
+(which are defined as 16-bit integers) can be easily classified in two
+categories:
+
+!begin_sourcecode
+    if key code < 0
+       then it is a function
+    else
+       it is a printable character
+!end_sourcecode
+
+By the way, the ASCII code of a printable charater can contain all
+values from 0 to 255.
+
+!end_node
+
+
+!begin_node Key combinations not available from NKCC
+
+Some key combinations can never be returned by NKCC.
+
+  !begin_enumerate
+  !item Keys that are retained by the system. These include, for example:
+
+     !begin_itemize
+     !item Alternate + Cursor key (used for mouse control)
+
+     !item Alternate + Help (starts the hardcopy mechanism)
+
+     !item Alternate + Control + Tab (switches the task under MagiC)
+
+     !item etc.
+     !end_itemize
+
+  !item Keys that provide different characters when holding Alternate.
+     These include e.g. Alternate @ \ [ { ] } on the German
+     keyboard, obtained by pressing Alternate and/or Shift along
+     with an umlaut key. The ASCII code returns correctly, but the
+     alternate flag is never set. So, for example, do not set the
+     key combination "Alternate + @" on the German keyboard.
+  !end_enumerate
+
+!end_node
+
+!end_node
+
+!begin_node Handling dead keys
+!alias Dead-Keys
+
+As of version 3.0.0, (!I)ACSpro(!i) supports so-called "Dead-Key-Handling".
+These "dead keys" (literal translation) are characters that can be
+combined with a second character to be made to produce a special
+character e.g. ' combined with e to produce È. Because handling dead
+keys is not possible via the NKCC library, it has a completely new
+centralized implentation in (!I)ACSpro(!i) and can therefore be entirely
+controlled by the developer.
+
+How do they work? Quite simply, nothing happens after entering a dead
+key. The key press is first buffered and seemingly ignored (hence the
+name 'dead key'). An attempt is then made to combine the next 
+character entered with the dead key to produce a single special
+character.
+
+Internally the following happens:
+
+  !begin_enumerate
+  !item If no dead-key is buffered, a check is made to see if a dead
+     key has been entered. A dead key can be any one of the set
+     ^~'`™"„,/ and must be unlocked (see below).
+
+  !item If no dead key has been entered or should it be locked, the
+     character will be passed on normally.
+
+  !item However, if the key is an unlocked dead key, the character is
+     buffered and processing of the key press is aborted. (!I)ACSpro(!i)
+     then waits for the next key press.
+
+  !item If a dead key is buffered when a key is pressed, then a look-up
+     is performed to determine if there is a replacement character
+     for the combination of "dead key + newly entered character".
+     If this is the case, the last character entered is replaced
+     by the replacement character. Otherwise, the buffered dead key
+     and then the second character are processed normally - as if
+     there were no dead keys. The dead key buffer is always empty
+     after this case.
+  !end_enumerate
+
+The dead keys must be individually unlocked. For this purpose, the
+new variable ACSblk->ev_mkdead is used to register the characters
+that the application would like to consider as dead keys (as noted
+in the ToDo list, this is intended as an extension of the (!I)GUI-Editor(!i)
+but until then this must be done by the program - e.g. in ACSinit0).
+
+The following replacement variants are supported:
+
+
+!begin_table [lcllll]
+    Description          !! Dead-Key  !!    !! 2nd Character   !!    !! Subsitution
+!hline
+    Accent Circumflex    !!    ^      !! +  !! aeiou           !! =  !! ‚ÍÓÙ˚
+    Accent Tilde         !!    !~     !! +  !! nNaoAo          !! =  !! Ò—„ı√’
+    Accent Acute         !!    '      !! +  !! eEaiou          !! =  !! È…·ÌÛ˙
+    Accent Grave         !!    `      !! +  !! aeiouA          !! =  !! ‡ËÏÚ˘¿
+    Accent Umlaut        !!    ®      !! +  !! aeiouyAOU       !! =  !! ‰ÎÔˆ¸ˇƒ÷‹
+    Accent Umlaut        !!    "      !! +  !! aeiouyAOU       !! =  !! ‰ÎÔˆ¸ˇƒ÷‹
+    Accent Angstrom      !!    ∞      !! +  !! aA              !! =  !! Â≈
+    Accent Cedilla       !!    ,      !! +  !! cC              !! =  !! Á«
+    No Accent            !!    /      !! +  !! oO24            !! =  !! ¯ÿΩº
+    (still useful)
+!end_table
+
+!end_node
+
+
+!begin_pnode* Stefan Bachert
+!begin_preformatted
+ Address    Stefan Bachert GmbH
+            Kˆnigstr. 23
+            71139 Ehningen
+
+ Tel.       07034/99325-1
+
+ EMail      Stefan.Bachert@Stefan-Bachert.de
+
+ Homepage   (!url [http://www.Stefan-Bachert.de/] [])
+!end_preformatted
+
+!end_node
+
+
+!begin_pnode* Oliver Michalak
+!begin_preformatted
+            Oliver Michalak
+
+
+ EMail      info@artofaktur.de
+
+ Homepage   (!url [http://www.artofaktur.de] [])
+!end_preformatted
+
+!end_node
+
+!end_node

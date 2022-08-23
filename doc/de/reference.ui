@@ -1,0 +1,3156 @@
+!begin_node Die Referenz - geordnet nach Gruppen
+
+!subtoc [all] !depth 1
+
+Hier folgt die vollstÑndige Referenz aller von (!I)ACSpro(!i) zur VerfÅgung
+gestellten Konstanten, Datenstrukturen und Datentypen, Variablen und
+Funktionen.
+
+(!I)(!B)Anmerkung:(!b) Da nichts so schnell veraltet wie ein gedrucktes Buch,
+sollte stets in der Online-Hilfe (z.B. fÅr den ST-Guide) und der
+History nachgeschlagen werden, wo stets die aktuellsten Informationen
+zu finden sind.(!i)
+
+(!I)Anmerkung:(!i) Momentan sind alle Beispiele in C notiert. Bei Gelegenheit
+werden diese Beispiele nach Pascal Åbertragen. Die C-Beispiele sind
+jedoch bewuût so geschrieben, daû auch reine Pascal-Programmierer sie
+ohne - oder nur mit geringer - C-Kenntnis verstehen sollten.
+
+!begin_node Die Konstanten
+
+(!I)ACSpro(!i) definiert einige Konstanten, die in verschiedene Kategorien
+eingeteilt werden kînnen
+
+!subtoc [all] !depth 1
+
+!begin_node Fenster-Flags
+
+FÅr die Fenster-Flags in (!link [Awindow.kind] [Awindow.kind]) sind die nachfolgenden Flags
+definiert:
+
+!begin_xlist [AW_ICONACCEPT]
+!label AW_ICON
+ !item [AW_ICON]        Das Fenster wird beim AnwÑhlen der CLOSE-Box
+                ikonifiziert. Ist dieses Flag NICHT gesetzt, wird das
+                Fenster durch den CLOSER gelîscht!
+
+                (!B)Wichtig:(!b) Bitte beachten Sie diesen Unterschied, denn
+                er hat weitreichende Konsequenzen.
+
+!label AW_GHOSTICON
+ !item [AW_GHOSTICON]   Die Ikone verschwindet nicht beim ôffnen, sondern wird
+                als Geisterikone dargestellt, die zum Toppen angewÑhlt
+                werden kann.
+
+!label AW_STAY
+ !item [AW_STAY]        Der Zustand dieses Fensters soll nicht automatisch
+                verÑndert werden (ikonifiziert oder nicht).
+                Normalerweise wird, wenn GEM keine freie Fenster-ID
+                mehr hat, ein eigenes geschlossen. Es gibt manchmal
+                Fenster, die nicht geschlossen werden sollten.
+
+!label [AW_OBLIST]
+ !item [AW_OBLIST]      Der Arbeitsbereich ist eine Liste von Objekten. Diese
+                Liste wird je nach Grîûe des Fensters umgebaut. Das
+                erste Objekt bleibt immer am selben Platz und bestimmt
+                durch den Versatz ob_x und ob_y die AbstÑnde zwischen
+                den Objekten der Liste.
+
+!label AW_ICONACCEPT
+ !item [AW_ICONACCEPT]  Das ikonifizierte Fenster akzeptiert gezogene Objekte.
+
+!label AW_UHSLIDER
+ !item [AW_UHSLIDER]    Der Benutzer steuert den horizontalen (!link [Slider] [Slider]) selbst.
+                Beim ôffnen des Fensters nimmt der (!link [Slider] [Slider]) die Grîûe
+                wi_slider.w an der Position wi_slider.x ein.
+
+!label AW_UVSLIDER
+ !item [AW_UVSLIDER]    Analoges fÅr den vertikalen (!link [Slider] [Slider]).AW_NOSCROLL Es wird
+                nie optimiertes Scrollen durchgefÅhrt.
+
+!label AW_TOOLBOX
+ !item [AW_TOOLBOX]     Dieser Fenstermodus erlaubt es, das Fensterinnere
+                anzuwÑhlen, ohne das Fenster zuvor zu toppen. Dies ist
+                ideal fÅr Teilelisten und Werkzeuge. Dieser Modus ist
+                erst in hîheren Version als AES 3.00 vorhanden (z.B.
+                Falcon-TOS, MultiTOS, MagiC, N.AES).
+!end_xlist
+
+!end_node
+
+
+!begin_node Fenster-Status-Flags
+
+Die hier definierten Fenster-Status-Flags werden fÅr die Komponente
+(!link [Awindow.state] [Awindow.state]) benîtigt und beschreiben den Status eine Fensters.
+
+(!B)Die folgenden Werte sollten nur vom (!I)ACSpro(!i)-System verÑndert werden:(!b)
+
+!begin_xlist [AWS_FORCEREDRAW]
+!label AWS_FULL
+ !item [AWS_FULL]         Das Fenster befindet sich momentan in seiner
+                  maximalen Ausdehnung.
+
+!label AWS_DIALOG
+ !item [AWS_DIALOG]       Derzeit ist ein Dialog (Texteingabe) in diesem
+                  Fenster aktiv.
+
+!label AWS_MODIFIED
+ !item [AWS_MODIFIED]     Vor dem nÑchsten ôffnen des Fensters wird die init-
+                  Routine aufgerufen. Das Flag wird beim Erzeugen oder
+                  durch AWS_LATEUPDATE gesetzt.
+
+!label AWS_MODAL
+ !item [AWS_MODAL]        Ein modaler Dialog zu diesem Fenster ist derzeit
+                  aktiv.
+
+!label AWS_MODAL_WIN
+ !item [AWS_MODAL_WIN]    Dieses Fenster ist momentan eines der momentan
+                  aktiven modalen Fensterdialoge
+
+!label AWS_ICONIZED
+ !item [AWS_ICONIZED]     Das Fenster wurde vom System iconifiziert. Dies ist
+                  nicht der iconifizierte Zustand innerhalb von
+                  (!I)ACSpro(!i), sondern vielmehr ein systemweit verfÅgbarer
+                  Zustand in neuen Betriebssystemversionen. Zwingend
+                  notwendig dafÅr ist, daû in der Awindow.service-
+                  Routine Awi_service aufgerufen wird.
+
+!label AWS_SHADED
+ !item [AWS_SHADED]       Das Fenster wurde vom System shaded, d.h. es wurde
+                  zusammengeklappt, so daû nur der Fensterbalken zu
+                  sehen ist. In diesem Zustand werden die Maus-Formen,
+                  die im AOBJECT hinterlegt sind, nicht mehr
+                  aktiviert, da das Work-Objekt nicht sichtbar ist.
+!end_xlist
+
+(!B)Die folgenden Werte dÅrfen auch per Programm verÑndert werden:(!b)
+
+!begin_xlist [AWS_FORCEREDRAW]
+!label AWS_FORCEREDRAW
+ !item [AWS_FORCEREDRAW]  Bei manchen Operationen sendet AES keine REDRAW-
+                  Nachricht. Um dennoch das Auffrischen zu erzwingen,
+                  kann dieses Flag gesetzt werden. Ein Beispiel, wo
+                  dieses Flag innerhalb (!I)ACSpro(!i) zur Anwendung kommt,
+                  ist das Verkleinern des Listenfensters. Die AES
+                  unterstellt, daû der Inhalt beim Verkleinern nicht
+                  verÑndert wird. Bei Listenfenstern verÑndert sich
+                  dadurch aber die Anordnung und die
+                  Bildschirmdarstellung muû daher aufgefrischt werden.
+
+!label AWS_LATEUPDATE
+ !item [AWS_LATEUPDATE]   Informationen, die zu diesem Fenster gehîren, wurden
+                  verÑndert. Die init-Routine wird nach RÅckkehr zur
+                  Hauptschleife aufgerufen. Ist das Fenster
+                  geschlossen, wird nur das Flag AWS_MODIFIED gesetzt.
+                  Damit kann das Auffrischen gebÅndelt werden. Ein
+                  Beispiel: Ist das Texte-Fenster des Editors offen
+                  und wird eine Kopieroperation von Objekten aus
+                  fremden Dateien vorgenommen, werden in der Regel
+                  sehr viele neue Texte angelegt. WÅrde nun nach jedem
+                  Text die Anzeige aufgefrischt, ginge sehr viel Zeit
+                  und Speicherplatz verloren. Setzt das offene Fenster
+                  immer wieder selbst dieses Flag, wird es immer
+                  wieder aufgerufen. Damit kann eine Art Multitasking
+                  realisiert werden.
+
+!label AWS_TERM
+ !item [AWS_TERM]         Dieses Flag zeigt an, daû sich dieses Fenster in der
+                  Terminiersequenz befindet. Gewisse Operationen sind
+                  dann ÅberflÅssig. Ist das Fenster noch offen, wird
+                  der ikonifizierte Zustand Åbergangen.
+
+!label AWS_INTERM
+ !item [AWS_INTERM]       Dieses Flag sollte der Benutzer setzen wenn das
+                  Fenster beim terminieren ist. Komplexe
+                  Terminiersequenzen, z.B. wenn mehrere Fenster
+                  beteiligt sind, kînnen dazu fÅhren, daû Fenster sich
+                  gegenseitig lîschen (= Terminieren) wollen. Anhand
+                  dieses Flags kann die Terminierroutine ein doppeltes
+                  Durchlaufen verhindern. (!I)ACSpro(!i) selbst beachtet
+                  dieses Flag nicht.
+!end_xlist
+
+!end_node
+
+
+!begin_node Objekt-States
+
+(!I)ACSpro(!i) definiert einige der nicht verwendeten Bits von ob_state der
+Struktur OBJECT bzw. AESOBJECT. Die definierten Flags fÅr ob_state
+lauten:
+
+!begin_xlist [AOS_DCLICK]
+!label AOS_FIXED
+ !item [AOS_FIXED]    Im ersten Objekt des Objektbaumes ist dieser Status
+              gesetzt, wenn der Objektbaum schon von Zeichen- in
+              Pixelkoordinaten konvertiert wurde. Siehe auch Aob_fix.
+
+!label AOS_DCLICK
+ !item [AOS_DCLICK]   Dieses Objekt wurde durch einen Doppelklick angewÑhlt.
+              Der Status ist nur fÅr die aktuelle ev_obnr gÅltig.
+
+!label AOS_CONST
+ !item [AOS_CONST]    Substrukturen der ObjektbÑume werden normalerweise durch
+              den Aufruf Aob_create dupliziert bzw. durch Aob_delete
+              freigegeben. Das Duplizieren bzw. Freigeben kann durch
+              diesen Status unterbunden werden. Das ist sinnvoll um
+              Speicher zu sparen und um Freigaben zu verhindern.
+              Dieser Status soll nur mit sehr viel Vorsicht eingesetzt
+              werden.
+!end_xlist
+
+Um bei den Objektnummern zwischen der Toolbar und dem Workobjekt
+unterscheiden zu kînnen, sind die Konstanten (!link [A_TOOLBAR] [A_TOOLBAR]) und (!link [A_MASK] [A_MASK])
+definiert worden.
+
+!end_node
+
+
+!begin_node Objekt-Flags
+
+(!I)ACSpro(!i) definiert einige der nicht verwendeten Bits von ob_flags und
+ob_state der Struktur OBJECT bzw. AESOBJECT. Folgende Flags fÅr
+ob_flags sind definiert:
+
+!begin_xlist [AO_DRAGABLE]
+!label AEO
+ !item [AEO]          Dieses Objekt ist ein erweitertes Objekt. Statt des
+              Types OBJECT bzw. AESOBJECT ist der Typ AOBJECT zu
+              verwenden.
+
+!label AO_DEFABLE
+ !item [AO_DEFABLE]   Dieses Objekt kann zum DEFAULT-Objekt werden. Durch den
+              Tastendruck CTRL-TAB wird zum nÑchsten DEFAULT-Objekt
+              weitergeschaltet. Siehe auch Awi_keys.
+
+!label AO_DRAGABLE
+ !item [AO_DRAGABLE]  Das Objekt wird als ziehbar markiert.
+
+!label AO_ACCEPT
+ !item [AO_ACCEPT]    Dieses Objekt kann Objekte annehmen.
+
+!label AO_SILENT
+ !item [AO_SILENT]    Objekte werden still angenommen. Das heiût, daû das
+              Objekt beim Daraufziehen nicht invertiert wird.
+!end_xlist
+
+Um bei den Objektnummern zwischen der Toolbar und dem Workobjekt
+unterscheiden zu kînnen, sind die Konstanten (!link [A_TOOLBAR] [A_TOOLBAR]) und (!link [A_MASK] [A_MASK])
+definiert worden.
+
+!end_node
+
+
+!begin_node Objekt-Nummern
+
+Um bei den Objektnummern zwischen der Toolbar und dem Workobjekt
+unterscheiden zu kînnen, sind die folgenden Konstanten definiert
+
+!begin_xlist [A_TOOLBAR]
+!label A_TOOLBAR
+ !item [A_TOOLBAR]  Einige Funktionen haben keinen eigenen Parameter fÅr den
+            gewÅnschten Objektbaum z.B. Awi_obchange. Daher wird die
+            'obnr' mit der Konstante A_TOOLBAR per Oder verknÅpft.
+            Damit schrÑnkt sich zwar die Anzahl mîglicher Objekte im
+            Objektbaum auf 4096 ein, was fÅr die Praxis jedoch mehr
+            als ausreichend ist.
+
+!label A_MASK
+ !item [A_MASK]     Einige Funktionen liefern mîglicherweise Objektindizes,
+            die mit A_TOOLBAR verOdert sind. Um diese und zukÅnftige
+            Flags abzutrennen existiert die Mask A_MASK. Eine
+            VerknÅpfung per Und ergibt den reinen Objektindex.
+!end_xlist
+
+!end_node
+
+
+!begin_node Vordefinierte Fenster-Nachrichten
+
+(!I)ACSpro(!i) definiert einige Nachrichten vor. Der Nummernkreis 1 bis 9999
+ist (!I)ACSpro(!i) vorbehalten. Applikationseigenen Nachrichten verbleibt der
+Nummernkreis von 10000 bis 32000. FÅr (!I)ACSpro(!i)-Erweiterungen, die einem
+groûem Kreis zugÑnglich gemacht werden, lassen Sie bitte die
+entsprechenden Nachrichten beim Support registrieren.
+
+(!B)Allgemeine Nachrichten:(!b)
+
+!begin_xlist [AS_REALMENU_UPDATE]
+ !item [AS_ACCLOSED]           Accessory wurde geschlossen
+
+ !item [AS_TERM]               Fenster soll terminieren
+
+ !item [AS_ICONIZED]           Fenster wurde ikonifiziert
+
+ !item [AS_MOUSE]              Die Maus wurde bewegt
+
+ !item [AS_SELECTADD]          Es wurde ein weiteres Objekt selektiert
+
+ !item [AS_SELECTDEL]          Es wurde ein/alle Objekt(e) deselektiert
+
+ !item [AS_UNTOPPED]           GEM-Nachricht UNTOPPED erhalten
+
+ !item [AS_FOCUSCHG]           Der Eingabefokus wurde verÑndert
+
+ !item [AS_CHECKDRAG]          PrÅfe ob Fenster gezogene Objekte annÑhme
+
+ !item [AS_OPEN]               Selektierte Objekte îffnen
+
+ !item [AS_DELETE]             Selektierte Objekte lîschen
+
+ !item [AS_CHECKDELETE]        PrÅfe ob gezogene Objekte gelîscht werdn kînnen
+
+ !item [AS_WIAUTOPOS]          Das Fenster wurde automatisch positioniert
+
+ !item [AS_INFO]               Das Fenster soll informieren
+
+ !item [AS_DRAGGED]            Ein Objekt wurde auf das Fensterikon gezogen
+
+ !item [AS_CHECKDRAGGED]       PrÅfe ob Fensterikon Objekte annÑhme
+
+ !item [AS_CONFIGDRAG]         Konfiguriere Ziehoperation
+
+ !item [AS_DRAGABORTED]        Ziehoperation wurde auf fremden Fenster beendet
+
+ !item [AS_REALSEL_START]      Start einer neuen Auswahl-Liste
+
+ !item [AS_REALSEL_UPDATE]     énderung der Auswahl-Liste
+
+ !item [AS_REALSEL_END]        Ende der Auswahl-Liste
+
+ !item [AS_REALPOP_START]      Start der Popupbedienung
+
+ !item [AS_REALPOP_UPDATE]     énderung des Popupeintrags
+
+ !item [AS_REALPOP_END]        Ende des Popups
+
+ !item [AS_EDITCHG]            Neue Taste in der Eingabe
+
+ !item [AS_GEM_MESS]           Unbekannte GEM-Message erhalten
+
+ !item [AS_SCRAP_UPDATE]       Das Klemmbrett wurde erneuert
+
+ !item [AS_SCRAP_IMPORT]       Aufforderung, aus dem Klemmbrett zu importieren
+
+ !item [AS_SCRAP_EXPORT]       Aufforderung, ins Klemmbrett zu exportieren
+
+ !item [AS_REALMENU_START]     Start der MenÅfÅhrung
+
+ !item [AS_REALMENU_UPDATE]    énderung des MenÅeintrags
+
+ !item [AS_REALMENU_END]       Ende der MenÅfÅhrung
+
+ !item [AS_HELP]               Ausgabe einer Hilfe Åbers Hilfe-Fenster
+
+ !item [AS_LOOKSTRING]         Suche Text in eigenen Datenstrukturen
+
+ !item [AS_REDRAWFILE]         Aktualisieren eines Laufwerks
+
+ !item [AS_LOADFILE]           Programm soll Datei laden
+
+ !item [AS_SELECTFILE]         Fenster soll Datei(en) selektieren
+
+ !item [AS_SAVEFILE]           Aufforderung zum Sichern
+
+ !item [AS_ALLOWBUBBLE]        Frage, ob eine BubbleGEM-Hilfe angezeigt werden
+                       darf
+
+ !item [AS_GETBUBBLE]          Der Text fÅr eine BubbleGEM-Hilfe wird erfragt
+
+ !item [AS_OLGA_DISCONNECT]    Eine OLGA-Verbindung wurde getrennt
+
+ !item [AS_OLGA_UPDATED]       Eine Datei wurde vom (!link [OLGA-Server] [OLGA-Server]) geÑndert, das
+                       Fenster soll geeignet darauf reagieren
+
+ !item [AS_OLGA_MAKE_INFO]     Ein (!link [OLGA-Client] [OLGA-Client]) hat eine Info-Datei
+                       angefordert, die das Fenster bereitstellen soll
+
+ !item [AS_OLGA_CLEAR_INFO]    Der (!link [OLGA-Client] [OLGA-Client]) hat die Info-Datei ausgelesen,
+                       sie kann wieder gelîscht werden
+!end_xlist
+
+(!B)generischer Desktop(!b)
+
+!begin_xlist [AS_REALMENU_UPDATE]
+ !item [AS_PLACEICON]          Plaziere das Ikon
+
+ !item [AS_REMICON]            Entferne das Ikon
+
+ !item [AS_GHOSTICON]          Stelle das Ikon als Ghostikon dar
+
+ !item [AS_NORMICON]           Stelle das Ikon wieder normal dar
+
+ !item [AS_NEWCALL]            Melde (Awindow.create) Routine an
+
+ !item [AS_BACKOBJECT]         Melde andere Hintergrund an
+
+ !item [AS_ICONNEW]            Melde anderes Neu-Icon an
+
+ !item [AS_ICONTRASH]          Melde anderen Papierkorb an
+
+ !item [AS_ICONWINDOW]         Melde anderes Fenster an
+
+ !item [AS_UPDATEICON]         Frische Fensterikonen auf
+!end_xlist
+
+(!B)EDITOR-Fenster Nachrichten(!b)
+
+!begin_xlist [AS_REALMENU_UPDATE]
+ !item [AS_EDGETENTRY]         Gibt den Zeiger auf den Userdefeintrag zurÅck
+
+ !item [AS_EDEXT]              Setzt Erweiterung (Extension)
+
+ !item [AS_EDLOADFILE]         Es wird der Name der Datei Åbergeben, die
+                       geladen werden soll
+
+ !item [AS_EDTITLE]            Der Normaltitle wird gesetzt
+
+ !item [AS_EDTITLEDIRTY]       Der Modifizierttitel wird gesetzt
+
+ !item [AS_EDPUTSTRING]        Ein Text wird Åbergeben
+
+ !item [AS_EDGETSTRING]        Der Edittext wird zurÅckgeschrieben
+
+ !item [AS_EDGETNEED]          Berechnet den Speicherbedarf des Textes
+
+ !item [AS_EDWINDOW]           Setzt Steuerfenster
+
+ !item [AS_EDTERM]             Das Editorfenster will terminieren
+
+ !item [AS_EDSAVE]             Das Editorfenster ist ungesichert
+
+ !item [AS_EDCLEAN]            Stuft den Text als ummodifiziert ein
+
+ !item [AS_EDHOME]             Die Startposition wird sichtbar
+
+ !item [AS_EDICONTEXT]         öbergibt den Text fÅr die Editorikone
+
+ !item [AS_EDSAVEIT]           Aufforderung zum Sichern
+!end_xlist
+
+(!B)PROTOCOL-Fenster Nachrichten(!b)
+
+!begin_xlist [AS_REALMENU_UPDATE]
+ !item [AS_EDGETENTRY]         Gibt den Zeiger auf den Userdefeintrag zurÅck
+!end_xlist
+
+(!B)PLOTTER-Fenster Nachrichten(!b)
+
+!begin_xlist [AS_REALMENU_UPDATE]
+ !item [AS_PLOTHANDLE]         Gibt das VDI-Handle zurÅck
+
+ !item [AS_PLOTMFDB]           Gibt den verwendeten MFDB zurÅck
+
+ !item [AS_PLOTSIZE]           Setzt eine neue Grîûe
+
+ !item [AS_PLOTENTRY]          Gibt den Zeiger auf den Userdefeintrag zurÅck
+!end_xlist
+
+(!B)Programmspezifische Nachrichten, ab Version 2.2(!b)
+
+!begin_xlist [AS_REALMENU_UPDATE]
+ !item [AS_ASKHELP]            Sucht Hilfe-Fenster
+
+ !item [AS_ASKLAZY]            Sucht LAZy-Fenster
+
+ !item [AS_ASKFILE]            Sucht Dateidarstellungsfenster?
+
+ !item [AS_ASKTURNUS]          Sucht TURNUS-Fenster?
+
+ !item [AS_ASKNOTIO]           Sucht NOTIO-Fenster?
+!end_xlist
+
+(!B)Interne Nachrichten, ab Version 2.2(!b)
+
+!begin_xlist [AS_REALMENU_UPDATE]
+ !item [AS_DOARCHIVE]          LAZy-Shell
+
+ !item [AS_CEWS_BASE]          ACS-intern...
+
+ !item [AS_CEWS_ACSSAVE]       ACS-intern...
+!end_xlist
+
+!end_node
+
+
+!begin_node Die Userdef-Standard-Nachrichten
+
+Die Nachrichten werden durch die Service-Funktion bearbeitet. Sie wird
+
+in Pure-C
+
+!begin_preformatted
+        auserblk = (AUSERBLK*)entry->ob_spec.userblk;
+        auserblk->ub_serv(entry, Nachricht, Parameter);
+!end_preformatted
+
+in Pure-Pascal
+
+!begin_preformatted
+        auser := AUSERBLKPtr(entry^.aes.ob_spec.userblk);
+        db := auser^.ub_serv(entry, Nachricht, Parameter);
+!end_preformatted
+
+aufgerufen. 'entry' ist von Typ OBJECT* bzw ACSOBJECTPtr und ist der
+Ojekteintrag, das den Userdef benutzt. Nachricht ist die zu sendende
+Nachricht. Parameter der optionale Parameter, der die Nachricht
+ergÑnzt. Er sollte NULL/NIL sein, wenn diese Nachricht keinen
+Parameter hat. Die Wirkung der Nachricht kann bei unterschiedlichen
+Userdef unterschiedlich ausfallen. Es sollte jedoch mîglichst analog
+reagiert werden.
+
+Analog zu den Fensterservices liefert die Routine den Wert TRUE wenn
+eine derartige Nachricht vorgesehen ist und mit Erfolg bearbeitet
+wurde. Existiert keine solche Nachricht oder konnte die Bearbeitung
+der Nachricht aufgrund von Fehlern nicht durchgefÅhrt werden, wird
+FALSE zurÅckgegeben.
+
+Die folgenden Nachrichten - mit ihren Datentypen des Parameters - sind
+definiert:
+
+!begin_xlist [AUO_FULLUPDATE]
+!label AUO_CREATE
+ !item [AUO_CREATE]      Userdef wird initialisiert. Hier sollte das Userdef
+                 benîtigten Speicherplatz anfordern und in einen der
+                 Userpointer eintragen. Als Parameter wird
+
+                      FÅr Pure-C: INT16 *success;
+
+                      FÅr Pure-Pascal: success: Integer;
+
+                 Åbergeben. Falls die Initialisierung nicht klappte,
+                 sollte der Wert 'FAIL' zugewiesen werden, um dem
+                 Aufrufenden das Miûlingen mitzuteilen
+
+!label AUO_TERM
+ !item [AUO_TERM]        Der Userdef wird freigegeben. Allozierter Speicher
+                 sollte hier freigegeben werden.
+
+!label AUO_GETVAL
+ !item [AUO_GETVAL]      Der Aufrufer wÅnscht den String-Wert zu lesen
+
+                      FÅr Pure-C: char **text;
+
+                      FÅr Pure-Pascal: text: Pointer;
+
+                 Der Wert darf kopiert, aber nicht direkt geÑndert
+                 werden.
+
+!label AUO_SETVAL
+ !item [AUO_SETVAL]      Der String-Wert wird gesetzt.
+
+                      FÅr Pure-C: char *text;
+
+                      FÅr Pure-Pascal: text: Pointer;
+
+!label AUO_UPDATE
+ !item [AUO_UPDATE]      Das Userdef sollte seinen aktuellen Zustand zeigen.
+                 Dazu werden Information Åber das Fenster und der
+                 Objektnummer gebraucht, die mit AUO_SELF Åbergeben
+                 werden. Aufwendige Userdefs wie der Editor oder der
+                 (!link [Slider] [Slider]) merken, das nur Teile durch vorhergehende
+                 Nachrichten auszufÅhren sind und tun daher auch nur
+                 das Nîtigste (smart update).
+
+!label AUO_FULLUPDATE
+ !item [AUO_FULLUPDATE]  Aus irgend einem Grund wird ein Vollupdate gewÅnscht.
+                 Im Gegensatz zu einem entsprechenden (wi-
+                 >obchange)(...) wird das Userdef dabei in Kenntnis
+                 gesetzt.
+
+!label AUO_SELF
+ !item [AUO_SELF]        Dem Userdef wird sein Fenster, sein Objekteintrag und
+                 Objektnummer mitgeteilt, die es braucht um selbstÑtig
+                 Updateoperationen durchzufÅhren. Dazu wird
+
+                      fÅr Pure-C: Awiob *wiob;
+
+                      fÅr Pure-Pascal: wiob: AwiobPtr;
+
+                 Åbergeben.
+
+!label AUO_OWNER
+ !item [AUO_OWNER]       Die per AUO_SELF Åbergebene IdentitÑt kann hiermit
+                 jederzeit wieder ermittelt werden. Da dies nur in
+                 Live-Routinen Sinn macht, wird diese Nachricht
+                 normalerweise auch nur bei Objekten mit einer Live-
+                 Routine unterstÅtzt.
+
+!label AUO_NEXT
+ !item [AUO_NEXT]        Es soll zum nÑchsten Wert geschritten werden
+
+!label AUO_PREV
+ !item [AUO_PREV]        Es soll zum vorigen Wert geschritten werden
+
+!label AUO_NEXTPAGE
+ !item [AUO_NEXTPAGE]    Es soll ein 'Seitensprung' nach vorne erfolgen.
+
+!label AUO_PREVPAGE
+ !item [AUO_PREVPAGE]    Es soll ein 'Seitensprung' zurÅck erfolgen.
+
+!label AUO_BEGIN
+ !item [AUO_BEGIN]       Es soll an den Anfang gesprungen werden.
+
+!label AUO_END
+ !item [AUO_END]         Es soll an das Ende gesprungen werden.
+
+!label AUO_POS
+ !item [AUO_POS]         Die Position soll auf den Åbergebenen Wert gesetzt
+                 werden.
+
+                      FÅr Pure-C: INT16 *pos;
+
+                      FÅr Pure-Pascal: pos: ^Integer;
+
+!label AUO_GETBUBBLE
+ !item [AUO_GETBUBBLE]   Es soll eine BubbleGEM-Hilfe zum UserDef angezeigt
+                 werden. Dem Userdef wird der Text Åbergeben. Der Text
+                 kann verÑndert oder sogar durch NULL bzw. NIL
+                 gelîscht werden. Falls ein leerer Text Åbergeben
+                 wird, wird keine BubbleGEM-Hilfe angezeigt.
+
+                      FÅr Pure-C: char **text;
+
+                      FÅr Pure-Pascal: text: Pointer;
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+!end_node
+
+
+!begin_node Die Strukturen
+
+(!I)ACSpro(!i) definiert die folgenden Strukturen:
+
+ Aaction
+
+ Acreate
+
+ Adescr
+
+ Amouse
+
+ AOBJECT
+
+ Asel
+
+ Awindow
+
+ Awiob
+
+ A_dd
+
+ A_FileList
+
+ EDITGETS
+
+ EDITLIVE
+
+ EDITSUBS
+
+ OLGA_Info
+
+ PROTOCOLDATA
+
+ PLOTTERDATA
+
+ SLLIVE
+
+ ULinList
+
+ Queue
+
+!end_node
+
+
+!begin_node Die Variablen
+
+Alle (!I)ACSpro(!i)-Variablen sind in der Struktur Ablk zusammengefaût. Die
+Variable ACSblk zeigt auf diese Struktur. Auf alle Variablen sollte
+demnach Åber den Zeiger ACSblk zugegriffen werden, z.B. sollte auf die
+Variable ev_window Åber ACSblk->ev_window zugegriffen werden.
+
+Folgende Variablen existieren (und sind Åber den Zeiger ACSblk
+zugÑnglich):
+
+!subtoc [all] !depth 1
+
+
+!begin_node AES-orientierte Variablen
+
+!begin_xlist [phys_handle]
+ !item [gl_apid]       Die AES-Application-ID
+
+ !item [phys_handle]   VDI-Workstation der AES
+
+ !item [gl_wattr]      Attribut-Breite
+
+ !item [gl_hattr]      Attribut-Hîhe
+
+ !item [desk]          Desktop-Grenzen
+
+ !item [apterm]        Die Nachricht AP_TERM wurde empfangen
+
+ !item [AESglobal]     Das global-Feld fÅr AES-Aufrufe
+
+ !item [menu_id]       MenÅ-ID im Accessory-Modus oder -1
+!end_xlist
+
+!end_node
+
+
+!begin_node VDI-orientierte Variablen
+
+!begin_xlist [screenMFDB]
+ !item [vdi_handle]    Die virtuelle VDI-Workstation fÅr (!I)ACSpro(!i)
+
+ !item [gl_wbox]       Zellenbreite eines "Standard-Zeichens"
+
+ !item [gl_hbox]       Zellenhîhe eines "Standard-Zeichens"
+
+ !item [gl_wchar]      Maximale Breite eines "Standard-Zeichens"
+
+ !item [gl_hchar]      Maximale Hîhr eines "Standard-Zeichens"
+
+ !item [ncolors]       Anzahl der Farben
+
+ !item [nplanes]       Anzahl der Farbebenen
+
+ !item [fonts]         Anzahl der verfÅgbaren ZeichensÑtze
+
+ !item [screenMFDB]    MFDB des Bildschirmes fÅr Kopieraktionen
+
+ !item [fontid]        Font-ID fÅr UserDefs
+
+ !item [fheight]       Hîhe des Fonts fÅr UserDefs
+
+ !item [fontsid]       Font-ID des kleinen Fonts fÅr UserDefs
+
+ !item [fsheight]      Hîhe des kleinen Fonts fÅr Userdefs
+!end_xlist
+
+!end_node
+
+
+!begin_node Pfad-Variablen
+
+!begin_xlist [alert_name}
+ !item [appname]       Kompletter Dateiname (incl. Pfad) der Anwendung
+
+ !item [apppath]       Kompletter Pfad der Anwendung
+
+ !item [apppara]       Parameter der Anwendung
+
+ !item [appfrom]       Aufrufer der Anwendung
+
+ !item [basename]      Name der Anwendung (ohne Extension)
+
+ !item [cfg_path]      Kompletter Pfad fÅr Konfigurationsdateien
+
+ !item [scrp_path]     Kompletter Pfad des Klemmbretts
+
+ !item [dd_name]       Global verfÅgbarer Name fÅr alle D&D-Protokolle
+
+ !item [alert_name]    Eigener Name fÅr die Titelzeilen von eigenen Alert-
+               Boxen
+!end_xlist
+
+!end_node
+
+
+!begin_node Variablen fÅr die Drag- & Click-Routinen
+
+!begin_xlist [ev_mmokstate]
+ !item [ev_window]     Aktuelles Fenster
+
+ !item [ev_object]     Aktueller Objektbaum
+
+ !item [ev_obnr]       Aktueller Objektbaum-Index
+
+ !item [ev_mmox]       X-Koordinate der Maus-Position
+
+ !item [ev_mmoy]       Y-Koordinate der Maus-Position
+
+ !item [ev_mmokstate]  Tastaturstatus
+
+ !item [dia_abort]     Flag fÅr den Abbruch eines modalen Dialoges
+!end_xlist
+
+!end_node
+
+
+!begin_node Variablen der Event-Schleife
+
+!begin_xlist [ev_mmobutton]
+ !item [ev_bmask]      Bitvektor der zu Åberwachenden Maustasten
+
+ !item [ev_bstate]     Zustand der Maustasten, der eintreten soll
+
+ !item [ev_mmobutton]  Zustand der Mausknîpfe bei einem Ereignis
+
+ !item [ev_mbreturn]   Anzahl der Mausklicks
+
+ !item [ev_mkreturn]   NKCC-Tastencode der gedrÅckten Taste
+
+ !item [ev_mbclicks]   Anzahl der Mausklicks, auf die gewartet werden soll
+!end_xlist
+
+!end_node
+
+
+!begin_node Funktions-Zeiger
+
+(!I)ACSpro(!i) bietet verschiedene BenutzereinsprÅnge an. öber den Zeiger
+ACSblk sind fast alle Funktions-Zeiger auf diese Prozedurevariablen
+zugÑnglich. Die Zeiger werden mit den Adressen von (!I)ACSpro(!i)-Routinen
+belegt. Die einzige Ausnahme ist die Routine ACSinit.
+
+!begin_xlist [ACSGEMScript]
+ !item [ACSterm]       Funktion, die kurz vor dem Beenden der Anwendung
+               aufgerufen wird
+
+ !item [ACSaboutme]    Klick-Routine des Eintrags `öber mich...'
+
+ !item [ACSclose]      Klick-Routine, um die Anwendung zu beenden
+
+ !item [ACSmessage]    Bearbeiten von nicht verarbeitete Messages
+
+ !item [ACStimer]      Timer-Funktion, die in der Event-Schleife regelmÑûig
+               aufgerufen wird
+
+ !item [ACSinit0]      Initialisierungsfunktion, die nach Initialisierung der
+               Variablen, der AES und des VDI und vor Initialisierung
+               des (!I)ACSpro(!i)-Systems aufgerufen wird
+
+ !item [ACSmproto]     Protokollieren oder filtern von GEM-Messages
+
+ !item [ACSkey]        Protokollieren oder filtern von TastendrÅcken
+
+ !item [ACSbutton]     Protokollieren oder filtern von Maus-Klicks
+
+ !item [ACSmouse]      Protokollieren oder filtern von Maus-Bewegungen
+
+ !item [ACSwikey]      Protokollieren oder filtern von TastendrÅcken kurz vor
+               der öbergabe an die Awindow.keys-Routine
+
+ !item [ACSerror]      (!I)ACSpro(!i)-globale Fehlerroutine zur Ausgabe von
+               Fehlermeldungen
+
+ !item [ACSGEMScript]  Funktion zur Verarbeitung von allgemeinen GEMScript-
+               Kommandos
+
+ !item [DEBUG_MEM]     Anzeigen und bearbeiten von Speicherfehlern
+!end_xlist
+
+!end_node
+
+
+!begin_node Sonstige Variablen
+
+!begin_xlist [description]
+ !item [ev_mtcount]    Timerintervall (in ms) fÅr die Event-Schleife
+
+ !item [application]   Flag, ob die Anwendung als Accessory lÑuft (FALSE) oder
+               nicht (TRUE)
+
+ !item [multitask]     Flag, ob die Anwendung in einer Multitasking-Umgebung
+               lÑuft
+
+ !item [appexit]       Flag, ob die Anwendung beendet wird
+
+ !item [description]   OberflÑchenbeschreibungen (Zeiger zum schnellen
+               "Auswechseln")
+
+ !item [Aselect]       Die Auswahlliste
+
+ !item [argc]          Die Anzahl der Parameter, die Åbergeben wurden
+
+ !item [argv]          Das Parameter-Array
+
+ !item [env]           Die Environments der Anwendung
+
+ !item [dither]        Konfiguration des Dither-Modus
+
+ !item [separator]     Zeichen, die als Worttrenner benutzt werden sollen
+
+ !item [mfsel_count]   Maximale Anzahl von Dateien, die Åber die Mehrfach-
+               Dateiauswahl gewÑhlt werden kînnen sollen
+!end_xlist
+
+!end_node
+
+!end_node
+
+
+!begin_node Die Funktionen
+
+Die von (!I)ACSpro(!i) zur VerfÅgung gestellten Funktionen lassen sich in
+verschiedene Kategorien einteilen.
+
+!subtoc [all] !depth 1
+
+
+!begin_node Fenster-Funktionen
+
+Der Datentyp Awindow beschreibt ein Fenster. Er ist fÅr (!I)ACSpro(!i) von
+zentraler Bedeutung. Die Struktur enthÑlt Zeiger auf verschiedene
+Routinen, fÅr die zunÑchst einmal komplett Standardroutinen eingesetzt
+werden. Der Benutzer kann sie gegebenfalls durch eigene ersetzen. FÅr
+die create-Komponente ist das zu empfehlen, da dort diverse
+Datenstrukturen neben der Fensterstruktur erzeugt werden kînnen und
+dem Fenster in der user-Komponente quasi als 'lokale' Daten zugewiesen
+werden kînnen, wie im Beispiel zur Komponente Awindow.user ersichtlich
+ist.
+
+Eigene Routinen sollten in der Regel die (!I)ACSpro(!i)-Routinen aufrufen und
+sich im Verhalten nicht zu sehr von gÅltigen Standards entfernen, da
+dann die Reaktionen des Programmes den Anwender irritieren.
+
+Sollten Sie in eigenen Routinen auf die Werte anderer Fenster Bezug
+nehmen (Position etc.), so mÅssen Sie eventuelle Redraw-Fehler dadurch
+vermeiden, indem sie mit Aev_mess die normale Ereignisbearbeitung
+ermîglichen.
+
+Technisch ist noch ein Unterschied zwischen einer per create-Routine
+erzeugter Fensterstruktur und der 'Vorlage', der sogenannten 'Klasse'
+zu betonen: Per create wird eine Kopie der Klasse angelegt, die
+ObjektbÑume angepaût und diverse Werte initialisiert. Diese
+Kopie/Instanz der Klasse muû am Schluû per Awi_delete wieder
+freigegeben werden - nicht jedoch die Vorlage/Klasse. Alle weiteren
+(!I)ACSpro(!i)-Routinen sind nur fÅr Instanzen konzipiert.
+
+Die folgenden Standardroutinen sind vorhanden
+
+!begin_xlist [Awi_selfcreate]
+ !item [Awi_wid]         Zeiger auf die Fensterstruktur ermitteln
+
+ !item [Awi_root]        Zeiger des Rootfensters ermitteln
+
+ !item [Awi_list]        NÑchste existente Fensterstruktur ermitteln
+
+ !item [Awi_down]        Vorheriges Fenster nach oben bringen
+
+ !item [Awi_up]          NÑchstes Fenster nach oben bringen
+
+ !item [Awi_show]        Fenster zeigen
+
+ !item [Awi_init]        Fenster initialisieren
+
+ !item [Awi_create]      Fenster erzeugen
+
+ !item [Awi_open]        Fenster îffnen
+
+ !item [Awi_closed]      Fenster schlieûen
+
+ !item [Awi_delete]      Fenster entfernen
+
+ !item [Awi_topped]      Fenster nach oben bringen
+
+ !item [Awi_fulled]      Fenster auf maximale Grîûe bringen
+
+ !item [Awi_sized]       Fenstergrîûe einstellen
+
+ !item [Awi_moved]       Fenster positionieren
+
+ !item [Awi_diaend]      Eingabe in einem offenen Dialog beenden
+
+ !item [Awi_diastart]    Eingabe in einm offenen Dialog starten
+
+ !item [Awi_diaabort]    Modalen (Fenster-)Dialog beenden
+
+ !item [Awi_keys]        Tastendruck auswerten, die Weiterleitung der nicht
+                 verarbeiteten TastendrÅcke (!I)nicht(!i) an den AV-Server
+                 wird unterdrÅckt
+
+ !item [Awi_keysend]     Tastendruck auswerten, die Weiterleitung der nicht
+                 verarbeiteten Tasten an den AV-Server ist mîglich
+
+ !item [Awi_sendkey]     Dummy-Tastenroutine, die auûer der Help-Taste das
+                 Senden des Tastendruckes an den AV-Server veranlaût
+
+ !item [Awi_nokey]       Dummy-Tastenroutine, die nichts an den AV-Server
+                 senden lÑût und nur die Help-Taste auswertet
+
+ !item [Awi_help]        Zeigt ST-Guide-Hilfe zum Fenster an
+
+ !item [Awi_obview]      Inneres Objekt sichtbar machen
+
+ !item [Awi_service]     Service-Routine
+
+ !item [Awi_sendall]     Nachricht an alle Fenster senden
+
+ !item [Awi_obchange]    Zustand eines Objekts Ñndern
+
+ !item [Awi_obredraw]    Objekt zeichnen
+
+ !item [Awi_redraw]      Fensterteile neu zeichnen
+
+ !item [Awi_arrowed]     Pfeil-Operationen durchfÅhren
+
+ !item [Awi_hslid]       Horizontale Slideroperationen durchfÅhren
+
+ !item [Awi_vslid]       vertikale Slideroperationen durchfÅhren
+
+ !item [Awi_scroll]      Bildschirm verschieben
+
+ !item [Awi_dialog]      Routine fÅr modale Fensterdialoge
+
+ !item [Awi_doform]      Routine fÅr modale Fensterdialoge, schaltet zur Not
+                 auf A_dialog um
+
+ !item [Awi_modal]       Ermitteln, ob modaler Fenstrdialog offen
+
+ !item [Awi_alert]       Analog zu form_alert eine Fenster-Meldung
+
+ !item [Awi_selfcreate]  Kurze create-Routine
+
+ !item [Awi_update]      internes wind_update
+
+ !item [Awi_uoself]      USERDEFs initialisieren
+
+ !item [Awi_gemscript]   GEMScript-Kommandos fÅr das Fenster bearbeiten
+
+ !item [Awi_ontop]       Das oberste Fenster der Applikation ermitteln
+
+ !item [Awi_layout]      3D-Darstellung und moderne MenÅs ein-/ausschalten
+!end_xlist
+
+!end_node
+
+
+!begin_node Object-Funktionen
+
+(!I)ACSpro(!i) legt dynamisch Objekte und ObjektbÑume an, wenn sie benîtigt
+werden, und lîscht sie nach Gebrauch wieder. HierfÅr stehen eine Reihe
+von Funktionen zur Erzeugung von Objekten (und deren "Einzelteilen")
+sowie zum Lîschen der erzeugten Objekte bereit. Dies sind
+
+!begin_xlist [Aob_create]
+ !item [Aob_create]  Objektbaum-Kopie erzeugen
+
+ !item [Aob_delete]  Objektbaum freigeben
+
+ !item [Ast_create]  String-Kopie erzeugen
+
+ !item [Ast_delete]  String-Speicherplatz freigeben
+
+ !item [Ate_create]  TEDINFO-Kopie erzeugen
+
+ !item [Ate_delete]  TEDINFO-Speicherplatz freigeben
+
+ !item [Aic_create]  Ikone-Kopie erzeugen
+
+ !item [Aic_delete]  Ikone-Speicherplatz freigeben
+
+ !item [Aim_create]  Bild-Kopie erzeugen
+
+ !item [Aim_delete]  Bild-Speicherplatz freigeben
+
+ !item [Aus_create]  AUSERBLK-Kopie erzeugen
+
+ !item [Aus_delete]  AUSERBLK-Speicherplatz freigeben
+!end_xlist
+
+(!I)Achtung:(!i) Die 'Axx_delete'-Aufrufe dÅrfen nur fÅr Objekte verwendet
+werden, die mit dem entsprechenden 'Axx_create' erzeugt wurden.
+
+Ferner werden einige Routinen zum Bearbeiten und Manipulieren der
+erzeugten ObjektbÑume bereitgestellt. Diese sind
+
+!begin_xlist [Aob_findflag]
+ !item [Aob_create]    Objektbaum-Kopie erzeugen
+
+ !item [Aob_delete]    Objektbaum freigeben
+
+ !item [Aob_fix]       Objektbaum-Koordinaten umwandeln
+
+ !item [Aob_offset]    Objekt-Koordinaten berechnen
+
+ !item [Aob_save]      Desktop-Rechteck sichern
+
+ !item [Aob_restore]   Desktop-Rechteck zurÅckschreiben
+
+ !item [Aob_watch]     Objekt unter Maus anzeigen
+
+ !item [Aob_findflag]  Objekt mit speziellem Flag suchen
+
+ !item [Aob_up]        Elternobjekt suchen
+
+ !item [Aob_puttext]   Text in Objekt schreiben
+
+ !item [Aob_gettext]   Text aus Objekt auslesen
+
+ !item [Aob_printf]    Text formatiert in Objekt schreiben
+
+ !item [Aob_scanf]     Text formatiert aus Objekt auslesen
+
+ !item [Aob_within]    PrÅfen, ob ein Punkt im Rechteck liegt
+
+ !item [Aob_alias]     (!link [Click-Routine] [Click-Routine]), die den Click an ein anderes Objekt
+               weitergibt.
+!end_xlist
+
+!end_node
+
+
+!begin_node MenÅ-Funktionen
+
+(!I)ACSpro(!i) legt dynamisch Objekte und ObjektbÑume an, wenn sie benîtigt
+werden, und lîscht sie nach Gebrauch wieder. HierfÅr stehen eine Reihe
+von Funktionen zur Erzeugung von Objekten (und deren "Einzelteilen")
+sowie zum Lîschen der erzeugten Objekte bereit. Dies sind
+
+!begin_xlist [Ame_strpopup]
+ !item [Aob_create]   Objektbaum-Kopie erzeugen (ein MenÅ ist ja ein
+              Spezialfall eines Objektbaumes)
+
+ !item [Aob_delete]   Objektbaum freigeben (ein MenÅ ist ja ein Spezialfall
+              eines Objektbaumes)
+
+ !item [Ame_namefix]  Die Positionen der MenÅ-Titel anpassen
+
+ !item [Ame_strpopup] Ein durch einen String beschriebenes Popup-MenÅ anzeigen
+              und einen Eintrag auswÑhlen lassen
+
+ !item [Ame_popup]    Ein Popup anzeigen und einen Eintrag auswÑhlen lassen
+!end_xlist
+
+!end_node
+
+
+!begin_node String-Funktionen
+
+(!I)ACSpro(!i) stellt erweiterte String-Funktionen bereit und erweitert so die
+Auswahl an Funktionen der Standard-Bilbiothek. Die folgenden
+Funktionen existieren:
+
+!begin_xlist [Ach_tolower]
+ !item [Ach_tolower]  Buchstaben in Kleinbuchstaben wandeln - Umlaute werden
+              korrekt berÅcksichtigt
+
+ !item [Ach_toupper]  Buchstaben in Groûbuchstaben wandeln - Umlaute werden
+              korrekt berÅcksichtigt
+
+ !item [Ach_isWhite]  PrÅfen, ob Zeichen ein "Blank" (Leerzeichen, Tabulator,
+              Carriage-Return, Line-Feed) ist
+
+ !item [Ast_adc]      String zentriert mit Leerzeichen auffÅllen
+
+ !item [Ast_add]      Strings hintereinanderhÑngen und auf bestimmte LÑnge mit
+              Leerzeichen auffÅllen
+
+ !item [Ast_adl]      String linksbÅndig mit Leerzeichen auffÅllen
+
+ !item [Ast_adr]      String rechtsbÅndig mit Leerzeichen auffÅllen
+
+ !item [Ast_cmp]      Zwei Strings vergleichen, Groû-/Kleinschreibung (!I)wird(!i)
+              berÅcksichtigt
+
+ !item [Ast_count]    HÑufigkeit von Zeichen im String zÑhlen
+
+ !item [Ast_create]   Erzeugen eines neuen Strings gemÑû einer Vorlage
+
+ !item [Ast_delete]   Freigeben und Lîschen eines Strings
+
+ !item [Ast_deleteAry] Freigeben und Lîschen eines Arrays von Strings - auch
+              das Array wird per Ax_free freigegeben
+
+ !item [Ast_icmp]     Zwei Strings vergleichen, Groû-/Kleinschreibung wird
+              (!I)nicht(!i) berÅcksichtigt
+
+ !item [Ast_isEmpty]  PrÅfen, ob ein String nur Blanks enthÑlt
+
+ !item [Ast_filter]   "Nicht erlaubte" Zeichen aus String herausnehmen
+
+ !item [Ast_fcmp]     Dateinamen vergleichen, der erste darf die Åblichen
+              Wildcards '*' und '?' enthalten
+
+ !item [Ast_reverse]  Einen String rÅckwÑrts "lesen"
+
+ !item [Ast_tolower]  Alle Buchstaben (incl. Umlaute) in Kleinbuchstaben
+              wandeln
+
+ !item [Ast_toupper]  Alle Buchstaben (incl. Umlaute) in Groûbuchstaben
+              wandeln
+
+ !item [Ast_istr]     Einen Substring in einem String
+              suchen, Groû-/Kleinschreibung wird (!I)nicht(!i) berÅcksichtigt
+!end_xlist
+
+!end_node
+
+
+!begin_node Tedinfo-Funktionen
+
+GEM-Eingabefelder werden durch die TEDINFO-Struktur beschrieben. Auch
+diese Struktur wird von (!I)ACSpro(!i) dynamisch erzeugt und wieder
+freigegeben. Meist wird jedoch das Userdef-BoxEdit verwendet werden,
+da es wesentlich flexiblere Kontrollen Åber die Eingaben erlaubt.
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate !compressed
+ !item [Ate_create]  Erzeugen einer TEDINFO-Struktur nach einer Vorlage
+
+ !item [Ate_delete]  Freigeben und Lîschen einer TEDINFO-Struktur
+!end_enumerate
+
+!end_node
+
+
+!begin_node Icon-Funktionen
+
+Die Ikonen (neudeutsch 'Icon') werden durch die ICONBLK-Struktur
+beschrieben. Auch diese Struktur wird von (!I)ACSpro(!i) dynamisch erzeugt und
+wieder freigegeben.
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate !compressed
+ !item [Aic_create]  Erzeugen eines Icons nach einer Vorlage
+
+ !item [Aic_delete]  Freigeben und Lîschen eines Icons
+!end_enumerate
+
+!end_node
+
+
+!begin_node Image-Funktionen
+
+Die Bilder (neudeutsch 'Images') werden durch die BITBLK-Struktur
+beschrieben. Auch diese Struktur wird - wie alle Objekt-Strukturen -
+von (!I)ACSpro(!i) dynamisch erzeugt und wieder freigegeben.
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate !compressed
+ !item [Aim_create]  Erzeugen eines Images nach einer Vorlage
+
+ !item [Aim_delete]  Freigeben und Lîschen eines Images
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Funktionen
+
+Um die von (!I)ACSpro(!i) erweiterten USERDEF-Objekte handhaben zu kînnen,
+sind folgende Funktion implementiert worden:
+
+!begin_xlist [Aus_create]
+ !item [Aus_create]  Erzeugen einer AUSERDEF-Struktur nach einer Vorlage
+
+ !item [Aus_delete]  Freigeben und Lîschen einer AUSERDEF-Struktur
+
+ !item [Aus_help]    (!link [Hilfeseite] [Awi_help]) fÅr das aktuelle Fenster aus ACSblk->ev_window
+             aufrufen
+!end_xlist
+
+!end_node
+
+
+!begin_node Ausgabe auf Userdefs
+
+Es gibt analog zu printf aufgebaute Funktionen, um Userdefs mit Daten
+zu fÅllen. Diese Funktionen sind wegen der variablen Parameter
+zunÑchst nur fÅr (Pure-)C vorhanden.
+
+Dies sind die Funktionen
+
+!begin_itemize
+   !item uputs
+
+   !item uprintf
+
+   !item uvprintf
+!end_itemize
+
+!end_node
+
+
+!begin_node Backplane-UnterstÅtzung
+
+Eine Backplane ist ein StÅck Speicher, die sich unter gewissen
+Bedingungen wie der Bildschirm verhÑlt. Die Backplane kann kleiner
+oder grîûer als der tatsÑchliche Bildschirm sein. Durch AES- und VDI-
+Routinen kann die Backplane bearbeitet werden. Es wird immer in der
+aktuellen Farbauflîung gearbeitet.
+
+(!B)Hinweis:(!b) Beim Schreiben auf die Backplane mittels VDI und AES mÅssen
+negative LineA-Werte modifiziert werden. Soweit mîglich, sollte darauf
+zugunsten von Offscreen-Bitmaps, wie sie z.B. von NVDI angeboten
+werden, verzichtet werden. FÅr Ash_CallEdDI(0)>=0x0100 sollte darÅber
+eine Offscreen-Bitmap erzeugt und angesprochen werden - dann sind
+Abp_start und Abp_end vîllig ÅberflÅssig!
+
+Die zur VerfÅgung gestellten FUnktionen sind
+
+!begin_xlist [Abp_img2mfdb]
+ !item [Abp_create]    Backplane erzeugen
+
+ !item [Abp_delete]    Backplane-Speicher wieder freigeben
+
+ !item [Abp_start]     Auf Backplane schreiben
+
+ !item [Abp_end]       Wieder auf Bildschirm schreiben
+
+ !item [Abp_img2mfdb]  Wandelt ein Image in ein MFDB
+
+ !item [Abp_mfdb2img]  Wandelt ein MFDB in ein Image
+!end_xlist
+
+!end_node
+
+
+!begin_node Mausoperationen
+
+MIt den Mausoperationen kann die Darstellung des Maus-Zeigers
+beeinfluût werden. Zur VerfÅgung stehen die folgenden Funktionen
+
+!begin_xlist [Amo_unbusy]
+ !item [Amo_new]     Neue Mausform setzen
+
+ !item [Amo_busy]    Maus als Biene
+
+ !item [Amo_unbusy]  Vorherige Mausform setzen
+
+ !item [Amo_hide]    Mauszeiger verstecken
+
+ !item [Amo_show]    Mauszeiger wieder zeigen
+!end_xlist
+
+!end_node
+
+
+!begin_node Zieh-Operationen
+
+Alle Objekte der Auswahlliste stammen aus genau einem Fenster. Bei
+Fensterwechsel werden die bisher ausgewÑhlten Objekte aus der Liste
+entfernt. Die Reihenfolge der Aufnahme der EintrÑge entspricht auch
+der Reihenfolge beim Auslesen durch Adr_next.
+
+Die folgenden Funktionen fÅr die Abfrage und fÅr die Manipulation der
+Auswahlliste stehen zur VerfÅgung:
+
+!begin_xlist [Adr_unselect]
+ !item [Adr_box]       Rechteck aufziehen
+
+ !item [Adr_drag]      Ziehen der Objekte beginnen
+
+ !item [Adr_start]     Auswahllistenabfrage initialisieren
+
+ !item [Adr_next]      NÑchstes Auswahllisten-Objekt erfragen
+
+ !item [Adr_add]       Auswahllisten-Objekt aufnehmen
+
+ !item [Adr_del]       Ein Auswahllisten-Objekt entfernen
+
+ !item [Adr_unselect]  Alle Auswahllisten-Objekte entfernen
+!end_xlist
+
+(!B)Achtung:(!b) Wenn man mit unmodalen Fensterdialogen arbeitet und dort die
+Auswahl eines anderen Fensters verÑndert, darf man sich natÅrlich
+nicht mehr darauf verlassen, daû die Auswahl dabei unverÑndert bleibt.
+Wenn beispielsweise mehrere Objekte eines Fensters geÑndert werden
+sollen und jede Abfrage per Awi_dialog erfolgt, wird bei der
+Aktualisierung schon in der Schleife eventuelle Adr_del, Adr_add oder
+Adr_unselect bearbeitet. Zur Lîsung muû man sich vor den Dialogen ein
+Feld von Objektnummern aufbauen und dieses verarbeiten.
+
+Im folgenden Beispiel wird gezeigt, wie man dies z.B. in Pure-C
+realisieren kînnte:
+
+!begin_sourcecode
+INT16  *objects, actobnr, len;
+
+/* ... */
+if( !Aselect.actlen )
+   return;
+
+objects = Ax_malloc(Aselect.actlen*sizeof(*objects));
+if( objects==NULL )
+   return;
+
+Adr_start();
+len = 0;
+while( (actobnr=Adr_next())>0 )
+   objects[len++] = actobnr;
+
+len = Aselect.actlen;
+actobnr = 0;
+while( actobnr<len )
+{
+   neuer_object_name(ev_window, objects[actobnr]);
+   /* ... */
+   actobnr++;
+}
+Ax_free(objects);
+/* ... */
+!end_sourcecode
+
+!end_node
+
+
+!begin_node Klemmbrett-Funktionen
+
+Das Klemmbrett ist ein von ATARI 'angedachte' Mîglichkeit, Daten
+zwischen verschiedenen Programmen auszutauschen. DafÅr befindet sich
+(in der Regel) im Wurzelverzeichnis des Boot- Laufwerks ein Ordner
+Namens 'CLIPBRD'. Existiert dieser Ordner nicht, wird von (!I)ACSpro(!i)
+versucht, ihn anzulegen - er ist dann in scrp_path zu finden!
+
+Darin befindliche Dateien, die als Reaktion auf die MenÅpunkte
+'Ausschneiden', 'Kopieren' oder 'EinfÅgen' angelegt wurden, besitzen
+verschiedene Klemmbrett-Typen.
+
+Damit der (!I)ACSpro(!i)-Entwickler nun diesen Austausch aktiv unterstÅtzen
+kann, wurden neue Funktionen implementiert:
+
+!begin_xlist [Ascrp_clear]
+ !item [Ascrp_clear]  Lîscht das Klemmbrett
+
+ !item [Ascrp_put]    Schreibt Daten ins Klemmbrett
+
+ !item [Ascrp_get]    Lieût Daten aus dem Klemmbrett
+!end_xlist
+
+Bisher vorgeschlagene Datei-Typen fÅr das Klemmbrett sind:
+
+!begin_xlist [TXT]
+ !item [TXT]  reine ASCII-Textdatei, Zeilentrenner CR/LF
+
+ !item [GEM]  GEM-Metafile, siehe VDI-Dokumentation
+
+ !item [IMG]  GEM-Image, das durch Abp_img2mfdb bedient oder durch
+      Abp_mfdb2img erzeugt werden kann
+
+ !item [ASC]  ASCII-Textdatei, deren AbsÑtze durch CR/LF getrennt sind
+
+ !item [CSV]  ACSII-Datei mit durch Kommata getrennten Zahlen
+
+ !item [DIF]  Exportdatei aus Tabellenkalkulationen
+
+ !item [1WP]  1stWordPlus-Dokument
+
+ !item [RTF]  RichTextFormat
+!end_xlist
+
+!end_node
+
+
+!begin_node NKCC-Funktionen
+
+Die Routinensammlung rund um die NKCC-Tastencodes bietet weiterhin
+einige nÅtzliche oder teilweise notwendige Routinen an:
+
+!begin_xlist [nkc_n2kstate]
+ !item [nkc_tos2n]     konvertiert aus dem TOS- ins NKCC-Format
+
+ !item [nkc_n2tos]     konvertiert aus dem NKCC- ins TOS-Format
+
+ !item [nkc_gem2n]     konvertiert aus dem GEM- ins NKCC-Format
+
+ !item [nkc_n2gem]     konvertiert aus dem NKCC- ins GEM-Format
+
+ !item [nkc_n2gemks]   konvertiert aus dem NKCC- ins GEM-Format (incl.
+               Sondertastenstatus)
+
+ !item [nkc_gemks2n]   konvertiert aus dem GEM- (incl. Sondertastenstatus) ins
+               NKCC-Format
+
+ !item [nkc_n2kstate]  ermittelt aus dem NKCC-Format den dazugehîrigen
+               Sondertastenstatus
+
+ !item [nkc_kstate]    ermittelt schnell den Sondertastenstatus
+
+ !item [nkc_cmp]       Tasten kompatibel vergleichen
+!end_xlist
+
+!end_node
+
+
+!begin_node Datei-Funktionen
+
+FÅr das komfortable und hÑufig benîtigte Arbeiten mit Dateinamen und
+Pfaden gibt es nun Routinen, die einen gelieferten Pfadnamen nach
+allen Regeln der Kunst auseinander nehmen oder aus Einzelteilen einen
+kompletten Dateinamen zusammensetzen. DarÅber hinaus werden die
+Zugriffe auf diverse Dateisysteme und Dateiauswahloxen
+vereinheitlicht:
+
+!begin_xlist [Af_parseCmdLine]
+ !item [Af_cfgfile]     CFG-Pfad erzeugen
+
+ !item [Af_2drv]        ermittelt Laufwerk aus einer absoluten Dateiangabe
+
+ !item [Af_2path]       ermittelt Pfad aus einer absoluten Dateiangabe
+
+ !item [Af_2name]       ermittelt Datenamen aus einer absoluten Dateiangabe
+
+ !item [Af_2fullname]   ermittelt Namen und Typ aus einer absoluten
+                Dateiangabe
+
+ !item [Af_2ext]        ermittelt Typ aus einer absoluten Dateiangabe
+
+ !item [Af_buildname]   Baut Daateinamen aus Einzelteilen auf
+
+ !item [Af_length]      Ermittelt Existenz und LÑnger einer Datei bzw. Ordners
+
+ !item [Af_select]      Dateiauswahl
+
+ !item [Af_first_fsel]  Beginn der MultiDateiAuswahl
+
+ !item [Af_next_fsel]   NÑchste Datei abholen
+
+ !item [Af_first]       Dateien eines Ordners ermitteln
+
+ !item [Af_next]        NÑchste Datei abholen
+
+ !item [Af_readdir]     Ordner komplett einlesen
+
+ !item [Af_freedir]     Ordnerstruktur freigeben
+
+ !item [Af_quote]       Einen Dateinamen ggf. quoten
+
+ !item [Af_unquote]     Ggf. die Quote-Zeichen eines Dateinamen entfernen
+
+ !item [Af_parseCmdLine] Die Parameter einer Kommandozeile in eine lineare
+                Liste zerlegen
+!end_xlist
+
+!end_node
+
+
+!begin_node Speicherverwaltung
+
+Diese Routinen stellen eine Speicherverwaltung zur VerfÅgung, die zum
+einen einen ACC-fest ist und darÅber hinaus bei der Freigabe
+feststellt, ob dieser Speicherblock Åberhaupt angefordert wurde.
+
+Auûerdem erfolgt die Speicherfreigabe verzîgert: Per Ax_free
+freigegebene Blîcke werden nicht sofort dem System wieder zugeteilt,
+sondern gesammelt und vor dem Einsprung in die Eventschleife rÅckwÑrts
+wieder freigegeben. Einzig sehr groûe Speicherblîcke sollte per
+Ax_ifree sofort freigegeben werden.
+
+Um das Allozieren und Freigeben von Speicher zu optimieren, enthÑlt
+(!I)ACSpro(!i) eine Verwaltung von freien Speicherblîcken.
+
+!begin_xlist [Ax_getRecycleStat]
+ !item [Ax_malloc]  Speicher anfordern
+
+ !item [Ax_recycle] Speicher freigeben, aber ggf. puffern
+
+ !item [Ax_free]    Speicher als frei kennzeichnen
+
+ !item [Ax_ifree]   Speicher sofort freigeben
+
+ !item [Ax_setRecycleSize] Die Verwaltung der freien Listen konfigurieren
+
+ !item [Ax_getRecycleStat] Die aktuelle Statistik der freien Listen abrufen
+!end_xlist
+
+(!B)Wie funktioniert die Optimierung mittels "Listen freier Blîcke"?(!b)
+(!I)ACSpro(!i) fÅhrt intern fÅr bestimmte Grîûen von Speicherblîcken, die
+innerhalb (!I)ACSpro(!i) bzw. in einer (!I)ACSpro(!i)-Anwendung îfter auftreten, eine
+Liste an freien Blîcken. Diese Liste ist am Anfang natÅrlich leer.
+Speicherblîcke von einer dieser Grîûen - wie etwa die typischen
+Speicherblîcke fÅr die Strukturen Awindow, AUSERBLK, TEDINFO,
+ULinListe, Daten des File-Selectors oder des Print-Selectors - werden
+hierbei beim Aufruf von Ax_recycle() nicht direkt freigegeben, sondern
+in der entsprechenden Liste der "freien Blîcke" gepuffert. Falls
+danach ein Speicherblock von dieser Grîûe angefordert werden sollte,
+so muû er nicht erneut alloziert werden, sondern wird aus dieser Liste
+entnommen.
+
+!begin_itemize
+   !item Ax_recycle prÅft, ob der Åbergebene Block in eine dieser Listen
+     einsortiert werden kann. Falls dies nicht der Fall sein sollte
+     oder falls die ermittelte Liste bereits voll sein sollte, so wird
+     der Block direkt per Ax_free freigegeben. Andernfalls wird der
+     Block in die Liste eingehÑngt.
+
+   !item Die Funktion Ax_malloc prÅft dann als erstes, ob zu der
+     gewÅnschten Blockgrîûe eine Liste existiert. Wenn dies nicht so
+     sein sollte oder die Liste leer lein sollte, so wird - wie bisher
+     auch - neuer Speicher alloziert. Andernfalls wird der erste Block
+     der ermittelten Liste aus der Liste entfernt und wieder
+     zurÅckgegeben.
+
+   !item Bei der initialisierung des (!I)ACSpro(!i) werden als erstes die Listen
+     der "freien Blîcke" initialisiert.
+
+   !item Beim Beenden der Anwendung wird als Letztes aller Speicher, der
+     in den Listen gepuffert wurde, freigegeben.
+
+   !item Das Suchen nach einer Liste fÅr eine Speicherblock-Grîûe
+     geschieht optimiert per binÑrer Suche. Zum Beispiel sind daher
+     fÅr die momentan insgesamt 21 Blockgrîûen, die (!I)ACSpro(!i) bereits
+     kennt, maximal 4 Vergleiche notwendig, bis die Liste entdeckt
+     wurde oder feststeht, daû es keine Liste zu dieser Grîûe gibt.
+
+   !item Da die Listen selbst mittels der "freigegebenen" Blîcke aufgebaut
+     werden, wird fÅr jede Liste kein weiterer Speicher benîtigt.
+     Allein die Freigabe des Speichers wird u.U. bis zur Terminierung
+     der Anwendung hinausgezîgert.
+
+   !item Mittels der Funktion Ax_setRecycleSize kînnen die Werte verÑndert
+     werden, neue Blockgrîûen in die Liste aufgenommen oder vorhandene
+     Blockgrîûen entfernt werden. Die Funktion Ax_getRecycleStat
+     liefert die aktuellen Informationen Åber die Listen der freien
+     Blîcke.
+
+   !item (!I)ACSpro(!i) fÅhrt bereits Listen fÅr die wichtigsten Strukturen, die
+     in (!I)ACSpro(!i)-Anwendungen immer wieder benîtigt werden dÅrften, wie
+     etwa Awindow, TEDINFO, AUSERBLK, BITBLK, MFDB, A_dd, MEMX (intern
+     in Speicherverwaltung verwendet).
+
+   !item (!I)ACSpro(!i) kennt momentan 21 Blockgîûen, die in Listen freier Blîcke
+     verwaltet werden. Die interne Verwaltung der Listen benîtigt pro
+     Liste momentan nur 22 Byte.
+!end_itemize
+
+(!B)Beispiel:(!b) Die Funktion Awi_delete ruft intern die FUnktion Ax_recycle
+folgendermaûen auf: Ax_recycle(wind, sizeof(*wind)).
+
+(!B)Tip:(!b) Wenn am Ende der (!I)ACSpro(!i)-Anwendung die Statistik per
+Ax_getRecycleStat ermittelt und in eine Datei geschrieben wird, so
+lÑût sich die Verwaltung der freien Blîcke auf jede Anwendung und den
+entsprechenden Einsatz-Zweck weiter optimieren.
+
+!end_node
+
+
+!begin_node System-Funktionen
+
+Globale Routinen, die andere Applikationen, Module oder
+Systemeinstellungen betreffen, sind hier zu finden:
+
+!begin_xlist [Ash_thermometer]
+ !item [Ash_CallEdDI]   Aufruf einer EdDI-Funktion
+
+ !item [Ash_error]      Fehlerausgabe
+
+ !item [Ash_fileselect] Eine Datei Åber die (MagiC-)Dateiauswahlbox auswÑhlen
+                lassen
+
+ !item [Ash_font]       Einen Zeichensatz Åber den (MagiC-)Font-Selector
+                auswÑhlen lassen
+
+ !item [Ash_getcookie]  Ermittelt den Wert von einem (!link [Cookie] [Cookie Jar])
+
+ !item [Ash_getenv]     Sucht Variable in den Environment-Strings
+
+ !item [Ash_gettimer]   Wert des 200Hz-Timers liefern
+
+ !item [Ash_module]     Module nachladen
+
+ !item [Ash_nextdd]     Externe D&D-Partner suchen
+
+ !item [Ash_NVDICookie] Zeiger auf (!link [Cookie] [Cookie Jar])-Struktur von NVDI liefern
+
+ !item [Ash_NVDIDatum]  NVDI-Datum ermitteln
+
+ !item [Ash_NVDIVersion] NVDI-Versionsnummer ermitteln
+
+ !item [Ash_print]      Die WDIALOG-Druck-Dialoge aufrufen
+
+ !item [Ash_prog]       Programm starten
+
+ !item [Ash_sendall]    Mitteilung verschicken
+
+ !item [Ash_thermometer] Ein sog. Thermometer wÑhrend einer lÑngeren Aktion
+                anzeigen
+!end_xlist
+
+!end_node
+
+
+!begin_node Unsortierte, doppelt verkettete, lineare Liste
+
+Mit Hilfe der linearen Liste kînnen Daten beliebigen Typs verwaltet
+werden. Die Liste ist als unsortierte, doppelt verkettete, lineare
+Liste implementiert, die die Daten als typenlosen Zeiger enthÑlt.
+
+Zur VerfÅgung stehen "nur" die beiden Funktionen
+
+!begin_xlist [Alu_create]
+ !item [Alu_create]  fÅr das Erzeugen einer Liste und
+
+ !item [Alu_delete]  fÅr das Lîschen einer Liste,
+!end_xlist
+
+da alle anderen Funktionen und Manipulationsmîglichkeiten Åber
+Funktionszeiger des verwendeten Datentyps ULinList realisiert sind.
+
+!end_node
+
+
+!begin_node Die Warteschlange (Queue)
+
+Mit Hilfe der Warteschlange (Queue) kînnen Daten beliebigen Typs
+verwaltet werden. Die Queue ist als lineare Liste implementiert, die
+die Daten als typenlosen Zeiger enthÑlt.
+
+Zur VerfÅgung stehen "nur" die beiden Funktionen
+
+!begin_xlist [Aqu_create]
+ !item [Aqu_create]  fÅr das Erzeugen einer Queue und
+
+ !item [Aqu_delete]  fÅr das Lîschen einer Queue,
+!end_xlist
+
+da alle anderen Funktionen und Manipulationsmîglichkeiten Åber
+Funktionszeiger des verwendeten Datentyps Queue realisiert sind.
+
+!end_node
+
+
+!begin_node Die Konfigurations-Strings
+
+Die Konfigurationsstrings - von mir auch Config-Strings oder Cfg-
+Strings genannt - bieten eine Konfigurationsmîglichkeit Åber ASCII-
+Dateien. Diese Dateien sind Ñhnlich den aus der Windows-Welt bekannten
+INI-Dateien aufgebaut. Eine solche Konfigurationsdatei wird in
+verschiedene sog. (!I)Parameter-Gruppen(!i) unterteilt. Diese Gruppen werden
+Åber ihren Namen angesprochen, die erste Gruppe ist die Default-Gruppe
+ohne einen Gruppenamen. Der Name steht am Anfang der Gruppe in eckigen
+Klammern . Jeder Parameter wird durch seinen Namen angegeben, dem per
+Gleichheitszeichen ein Wert zugewiesen wird. Dieses Verfahren dÅrfte
+von dem Environment und den Environment-Strings bekannt sein. Die
+Namen der Parameter und der Gruppen dÅrfen Leerzeichen enthalten,
+einzig die Zeichen '[' und ']' sind fÅr Gruppennamen, das Zeichen '='
+fÅr Parameternamen nicht erlaubt. In der Datei dÅrfen Kommentare
+enthalten sein. Hierzu kînnen Kommentarzeichen definiert werden. Wird
+ein Kommentarzeichen am (!I)Anfang(!i) einer Zeile (auûer fÅhrenden
+Leerzeichen) gefunden, wird diese Zeile ignoriert.
+
+(!B)Hinweis:(!b) Gruppen-Namen, die mit "ACS-" beginnen, sollten fÅr (!I)ACSpro(!i)
+und die diversen Module reserviert sein. Es ist geplant, (!I)ACSpro(!i) und
+alle Module auf diese Cfg-Strings umzustellen.
+
+(!I)Beispiel:(!i)
+
+!begin_sourcecode
+% Die Kommentar-Zeichen in diesem Beispiel sind '%' und ';',
+; so daû diese fÅnf Zeilen komplett ignoriert werden. Sie bilden
+% die sog. Header-Kommentar-Zeilen. Trotzdem werden die Zeilen
+; beim Laden und Speichern korrekt berÅcksichtigt und
+% bleiben - so wie sie sind - erhalten!
+ProgTitel=Demo-Programm
+AnzahlHistory=2
+
+[HistoryInfos 1]
+HistDateiname=C:\Pfad\Datei.TXT
+HistWindowX=50
+HistWindowY=50
+HistWindowW=200
+HistWindowH=200
+HistWindowOpen=TRUE
+
+[HistoryInfos 2]
+HistDateiname=C:\Pfad\Datei.TXT
+HistWindowX=10
+HistWindowY=20
+HistWindowW=400
+HistWindowH=400
+HistWindOpen=FALSE
+!end_sourcecode
+
+Folgende Funktionen stehen fÅr die Handhabung der Cfg-Strings zur
+VerfÅgung
+
+!begin_xlist [Acfg_clearHeader]
+ !item [Acfg_create]      Erzeugen der internen Struktur zur Verwaltung der
+                  Cfg-Strings
+
+ !item [Acfg_delete]      Lîschen und Freigeben der mittels Acfg_create
+                  angelegten Struktur
+
+ !item [Acfg_clear]       Lîschen der Cfg-Strings und der Verwaltungs-
+                  Informationen
+
+ !item [Acfg_clearGroup]  Nur die angelegten Gruppen mit den Strings lîschen
+
+ !item [Acfg_load]        Eine Cfg-Datei laden
+
+ !item [Acfg_save]        Die Cfg-Strings speichern
+
+ !item [Acfg_isChanged]   PrÅfen, ob Strings verÑndert wurden
+
+ !item [Acfg_getValue]    Werte von Parametern abfragen - ggf. auch im
+                  Environment
+
+ !item [Acfg_setValue]    Werte von Parameter setzen
+
+ !item [Acfg_clearValue]  Parameter aus den Strings lîschen
+
+ !item [Acfg_clearHeader] Kommentar-Header-Zeilen der Cfg-Datei lîschen
+
+ !item [Acfg_setHeader]   Kommentar-Header-Zeilen fÅr die Cfg-Datei setzen
+
+ !item [Acfg_getHeader]   Kommentar-Header-Zeilen fÅr die Cfg-Datei ermittelt
+
+ !item [Acfg_headAnzahl]  Anzahl der (!I)gesetzten(!i) - nicht der tatsÑchlich
+                  vorhandenen - Kommentar-Header-Zeilen der Cfg-Datei
+
+ !item [Acfg_grpAnzahl]   Anzahl der vorhandenen Gruppen bestimmen
+
+ !item [Acfg_grpName]     Name einer Gruppe bestimmen
+
+ !item [Acfg_strAnzahl]   Anzahl der Cfg-Strings einer Gruppe bestimmen
+
+ !item [Acfg_strName]     Namen eines Parameters einer Gruppe bestimmen
+
+ !item [Acfg_isCfgfile]   PrÅfen, ob die Cfg-Strings einem Dateinamen
+                  zugeordnet sind
+
+ !item [Acfg_createInfo]  Info-Struktur fÅr die Cfg-Strings erzeugen
+
+ !item [Acfg_deleteInfo]  Info-Struktur freigeben
+
+ !item [Acfg_setInfo]     Info-Struktur an Cfg-Struktur Åbergeben
+
+ !item [Acfg_getInfo]     Info-Struktur einer Cfg-Struktur erfragen
+
+ !item [Acfg_copyInfo]    eine Info-Struktur kopieren
+!end_xlist
+
+!end_node
+
+
+!begin_node Event-Support
+
+FÅr die UnterstÅtzung von Events sind nur relativ wenige Funktionen
+vorgesehen, da aufgrund des Konzepts von (!I)ACSpro(!i) ein Groûteil der
+benîtigten Funktionen bereits anderweitig abgedeckt ist, wie etwa
+durch die Fenster-Funktionen.
+
+Zur VerfÅgung stehen
+
+!begin_xlist [Aev_unhidepointer]
+ !item [Aev_quit]           Applikation beenden
+
+ !item [Aev_mess]           GEM-Nachrichten bearbeiten
+
+ !item [Aev_unhidepointer]  Mauszeiger wieder sichtbar machen
+
+ !item [Aev_release]        Wartet bis Maustasten losgelassen
+!end_xlist
+
+Ferner existieren noch einige Funktionen zur (!link [externen Kommunikation] [Externe Kommunikation]).
+
+!end_node
+
+
+!begin_node Externe Kommunikation
+!alias Protokoll
+
+(!I)ACSpro(!i) kann nun recht komfortabel Nachrichten der wichtigsten
+Protokolle versenden. Der Empfang der Nachrichten geschieht vollkommen
+automatisch und transparent. Die implementierten Protokolle sind:
+
+!begin_xlist [PureC-Hilfe-Protokoll]
+ !item [PureC-Hilfe-Protokoll]  Protokoll zur Ansteuerung der Pure-C-Hilfe und
+                        des ST-Guide
+
+ !item [ST-Guide-Protokoll]     "Protokoll" zur Ansteuerung des ST-Guide
+
+ !item [BubbleGEM-Protokoll]    Das Protokoll zur Ansteuerung von BubbleGEM,
+                        der "Blasen-Hilfe"
+
+ !item [GEMScript-Protokoll]    Das Protokoll zum Fernsteuern von Anwendungen
+                        und erweiterten Kommunikationsmîglichkeiten
+
+ !item [OLGA-Protokoll]         Protokoll zur Inter-Programm-Kommunikation, um
+                        Dateien durch andere Programme bearbeiten zu
+                        lassen
+
+ !item [DHST-Protokoll]         Protokoll, um gespeicherte Dateien bei einem
+                        Document-History-Server abzulegen. Dieser
+                        fÅhrt system-global Åber verwendete Dateien
+                        Buch und kann diese auch wieder laden lassen.
+!end_xlist
+
+Genauere Informationen Åber diese Protokolle liegen (!I)ACSpro(!i) bei oder
+kînnen Åber Links von der (!I)ACSpro(!i)-Homepage unter
+http://acspro.atari.org/ geladen werden.
+
+
+!begin_node PureC-Hilfe-Protokoll
+
+Die Funktionen, die sich um das PureC-Hilfe-(!link [Protokoll] [Protokoll]) (So weit ich
+weiû, sind dies bislang nur PC_HELP und ST-Guide) kÅmmern, sind
+
+!begin_xlist [Aev_PCHelpVersion]
+ !item [Aev_AcHelp]         Hilfe-Seite anzeigen lassen
+
+ !item [Aev_AcVersion]      Versionsnummer ermitteln lassen
+
+ !item [Aev_AcCopy]         Hilfe-Seite ins Klemmbrett kopieren lassen
+
+ !item [Aev_PCHelpVersion]  Letzte gemeldete Versionsnummer erfragen
+!end_xlist
+
+!end_node
+
+
+!begin_node ST-Guide-Protokoll
+
+Die Funktion Aev_STGuideHelp stellt fÅr (!I)ACSpro(!i)-Anwendungen das
+Interface fÅr die Online-Hilfe dar. Der Aufruf der Hilfe-Seite
+geschieht vîllig automatisch durch die Funktionen Awi_keys,
+Awi_keysend, Awi_sendkey bzw. Awi_nokey beim Druck auf die HELP-Taste.
+Die Funktion Aev_STGuideHelp dÅrfte also nur benîtigt werden, wenn
+eine eigene Routine in Awindow.keys eingetragen wurde.
+
+Das Hilfe-Thema selbst wird aus Awindow.help entnommen und vor Versand
+an den ST-Guide per AS_ASK_STGUIDE dem Fenster bekannt gegeben. Dieses
+kann das Thema frei Ñnderen (wie z.B. das Editor-Fenster es tut) oder
+sogar die Anzeige der Hilfe unterbinden. Damit erhÑlt der
+Programmierer die Mîglichkeit, jederzeit die Kontrolle Åber die
+angezeigte Hilfe-Seite zu Åbernehmen oder den durch (!I)ACSpro(!i)
+bereitgestellten Automatismus zu nutzen.
+
+!end_node
+
+
+!begin_node BubbleGEM-Protokoll
+
+Das BubbleGEM-(!link [Protokoll] [Protokoll]) ist vîllig transparent in (!I)ACSpro(!i) integriert.
+Wenn eine BubbleGEM-Hilfe angefordert wird (z.B. durch eine Nachricht
+des BubbleGEM-DÑmons), so wird Åber die Funktion Awi_bubblegem die
+Hilfe automatisch aufgerufen.
+
+Wie eigentlich Åberall in (!I)ACSpro(!i) Åblich, kann dieser Automatismus
+kontrolliert werden. (!I)ACSpro(!i) geht bei Anforderung einer BubbleGEM-Hilfe
+folgendermaûen vor:
+
+!begin_enumerate
+  !item Das Fenster wird zuerst per AS_ALLOWBUBBLE um Erlaubnis gefragt.
+     Wenn das Fenster die Nachricht (RÅckgabewert TRUE) versteht und
+     ein "Verbot" liefert, wird keine BubbleGEM-Hilfe angezeigt, d.h.
+     jedes Fenster kann durch Awindow.service BubbleGEM komplett
+     ausschalten.
+
+  !item Wenn das Fenster eine BubbleGEM-Hilfe zulÑût (Das ist die
+     Default-Einstellung), so wird das Objekt an den Maus-Koordinaten
+     bestimmt.
+
+  !item Wenn es sich hier um ein UserDef handelt, so wird dem UserDef die
+     Nachricht (!link [AUO_GETBUBBLE] [AUO_GETBUBBLE]) gesandt. Das UserDef hat nun die
+     Mîglichkeit, den vordefinierten Hilfe-String zu Ñndern oder die
+     BubbleGEM-Hilfe auszuschalten.
+
+  !item Falls es sich nicht um ein UserDef, sondern um ein Standard-GEM-
+     Objekt handelt oder falls das UserDef die Nachricht nicht
+     versteht (RÅckgabewert der Service-Routine ist FALSE), wird dem
+     Fenster die Nachricht AS_GETBUBBLE gesandt, damit dieses einen
+     Hilfetext zur VerfÅgung stellt.
+
+  !item Wenn nun ein Hilfetext zur VerfÅgung steht, so wird dieser an
+     BubbleGEM gesandt. Falls hier ein leerer String (siehe
+     Ast_isEmpty) als Hilfetext eingetragen worden sein sollte, wird
+     keine BubbleGEM-Hilfe aufgerufen.
+!end_enumerate
+
+Die gesamte Kommunikation mit BubbleGEM wird von (!I)ACSpro(!i) komplett
+selbst Åbernommen. Ebenso werden Tastendruck- und Mausklick-Meldungen,
+die von BubbleGEM gemeldet werden, wie gewohnt an die richtigen
+EmpfÑnger verteilt. Der (!I)ACSpro(!i)-Entwickler kann also die BubbleGEM-
+Kommunikation komplett beeinflussen, hat mit ihr aber Åberhaupt keine
+Arbeit.
+
+!end_node
+
+
+!begin_node GEMScript-Protokoll
+
+Das GEMScript-(!link [Protokoll] [Protokoll]) ist passiv in erster Stufe in (!I)ACSpro(!i)
+implementiert. Im Moment ist (!I)ACSpro(!i) der passive GEMScript-Partner, der
+auf eingehende GEMScript-Nachrichten reagiert. Es fehlen noch die
+Macroaufnahme und der aktive Verbindungsaufbau. Beide Erweiterungen
+von (!I)ACSpro(!i) stehen noch aus und werden in einer der nÑchsten Versionen
+realisiert sein.
+
+Der Nachrichtenaustausch mittels GEMScript zwischen zwei Anwendungen
+wird in drei Phasen unterteilt, der Kontaktaufnahme, der Kommandophase
+und dem Abmelden.
+
+Die Kontaktaufnahme erledigt (!I)ACSpro(!i) vîllig selbstÑndig. Als
+GEMScript-Version wird die Version 1.2 gemeldet, die hexadezimale
+Codierung von Parametern wird natÅrlich unterstÅtzt - fÅr den (!I)ACSpro(!i)-
+Entwickler vîllig unbemerkt.
+
+Das Abmelden wird von (!I)ACSpro(!i) ebenfalls selbsttÑtig beim Beenden
+erledigt, sofern der GEMScript-Partner die Verbindung nicht beendet.
+
+In der Kommandophase werden die Kommandos an GEMScript-Funktionen
+weitergegeben. Diese kînnen vom Entwickler ersetzt oder erweitert
+werden, wie unter dem Vorgehen von (!I)ACSpro(!i) beim
+(!link [Eintreffen eines GEMScript-Kommandos] [GEMScript-Realisierung in ACS]) beschrieben ist.
+
+!end_node
+
+
+!begin_node GEMScript-Realisierung in ACS
+
+Beim Eintreffen von GEMScript-Kommandos geht (!I)ACSpro(!i) folgendermaûen
+vor:
+
+!begin_enumerate
+  !item Die im ASCIIZZ-Format gesendeten Parameter werden ausgelesen und
+     in ein Array von Strings umgewandelt. Die hexadezimal codierten
+     Parameter werden umgewandelt.
+
+  !item Die Daten werden der in ACSblk eingetragenen GEMScript-Funktion
+     Åbergeben. Die Default-Funktion ist ACSGEMScript.
+
+  !item Wenn das GEMScript-Kommando von dieser Funktion nicht erfolgreich
+     bearbeitet wird, d.h. wenn der RÅckgabewert ungleich GSACK_OK
+     ist, so wird versucht, dem im zweiten Parameter angegebenen
+     Fenster das Kommando zuzuleiten. Falls der zweite Parameter leer
+     ist, wird das oberste Fenster verwendet. Falls kein Fenster
+     angegeben ist oder das angegebene Fenster nicht identifiziert
+     werden kann, wird das Kommando an das Root-Fenster
+     weitergeleitet.
+
+  !item Die in Awindow.gemscript eingetragene GEMScript-Funktion des
+     ermittelten Fensters wird aufgerufen. Die Default-Funktion ist
+     Awi_gemscript.
+!end_enumerate
+
+Der von den GEMScript-Funktionen zurÅckgegebene Fehlercode wird an den
+Absender des GEMScript-Kommandos weiter gegeben. RÅckgabewerte sollten
+- wie in der GEMScript-Dokumentation beschrieben ist - stets Åber
+einen ASCIIZZ-String gesandt werden. (!I)ACSpro(!i) hilft auch hier. Die
+GEMScript-Funktionen bekommen einen Zeiger auf die Struktur
+A_GSAntwort Åbergeben. In der Beschreibung dieser Struktur ist auch
+dokumentiert, wann und wie die RÅckmeldungen durch die GEMScript-
+Funktionen eingetragen werden sollten.
+
+!end_node
+
+
+!begin_node OLGA-Protokoll
+
+Das Empfangsteil des OLGA-Protokolles wird von (!I)ACSpro(!i) automatisch
+erledigt und ggf. an das betroffene Fenster (!link [weitergeleitet] [Vordefinierte Fenster-Nachrichten]). Das
+Sendeteil des OLGA-Protokolles liegt in der Verantwortung des
+Programmierers. Um ihn zu unterstÅtzen, stehen einige Funktionen zur
+VerfÅgung, die in drei Kategorien unterteilt werden kînnen.
+
+In der aktuellen (!I)ACSpro(!i)-Version ist der Empfangsteil bis auf das
+Inplace-Drawing bereits implementiert. Der Sendeteil ist noch in
+Arbeit und wird in einer der nÑchsten Versionen hinzukommen.
+
+!begin_xlist [OLGA-Allgemein]
+!label OLGA-Server
+ !item [OLGA]-Server     Die hier genannten Funktionen unterstÅtzen den
+                 Programmierer beim Entwickeln einer (!I)ACSpro(!i)-Anwendung,
+                 die als OLGA-Server eingesetzt werden soll bzw. kann.
+
+                  !begin_xlist [Aev_OlgaBreaklink]
+                  !item [Aev_OlgaIdle]       Test der OLGA-Verbindung, ob alle
+                                     vorherigen Nachrichten
+                                     verarbeitet wurden (als OLGA-
+                                     Server und als OLGA-CLient)
+
+                  !item [Aev_OlgaBreaklink]  Lîschen einer Datei an den OLGA-
+                                     Manager melden (als OLGA-Server)
+
+                  !item [Aev_OlgaRename]     Umbenennen einer Datei an den
+                                     OLGA-Manager melden (als OLGA-
+                                     Server)
+
+                  !item [Aev_OlgaUpdate]     Update einer Datei an den OLGA-
+                                     Manager melden (als OLGA-Server)
+                  !end_xlist
+
+!label OLGA-Client
+ !item [OLGA]-Client     Die aufgelisteten Funktionen stehen dem (!I)ACSpro(!i)-
+                 Entwickler zur VerfÅgung, um eine OLGA-Client-
+                 Anwendung zu programmieren.
+
+!label OLGA-Allgemein
+ !item [OLGA]-Allgemein  Die folgenden Funktionen sind fÅr (!I)ACSpro(!i)-Anwendungen,
+                 die als OLGA-Server, als OLGA-Client oder beides
+                 verwendet werden kînnen, gedacht. Ferner sind hier
+                 Funktionen aufgelistet, die die OLGA-Verbindungen
+                 verwalten.
+
+                  !begin_xlist [A_OlgaCreate]
+                  !item [A_OlgaCreate]  Erzeugen einer registrierten OLGA-
+                                Verbindung, die Verbindung wird noch
+                                nicht beim OLGA-manager registriert!
+                  !end_xlist
+!end_xlist
+
+!end_node
+
+
+!begin_node DHST-Protokoll
+
+(!I)ACSpro(!i) unterstÅtzt das DHST-(!link [Protokoll] [Protokoll]). Das (!xlink [] [Document-History-Protokoll])
+(DHST-(!link [Protokoll] [Protokoll])) dient dazu, eine globale Liste der zuletzt benutzten
+Dokumente zu verwalten (Ñhnlich dem Abruf-MenÅ in z.B. Texel) und an
+einer einheitlichen Stelle (z.B. Start-Me-Up-MenÅ) schnell abrufbar zu
+machen. Bei diesem DHST-Server (wie z.B. SMU) werden alle
+gespeicherten Dateien registriert. Der DHST-Server zeigt diese nun an
+und bieten an, eine der gelisteten Dateien wieder zu bearbeiten.
+
+(!I)ACSpro(!i) unterstÅtzt das dazu notwendige (!link [Protokoll] [Protokoll]) vîllig transparent.
+Die Funktion Aev_DhstAdd lîst das Registrieren der Datei aus, die dazu
+notwendige Kommunikation wird komplett von (!I)ACSpro(!i) erledigt, so daû
+keine weitere Arbeit entsteht.
+
+Genauere Informationen Åber das (!xlink [DHST-Protokoll] [Document-History-Protokoll]) sind in der
+Dokumentation von (!xlink [SMU] [Start Me Up! ]) zu finden.
+
+(!B)Hinweis:(!b) Generell ist empfehlenswert, sowohl dem (!link [OLGA-Server] [OLGA-Server]) als auch
+dem DHST-Server nach dem Speichern eines Dokumentes mittels der
+Funktionen Aev_OlgaUpdate bzw. Aev_DhstAdd Bescheid zu sagen.
+
+!end_node
+
+!end_node
+
+
+!begin_node Sonstige Funktionen
+
+Zu guter Letzt gibt es einige Routinen, die keiner speziellen Rubrik
+zuzuordnen sind und hier aufgelistet werden. Es handelt sich hier um
+die Funktionen
+
+!begin_xlist [dotted_xline]
+ !item [A_dialog]      Dialog durchfÅhren
+
+ !item [A_dialog2]     Dialog durchfÅhren
+
+ !item [alert_str]     Alarmbox aufbauen und anzeigen
+
+ !item [intersect]     Bildet den Schnitt zweier Rechtecke
+
+ !item [xywh2array]    Umrechnen eines Rechtecks
+
+ !item [array2xywh]    Umrechnen eines Rechtecks
+
+ !item [dotted_xline]  Punktierte, horizontale Linie
+
+ !item [dotted_yline]  Punktierte, vertikale Linie
+
+ !item [Avdi_getRGB]   RGB-Farbwerte der NVDI-Farbpalette ermitteln
+!end_xlist
+
+!end_node
+
+!end_node
+
+
+!begin_node Die Erweiterungen der Objekte durch GEM-Userdefs
+
+(!I)ACSpro(!i) erweitert die bestehenden GEM-Objekte durch eigene Userdefs
+erheblich. Da im Gegensatz zu "traditionellen" GEM-Userdefs die von
+(!I)ACSpro(!i) bereitgestellten Objekte nicht nur ein Aussehen, sondern durch
+die Konzepte der Klick-, Drag- und Service-Funktionen auch eine zum
+Teil sehr mÑchtige FunktionalitÑt haben, lassen sich ansprechende
+gestaltete GEM- Anwendung mit komfortablen Mîglichkeiten in recht
+kurzer Zeit entwickeln.
+
+Die von (!I)ACSpro(!i) bereitgestellten Userdefs sind
+
+!subtoc [all] !depth 1
+
+
+!begin_node Userdef-BoxEdit
+!alias BoxEdit
+
+Dieses Objekt wird ab ACSpro V2.3 dazu benutzt, in Fensterdialogen ein
+komfortables Eingabeobjekt anzubieten, das gegenÅber den
+ursprÅnglichen TEDINFO-Objekten eine umfangreiche Cursorsteuerung,
+eine Blockselektion und bis zu 255 Zeichen in der Eingabe zulÑût. Der
+Rahmen wird erst mit OUTLINED-Flag gezeichnet und nur im 3D-Modus,
+wenn mehr als 16 Farben darstellbar sind. Ist das SELECTED-Bit gesetzt
+wird das Objekt nicht invertiert, er erscheint vielmehr ein innerer
+Rahmen.
+
+(!B)Achtung:(!b) Die ACSpro-Library verlangt diesen Objekttyp (!B)zwingend(!b), um in
+Fensterdialogen eine korrekte Cursorsteuerung auszufÅhren.
+
+Zur Laufzeit kann dieses Objekt mit der Service-Routine Auo_boxed
+angesprochen werden. Die dafÅr vorbereitete (!link [Click-Routine] [Click-Routine]) Aus_boxed
+steuert die Textselektion Sie mÅssen diese Click- Routine nicht
+zwingend angeben, da (!I)ACSpro(!i) bei einem EDITABLE-Objekt diese
+automatisch anspringt. DafÅr (!B)darf(!b) das Objekt leider nicht in modalen
+Dialogen (A_dialog) eingesetzt werden!
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_boxed
+
+ !item [ub_parm]  Bitvektor, der das Aussehen festlegt. Hierbei bedeutet
+
+           !begin_xlist [Bit 28-31]
+           !item [Bit 0-2]    ...
+
+           !item [Bit 3]      unsichtbare Zeichen
+
+           !item [Bit 4]      3D-Modus
+
+           !item [Bit 6]      kleine Schrift
+
+           !item [Bit 7]      Kapitalisieren
+
+           !item [Bit 8-11]   Textfarbe
+
+           !item [Bit 11-18]  maximale TextlÑnge
+
+           !item [Bit 19-23]  Maskenindex
+
+           !item [Bit 24-27]  Rahmenfarbe unten/rechts
+
+           !item [Bit 28-31]  Rahmenfarbe oben/links
+           !end_xlist
+
+ !item [ub_serv]  Auo_boxed
+
+ !item [ub_ptr1]  aktueller Text oder Selektion
+
+ !item [ub_ptr2]  NULL (interne Daten)
+
+ !item [ub_ptr3]  NULL
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_boxed/Aus_boxed/Auo_boxed
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Slider
+!alias Slider
+
+Zusammen mit der click-Routine Aus_slider und den Nachrichten
+entfaltet dieses Userdef seine volle FunktionalitÑt. Es bietet einen
+Liveupdate, dies heiût der aktuelle Sliderwert kann sofort
+entsprechend angezeigt werden. In den Balken kann ein Text eingetragen
+werden. StandardmÑûig wird der Zahlenwert eingetragen.
+
+Die Version (!link [A_wislider] [A_wislider]) simuliert mit Hilfe der AES-Fensterslider einen
+A_slider. Dabei bleibt das Liveupdate durch den Balken und der
+Texteintrag auf der Strecke. (!link [A_wislider] [A_wislider]) hat als Userdef natÅrlich
+keine visuelle Komponente.
+
+Zur Laufzeit kann dieses Objekt mit der Service-Routine Auo_boxed
+angesprochen werden. Die dafÅr vorbereitete (!link [Click-Routine] [Click-Routine]) Aus_boxed
+steuert die Textselektion Sie mÅssen diese Click- Routine nicht
+zwingend angeben, da (!I)ACSpro(!i) bei einem EDITABLE-Objekt diese
+automatisch anspringt. DafÅr (!B)darf(!b) das Objekt leider nicht in modalen
+Dialogen (A_dialog) eingesetzt werden!
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_slider bzw. (!link [A_wislider] [A_wislider])
+
+ !item [ub_parm]  Ausrichtung des Sliders horizontal (0) oder vertikal (1)
+
+ !item [ub_serv]  Auo_slider bzw. (!link [Auo_wislider] [Auo_wislider])
+
+ !item [ub_ptr1]  NULL (interne Daten)
+
+ !item [ub_ptr2]  NULL
+
+ !item [ub_ptr3]  NULL
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_slider/Aus_slider/Auo_slider
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Editor
+
+Dieses Userdef kann als Editor, Selektor oder als (!link [Protokoll] [Protokoll]) betrieben
+werden. Die volle LeistungsfÑhigheit erreicht dieses Userdef durch den
+umfangreichen Satz an Nachrichten, die click-Routine Aus_editor. Das
+Userdef arbeitet optional mit einem horizontalen (!link [Slider] [Slider]) und vertikalen
+(!link [Slider] [Slider]) zusammen.
+
+Zu diesem Userdef existiert noch ein 'printf'-Interface Åber die
+Funktionen uputs, uprintf und uvprintf.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_editor
+
+ !item [ub_parm]  0
+
+ !item [ub_serv]  Auo_editor
+
+ !item [ub_ptr1]  NULL (interne Daten)
+
+ !item [ub_ptr2]  NULL
+
+ !item [ub_ptr3]  NULL
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_editor/Aus_editor/Auo_editor
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Picture
+!alias Picture
+
+Im Gegensatz zum Typ G_IMAGE sind mehrere Planes mîglich. Das Bild
+wird auf die Objektgrîûe begrenzt. Beim Initialisieren wird ein MFDB
+im aktuelle Format erzeugt. Weitere Aufrufe (auûer im Testmode)
+benutzen diesen MFDB. Ab Version 2.2 kann man dem Hintergrund eine
+eigene Farbe und ein Muster zuordnen, weiterhin wird auch ein 3D-Modus
+(in AbhÑngigkeit von AB_NO3D) beachtet.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_picture
+
+ !item [ub_parm]  Bitvektor:
+
+           !begin_xlist [Bit 16-19]
+           !item [Bit 0]      Normal-Modus (0) oder Testmode (1) (erzeuge
+                      immer einen MFDB - ist fÅr den (!I)GUI-Editor(!i)
+                      gedacht)
+
+           !item [Bit 1]      zentriert (0) oder Kachel (1)
+
+           !item [Bit 4-7]    Kachel-Hintergrundfarbe
+
+           !item [Bit 8-12]   Kachel-vsf_style-Mode
+
+           !item [Bit 16-19]  Kachel-vsf_interior-FLag
+
+           !item [Bit 20]     Kachel-Dither-Flag
+           !end_xlist
+
+ !item [ub_serv]  Auo_picture
+
+ !item [ub_ptr1]  Zeiger auf die ursprÅnglichen Bild-Daten
+
+ !item [ub_ptr2]  NULL (zeigt auf interne Struktur)
+
+ !item [ub_ptr3]  NULL (aktueller MFDB)
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_picture/Auo_picture
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Cycle
+!alias Cycle
+
+Links wird die (letzte) Wahl und rechts ein Pfeil nach unten zum
+Durchschreiten gezeichnet. Die volle FunktionalitÑt wird erst durch
+Anklicken mit der Maus erreicht. Die click-Routine zu diesem Userdef
+ist Aus_cycle.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_cycle
+
+ !item [ub_parm]  0
+
+ !item [ub_serv]  Auo_cycle
+
+ !item [ub_ptr1]  NULL/NIL oder ein C-String (der ursprÅngliche Popupstring)
+
+          Die verschiedenen EintrÑge werden durch Bar '|' getrennt,
+          z.B.
+
+          !begin_sourcecode
+"Rot|Gelb|GrÅn".
+          !end_sourcecode
+
+          SubmenÅs werden durch eckige Klammer beschrieben. Der erste
+          Wert ist der Titel, z.B.
+
+          !begin_sourcecode
+"Rot|[Gelb|Fast Rot|normales Gelb|GrÅngelb]"
+"|[GrÅn|Aufpassen!|normale Fahrt|Vollgas]".
+          !end_sourcecode
+
+
+!image (!IMAGES)img00734.img
+
+          Der aktuelle Wert wird mit CHECKED gekennzeichnet.
+
+ !item [ub_ptr2]  NULL (interne Daten)
+
+ !item [ub_ptr3]  NULL
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_cycle/Aus_cycle/Auo_cycle
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-3D-Button
+
+!subtoc [all] !depth 1
+
+Dieser Button hat einen linken oberen und einen rechten unteren
+Rahmen. Werden hier verschiedene Farben eingestellt, wird ein 3D-
+Effekt erreicht. Beim Selektieren werden die Rahmenfarben vertauscht
+um den Effekt des HineindrÅckens zu erreichen. Sind beide Rahmenfarben
+gleich, wird beim Selektieren der innerer Bereich invertiert.
+
+Der Buttontext unterstÅtzt die String Codes.
+
+Die Rahmendicke kann unabhÑngig vom Rahmenversatz eingestellt werden.
+Zum Beispiel kann der Rahmen 2 Pixel dick gemacht werden und um 1
+Pixel nach innen gesetzt werden, so daû insgesamt das Objekt 1 Pixel
+grîûer wird.
+
+(!B)Wichtig:(!b) AES fordert bei Teilredraws nur die im Redrawrechteck liegen.
+Mittels des Flags OUTLINED kann das Objekt in allen Richtungen visuell
+um 3 Pixel grîûer sein als logisch konzipiert, ohne Redrawproblem zu
+verursachen.
+
+Dieses Userdef unterstÅtzt einen Dither genannten Mode. Ziel ist einen
+Modus zu haben, der in allen Auflîsung gleichermassen gut wirkt. Dabei
+stellt der Benutzer das Muster VOLL (7) und die Farbe HELLGRAU (8)
+ein. Diese Kombination kann erst ab 16 Farben umgesetzt werden.
+
+Im 4 Farb Modus wird stattdessen automatisch die Farbe 2 (GRöN)
+eingestellt. Wobei in dieser Auflîsung die Farbe 2 per Controlfeld in
+ein HELLGRAU verwandelt sollte um einen guten Eindruck zu haben
+
+In monochrom wird das Muster 4 (50%) verwendet. Visuell wirkt dies wie
+HELLGRAU. ZusÑtzlich wird der REPLACE-Modus bei Texten erzwungen, da
+Fonts im Transparentmodus auf dem Muster 4 nicht so gut lesbar sind.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_3Dbutton
+
+ !item [ub_parm]
+
+           !begin_xlist [Bit 28-29]
+           !item [Bit 0-3]    FÅllfarbe
+
+           !item [Bit 4-6]    FÅllmuster
+
+           !item [Bit 7]      REPLACE-Modus bei Texten ein/aus
+
+           !item [Bit 8-11]   Textfarbe
+
+           !item [Bit 12-15]  Farbe des oberen Rahmens
+
+           !item [Bit 16-19]  Rahmendicke (0 ... 15)
+
+           !item [Bit 20-23]  Rahmenoffset (-8 ... +7)
+
+           !item [Bit 24-27]  Farbe des unteren Rahmens
+
+           !item [Bit 28-29]  Textausrichtung: 0=links, 1=rechts, 2=zentriert
+                      (3=Blocksatz)
+
+           !item [Bit 30]     kleine Schrift
+
+           !item [Bit 31]     keine FÅllung
+           !end_xlist
+
+ !item [ub_serv]  Auo_string
+
+ !item [ub_ptr1]  NULL/NIL oder ein C-String
+
+ !item [ub_ptr2]  NULL/NIL (window)
+
+ !item [ub_ptr3]  NULL/NIL (obnr)
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_3Dbutton/Auo_string
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+
+!begin_node String Codes
+
+Das erste Zeichen, das mit dem im (!I)GUI-Editor(!i) eingetragenen Tastencode
+Åbereinstimmt, unabhÑngig von der Groû-bzw. Kleinschreibung, wird
+entsprechend der folgenden Regel mit einem VDI-Texteffekt
+hervorgehoben:
+
+!begin_xlist [SHIFT]
+ !item [ALT]    Unterstrichen
+
+ !item [CTRL]   Hohl
+
+ !item [SHIFT]  Fett
+
+ !item [sonst]  normal
+!end_xlist
+
+Hierdurch wird die Tastatur-UnterstÅtzung optisch sichtbar gemacht.
+
+!end_node
+
+!end_node
+
+
+!begin_node Userdef-FText
+!alias FText
+
+FÅr ErlÑuterungen war es bisher recht umstÑndlich, mehrere G_STRING-
+Objekte umzuarbeiten. Mit diesem USERDEF wird der Text einmal
+eingegeben und dann kann man den Text selbst schnell umarrangieren.
+Der Text wird an Spaces und an Bindestrichen umgebrochen, soweit
+mîglich. Bar '|' erzwingt einen Umbruch.
+
+Der Text selbst wird im Transparent Modus gezeichnet. Es werden fixed
+(monospaced) Fonts unterstÅtzt.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_ftext
+
+ !item [ub_parm]
+
+           !begin_xlist [Bit 20-31]
+           !item [Bit 0-7]    Hîhe in Pixeln (0 wird durch gl_hchar ersetzt)
+
+           !item [Bit 8-13]   Effekte
+
+           !item [Bit 14-15]  Ausrichtung (0=links, 1=rechts, 2=zentriert,
+                      3=Blocksatz)
+
+           !item [Bit 16-19]  Farbindex
+
+           !item [Bit 20-31]  Schrift
+           !end_xlist
+
+ !item [ub_serv]  Auo_ftext
+
+ !item [ub_ptr1]  NULL/NIL oder ein C-String
+
+ !item [ub_ptr2]  NULL/NIL (window)
+
+ !item [ub_ptr3]  NULL/NIL (obnr)
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_ftext/Auo_ftext
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Select
+
+Manchmal ist das Invertieren nicht geeignet, um die Anwahl anzuzeigen.
+Hier bietet A_select alternativ einen Rahmen an. Sinnvollerweise kommt
+dieses USERDEF nur in MenÅs und Popups vor. Das Objekt muû dann noch
+mit Kindern gefÅllt werden. Zum Editieren ist es etwas problematisch,
+da es im Normalzustand unsichtbar ist.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_select
+
+ !item [ub_parm]  0
+
+ !item [ub_serv]  NULL/NIL
+
+ !item [ub_ptr1]  NULL/NIL
+
+ !item [ub_ptr2]  NULL/NIL
+
+ !item [ub_ptr3]  NULL/NIL
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_select
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Arrows
+
+Dieses USERDEF stellt Pfeile und Linien zur VerfÅgung. Es kann nicht
+durch Selektieren invertiert werden, dies macht auch keinen besonderen
+Sinn. (Siehe auch VDI: v_pline)
+
+Ab Version 2.2 steht auch eine richtig punktierte Linie zur VerfÅgung.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_pattern
+
+ !item [ub_parm]
+
+           !begin_xlist [Bit 28-30]
+           !item [Bit 0-3]    Farbe
+
+           !item [Bit 16-18]  Linientyp (vsl_type)
+
+           !item [Bit 19]     0=1 Pixel breit, 1=3 Pixel breit
+
+           !item [Bit 20-21]  Endetypus Start (vsl_ends)
+
+           !item [Bit 22-23]  Endetypus Ende (vsl_ends)
+
+           !item [Bit 24-26]  Startposition
+
+           !item [Bit 28-30]  Endposition
+
+           !item [Bit 31]     3D-Modus
+           !end_xlist
+
+          Die Positionen 4-7 sind um eine halbe Zeichenposition nach
+          innen versetzt.
+
+
+!image (!IMAGES)img00733.img
+
+ !item [ub_serv]  NULL/NIL
+
+ !item [ub_ptr1]  NULL/NIL
+
+ !item [ub_ptr2]  NULL/NIL
+
+ !item [ub_ptr3]  NULL/NIL
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_arrows
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Pattern
+!alias Pattern
+
+Dieses Userdef erlaubt verschiedene VDI-Muster zu wÑhlen. (siehe auch
+VDI: v_bar).
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_pattern
+
+ !item [ub_parm]
+
+           !begin_xlist [Bit 22-23]
+           !item [Bit 0-3]    Farbe
+
+           !item [Bit 16-20]  Musterindex (vsf_style)
+
+           !item [Bit 21]     Rahmen (vsf_perimeter)
+
+           !item [Bit 22-23]  0=FIS_HATCH, 1=FIS_PATTERN, 2 & 3=ACS-eigen
+           !end_xlist
+
+ !item [ub_serv]  NULL/NIL
+
+ !item [ub_ptr1]  NULL/NIL
+
+ !item [ub_ptr2]  NULL/NIL
+
+ !item [ub_ptr3]  NULL/NIL
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_pattern
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Innerframe
+!alias Innerframe
+
+Das Userdef-Innerframe stellt eine Box dar, die in allen Richtungen um
+eine halbe Zeichengrîûe nach innen versetzt ist. Ein optionaler String
+kann plaziert werden.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_innerframe
+
+ !item [ub_parm]
+
+           !begin_xlist [Bit 24-26]
+           !item [Bit 0-3]    Rahmenfarbe links/oben
+
+           !item [Bit 4-7]    Textfarbe
+
+           !item [Bit 8]      Textmodus
+
+           !item [Bit 9-11]   FÅllmuster
+
+           !item [Bit 12-15]  FÅllfarbe
+
+           !item [Bit 16-23]  Rahmenfarbe rechts/unten
+
+           !item [Bit 24-26]  Textposition:
+
+                       !begin_xlist [0]
+                       !item [0]  oben links
+
+                       !item [1]  oben zentriert
+
+                       !item [2]  oben rechts
+
+                       !item [4]  unten links
+
+                       !item [5]  unten zentriert
+
+                       !item [6]  unten rechts
+                       !end_xlist
+
+           !item [Bit 27]     groûer/kleiner Text
+
+           !item [Bit 28]     Dither-Modus
+           !end_xlist
+
+ !item [ub_serv]  Auo_string
+
+ !item [ub_ptr1]  NULL/NIL oder ein C-String
+
+ !item [ub_ptr2]  NULL/NIL
+
+ !item [ub_ptr3]  NULL/NIL
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate !compressed
+  !item A_innerframe, Auo_string
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Title
+!alias Title
+
+Es wird ein Text gezeichnet, der unterstrichen ist. Dieses Userdef
+kann fÅr Titel verwendet werden. Tastencodes werden im Text durch
+String Codes kenntlich gemacht.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_title
+
+ !item [ub_parm]
+
+           !begin_xlist [Bit 0-1]
+           !item [Bit 0-1]    0=Links, 1=Mitte, 2=Rechts
+
+           !item [Bit 2]      0=normale Schrift, 1=kleine Schrift
+
+           !item [Bit 3]      0=transparent, 1=deckend
+           !end_xlist
+
+ !item [ub_serv]  Auo_string
+
+ !item [ub_ptr1]  NULL/NIL oder ein C-String
+
+ !item [ub_ptr2]  NULL/NIL
+
+ !item [ub_ptr3]  NULL/NIL
+!end_xlist
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_title, Auo_string
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+
+!begin_node Userdef-Checkbox
+!alias Userdef-Radiobutton
+
+Dieses Objekt stellt eine Check-Box bzw. einen Radio-Button dar.
+Hinterlegte Tasten-Codes werden im Text durch String Codes kenntlich
+gemacht.
+
+Die Werte der zum Userdef gehîrenden AUSERBLK-Struktur sind
+folgendermaûen belegt:
+
+!begin_xlist [ub_parm]
+ !item [ub_code]  A_checkbox
+
+ !item [ub_parm]  0 = Normal, 1 = 3D-Darstellung (nur bei 16*16 Pixel)
+
+ !item [ub_serv]  Auo_string
+
+ !item [ub_ptr1]  NULL/NIL oder ein C-String
+
+ !item [ub_ptr2]  NULL/NIL
+
+ !item [ub_ptr3]  NULL/NIL
+!end_xlist
+
+(!I)Achtung(!i): Ab Version 2.2 wurden die Objekte Checkbox und Radiobutton
+zusammengelegt, die Unterscheidung erfolgt nur noch anhand des
+RBUTTON-Flags in ob_flags!
+
+(!I)Querverweise:(!i)
+
+!begin_enumerate
+  !item A_checkbox, Auo_string
+
+  !item (!link [Benutzerdefinierte Objekte] [Benutzerdefinierte Objekte])
+!end_enumerate
+
+!end_node
+
+!end_node
+
+
+!begin_node Vordefinierte Drag-Typen
+!alias Drag-Typen
+
+Damit der EmpfÑnger eines gezogenen Objektes weiû fÅr was das Objekt
+steht, gibt es die Typen. Ein Typ ist ein 16-Bit Wort. Die Applikation
+darf den Nummerkreis von 10000 bis 32000 verwenden. (!I)ACSpro(!i) definiert
+den Nummernkreis von 0 bis 9999. Nur (!I)ACSpro(!i)-definierte Typen kînnen
+zur Kommunikation zwischen Applikationen und Modulen eingesetzt
+werden.
+
+Falls diese Typen nicht reichen, lassen Sie sich ihren neuen Typ
+registrieren!
+
+!begin_xlist [AT_ICONWINDOW]
+ !item [Kein Typ]       (0)
+
+ !item [AT_ICONWINDOW]  (1)
+
+ !item [AT_NEW]         (2)
+
+ !item [AT_TRASH]       (3)
+
+ !item [AT_MFDB]        (10)
+
+ !item [AT_STRING]      (11)
+
+ !item [AT_FILE]        (20)
+
+ !item [AT_ARCHIVE]     (30)
+
+ !item [AT_TEXT]        (31)
+
+ !item [AT_TURNUS]      (32)
+
+ !item [AT_NOTIO]       (33)
+!end_xlist
+
+
+!begin_node AT_ICONWINDOW
+
+Es handelt sich um das Symbol fÅr ein Fenster.
+
+!begin_xlist [userp1]
+ !item [click]   Das Fenster wird geîffnet (wi->open)
+
+ !item [drag]    Dem Fenster wird die Nachricht AS_DRAGGED zugesandt
+
+ !item [userp1]  Zeiger auf das Fenster (Awindow* bzw. (!link [AwindowPtr] [AwindowPtr]))
+
+ !item [userp2]  Zeiger auf die Ikone (CICONBLK * bzw. CICONBLKPtr)
+!end_xlist
+
+!end_node
+
+
+!begin_node AT_NEW
+
+Es handelt sich um das Symbol NEU.
+
+!begin_xlist [userp1]
+ !item [click]   Ein Applikationsobjekt wird erzeugt
+
+ !item [drag]    Ein Applikationsobjekt wird erzeugt
+
+ !item [userp1]  nicht belegt
+
+ !item [userp2]  nicht belegt
+!end_xlist
+
+!end_node
+
+
+!begin_node AT_TRASH
+
+Es handelt sich um das Symbol des Papierkorbs.
+
+!begin_xlist [userp1]
+ !item [click]   nicht belegt (Infobox)
+
+ !item [drag]    Sendet die Nachricht AS_DELETE an das Fenster, dem die
+         Objekte gehîren
+
+ !item [userp1]  nicht belegt
+
+ !item [userp2]  nicht belegt
+!end_xlist
+
+!end_node
+
+
+!begin_node AT_MFDB
+
+Dieses Objekt enthÑllt einen Zeiger auf einen MFDB in Standardformat.
+Damit kînnen Graphiken ausgetauscht werden.
+
+!begin_xlist [userp1]
+ !item [click]   nicht belegt
+
+ !item [drag]    nicht belegt
+
+ !item [userp1]  MFDB* bzw. MFDBPtr
+
+ !item [userp2]  nicht belegt
+!end_xlist
+
+!end_node
+
+
+!begin_node AT_STRING
+
+Dieses Objekt enthÑllt einen nullterminierten String (C-String). Damit
+kann Text ausgetauscht werden.
+
+!begin_xlist [userp1]
+ !item [click]   nicht belegt
+
+ !item [drag]    nicht belegt
+
+ !item [userp1]  char * bzw. Pointer
+
+ !item [userp2]  nicht belegt
+!end_xlist
+
+!end_node
+
+
+!begin_node AT_FILE
+
+Dieses Objekt enthÑllt einen nullterminierten String (C-String). Er
+symbolisiert eine Datei. Der Inhalt ist der zugehîrige Pfadname.
+
+!begin_xlist [userp1]
+ !item [click]   nicht belegt
+
+ !item [drag]    nicht belegt
+
+ !item [userp1]  char * bzw. Pointer
+
+ !item [userp2]  nicht belegt
+!end_xlist
+
+!end_node
+
+
+!begin_node AT_ARCHIVE
+
+Dieses Objekt enthÑllt einen nullterminierten String (C-String). Es
+ist fÅr die LAZy-Shell reserviert.
+
+!end_node
+
+
+!begin_node AT_TEXT
+
+Dieses Objekt enthÑllt einen nullterminierten String (C-String).
+Einzelne Zeilen werden durch ein '\n' (und optional '\r') getrennt,
+womit Åber ein Objekt mehrere Zeilen verschickt weden kînnen.
+
+!begin_xlist [userp1]
+ !item [click]   nicht belegt
+
+ !item [drag]    nicht belegt
+
+ !item [userp1]  char * bzw. Pointer
+
+ !item [userp2]  nicht belegt
+!end_xlist
+
+!end_node
+
+
+!begin_node AT_TURNUS
+
+Dieses Objekt ist fÅr TurnUs reserviert.
+
+!end_node
+
+
+!begin_node AT_NOTIO
+
+Dieses Objekt ist fÅr Notio reserviert.
+
+!end_node
+
+!end_node
+
+
+!begin_node Der "pure" Desktop
+
+Der Desktop einer Anwendung ermîglicht dem Benutzer den Zugriff auf
+die wichtigsten Funktionen und Dateien, die sich in Form von Symbolen
+auf dem Bildschirm befinden. Unter GEM ist es auch Åblich, daû der
+Desktop eine MenÅleiste besitzt, die weitere Operationen ermîglicht.
+
+Da sich das Verhalten und die Darstellung des Desktops DESKTOP zu sehr
+von dem Åblichen Verhalten anderer Anwendungen unterschied, verwendet
+(!I)ACSpro(!i) nun den "puren Desktop" PUR_DESK als Wurzelfenster. Damit
+ergibt sich im Gegensatz zum bisherigen Desktop ein "normales
+Applikationsverhalten" - die Modul- und Iconverwaltung liegt dazu in
+einem eigenen Module-Fenster. Die MenÅleiste wird als SystemmenÅleiste
+angemeldet - im Accessory-Modus verschiebt sie sich in das Module-
+Fenster.
+
+In allen moderneren Anwendungen sollte der Desktop PUR_DESK verwendet
+werden, der Dekstop DESKTOP ist nur noch zur KompatibilitÑt enthalten
+und wird in einer der nÑchsten Versionen verschwinden.
+
+
+!image (!IMAGES)img00732.img
+
+!end_node
+
+
+!begin_node Der generische Desktop
+
+Der bis zur (!I)ACSpro(!i)-Version 2.3 verwendete Desktop DESKTOP ist der
+VorlÑufer des modereren Desktops PUR_DESK.
+
+Der Desktop DESKTOP bietet unter anderem die Mîglichkeit, Fenster, die
+momentan nicht benutzt werden zu Symbolen werden, zu lassen und das
+Verhalten einiger Grundfunktionen zu verÑndern. ZusÑtzlich ist es
+mîglich, einige îfter gebrauchte, eigenstÑndige Module nachzuladen.
+Der Desktop wird in einer Multitaskingumgebung in ein Fenster
+umgelenkt, damit man immer den Standard-Desktop des GEM benutzen kann.
+Der DESKTOP kann vom Programmierer durch einen eigenen ersetzt werden.
+Viel nÅtzlicher aber ist es, daû dieser vîllig abgestellt werden kann.
+Der Programmierer kann also auch seine eigene MenÅleiste installieren.
+Der Desktop kann auf verschiedene Weise konfiguriert werden.
+
+In allen moderneren Anwendungen sollte der pure Desktop PUR_DESK
+verwendet werden, der Desktop DESKTOP ist nur noch zur KompatibilitÑt
+enthalten und wird in einer der nÑchsten Versionen verschwinden.
+
+!end_node
+
+
+!begin_node Das Editor-Fenster und das Editor-Objekt
+
+Hier fehlt noch etwas...
+
+!end_node
+
+
+!begin_node Das Protokoll-Fenster
+
+Hier fehlt noch etwas...
+
+!end_node
+
+
+!begin_node Das Plotter-Fenster
+
+Hier fehlt noch etwas...
+
+!end_node
+
+
+!end_node

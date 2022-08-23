@@ -1,0 +1,40 @@
+!begin_node Navigating this ST-Guide hypertext
+
+Dear ST-Guide user interested in (!I)ACSpro(!i),
+
+This online-help is presented to you fully customized for ST-Guide.
+The hypertext is delivered together with a reference file. This is
+used by ST-Guide to quickly and securely locate external references
+passed as parameters without having to first load in all existing
+hypertext files. For this purpose all .REF files should be saved
+with the program RefLink, included with ST-Guide, into a global
+one, to be connected to the searchable ST-Guide "Dictionary".
+
+If you are not familiar with using ST-Guide, please refer to the
+hypertext ST-GUIDE.HYP included with the ST-Guide program for any
+questions you may have. If you need help integrating the (!I)ACSpro(!i)
+reference file into your global reference file, please refer to the
+RefLink documentation,
+
+If you have integrated the (!I)ACSpro(!i) reference file into the global
+reference file, then this online-help is fully functional. You can
+then simply place the cursor on the name of an (!I)ACSpro(!i) function in
+the (!I)ACSpro(!i) (!I)GUI editor(!i) or even qed and press the HELP key to
+display the information.
+
+Since color images greatly increase the size of the hypertext, I
+would integrate (!I)only(!i) black and white images. This way the hypertext
+should be reasonably depictable under all resolutions.
+
+If you have any questions, suggestions or ideas for improvement,
+please let me know. The ways to reach me can be found (!link [here] [Contact]).
+Thank you!
+
+With kind regards,
+
+Martin Elsässer
+
+
+!image (!IMAGES)img00865.img
+
+!end_node

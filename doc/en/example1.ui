@@ -1,0 +1,694 @@
+!begin_node A simple program: Hello World (Pure-C, ACSpro 3.0.0)
+
+The first example program is the ever popular "Hello World", but
+here presented as a complete GEM application. The example was
+developed under (!link [MagiCMac] [Mag!X]) in the ST-High emulation mode.
+
+(!B)Note:(!b) For this example, there is no archive included with the
+sources because it is far too simple for that. Just follow the
+various steps and don't let the large number of steps deter you
+because I took quite a few pictures! It is actually really very
+simple!
+
+!subtoc [all] !depth 1
+
+
+!begin_node Step I-01: Start the GUI editor
+
+Start (!I)ACSpro(!i) - here is the (!I)GUI editor(!i) in Version 3.0.0.
+You should see something like the following image:
+
+
+!image (!IMAGES)snap_00.img  The (!I)ACSpro(!i) (!I)GUI editor(!i) is started
+
+!end_node
+
+
+!begin_node Step I-02: Create a new ACS file
+
+Select the entry "New" from the "File" menu. Alternatively,
+press the key combination Ctrl-N. When the file selector
+appears, enter the path and name of the new file
+e.g. "D:\ACSPRO\EXAMPLE\HELLO.C\HELLO.ACS".
+
+
+!image (!IMAGES)snap_01.img  Start a new (!I)ACSpro(!i) file
+
+!end_node
+
+
+!begin_node Step I-03: The ACS window "General"
+
+You will then get the window "General" from which you can start
+any work in the (!I)ACSpro(!i) (!I)GUI editor(!i).
+
+
+!image (!IMAGES)snap_02.img  The ACS window "General"
+
+!end_node
+
+
+!begin_node Step I-04: Open the window list, create a window
+
+Open the window list by clicking on the window icon. The window
+"WINDOW LIST" will appear which initially displays no windows.
+Now select the entry "New..." from the window menu "Options".
+
+
+!image (!IMAGES)snap_03.img  Create a new window
+
+!end_node
+
+
+!begin_node Step I-05: Specify the name of the window
+
+You will be asked for the name of the new window. The name in
+the dialog is already preassigned. Overwrite this name with
+"HelloWorldWind". Under this name, the generated prototype
+for the window can be addressed later on in the program.
+
+
+!image (!IMAGES)snap_04.img  Specify the name of the window
+
+!end_node
+
+
+!begin_node Step I-06: Enter the window data
+
+The window editor will open. Here make the settings shown in the
+image below. Switch the info line off, enter the name of the
+window and adjust the window attributes.
+
+To assign an object as content to the window, click on the text
+"Work:", shown in the image under the mouse pointer.
+
+
+!image (!IMAGES)snap_05.img  Enter the window data
+
+!end_node
+
+
+!begin_node Step I-07: The object tree list
+
+The window "OBJECTTREES LIST" will open. It is currently empty.
+
+
+!image (!IMAGES)snap_06.img  The object tree list
+
+!end_node
+
+
+!begin_node Step I-08: Create the workspace object
+
+Select the entry "New..." from the window menu "Options" to create
+a new object tree.
+
+
+!image (!IMAGES)snap_07.img  Create the workspace object
+
+!end_node
+
+
+!begin_node Step I-09: Specify the name of the object tree
+
+You will be asked for the name of the object tree. The name is
+already preassigned in the dialog. Overwrite the name with
+"HelloWorldObj".
+
+
+!image (!IMAGES)snap_08.img  Specify the name of the object tree
+
+!end_node
+
+
+!begin_node Step I-10: The object tree editor
+
+You will now be taken to the object tree editor where you can
+put together the object tree. Next to the window "OBJECTTREE
+EDITOR" is the "Toolbox" window which offers you all the available
+objects.
+
+
+!image (!IMAGES)snap_09.img  The object tree editor
+
+!end_node
+
+
+!begin_node Step I-11: Place a 3D button
+
+Click on the 3D button in the toolbox window as shown in the image
+and drag it (while holding down the mouse button) onto the object
+tree.
+
+
+!image (!IMAGES)snap_10.img  Place a 3D button
+
+!end_node
+
+
+!begin_node Step I-12: Replace the root object
+
+Now click next to the 3D button that you placed so that the root
+object (the white box with the double frame) is selected. Then
+select "Delete" from the main menu "Window" or press Ctrl-D.
+
+The old root object is deleted and the 3D button that was placed
+is used as the new root object of the object tree. In this way
+you can set the root object at the beginning and also use any
+object as the root object.
+
+
+!image (!IMAGES)snap_11.img  Replace the root object
+
+!end_node
+
+
+!begin_node Step I-13: Invoke the object editor
+
+After a double-click on the 3D button, a pop-up appears in which
+you now should select the object editor.
+
+
+!image (!IMAGES)snap_13.img  Invoke the object editor
+
+!end_node
+
+
+!begin_node Step I-14: The object editor for 3D button
+
+The "OBJECT TREE EDITOR" window now changes its interior object,
+so that the object editor for the 3D button appears with the title
+"3D-Button - OBJECTTREE EDITOR".
+
+
+!image (!IMAGES)snap_14.img  The object editor for the 3D button
+
+!end_node
+
+
+!begin_node Step I-15: Enter data in the object editor for the 3D button
+
+In the object editor for the 3D button, please enter the data
+as shown in the image and exit the object editor by clicking the
+"OK" button
+
+
+!image (!IMAGES)snap_15.img  Enter data in the object editor for the 3D button
+
+!end_node
+
+
+!begin_node Step I-16: Invoke the state editor
+
+To invoke the state editor for the 3D button, select the entry
+"State..." from the pop-up after double-clicking the 3D button.
+
+
+!image (!IMAGES)snap_21.img  Invoke the state editor
+
+!end_node
+
+
+!begin_node Step I-17: Enter data in the state editor for the 3D button
+
+Set the state data for the 3D button as shown in the image and
+exit the state editor by clicking the "OK" button.
+
+
+!image (!IMAGES)snap_22.img  Enter data in the state editor for the 3D button
+
+!end_node
+
+
+!begin_node Step I-18: Resize the root object
+
+Click on the 3D button with a single click. The button is selected
+and you will notice a small, dark box in the lower right corner.
+This is used for resizing.  Click this small box and with the
+mouse button held down, move to the right. In doing this, you
+pull up a "rubber band" that allows you to visualize the new size
+of the 3D button. At the upper left corner of the 3D button, the
+current size of the rubber band is displayed with the information
+in character positions at the top and below that the pixel values.
+
+
+!image (!IMAGES)snap_23.img  Resize the root object
+
+!end_node
+
+
+!begin_node Step I-19: The work object of the window
+
+Enlarge the 3D button to 32 x 11 characters and release the left
+mouse button. Then enlarge the window of the object tree editor
+until you can see the 3D button completely.
+
+
+!image (!IMAGES)snap_24.img  The work object of the window
+
+!end_node
+
+
+!begin_node Step I-20: Place an inner frame
+
+In the toolbox window, click on the frame with title shown in the
+image and drag it to the new root object while holding down the
+mouse button.
+
+
+!image (!IMAGES)snap_25.img  Place an inner frame
+
+!end_node
+
+
+!begin_node Step I-21: Enlarge the inner frame
+
+Enlarge the inner frame so that it touches the 3D button at the
+top and bottom, but still leaves 1 character space left and right
+as can be seen in the image.
+
+
+!image (!IMAGES)snap_26.img  Enlarge the inner frame
+
+!end_node
+
+
+!begin_node Step I-22: invoke the object editor
+
+As before, invoke the object editor by double-clicking, but this
+time for the inner frame.
+
+
+!image (!IMAGES)snap_27.img  invoke the object editor
+
+!end_node
+
+
+!begin_node Step I-23: Enter values in the object editor for the inner frame
+
+In the object editor for the inner frame, please enter the data
+as shown in the image and exit the object editor by clicking "OK".
+
+
+!image (!IMAGES)snap_28.img  Enter values in the object editor for the inner frame
+
+!end_node
+
+
+!begin_node Step I-24: Enter data in the state editor for the inner frame
+
+Now call up the state editor for the inner frame by selecting
+the "State..." entry from the pop-up after doing a double-click.
+If any flags are selected in the state editor, clear them.
+
+
+!image (!IMAGES)snap_29.img  Enter data in the state editor for the inner frame
+
+!end_node
+
+
+!begin_node Step I-25: The revised work object
+
+After leaving the state editor with the "OK" button your work
+object should look something like this:
+
+
+!image (!IMAGES)snap_30.img  The revised work object
+
+!end_node
+
+
+!begin_node Step I-26: Add a text box
+
+Now drag the text box from the toolbox window to the inner frame
+as shown in the image and drop it there.
+
+
+!image (!IMAGES)snap_31.img  Add a text box
+
+!end_node
+
+
+!begin_node Step I-27: Position the text box
+
+Position the text box in the upper left corner of the inner frame
+as shown in the image. The text box should not obscure the frame.
+
+
+!image (!IMAGES)snap_32.img  Position the text box
+
+!end_node
+
+
+!begin_node Step I-28: Enlarge the text box
+
+Now enlarge the text box until it completely fills the inner frame.
+
+
+!image (!IMAGES)snap_33.img  Enlarge the text box
+
+!end_node
+
+
+!begin_node Step I-29: Invoke the object editor
+
+After a double-click on the text box, select the object editor from
+the pop-up that appears.
+
+
+!image (!IMAGES)snap_34.img  Invoke the object editor
+
+!end_node
+
+
+!begin_node Step I-30: Enter values in the object editor for the text box
+
+Enter the data as shown in the image and exit the object editor
+by clicking on the "OK" button.
+
+
+!image (!IMAGES)snap_35.img  Enter values in the object editor for the text box
+
+!end_node
+
+
+!begin_node Step I-31: Resize the text box to the text
+
+Now reduce the text box until it fits the height of the text
+as shown in the image.
+
+
+!image (!IMAGES)snap_36.img  Resize the text box to the text
+
+!end_node
+
+
+!begin_node Step I-32: Position the text box in the inner frame
+
+Next, position the text box in the middle of the inner frame as
+you can see in the picture.
+
+
+!image (!IMAGES)snap_37.img  Position the text box in the inner frame
+
+!end_node
+
+
+!begin_node Step I-33: Use the object tree as the work object of the window
+
+Close the window by clicking on the close box or by pressing
+the key combination Ctrl-U. This returns you to the object tree
+list which now shows the generated object tree "HelloWorldObj".
+
+Drag this object tree with the mouse from the list window to
+the still open window editor window.
+
+
+!image (!IMAGES)snap_38.img  Use the object tree as the work object of the window
+
+!end_node
+
+
+!begin_node Step I-34: Drag the icon over the input field of the work object
+
+As soon as you reach the input field of the work object with the
+dragged icon, a frame will appear indicating the acceptance of the
+object by the field. In this way you can immediately see where you
+can drag the object tree.
+
+You can use an object tree as a work object or as a toolbar object
+for a window.
+
+
+!image (!IMAGES)snap_39.img  Drag the icon over the input field of the work object
+
+!end_node
+
+
+!begin_node Step I-35: Release the icon above the input field of the work object
+
+Now release the dragged icon of the object tree above the
+input field of the work object. The name of the object tree
+"HelloWorkObj" is entered in the input field.
+
+You have now assigned the object tree as a work object for the
+window.
+
+
+!image (!IMAGES)snap_40.img  Release the icon above the input field of the work object
+
+!end_node
+
+
+!begin_node Step I-36: Switch to the window editor
+
+Now close the object tree list window and switch to the underlying
+window editor window.
+
+
+!image (!IMAGES)snap_41.img  Switch to the window editor
+
+!end_node
+
+
+!begin_node Step I-37: Entering functions in the window editor
+
+If you scroll down in the window editor, your will see the input
+fields for the various window functions. Here you can specify
+your own functions. If the fields are left blank, the functions
+defined by (!I)ACSpro(!i) will be used. In this example, please do
+not enter any functions so that the default (!I)ACSpro(!i) functions
+are used.
+
+
+!image (!IMAGES)snap_42.img  Entering functions in the window editor
+
+!end_node
+
+
+!begin_node Step I-38: Close the window editor
+
+Close the window editor by clicking on the "OK" button.
+
+
+!image (!IMAGES)snap_43.img  Close the window editor
+
+!end_node
+
+
+!begin_node Step I-39: Message from the window editor
+
+A message appears in the window editor that no create routine
+has been defined for Awindow.create and therefore Awi_selfcreate
+will be used.
+
+This is an indication for you, because Awi_selfcreate needs
+a pointer to the window structure being created as a parameter.
+Confirm this message with "OK".
+
+
+!image (!IMAGES)snap_44.img  Message from the window editor
+
+!end_node
+
+
+!begin_node Step I-40: The window list
+
+You will now return to the window list. Here you can see the now
+completed "HelloWorld" window. Close the window list.
+
+
+!image (!IMAGES)snap_45.img  The window list
+
+!end_node
+
+
+!begin_node Step I-41: The input values of the properties dialog
+
+Now click on the "BEHAVIOR" icon in the "General" window.
+Alternatively you can use the 'V' key. The "Behavior" dialog
+will appear.
+
+(!B)Note:(!b) As of (!I)ACSpro(!i) 3.0.0 the icon has been renamed
+"PROPERTIES" and has the keyboard shortcut 'E'. So from now
+on it will be called this as well. Some options here have also
+been moved to the "Main Module Preferences" dialog that is
+accessed through the "MAINMODUL" icon in 3.0.0 and will need
+to be set there.
+
+Please enter the displayed data into the dialog and close it by
+clicking on the "OK" button.
+
+
+!image (!IMAGES)snap_55.img
+
+!image (!IMAGES)snap_47.img  The input values of the properties dialog
+
+!end_node
+
+
+!begin_node Step I-42: The system messages
+
+If you now open the list of messages by clicking the "ALERT-BOX"
+icon, you will find the system messages. Of course you can edit
+and change these. However, since these are needed by (!I)ACSpro(!i) you
+should never delete any of them!
+
+
+!image (!IMAGES)snap_48.img  The system messages
+
+!end_node
+
+
+!begin_node Step I-43: Save the ASC file
+
+Close the alert list and save the ACS file by clicking on the
+floppy disk icon in the toolbar as shown in the image.
+
+By clicking the icon with the small readable "if" on it (which
+symbolizes the compiler source - second icon from the right on
+the toolbar) you can cause the (!I)GUI editor(!i) to generate the
+compiler source if it is not done automatically when the file
+is saved.
+
+
+!image (!IMAGES)snap_49.img  Save the ACS file
+
+!end_node
+
+
+!begin_node Step I-44: Exit ACS
+
+So now that everything is done in the (!I)ACSpro(!i) (!I)GUI editor(!i) please
+exit the (!I)GUI editor(!i).
+
+If you want to understand (!link [Example II] [A simple program: Hello World (Pure-Pascal, ACSpro 2.3.4)]) (Pure-Pascal), then click
+through the link here (!link [Step II-1] [Step II-1: Create the ACS files]).
+
+
+!image (!IMAGES)snap_51.img  Exit (!I)ACSpro(!i)
+
+!end_node
+
+
+!begin_node Step I-45: The files saved for the example
+
+Now back at the desktop - here it is jinnee - look in the
+directory where you saved the example and you should see
+the files shown here.
+
+
+!image (!IMAGES)snap_52.img  The files saved for the example
+
+!end_node
+
+
+!begin_node Step I-46: Create the Pure-C project file
+
+Start Pure-C and create a new project file, for example,
+"D:\ACSPRO\EXAMPLE\HELLO.C\HELLO.PRJ".
+
+Of course, if you are not using the Pure-C's own file
+selector then your screen will look different... ;-)
+
+
+!image (!IMAGES)snap_53.img  Create the Pure-C project file
+
+!end_node
+
+
+!begin_node Step I-47: The Pure-C project file
+
+Now enter the project file as shown and save it.
+
+
+!image (!IMAGES)snap_17.img  The Pure-C project file
+
+!end_node
+
+
+!begin_node Step I-48: Create the main module in Pure-C
+
+Now create a new file to be used as the main module, e.g.
+"D:\ACSPRO\EXAMPLE\HELLO.C\HELLO.C".
+
+Of course, if you are not using the Pure-C's own file
+selector then your screen will look different... ;-)
+
+
+!image (!IMAGES)snap_18.img  Create the main module in Pure-C
+
+!end_node
+
+
+!begin_node Step I-49: The main program in Pure-C
+
+Now enter the main program as shown and save it under the
+name specified in the project file.
+
+
+!image (!IMAGES)snap_19.img  The main program in Pure-C
+
+!end_node
+
+
+!begin_node Step I-50: The finished program
+
+Use Pure-C to compile and link the project. Then back
+at the desktop you should now see the following files.
+
+
+!image (!IMAGES)snap_20.img  The finished program
+
+!end_node
+
+
+!begin_node Step I-51: Start the "Hello World" program
+
+Start the program by double-clicking from the desktop.
+The constructed window will be displayed with the text
+"Hello World".
+
+The window is already fully functional. You can move,
+resize, iconify and reactivate, etc. This behavior is
+the standard (!I)ACSpro(!i) behavior that your new window has
+inherited without having to write a single line of code.
+The (!I)ACSpro(!i) standard menu is integrated as well. Through
+it you have, for example, access to the accessory menu.
+
+(!B)Note:(!b) Notice that the normal (!I)ACSpro(!i) behavior is to not
+allow the window to be resized larger than the size of the
+work object. Different behavior must be programmed yourself.
+Therefore, while you can make the Hello World window smaller,
+you can not make it bigger then the constructed object tree.
+You may verify this behavior if you wish by enlarging the
+object tree in the (!I)ACSpro(!i) (!I)GUI editor(!i).
+
+(!B)Note:(!b) The image below shows the program in 2D mode, which
+by default should (!I)not(!i) be turned on. Use the modules NO3D or
+ON3D respectively to switch between 2D and 3D modes.
+
+
+!image (!IMAGES)snap_50.img  Start the "Hello World" program
+
+!end_node
+
+
+!begin_node Step I-52: Exit the "Hello World" program
+
+Exit the "Hello World" program via the "File" menu or use the
+key combination Ctrl-Q.
+
+(!B)Congratulations, you have just developed your first (!I)ACSpro(!i)
+program!(!b)
+
+(!B)Note:(!b) The image below shows the program in 2D mode, which
+by default should (!I)not(!i) be turned on. Use the modules NO3D or
+ON3D respectively to switch between 2D and 3D modes.
+
+
+!image (!IMAGES)snap_54.img  Exit the "Hello World" program
+
+!end_node
+
+!end_node

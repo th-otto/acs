@@ -1,0 +1,162 @@
+!begin_node ACSpro is shareware
+!alias Shareware
+
+!subtoc [all] !depth 1
+
+Since July 1, 1996 (!I)ACSpro(!i) has been shareware. Due to the
+experience gained, (!I)ACSpro(!i) can only be distributed as limited
+shareware. The data required for activation will be sent immediately
+after successful (!link [Registration] [What does ACSpro cost?]) and delivered by me.
+
+
+!begin_node Updates, Upgrades
+
+Corrected or expanded versions of parts of the package are produced
+at irregular intervals (so-called (!I)updates(!i)), which are then
+available for free installation for registered users. These are
+stored in the Maus LL and on the Internet for (!link [Download] [Downloading ACSpro]).
+
+If you wish, you can be informed by email of these (!I)ACSpro(!i) updates.
+Send a short email and state which releases interest you
+((!I)ACSpro(!i)-(!I)GUI editor(!i), libraries, online help, modules, examples, etc.)
+or subscribe to the ACSpro News info letter or one of the other
+mailing lists. Please understand that this service can only be
+offered by email for efficiency and cost reasons. In addition, the
+three (!link [Mailing Lists] [The ACSpro mailing list]) ACSpro-News, ACSpro-Discussion and ACSpro-Beta
+are available to you and you can subscribe to stay up to date.
+
+If major innovations and/or improvements are released (so-called
+(!I)upgrades(!i)), it may be necessary to register again. Even so, any
+currently registered users will benefit from cheaper (!link [special prices] [What does ACSpro cost?]).
+As a rule, all registered users are informed of upgrades by email,
+fax or post.
+
+!end_node
+
+
+!begin_node What does ACSpro cost?
+!alias Registration
+
+ACSpro can be registered in different ways - the basis for each type
+of registration is the data from the registration dialog within the
+(!I)ACSpro(!i)-(/!Builders), which you must fill out correctly and send
+to me at the following address:
+
+!begin_preformatted
+     Martin Elsässer
+     Gartenäcker 30
+     86938 Schondorf a.A.
+     Deutschland
+!end_preformatted
+
+Upon successful registration you will receive a serial number (for
+previous customers this is identical to the previous serial number)
+and a key with which you can activate the full version of the
+restricted (!link [Shareware] [ACSpro is shareware]).
+
+!begin_enumerate
+  !item If you are using one of the 2.x versions of (!I)ACS(!i) up to
+     and including V2.2x:
+
+      !begin_xlist [C.O.D. (in Europe)]
+      !item [Kind]                   (!B)Price in DM/Euro(!b): Note
+
+      !item [Check]                  (!B)15,- Euro(!b): Your data will be sent
+                                        to you immediately
+
+      !item [Bank Transfer]          (!B)15,- Euro(!b): (!I)The name must appear
+                                        on the transfer!(!i)
+
+      !item [C.O.D. (in D)]          (!B)18,- Euro(!b): The data will be sent
+                                        directly on delivery
+
+      !item [C.O.D. (in Europe)]     (!B)28,- Euro(!b): The data will reach the
+                                        recipient by registered
+                                        mail
+      !end_xlist
+
+     Please don't forget to give me your (!B)serial number(!b)!
+
+  !item If you are using one of the 1.x versions (!I)ACS(!i).:
+
+      !begin_xlist [C.O.D. (in Europe)]
+      !item [Kind]                   (!B)Price(!b): Note
+
+      !item [Check]                  (!B)30,- Euro(!b): Your data will be sent
+                                        to you immediately
+
+      !item [Bank Transfer]          (!B)30,- Euro(!b): (!I)The name must appear
+                                        on the transfer!(!i)
+
+      !item [C.O.D. (in D)]         (!B) 33,- Euro(!b): The data will be sent
+                                        directly on delivery
+
+      !item [C.O.D (in Europe)]      (!B)43,- Euro(!b): The data will reach the
+                                        recipient by registered
+                                        mail
+      !end_xlist
+
+     Please don't forget to give me your (!B)serial number(!b)!
+
+  !item If you are not yet a registered (!I)ACSpro(!i) user:
+
+      !begin_xlist [C.O.D. (in Europe)]
+      !item [Kind]                   (!B)Price(!b): Note
+
+      !item [Check]                  (!B)50,- Euro(!b): Your data will be sent
+                                        to you immediately
+
+      !item [Bank Transfer]          (!B)50,- Euro(!b): (!I)The name must appear
+                                        on the transfer!(!i)
+
+      !item [C.O.D. (in D)]         (!B) 53,- Euro(!b): The data will be sent
+                                        directly on delivery
+
+      !item [C.O.D (in Europe)]      (!B)63,- Euro(!b): The data will reach the
+                                        recipient by registered
+                                        mail
+      !end_xlist
+!end_enumerate
+
+My bank details are:
+
+!begin_preformatted
+     Martin Elsässer
+     Postbank München
+     Kto: 1196 34 - 804
+     BLZ: 700 100 80
+!end_preformatted
+
+!end_node
+
+
+!begin_node Support
+
+Registered users receive (!link [written advice] [Contact]) to a limited extent for
+problems that arise in connection with the installation and use
+of the software program (!I)ACSpro(!i) to eliminate or circumvent them.
+
+However, no liability is assumed for the result of consultation, nor
+is there any guarantee that all program errors will be eliminated.
+In order to answer questions or to search for causes of errors, it
+may be necessary to send in some source code, even if it is only an
+example.
+
+     (!I)It is hereby expressly assured that all the sources and
+     data provided will be treated with absolute confidentiality
+     and that they will be deleted immediately after processing
+     the problem.(!i)
+
+The latest versions, information and many other examples, modules
+or documentation can be found in the Maus LL in the "ACSpro" group
+program section. On the internet they are over at the page:
+
+     (!url [http://acspro.atari.org/] [])
+
+However, they can only be found there shortly after being stored in
+the Maus LL, since they have to be loaded onto (foreign) FTP servers
+and the links and the pages have to be updated.
+
+!end_node
+
+!end_node

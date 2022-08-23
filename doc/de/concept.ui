@@ -1,0 +1,103 @@
+!begin_node Das Konzept des ACS-Systems
+
+!subtoc [all] !depth 1
+
+Hier fehlt noch etwas...
+
+!begin_node Click-Routine & Drag-Routine
+!alias Click-Routine
+!alias Drag-Routine
+
+Ein wesentliches Konzept von (!I)ACSpro(!i) ist die Hinterlegung von Click-
+bzw. Drag-Routinen direkt an GEM-AES-Objekte, die bei entsprechenden
+Benutzeraktionen aufgerufen werden und dann eine geeignete Aktion
+ausfÅhren.
+
+Diese Routinen kînnen schon im (!I)GUI-Editor(!i) definiert und editiert
+werden, (!I)ACSpro(!i) paût den generierten GEM-Objekt-Baum derart an, daû in
+dem Feld von AES-Objekte eines Objekt-Baums hinter z.B. einem Button-
+Objekt ein AOBJECT liegt, dessen Inhalt u.a. diese beiden Click- &
+Drag-Routinen sind. Um zu testen, ob hinter einem Objekt ein AOBJECT
+vorhanden ist, existiert die Objekt-Flags-Konstante (!link [AEO] [AEO]).
+
+Wenn aufgrund der Objekt-Flags ein Objekt angewÑhlt wird, wird dessen
+Click-Routine angesprungen. Dabei wird die Routine sofort
+angesprungen, wenn TOUCHEXIT gesetzt ist, sonst erst beim Loslassen
+einer Maustaste innerhalb der Objektausmaûe.
+
+Wenn ausgewÑhlte Objekte in (!I)ACSpro(!i) per Drag&Drop gezogen und
+verschoben werden, wird die Drag-Routine des Zielobjekts aufgerufen,
+wenn die Maustaste dort losgelassen wird. Diese Routine sollte dann
+die sog. Auswahl-Liste ACSblk->Aselect auswerten, in der die Objekte
+mit dem Typ und den Daten gespeichert sind.
+
+!end_node
+
+!begin_node ACSpro-UserDefs
+!alias Benutzerdefinierte Objekte
+
+UserDef sind ein leistungstarkes Konzept GEM zu erweitern. Allerdings
+beschrÑnkt sich dies nur auf das graphische Aussehen. Die Parameter
+sind in einem 32-Bit-Wort unterzubringen.
+
+(!I)ACSpro(!i) erweitert nun dieses Konzept in objektorientierter Weise durch
+verschiedene Punkte:
+
+!begin_itemize
+   !item Die Datenstruktur wird erweitert und heiût nun AUSERBLK, sie hat
+     3 Userpointer und einen Zeiger auf eine Service-Routine. Die
+     Userpointer erlauben weiterer Parameter mitzugeben, wie zum
+     Beispiel Strings.
+
+   !item Die Service-Routine erlaubt analog zu der Service-Routine der
+     Fenster, Dienste anzufordern bzw. Nachrichten an das UserDef(-
+     Objekt) zu senden. Beim Erzeugen mittels Aob_create wird die
+     Nachricht (!link [AUO_CREATE] [AUO_CREATE]) an das UserDef gesandt. Dann kann das
+     UserDef, wenn nîtig, weiteren Speicher anfordern, und/oder sich
+     initialisieren. Ein Userpointer wird dazu verwandt, diesen
+     zusÑtzlichen Speicher zu referenzieren. Analog dazu wird beim
+     Freigeben mit Aob_delete den UserDefs die Nachricht (!link [AUO_TERM] [AUO_TERM])
+     zugesandt.
+!end_itemize
+
+Wird das UserDef anders erzeugt, muû der Programmierer fÅr die das
+Absenden von (!link [AUO_CREATE] [AUO_CREATE]) bzw. (!link [AUO_TERM] [AUO_TERM]) sorgen.
+
+UserDefs kînnen weitere Nachrichten empfangen. Damit kann die
+FunktionalitÑt erweitert werden. Wie weit das gehen kann, sieht man am
+Userdef-Editor.
+
+Es gibt Nachrichten, die von allen UserDefs bearbeitet werden sollten.
+
+(!I)ACSpro(!i) bietet im Lieferumfang die folgenden UserDefs an:
+
+
+!begin_table [llll]
+ Anzeige        !! click       !! Service       !!
+ A_boxed        !! Aus_boxed   !! Auo_boxed     !! Eingabefeld mit Blockselektion.
+ A_checkbox     !! -           !! Auo_string    !! Ankreuzbare Box mit Text
+ (!link [A_radio button] [A_checkbox])  !! -    !! Auo_string    !! AnwÑhlbarer Kreis mit Text
+ A_innerframe   !! -           !! Auo_string    !! Rahmen mit Text
+ A_pattern      !! -           !! -             !! Zeichnet VDI-FÅllmuster
+ A_arrows       !! -           !! -             !! Zeichnet VDI-Linien/Pfeile
+ A_select       !! -           !! -             !! Selektiert mit Rahmen statt mit Invertierung
+ A_ftext        !! -           !! Auo_ftext     !! Gibt formatierten mehrzeiligen Text aus
+ A_3Dbutton     !! -           !! Auo_string    !! Button im 3D-Stil.
+ A_cycle        !! Aus_cycle   !! Auo_cycle     !! Cyclebutton, erzeugt Popup beim AnwÑhlen
+ A_picture      !! -           !! Auo_picture   !! Zeichnet ein Bild mit Farben
+ A_editor       !! Aus_editor  !! Auo_editor    !! Gibt Texte aus (Editor, Selektoren, Protokolle)
+ A_slider       !! Aus_slider  !! Auo_slider    !! horizontaler bzw. vertikaler (!link [Slider] [Slider])
+ A_wislider     !! -           !! Auo_wislider  !! Simuliert mit den GEM-Windowslidern einen A_slider
+ A_title        !! -           !! Auo_string    !! Unterstrichener Text
+!end_table
+
+!end_node
+
+!begin_node Das Kontext-MenÅ
+!alias Kontext-MenÅ
+
+Hier fehlt noch etwas...
+
+!end_node
+
+!end_node

@@ -1,0 +1,162 @@
+!begin_node ACSpro ist Shareware
+!alias Shareware
+
+!subtoc [all] !depth 1
+
+Seit dem 1. Juli 1996 ist (!I)ACSpro(!i) Shareware. Aufgrund der gesammelten
+Erfahrungen kann (!I)ACSpro(!i) nur als eingeschr„nkte Shareware vertrieben
+werden. Die zur Freischaltung n”tigen Daten werden sofort nach
+erfolgreicher (!link [Registrierung] [Registrierung]) von mir geliefert.
+
+!begin_node Updates, Upgrades
+
+In unregelm„igen Abst„nden werden korrigierte oder erweiterte
+Versionen von Teilen des Paketes angefertigt (sog. (!I)Updates(!i)), die dann
+zur freien Installation fr registrierte Anwender zur Verfgung
+stehen. In der Maus LL und im Internet werden diese zum (!link [Download] [Download von ACSpro])
+abgelegt.
+
+Auf Wunsch werden Sie gerne per eMail von diesen Updates rund um
+(!I)ACSpro(!i) informiert. Senden Sie hierzu eine kurze eMail und geben Sie
+darin an, welche Ver”ffentlichungen Sie interessieren ((!I)ACSpro(!i)-(!I)GUI-
+Editor(!i), Bibliotheken, Online-Hilfe, Module, Beispiele, etc.) oder
+tragen Sie sich in den Info-Letter ACSpro-News oder eine der anderen
+Mailing-Listen ein. Bitte haben Sie Verst„ndnis dafr, da dieser
+Service aus Effizienz-und Kostengrnden nur per eMail angeboten werden
+kann. Ferner stehen Ihnen mittlerweile die drei (!link [Mailing-Listen] [Die ACSpro-Mailing-Listen])
+ACSpro-News, ACSpro-Diskussion sowie ACSpro-Beta zur Verfgung, in
+welche Sie sich eintragen k”nnen, um immer auf dem Laufenden zu sein.
+
+Bei Ver”ffentlichung von gr”eren Neuerungen und/oder Verbesserungen
+(sog. (!I)Upgrades(!i)) kann ein erneutes Registrieren notwendig sein. Hierbei
+werden fr bereits registrierte Benutzer gnstigere (!link [Sondertarife] [Was kostet ACSpro?])
+gelten. Von Upgrades werden in der Regel alle registrierten Benutzer
+per EMail, Fax oder Post informiert.
+
+!end_node
+
+
+!begin_node Was kostet ACSpro?
+!alias Registrierung
+
+ACSpro kann auf verschiedenen Wegen registriert werden - die Grundlage
+fr jede Registrierung stellen die Daten aus dem Registrierungsdialog
+innerhalb des (!I)ACSpro(!i)-(/!Builders) dar, die Sie unbedingt korrekt
+ausfllen und an mich an folgende Adresse schicken:
+
+!begin_preformatted
+     Martin Els„sser
+     Garten„cker 30
+     86938 Schondorf a.A.
+     Deutschland
+!end_preformatted
+
+Sie erhalten bei erfolgreicher Registrierung eine Seriennummer (Fr
+bisherige Kunden ist diese identisch zur bisherigen Seriennummer) und
+einen Schlssel, mit dessen Hilfe Sie die eingeschr„nkte (!link [Shareware] [Shareware])-
+Version zur Vollversion freischalten k”nnen.
+
+!begin_enumerate
+  !item Falls Sie eine der Versionen (!I)ACS(!i) 2.x bis einschl. V2.2x
+     verwenden:
+
+      !begin_xlist [Nachnahme (in Europa)]
+      !item [Art]                    (!B)Preis in DM/Euro(!b): Hinweis
+
+      !item [Scheck]                 (!B)15,- Euro(!b): Ihre Daten werden Ihnen
+                             umgehend zugeschickt
+
+      !item [Kontoberweisung]       (!B)15,- Euro(!b): (!I)Auf der šberweisung mu der
+                             Name stehen!(!i)
+
+      !item [Nachnahme (in D)]       (!B)18,- Euro(!b): Die Daten werden auf dem
+                             Nachnahmeweg unmittelbar zugestellt
+
+      !item [Nachnahme (in Europa)]  (!B)28,- Euro(!b): Die Daten erreichen per
+                             Einschreiben den Empf„nger
+      !end_xlist
+
+     Bitte vergessen Sie nicht, mir Ihre (!B)Seriennummer(!b) mitzuteilen!
+
+  !item Falls Sie eine der Versionen (!I)ACS(!i) 1.x verwenden:
+
+      !begin_xlist [Nachnahme (in Europa)]
+      !item [Art]                    (!B)Preis(!b): Hinweis
+
+      !item [Scheck]                 (!B)30,- Euro(!b): Ihre Daten werden Ihnen
+                             umgehend zugeschickt
+
+      !item [Kontoberweisung]       (!B)30,- Euro(!b): (!I)Auf der šberweisung mu der
+                             Name stehen!(!i)
+
+      !item [Nachnahme (in D)]       (!B) 33,- Euro(!b): Die Daten werden auf dem
+                             Nachnahmeweg unmittelbar zugestellt
+
+      !item [Nachnahme (in Europa)]  (!B)43,- Euro(!b): Die Daten erreichen per
+                             Einschreiben den Empf„nger
+      !end_xlist
+
+     Bitte vergessen Sie nicht, mir Ihre (!B)Seriennummer(!b) mitzuteilen!
+
+  !item Falls Sie bislang noch kein registrierter (!I)ACSpro(!i)-Anwender sind:
+
+      !begin_xlist [Nachnahme (in Europa)]
+      !item [Art]                    (!B)Preis(!b): Hinweis
+
+      !item [Scheck]                 (!B)50,- Euro(!b): Ihre Daten werden Ihnen
+                             umgehend zugeschickt
+
+      !item [Kontoberweisung]       (!B)50,- Euro(!b): (!I)Auf der šberweisung mu der
+                             Name stehen!(!i)
+
+      !item [Nachnahme (in D)]       (!B)53,- Euro(!b): Die Daten werden auf dem
+                             Nachnahmeweg unmittelbar zugestellt
+
+      !item [Nachnahme (in Europa)]  (!B)63,- Euro(!b): Die Daten erreichen per
+                             Einschreiben den Empf„nger
+      !end_xlist
+!end_enumerate
+
+Meine Bankverbindung lautet:
+
+!begin_preformatted
+     Martin Els„sser
+     Postbank Mnchen
+     Kto: 1196 34 - 804
+     BLZ: 700 100 80
+!end_preformatted
+
+!end_node
+
+
+!begin_node Support
+
+Registrierte Benutzer erhalten bei Problemen, die im Zusammenhang mit
+der Installation und Nutzung des Softwareprogrammes (!I)ACSpro(!i) entstehen,
+im begrenzten Umfang (!link [schriftliche Beratung] [Kontakt-Aufnahme]) zur Beseitigung oder
+Umgehung der Probleme.
+
+Es wird jedoch keine Haftung fr das Ergebnis einer Beratung
+bernommen, noch eine Gew„hr dafr, da alle Programmfehler beseitigt
+werden. Zur Beantwortung von Fragen oder zur Suche nach Fehlerursachen
+kann es notwendig sein, da ein - auch nur beispielhafter - Quellcode
+eingesandt wird.
+
+     (!I)Es wird hiermit ausdrcklich zugesichert, da alle zur
+     Verfgung gestellten Sourcen und Daten absolut vertraulich
+     behandelt werden und nach Bearbeitung des Problemes sofort
+     restlos gel”scht werden.(!i)
+
+Die aktuellsten Versionen, Informationen und viele weitere Beispiele,
+Module oder Dokumentationen finden Sie in der Maus LL im
+Gruppenprogrammteil "ACSpro". Im Internet sind sie ber die Seite
+
+     (!url [http://acspro.atari.org/] [])
+
+aus abrufbar. Dort sind sie jedoch erst kurze Zeit nach dem Ablegen in
+der Maus LL zu finden, da sie auf (fremde) FTP-Server geladen werden
+mssen und die Links sowie die Seiten zu aktualisieren sind.
+
+!end_node
+
+!end_node

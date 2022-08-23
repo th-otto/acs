@@ -1,0 +1,1291 @@
+!begin_node Der ACSpro-GUI-Editor
+
+Optisch ausgefeilte und intuitiv zu bedienende Benutzeroberfl„chen
+ben”tigen ein Gestaltungsprogramm, das diesen besonderen
+Erfordernissen Rechnung tr„gt, dabei leicht zu handhaben ist, keine
+unn”tigen Beschr„nkung aufwirft und individuell konfigurierbar ist:
+
+                            (!B)Willkommen bei(!b)
+
+
+!image (!IMAGES)img00866.img
+
+Da der (!I)GUI-Editor(!i) selbst mit (!I)ACSpro(!i) entwickelt wurde, partizipiert er
+von allen Vorteilen und kann dementsprechend modular erweitert oder
+als Accessory eingesetzt werden. Er besitzt die Menleiste von
+PUR_DESK, und legt im Module-Fenster eine Fensterstruktur als Icon ab,
+die per Doppelklick ge”ffnet werden kann und (!link [allgemeine Einstellungen] [Die Einstellungen])
+vom (!I)GUI-Editor(!i) beinhaltet.
+
+(!I)ACSpro(!i) bietet die M”glichkeit, eigene Editoren in den (!I)GUI-Editor(!i)
+einzubinden. Diese mssen sich in dem Ordner befinden, aus dem der
+Builder gestartet wird und mssen die Endung AME besitzen. Der (!I)GUI-
+Editor(!i) l„dt dann beim Start aIle Editoren nach. Wenn man einen Editor
+nach dem Start laden m”chte, so w„hlt man einfach den Desktop-
+Menpunkt Module Nachladen an und selektiert den entsprechenden
+Editor.
+
+!subtoc [all] !depth 1
+
+!begin_node Die Einstellungen
+
+Im Fenster Allgemein werden die (!I)ACSpro(!i) betreffenden Einstellungen
+gemacht.
+
+
+!image (!IMAGES)img00792.img Screen-Shot des Fensters unter (!link [MagiCMac] [Mag!X]) 6.1
+(!nl)
+
+!begin_xlist [Teilefenster mitfhren]
+ !item [(!link [Registrierung] [Registrierung])]           Hier tragen Sie bitte exakt die Daten aus dem
+                         Registrierungsformular ein, um in den vollen
+                         Genu der Funktionalit„t des (!I)ACSpro(!i)-(!I)GUI-
+                         Editor(!i) zu kommen.
+
+ !item [Einrasten]               Der Schalter Einrasten legt fest, ob bei
+                         Positions- und Gr”enver„nderungen Objekte in
+                         DiaIogen auf Zeichenpositionen einrasten oder
+                         nicht.
+
+ !item [Kopiere Index]           Beim Kopieren von Objektb„umen k”nnen die
+                         Bezeichner der Indizes mitkopiert werden.
+                         Innerhalb derselben Datei kann das sehr
+                         l„stig werden, da doppelt vorkommende Indizes
+                         nicht erIaubt sind und daher ein neuer
+                         Bezeichner vom Benutzer verlangt wird. Ist
+                         das FIag "Kopiere Index" nicht gesetzt,
+                         werden die Indizes nicht mitkopiert.
+
+ !item [Kopiere Bildteil]        Werden Icons oder Images innerhalb derselben
+                         Datei kopiert, hat man die M”glichkeit das
+                         Objekt zu kopieren oder nur zu referenzieren.
+                         Das Flag "Kopiere Bildteil" erlaubt, den
+                         geeigneten Modus zu w„hlen.
+
+ !item [Selbstsichern]           Dieses Flag bestimmt, ob beim Verlassen des
+                         Builders automatisch eine Konfigurationsdatei
+                         (siehe Sichern) abgespeichert wird oder
+                         nicht.
+
+ !item [Schnell Sichern]         Normalerweise werden vor dem Sichern einer
+                         ACS-Datei alle noch offenen Editorfenster mit
+                         OK geschlossen, um Inkonsistenzen zu
+                         vermeiden. Ist dieses Flag gesetzt, so
+                         geschieht dies nicht: alle Fenster bleiben in
+                         ge”ffnetem Zustand. Allerdings werden dann
+                         nderungen, die noch nicht mit OK
+                         abgeschlossen wurden, beim Sichern nicht
+                         bercksichtigt.
+
+ !item [Teilefenster mitfhren]  Das Teilefenster mit allen verfgbaren
+                         Objekten kann automatisch links am
+                         Objektfenster mitgefhrt werden, so da man
+                         immer am aktuell bearbeiteten Objektbaum das
+                         Teilefenster im Zugriff hat.
+
+ !item [Bildraster]              Hier kann der Rasterwert festgelegt werden,
+                         auf dessen Vielfaches bei Icon- und Image-
+                         Operationen die Positionen schnappen sollen.
+                         Die Werte 1 (kein Einrasten), 2, 4 und 8 sind
+                         w„hlbar.
+
+ !item [Hilfe]                   Mit der HELP-Taste kann man aus fast allen
+                         Dialogen direkt eine Online-Hilfe mit einem
+                         externen Programm ansprechen. Hier kann
+                         konfiguriert werden, welches Programm das
+                         ist, das bei Bedarf auch nachgeladen wird.
+                         Normalerweise wird hier wohl der ST-Guide von
+                         Holger Weets eingetragen sein, der in der
+                         Maus LL oder von den (!I)ACSpro(!i)-Internetseiten
+                         geladen werden kann.
+
+ !item [Sichern]                 Es wird sofort der aktueIlen Zustand des
+                         (!I)GUI-Editor(!i) gesichert. Der (!I)GUI-Editor(!i) sichert
+                         die Dateinamen aller momentan ge”ffneten
+                         (!I)ACSpro(!i)-Dateien und die Einstellungen der
+                         einzeInen Editoren in einer
+                         Konfigurationsdatei. Nach einem erneuten
+                         Start des (!I)GUI-Editor(!i) wird genau dieser
+                         Zustand wiederhergestellt.
+
+!end_xlist
+
+!end_node
+
+
+!begin_node Das Fenster Generelles
+
+Jede (!I)ACSpro(!i)-Oberfl„chendatei, die bearbeitet wird, wird durch ein
+generelles Fenster repr„sentiert, das in die (!link [Toolbar] [Die Toolbar des Fensters "Generelles"]) und die
+Objektliste unterteilt ist.
+
+
+!image (!IMAGES)img00791.img Screen-Shot des Fensters unter (!link [MagiCMac] [Mag!X]) 6.1
+(!nl)
+
+Dieses Fenster stellt die Schaltzentrale fr jede (!I)ACSpro(!i)-Datei dar.
+Durch Klick auf die Icons der Objektliste gelangen Sie in weitere
+Dialoge oder k”nnen in eine Objektliste verzweigen. Die Icons bedeuten
+hierbei folgendes:
+
+!begin_xlist [Objekte, Mens, Popup]
+ !item [Hauptmodul]             šber dieses Icon wird der Hauptmodul-Dialog
+                        aufgerufen. Dort werden die Eigenschaften des
+                        Hauptmoduls eingetragen.
+
+ !item [Eigenschaft]            Dieses Icon verzweigt in den Eigenschaften-
+                        Dialog.
+
+ !item [Fenster]                Die Objektliste aller Fenster wird angezeigt.
+                        šber diese erreichen Sie den Fenster-Editor.
+
+ !item [Objekte, Mens, Popup]  Die Objektliste von den Work-, Men und
+                        Popup-Objekten erscheinen hiernach. Diese
+                        verzweigen dann in den Objektbaum-Editor.
+
+ !item [Referenz]               Die Objektliste der Referenzen erscheint, aus
+                        der heraus Sie Ihre Strukturen und Routinen
+                        mit dem integrierten Editor entwickeln k”nnen.
+
+ !item [Ikonen]                 Hiermit erreichen Sie die Objektliste der
+                        (Farb-)Icons, jedes Icon wird durch Icon-
+                        Editor bearbeitet.
+
+ !item [Bilder]                 Es erscheint die Objektliste der Bilder
+                        (monochrome Grafiken), die jeweils in den
+                        Bild-Editor verzweigt.
+
+ !item [Alert-Box]              Die Objektliste der Alert-Meldungen ist hier
+                        erreichbar. Jede Meldung wird im Alert-Editor
+                        gestaltet.
+
+ !item [Texte]                  Die Objektiste alle Texte fr die Oberfl„che
+                        befinden sich hier, die Texte werden teilweise
+                        aus anderen Objekten referenziert oder manuell
+                        angelegt. Jeder String/Text kann im String-
+                        Editor nachtr„glich ver„ndert werden.
+
+ !item [M„use]                  Die Objektliste Ihrer Mausformen erscheint
+                        hier - jede Mausform wird im Mausform-Editor
+                        gestaltet.
+
+ !item [Palette]                Dem Hauptmodul k”nnen Sie den 32 Positionen
+                        der Adescr-Struktur neue Mausformen zuordnen.
+
+ !item [Tedinfo]                Die Objektliste der TEDINFO-Strukturen ist
+                        hier ersichtlich. Diese k”nnen im TEDINFO-
+                        Editor nur eingesehen werden.
+
+ !item [User-Block]             Alle USERBLK-Strukturen sind hinter dieser
+                        Objektliste zug„nglich. Durch den jeweiligen
+                        USERBLK-Editor wird nur ein Hinweis gegeben.
+
+ !item [Daten]                  Diese Objektliste enth„lt interne Daten - der
+                        DATA-Editor zeigt dementsprechend nur einen
+                        Hinweis.
+!end_xlist
+
+Alternativ zur Mausbedienung k”nnen auch folgende Tasten verwendet
+werden
+
+!begin_table [|ll|ll|] !hline
+  H      !! Hauptmodul-Dialog           !! A        !! Alert-Editor
+  V      !! Verhalten-Dialog            !! T        !! String-Editor
+  F      !! Fenster-Editor              !! Shift-M  !! Mausformeditor
+  O,M,P  !! Objektbaum-Editor           !! Shift-P  !! Palette der Mausformen
+  R      !! Referenzenliste mit Editor  !! Shift-T  !! TEDINFO-Editor
+  I      !! Icon-Editor                 !! U        !! USERBLK-Editor
+  B      !! Bild-Editor                 !! D        !! DATA-Editor
+!hline
+!end_table
+
+!end_node
+
+
+!begin_node Die Toolbar des Fensters "Generelles"
+
+
+!image (!IMAGES)img00790.img Toolbar des Fensters "Generelles"
+(!nl)
+
+!begin_xlist [Protokoll erstellen]
+ !item [Speichern]          Dient zum Sichern der aktuelIen Datei. Zun„chst
+                    werden, faIIs das FIag Schnellsichern nicht
+                    gesetzt ist, alle offenen Editoren mit OK
+                    geschlossen um sicherzustelIen, da get„tigte
+                    Anderungen auch gesichert werden Anschlieend wird
+                    die Datei gesichert (Tastatur: Control-S).
+
+ !item [Speichern unter]    Dient zum Sichern der aktuellen Datei unter einem
+                    neuen Namen. Eine Dateiauswahlbox erscheint. Wird
+                    dort ein gltiger Dateiname eingeben, wird die
+                    Datei unter diesem gesichert Die ursprngliche
+                    Datei bleibt erhalten. Ansonsten verh„lt sich
+                    dieser Punkt wie Sichern (Tastatur: Control-M).
+
+ !item [Backup erstellen]   Legt eine Backup-Kopie der Datei an - das Format
+                    der Dateinamen und die Konfiguration des Pfades
+                    lassen Sie sich bitte unter Backup erkl„ren
+                    (Tastatur: Control-B).
+
+ !item [(!link [Protokoll] [Protokoll]) erstellen] Es wird das Protokoll der ACS-Datei erstellt, das
+                    die Informationen zur aktuellen Datei enth„lt. Das
+                    (!link [Protokoll] [Protokoll]) wird in die Datei mit der Endung LST
+                    geschrieben (Tastatur: Alt-P).
+
+ !item [Compiler-Ausgabe]   Dieser Punkt dient zum Ausgeben der Dateien, die
+                    fr die šbersetzung des Projekts ben”tigt werden.
+                    Die aIten Dateien werden einfach berschrieben
+                    (Tastatur: Alt-C).
+
+ !item [ACS-Datei in CEWS]  Wenn eine EWS-Datei fr ein geladenes CEWS-Modul
+                    existiert, die den Namen der ACS-Datei besitzt,
+                    wird diese hiermit automatisch in das CEWS-Modul
+                    bernommen.
+!end_xlist
+
+!end_node
+
+
+!begin_node Der Hauptmodul-Dialog
+
+Im Hauptmodul-Dialog werden die Daten des Hauptmodul angegeben.
+
+
+!image (!IMAGES)img00789.img
+
+     Wenn die (!I)ACSpro(!i)-Datei als Hauptmodul eingestellt wird,
+     werden alle Eingabem”glichkeiten freigegeben, andernfalls
+     sind sie gesperrt. Wenn Sie ein Hauptmodul wieder als
+     normales Modul verwenden m”chten, werden Sie beim Beenden
+     des Dialoges gefragt, ob die fr ein Hauptmodul automatisch
+     angelegten Alerts gel”scht werden sollen. Bisher ist dies
+     bereits beim Anklicken der Checkbox (im Eigenschaften-
+     Dialog) geschehen.
+
+
+!image (!IMAGES)img00788.img
+
+     Hier wird der Meneintrag im Accessory-Betrieb eingegeben.
+     Der (!I)ACSpro(!i)-(!I)GUI-Editor(!i) fgt automatisch vor den eingegebenen
+     Namen zwei fhrende Leerzeichen beim Accessory-Namen
+     einzugeben, um den Namen im Accessory-Betrieb auch korrekt
+     auszurichten. Sie brauchen sich darum nicht zu kmmern.
+
+     Eine besondere Stellung nimmt in (!I)ACSpro(!i) das Root- oder
+     Wurzelfenster ein. Sie k”nnen die Root-Fenster fr den
+     Betrieb als Applikation und/oder als Accessory eingegeben
+     oder per Drag&Drop aus der Fensterliste bernehmen. Die
+     Fensterliste kann durch Klick auf die Beschriftung "ACC-
+     Fenster" oder "Oberfl„che" aufgerufen werden.
+
+     Wenn der Eintrag hinter "Oberfl„che" freigelassen wird, wird
+     dafr der pure Desktop PUR_DESK herangezogen. Andernfalls
+     ist hier der Name einer Fensterstuktur einzutragen oder per
+     Drag&Drop aus der Fenster-Liste zu ziehen.
+
+     In der Regel sollte das Root-Fenster sich um grundlegende
+     Funktionen des Programmes, um die Menleiste und um die
+     Iconverwaltung kmmern.
+
+     Es kann wnschenswert sein, da das Programm im Accessory-
+     Modus ein anderes Fenster als Wurzelfenster benutzen soll -
+     dies ist dann im Eintrag ACC-Fenster einzugeben.
+
+
+!image (!IMAGES)img00787.img
+
+     In diesem Bereich k”nnen komfortabel die Namen der
+     Initialisierungsroutinen angeben werden. Falls die beiden
+     Eingabefelder leer bleiben, so werden wie bisher die
+     Funktionen ACSinit und ACSinit0 (optional) ben”tigt. Im
+     Popup k”nnen Sie den XAcc-Typ (siehe XAcc-Dokumentation)
+     Ihrer Anwendung angeben. Dieser Typ wird automatisch beim
+     XAcc-(!link [Protokoll] [Protokoll]) anderen Anwendungen bermittelt.
+
+
+!image (!IMAGES)img00786.img
+
+     In diesem Bereich werden die Funktionsnamen eingetragen, die
+     ber den Zeiger ACSblk in die entsprechenden Eintr„ge der
+     Ablk-Struktur geschrieben werden sollen. Die Funktionen
+     werden automatisch in die Referenzliste eingetragen. šber
+     diese Liste kann der Code der Funktion im integrierten
+     Editor direkt implementiert werden.
+
+
+!image (!IMAGES)img00785.img
+
+     Die hier eingegebenen Funktionen werden ber den Zeiger
+     ACSblk in die entsprechenden Komponenten der Struktur Ablk
+     eingetragen. Sie werden vor entsprechenden Ereignissen zur
+     Protokollierung und/oder Manipulation aufgerufen. Die
+     Funktionen werden automatisch in die Referenzliste
+     eingetragen. šber diese Liste kann der Code der Funktion im
+     integrierten Editor direkt implementiert werden.
+
+
+!image (!IMAGES)img00784.img
+
+     In diesem Abschnitt sind die Funktionen zur Kommunikation
+     mit anderen Anwendungen zusammengefat. Die Funktion wird
+     automatisch in die Referenzliste eingetragen. šber diese
+     Liste kann der Code der Funktion im integrierten Editor
+     direkt implementiert werden.
+
+     Im Moment gibt es hier nur die globale GEMScript-Funktion.
+
+
+!image (!IMAGES)img00783.img
+
+     Die in diesem Bereich zusammengefaten Checkboxen steuern
+     die Initialisierung der entsprechenden
+     Kommunikationsprotokolle beim Start Ihrer Anwendung.
+
+     Falls speziell beim OLGA-Protokoll der OLGA-Manager
+     nachgestartet wurde, k”nnen Sie Ihre Anwendung warten
+     lassen, bis dieser ansprechbar ist. Dies verz”gert nur den
+     Start Ihrer Anwendung und ist eigentlich unn”tig, da sich
+     der OLGA-Manager gem„ der OLGA-Dokumentation selbst beim
+     Nachstarten bei allen Anwendungen anmeldet. Fr
+     "Sicherheits-Fanatiker" ist diese Option denoch
+     verfgbar.... ;-)
+
+
+!image (!IMAGES)img00782.img
+
+     Die Optionen in diesem Bereich werden fr die
+     Initialisierung des Verhalten-Flags in der Struktur Adescr
+     (ACSblk->description) verwendet. šber BubbleGEM stehen Ihnen
+     hier fr jedes Flag Kurzerkl„rungen bereit.
+
+     (!B)Hinweis:(!b) Bitte beachten Sie, da das Flag AB_SMARTREDRAW
+     beim Start Ihrer Anwendung stets gesetzt wird, um Problemen
+     mit dem Smart-Redraw von MagiC vorzubeugen.
+
+
+!image (!IMAGES)img00781.img
+
+     Die beiden Werte in diesem Bereich geben die Ausmae eines
+     virtuellen Rahmens um den Desktop an. (!I)ACSpro(!i) legt kein
+     Fenster auerhalb dieses Rahmens. Positive Werte haben einen
+     Rahmen innerhalb des Dekstops zur Folge, negative Werte
+     gestatten das Herausschieben von Fenstern aus dem Desktop.
+
+     (!B)Hinweis:(!b) Beachten Sie bitte, da bei einem zu kleinen Rahmen
+     auerhalb des Dekstops das Ausblenden Ihrer Anwendung unter
+     MagiC nicht mehr funktioniert - MagiC blendet eine Anwendung
+     aus, indem alle Fenster auerhalb des sichtbaren Bereichs
+     verschoben werden...
+
+(!B)Hinweis:(!b) Kennern der Datenstruktur Aconfig f„llt auf, da die Daten
+der in der Struktur Aconfig enthaltenen Struktur UCfgInfo momentan
+noch nicht eingegeben werden k”nnen. Da die Konfigurationsstrings
+momentan noch nicht automatisch geladen und ausgewertet werden, ist
+dies nicht besonders schlimm. In einer der n„chsten (!I)ACSpro(!i)-Versionen
+wird sowohl die Auswertung der Config-Strings als auch die
+Einstellungen in UCfgInfo im (!I)GUI-Editor(!i) enthalten sein.
+
+!end_node
+
+
+!begin_node Der Eigenschaften-Dialog
+
+In diesem Dialog k”nnen fr jede ACS-Datei einige Optionen und
+allgemeine Werte eingestellt werden.
+
+
+!image (!IMAGES)img00780.img Screen-Shot des Fensters unter (!link [MagiCMac] [Mag!X]) 6.1
+(!nl)
+
+Die einzelnen Abschnitte im Detail:
+
+
+!image (!IMAGES)img00779.img
+
+!begin_itemize
+   !item Bei der Ausgabe kann man zwischem der C- und Pascal-Syntax
+     w„hlen. Ist die Ausgabe aktiviert, werden die Sourcecodes beim
+     Absichern der ACS-Datei gleich miterzeugt.
+
+   !item Fr die Wahl der aktuellen Sprache fr die Benutzeroberfl„che
+     kann zwischen vier M”glichkeiten gew„hlt werden. Wird die Sprache
+     gewechselt, mu der Dialog erst mit OK beendet werden, alle
+     relevanten Fenster werden daraufhin geschlossen und die internen
+     Textobjekte ausgetauscht.
+
+     Dieses Verhalten wird in Zukunft anders sein. Wie in der ToDo-
+     Liste beschrieben ist, wird (!I)ACSpro(!i) in einer der n„chsten
+     Versionen alle Sprachen exportieren, zwischen denen dann per
+     Compiler-Schalter gewechselt werden kann.
+!end_itemize
+
+
+!image (!IMAGES)img00778.img
+
+!begin_itemize
+   !item Wollen Sie die von Ihnen entwickelten Prototypen und Routinen fr
+     den Compiler gleich mitexportieren, mssen Sie den Schalter
+     Prototypen aktivieren.
+
+   !item Mit 'lokal' werden alle Definitionen als statisch exportiert,
+     damit sich in mehreren Modulen die Bezeichner nicht
+     berschneiden. In Pascal hat der Schalter keine Bedeutung.
+
+   !item Eine Liste der Definitionen und Bezeichner kann man sich
+     zus„tzlich bei jedem Absichern automatisch anfertigen lassen.
+!end_itemize
+
+
+!image (!IMAGES)img00777.img
+
+!begin_itemize
+   !item Mit 'abc=ABC' weisen Sie ACSpro an, die Objektnamen automatisch
+     in Grobuchstaben zu wandeln.
+
+   !item Wollen Sie ein Backup anlegen, sollte der Schalter aktiv sein und
+     ein Pfad daneben eingetragen sein. Dann wird automatisch bei
+     (!B)jedem(!b) Absichern der ACS-Datei auch eine Backup-Kopie in dem
+     Ordner angelegt. Manuell k”nnen Sie jederzeit ein Kopie in der
+     Toolbar des (!link [Fensters "Generelles"] [Das Fenster Generelles]) anlegen.
+!end_itemize
+
+!end_node
+
+
+!begin_node Der Fenster-Editor
+
+Der Fenstereditor erm”glicht das Definieren der Erscheinungsform und
+der FunktionaIit„t Ihrer Fenster. Er ist dazu in kIeine bersichtIiche
+Abschnitte eingeteilt:
+
+
+!image (!IMAGES)img00776.img
+
+     Darber hinaus kann die Position und Gr”e des Fensters in
+     Zeichengr”en festgelegt werden. Ist die Y-Position 0, wird
+     beim ™ffnen dem Fenster automatisch ein Platz auf dem
+     Desktop zugewiesen.
+
+
+!image (!IMAGES)img00775.img
+
+     Der Rasterwert besagt, in welchen Schritten (in Pixeln) der
+     Fensterinhalt beim Bet„tigen der Scroll-Pfeile verschoben
+     wird. Damit kann man zwischen sehr feinem, aber langsamen
+     und grobem, dafr aber schnelIerem ScrolIen fr beide
+     Richtungen einzeln ausw„hlen.
+
+
+!image (!IMAGES)img00774.img
+
+     Die Komponenten entsprechen den GEM-Attributen eines
+     Fensters. So k”nnen Sie hier zum Beispiel angeben, ob das
+     Fenster eine Infozeile besitzen soII oder nicht.
+
+
+!image (!IMAGES)img00773.img
+
+     (!I)ACSpro(!i)-Fenster haben zus„tzliche Funktionalit„t, die hier
+     eingestellt werden kann. Ein Fenster kann zum Beispiel im
+     geschlossenen Zustand auf dem Desktop durch ein Symbol
+     repr„sentiert werden.
+
+!begin_xlist [Hintergrund]
+      !item [Liste]      Der Fensterinhalt (das Workobjekt) wird als
+                 Liste behandelt.
+
+      !item [Bleibt]     Das Fenster kann durch den (!I)ACSpro(!i)-Mechanismus
+                 nicht automatisch geschlossen werden Achtung:
+                 Das Fenster kann immer noch zwangsgeschlossen
+                 werden.
+
+      !item [Icon]       Das Fenster wird im geschlossenen Zustand durch
+                 ein Symbol auf dem Default-Desktop dargestellt.
+                 Ist dieses Flag nicht angew„hlt, so wird das
+                 Fenster beim Schlieen gleich gel”scht.
+
+      !item [Ghosticon]  Nach dem ™ffnen eines Fensters durch DoppeIklick
+                 auf dessen Symbol auf dem Desktop wird das
+                 Symbol ohne Maske (grau schattiert) dargestelIt.
+
+      !item [Nimmt an]   Das Symbol des Fensters auf dem Default-Desktop
+                 wird invers dargestelIt, faIls Objekte
+                 draufgezogen und vom Fenster akzeptiert werden.
+                 Das Fenster, dem das Icon geh”rt, bekommt dann
+                 die Nachricht, das Objekte darauf gezogen wurden
+                 (AS_DRAGGED).
+
+      !item [Hintergrund] Das Fenster wird nicht getoppt (nach oben
+                 gebracht), wenn dessen Inhalt angeklickt wird,
+                 es kann im Hintergrund bedient werden. Dies ist
+                 vor allem fr Toolbox-Fenster wichtig, da der
+                 Benutzer Objekte daraus draggen kann, ohne das
+                 Fenster zu toppen. Bei AES-Versionen, die dies
+                 nicht untersttzen, wird das Toolbox-Verhalten
+                 simuliert.
+!end_xlist
+
+
+!image (!IMAGES)img00772.img
+
+     Der Name und die Infozeile k”nnen in diesem Abschnitt
+     angegeben werden. Achten Sie darauf, da Sie auch wirklich
+     eine Zeichenkette angeben, falls Sie das entsprechende Flag
+     in den Komponenten angew„hlt haben.
+
+
+!image (!IMAGES)img00771.img
+
+     Dem Fenster kann hier direkt der Titel einer Hilfeseite fr
+     den ST-Guide zugeordnet werden. Die Standard-Key-Routinen
+     leiten nach Rckfragen beim Fenster diesen Titel an den ST-
+     Guide weiter, sofern der Titel gefllt ist.
+
+
+!image (!IMAGES)img00770.img
+
+     Die Fensterobjekte sind wichtige Referenzen eines Fensters.
+     Hier k”nnen Sie die Namen der Fenstermenleiste, des
+     Fensterinneren, des Icons und die Referenz auf eine
+     Userstruktur angeben. Klicken Sie auf den Titel des Eintrags
+     (zum Beispiel Work), um das entsprechende Listenfenster zu
+     ”ffnen, aus dem Sie dann ein Objekt in den Eintrag ziehen
+     k”nnen. Der Eintrag wird dabei invertiert dargestellt
+
+
+!image (!IMAGES)img00769.img
+
+     Die (!I)ACSpro(!i)-Fensterverwaltung stellt einige Default-Routinen
+     bereit, die automatisch in die Fensterstruktur eingetragen
+     werden. Hier k”nnen Sie Routinen angeben, die Sie seIbst
+     definieren m”chten und die von den Default-Routinen
+     abweichen. Wenn Sie auf den Namen einer Default-Routine
+     klicken, wird die Referenzliste ge”ffnet, aus der Sie dann
+     die entsprechende Routine in den Eintrag ziehen k”nnen. Die
+     Create-Routine sollte immer angegeben werden und wird sonst
+     mit Awi_selfcreate gefllt. Die Bedeutung der einzelnen
+     Routinen sollte bei den Fensterroutinen nachgeschlagen
+     werden.
+
+!end_node
+
+
+!begin_node Der Objektbaum-Editor
+
+Der Objektbaum-Editor, der in diesem Abschnitt beschrieben wird, ist
+eng mit dem Men- und dem Popup-Editor verwandt. Hier sollen deren
+Gemeinsamkeiten erl„utert werden.
+
+Beim ™ffnen des ersten Editors (zum Beispiel durch einen DoppeIklick
+auf ein Objekt der Objektliste) erscheint zus„tzlich zu dem
+Arbeitsfenster, das das Objekt darsteIlt, das abh„ngige Teilefenster,
+das die einzelnen BestandteiIe eines Objektbaumes enth„lt. Die Optik
+eines dieser GEM-Objekte „ndert man im zugeh”rigen Objekt-Editor.
+
+!subtoc [all] !depth 1
+
+Weitere Funktionen werden durch ein Objektpopup und die Fenster-
+Menleiste der Objektliste angeboten.
+
+Damit die Bedienung fr Erfahrene weiter vereinfacht und beschleunigt
+wird, k”nnen die einzelnen Objekte in ihrer Reihenfolge durch die
+Tab-Taste nacheinander selektiert werden.
+
+!begin_node Selektieren von Objekten
+
+
+!image (!IMAGES)img00768.img
+
+Das Ausw„hlen von Objekten h„lt sich an die Konventionen der GEM-
+Bedienung. Das heit, da man ein Objekt einfach mit der Maus
+selektieren kann und da davor eventuell bereits selektierte Objekte
+deselektiert werden. Selektierte Objekte erkennt man an ihrer
+gepunkteten Umrahmung und einem kleinen Rechteck in der rechten
+unteren Ecke.
+
+Um Objekte in die Auswahlliste hinzufgen zu k”nnen, h„It man w„hrend
+der SeIektion die Shift-Taste gedrckt. Allerdings mssen sich
+Objekte, die man in die Liste bernehmen m”chte, innerhaIb desseIben
+Objektbaums befinden. Auch k”nnen Eltern- und Kindobjekt nicht
+gleichzeitig in der Liste sein, da ein Elternobjekt seine Kindobjekte
+sowieso immer mitbercksichtigt. M”chte man ein von Kindobjekten
+bedecktes Elternobjekt anw„hlen, mu man w„hrend der Selektion die
+Control-Taste gedrckt halten.
+
+!end_node
+
+
+!begin_node Selektieren durch Aufziehen eines Rechtecks
+
+
+!image (!IMAGES)img00767.img
+
+Um gleichzeitig mehrere Objekte zu selektieren, kann man mit der Maus
+ein Rechteck aufziehen, indem man beim Mausklick die Alternate-Taste
+gedrckt h„lt.
+
+!end_node
+
+
+!begin_node Gr”enver„nderung von Objekten
+
+
+!image (!IMAGES)img00766.img
+
+Man selektiert das Objekt, das man in seiner Gr”e ver„ndern m”chte.
+Nun erscheint die Umrahmung des Objekts mit einem inversen (schwarzen)
+Rechteck in der rechten unteren Ecke. Man kann nun in dieses Rechteck
+klicken und das Objekt verkleinern oder vergr”ern. Ist das Einrasten
+eingeschaItet, springt das Rechteck nur in Zeichenpositionen. Es wird
+sofort berprft, ob die neue Gr”e vernnftig ist, wobei folgende
+Regeln gelten:
+
+!begin_itemize
+   !item Die minimale Gr”e darf nicht unterschritten werden. Sie h„ngt
+     von der Art des Objektes ab. Zum Beispiel ist ein Knopf mit einem
+     Text von sechs Zeichen eben mindestens sechs Zeichen breit.
+
+   !item Das Objekt darf nicht aus dem Elternobjekt herausschauen. Das
+     Elternobjekt bildet damit einen Rahmen, innerhalb dessen das
+     Objekt aufgezogen werden kann.
+
+   !item Das Objekt darf seine Geschwister nicht berdecken.
+!end_itemize
+
+Es gibt F„lle, in denen diese Regeln st”ren. Wird beim Aufziehen
+gleichzeitig die Control-Taste gedrckt, so kann man ein Objekt frei
+vergr”ern oder verkleinern, nur die minimale Gr”e von ein mal einem
+Zeichen kann nicht unterschritten werden.
+
+!end_node
+
+
+!begin_node Positionieren von Objekten
+
+
+!image (!IMAGES)img00765.img
+
+Nachdem man die gewnschten Objekte selektiert hat, kann man diese neu
+positionieren, indem man ein beliebiges selektiertes Objekt mit der
+Maus anw„hlt und verschiebt. Die anderen Objekte in der Auswahlliste
+werden mitverschoben.
+
+Ist unter allgemeine Einstellungen das Flag Einrasten eingeschaltet,
+dann werden die Objekte eingerastet und zwar so, da die linke obere
+Ecke in das Raster eingeordnet wird. Pat das neue Objekt nicht
+vollst„ndig in das Elternobjekt, so wird der Benutzer gefragt, ob er
+das Kindobjekt ber das Elternobjekt hinausragen lassen m”chte oder ob
+es in der H”he und Breite eingepat werden soII.
+
+!end_node
+
+
+!begin_node Kopieren von Objekten
+
+
+!image (!IMAGES)img00764.img
+
+M”chte man Objekte innerhalb des selben Arbeitsfensters kopieren, so
+mu man diese selektieren, an die neue Stelle verschieben und vor dem
+LosIassen der Maus die Shift- Taste drcken und halten. Die schiebende
+Hand wird zum Kopiersymbol, um die Kopieroperation zu signalisieren.
+(!B)Dabei werden die einzelnen Komponenten des Objekts referenziert(!b), da
+heit, es wird beispielsweise kein neuer Text angelegt, sondern der
+des Ursprungsobjektes benutzt. nderungen an einem bewirkt also auch
+eine nderung aller betroffenen Objekte.
+
+!end_node
+
+
+!begin_node Vollst„ndiges Duplizieren von Objekten
+
+
+!image (!IMAGES)img00763.img
+
+M”chte man dagegen auch alle Komponenten eines Objektes kopieren,
+mssen die Shift- und Control-Taste gedrckt gehalten werden - das
+erscheinende Doppel-Plus signalisiert das.
+
+Will man die Objekte aus einem anderen Arbeitsfenster kopieren, so
+reicht es, diese nur an die gewnschte Position zu plazieren. Die
+ursprnglichen Objekte bleiben an ihrer Stelle.
+
+Wenn Sie gewisse Objekte l”schen m”chten, so mssen Sie diese einfach
+nur selektieren und den Desktop-Menpunkt L”schen anw„hlen.
+Normalerweise werden die Kinder eines Objekts auch mitgel”scht. SoIl
+nur das Vaterobjekt des Baumes geI”scht werden (flatten, verflachen),
+so mu man w„hrend des Loslassens des Mausknopfes die Control-Taste
+gedrckt halten. Die Kindobjekte bleiben nun an ihrer Position stehen.
+Auch das Wurzelobjekt kann gel”scht werden, wenn es genau ein Kind
+besitzt. Das Kind wird dann zum WurzeIobjekt.
+
+!end_node
+
+
+!begin_node Nachwort zum Objektbaum-, Men- & Popup-Editor
+
+Zum besseren Verst„ndnis hier ein kleiner Exkurs in die internen
+Objektstrukturen einer (!I)ACSpro(!i)-Datei:
+
+GEM-Objekte, insbesondere die USERDEF-Objekte, legen neben einer
+OBJECT-Struktur weitere Daten vor allem als Text an (als Titeltext,
+als Bezeichner etc.). Diese referenzierten Textobjekte macht der
+(!I)ACSpro(!i)-(!I)GUI-Editor(!i) dem Anwender zum Beispiel in der Textliste - genauer
+dem Stringeditor - zug„nglich, um sie dort zu ver„ndern. Um den
+Speicherplatz gering zu halten und 'gleichnamige' Objekte immer nur
+einmal ver„ndern zu mssen, referenziert der (!I)ACSpro(!i)-(!I)GUI-Editor(!i)
+gleichnamige Objekte, ohne sie neu anzulegen! Ver„nderungen, die an
+einem Textobjekt dann vorgenommen werden, gelten dann fr alle
+Objekte, die diesen Text referenzieren.
+
+Dies bedingt aber auch, das Objekte nicht so leicht kopiert werden
+k”nnen, da alle Objektkopien sogenannte virtuelle Kopien sind. Was
+tun, wenn Sie also mehrere gleiche Objekte mit unterschiedlichem Text
+versehen wollen? Sie mssen dann aus dem Teilefenster ein Objekt in
+den Objektbaum ziehen und (!B)sofort(!b) dieses Objekt editieren - (!B)dann(!b) erst
+sollten Sie das n„chste Objekt aus dem Teilefenster herberziehen.
+
+Hintergrund: Mit der Mehrsprachigkeit besitzt ein solches Textobjekt
+drei 'unsichtbare' Komponenten, die auch angelegt und verwaltet
+werden. Ein Objekt, das einen Text beinhaltet, wird nur dann diesen
+Text referenzieren, wenn auch die drei unsichtbaren Texte identisch
+sind - und vice versa.
+
+!end_node
+
+!end_node
+
+
+!begin_node Der Popup-Editor
+
+Im Popup-Editor bearbeiten Sie die Popups Ihrer Anwendung, die nicht
+als Strings (fr Ame_strpopup vorliegen). Der Popup-Editor ist - mit
+den Einschr„nkungen, die bei einem Popup n”tig sind - dem
+(!link [Objektbaum-Editor] [Der Objektbaum-Editor]) „hnlich. Daher finden Sie genauere Informationen
+beim (!link [Objektbaum-Editor] [Der Objektbaum-Editor]) wie z.B. ber das Selektieren von Objekten, das
+Selektieren durch Aufziehen eines Rechtecks, die
+Gr”enver„nderung von Objekten, das Positionieren von Objekten, das
+Kopieren von Objekten sowie das (!link [Vollst„ndige Duplizieren von Objekten] [Vollst„ndiges Duplizieren von Objekten]).
+
+!end_node
+
+
+!begin_node Der Men-Editor
+
+Im Men-Editor bearbeiten Sie die Mens Ihrer Anwendung. Der Men-
+Editor ist - mit den Einschr„nkungen, die bei einem Men n”tig sind -
+dem (!link [Objektbaum-Editor] [Der Objektbaum-Editor]) „hnlich. Daher finden Sie genauere Informationen
+beim (!link [Objektbaum-Editor] [Der Objektbaum-Editor]) wie z.B. ber das Selektieren von Objekten, das
+Selektieren durch Aufziehen eines Rechtecks, die
+Gr”enver„nderung von Objekten, das Positionieren von Objekten, das
+Kopieren von Objekten sowie das (!link [vollst„ndige Duplizieren von Objekten] [Vollst„ndiges Duplizieren von Objekten]).
+
+!end_node
+
+
+!begin_node Das Teile-Fenster
+
+!end_node
+
+
+!begin_node Die Objekt-Editoren
+
+Fr jedes Objekt aus dem Teilefenster gibt es einen speziellen Editor,
+der das Aussehen des Objektes komfortabel konfigurieren l„t. Drckt
+man dabei die Control-Taste, erh„lt man bei UserDef-Objekten einen
+Dialog, in dem man gezielt die Eintr„ge ver„ndern kann.
+
+!begin_table [ll]
+ (!B)Objektname(!b)   !! (!B)Editor(!b)
+
+ String, Button       !! Der String-Editor
+
+ Box, IBox, BoxChar   !! Der Boxen-Editor
+
+ TEDINFO              !! Der TEDINFO-Editor
+
+ Userdef-BoxEdit      !! Der BoxEdit-Editor
+
+ Userdef-Checkbox     !! Der Checkbox-/Radiobutton-Editor
+
+ (!link [Userdef-Radiobutton] [Userdef-Radiobutton])  !! Der Checkbox-/Radiobutton-Editor
+
+ Userdef-Innerframe   !! Der Innerframe-Editor
+
+ Userdef-Pattern      !! Der Pattern-Editor
+
+ Userdef-Arrows       !! Der Arrows-Editor
+
+ Userdef-FText        !! Der FText-Editor
+
+ Userdef-3D-Button    !! Der 3D-Button-Editor
+
+ Userdef-Cycle        !! Der Cycle-Button-Editor
+
+ Userdef-Picture      !! Der Picture-Editor
+
+ Userdef-Slider       !! Der Slider-Editor
+
+ Userdef-Title        !! Der Title-Editor
+!end_table
+
+Die Editoren wurden so gestaltet, da zwischen ihnen einige
+Gemeinsamkeiten identisch sind.
+
+!begin_itemize
+   !item So besitzt jeder Editor in der oberen linken Ecke ein Beispiel,
+     an dem man die aktuellen Ver„nderungen mitverfolgen kann. Der in
+     einigen Objekten w„hlbare Zeichenmodus unterscheidet, ob der Text
+     den Hintergrund durchscheinen l„t, oder ob er diesen mit einer
+     kleinen weien Textbox abdeckt.
+
+   !item Mit diesem Popup kann man die Farbe einer zu bestimmenden
+     Komponente w„hlen. Damit Sie diese auch in monochromer Aufl”sung
+     setzen k”nnen, ist der Name der Farbe einer Systemfarbpalette
+     angegeben.
+!end_itemize
+
+
+!image (!IMAGES)img00762.img
+
+!begin_itemize
+   !item Einige Komponenten erm”glichen die Wahl eines Musters, das
+     zusammen mit der Farbe eine differenzierte Darstellung
+     erm”glicht.
+!end_itemize
+
+
+!image (!IMAGES)img00761.img
+
+!begin_itemize
+   !item Zur horizontalen Ausrichtung einiger Texte innerhalb des ganzen
+     Objektes dient dieses Popup.
+!end_itemize
+
+
+!image (!IMAGES)img00760.img
+
+!begin_node Der FText-Editor
+
+Dieses Objekt erm”glicht mehrzeilige Textausgaben, die entsprechend
+der Objektgr”e automatisch in das Objekt eingepat werden. Je nach
+Ausrichtung wird der Text dabei links- oder rechtsbndig, zentriert
+oder im Blocksatz ausgegeben. M”chten Sie den automatischen
+Zeilenumbruch an einer Stelle manuell setzen, mssen Sie dort das
+Trennzeichen | eigeben.
+
+Darber hinaus stehen Ihnen Texteffekte zur Verfgung, die auch
+kombiniert werden k”nnen. Denken Sie daran, da manche Effekte zu
+einer sehr unleserlichen Darstellung fhren k”nnen oder m”glicherweise
+vom VDI nicht umgesetzt werden.
+
+Mittels 'Schrift' erreichen Sie die Schriftauswahl, aus der heraus Sie
+die Schrift samt Gr”e (maximal 255) ausw„hlen k”nnen.
+
+
+!image (!IMAGES)img00759.img Der Editor fr das Userdef-FText
+(!nl)
+
+!end_node
+
+
+!begin_node Der Innerframe-Editor
+
+
+!image (!IMAGES)img00758.img
+
+Dieses Objekt dient der Gruppierung von darin befindlichen Objekten.
+Dazu kann ihm ein Titeltext mitgegeben werden, der neben einer frei
+w„hlbaren Farbe und Gr”e auch an einer der sechs Eckpositionen
+gezeichnet werden kann.
+
+Den Rahmen kann man dann dreidimensional wirken lassen, wenn man die
+linke/obere bzw. rechte/untere Rahmenfarbe entsprechend w„hlt.
+
+Die Innenfl„che besitzt einen Dithermodus, wenn das volle Fllmuster
+und Hellgrau als Fllfarbe gew„hlt wurde. Dann optimiert das Objekt in
+monochromer Aufl”sung die Darstellung derart, da ein Graumuster
+'simuliert' wird.
+
+!end_node
+
+
+!begin_node Der BoxEdit-Editor
+
+Auch hier k”nnen Sie sowohl fr den Text als auch fr den Rahmen
+eigene Farben w„hlen. Getrennte Farben fr den Rahmen werden
+allerdings erst dann wirksam, wenn Sie den 3D-Modus gew„hlt haben und
+das Programm mit mindestens 16 Farben benutzen. Neben einem
+vorgegebenen Text k”nnen Sie zwischen groer und kleiner Darstellung
+w„hlen und die maximale Eingabel„nge bestimmen. Das Objekt wird
+maximal nur so breit, wie die Textl„nge ist, gezeichnet.
+
+Die Eingabe kann komfortabel konfiguriert werden. Ist Kapitalisieren
+gesetzt, wird die Eingabe immer in Grobuchstaben umgesetzt. M”chte
+man die Eingabe unsichtbar halten - z.B. bei einer Password-Eingabe -
+kann man dies explizit einstellen.
+
+
+!image (!IMAGES)img00757.img Der Editor fr das Userdef-BoxEdit
+(!nl)
+
+Die im Popup w„hlbaren Masken bedeuten:
+
+
+!image (!IMAGES)img00756.img Die Auswahl der Edit-Masken
+(!nl)
+
+
+!begin_table [|l|l|l|] !hline
+ (!B)Maske(!b)     !! (!B)Symbol(!b)       !! (!B)Bedeutung(!b)
+!hline
+ alle Zeichen      !! BEM_ALL              !! alle Zeichen
+ normal            !! BEM_NORM             !! alle Zeichen ab dem
+                   !!                      !! Leerzeichen
+ Buchstaben        !! BEM_ALPHA            !! Buchstaben und Leerzeichen
+ Buchst. & Zahlen  !! BEM_ALPHADIGIT       !! Buchstaben, Leerzeichen
+                   !!                      !! und Ziffern
+!hline
+ #
+ normaler Pfad     !! BEM_PATH             !! alle Zeichen
+ normale Datei     !! BEM_FILE             !! alle Zeichen auer \:
+ TOS-Datei         !! BEM_TOSFILE          !! Buchstaben und Ziffern und die
+                   !!                      !! Zeichen ._!@#$%^&()+-=~';",
+                   !!                      !! <>|[]{}
+ TOS-Pfad          !! BEM_TOSPATH          !! Die Zeichen der TOS-Datei
+                   !!                      !! und \:
+ TOS-Pfad-Muster   !! BEM_TOSPATHSPEC      !! Die Zeichen der TOS-Datei
+                   !!                      !! und \:*?
+ TOS-Datei-Muster  !! BEM_TOSFILESPEC      !! Die Zeichen der TOS-Datei
+                   !!                      !! und *?
+!hline
+ #
+ Bin„rzahl         !! BEM_BIN              !! 0 und 1
+ neg. Bin„rzahl    !! BEM_NEGBIN           !! 0 und 1 und -
+ Oktalzahl         !! BEM_OCT              !! 0 bis 7
+ neg. Oktalzahl    !! BEM_NEGOCT           !! 0 bis 7 und -
+ Dezimalzahl       !! BEM_DEC              !! 0 bis 9
+ neg. Dezimalzahl  !! BEM_NEGDEC           !! 0 bis 9 und -
+ Hexadezimalzahl   !! BEM_HEX              !! 0 bis 9 und A bis Z
+ neg. Hex.zahl     !! BEM_NEGHEX           !! 0 bis 9 und A bis Z und -
+ Fliekommazahl    !! BEM_FLOAT            !! 0 bis 9 und .
+ neg. Flie.zahl   !! BEM_NEGFLOAT         !! 0 bis 9 und . und -
+!hline
+ #
+ Datum             !! BEM_DATEEURO         !! TT.MM.JJJJ
+                   !!                      !! (Tag, Monat, Jahr; Trenner .)
+                   !! BEM_DATEEURO_SEP     !! TT/MM/JJJJ
+                   !!                      !! (Tag, Monat, Jahr; Trenner /)
+                   !! BEM_DATEUS           !! MM.TT.JJJJ
+                   !!                      !! (Monat, Tag, Jahr; Trenner .)
+                   !! BEM_DATEUS_SEP       !! MM/TT/JJJJ
+                   !!                      !! (Monat, Tag, Jahr; Trenner /)
+!hline
+ #
+ Zeit              !! BEM_TIME             !! HH:MM:SS
+                   !!                      !!  (Stunden, Minuten, Sekunden)
+                   !! BEM_TIME12           !! HH:MM:SS
+                   !!                      !! (max. 11) Stunden
+                   !! BEM_TIME24           !! HH:MM:SS
+                   !!                      !! (max. 23) Stunden
+!hline
+!end_table
+
+!end_node
+
+
+!begin_node Der Checkbox-/Radiobutton-Editor
+
+Je nach gesetztem Radiobutton-Flag aus dem Objekt-Status erscheint
+hier ein runder Radiobutton oder eine eckige Checkbox. Diesen kann
+eine Bezeichnung mitgegeben werden. Der 3D-Modus erzwingt ein
+dreidimensionale Darstellung, die an das Aussehen der Objekte in MagiC
+6 angelehnt ist.
+
+
+!image (!IMAGES)img00755.img Der Editor fr das Userdef-Checkbox
+(!nl)
+
+!end_node
+
+
+!begin_node Der Cycle-Button-Editor
+
+Dieses Objekt erzeugt ein Popup, dessen Eintr„ge durch einen String
+definiert werden. Die (!link [Click-Routine] [Click-Routine]) Aus_cycle schaltet auf den
+n„chsten Eintrag, wenn der rechte (!link [Cycle] [Cycle])-Button, dessen Zeichen frei
+gew„hlt werden kann, angeklickt wurde - sonst ruft sie Ame_strpopup
+auf. Im 3D-Modus kann die Farbe fr die Rahmen der 3D-Buttons
+innerhalb des Popups gew„hlt werden - sonst erscheint ein 'flaches'
+Popup.
+
+
+!image (!IMAGES)img00754.img Der Editor fr das Userdef-Cycle
+(!nl)
+
+!end_node
+
+
+!begin_node Der 3D-Button-Editor
+
+Dieses Objekt dient der Darstellung eines jederzeit dreidimensional
+wirkendem Buttons. Fr den Text kann eine Farbe, die Position, der
+Zeichenmodus und die Gr”e gew„hlt werden.
+
+Der zweiteilige Rahmen kann in seiner Farbe, der St„rke und dem Offset
+relativ zu den Objektausmaen konfiguriert werden. Mit positiven
+Offsets sollte man sparsam umgehen, da die AES in einigen F„llen nur
+die Objektausmae bercksichtigen und dann auch nur neuzeichnen
+lassen.
+
+Bei der Innenfl„che gibt es den Dithermodus genau dann, wenn bei
+vollem Fllmuster die hellgraue Farbe gew„hlt wurde - dann optimiert
+das Objekt in monochromer Aufl”sung die Darstellung. Wird ein leeres
+Fllmuster gew„hlt, wird die Innenfl„che gar nicht gezeichnet.
+
+
+!image (!IMAGES)img00753.img Der Editor fr das Userdef-3D-Button
+(!nl)
+
+!end_node
+
+
+!begin_node Der Picture-Editor
+
+Dieses Objekt stellt mehrfarbige Bilder dar - setzen Sie dieses Objekt
+behutsam ein, es ben”tigt sehr viel Speicher. Der Kachelmodus fllt
+das Objekt in seinen realen Ausmaen mit dem Bild wiederholt aus.
+Sonst wird das Bild zentriert, und im restlichen Bereich wird das
+gew„hlte Fullmuster gezeichnet.
+
+Neue Bilder erzeugen Sie im IMG-EDIT-Modul, aus dem heraus Sie Bilder
+auf das Beispiel links oben per D&D ablegen k”nnen.
+
+
+!image (!IMAGES)img00752.img Der Editor fr das Userdef-Picture
+(!nl)
+
+!end_node
+
+
+!begin_node Der Slider-Editor
+
+Diese Schieber k”nnen horizontal und vertikal eingesetzt werden.
+Zus„tzlich stellt der 3D-Modus diese dreidimensional dar. M”chte man
+nur die Pfeilsymbole einsetzen (um z.B. in der Mitte einen Text
+auszugeben), mssen Sie die (!link [Slider] [Slider])-Komponente abschalten.
+
+
+!image (!IMAGES)img00751.img Der Editor fr das Userdef-Slider
+(!nl)
+
+!end_node
+
+
+!begin_node Der Title-Editor
+
+Unterstrichene šberschriften k”nnen hiermit dargestellt werden. Neben
+der horizontalen Ausrichtung kann auch die Gr”e und der Zeichenmodus
+gew„hlt werden.
+
+
+!image (!IMAGES)img00750.img Der Editor fr das Userdef-Title
+(!nl)
+
+!end_node
+
+
+!begin_node Der Pattern-Editor
+
+Mit diesem Objekt kann man vielf„ltige Fllmuster in Rechtecken
+zeichnen lassen, wobei die Fllfarbe und ein eventueller Rand frei
+w„hlbar sind.
+
+
+!image (!IMAGES)img00749.img Der Editor fr das Userdef-Pattern
+(!nl)
+
+!end_node
+
+
+!begin_node Der Arrows-Editor
+
+Dieses Objekt erm”glich verschiedene Linien zu benutzen. Neben der
+Farbe des Pfeiles kann noch eine breitere Darstellung und ein 3D-Modus
+gesetzt werden - letzterer zeichnet zuvor um ein Pixel nach rechts
+unten versetzt das Objekt in weier Farbe im Untergrund.
+
+
+!image (!IMAGES)img00748.img Der Editor fr das Userdef-Arrows
+(!nl)
+
+
+!image (!IMAGES)img00747.img
+
+Hier kann man die Richtungen des Anfang- und Endpunktes angeben.
+
+
+!image (!IMAGES)img00746.img
+
+Es kann jeweils zwischen kurzen und langen Enden (bis zum Objektrand)
+gew„hlt werden.
+
+
+!image (!IMAGES)img00745.img
+
+Hier erfolgt getrennt fr jede Seite die Auswahl, ob ein Pfeil
+gezeichnet werden soll.
+
+
+!image (!IMAGES)img00744.img
+
+Die Art der Linie kann aus diversen Stilen gew„hlt werden.
+
+!end_node
+
+
+!begin_node Der String-Editor
+
+Fr das Objekt kann ein Text eingegeben werden. Zus„tzlich
+spezifiziert das Popup noch genau, um welche Art von Text es sich
+handelt:
+
+
+!image (!IMAGES)img00743.img Der Editor fr GEM-Strings, GEM-Buttons und GEM-Titel
+(!nl)
+
+Ein 'String' ist ein Text ohne Hintergrund, den ein 'Button' hingegen
+besitzt. 'Titel'- Objekte werden in Mentiteln eingesetzt und mssen
+nicht manuell gesetzt werden.
+
+
+!image (!IMAGES)img00742.img šber das Popup wird der Typ eingestellt
+(!nl)
+
+!end_node
+
+
+!begin_node Der TEDINFO-Editor
+
+Dieses Objekte diente ehemals der Texteingabe oder der formatierten
+Ausgabe. Es sollte nur noch sparsam und als Eingabeobjekt nur noch in
+modalen Dialogen (A_dialog) eingesetzt werden. (!I)ACSpro(!i) kann mit diesem
+Objekttyp in Fenster-Dialogen keine korrekte Cursorsteuerung
+ausfhren. Fr Eingaben in Fenster-Dialogen steht das wesentlich
+komfortablere Userdef-BoxEdit zur Verfgung.
+
+
+!image (!IMAGES)img00741.img Der Editor fr TEDINFO-Strukturen
+(!nl)
+
+Neben den Farben fr Text, Rahmen und Fl„che kann auch hier wieder die
+Rahmenst„rke und das Fl„chemuster frei bestimmt werden.
+
+Der normale 'Text' l„t keine Eingaben zu, der 'F-Text' hingegen
+schon. Beide Typen gibt es zus„tzliche mit Rahmen ('Box-Text' bzw.
+'F-Boxtext').
+
+
+!image (!IMAGES)img00740.img šber das Popup wird der Typ eingestellt
+(!nl)
+
+Bei einer Eingabe kommen den drei Zeilen eine besondere Bedeutung zu:
+'Text' ist der vorgegebene Text, der sp„ter ver„ndert werden kann.
+'Tmp' ist eine Schablone, an deren mit '_' markierten Stellen sp„ter
+berhaupt der Cursor positioniert wird. 'Val' dient als Maske und wird
+sukzessiv von links beginnend jedem mit '_' im 'Tmp' zugeordnet. Val
+kann dabei folgende Werte annehmen
+
+
+!begin_table [|l|l|] !hline
+         (!B)Wert(!b)  !! (!B)gltige Eingaben(!b)
+!hline
+         9     !! Ziffern
+!hline
+         A     !! Grobuchstaben und Leerzeichen
+!hline
+         a     !! Buchstaben und Leerzeichen
+!hline
+         N     !! Grobuchstaben, Ziffern und Leerzeichen
+!hline
+         n     !! Buchstaben, Ziffern und Leerzeichen
+!hline
+         F     !! alle Zeichen eines Dateinamens
+!hline
+         P     !! alle Zeichen eines Pfadnamens
+!hline
+         p     !! wie 'P' ohne ? und *
+!hline
+         X     !! alle Zeichen
+!hline
+         x     !! alle Zeichen, Buchstaben werden kapitalisiert
+!hline
+!end_table
+
+!end_node
+
+
+!begin_node Der Boxen-Editor
+
+Hier kann man ein vielf„ltiges Rechteck mit maximal einem zus„tzlichem
+Buchstaben gestalten. Neben der Textfarbe kann auch die Rahmen- und
+Fl„chenfarbe frei gew„hlt werden. Der Rahmen kann in mehreren St„rken
+gesetzt sein. Die Innenfl„che hat verschiedene Muster. Mit dem Modus
+kann man festlegen, ob ein eventuelles Zeichen den Hintergrund v”llig
+verdeckt oder diesen durchscheinen l„t.
+
+
+!begin_center
+!image (!IMAGES)img00739.img Der Editor fr die GEM-Boxen
+!end_center
+(!nl)
+
+Der Typ gibt an, ob nur die 'Box' ohne Buchstaben, oder nur der Rahmen
+der Box ('I-Box') oder alle Teile gezeichnet werden sollen ('Box-
+Char').
+
+
+!begin_center
+!image (!IMAGES)img00738.img šber das Popup wird der Typ eingestellt
+!end_center
+(!nl)
+
+!end_node
+
+
+!begin_node Der USERDEF-Editor
+
+
+!begin_center
+!image (!IMAGES)img00737.img Der allgemeine Userdef-Editor
+!end_center
+(!nl)
+
+!end_node
+
+
+!begin_node Die Icon-Zuordnung
+
+
+!begin_center
+!image (!IMAGES)img00736.img Die Icon-Zuordnung
+!end_center
+(!nl)
+
+!end_node
+
+
+!begin_node Die Graphik-Zuordnung
+
+
+!begin_center
+!image (!IMAGES)img00735.img Die Graphik-Zuordnung
+!end_center
+(!nl)
+
+!end_node
+
+!end_node
+
+!end_node

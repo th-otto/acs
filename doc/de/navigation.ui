@@ -1,0 +1,43 @@
+!begin_node Navigation in diesem ST-Guide-Hypertext
+
+Lieber (!I)ACSpro(!i)-interessierter ST-Guide-Nutzer,
+
+diese Ihnen vorliegende Online-Hilfe ist voll und ganz an den ST-Guide
+angepat. Der Hypertext wird zusammen mit einer Referenzdatei
+ausgeliefert. Diese dient dem ST-Guide dazu, externe Referenzen, als
+Parameter bergebene Pattern oder auch Suchbegriffe schnell und sicher
+aufzufinden, ohne dazu erst alle existierenden Hypertext-Dateien
+einlesen zu mssen. Hierzu sollten alle REF Dateien mit dem Programm
+RefLink, welches i.a. ST-Guide beiliegt, zu einem globalen, fr den
+ST-Guide auffindbaren "Lexikon" verbunden werden.
+
+Wenn Sie mit der Bedienung des ST-Guide noch nicht so erfahren sind,
+schlagen Sie bitte bei Fragen in dem dem ST-Guide beiliegenden
+Hypertext ST-GUIDE.HYP nach. Falls Sie Hilfe bim Einbinden der
+(!I)ACSpro(!i)-Referenzdatei in Ihre globale Referenzdatei ben”tigen, so
+ziehen Sie bitte die RefLink-Dokumentation zu Rate.
+
+Wenn Sie die (!I)ACSpro(!i)-Referenzdatei in die globale Referenzdatei
+eingebunden haben, dann ist diese Online-Hilfe voll funktionsf„hig. Es
+reicht dann z.B. aus, im Editor des (!I)ACSpro(!i)-(!I)GUI-Editor(!i) - oder z.B. in
+qed - den Cursor auf den Namen einer (!I)ACSpro(!i)-Funktion stellen und die
+HELP-Taste zu drcken, um die Informationen dazu angezeigt zu
+bekommen.
+
+Da farbige Bilder die Gr”e des Hypertextes z.T. wesentlich erh”hen
+wrden, habe ich (!I)alle(!i) Bilder nur als S/W-Bilder eingebunden. Damit
+sollte der Hypertext unter allen Aufl”sungen vernnftig darstellbar
+sein.
+
+Wenn Sie Fragen, Anregungen und/oder Verbesserungsvorschl„ge haben, so
+teilen Sie mir diese bitte mit. Wie Sie mich erreichen k”nnen, k”nnen
+Sie hier nachsehen. Vielen Dank!
+
+Mit freundlichem Gru
+
+Martin Els„sser
+
+
+!image (!IMAGES)/img00865
+
+!end_node

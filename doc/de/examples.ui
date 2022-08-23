@@ -1,0 +1,27 @@
+!begin_node ACS-Beispiele
+
+Um zu demonstrieren, wie mit (!I)ACSpro(!i) Anwendungen entwickelt werden
+kînnen, habe ich einige Beispiele bereit gestellt.
+
+Zu (!I)ACSpro(!i) wird es einen Hypertext "Lehrgang: Applikations-Entwicklung
+mit (!I)ACSpro(!i)" geben. Dieser muû allerdings noch geschrieben werden - ich
+kann nun einmal nicht programmieren, Dokumentation und den "Lehrgang"
+schreiben gleichzeitig machen. Warum erwÑhne ich das hier? Ganz
+einfach, dort sind alle diese Beispiele enthalten - und im
+Zweifelsfall sogar noch mehr. Die erste Version davon kann bei den
+(!link ["Beta-Archiven"] [Archive im Beta-Test]) geladen werden.
+
+@{B}Hinweis:@{b} Die Beispiele werden meistens mittels Pure-C programmiert, da
+dies einfach meine Lieblingssprache ist - nebenbei wird (!I)ACSpro(!i) selbst
+komplett erst unter Pure-C entwickelt und dann in andere Sprachen
+Åbertragen. Jedoch sollten auch Nutzer von GNU-C und Pure-Pascal
+dieses Beispiel verstehen und Åbertragen kînnen. Das ein oder andere
+Beispiel wird jedoch auch in Pascal oder GNU-C zur VerfÅgung stehen.
+
+!subtoc [all] !depth 1
+
+!include example1.ui
+!include example2.ui
+!include example3.ui
+
+!end_node

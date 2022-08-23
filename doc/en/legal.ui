@@ -1,0 +1,240 @@
+!begin_node Legal
+
+!subtoc [all] !depth 1
+
+(!B)Legal Notice:(!b)
+In a judgment of May 12, 1998, the Hamburg Regional Court ruled that
+the contents of a 'linked' page may have to be held responsible for
+the content of the 'link'. According to the regional court, this can
+only be prevented by expressly distancing yourself from this content.
+
+For all my page 'links': I declare that I have no influence on the
+design and content of the 'linked' pages. I therefore hereby expressly
+distance myself from all content on all 'linked' sites whose content
+is not in accordance with the law.
+
+This declaration applies to all 'links' on my page and to all contents
+of the pages to which banners lead. Product names, trademarks and
+protected trademarks used are the property of their respective owners.
+The use of trademarks is for information only and does not provide
+information about the free availability of product names or trademarks.
+
+
+!begin_node Copyright of ACSpro
+
+Maxon Computer GmbH and (!link [Stefan Bachert] [Stefan Bachert]) had the exclusive distribution
+rights and legal provisions for (!I)ACSpro(!i) until the end of June 1996.
+From July 1, 1996 the distribution took place as limited (!link [Shareware] [ACSpro is shareware]).
+
+All rights to the software remain with (!link [Stefan Bachert] [Stefan Bachert])
+(Stefan.Bachert@Stefan-Bachert.de)
+
+     (!url [http://www.Stefan-Bachert.de/] []),
+
+as well as (!link [Oliver Michalak] [Oliver Michalak]) (info@artofaktur.de)
+
+     (!url [http://www.artofaktur.de] [])
+
+and additionaly from version 2.31 by Martin Elsässer
+(Martin_Elsaesser@ll.maus.de)
+
+     (!url [http://acspro.atari.org/] []).
+
+A big thank you goes to Stefan and Oliver, because it is thanks to
+them that (!I)ACSpro(!i) can be further developed.
+
+The unregistered version may only be given in the archive form
+available here and in the Maus LL. Compiled and (!link [passed on] [Upload]) by me
+unchanged. Users who have (!link [registered] [What does ACSpro cost?]) have received serialized user
+data from the licensor which grants you a single-user license -
+the licensee agrees to protect the software against unauthorized use,
+reproduction, distribution or publication. If the licensee violates
+this, the licensor is entitled to withdraw the license for use. The
+licenser reserves the right to make further claims from the damage
+incurred.
+
+The license allows the use of the files similiar to the use of a
+book. Due to the impossibility of a book being read by several people
+in different places at the same time, the software package must not be
+used simultaneously by different people in different places or on
+different devices. Copies may only be made for the purpose of data
+backup. The rental of the program is excluded.
+
+!end_node
+
+
+!begin_node Upload
+
+(!B)Uploads to mailboxes or to other servers on the Internet are
+expressly encouraged, provided the original archives that I have
+compiled are used. Repackaging the archives (other packers, etc.)
+is therefore (!I)expressly prohibited!(!i)(!b)
+
+Each archive contains the upload text that is used to upload to
+the Maus LL. (!I)This upload text should always be used to ensure
+a consistent summary.(!i)
+
+A signature can be loaded for each archive, which makes the archive's
+authenticity verifiable by PGP. The (!link [public key] [My public PGP key]) required for this can
+also be downloaded from the page:
+
+     (!url [http://acspro.atari.org/] [])
+
+!end_node
+
+
+!begin_node Copyright of ACSpro Applications
+
+The registered licensee may use, sell or share their own programs
+created with the (!I)ACSpro(!i) software package without restriction or
+obligation to pay additional license fees, as long as these programs
+contain a copyright notice from the licensee. It is requested, but
+not mandatory, that they contain a reference to the (!I)ACSpro(!i) software
+package.
+
+If (!I)ACSpro(!i) is used as unregistered (!link [Shareware] [ACSpro is shareware]) within the testing phase,
+any programs created with it may only be used for private purposes and
+may in no way be made publicly available!
+
+The example programs in the (!I)ACSpro(!i) package demonstrate various
+properties of (!I)ACSpro(!i). They are used for teaching purposes only. But
+you may edit these sample programs or modify them for your own use.
+However, you may not distribute or sell these programs in whole or in
+part in compiled form or as source code. You may use the routines from
+the sample programs in your own user programs as long as the resulting
+programs do not resemble or function like a sample program or part of
+a sample program.
+
+!end_node
+
+
+!begin_node Disclaimer
+
+Despite the many years of development, the experience and all of the
+testing, no guarantee can be given for the correctness or completeness
+of any part of this package. The licensor assumes no liability for
+consequential damages that arise directly or indirectly to the licensee
+or third parties from the use of the package. Since errors can never be
+completely avoided, despite all efforts, the licensor is grateful for
+information at any time.
+
+!end_node
+
+
+!begin_node Trademark
+
+Among others the following are (protected, registered) trademarks
+regardless of the legal situation:
+
+!begin_table [ll]
+ Atari ST, TT, STE, Falcon   !! Atari Cooperation
+
+ GEM, AES, VDI, RCS          !! Digital Research
+
+ Pure-C                      !! Application Systems Heidelberg
+
+ Pure-Pascal                 !! Application Systems Heidelberg
+
+ MagiC, (!link [MagiCMac] [MagiC]), (!link [MagiCPC] [MagiC])    !! Application Systems Heidelberg
+
+ Milan-MultiOS               !! Milan GmbH, Woller Systeme
+
+ N.AES                       !! Woller Systeme
+
+ MultiTOS                    !! Atari Coorporation
+
+ MultiGEM                    !! MAXON Computer
+
+ NVDI                        !! Bela, Behne&Behne
+
+ (!link [Mag!X] [MagiC])                       !! Bela, Behne&Behne
+
+ GNU-C                       !! GNU Public License
+!end_table
+
+This list is not intended to be exhaustive. The ommission of a product
+or name above does not mean that it is free of third party rights.
+
+
+
+!begin_node MagiC
+!label Mag!X
+!label MagicMac
+!label MagiCMac
+!label MagiCPC
+!label MagicPC
+
+MagiC (formerly called Mag!X) is an operating system compatible with
+the ATARI TOS. Performance features include pre-emptive multitasking
+at very high speed, stability and with many new functions. MagiC is
+available as MagiCMac for Apple Macintosh and MagiCPC for Win95/NT.
+It's just my "favorite operating system" - (!I)ACSpro(!i) is developed on
+an Apple PowerBook 3400c/240 under MagiCMac.
+
+!end_node
+
+
+!begin_node Milan-MultiOS
+
+The Milan is delivered with the Milan MultiOS, an adaptation of N.AES.
+
+!end_node
+
+
+!begin_node N.AES
+
+N.AES is the further or new development of MultiTOS. In the latest
+version 2.0 it is a lot faster than the predecessor MultiTOS. Like
+MultiTOS, N.AES relies on MiNT and therefore offers all the advantages
+of this kernel such as UNIX-compatible pipes, preemptive multitasking,
+memory protection, etc.!
+
+Even if all windows of an (!I)ACSpro(!i) Application have been closed, the
+Application can still be reached in the following way: Set the
+Application as the active one in the desk menu and then press any key.
+This will open the root window.
+
+!end_node
+
+
+!begin_node MultiTOS
+
+MultiTOS is an official multitasking operating system published by
+ATARI in the middle of '93, which is characterized by many new and
+innovative ideas and above all by its low speed and vulnerability.
+Nevertheless its functionally set standards for the ATARI market. In
+the meantime, MultiTOS has been replaced by N.AES.
+
+Even if all windows of an (!I)ACSpro(!i) Application have been closed, the
+Application can still be reached in the following way: Set the
+Application as the active one in the desk menu and then press any key.
+This will open the root window.
+
+!end_node
+
+
+!begin_node WINX
+
+WINX is not only a program to provide ATARI computers with new window
+functions in addition to allowing many windows, it also enables the
+associated AES identification, e.g. from other windows to be able to
+determine the XACC, VA and Drag&Drop protocols.
+
+WINX was written by Martin Osieka.
+
+!end_node
+
+
+!begin_node MultiGEM
+
+MultiGEM is a product formerly distributed by MAXON Computer GmbH,
+which represents the first attempt to support correct multitasking
+on ATARI computers. Is no longer maintained today.
+
+Therefore (!I)ACSpro(!i) will not be specially adapted to MultiGEM... Sorry!
+
+!end_node
+
+!end_node
+
+!end_node

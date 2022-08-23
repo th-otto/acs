@@ -1,0 +1,29 @@
+!begin_node Development using ACSpro
+
+!subtoc [all] !depth 1
+
+Here there is something missing...
+
+
+!begin_node The Cookie Jar
+!alias Cookie Jar
+!alias Cookie
+!alias Cookies
+
+The Cookie Jar is a global information source for various settings in
+your computer. For example, it contains values for the current
+hardware setup (programs should evaluate the cookies and not make
+assumptions about the hardware), but many resident programs that are
+processed when the computer boots (auto folder) register a cookie to
+provide information or routines to other programs.
+
+A cookie always has a unique name (hopefully) and a value that can be
+obtained by using Ash_getcookie.
+
+For example, the SELECTRIC file selector installs the 'FSEL' cookie,
+the existance of which (!I)ACSpro(!i) internally checks for to determine
+whether it can offer the multi-file selection or not.
+
+!end_node
+
+!end_node

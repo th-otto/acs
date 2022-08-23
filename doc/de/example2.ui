@@ -1,0 +1,81 @@
+!begin_node Ein einfaches Programm: Hello World (Pure-Pascal, ACSpro 2.3.4)
+
+Als zweites Beispiel-Programm wird das vorhergehende Programm "Hello-
+World" unter Pure Pascal entwickelt.
+
+(!B)Hinweis:(!b) Zu diesem Beispiel gibt es kein Archiv mit den Sourcen, da es
+dafÅr viel zu simpel ist. Es ist genauso einfach wie zuvor... ;-)
+
+
+!subtoc [all] !depth 1
+
+
+!begin_node Schritt II-1: Erstellen der ACS-Dateien
+
+Das Erstellen der ACS-Dateien erfolgt wie im (!link [ersten Beispiel] [Ein einfaches Programm: Hello World (Pure-C, ACSpro 2.3.4)]) in den
+(!link [Schritten I-1] [Schritt I-1: Starten des GUI-Editors]) bis (!link [Schritt I-44] [Schritt I-44: ACS beenden]).
+
+Der einzige Unterschied ist, daû in (!link [Schritt I-41] [Schritt I-41: Die Eigenschaften des Hauptmoduls]) als Ausgabe-Sprache
+nicht Pure-C, sondern Pure-Pascal ausgewÑhlt werden muû.
+
+(!B)Hinweis:(!b) Als Pfad verwende ich in diesem Beispiel natÅrlich
+"D:\ACSPRO\BEISPIEL\HELLO.PAS" anstelle von
+"D:\ACSPRO\BEISPIEL\HELLO.C".
+
+Wenn Sie nun im Desktop - hier ist es jinnee - das Verzeichnis
+ansehen, in das Sie die Dateien gespeichert haben, so sollten Sie die
+hier abgebildeten Dateien vorfinden.
+
+
+!image (!IMAGES)img00812.img Die bisherigen Dateien des Beispiels
+
+!end_node
+
+
+!begin_node Schritt II-2: Anlegen des Hauptprogrammes in Pure-Pascal
+
+Starten Sie Pure-Pascal und legen Sie das Hauptprogramm an, z.B.
+"D:\ACSPRO\BEISPIEL\HELLO.PAS\MAIN.PAS".
+
+Geben Sie nun das Hauptprogramm wie abgebildet ein und speichern Sie
+es.
+
+
+!image (!IMAGES)img00811.img Anlegen des Hauptprogrammes in Pure-Pascal
+
+!end_node
+
+
+!begin_node Schritt II-3: Anlegen des Moduls Hello in Pure-Pascal
+
+Als nÑchstes legen Sie das Programm fÅr die Unit Hello an, z.B.
+"D:\ACSPRO\BEISPIEL\HELLO.PAS\HELLO.PAS".
+
+Geben Sie das Programm wie abgebildet ein und speichern Sie es.
+
+
+!image (!IMAGES)img00810.img Anlegen des Hauptprogrammes in Pure-Pascal
+
+!end_node
+
+
+!begin_node Schritt II-4: Das fertige Programm
+
+Lassen Sie Pure-Pascal das Hauptprogramm compilieren und linken. Sie
+sollten dann in Ihrem Desktop die folgenden Dateien wieder finden.
+
+
+!image (!IMAGES)img00809.img Das fertige Programm
+
+!end_node
+
+
+!begin_node Schritt II-5: Start des Programmes "Hello World"
+
+Das fertige Programm wird nun wie im (!link [Beispiel I] [Schritt I-51: Start des Programmes "Hello World"]) gestartet und verhÑlt
+sich identisch wie dort.
+
+!end_node
+
+
+!end_node

@@ -1,0 +1,4022 @@
+!begin_node History and ToDo list
+
+In the ToDo list I have listed all currently planned corrections and
+extensions. The list is sorted by priority.
+
+I also compiled the so-called (!I)History(!i), the list of all changes and
+improvements that are or have been made in (!I)ACSpro(!i). Like all such
+history lists, this is usually arranged chronologically, with the
+latest changes first in the list.
+
+(!B)Note:(!b) The version number of the next (!I)ACSpro(!i) version has now been
+increased from V2.40 to V3.0.0 because some fundamental things
+have changed.
+
+!subtoc [all] !depth 1
+
+(!B)Note:(!b) These lists contain the status of February 2, 2005. You can
+always get the latest version of the history and ToDo list via the
+Internet or the (!link [Help-Daemon of the Maus LL] [The Help Daemon of the Maus LL]). The address of the
+ACSpro pages is:
+
+!begin_center
+     (!url [http://acspro.atari.org/] [])
+!end_center
+
+
+!begin_node ToDo List
+
+Here I have listed all planned corrections and improvements in their
+assessed priority (the more important a point, the further up it is).
+
+The status of the list is of February 2, 2005. A more up-to-date list
+can be obtained via the (!link [Help-Daemon of the Maus LL] [The Help Daemon of the Maus LL]).
+
+!begin_enumerate
+
+  !item (!I)ACSpro(!i) and (!I)ACSpro(!i)-"products" should run under memory protection.
+     (U. Kaiser)
+
+     (!I)ACSpro(!i) should actually run this way, so far there have been
+     no problems with MultiTOS during the tests. I ask for further
+     tests under N.AES and Milan-MultiOS (both of which I do not
+     have available) and feedback of the results - thank you!
+
+  !item Transparent and convenient support in the (!I)ACSpro(!i)-(!I)GUI-Editor(!i)
+     (as far as possible and useful) and in the libraries for all
+     modern protocols such as AV- & XAcc-(!link [Protocol] [External communication]) (complete, not
+     just rudimentary as before), OLGA, GEMScript, ST-Guide,
+     PureC Help Protocol, DHST Protocol, SE-(!link [Protocol] [External communication]), Menu-(!link [Protocol] [External communication]),
+     SSP, etc. (M. Elsässer)
+
+     Most of the protocols mentioned are already supported passively
+     by (!I)ACSpro(!i), i.e. the corresponding messages are received
+     and processed. Active support is in preparation and will be
+     implemented in one of the versions after V3.0.0.
+
+  !item gcc should also be able to be used as a compiler. (U.
+     Kaiser)
+
+     A port for GNU-C is planned and in progress with version 3.0.0.
+
+  !item With more than 256 colors you get either black and white icons
+     or pixel garbage. (H. Achilles)
+
+  !item If (!I)ACSpro(!i)'s own UserDefs are given another service routine
+     via the general UserDef editor, this will be replaced by the
+     standard routine if you leave the Userdef object editor with
+     'OK'. Its own service routine should be maintained by the
+     Userdef object editor or even be able to enter it!
+
+  !item So far, backgrounds have been done automatically by MagiC
+     (background of the window is not registered) or by (!I)ACSpro(!i)
+     (background of the window is registered) and cannot be
+     influenced. (M. Elsässer)
+
+     In a future release, the Awindow structure will be expanded
+     to include a pointer for backgrounds, so that you can then
+     store your own routines there.
+
+  !item The WM_MOUSEWHEEL message is received and then implemented by
+     scrolling the window. Here, an optimized scrolling should take
+     place. If necessary, objects under the mouse should be scrolled.
+
+     This will be optimally supported in one of the next versions,
+     i.e. that mouse wheel actions scroll things such as edit fields,
+     (!link [cycle] [Userdef-Cycle]) buttons, popups, etc..
+
+  !item (!I)ACSpro(!i) should provide support for the WDIALOG print dialogs,
+     the (MagiC)-file selector and the (MagiC)-font selectors as a
+     window dialog and a modal dialog with the usual ease.
+
+     The (MagiC)-file selector and (MagiC)-font selector are fully
+     supported in version 3.0.0 in all possible (and impossible ;-)
+     variants. The WDIALOG print dialog is supported in version 3.0.0,
+     however the print dialog cannot yet be extended with your own
+     object trees. The integration of your own object trees in the
+     print dialog will be included in one of the next versions.
+
+  !item Most of the individual configuration files that are currently
+     available are stored in binary form.
+
+     It is planned to replace all the configuration files with the
+     appropriate Cfg strings. Application specific Cfg strings are
+     already loaded automatically. Control via the structure CfgInfo
+     in ACSconfig should be done via the (!I)GUIeditor(!i) in the main
+     module.
+
+     All modules should load their data from this one Cfg file. The
+     idea here is to use one Cfg group per ACS module. Therefore the
+     group names beginning with "ACS-" are reserved for (!I)ACSpro(!i)!
+     Only if the module's own group is not available should the module
+     use its own Cfg strings and transfer them to the Application's
+     Cfg strings. This transfer will be supported by (!I)ACSpro(!i) as soon
+     as the Cfg strings are used by all ACS modules.
+
+ !item The Aconfig structure generated by the (!I)GUI editor(!i) still has
+     dummy values for the components CfgInfo and basename.
+
+     The values stored here should be just as easy to enter for the
+     main module in the (!I)GUI editor(!i), as the other values of
+     the structure.
+
+ !item The structure Aconfig should contain (!I)all(!i) of the important
+     initialization data i.e. the entry of the activated (!link [Dead-Keys] [Handling dead keys]),
+     which have now been added, is missing,
+
+ !item After the linear unsorted list, other things like linear sorted
+     list, stack, binary trees, AB trees, hashtables, etc. would be
+     nice.
+
+ !item (!I)ACSpro(!i) and applications developed using (!I)ACSpro(!i) should run
+     without problems under MagiC 6 and N.AES using proportional
+     AES fonts. (U. Kaiser)
+
+ !item For Pure Pascal output, the forward declarations should also be
+     output.(K. Kroll)
+
+ !item The icon editor should be revised, preferably completely rewritten.
+     E.g. the icons for 16, 4 and 2 colors should also be editable for
+     256 colors...
+
+ !item The implemented Cfg strings should be changed by the presence of
+     a binary tree or a hash table, to achieve much better performance
+     than with the previous linear search.
+
+ !item Routines for processing and evaluating object trees e.g. to Copy
+     sections of trees, count objects in the tree etc. (H. Achilles)
+
+ !item Submenus should also be implemented in (!I)ACSpro(!i). Unfortunately
+     only subpopups are currently possible. (D. König)
+
+ !item In order to be able to check the plausibility of input as soon as
+     possible, a lot of programming effort is necessary, especially if
+     input fields depend on each other. Here (!I)ACSpro(!i) should offer some
+     mechanism that enables even complex plausibility checks to be done
+     without great effort.
+
+ !item Better support for multilingualism! So far, every ACS file has
+     to be opened in the (!I)ACSpro(!i)-(!I)GUI editor(!i) and changed to the new
+     language. Then, after generating the compiler sources, you have
+     to compile again. (M. Elsässer)
+
+     Here (!I)ACSpro(!i) will export all language variants in the future.
+     The one desired is then integrated using compiler macros, e.g.
+     only define the appropriate language macro in Pure-C. I still
+     have to "research" how this will work in Pure Pascal ...;-/
+
+     As a further variant, the strings can of course be outsourced
+     from the Application. Unfortunately, however, how applications
+     consisting of many modules access a "text resource" is still
+     not entirely clear. This last method is favored and will be
+     implemented in one of the versions after V3.0.0, since it
+     enables independent translators to translate applications into
+     other languages.
+
+ !item When copying objects in the (!I)GUI editor(!i) (Shift key pressed
+     while dragging) dependent objects (mostly strings) are only
+     referenced. By additionally pressing the control key, these
+     are then also copied. This current standard setting of this
+     exclusive referencing for copying objects in the (!I)GUI editor(!i)
+     should be activated the other way around, since referencing
+     is more useful as a special case.
+
+     Usually you move in, for example, a button object from the
+     toolbox window and sets the size, color, etc. If you now need
+     to have 10 of these objects, you could make the number of copies
+     earlier and then enter the different box texts. At the momement
+     however, this process must be carried out again for each of the
+     individual objects. This is a considerable additional effort and
+     does not save a byte of redundant code. However, objects that
+     are completely identical are rarely needed. (D. King)
+
+ !item Modern AES can draw an attractive dividing line in the menu.
+     This should be preferred over the (!I)ACSpro(!i) UserDef solution.
+     (U. Kaiser)
+
+     In (!I)ACSpro(!i) 3.0.0 the appearance of the menus has now been
+     adapted to the 3D menus such as displayed under MagiC with
+     a proportional system character set. The 3D look of the menus
+     is independent of the proportional font. The 3D look of the
+     menus can also be switched off.
+
+ !item In the sense of having a uniform and really user-friendly GUI,
+     the look of (!I)ACSpro(!i) applications should definitely adapt to
+     the popular style. (U. Kaiser)
+
+     On the whole, this should already be realized for MagiC. Of
+     course, I would like to adjust any missing points. (!I)ACSpro(!i)
+     applications should appear visually like any other modern
+     applications - this is also the case with older TOS versions.
+
+     However, I would like to convert the ACS Userdefs into some
+     corresponding GEM objects if they are available, e.g. the
+     checkboxes should be converted into MagiC checkboxes. However,
+     conceptual work is still necessary here due to the having ACS
+     functionality via service routines.
+
+ !item (!I)ACSpro(!i) should either use the MT_AES.LIB or some sort of its
+     own (optimized?) multithreading-binding. Having some convenient
+     possibilities for threads is also useful. (H. Achilles)
+
+     (!I)ACSpro(!i) now contains its own TOS and GEM bindings. The GEM
+     version is not yet multithreading optimized for (!I)ACSpro(!i).
+
+ !item The (!link [Cycle] [Userdef-Cycle]) object unfortunately only returns the index of the
+     first occurring entry when calling identical text entries using
+     AUO_CYGETINDEX. This is not WYSIWYG. If I pass, for example,
+     "Test |" as a string 10 times and click on the 10th entry, the
+     index 0 should not be returned. Here the search algorithm would
+     have to determine the position in the object tree and not just
+     the first string position in the popup string. Similar misconduct
+     is to be criticized for subpopups. For now, you have to make sure
+     that there are no identical strings in the popups - an annoying
+     limitation. (D. King)
+
+ !item The function Ame_strpopup opens the popup with the mouse over
+     this popup object when the (!I)chk(!i) pointer is passed. Unfortunately,
+     this is not the case when the desired object is in a subpopup.
+     The routine could be reprogrammed so that in this case the
+     subpopups are opened automatically and the mouse is then also
+     over the desired object. This looks a lot more professional and
+     you don't have to wiggle your way to this "starting point" every
+     time you want to select something within a "group" of sub (subsub)
+     popups. (D. King)
+!end_enumerate
+
+!end_node
+
+
+!begin_node Changes from version V2.3.3 to V3.0.0
+
+Here the changes and additions from V2.3.3 to V3.0.0. Changes are listed
+in reverse chronological order.
+
+(!B)Note:(!b) Changes to the C libraries also affect the (!link [Pascal-Library] [The Pascal Library])
+as well. The (!I)GUI-Editor(!i) has always benefited from any bugfixes and
+extensions to the libraries, since it was developed using (!I)ACSpro(!i).
+
+ 02/02/2005 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item The (!I)GUI-Editor(!i) now exports all four included languages
+           when generating the sources. The macros ACS_LANG1 through
+           ACS_LANG4 are used to decide during compilation which of the
+           language variants is to be integrated If none of the macros
+           are defined, the language chosen in the (!I)GUI-Editor(!i) 
+           for the ACS file is used.
+
+           This makes it very easy to compile an ACS program for other
+           languages. The language to be used can either be set in the
+           project file (Pure-C), in an include file or globally, i.e.
+           in the Pure-C IDE. For (!I)ACSpro(!i), both for the (!I)GUI-Editor(!i)
+           as well as for the libraries - the language variant is set
+           in the Pure-C IDE under Options->Compiler->Define Macro:.
+         !end_itemize
+
+ 01/31/2005 (!link [ACS.LIB] [The Pure-C Library]), (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item The copyright information has been modified.
+
+         !item Integration of the KEYTAB library to KEYTAB 12.
+         !end_itemize
+
+ 10/04/2004 ACSMOD.LIB, ACSMOD01.LIB, ACS_LOAD.O
+
+         !begin_itemize
+         !item Because of an error in the module interface, modules created
+           with the previous beta version of (!I)ACSpro(!i) could no longer be
+           loaded. The problem has been fixed.
+         !end_itemize
+
+ 06/02/2004 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item If there was at least one named parameter group present in
+           the (!link [Cfg-Strings] [The Configuration strings]), but there was no (unamed) default group
+           present, any parameters entered later for the default group
+           were saved in the middle of the other groups and of course
+           then assigned to another group when loading. Now the default
+           group is always saved first.
+         !end_itemize
+
+ 04/06/2004 (!link [ACS.LIB] [The Pure-C Library]), (!link [ACSPLUS.LIB] [The C-Extension Library]), (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Constants were assigned for the NKCC routines that were
+           previously reserved. These are:
+
+            !begin_xlist [NK_M_PGUP ($05)]
+            !item [NK_M_PGUP ($05)]  For the Apple Macintosh under (!link [MagiCMac] [MagiC]):
+                             one page up (Page Up)
+
+            !item [NK_M_PGDN ($06)]  For the Apple Macintosh under (!link [MagiCMac] [MagiC]):
+                             one page down (Page Down)
+
+            !item [NK_M_END ($07)]   For the Apple Macintosh under (!link [MagiCMac] [MagiC]):
+                             jump to the end (End)
+
+            !item [NK_M_F11 ($1A)]   For the Apple Macintosh under (!link [MagiCMac] [MagiC]):
+                             function key F11
+
+            !item [NK_M_F12 ($1C)]   For the Apple Macintosh under (!link [MagiCMac] [MagiC]):
+                             function key F12
+
+            !item [NK_M_F14 ($1D)]   For the Apple Macintosh under (!link [MagiCMac] [MagiC]):
+                             function key F14
+            !end_xlist
+
+         !item The default response under (!I)ACSpro(!i) is as follows:
+
+            !begin_xlist [NK_M_PGUP ($05)]
+            !item [NK_M_PGUP ($05)]  With no Shift-key pressed, scrolls up
+                             one page. This is how it used to be 
+                             with Shift-Cursor-Up.
+
+                             With Shift pressed, it scrolls up one
+                             line instead of one page, as how it
+                             was previously with Cursor-Up.
+
+            !item [NK_M_PGDN ($06)]  With no Shift-key pressed, scrolls down
+                             one page. This used to be how it was
+                             with Shift-Cursor-Down.
+
+                             With Shift pressed, it scrolls down one
+                             line instead of one page, as how it
+                             was previously with Cursor-Down.
+
+            !item [NK_M_END ($07)]   With no Shift-key pressed, jumps to the
+                             end as was previously the case with
+                             Shift-Clr/Home.
+
+                             With Shift pressed, it jumps to the
+                             beginning as with Clr/Home.
+            !end_xlist
+
+           The previous behavior of the keys Shift-Cursor-Up/Down and
+           Shift-Clr/Home remain the same.
+         !end_itemize
+
+ 04/06/2004 ACSMOD.LIB, ACSMOD01.LIB, ACS_START.O
+
+         !begin_itemize
+         !item The _globl symbol is now included in the module's startup
+           code.  Modules that use GEM functions and implement their
+           own bindings and so do not access the functions provided
+           via the module interface can be linked with the PCGEM.LIB
+           library. In compatibility mode, this provides a global
+           variable _globl that contains the global array. Now this
+           variable is included in the startup code and is initialized
+           by (!I)ACSpro(!i).
+
+           Unfortunately, all modules that were created with one of the
+           previous 3.0.0 beta versions will have to be linked again.
+           However, this should not be too much trouble.
+         !end_itemize
+
+ 03/29/2004 (!link [ACS.LIB] [The Pure-C Library]), ACSTOOLS.LIB, ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item The new functions of KEYTAB and the KEYTAB library have been
+           integrated into (!I)ACSpro(!i). The functions are also available
+           through the module interface for Module.
+         !end_itemize
+
+ 02/01/2004 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item New (!link [Cookies] [The Cookie Jar]) from the MiNT mailing list were added to
+           ACSCOOK.H.
+         !end_itemize
+
+ 01/19/2004 (!link [ACS.LIB] [The Pure-C Library]), ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item The unsorted linear list ULinListe was renamed to ULinList.
+           The previous name ULinListe is converted to the new name
+           using a macro.
+
+         !item The "related" objects Stack and Queue have been added to the
+           unsorted linear list.
+
+         !item The create and delete functions of the new objects Queue and
+           Stack are also available via the module interface.
+         !end_itemize
+
+ 01/01/2004 (!link [ACS.LIB] [The Pure-C Library]), (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item The copyright information was updated.
+         !end_itemize
+
+ 11/10/2003 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item The (!I)GUI-Editor(!i) text has been translated to English, so a
+           beta version of the English version is now available.
+         !end_itemize
+
+ 07/30/2003 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Libaries PCGEM.LIB (GEM-Binding) and ACSTOS.LIB(TOS-Binding)
+           are no longer included in (!link [ACS.LIB] [The Pure-C Library]). This means that now
+           the bindings can be exchanged for more recent versions at
+           any time. So all applications must now link PCTOS.LIB and
+           PCGEM.LIB, which are included with (!I)ACSpro(!i).
+
+         !item (!I)ACSpro(!i) has now been completely converted to the TOS library
+           PCTOS.LIB. This optimized version doesn't really affect much
+           as far as TOS bindings, so the effort for compatibility with
+           various documentation has been stopped. Since only a few
+           functions are involved, this change should not cause any
+           problems.
+         !end_itemize
+
+ 12/29/2002 (!link [ACS.LIB] [The Pure-C Library]), ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item The new function Avdi_getRGB returns the appropriate RGB
+           values for the 256 color NVDI palette. This means that the
+           color information for objects that "only" know 256 colors
+           is available for correct drawing, even with high or true
+           color resolutions. The function is also available via the
+           module interface.
+
+         !item The Af_2path function returns the default path for the
+           default drive instead of returning the root path "\"
+           i.e. Dgetpath(dest, 0) - in case no path is recognized
+           in the parameter. This behavior is the same as for the
+           Af_2drv function and also is required for relative path
+           specifications.
+         !end_itemize
+
+ 11/22/2002 (!link [ACS.LIB] [The Pure-C Library]), ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item The new function Aob_count counts the number of OBJECT
+           structures in an object tree. As usual with GEM, the end
+           is indicated by the flag LASTOB in ob_flags. Depending on
+           the flag passed, the AOBJECT structures are either skipped
+           or included in the count. The function is also available
+           via the module interface.
+         !end_itemize
+
+ 11/13/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item When sending data via Drag&Drop to other applications, there
+           was another major bug: the length of the data was not sent
+           correctly for strings (ACS-DD type AT_STRING, AT_TEXT and
+           AT_FILE), so that the recipient only used part of the data.
+
+         !item The Selection-Popup, with which the target application must
+           be selected, now only appears if the owner of the target
+           window cannot be determined using WF_OWNER (WF_OWNER does
+           not exist or produces errors).
+
+         !item Strings received from other applications, that arrive via
+           the (!link [Drag Routine] [Click Routine & Drag Routine]) are now correctly declared as AT_STRING
+           or AT_TEXT depending on whether either of the characters
+           '\n' (CR) or '\r' (LF) are included.
+
+         !item Per the XAcc-(!link [Protocol] [External communication]) received strings are now not only
+           declared as AT_STRING, but also as AT_FILE if the string 
+           according to Af_length() is the name of an existing file
+           or folder. However, the distinction between AT_TEXT or not
+           has priority.
+
+         !item Correction made when processing a Drag&Drop message: the
+           Drag&Drop (!link [Protocol] [External communication]) provides a header that contains at 
+           least the following information: HeaderLength (2 bytes), the
+           Data type (4 bytes) and the DataLength (4 bytes). (!I)ACSpro(!i)
+           reported an error to the sender if the HeaderLength was less
+           than 10 bytes. Tests have shown that MagicDesk specifies a
+           length of 9. The check was therefore changed to at least 8
+           characters. Apparently the "scholars" don't agree whether
+           the length specification belongs to the header or not!
+           (!I)ACSpro(!i) now assumes that the two byte HeaderLength does
+           (!I)not(!i) belong to the header, but that the HeaderLength
+           indicates how many bytes (!I)follow(!i).
+         !end_itemize
+
+ 09/21/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Fixed handling of the GEMScript message GS_ACK.
+
+         !item Due to internal optimizations in the various supported
+           protocols, savings in some of the required memory were
+           realized.
+         !end_itemize
+
+ 09/13/2002 (!link [ACS.LIB] [The Pure-C Library]), ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item The current PCGEM.LIB has been included. The new functions
+           (up to NVDI 5) are also available in the module interface.
+
+         !item The module interface for vsf_updat was not correct, so there
+           were some assumptions, so that in case of doubt, wrong VDI
+           functions were called. This has now been fixed!
+
+         !item The current KEYTAB library has been integrated, the new
+           functions are also available in the module interface.
+         !end_itemize
+
+ 08/31/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item The appl_xgetinfo function now also checks whether WINX is
+           available, since in that case appl_getinfo can also be
+           called.
+         !end_itemize
+
+ 08/06/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item The COLORS_CHANGED message (see NVDI 5 documentation) is
+           processed and a complete redraw of the screen is triggered.
+         !end_itemize
+
+ 07/22/2002 (!link [ACS.LIB] [The Pure-C Library]), ACSTOOLS.LIB, ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item The new functions of KEYTAB and the KEYTAB library have been
+           integrated into (!I)ACSpro(!i). The functions are also available
+           through the module interface.
+
+         !item Several new functions Ax_recycle, Ax_setRecycleSize and
+           Ax_getRecycleStat are now available for use via the module
+           interface for Module.
+         !end_itemize
+
+ 07/04/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item The new function Ax_getRecycleStat() returns the current
+           statistics for memory management of the free lists. The
+           configuration of memory management in the ACSinit0 routine
+           can be optimized with the data supplied with this.
+
+         !item The new function Ax_setRecycleSize() manages the lists of
+           free memory blocks:
+
+              !begin_itemize
+              !item The new function Ax_setRecycleSize() manages the lists
+                of free memory blocks:
+
+              !item A size recognized by (!I)ACSpro(!i) is set to the new
+                maximum value (if the list has been reduced, all blocks
+                that are now buffered too much are released)
+
+              !item If the number of blocks to be buffered is set to 0 for
+                a known block size, memory blocks of this size are no
+                longer buffered and the list is deleted.
+              !end_itemize
+
+         !item The new function Ax_recycle() appends a memory block to a
+           list of free blocks, as long as (!I)ACSpro(!i) manages the size
+           of the block in a list. If the maximum number of blocks
+           to be kept set for the block size is reached, the block is
+           freed directly via Ax_free, just like with an unmanaged
+           block size.
+
+         !item The memory management for the Ax_malloc() and Ax_free()
+           functions has been expanded to include management of empty
+           lists.
+
+           (!I)How does this work?(!i)
+           Nun, es gibt eine interne Funktion, die (!I)ACSpro(!i) zur Freigabe
+           der eigenen Structures wie z.B. Awindow, TEDINFO, BITBLK,
+           AUSERBLK, ULinList oder intern gekapselter Structures
+           verwendet. Diese Funktion prüft, ob es for die
+           entsprechende Blockgröße eine Liste for freie Blöcke gibt.
+           Falls dies der Fall ist, wird der Block nicht freigegeben,
+           sondern in dieser Liste aufbewahrt - allerdings wird for
+           jede dieser Listen eine Obergrenze beachtet, ab der der
+           Speicher - wie bisher auch - per Ax_free freigegeben wird.
+           Falls danach ein Block dieser Größe angefordert wird, wird
+           er direkt aus dieser Liste genommen und braucht nicht
+           erneut alloziert werden.
+
+           Da die Speicherverwaltung der (!link [Pure-C-Bibliothek] [The Pure-C Library]) die Blöcke
+           nicht sofoert an das Betriebssystem zurückgibt, sondern
+           größere Blöcke anfordert, diese verwaltet und auf
+           Anforderung an die Anwendung gibt, ergibt sich eigentlich
+           kein nennenswerter Mehrverbrauch an Speicher. Da (!I)ACSpro(!i)
+           jedoch die Größe der eigenen Structures kennt, kann (!I)ACSpro(!i)
+           hier viel effizienter die Verwaltung übernehmen. Besonders
+           bei den Structures AUSERBLK macht sich dies positiv
+           bemerkbar, da diese bei allen ACS-eigenen Objekten
+           verwendet werden.
+         !end_itemize
+
+ 07/03/2002 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) verwendet nun Version 1.4 des Startup-Codes
+           von Stefan Kuhr @ OS. Im ReadMe dazu steht:
+
+              !begin_itemize
+              !item Die Zeiger auf die EnvironmentVariables und
+                Kommandozeilenargumente verringern die Stack-Größe nun
+                nur noch bei Accessories oder zu kleiner TPA. Ein
+                minimaler Stack bleibt immer frei.
+
+              !item Wenn der Heap zu klein ist - TPA ist schon geschrumpft
+                und der Stack ist kleiner als ein Mindestwert -,
+                beendet der Startup-Code das Programm mit dem Exit-
+                Code 0x4150.
+
+              !item Auch bei viel zu vielen EnvironmentVariables oder
+                Argumenten wird niemals über das TPA-Ende
+                hinausgeschrieben. Gleich zu Beginn wird der maximale
+                Heap berechnet: MaxHeapSize = TPA - BSSEnde -
+                MinimalStack. Mit dem Schreiben der argv- und envp-
+                Zeiger wird der Heap gefüllt und bei Erreichen der
+                maximalen Heap-Größe wird die Auswertung abgebrochen.
+                Auf das reele Heap-Ende wird die Stack-Größe addiert
+                und so das gewünschte Ende der TPA bestimmt. Falls
+                möglich wird dann noch die TPA geschrumpft.
+
+              !item Die Basepagekommandozeile wird nun ins BSS kopiert und
+                nicht mehr direkt in der Basepage geparst, da ein
+                Fsfirst() ohne vorheriges Fsetdta() die Kommandozeile
+                zerstört.
+
+              !item Bei einem zu hohen Wert for die
+                BasepagekommadozeilenLength wurde an eine falsche
+                Position gesprungen und dadurch ein RTS ausgeführt,
+                ohne das eine gültige Rücksprungadresse auf dem Stack
+                war.
+
+              !item Durch einen falschen Vergleichen mit '0' wurden leere
+                ARGV-Argumente ab dem zehnten nicht mehr geleert.
+
+              !item Den kleinen Startup-Code habe ich nochmal überarbeitet
+                und ein wenig optimiert. Unter anderem habe ich
+                argv[0], argv[1] und envp bereits initialisiert ins
+                Datensegment gelegt.
+              !end_itemize
+
+           Ein dickes Danke an Stefan Kuhr @ OS for seinen Startup-
+           Code und dessen Pflege. Besonders natürlich ein dickes
+           Danke, daß ich ihn (!I)ACSpro(!i) beilegen darf!
+         !end_itemize
+
+ 06/24/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Funktion Af_fileselect() hat einen weiteren Parameter
+           bekommen. Nach dem Extensions-(!link [Pattern] [Userdef-Pattern]) wird nun die
+           Sortierung des File-Selectors angegeben. Diese Sortierung
+           wird nur for die FSLX-Funktionen verwendet. Falls die
+           FSLX-Funktionen nicht verfügbar sind und daher auf
+           Af_select() bzw. Af_first_fsel() und Af_next_fsel()
+           zurückgegriffen werden muß, so wird diese Sortierung (!I)nicht(!i)
+           berücksichtigt.
+         !end_itemize
+
+ 06/23/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Funktion Ash_font liefert nun bei Verwendung des
+           modalen Font-Selektors in der übergebenen Struktur
+           A_FontSel die Ergebnisse zurück.
+
+         !item In der Funktion Af_fileselect wurde die Verwendung der
+           Extensions-Patterns nochmals überarbeitet und korrigiert.
+           Nun sollte alles korrekt laufen.
+         !end_itemize
+
+ 06/05/2002 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) verwendet nun Version 1.3 des Startup-Codes
+           von Stefan Kuhr @ OS. Im ReadMe dazu steht:
+
+              !begin_itemize
+              !item Der Parser hat nun eine C-Schnittstelle, so daß er nun
+                auch for z.B. AV_START genutzt werden kann. Die
+                Schnittstelle ist wie folgt definiert:
+
+!begin_sourcecode
+unsigned long parse_cmdline(
+         char *cmdline,
+         char *cmdarg, char **argv,
+         unsigned long max_argc );
+!end_sourcecode
+
+                 !begin_xlist [max_argc]
+                 !item [cmdline]  ist ein Zeiger auf eine Kommandozeile, die
+                          durch ein Nullbyte abgeschlossen ist, und
+                          kein Lengthnbyte besitzt.
+
+                 !item [cmdarg]   verweist auf einen Speicher, in dem die
+                          geparsten Argumente abgelegt werden sollen.
+                          Ist dieser Zeiger NULL, wird cmdline als
+                          Zielspeicher verwendet.
+
+                 !item [argv]     bestimmt die Adresse, an der bis zu max_argc
+                          Zeiger auf die einzelnen Argumente der
+                          Kommandozeile hintereinander abgelegt
+                          werden. Sofern das Feld groß genug ist, ist
+                          argv[Ergebnis]==NULL. Es ist aber auch
+                          möglich, einen Nullpointer an argv zu
+                          übergeben.
+
+                 !item [max_argc] beschreibt die Größe des Feldes argv.
+                 !end_xlist
+
+                Ergebnis ist die Anzahl der Argumente in der
+                Kommandozeile.
+
+                Die Parameterübergabe erfolgt in Pure-C-Manier, es
+                werden dazu die Register D0, A0, A1 und ein Argument
+                auf dem Stack genutzt. Alle anderen Register bleiben
+                unverändert.
+
+              !item Bei einer defekten, erweiterten ARGV-Übergabe, konnte
+                es zu Speicherschreibern kommen. Ich habe nun alle
+                unsicheren Stellen abgedichtet.
+
+              !item Ein ARGV=NULL:0 wurde nicht ausgewertet. (Naja, macht
+                eh keinen großen Sinn den Programmnamen zu löschen;
+                aber nun geht auch das.)
+
+              !item Die Register werden nun als unsigned betrachtet, dass
+                heißt es können theoretisch über vier Milliarden
+                Argumente und EnvironmentVariables gehandhabt werden.
+                Auch argc wird als unsigned long an main() übergeben.
+
+              !item Die Baspagekommandozeile wird nun nicht mehr auf den
+                Heap kopiert (was dem Stack 128 Byte kostete), sondern
+                direkt in der Basepage geparst.
+
+              !item Nach wie vor wird der Speicher for die Felder envp und
+                argv vom Stack abgeknappst. Das sollte bei der Wahl
+                der Stackgröße bedacht werden. Vorsichtige Naturen
+                können die unterste Stackadresse _StkLim entnehmen.
+
+              !item Selbst bei korrupter Argumentübergabe sind die
+                Parameter an main() konsistent.
+
+              !item Der kleine Startup-Code ist noch um eine Kleinigkeit
+                geschrumpft.
+              !end_itemize
+
+           Ein dickes Danke an Stefan Kuhr @ OS for seinen Startup-
+           Code und dessen Pflege. Besonders natürlich ein dickes
+           Danke, daß ich ihn (!I)ACSpro(!i) beilegen darf!
+         !end_itemize
+
+ 05/30/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Funktion Awi_obfind() stürzte mit einem Bus-Error ab,
+           wenn als **tree der Zeiger NULL bzw. NIL übergeben wurde.
+
+         !item Die Funktion nkc_kstate() brachte ebenfalls hin und wieder
+           einen Bus-Error zustande.
+         !end_itemize
+
+ 05/26/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Bei den Funktionen A_dialog und A_dialog2 wird nun wie bei
+           Awi_dialog das Hauptmenu deaktiviert.
+
+         !item Falls bei A_dialog oder A_dialog2 ein Dialog ohne Edit-
+           Felder verwendet wurde, gab es einen üblen Absturz, der nun
+           behoben sein sollte.
+
+         !item Aktuelle PCGEM.LIB mit Fehlerkorrektur for fsel_exinput
+           sowie Unterstützung der Mausräder gemäß TORG 105 (siehe
+           http://www.tosgroup.org - wie z.B. von MWheel von Armin
+           Diedering verwendet - wird verwendet.
+         !end_itemize
+
+ 05/23/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die HOT-Close-Box wird ggf. abgeschaltet, wenn das System
+           sie gemäß appl_getinfo nicht kennt.
+         !end_itemize
+
+ 05/22/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Probleme bei Parameterübergabe via VA_START und D&D
+           korrigiert.
+         !end_itemize
+
+ 05/06/2002 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Der DESKTOP hatte noch einen kleinen Bug: beim Doppelklick
+           auf das NEU-Icon wurde ein nicht initialisierter String
+           anstelle des Wertes NULL übergeben.
+         !end_itemize
+
+ 04/04/2002 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Bei Verwendung des "alten Menu-Layoutes" gab es einen
+           Absturz, der nun behoben sein sollte.
+         !end_itemize
+
+ 04/01/2002 ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item Die neue Funktion Ash_getOSHeader steht auch über die
+           Modul-Schnittstelle for Module zur Verfügung.
+
+         !item Die Kompatibilitäts-Funktionen Aob_create und Aus_create
+           for Module der ACS-Versionen 2.30 bis 2.3.4 waren
+           fehlerhaft in die Schnittstelle eingebunden. Module, die
+           nur Awi_create verwendet haben, haben funktioniert. Sobald
+           allerdings Aob_create oder Aus_create verwendet wurde -
+           z.B. beim Austausch des Work Objectes -, gab es Probleme.
+         !end_itemize
+
+ 03/26/2002 (!link [ACS.LIB] [The Pure-C Library]), (!link [ACSPLUS.LIB] [The C-Extension Library]),
+
+         !begin_itemize
+         !item Die von der Funktion Af_fileselect intern benutzten
+           Wrapper-Funktionen for die Funktionen Af_fileselect,
+           Af_select, Af_first_fsel und Af_next_fsel wurden komplett
+           überarbeitet. (!I)Dadurch wurde der Parameter patterns
+           geändert!(!i)
+
+           In dem Parameter patterns werden jetzt Endungs-Muster
+           übergeben. Mehrere Endungen in einem Muster werden durch
+           ',' getrennt, mehrere Muster durch ein Null-Byte.
+           Abgeschlossen werden die Muster durch zwei
+           aufeinanderfolgende Null-Bytes. Der (!I)GUI-Editor(!i) verwendet
+           z.B. beim Öffnen die Patterns (als C-String)
+           "ACS,acs\0RSC,rsc\0\0".
+
+           Falls die FSLX-Funktionen verfügbar sind, werden die
+           Extensionen direkt verwendet (incl. Groß-/
+           Kleinschreibungsvarianten), falls auf Af_select bzw.
+           Af_first_fsel und Af_next_fsel zurückgegriffen wird, wird
+           nur die erste Extension (unverändert) verwendet.
+
+         !item Die neue Funktion Ash_getOSHeader liefert einen Zeiger auf
+           die Struktur SYSHDR (manchmal auch OSHEADER genannt)
+           zurück.
+         !end_itemize
+
+ 03/20/2002 (!link [ACS.LIB] [The Pure-C Library]), ACSTOOLS.LIB, ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item Die neue Funktion Ast_istr sucht analog zur C-Funktion
+           strstr einen Substring in einem String - allerdings im
+           Gegensatz zu strstr ohne Unterscheidung zwischen Groß- und
+           Kleinschreibung. Die Funktion ist auch in der Modul-
+           Schnittstelle enthalten.
+         !end_itemize
+
+ 03/16/2002 (!link [ACS.LIB] [The Pure-C Library]), ACSTOOLS.LIB
+
+         !begin_itemize
+         !item Wenn im Dateinamen das Quote-Zeichen selbst vorkam und
+           daher verdoppelt wurde, so funktionierte nichts mehr. Die
+           Funktionen Af_quote und Af_unquote arbeiten nun korrekt.
+           Als Quote-Zeichen erkennt Af_unquote sowohl die einfachen
+           als auch die doppelten Anführungszeichen, während Af_quote
+           selbst nur die einfachen Anführungszeichen verwendet.
+
+         !item Die neue Funktion Af_parseCmdLine zerlegt eine
+           Kommandozeile und liefert eine lineare Liste ULinList mit
+           den Dateinamen zurück. Hierbei wird das Quoting korrekt
+           behandelt, d.h. aus den String
+
+                "'Param Leer.txt' Param_no_Leer.txt 'Param Leer
+                und `` darin.txt`"
+
+           wird eine lineare Liste mit den Einträgen
+
+                Param Leer.txt
+                Param_no_Leer.txt
+                Param Leer und ` darin.txt
+
+           gebildet. Die Namen liegen also nicht gequoted vor!
+
+         !item Die Dateinamen, die von außerhalb der Anwendung über die
+           Drag Routinen als AT_FILE geliefert werden, liegen nun
+           gequoted vor. Ggf. können mehrere Dateinamen geliefert
+           worden sein, die über getrennte Aufrufe der (!link [Drag Routine] [Click Routine & Drag Routine])
+           übergeben werden. Intern wird der gelieferte String über
+           Af_parseCmdLine in ie Dateinamen zerlegt, die dann per
+           Af_quote gequoted und an an die (!link [Drag Routine] [Click Routine & Drag Routine]) bzw. dem
+           Fenster mittels der Nachricht AS_DRAGGED weiter gegeben
+           werden.
+
+           Damit sollten nun lange Dateinamen - besonders mit
+           Leerzeichen oder einfachen Anführungszeichen - wesentlich
+           komfortabler möglich sein, als es bisher der Fall war.
+
+           Zur Erinnerung: Wenn keines der im C-String " \t\n\r'"
+           enthaltenen Zeichen im übergebenen Dateinamen vorkommt, so
+           macht Af_quote nichts!
+         !end_itemize
+
+ 03/14/2002 (!link [ACS.LIB] [The Pure-C Library]), (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Bei meinen Tests habe ich leider feststellen müssen, daß
+           das Öffnen von Dateien im PUR_DESK nun nicht mehr
+           reibungslos klappte. Jetzt geht (endlich) sowohl das Öffnen
+           im PUR_DESK, als auch die Übergabe von Dateien per AV-
+           (!link [Protocol] [External communication]) oder Drag&Drop-Protokoll
+         !end_itemize
+
+ 03/03/2002 (!link [ACS.LIB] [The Pure-C Library]), (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Der PUR_DESK und der DESKTOP unterstützen nun Quoting von
+           Dateinamen auch bei übergebenen Namen beim AV-(!link [Protocol] [External communication])
+           oder Atari-Drag&Drop-(!link [Protocol] [External communication]).
+
+         !item Beim Drag&Drop-(!link [Protocol] [External communication]) war noch ein Fehler enthalten, so
+           daß eine Parameter-Übergabe von z.B. jinnee an ACS-
+           Anwendungen nicht richtig funktionierte.
+
+         !item Bei meinen Tests der Parameter-Übergabe stellte ich
+           erstaunt fest, daß jinnee beim Öffnen von mehreren ACS-
+           Dateien (im jinnee-Fenster z.B. zwei Dateien selektiert und
+           "Datei\Objekte öffnen" auswählen) den ersten Parameter an
+           den (!I)GUI-Editor(!i) übergeben hat und den zweiten je nach
+           Anmeldung des (!I)GUI-Editor(!i) per VA-START oder Drag&Drop
+           übergab. In der frühen Initialisierungsphase von (!I)ACSpro(!i)
+           ging das schief und wurde mit einem Crash quittiert, der
+           nun ausgeräumt ist.
+         !end_itemize
+
+ 03/01/2002 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Sowohl der PUR_DESK als auch der DESKTOP verwenden nun
+           Af_unquote vor Aufruf der der hinterlegten Neu-Routine.
+         !end_itemize
+
+ 02/28/2002 (!link [ACS.LIB] [The Pure-C Library]), ACSTOOLS.LIB, ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item Die neue Funktion Af_quote prüft, ob ein Dateiname mit
+           Quote-Zeichen versehen muß, bevor er an andere Anwendungen
+           gesandt werden kann (z.B. for AV-(!link [Protocol] [External communication]). Umgekehrt
+           entfernt ggf. die Funktion Af_unquote vorhandene Quote-
+           Zeichen.
+         !end_itemize
+
+ 02/24/2002 ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item Die neuen Funktionen for die KEYTAB-Ansteuerung sowie das
+           Setzen der Icons sind in die Modul-Schnittstelle
+           aufgenommen worden.
+         !end_itemize
+
+ 02/24/2002 (!link [ACS.LIB] [The Pure-C Library]), ACSTOOLS.LIB
+
+         !begin_itemize
+         !item Der Druck-Dialog sowie der File- und der Font-Selector
+           verwenden nun kein Icon mehr. Über die Funktionen
+           Ash_printSetIcon, Ash_fileSetIcon und Ash_fontSetIcon kann
+           das zu verwendende Icon gesetzt oder durch NULL bzw. NIL
+           gelöscht werden. Der Parameter ghost setzt oder löscht bei
+           vorhandenem Icon das "Ghost-Flag" (!link [AW_GHOSTICON] [AW_GHOSTICON]).
+
+         !item Die Bibliothek KEYTAB.LIB wurde in (!I)ACSpro(!i) integriert.
+           Mittels dieser Bibliothek wird KEYTAB zur Zeichensatz-Kon-
+           version angesteuert. Die dazu notwendigen Funktionen sind
+
+                Akt_getKeyTab, Akt_getRelease, Akt_getEuro,
+                Akt_getExpMaxNr, Akt_getImpMaxNr,
+                Akt_getExpNameFromNr, Akt_getImpNameFromNr,
+                Akt_getExpShortNameFromNr,
+                Akt_getImpShortNameFromNr, Akt_getExpNrFromId,
+                Akt_getImpNrFromId, Akt_getExpIdFromNr,
+                Akt_getImpIdFromNr, Akt_getExpNrFromName,
+                Akt_getImpNrFromName, Akt_CharAtari2X,
+                Akt_CharX2Atari, Akt_BlockAtari2X,
+                Akt_BlockX2Atari, Akt_StringAtari2X und
+                Akt_StringX2Atari.
+
+           In der Bibliothek (!link [ACS.LIB] [The Pure-C Library]) sind zusätzlich die Funktionen
+
+                Akt_popExpName, Akt_popImpName, Akt_chooseExpNr
+                und Akt_chooseImpNr
+
+           enthalten, die eine komfortable Auswahl des Ziel- bzw.
+           Quell-Zeichensatzes über Popups ermöglichen.
+
+           Die Einbindung der Bibliothek KEYTAB.LIB oder der Header-
+           Datei KEYTAB.H ist damit überflüssig geworden.
+
+           Genauere Informationen über KEYTAB und die KEYTAB.LIB
+           liegen zusammen mit allen(!) Sourcen KEYTAB bei. KEYTAB
+           kann aus der Maus LL (Telefonnummer 0 81 92 / 99 6 99 99,
+           V.34 und X.75) oder vom Internet unter
+           http://acspro.atari.org/ geladen werden.
+         !end_itemize
+
+ 12/15/2001 ACSTOOLS.LIB
+
+         !begin_itemize
+         !item Es gibt nun eine weitere Bibliothek: ACSTOOLS.LIB. Sie ist
+           for TOS/TTP-Programme und stellt einige Utility-Funktionen
+           aus (!I)ACSpro(!i) zur Verfügung.
+
+           Auch hier erfolgt die Initialisierung über die bekannten
+           Funktionen ACSinit0 und ACSinit. Die wichtigsten
+           Initialisierungs-Daten müssen über eine Variable ACSconfig
+           vom Typ Aconfig zur Verfügung gestellt werden. Die
+           Dokumentation dieser Bibliothek wird in die (!I)ACSpro(!i)-
+           Dokumentation eingearbeitet werden.
+
+           (!B)Note:(!b) Die Struktur von Aconfig, Ablk etc. ist for die
+           TOS-/TTP-Programme entsprechend angepaßt worden, d.h. GEM-
+           Anwendungen benötigen (!link [ACS.LIB] [The Pure-C Library]), TOS/TTP-Programme
+           ACSTOOLS.LIB. Beide Bibliotheken schließen sich aus.
+         !end_itemize
+
+ 11/28/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Beim Erstellen der Cfg-Struktur UConfig wurde die
+           Komponente env_praefix der Info-Struktur UCfgInfo nicht
+           korrekt ausgewertet: wenn env_praefix gleich NULL bzw. NIL
+           ist, so wurde ein leerer String erzeugt. Durch env_praefix
+           gleich NULL bzw. NIL wird signalisiert, daß (!I)nicht(!i) im
+           Environment nach einer Cfg-Variables gesucht werden soll,
+           wenn sie in den Cfg-Strings nicht gefunden wird.
+         !end_itemize
+
+ 11/27/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Nach einigen Tests hat sich ein übler Absturz in den Cfg-
+           Strings gezeigt, der nun korrigiert ist. Er trat auf, wenn
+           ein gesuchter String nicht gefunden wurde und versucht
+           wurde, im Environment den gewünschten Wert zu finden.
+         !end_itemize
+
+ 10/26/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Der PUR_DESK wurde um ein paar interne Überprüfungen
+           ergänzt, die den Betrieb gegenüber Programmier-Fehlern
+           stabiler machen dürften.
+         !end_itemize
+
+ 10/17/2001 (!link [ACS.LIB] [The Pure-C Library]), ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item Die neue Funktion Ash_gettimer liefert den Wert des 200Hz-
+           Timers zurück. Bevorzugt wird der Wert über Ssystem
+           ermittelt, falls dies nicht geht, wird der Timer direkt
+           ausgelesen. Die Funktion steht auch über die Modul-
+           Schnittstelle zur Verfügung.
+         !end_itemize
+
+ 09/25/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item In (!I)ACSpro(!i) wurden die Änderungen aus PCGEM.LIB übernommen
+           (Binding v_opnwk erweitert, Binding for v_copies
+           nachgerüstet).
+         !end_itemize
+
+ 09/18/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Kleinere Umstellungen und Optimierungen bei der
+           Initialisierung des ACS-Systems - z.B. sollte jetzt nach
+           der Initialisierung der normale Mauszeiger erscheinen.
+
+         !item Kleinere Optimierungen in Amo_busy() und Amo_unbusy() sowie
+           Amo_hide() und Amo_show().
+         !end_itemize
+
+ 09/06/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Der Font-Selektor hatte keinen Fenster-Titel. Dieser wird
+           jetzt an die Funktion Ash_font übergeben. Daher erhält die
+           Funktion Ash_font als neuen ersten Parameter den Fenster-
+           Titel, die restlichen Parameter sind wie gewohnt.
+
+         !item Beim Aufruf der Druck-Dialog im nicht-modalen Fenster
+           erfuhr man in der Nachricht AS_PRINT, welche Daten
+           eingestellt wurden. Allerdings fehlte hier die Information,
+           ob "OK", "Drucken" oder "Abbrechen" gewählt worden war.
+           Daher wurde die Struktur A_PrintSel um die Angabe des
+           Buttons erweitert. Wenn der Button nicht PDLG_OK ist, so
+           wurde Abbrechen gewählt, bei PDLG-OK entweder OK oder
+           Drucken, was durch options (der Wert, der Ash_print
+           mitgegeben wurde) bestimmt wird.
+         !end_itemize
+
+ 08/21/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Wenn in Fenster-Dialogen ein Tastendruck nicht verarbeitet
+           werden kann - z.B. weil kein Eingabefeld existiert und es
+           kein passendes Tastenkürzel gibt -, so passierte gar
+           nichts.
+
+           Jetzt kann bei Tastendrücken ohne Ctrl oder Alt versucht
+           werden, ein Tastenkürzel mit Ctrl oder Alt zu verwenden.
+           Über die Variable ACSblk->keyAltCtrlSwitch wird global for
+           die Anwendung das Verhalten definiert. Folgende Varianten
+           sind möglich:
+
+              !begin_itemize
+              !item Suche im Work Object getrennt einschaltbar
+
+              !item Suche in der Toolbar getrennt einschaltbar
+
+              !item Suche nach Alt+Key getrennt einschaltbar
+
+              !item Suche nach Ctrl+Key getrennt einschaltbar
+
+              !item Suche nach Ctrl+Alt+Key getrennt einschaltbar
+
+              !item Zuerst im Work Object suchen, dann in der Toolbar
+
+              !item Zuerst in der Toolbar suchen, dann im Work Object
+              !end_itemize
+ 
+           Hierfor sind einige Konstanten definiert:
+
+            !begin_xlist [KEY_AC_CTRL_FIRST_WORK]
+            !item [KEY_AC_NONE]            bisheriges Verhalten (keine
+                                   Variante probieren)
+
+            !item [KEY_AC_ALT_WORK]        Alt+Key im Work Object versuchen
+                                   (defaultmäßig aktiviert)
+
+            !item [KEY_AC_CTRL_WORK]       Ctrl+Key im Work Object versuchen
+                                   (defaultmäßig nicht aktiviert)
+
+            !item [KEY_AC_CTRL_FIRST_WORK] For das Work Object erst Ctrl+Key,
+                                   dann Alt+Key versuchen (Standard:
+                                   erst Alt, dann Ctrl)
+
+            !item [KEY_AC_ALT_CTRL_WORK]   Ctrl+Alt+Key im Work Object
+                                   versuchen (defaultmäßig nicht
+                                   aktiviert)
+
+            !item [KEY_AC_ALT_TOOL]        Alt+Key in der Toolbar versuchen
+                                   (defaultmäßig nicht aktiviert)
+
+            !item [KEY_AC_CTRL_TOOL]       Ctrl+Key in der Toolbar versuchen
+                                   (defaultmäßig nicht aktiviert)
+
+            !item [KEY_AC_CTRL_FIRST_TOOL] For die Toolbar erst Ctrl+Key, dann
+                                   Alt+Key versuchen (Standard: erst
+                                   Alt, dann Ctrl)
+
+            !item [KEY_AC_ALT_CTRL_TOOL]   Ctrl+Alt+Key in der Toolbar
+                                   versuchen (defaultmäßig nicht
+                                   aktiviert)
+
+            !item [KEY_AC_TOOL_FIRST]      Zuerst in der Toolbar, dann im
+                                   Work Object nachsehen (Standard:
+                                   erst Work Object, dann Toolbar)
+            !end_xlist
+         !end_itemize
+
+ 08/08/2001 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Das Generieren der Sourcen wurde korrigiert. Wenn in
+           Strings Sonderzeichen wie z.B. Linefeed oder Formfeed
+           enthalten waren, so sind diese direkt so ausgegeben worden.
+
+              !begin_itemize
+              !item In C-Strings werden diese Zeichen korrekt als Escape-
+                Sequenz ausgegeben. Beispielsweise wird der String
+                "Zeilen-umbruch" mit dem Zeichen '\n' nach dem
+                Trennstrich (läßt sich hier nicht passend wiedergeben)
+                dann korrekt als "Zeilen-\numbruch" geschrieben.
+
+              !item For Pascal werden diese Zeichen bis auf das Pascal-
+                Zeichen "'" über ihren ASCII-Code in den String
+                geschrieben.
+              !end_itemize
+         !end_itemize
+
+ 06/25/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item The Functions wputs, wprintf und wvprintf prüfen nun, ob
+           das übergebene Fenster ungleich NULL bzw. NIL ist.
+
+           (!B)Tip:(!b) Damit lassen sich Debug-Ausgaben in ein (!link [Protocol] [External communication])-
+           Fenster umleiten. For die Release-Version wird das globale
+           Debug-Fenster nicht mehr angelegt, sondern die globale
+           Debug-Fenster-Variable auf NULL bzw. NIL gesetzt - und
+           schon sind alle Debug-Ausgaben quasi wirkungslos.
+         !end_itemize
+
+ 06/14/2001 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Beim Zeichnen von Icons im Icon-Editor nimmt der Maus-Pfeil
+           die gewählte Farbe an. Bei hellen Farben - speziell
+           Hellgrau - war der Maus-Zeiger auf dem hellen Untergrund
+           nicht mehr erkennbar. Jetzt wird anhand einer empirischen
+           "Helligkeits-Bestimmung" (Der Name klingt nach wesentlich
+           mehr, als es ist) die Umrahmung des Maus-Zeigers bei
+           dunklen Farben auf weiß, bei hellen Farben auf schwarz
+           gestellt.
+         !end_itemize
+
+ 06/05/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Der (!link [Slider] [Userdef-Slider])-Balken wird nun auch wie die Pfeile deaktiv
+           dargestellt, wenn der (!link [Slider] [Userdef-Slider]) den gesamten Bereich bereits
+           anzeigt, d.h. wenn der Balken bisher nicht zu verschieben
+           war.
+         !end_itemize
+
+ 06/01/2001 ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item The Functions Acfg_getChar, Acfg_setChar, Acfg_getLong,
+           Acfg_setLong, Acfg_getBool, Acfg_setBool und Acfg_getString
+           sind auch in der Modul-Schnittstelle enthalten.
+         !end_itemize
+
+ 06/01/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die (!link [Cfg-Strings] [The Configuration strings]) haben die neuen Funktionen Acfg_setChar,
+           Acfg_getChar, Acfg_getLong, Acfg_setLong, Acfg_getBool und
+           Acfg_getBool erhalten. Diese nehmen ggf. die Umwandlung der
+           Werte von char, INT32 bzw. Logischen Werten in Strings und
+           umgekehrt vor.
+
+         !item Die neue Funktion Acfg_getString stellt eine Abkürzung zu
+           Acfg_getValue dar, der Wert wird in einem statischen String
+           zurückgegeben.
+
+           (!B)Note:(!b) Die Funktion Acfg_getString ist (!I)nicht(!i) multi-
+           threading-fest!
+
+         !item Die neue Funktion Acfg_clearGroup löscht eine einzige
+           Gruppe.
+
+         !item Die Funktion Acfg_clearGroup wurde in Acfg_clearAllGroups
+           umbenannt.
+         !end_itemize
+
+ 05/27/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Es gibt zwei neue Funktionen, um zu überprüfen, ob es eine
+           Parameter-Gruppe bzw. einen Cfg-String gibt.
+           Acfg_isGroupPresent liefert TRUE, wenn die genannte Gruppe
+           existiert, anderfalls wird FALSE geliefert. Ebenso liefert
+           Acfg_isStringPresent bei existierendem Parameter TRUE,
+           andernfalls FALSE.
+
+           (!B)Note:(!b) Die beiden Funktionen betrachten nur die
+           übergebene UConfig-Struktur, nicht evtl. von Acfg_getValue
+           untersuchte Environment-Strings!
+
+         !item The Functions Acfg_getBool und Acfg_setBool verwenden nun
+           andere Werte. Acfg_setBool gibt dem übergebenen Parameter
+           je nach Flag die Werte "True" oder "False". Acfg_getBool
+           konvertiert den Wert "True" nach TRUE, alles andere wird
+           FALSE.
+         !end_itemize
+
+ 05/25/2001 ACSMOD.LIB, ACSMOD01.LIB, ACS_LOAD.O
+
+         !begin_itemize
+         !item Die Modul-Schnittstelle ist nun um die kompletten Bindings
+           der VDI- und AES-Funktionen erweitert worden. Damit wird
+           das applikations-globale AES-Array ACSblk->AESglobal bei
+           AES-Aufrufen der Module benutzt, was bislang bei Modulen zu
+           Problemen geführt hat (Module hatten bislang die GEM-
+           Bibliothek ebenfals gelinkt und damit ein eigenes und damit
+           uninitialisiertes global-Array benutzt).
+         !end_itemize
+
+ 05/06/2001 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) hat bislang in die exportierte UConfig-
+           Struktur, die in der exportierten Variable ACSconfig des
+           Hauptmoduls enthalten ist, als Dateiname der Cfg-Strings
+           "PUR_DESK" geschrieben. Nun wird dieser Text leer gelassen.
+
+           Damit wird for das Laden der in ACSblk->basename stehende
+           Name verwendet. In späteren Versionn ist geplant, die in
+           ACSconfig enthaltene Struktur CfgInfo auch im (!I)GUI-Editor(!i)
+           bereits bearbeiten zu können.
+         !end_itemize
+
+ 05/06/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die (!link [Cfg-Strings] [The Configuration strings]) werden nun beim Anwendungs-Start
+           automatisch geladen. Die Cfg-Strings stehen danach in
+           ACSblk->cfg zur Verfügung und können mit den zugehörigen
+           Funktionen bearbeitet und ausgewertet werden.
+
+           Der Dateiname for das Laden wird aus ACSconfig genommen.
+           Falls der dort notierte Name leer sein sollte, wird der
+           Dateiname anhand ACSblk->basename gebildet:
+           Af_cfgfile(&ACSblk->basename[2]) (die 2 wegen der zwei
+           führenden Leerzeichen in ACSblk->basename).
+
+           Das Laden der Cfg-Strings geschieht unmittelbar nach Aufruf
+           der ACSinit0-Funktion, so daß der dort ggf. manipulierte
+           Name in ACSblk->basename verwendet wird.
+         !end_itemize
+
+ 04/28/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Das Thermometer kann nun auch nicht-modal aufgerufen
+           werden, indem der Funktion Ash_thermometer im Parameter
+           kind das neue Flag THERMO_NONMODAL übergeben wird.
+
+           (!B)Note:(!b)Das modale Thermometer setzt allerdings den Wert
+           for ACSblk->ev_mtcount auf 1, damit die Schleife
+           schnellstmöglich durchläuft. Dies passiert beim nicht-
+           modalen Thermometer natürlich nicht. Damit läuft das
+           Thermometer nicht mehr gleichmäßig, wenn z.B. die Maus
+           bewegt wird. Normalerweise wird wohl außerdem das modale
+           Thermometer zum Einsatz kommen... ;-)
+         !end_itemize
+
+ 04/27/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Der (!link [Slider] [Userdef-Slider])-Balken wird nun wie die Pfeile deaktiv
+           dargestellt, wenn das Objekt im Status DISABLED ist.
+         !end_itemize
+
+ 04/22/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Funktion Aev_WmRedraw verschickt eine Redraw-Nachricht.
+           (!I)ACSpro(!i) verwendet diese Funktion, um in einigen Fällen ein
+           Neuzeichnen von Fenstern oder sogar des gesamten
+           Bildschirmes zu veranlassen (z.B. in Awi_layout).
+
+         !item Die Funktion Awi_alert hat den Alert-String direkt an
+           form_alert weitergegeben, wenn der (!I)ACSpro(!i)-eigene modale
+           Alert-Fenster-Dialog nicht verwendet werden konnte. Nun
+           wird das Icon '4' auf das Icon '1' for form_alert
+           umgesetzt.
+         !end_itemize
+
+ 04/19/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item The Functions Awi_redraw zeichnet den Fenster-Inhalt nur
+           noch, wenn das Fenster nicht im Zustand (!link [AWS_SHADED] [AWS_SHADED]) ist. Da
+           hin und wieder die Redraw-Message vor dem "Unshaden"
+           eintrifft, wird bei Erhalt der Nachricht WM_UNSHADED das
+           Fenster davon informiert, das Flag (!link [AWS_SHADED] [AWS_SHADED]) gelöscht und
+           dann ein Neuzeichnen angestoßen.
+
+         !item The Functions Awi_obchange und Awi_obredraw rufen bei
+           gesetztem Flag (!link [AWS_SHADED] [AWS_SHADED]) direkt die normale Redraw-Routine
+           des Fensters auf. Diese ist in den meisten Fällen
+           Awi_redraw, welche in diesem Zustand die Arbeit verweigert
+           - das Fenster ist ja eingeklappt und nichts außer der
+           Titelzeile zu sehen.
+         !end_itemize
+
+ 04/17/2001 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) öffnet nun Module nicht mehr als Text im
+           Editor, sondern startet sie per Ash_module nach.
+
+         !item Im Eigenschaften-Dialog jeder ACS-Datei wurden bereits die
+           Optionen for das Exportieren und Importieren der Texte
+           vorgesehen. Das Importieren der Texte sowie das
+           Zusammenbinden und Verwenden der generierten Texte wird
+           noch nicht in Version 3.0.0 enthalten sein.
+         !end_itemize
+
+ 04/17/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Der pure Desktop verwendet nun zum Nachladen von Modulen
+           die Funktion Af_fileselect, d.h. die Auswahlbox wird,
+           sofern möglich, in ein modales Fenster gelegt, Multi-
+           Selektion wird ebenfalls unterstützt.
+         !end_itemize
+
+ 04/14/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die neue Funktion Ast_reverse dreht einen String
+           zeichenweise um, d.h. im übergebenen Puffer ist das letzte
+           Zeichen das erste und das erste das letzte.
+
+         !item Die Funktion Aob_visible prüft, ob ein Objekt im Objektbaum
+           sichtbar ist, oder ob eines der Eltern-Objekte unsichtbar
+           ist.
+
+         !item Ebenso prüft die Funktion Awi_obvisible, ob das angegebene
+           Objekt im Fenster sichtbar sein könnte, d.h. ob das Fester
+           geöffnet, nicht ikonifiziert und nicht "shaded" ist und
+           keines der Eltern-Objekte des Objektes unsichtbar ist. Es
+           wird nicht geprüft, ob der passende Ausschnitt im Fenster
+           sichtbar ist.
+         !end_itemize
+
+ 04/14/2001 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) generiert beim Erzeugen der Dateien for den
+           Compiler nun auch eine neue Datei for die Strings. Diese
+           Datei ist im Format der (!link [Cfg-Strings] [The Configuration strings]) aufgebaut. Pro ACS-
+           Datei wird eine ASCII-Datei generiert, wobei der Dateiname
+           aus dem Namen der ACS-Datei durch Ersetzen von ".acs" durch
+           ".st<n>" hervorgeht - <n> ist hierbei eine Zahl von 0 bis 3
+           je nach aktueller Sprach-Einstellung. Dies vereinfacht das
+           Übersetzen von Anwendungen erheblich, da beim Editieren der
+           Texte nur die aktuelle Sprache verwendet wird und nun die
+           generierte ASCII-Datei der Original-Sprache parallel in den
+           Editor geladen werden kann.
+
+           Diese ASCII-Dateien werden bislang nur erzeugt und noch
+           nicht verwendet. Es ist geplant, diese ASCII-Dateien zu
+           einer einzigen Datei pro Anwendung zusammenzusetzen
+           (entweder durch ein extra Merge-Programm oder durch den
+           (!I)GUI-Editor(!i). Diese eine große Datei soll dann die Endung
+           ".str" haben, im Verzeichnis der compilierten Anwendung
+           stehen, alle Strings der Anwendung enthalten und über die
+           Mechanismen der (!link [Cfg-Strings] [The Configuration strings]) ACS-intern verwendet werden.
+           Ein Umschalten der Sprache soll dann durch Austausch dieser
+           Datei gegen eine Datei mit übersetzten Texten möglich sein.
+           Auch das bisherige Verfahren, die Strings in die Anwendung
+           zu compilieren (quasi als Default-Strings), soll möglich
+           sein. Aber das ist noch Zukunftsmusik (siehe ToDo List).
+         !end_itemize
+
+ 04/07/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Nachricht WM_MOUSEWHEEL wird nun ausgewertet.
+           Allerdings wird "nur" das Fenster gescrollt. Da es nur eine
+           Scroll-Information gibt, wird zuerst versucht, vertikal zu
+           scrollen. Wenn es die Scroll-Elemente bei dem Fenster nicht
+           gibt oder bereits alles dargestellt werden sollte, wird
+           versucht, horizontal zu scrollen, sofern dies möglich ist.
+           Wenn die Control-Taste gedrückt ist, wird das Verhalten
+           umgedreht, d.h. erst wird versucht, horizontal zu scrollen,
+           dann ggf. vertikal.
+         !end_itemize
+
+ 04/03/2001 ACSMOD.LIB
+
+         !begin_itemize
+         !item Die Modul-Schnittstelle hat eine abwärtskompatible
+           Schnittstellenfunktion bekommen, die die Schrittweite 1 for
+           die Funktion Awi_arrowed bei Modulen von ACS 2.3x einsetzt.
+           Module, die bereits mittels Version 3.0.0 geschrieben
+           wurden, müssen allerdings angepaßt werden.
+         !end_itemize
+
+ 04/03/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item (!I)ACSpro(!i) unterstützt nun das erweiterte Scrollen gemäß WINX.
+           Dazu ist einiges passiert...
+
+         !item Die Routine Awi_arrowed hat als dritten Parameter die
+           Scroll-Schrittweite bekommen und berücksichtigt diesen
+           auch.
+
+         !item Die Fenster-Routine (!link [Awindow.arrowed] [Awindow]) hat ebenfalls diesen
+           Parameter bekommen.
+         !end_itemize
+
+ 03/29/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item (!I)ACSpro(!i) beherrscht nun auch die von NKCC gewohnten sog.
+           (!link [Dead-Keys] [Handling dead keys]). Wie funktionieren diese? Ganz einfach: nach
+           Eingabe eines (!link [Dead-Keys] [Handling dead keys]) geschieht gar nichts, der
+           Tastendruck wird zunächst gepuffert und scheinbar
+           ignoriert. Beim nächsten Zeichen wird dann versucht, das
+           erste und das zweite Zeichen zu einem einzigen Zeichen zu
+           kombinieren. Genauer läuft hier folgendes ab:
+
+             !begin_enumerate
+             !item Wenn kein Dead-Key gepuffert ist, wird geprüft, ob ein
+                Dead-Key eingegeben wurde. Ein Dead-Key stammt aus der
+                Menge ^ '`ª"ã,/ und muß freigeschaltet sein (s.u.).
+
+             !item Falls kein Dead-Key eingegeben wurde oder dieser
+                gesperrt sein sollte, so wird das Zeichen normal
+                weitergereicht.
+
+             !item Handelt es sich jedoch bei dem Zeichen um einen
+                freigegebenen Dead-Key, so wird das Zeichen gepuffert
+                und die Verarbeitung des Tastendruckes abgebrochen.
+                (!I)ACSpro(!i) wartet nun auf den nächsten Tastendruck.
+
+             !item Wenn ein Dead-Key gepuffert ist, so wird
+                nachgeschlage, ob for die vorliegende Kombination
+                Dead-Key plus das neu eingegebene Zeichen eine
+                Ersetzung hinterlegt ist. Wenn dies der Fall ist, wird
+                das zuletzt eingegebene Zeichen durch das Ersatz-
+                Zeichen ersetzt. Andernfalls wird zuerst der
+                gepufferte Dead-Key und danach das zweite Zeichen in
+                die normale Tastatur-Verarbeitung gespielt - wie wenn
+                es keine (!link [Dead-Keys] [Handling dead keys]) gäbe. Der Dead-Key-Puffer ist nach
+                dieser Verarbeitung wieder leer.
+             !end_enumerate
+
+           Die (!link [Dead-Keys] [Handling dead keys]) müssen natürlich individuell freigeschaltet
+           werden. Hierzu wird in der neuen Variable ACSblk->ev_mkdead
+           die Zeichen eingetragen, die die Anwendung als (!link [Dead-Keys] [Handling dead keys])
+           betrachtet haben möchte. Wie in der ToDo List vermerkt,
+           wird dies als Erweiterung des (!I)GUI-Editor(!i) vorgesehen.
+
+           Folgende Ersetzungs-Varianten werden unterstützt:
+
+
+!begin_table [lclll]
+        Description  !! Dead-Key  !!    !! 2nd Character   !!    !! Subsitution
+!hline
+        Circumflex   !!    ^      !! +  !! aeiou           !! =  !! âêîôû
+        Tilde        !!    !~     !! +  !! nNaoAo          !! =  !! ñÑãõÃÕ
+        Acute        !!    '      !! +  !! eEaiou          !! =  !! éÉáíóú
+        Grave        !!    `      !! +  !! aeiouA          !! =  !! àèìòùÀ
+        Umlaut       !!    ¨      !! +  !! aeiouyAOU       !! =  !! äëïöüÿÄÖÜ
+        Umlaut       !!    "      !! +  !! aeiouyAOU       !! =  !! äëïöüÿÄÖÜ
+        Angström     !!    °      !! +  !! aA              !! =  !! åÅ
+        Cedilla      !!    ,      !! +  !! cC              !! =  !! çÇ
+        No Accent    !!    /      !! +  !! oO24            !! =  !! øØ½¼
+!end_table
+
+           Die for eine Anwendung zu verwendenden (!link [Dead-Keys] [Handling dead keys]) müssen per
+           Programm z.B. in ACSinit0 oder ACSinit in ACSblk->ev_mkdead
+           eingetragen werden. In späteren ACS-Versionen wird dies
+           bereits im (!I)GUI-Editor(!i) möglich sein.
+         !end_itemize
+
+ 03/17/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Auch die Toolbars der anderen Fensters wurden etwas zu
+           klein, wenn der Systemzeichensatz zu klein eingestellt war.
+           Jetzt ist die Größe aller Toolbars von der Größe des
+           Systemzeichensatzes unabhängig.
+         !end_itemize
+
+ 02/16/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Die neue Funktion Awi_layout schaltet ggf. die Flags
+           AB_NO3D und AB_OLDMENU um. Beim Umschalten des Flags
+           AB_OLDMENU werden - nach Rückfrage beim jeweiligen Fenster
+           über die Nachricht AS_CHANGE_LAYOUT - alle Menus auf das
+           jeweils gewünschte Layout umgestellt.
+         !end_itemize
+
+ 02/16/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Das Editor-Fenster EDITOR hat beim Kopieren auf das
+           Klemmbrett den gesamten und nicht nur den markierten Text
+           geschrieben. Das sollte nun abgestellt sein...
+         !end_itemize
+
+ 02/12/2001 ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item The Functions Aev_DhstAdd und Aev_DhstSaved stehen nun
+           auch in der Modul-Schnittstelle zur Verfügung.
+         !end_itemize
+
+ 02/10/2001 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Auch der (!I)GUI-Editor(!i) verschickt mittels Aev_DhstAdd die
+           Namen der gespeicherten ACS-Dateien an den DHST-Server.
+         !end_itemize
+
+ 02/10/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Der Editor informiert nun beim Save nicht nur den
+           OLGA-Manager, sondern auch den DHST-Server über die
+           gespeicherte Datei.
+         !end_itemize
+
+ 02/10/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Funktion Aev_DhstSaved ermittelt aus dem übergebenen
+           Dateinamen incl. Pfad den reinen namen incl. Endung - z.B.
+           "Doku.TXT" - und verwendet diesen bei einem Aufruf von
+           Aev_DhstAdd als Dokumentennamen.
+
+         !item (!I)ACSpro(!i) beherrscht nun das DHST Protocol, bei dem ein
+           Document-History-Server (z.B. SMU) über die letzten
+           gesicherten Dateien informiert wird.
+
+           Die neue Funktion Aev_DhstAdd sendet Dokument-Name und
+           -Pfad an den DHST-Server. Der Anwendungsname wird aus
+           ACSblk->AppLongName, der Anwendungspfad aus ACSblk->appname
+           verwendet. Die komplette Kommunikation mit dem DHST-Server
+           übernimmt (!I)ACSpro(!i).
+         !end_itemize
+
+ 02/05/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Der Bug beim nicht-modalen WDIALOG-Druckdialog ist nun
+           behoben. Der Druckdialog steht also "in voller Schönheit"
+           zur Verfügung.
+         !end_itemize
+
+ 02/03/2001 ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item The Functions Ash_font und Ash_print stehen nun auch über
+           die Modul-Schnittstelle allen Modulen zur Verfügung.
+
+         !item Die Funktion (!link [A_fileselect] [Ash_fileselect]) wurde auch in der Modul-
+           Schnittstelle in Ash_fileselect umbenannt.
+         !end_itemize
+
+ 02/03/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die neue Funktion Ash_font öffnet den (MagiC-)Font-
+           Selector. Je nach Parametern kann der Font-Selector als
+           modales oder auch nicht-modales Fenster geöffnet werden.
+           Wenn der Font-Selector als nicht-modales Fenster läuft,
+           wird beim Schließen des Selektors dem beim Aufruf
+           mitgegebenen Fenster die Nachricht AS_FONT zusammen mit den
+           gewählten Daten über die Struktur A_FontSel mitgegeben.
+
+           Auch hier ist es nicht unbedingt der MagiC-Font-Selector,
+           es ist der Font-Selector, der über die FNTS-Funktionen
+           bedient wird... ;-) Daraus folgt aber auch: ohne FNTS-
+           Funktionen (Abfrage erfolgt per appl_xgetinfo) gibt es hier
+           nichts!
+
+         !item Die Funktion A_print wurde konsequenterweise in Ash_print
+           umbenannt.
+
+         !item Ebenso wurde die Funktion (!link [A_fileselect] [Ash_fileselect]) in Ash_fileselect
+           umbenannt.
+
+         !item Der Parameter flag3D in der Funktion Ash_print ist
+           entfallen. Die 3D-Einstellung wird nun aus ACSblk-
+           >description->flags&AB_NO3D gewonnen - eine konsistentere
+           Umsetzung...
+         !end_itemize
+
+ 02/01/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Neue Klick-Routine Aob_help for beliebige Objekte, die
+           einfach die ST-Guide-Hilfe-Seite des Fensters anzeigen
+           läßt. Damit lassen sich "Hilfe-Buttons" blitzschnell
+           realisieren.
+
+         !item Bei der Umwandlung der Menus in das "moderne Layout" wird
+           vor der Umwandlung des Hintergrundes auf den 3D-Effekt per
+           appl_xgetinfo(13,...) geprüft, ob das System die AES-4-
+           Hintergrund-Flags kennt. Dies ist nun nicht mehr von der
+           Anzahl der Farben abhängig. Falls das System die AES-4-
+           Hintergrund-Flags nicht kennt, wird das Flag FL3DBAK nicht
+           gesetzt, die Umwandlung der Menu-Trenner "-" in Linien wird
+           denoch durchgeführt.
+         !end_itemize
+
+ 01/19/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Schreibfehler in der englischen Version im PUR_DESK
+           korrigiert, es heißt nun einmal "module"... ;-)
+         !end_itemize
+
+ 01/19/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Der PUR_DESK leitet nun komplett alle Nachrichten außer
+           AS_TERM an das Module-Fenster zur Bearbeitung weiter.
+
+         !item Das Module-Fenster versteht nun die vom DESKTOP her
+           bekannte Nachricht AS_BACKOBJECT. Damit kann der
+           Hintergrund im Module-Fenster wie vom DESKTOP hr gewohnt
+           verändert werden. Das Module-Fenster übernimmt die Werte
+           ob_type und ob_spec des übergebenen Objektes for den
+           Hintergrund.
+
+           (!B)Note:(!b) Als Objekt sollte bei der Nachricht AS_BACKOBJECT
+           im Moment nur eines verwendet werden, das keine
+           Substrukturen (Strings, etc.) hat, da keine Unterstrukturen
+           dynamisch neu angelegt werden. Es würde sonst zu Problemen
+           beim Terminieren des Module-Fensters (am Programm-Ende)
+           führen, da Daten, die nicht alloziert wurden, per Ax_free
+           freigegeben werden müßten!
+         !end_itemize
+
+ 01/19/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item (!I)ACSpro(!i) hatte bislang die Nachricht WM_UNTOPPED nicht
+           verarbeitet. Jetzt wird sie "gezielt" ignoriert... ;-)
+
+         !item Die Nachricht WM_TOOLBAR wird nun von (!I)ACSpro(!i) ebenfalls
+           "gezielt" ignoriert. Später, wenn ich herausgefunden habe,
+           wann diese Nachricht wozu verschickt wird, soll sie jedoch
+           passend ausgewertet werden.
+         !end_itemize
+
+ 01/18/2001 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Die Titelzeile des Module-Fensters kann nun geändert
+           werden. Dazu muß in ACSinit0 - oder der entsprechenden
+           Routine - der Name des Desktops geändert werden, in C z.B.
+           durch PUR_DESK.name = " <Neuer Name> ". Das Module-Fenster
+           übernimmt diesen Namen, sobald dieser vom Standard-Namen
+           abweicht.
+
+         !item Die Toolbar des Module-Fensters wurde etwas zu klein, wenn
+           der Systemzeichensatz zu klein eingestellt war. Jetzt ist
+           die Größe der Toolbar von der Größe des Systemzeichensatzes
+           unabhängig.
+         !end_itemize
+
+ 01/08/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Das Thermometer Ash_thermometer ist überarbeitet worden
+
+             !begin_enumerate
+             !item Die Optik ist überarbeitet worden - der Laufbalken ist
+                nicht mehr so "dick", was sich nicht nur bei der
+                besseren proportionerten Optik, sondern auch beim
+                Neuzeichnen bemerkbar macht.
+
+             !item Das von Ash_thermometer zur Verfügung gestellt
+                Schleifen-Konstrukt wurde ausgebaut. Die Schleife
+                heißt jetzt prinzipiell:
+
+!begin_sourcecode
+init(data);
+if( start(data) )
+{
+   while( cont(data) )
+      fkt(data);
+   stop(data);
+}
+quit(data);
+!end_sourcecode
+
+                Über den neu zu übergebenden Funktionszeiger cont wird
+                die Abbruchbedingung - bzw. korrekter die
+                "Weiterlauf-Bedingung" realisiert. Dies hat zwei
+                Auswirkungen. Die hier übergebene Funktion kann ebenso
+                in stop genutzt werden, um die Unterscheidung
+                "vorzeitiger Abbruch" oder "Ende" zu unterscheiden
+                (siehe Ash_thermometer). Ferner wird der evtl.
+                anzuzeigende Text durch die in cont übergebene
+                Funktion definiert, er wird also bei der eigentlichn
+                Aktion (in fkt übergeben) bereits angezeigt!
+
+                (!B)Note:(!b) Falls in cont der Wert NULL bzw. NIL
+                übergeben wird, wird die Schleife nicht ausgeführt.
+
+             !item Die Struktur ThermoData wurde in A_ThermoData
+                umbenannt. Ferner wurde sie um die an Ash_thermometer
+                übergebenen Funktionszeiger erweitert - hiermit sind
+                also z.B. generische "Stop-Nachfrage-Routinen"
+                möglich, die anhand des dort übergebenen Zeigers die
+                oben erwähnte Unterscheidung treffen.
+             !end_enumerate
+         !end_itemize
+
+ 01/08/2001 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Nachricht FNT_CHANGED wird unterstützt. Alle
+           Zeichensätze werden mittels vst_unload_fonts "weggeworfen"
+           und mittels vst_load_fonts neu geladen. Dann wird allen
+           Fenstern die Nachricht AS_FONT_UPDATE gesendet.
+
+         !item Die Nachricht PRN_CHANGED wird unterstützt. Allen Fenstern
+           wird die Nachricht AS_PRN_UPDATE gesendet. In der über
+           in_out mitgegebenen Struktur A_PrnUpd stehen die
+           Informationen über den treiber und die Art der Änderung.
+         !end_itemize
+
+ 01/01/2001 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Anpassung der Jahreszahl-Daten im Copyright.
+         !end_itemize
+
+ 12/30/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item (!I)ACSpro(!i) unterstützt nun die WDialog-Druckdialoge. Die
+           Funktion A_print stellt die Schnittstelle dazu dar.
+           Übergeben werden die Drucker-Einstellungen (siehe WDialog-
+           Dokumentation), die Position des Fensters, die zwei Flags
+           flag3D (siehe pdlg_create) und option (siehe pdlg_open),
+           der Titel des Fensters sowie ganz analog zu Af_fileselect
+           das Fenster, dem bei Erfolg die Nachricht AS_PRINT gesendet
+           werden soll. Der Dialog erscheint als nicht modaler-Dialog,
+           wenn das Fenster angegeben wird, und als modaler Fenster-
+           Dialog (sofern möglich ;-), wenn als Fenster NULL bzw. NIL
+           übergeben wird.
+
+           (!B)Note:(!b) Allerdings ist hier noch ein Bug for den nicht-
+           modalen Betrieb, aber zunächst kann einmal damit
+           experimentiert werden. Der Bug ist etwas merkwürdig, die
+           Anwendung stürzt gnadenlos ab, da der AES-Aufruf Käse
+           macht. Warum das aber nur im nicht-modalen Betrieb passiert
+           und mit modalen Fenster-Dialogen klappt, muß ich noch
+           herausbekommen...
+
+           (!B)Note:(!b) Eine Erweiterung des Druck-Dialoges durch eigene
+           Objektbäume ist in der Planung und wird nach der Version
+           3.0.0 realisiert. Wichtig war erst einmal, daß der
+           Druckdialog überhaupt unterstützt wird... ;-)
+         !end_itemize
+
+ 12/22/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Erste Vorbereitungen, um auch das im Entstehen begriffene
+           SSP (System Service Protocol - siehe im Internet unter
+           http://www.therapy-seriouz.de/ssp/) transparent in (!I)ACSpro(!i)
+           einzubinden.
+         !end_itemize
+
+ 12/12/2000 ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item Die neuen Funktionen Ast_ncmp und Ast_incmp stehen nun auch
+           in der Modulschnittstelle zur Verfügung.
+         !end_itemize
+
+ 12/12/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Es gibt zwei neue Funktionen for String-Vergleiche. Die
+           Funktion Ast_ncmp vergleicht zwei Strings, jedoch maximal n
+           Zeichen, bei Ast_incmp spielt dabei die Groß-/
+           Kleinschreibung keine Rolle.
+
+         !item Im Standard-AboutMe-Dialog von (!I)ACSpro(!i) wird nun das Datum
+           der Version "ordentlich" als "tt.mm.jjjj" (deutsch) bzw.
+           "mm-tt-jjjj"(englisch) dargestellt. Die "elende Krücke" mit
+           der Abkürzung des Monatsnamens als "Oct" oder "Dec" hat
+           also ein Ende... ;-)
+         !end_itemize
+
+ 12/11/2000 ACSMOD.LIB, ACSMOD01.LIB
+
+         !begin_itemize
+         !item Die Funktion appl_xgetinfo steht nun auch über die Modul-
+           Schnittstelle allen Modulen zur Verfügung.
+
+         !item Die Funktion Awi_ontop fehlte in der Modul-Schnittstelle
+           und ist nachgerüstet worden.
+         !end_itemize
+
+ 12/03/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Der letzte Parameter von Af_fileselect wurde geändert: es
+           wird nun nicht mehr TRUE oder FALSE als Kennung modal/
+           nicht-modal übergeben, sondern das Fenster, daß die Antwort
+           AS_FILESELECT im nicht-modalen Fall erhalten soll, bzw.
+           NULL/NIL for den modalen File-Selector.
+         !end_itemize
+
+ 11/02/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Bei der direkten Positionseingabe for ein Objekt im
+           Objekt-Editor konnten zu große oder zu kleine Werte for die
+           Zeichen- und Pixel-Komponenten eingegeben werden. Die
+           Zeichenkoordinaten sind auf 0..255, die Pixel-Korrekturen
+           auf -128..127 festgelegt. Größere oder kleinere Werte
+           werden passend auf den Rand des Intervalls gesetzt.
+         !end_itemize
+
+ 10/30/2000 PCGEM.LIB, ACSGEM.LIB
+
+         !begin_itemize
+         !item Die GEM-Bibliotheken sind nun aus (!I)ACSpro(!i) ausgegliedert
+           worden und laufen ab jetzt als eigenständige Projekte. Sie
+           erhalten eine eigene History und entfallen ab jetzt in
+           dieser Liste komplett.
+
+           Die GEM-Bibliotheken sind Freeware und wie (!I)ACSpro(!i) auch in
+           der Maus LL und auf dem Internet verfügbar.
+
+           Alle "Bestandteile" von (!I)ACSpro(!i) ab Version 3.0.0 sind ab
+           jetzt immer mit der jeweils neuesten Bibliothek PCGEM.LIB
+           compiliert bzw. gelinkt.
+         !end_itemize
+
+ 10/26/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Nachricht WM_MOUSEWHEEL wird von (!I)ACSpro(!i) nun empfangen,
+           allerdings noch nicht großartig ausgewertet. Dies ist ein
+           einer späteren Version allerdings geplant (siehe ToDo-
+           Liste).
+         !end_itemize
+
+ 10/26/2000 PCGEM.LIB, ACSGEM.LIB
+
+         !begin_itemize
+         !item Die Nachricht WM_MOUSEWHEEL ist nun in die Liste der
+           Nachrichten mit aufgenommen worden.
+         !end_itemize
+
+ 10/25/2000 PCTOS.LIB, ACSTOS.LIB
+
+         !begin_itemize
+         !item Die TOS-Bibliotheken sind nun aus (!I)ACSpro(!i) ausgegliedert
+           worden und laufen ab jetzt als eigenständige Projekte. Sie
+           erhalten eine eigene History und entfallen ab jetzt in
+           dieser Liste komplett.
+
+           Die TOS-Bibliotheken sind Freeware und wie (!I)ACSpro(!i) auch in
+           der Maus LL und auf dem Internet verfügbar.
+
+           Alle "Bestandteile" von (!I)ACSpro(!i) ab Version 3.0.0 sind ab
+           jetzt immer mit der jeweils neuesten Bibliothek ACSTOS.LIB
+           compiliert bzw. gelinkt.
+         !end_itemize
+
+ 10/19/2000 PCGEM.LIB, ACSGEM.LIB
+
+         !begin_itemize
+         !item Aus der N.AES-Entwickler-Dokumentation sind einige N.AES-
+           spezifische Funktionen in die Bibliotheken eingeflossen,
+           wie z.B. appl_control, wind_draw, shel_help, objc_xfind
+           etc.
+         !end_itemize
+
+ 10/18/2000 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item The "pure" desktop reagiert nun auf die Nachricht
+           AS_DRAGGED, indem die Auswahlliste nach Objekten vom Typ
+           AT_FILE durchsucht wird. Wenn diese gefunden werden und
+           eine Neu-Routine hinterlegt wurde, wird for jedes AT_FILE-
+           Objekt die Neu-Routine aufgerufen.
+
+           (!B)Note:(!b) Damit kann z.B. jede (!I)ACSpro(!i)-Anwendung, die den
+           PUR_DESK verwendet, - wie z.B. der (!I)GUI-Editor(!i) - per
+           Drag&Drop von jinnee Dateien empfangen und öffnen (sofern
+           dies in jinnee entsprechend eingestellt ist natürlich ;-)
+         !end_itemize
+
+ 10/18/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Behandlung des Drag&Drop-Protokolles for Text-Daten
+           wurde verbessert. Wenn eine laufende (!I)ACSpro(!i)-Anwendung Daten
+           per Drag&Drop gesendet bekommt (z.B. von jinnee bei einem
+           Mehrfachstart - muß in jinnee eingestellt werden), so
+           werden der Reihe nach die einzelnen Text-Daten in Objekte
+           vom Typ AT_FILE (D&D-Typ ARGS) oder AT_STRING (sonst)
+           "gesteckt" und an eine (!link [Drag Routine] [Click Routine & Drag Routine]) gesendet.
+
+           Bislang wurden empfangene Text-Daten über die
+           Awindow.keys-Routine eingespielt, wenn das Empfangsobjekt
+           nicht identifiziert werden konnte. Dies ist nicht immer das
+           Gewünschte, denn da in dieser Situation auch kein
+           Empfangsfenster bekannt ist, verwendet (!I)ACSpro(!i) automagisch
+           das Root-Fenster und überträgt die Dateinamen per
+           Awindow.keys-Routine... ;-/
+
+           Wenn jetzt das Objekt nicht bestimmt werden kann, wird dem
+           Empfangsfenster - nach erfolgreicher Prüfung durch die
+           Nachricht AS_CHECKDRAGGED - die Nachricht AS_DRAGGED
+           gesendet, als wenn das D&D-Objekt aus der Auswahlliste auf
+           das Fenster-Icon gezogen worden wären. Das Fenster kann nun
+           geeignet darauf reagieren.
+
+           (!B)Note:(!b) Falls das Empfangsobjekt lokalisiert werden kann,
+           aber kein erweitertes AOBJECT ist oder keine (!link [Drag Routine] [Click Routine & Drag Routine])
+           besitzt, bleibt alles so wie bisher: die "Text-Daten"
+           werden per Awindow.keys-Routine eingespielt.
+         !end_itemize
+
+ 10/16/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Nachdem ich selbst beim Entwickeln von und mit (!I)ACSpro(!i) immer
+           wieder in die Situation komme, wo es heißt "jetzt muß ich
+           nur noch schnell eine Nachricht an das Objekt xyz schicken"
+           und dann der Zirkus mit dem Bestimmen der AUSERBLK-Struktur
+           und dem Versand der Nachricht losgeht, gibt es jetzt
+           (endlich ;-) zwei neue Funktionen:
+
+             !begin_enumerate
+             !item Die Funktion Aob_service leitet eine Nachricht an ein
+                Objekt eines Objektbaumes weiter. Wenn das (globale)
+                Flag AB_LAZYEVAL gesetzt ist, werden keine
+                Überprüfungen mehr vorgenommen. Andernfalls wird
+                geprüft, daß der Objektbaum vorhanden ist, daß es ein
+                UserDef ist und eine Service Routine vorhanden ist...
+
+             !item Die Funktion Awi_observice leitet eine Nachricht an
+                ein Fenster-Objekt weiter. Auch hier wird nur bei
+                gelöschtem Flag AB_LAZYEVAL geprüft, daß das Fenster
+                existiert. Die Funktion selbst ist recht billig, denn
+                sie läßt - mit dem passenden Objektbaum - die Arbeit
+                von Aob_service erledigen... ;-)
+             !end_enumerate
+         !end_itemize
+
+ 10/15/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Wenn der Dateiname bei der Funktion Af_fileselect nur aus
+           dem String "*" besteht, so wird der Dateiname for den
+           FSLX-File-Selector (!link [A_fileselect] [Ash_fileselect]) geleert - sieht einfach
+           besser aus als ein Dateiname "*"... ;-)
+
+         !item Die Funktion Aob_state wurde etwas überarbeitet, sie hat
+           nicht immer das getan, was sie sollte. Das Ergebnis war von
+           der Uhrzeit, der Wetterlage und der Luftfeuchtigkeit
+           abhängig - na ja, sooo schlimm war es nicht, aber je
+           nachdem, ob das Fenster geöffnet war oder nicht, ob der
+           Zustand gesetzt werden sollte oder gelöscht, gab es hin und
+           wieder unterschiedliche Ergebnisse... Jetzt sollte es
+           funktionieren...
+
+         !item Die Nachricht AS_FILESELECT war leider falsch definiert und
+           hat sich mit AS_ALLOWBUBBLE überschnitten. Damit
+           funktionierte BubbleGEM nicht mehr, wenn die Nachricht
+           AS_FILESELECT von der Service Routine bearbeitet wurde...
+           AS_FILESELECT hat nun eine neue Nummer bekommen... Sorry!
+         !end_itemize
+
+ 10/15/2000 ACS_LOAD.O
+
+         !begin_itemize
+         !item Die Funktion Af_fileselect war im Modul-Startup-Code
+           fehlerhaft implementiert und hat im (!I)ACSpro(!i)-Hauptprogramm
+           die falsche Funktion aufgerufen - - Folge: Crash... ;-/
+         !end_itemize
+
+ 10/13/2000 (!link [ACSPLUS.LIB] [The C-Extension Library]), (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Funktion Ash_thermometer ist nun aus der Bibliothek
+           (!link [ACSPLUS.LIB] [The C-Extension Library]) in die Bibliothek (!link [ACS.LIB] [The Pure-C Library]) gewandert, da sie
+           dort eher paßt als in die "Ergänzungsbibliothek".
+         !end_itemize
+
+ 10/12/2000 ACS_LOAD.O
+
+         !begin_itemize
+         !item Der Startup-Code for (!I)ACSpro(!i)-Module wurde um die neuen
+           Funktionen Af_fileselect, (!link [A_fileselect] [Ash_fileselect]) und Ash_thermometer
+           erweitert, so daß auch Module diese Funktionen nutzen
+           können, ohne daß (!link [ACS.LIB] [The Pure-C Library]) gelinkt werden muß.
+         !end_itemize
+
+ 10/08/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Nachdem ich in Kürze umziehen werde, ist nun im (!I)GUI-Editor(!i)
+           beim Info-Dialog, der auf die (!link [Shareware] [ACSpro is shareware])-Einschänkung
+           hinweist, bereits meine neue Adresse enthalten - so wie auf
+           den Internetseiten und in der ST-Guide-Hilfe auch... ;-)
+         !end_itemize
+
+ 10/06/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Der nicht-modale File-Selector hatte noch einen Bug, durch
+           den u.U. auf bereits freigegebenen Speicher zugegriffen
+           wurde.
+         !end_itemize
+
+ 09/25/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Bei der Umwandlung der Menus in das "moderne Layout" war
+           noch ein kleiner Fehler enthalten, so daß unter Umständen
+           nicht angeforderte Strings freigegeben wurden.
+         !end_itemize
+
+ 09/25/2000 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Die neue Funktion Ash_thermometer stellt ein sog.
+           (!I)Thermometer(!i) (Woher der Name dafor stammt, weiß ich gar
+           nicht mehr - ich nenne es schon "ewig" so...) zur
+           Verfügung. Ich habe diese Funktion nach etwas Zögern aus
+           meiner langjährigen "(!I)ACSpro(!i)-Bibliothek-Sammlung" geholt,
+           sie etwas verallgemeinert und überarbeitet, damit sie in
+           der Bibliothek (!link [ACSPLUS.LIB] [The C-Extension Library]) nun allen zur Verfügung steht.
+
+           Die Funktion Ash_thermometer stellt prinzipiell ein
+           Programm der Form
+
+!begin_sourcecode
+init(data);
+if( start(data) )
+{
+   while( fkt(data) );
+   stop(data);
+}
+quit(data);
+!end_sourcecode
+
+           dar. Der Arbeitsfortschritt der Schleifen-Funktion fkt wird
+           durch einen Laufbalken mit zugehöriger Prozentzahl in einem
+           modalen Fenster-Dialog darstellt. Falls das Fenster for den
+           Fenster-Dialog nicht erstellt werden kann, läuft fast die
+           dargestellte Schleifenkonstruktion ohne optische
+           Rückmeldung durch.
+
+           Die in dieser Schleifenkonstruktrion dargestellten
+           Funktionen werden als Funktionszeiger, die übrigens auch
+           NULL sein dürfen, an Ash_thermometer übergeben:
+
+!begin_sourcecode
+Ash_thermometer(
+   THERMO_CANCEL|THERMO_TEXT|THERMO_PERCENT,
+   " Ein kleines Beispiel... ", color, data, init,
+   start, zaehlfkt, stop, quit);
+!end_sourcecode
+
+           Das Thermometer gibt es in insgesamt 4 Varianten. Das
+           Fenster kann einen Info-Text anzeigen, oder der Platz dafor
+           wird eingespart. Ferner kann die Aktion abgebrochen werden,
+           oder es ist kein Abbrechen-Button vorhanden. Die in der
+           Mitte des Laufbalkens plazierte Prozentzahl kann bei jeder
+           der Varianten ausgeblendet werden.
+         !end_itemize
+
+ 09/22/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die bisher intern genutzte Funktion appl_xgetinfo wurde
+           überarbeitet und steht nun "offiziell" zur Verfügung. Die
+           Funktion prüft, ob appl_getinfo verfügbar ist und ruft
+           diese ggf. auf.
+         !end_itemize
+
+ 09/22/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) verwendet nun die neue Funktion zur
+           Dateiauswahl. Die Routine zum Öffnen der ACS-Dateien wurde
+           überarbeitet und auf die neue Dateiauswahl angepaßt. Zum
+           Öffnen von ACS-Dateien wurde der modale Fileselector mit
+           Multi-Select-Fähigkeiten gewählt.
+
+           For Interessierte:
+           Das Code-Fragment im (!I)GUI-Editor(!i) lautet
+
+!begin_sourcecode
+liste=Af_fileselect(ttl_open, last_path, "acs",
+   TRUE, FALSE);
+if( liste!=NULL )
+{
+   (liste->doFor)(liste, &window, NO_FOR,
+      (A_ListWork)openFile);
+   Alu_delete(liste);
+}
+!end_sourcecode
+
+           Der letzte Parameter von Af_fileselect gibt an, ob der
+           Dialog modal sein soll, der vorletzte steuert die Multi-
+           Selektion.
+         !end_itemize
+
+ 09/22/2000 (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+         !item Der Desktop PUR_DESK versteht nun die neue Nachricht
+           AS_FILESELECT, die von dem nicht-modalen Fileselector
+           verschickt wird. Wenn eine Neu-Routine angemeldet wurde, so
+           werden dieser der Reihe nach die Dateinamen zum Öffnen
+           übergeben.
+         !end_itemize
+
+ 09/21/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die neue Funktion Ash_fileselect öffnet den
+           (MagiC-)Fileselector. Je nach Parametern kann der
+           Fileselector als modales oder auch nicht-modales Fenster
+           geöffnet werden. Wenn der Fileselector als nicht-modales
+           Fenster läuft, wird beim Schließen des Selektors dem beim
+           Aufruf mitgegebenen Fenster die Nachricht AS_FILESELECT
+           zusammen mit einer linearen Liste ULinList an Pfadnamen
+           geschickt (das Freigeben der Liste übernimmt hier (!I)ACSpro(!i)).
+
+           Na ja, es ist nicht unbedingt der MagiC-Fileselector, es
+           ist der Fileselector, der über die FSLX-Funktionen bedient
+           wird... ;-) Daraus folgt aber auch: ohne FSLX-Funktionen
+           (Abfrage erfolgt per appl_xgetinfo) gibt es hier nichts!
+
+         !item Um bei allen Varianten der Dateiauswahl immer ein Optimum
+           zu erzielen, gibt es nun die Funktion Af_fileselect, die
+           direkt eine lineare Liste ULinList von Dateinamen
+           zurückliefert - wie daher zu erwarten ist, wird eine
+           Mehrfach-Selektion unterstützt. Die Funktion greift auf die
+           Funktion Ash_fileselect zurück, sofern die FSLX-Funktionen
+           vorhanden sind. Andernfalls wird Die Kombination
+           Af_first_fsel/Af_next_fsel (Multi-Selektion) bzw. Af_select
+           (Single-Selektion) verwendet. Af_fileselect erlaubt auch
+           den Aufruf des nicht-modalen Fileselectors. In diesem Falle
+           wird die Nachricht AS_FILESELECT an das Root-Fenster
+           gesendet.
+
+           (!B)Note:(!b) Die Verwendung der Funktionen Af_select,
+           Af_first_fsel und Af_next_fsel sollte möglichst zugunsten
+           der neuen Funktion Af_fileselect aufgegeben werden.
+         !end_itemize
+
+ 09/17/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) kam nicht so recht mit langen Dateinamen
+           klar. Besonders problematisch waren Dateinamen mit
+           Leerzeichen darin. Der (!I)GUI-Editor(!i) versteht nun korrekt
+           gequote Dateinamen, sowohl beim Start in der Kommandozeile
+           als auch beim AV-(!link [Protocol] [External communication]) per VA_START.
+
+         !item Die Dateinamen wurden stets in Großbuchstaben umgewandelt.
+           Das ist etwas lästig, besonders bei casesensitiven
+           Filesystemen. Die Dateinamen werden nun nicht mehr
+           umgewandelt, sondern bleiben so, wie sie sind - sowohl beim
+           Öffnen von Dateien als auch beim Neuanlegen von Dateien.
+
+         !item Beim Start werden übergebene Optionen der Form "-..." bzw.
+           "/.." erkannt, wobei nach den Zeichen '-' bzw. '/' beliebig
+           viele Zeichen folgen können. Bisher wurde versucht, diesen
+           Parameter als Datei zu öffnen. Nachdem der (!I)GUI-Editor(!i)
+           (noch;-) keine Optionen kennt, werden diese Argumente
+           schlichtweg ignoriert.
+         !end_itemize
+
+ 09/15/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Bibliothek (!link [ACS.LIB] [The Pure-C Library]) enthält nun auch die beiden
+           Bibliotheken ACSTOS.LIB und PCGEM.LIB. Das Einbinden der
+           Bibliotheken PCTOS.LIB, PCTOSLIB.LIB, PCGEM.LIB oder
+           PCGEMLIB.LIB entfällt somit völlig und ist nicht mehr
+           notwendig.
+
+           Bisher mußte die Bibliothek ACSTOS.LIB im Projekt enthalten
+           sein. Falls dies vergessen wurde und eine der Bibliotheken
+           PCTOS.LIB oder PCTOSLIB.LIB (Pure-C-Biblitohek) verwendet
+           wurde, kam es zu Abstürzen, da (!I)ACSpro(!i) ab Version 3.0.0
+           bereits die optimierten Aufrufe aus ACSTOS.LIB verwendet.
+         !end_itemize
+
+ 09/05/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Flags in der Struktur Adescr wurde um AB_OLDMENU
+           erweitert.
+
+         !item Die Menus können - falls das Flag AB_OLDMENU nicht gesetzt
+           ist - in das "moderne Layout" umgewandelt werden, so daß
+           die Menus dreidimensional erscheinen. Folgende Umwandlungen
+           werden vorgenommen:
+
+             !begin_enumerate
+             !item Alle G_BOX-Objekte werden bei mindestens 16 Farben mit
+                Hintergrund LWHITE und Füllmuster IP_SOLID versehen.
+                Der 3D-Effekt wird durch das Flag FL3DBAK in ob_flags
+                bewirkt.
+
+                Diese Effekte wirken also nur auf Systemen, die die
+                AES-4-Objekt-Flags kennen...
+
+             !item Alle Strings G_STRING, die disabled sind und nur das
+                Zeichen '-' enthalten, werden in das Userdef-Arrows
+                umgewandelt. Bei mindestens 16 Farben wird die Linie
+                in der Farbe LBLACK mit der Stärke 1, andernfalls in
+                der Farbe BLACK mit Stärke 3 gezeichnet.
+
+             !item Alle Arrow-Userdefs, die disabled sind und in den
+                AUSERBLK-Structures die Default-Werte des Userdef-
+                Arrows in Menus enthalten, werden bei mindestens 16
+                Farben umgesetzt auf Linienfarbe LBLACK und Stärke 1.
+             !end_enumerate
+
+         !item Das Userdef-Arrows verhält sich nun beim Status DISABLED
+           etwas anders. Wenn die Stärke 3 verwendet wird, wird das
+           Userdef wie bisher gezeichnet (die Zeichenroutine
+           bearbeitet nur den Status SELECTED). Falls jedoch die
+           Stärke 1 verwendet wird, wird zusätzlich der Status
+           DISABLED durch die Zeichen-Routine bearbeitet. Damit sieht
+           das Userdef als Trennlinie bei Menus besser aus... ;-)
+
+           (!B)Note:(!b) Der Status SELECTED bzw. DISABLED hat jedoch keine
+           Auswirkung auf das Aussehen des Userdefs!
+         !end_itemize
+
+ 09/03/2000 ACSGEM.LIB, PCGEM.LIB
+
+         !begin_itemize
+         !item Das VDI-Binding wurde überarbeitet. Die auf dem Stack
+           angelegten Übergabe-Arrays sind nun etwas größer
+           dimensioniert - evtl. waren sie einfach zu klein, so daß es
+           beim Aufruf "krachte".
+         !end_itemize
+
+ 09/03/2000 ACS.PAS, ACS.PPU
+
+         !begin_itemize
+         !item Bei der Pure-Pascal-Unit wurde kein Environment an (!I)ACSpro(!i)
+           übergeben. Damit lieferte die Funktion Ash_getenv natürlich
+           nur "Käse" ;-) Dies ist jetzt korrigiert, so daß nun alle
+           Environment-Variables unter Pure-Pascal zur Verfügung
+           stehen...
+         !end_itemize
+
+ 07/29/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Überprüfungen des Speichers beim Anfordern und
+           freigeben per Ax_malloc, Ax_free bzw. Ax_ifree wurden
+           komplett überarbeitet. Wenn das Flag AB_NOMEMCHECK gesetzt
+           ist, findet jetzt keinerlei Prüfung mehr statt. Das
+           Beschreiben des Speichers vor dem von Ax_malloc gelieferten
+           Blockes mit einer (!I)ACSpro(!i)-eigenen Kennung ist nun zusammen
+           mit der zugehörigen Überprüfung der Kennung in Ax_free bzw.
+           Ax_ifree auch weggefallen - bei mir hat dies nicht korrekt
+           funktioniert, nach mehreren Crashes von MagiC habe ich es
+           herausgeworfen, denn MagiC macht intern genau so etwas
+           auch... ;-)
+
+           Wenn diese Art der Speicher-Überprüfung denoch benötigt
+           wird, dann werde ich eben wieder so eine nette Sache
+           einbauen... ;-)
+
+         !item Die Funktion nkc_gconv wurde in nkc_gem2n, die Funktion
+           nkc_tconv in nkc_tos2n umbenannt. Damit alte Sourcen nicht
+           angefaßt werden müssen, werden über Makros die alten in die
+           neuen Namen übersetzt.
+
+         !item (!I)ACSpro(!i) verwendet nun nicht mehr direkt die NKCC-Routinen,
+           sondern die von Christian Felsch überarbeitete Version aus
+           der CF-Lib.
+
+           Da dort die Funktionen nkc_n2gem, nkc_gem2n, nkc_cmp und
+           nkc_kstate nicht enthalten sind, wurden diese in C
+           entsprechend nachprogrammiert.
+
+         !item Neu dazu gekommen sind die Funktionen nkc_gemks2n,
+           nkc_n2gemks und nkc_n2kstate.
+         !end_itemize
+
+ 07/12/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Modul-Schnittstelle wurde nun komplett überarbeitet. In
+           Zukunft sollten also abwärtskompatible Erweiterungen
+           wesentlich leichter zu realisieren sein.
+
+           Da es bestimmt einige Module gibt, die nicht mehr
+           weitergepflegt werden, habe ich mich entschlossen, hier zu
+           tricksen und etwas mehr Aufwand zu treiben: wird eine alte
+           Modul-Schnittstelle erkannt (also von (!I)ACSpro(!i) 2.3x bzw.
+           2.3.x), so werden die Daten vor dem Weiterreichen an die
+           Anwendung konvertiert. Damit können auch Module von (!I)ACSpro(!i)
+           2.3x/2.3.x geladen werden und scheinen zu funktionieren -
+           jedenfalls soweit ich sie habe und testen kann...
+
+           Da das nicht jeder benötigt, gibt es nun drei Bibliotheken,
+           von denen genau eine zusätzlich zur Bibliothek (!link [ACS.LIB] [The Pure-C Library]) in
+           Projekte eingebunden werden muß:
+
+            !begin_xlist [ACSMODNO.LIB]
+            !item [ACSMODNO.LIB]  Die Funktion Ash_module existiert nur als
+                          Dummy-Funktion. Module werden nicht geladen,
+                          eine Schnittstelle wird nicht zur Verfügung
+                          gestellt. Durch Verwendung dieser Bibliothek
+                          werden nun von der Anwendung nicht benötigte
+                          Routinen vom Linker nicht mehr eingebunden,
+                          die andernfalls nur wegen der Modul-
+                          Schnittstelle denoch hinzugelinkt würden..
+
+            !item [ACSMOD01.LIB]  Die Modul-Schnittstelle Version 1 (neue
+                          Versionierung der Schnittstelle unabhängig
+                          von der (!I)ACSpro(!i)-Version) wird zur Verfügung
+                          gestellt. Die Funktion Ash_module lädt nur
+                          die neuen Module nach, die mit dieser
+                          Schnittstellen-Version erstellt wurden.
+
+            !item [ACSMOD.LIB]    Die Modul-Schnittstelle steht in
+                          abwärtskompatibler Form zur Verfügung. Es
+                          werden auch die Module der (!I)ACSpro(!i)-Versionen
+                          2.30, 2.31, 2.32, 2.3.3 und 2.3.4 geladen
+                          und gestartet. In der Schnittstelle stehen
+                          for die Erweiterungen der Structures
+                          Awindows und AUSERBLK entsprechende
+                          Konvertierungsroutinen bereit, die völlig
+                          unbemerkt for die Kompatibilität sorgen.
+            !end_xlist
+         !end_itemize
+
+ 07/09/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Modul-Schnittstelle ist nun in eine eigenständige
+           Bibliothek ausgelagert worden. Die neue Bibliothek
+           ACSMOD01.LIB muß zusätzlich zur Bibliothek (!link [ACS.LIB] [The Pure-C Library]) in
+           Projekte eingebunden werden.
+
+           For Anwendungen, die keine Modulschnittstelle benötigen,
+           existiert die Bibliothek ACSMODNO.LIB, die eine leere
+           Schnittstelle enthält. Damit bindet der Linker auch nur die
+           wirklich benötigten (!I)ACSpro(!i)-Funktionen ein.
+
+           Dank an Rainer Mannigel for diese Anregung!
+         !end_itemize
+
+ 07/08/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Anwendungen, die mit (!I)ACSpro(!i) entwickelt werden, brauchen nun
+           nicht mehr die Line-A-Bibliothek von Pure-C - außer wenn
+           der Entwickler selbst irgendetwas davon benötigt, wovon
+           allerdings (!I)dringendst(!i) abgeraten wird. (!I)ACSpro(!i) verwendet hier
+           nur die sog. "Initialisierung" ($A000) zur Ermittelung der
+           Line-A-Variables. Diese werden nun über eine eigene "Mini-
+           Funktion" beschafft.
+
+           Benötigt werden die Line-A-Variables nur in Abp_start und
+           Abp_end. Diese beiden Routinen sollten sowie so nur
+           verwendet werden, wenn alle anderen Stricke reißen...
+           (siehe auch die Dokumentation der beiden Funktionen ;-)
+         !end_itemize
+
+ 07/06/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Interne Aufräumarbeiten in Af_select und Af_first_fsel...
+         !end_itemize
+
+ 07/02/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) verwendet nun den Startup-Code von Stefan
+           Kuhr @ OS. Vielen Dank, Stefan! Bisher wurde der Startup-
+           Code von Behne&Behne verwendet.
+
+           Beide Startup-Codes sind an PowerMacs unter (!link [MagiCMac] [MagiC])
+           angepaßt und liegen (!I)ACSpro(!i) bei. Die Original-Archive der
+           Startup-Codes sind u.a. in der Maus LL im
+           Gruppenprogrammteil Maus.Computer.Atari.Programmieren zu
+           finden.
+
+           Hier ein kleiner Vergleich (unvollständig und natürlich
+           subjektiv!) der beiden Startup-Codes:
+
+           Der Startup-Code von Stefan Kuhr unterstützt:
+
+              !begin_itemize
+              !item Quoting (Komandozeilenparameter mit Leerzeichen)
+
+              !item ARGV (Komandozeilenparameter mit mehr als 125 Zeichen
+                werden im Environment übergeben)
+
+              !item erweitertes ARGV (Übergabe von leeren Parametern)
+
+              !item Workaround for PATH
+
+              !item Shared Text (Programm mehrfach starten, dessen Text-
+                Segment aber nur einmal im Speicher liegt)
+
+              !item keine FPU-Initialisierung
+              !end_itemize
+
+           Der Startup-Code von Behne&Behne unterstützt:
+
+              !begin_itemize
+              !item Quoting (Komandozeilenparameter mit Leerzeichen)
+
+              !item ARGV (Komandozeilenparameter mit mehr als 125 Zeichen
+                werden im Environment übergeben)
+
+              !item keine FPU-Initialisierung
+              !end_itemize
+         !end_itemize
+
+ 06/26/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Funktion Ax_memCheck prüft, ob ein Speicherbereich les-
+           und/oder beschreibbar ist. Da bei den diversen Protokollen
+           diese Funktion verwendet wird, sollten (!I)ACSpro(!i) und alle
+           mittels (!I)ACSpro(!i) entwickelten Anwendungen nicht mehr
+           abstürzen, wenn der Kommunikationspartner bei
+           eingeschaltetem Speicherschutz den "Transfer-Speicher"
+           nicht global alloziert hat.
+
+           Dank an Thomas Binder for die geniale Routine im MausNet in
+           der Gruppe Maus.Computer.Atari.Programmieren!
+         !end_itemize
+
+ 06/26/2000 ACSGEM.LIB, PCGEM.LIB
+
+         !begin_itemize
+         !item Fehler bei appl_search korrigiert, die Rückgabewerte wurden
+           nicht ordentlich gesetzt. Damit klappte die Kommunikation
+           per XAcc-(!link [Protocol] [External communication]) etc. nicht mehr... ;-/
+
+         !item Die PDLG-Routinen von WDialog wurden nun ebenfalls
+           implementiert.
+         !end_itemize
+
+ 06/25/2000 ACSGEM.LIB, PCGEM.LIB
+
+         !begin_itemize
+         !item In die Bibliothek wurden die LBOX-Funktionen for WDialog
+           aufgenommen.
+         !end_itemize
+
+ 06/23/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Neue Funktionen, die for den Umgang mit NVDI nützlich sind,
+           wurden implementiert. Es handelt sich um Ash_NVDICookie,
+           Ash_CallEdDI, Ash_NVDIVersion und Ash_NVDIDatum.
+         !end_itemize
+
+ 06/23/2000 ACSGEM.LIB, PCGEM.LIB
+
+         !begin_itemize
+         !item Die Bibliothek wurde noch etwas überarbeitet. Die EdDI-
+           Funktionen v_opnbm, v_clsbm und vq_scrninfo wurden in die
+           Bibliothek aufgenommen.
+
+         !item In die Bibliothek wurden die FNTS-Funktionen for WDialog
+           aufgenommen.
+
+         !item In die Bibliothek wurden die FSLX-Funktionen for WDialog
+           aufgenommen.
+         !end_itemize
+
+ 06/22/2000 (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item The Window editor erlaubt nun auch das Setzen des
+           Fenster-Elementes HOTCLOSEBOX, das in MagiC ab Version 1.0
+           und in KAOS 1.4.2 (außerdem ab PC-GEM 2) vorhanden ist.
+           Damit wird das Schließen des Fensters bereits beim
+           Anklicken der Schließbox und nicht erst beim Loslassen
+           ausgelöst.
+         !end_itemize
+
+ 06/18/2000 (!link [ACS.LIB] [The Pure-C Library]), (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Ash_getcookie verwendet nun Ssystem zum Lesen der (!link [Cookies] [The Cookie Jar]) -
+           falls die Funktion verfügbar ist.
+
+         !item Der Editor des (!link [Cycle] [Userdef-Cycle])-Button hatte einen kleinen Bug, der
+           nun behoben ist. Wenn als "(!link [Cycle] [Userdef-Cycle])-Zeichen" ein Zeichen
+           größer 127 gewählt wurde, wurde der Parameter-Wert des
+           Userdef falsch gesetzt - d.h. das Vorzeichen des char wurde
+           auf den long übertragen... ;-)
+         !end_itemize
+
+ 06/13/2000 PCTOS.LIB
+
+         !begin_itemize
+         !item In der Bibliothek PCTOS.LIB hatte sich for Mshrink ein
+           Fehler eingeschlichen, der Parameter zero war nicht
+           vorhanden. Auswirkungen hatte dies natürlich bei allen
+           Anwendungen, die diese Bibliothek verwenden, u.a. im (!I)GUI-
+           Editor(!i) beim Laden von Modulen.
+         !end_itemize
+
+ 06/02/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) hat for Pure-Pascal die Texte des
+           Hauptmoduls nicht exportiert (Der Bug war eigentlich immer
+           schon so drin, das hat noch nie richtig funktioniert... ;-
+           /). Damit stürzten Programme ab, wenn per Ash_error oder
+           Awi_alert eine Meldung ausgegeben werden sollte, ohne daß
+           alert_name gesetzt war.
+         !end_itemize
+
+ 05/19/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Konstanten-Definitionen der MiNTLib for (!link [Cookies] [The Cookie Jar]) wurden
+           in (!I)ACSpro(!i) übernommen. Damit stehen die sprechenderen
+           "Namen" der (!link [Cookies] [The Cookie Jar]) auch unter GNU-C und Pure-Pascal zur
+           Verfügung.
+
+         !item Kleineren Bug behoben: Die Funktion Awi_ontop() lieferte
+           nach der Nachricht WM_ONTOP fälschlicherweise das Root-
+           Fenster zurück... ;-/
+         !end_itemize
+
+ 05/18/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library]), (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Die Versionsnummern wurden nun umbenannt. Aus V3.00 ist
+           V3.0.0 geworden. Damit kann ich auch nun auch mehr als 9
+           BugFixes durchführen... ;-)
+         !end_itemize
+
+ 05/11/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die unterstützten GEMScript-Kommandos wurden um die
+           Kommandos 'KeyPress' und 'GetAllCommands' erweitert. Hier
+           wird ein Tastendruck simuliert bzw. eine alphabetisch
+           sortierte Liste aller unterstützten GEMScript-Kommandos
+           ausgegeben.
+
+           Genaueres ist in der Dokumentation der GEMScript-Funktionen
+           Aev_GEMScript und Awi_gemscript zu finden.
+         !end_itemize
+
+ 05/11/2000 Bibliothek ACSTOS.LIB, PCTOS.LIB
+
+         !begin_itemize
+         !item Weitere Fehlerkorrekturen in der TOS-Bibliothek
+
+         !item Die Bibliothek ACSTOS.LIB gibt es nun auch als kompatiblen
+           Ersatz der Pure-C Bibliothek. Die neue Bibliothek PCTOS.LIB
+           sollte zur bisherigen Pure-C Bibliothek kompatibel sein,
+           aber alle mir bekannten BIOS-, XBIOS- und GEMDOS-Funktionen
+           enthalten.
+
+         !item Die ACSTOS.LIB gibt es ferner als kompatible Bibliothek,
+           die zu 100% kompatibel zur von CAT verwendeten Bibliothek
+           ist - eine kleinere "Spielerei", diese Variante, ich gebe
+           es zu... ;-)
+         !end_itemize
+
+ 04/04/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Routine Awi_doform warf Bömbchen, wenn das Erzeugen des
+           Fensters nicht funktioniert hat und auf A_dialog
+           ausgewichen werden mußte.
+         !end_itemize
+
+ 03/12/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Im allgemeinen USERDEF-Editor (also Klick mit Ctrl auf
+           "Objekt-Editor) gab es einen Absturz, wenn die Strings for
+           BubbleGEM und das Context-Popup nicht leer waren.
+         !end_itemize
+
+ 03/12/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item In Ast_ltrim - und damit auch in Ast_alltrim - war noch ein
+           Bug, der das Ende des korrigierten Strings falsch setzte.
+         !end_itemize
+
+ 03/05/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Funktion Awi_obchange funktionierte bei einem Wechsel
+           des Objekt-Status von DISABLED auf ENABLED nicht richtig.
+           Das Objekt war zwar enabled, wurde aber z.T disabled
+           gezeichnet. Meine Untersuchungen haben ein etwas
+           merkwürdiges Verhalten von objc_change ergeben. Das Problem
+           wurde durch einen Workaround umschifft.
+         !end_itemize
+
+ 02/13/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Im Dialog "Allgemein" des Module-Fensters funktionierte die
+           Einstellung "Kopiere Bildteil" nicht richtig. Wenn die
+           Option umgestellt wurde, wurde stets das Gegenteil
+           durchgeführt. Wenn die Option in der Default-Einstellung
+           belassen wurde, klappte alles wie es sollte. Dies ist nun
+           korrigiert! Die Einstellungen in diesem Dialog sollten
+           daher nochmals kontrolliert werden.
+         !end_itemize
+
+ 01/31/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Bei Hauptmodulen wurde for Pure-Pascal in der Komponente
+           acc_reg ein Char zuviel ausgegeben. Dies ist nun
+           korrigiert!
+         !end_itemize
+
+ 01/25/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Funktion Af_readdir - und damit auch Af_first und
+           Af_next - funktionierte nicht korrekt, wenn Dxreaddir und
+           Dreaddir (MagiC bzw. MiNT) nicht vorhanden sind und intern
+           Fsfirst/Fsnext verwendet wurde. Die Dateinamen wurden mit
+           "*.*" aufgebläht:
+
+                       Laufwerk:\ORDNER1\...\*.*\DATEI.XYZ
+
+           Das Problem ist nun behoben!
+         !end_itemize
+
+ 01/05/2000 Bibliothek ACSTOS.LIB, PCGEM.LIB, ACSGEM.LIB
+
+         !begin_itemize
+         !item Diverse Optimierungen in den Bibliotheken for BIOS, XBIOS,
+           GEMDOS, VDI & AES.
+         !end_itemize
+
+ 12/23/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Das Backdropping wird nun in der Version 3.0.0 noch nicht
+           über einen Zeiger in der Struktur Awindow aufgerufen,
+           sondern noch automatisch und nicht beeinflußbar. Dies wird
+           sich nach der Version 3.0.0 allerdings ändern (steht schon
+           auf der ToDo List).
+         !end_itemize
+
+ 12/16/1999 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item The Object editors (3D-Button-Dialog, Checkbox-/
+           Radiobutton-Dialog, etc.) rufen nun die ST-Guide-Hilfe
+           ebenfalls über die neue Schnittstelle auf.
+
+         !item Der Objektbaum-Editor hat nun ebenso wie The Popup editor
+           und The Menu editor eine Hilfe-Seite erhalten.
+         !end_itemize
+
+ 12/14/1999 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item The Window editor ist nun komplett mit BubbleGEM-
+           Informationen ausgerüstet worden.
+         !end_itemize
+
+ 12/10/1999 Neue Bibliotheken ACSGEM.LIB und PCGEM.LIB
+
+         !begin_itemize
+         !item (!I)ACSpro(!i) ist nun auch um eine eigene GEM-Bibliothek ergänzt
+           worden. Diese deckt zunächst alle VDI- und AES-Funktionen
+           bis zum TT-TOS ab. Weitere werden allerdings noch
+           "nachgerüstet". Diese Bibliothek ersetzt die Pure-C-
+           Bibliothek PCGEMLIB.LIB vollständig und sollte völlig
+           kompatibel (aber bei wind_get/wind_set sauberer ;-) sein.
+
+           Diese Bibliothek gibt es demnächst auch in einer for (!I)ACSpro(!i)
+           optimierten und multithreading-festen Form.
+
+         !item Damit wird es auch demnächst (also dann, wenn ich einmal
+           dazu komme ;-)) zwei Versionen der ACS-Bibliothek geben.
+           Die eine baut wie bisher auf der (!link [Pure-C-Bibliothek] [The Pure-C Library])
+           PCGEMLIB.LIB (bzw. wahlweise auf der Ersatzbibliothek
+           PCGEM.LIB) auf, die andere ist for die Bibliothek
+           ACSGEM.LIB optimiert, enthält also zum Teil wesentlich
+           weniger Overhead.
+         !end_itemize
+
+ 09/08/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Bei mehr als 256 Farben sollte zumindest kein Pixelmüll
+           kommen. Bei Checkboxen oder Radiobuttons wird allerdings
+           die Schwarz-Weiß-Darstellung verwendet - ein kleiner
+           Kompromis, bis ich eine vernünftige Lösung gefunden habe
+           ...
+         !end_itemize
+
+ 08/30/1999 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Der (!I)GUI-Editor(!i) fügt nun selbsttätig zwei führende
+           Leerzeichen beim Accessory-Menueintrag ein, damit dieser im
+           Menu richtig positioniert wird. Bei der Anzeige werden
+           diese führenden Leerzeichen wieder entfernt. Man muß also
+           nicht mehr selbst darauf aufpassen, daß dieser Menueintrag
+           richtig dargestellt wird.
+         !end_itemize
+
+ 08/19/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Konfigurationsdatei for den (!I)GUI-Editor(!i) wurde erweitert,
+           die Seriennummer und der Schlüssel sind nun auf 10 Zeichen
+           erweitert worden. Ebenso ist der (Fenster-)Dialog
+           entsprechend erweitert worden.
+         !end_itemize
+
+ 08/08/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die (!I)ACSpro(!i)-eigenen Checkbox- und Radio-Button-Userdefs
+           waren im Zustand disabled noch nicht an die Checkbox- und
+           Radio-Button-Objekte von MagiC 6 angepaßt. Die Darstellung
+           wurde korrigiert und weiter angeglichen. Ferner wird nun im
+           Zustand disabled auch der Beschriftungstext hell
+           gezeichnet, wie es bei MagiC 6 der Fall ist. Die Checkbox
+           kann nun nicht mehr for ein Tri-State-Objekt verwendet
+           werden, dafor ist die völlige MagiC-Anpassung erreicht.
+
+           Bei mehr als 256 Farben sowie bei proportionalen
+           Systemzeichensätzen gibt es jedoch leider immer noch
+           Probleme mit den Chechbox- und Radio-Buttons.
+         !end_itemize
+
+ 08/01/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Das GEMScript Protocol wurde nun passiv in der ersten
+           Stufe implementiert. Damit funktioniert nun die
+           Fernsteuerung von ACS-Applikationen! Die Aufnahmefähigkeit
+           sowie die aktive Ansteuerung anderer Applikationen ist noch
+           nicht implementiert, beides wird jedoch noch
+           "nachgerüstet".
+
+           Bislang werden nur ein paar Standard-GS-Kommandos
+           unterstützt, die Liste wird aber noch wachsen.
+
+           Die Standard-Funktion for allgemeine GEMScript-Kommandos
+           heißt Aev_GEMScript, for GEMScript-Kommandos mit Bezug auf
+           Fenster wird die in Awindow.gemscript eingetragene Funktion
+           aufgerufen - Default-Funktion ist hier Awi_gemscript.
+         !end_itemize
+
+ 07/24/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library]), (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item For jedes Fenster kann nun der Hilfe-Titel for die ST-
+           Guide-Hilfe direkt im (!I)GUI-Editor(!i) eingetragen werden. Dem
+           Fenster wird durch die Nachricht AS_ASK_STGUIDE Gelegenheit
+           gegeben, das Hilfethema zu verändern.
+
+           Falls noch nichts selekiert wurde, so selektiert zum
+           Beispiel das Editor-Fenster das Wort unter dem Cursor. Als
+           Hilfe-Thema wird der selektierten Bereich verwendet.
+         !end_itemize
+
+ 07/22/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library]), (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Völlig analog zur BubbleGEM Help kann nun bereits im (!I)GUI-
+           Editor(!i) for jedes (!I)ACSpro(!i)-Userdef, das eine Service Routine
+           besitzt, das (!link [Kontext-Menu] [The Context Menu]) angegeben werden.
+
+         !item Alle Daten, die das Hauptmodul betreffen, sind nun ein
+           einem neuen Fensterdialog zusammengefaßt. Der bisherige
+           Verhalten-Dialog wurde damit wesentlich übersichtlicher
+           gestaltet.
+
+           In diesen neuen Fensterdialog gelangt man, indem man das
+           neue Icon HAUPTMODUL links neben dem bisherigen Icon
+           VERHALTEN auswählt.
+
+         !item Der Verhalten-Dialog wurde zusammen mit seinem Icon in
+           "Eigenschaft" umbenannt und ist nun for die Eigenschaften
+           wie z.B. die Programmiersprache jeder (!I)ACSpro(!i)-Datei
+           zuständig, während die Daten des Hauptmoduls getrennt davon
+           im Hauptmodul-Dialog zusammengefaßt sind.
+
+         !item Neu ist die Struktur Aconfig. In ihr werden vom (!I)GUI-Editor(!i)
+           wichtige Konfigurationsdaten des Hauptmoduls exportiert und
+           in der globalen Variable ACSconfig dem Compiler bzw. Linker
+           zur Verfügung gestellt. Dies sind z.B. die verschiedenen
+           Funktionszeiger, die von (!I)ACSpro(!i) in die Struktur Ablk, auf
+           die ACSblk verweist, eingetragen werden.
+
+         !item Die wichtigen Funktionszeiger in der Struktur Ablk können
+           nun bereits im (!I)GUI-Editor(!i) belegt werden.
+
+         !item Ferner kann nun auch die Funktion ACSinit einen anderen
+           Namen tragen. Der Default-Name ist ACSinit, ein
+           abweichender Name kann im Hauptmodul-Dialog vorgegeben
+           werden.
+         !end_itemize
+
+ 07/22/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Analog zur BubbleGEM Help wurde ein (!link [Kontext-Menu] [The Context Menu])
+           realisiert. (!I)ACSpro(!i) unterscheidet zwischen langen und kurzen
+           Klicks mit der rechten Maustaste. Bei kurzen Klicks
+           erscheint die BubbleGEM Help, bei langen Klicks das
+           (!link [Kontext-Menu] [The Context Menu]). Das Kontext-Menu kann vom Userdef und vom
+           Fenster kontrolliert werden.
+
+         !item Die Strategie zur Behandlung von Klicks mit der rechten
+           Maustaste ist nun wie folgt:
+
+             !begin_enumerate
+             !item Falls nach einer Zeit von im Moment festen 250 msec.
+                die rechte Maustaste noch gedrückt ist, handelt es
+                sich um einen langen Klick, andernfalls um einen
+                kurzen Klick.
+
+             !item Bei einem kurzen Klick wird die BubbleGEM Help
+                aufgerufen, andernfalls das (!link [Kontext-Menu] [The Context Menu]).
+
+             !item Falls keine BubbleGEM Help verfügbar war, wird das
+                (!link [Kontext-Menu] [The Context Menu]) verwendet.
+
+             !item Falls kein (!link [Kontext-Menu] [The Context Menu]) verfügbar war, wird nach der
+                Wartezeit zur Ermittlung eines langen Klicks (s.o.)
+                die BubbleGEM Help angezeigt.
+             !end_enumerate
+
+         !item Es wurden zwei neue Funktionen implementiert, Aob_state und
+           Aob_flags. Sie dienen zur einfachen Manipulation der
+           Komponenten ob_state bzw. ob_flags der Struktur OBJECT in
+           einem Objektbaum (Workobjekt oder Toolbar) eines Fensters.
+         !end_itemize
+
+ 07/20/1999 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Die Texte for BubbleGEM können nun for jedes ACS-Userdef,
+           das eine Service Routine besitzt, komfortabel bereits im
+           (!I)GUI-Editor(!i) angegeben werden. Als besonderes Feature können
+           die BubbleGEM-Strings am Beispiel-Objekt in der linken
+           oberen Ecke direkt beim Editieren ausprobiert werden, es
+           wird sofort der eingegebene Text verwendet.
+         !end_itemize
+
+ 06/27/1999 Bibliotheken (!link [ACS.LIB] [The Pure-C Library]) & (!link [ACSPLUS.LIB] [The C-Extension Library]), (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Die Struktur Awindow wurde erweitert:
+
+             !begin_enumerate
+             !item Es sind zwei Funktionszeiger hinzugekommen, die for
+                Iconify benötigt werden. Die Default-Routinen sind
+                Awi_iconify und Awi_uniconify.
+
+             !item For die ST-Guide-Unterstützung sind ferner zwei neue
+                Strings vorhanden. Hier kann das Hilfe-Thema for
+                dieses Fenster sowie ggf. der Dateiname des
+                Hypertextes angegeben werden.
+
+             !item Zur Unterstützung des GEMScript Protocoles ist ein
+                Funktionszeiger definiert, der auf die GEMScript-
+                Routine des Fensters zeigt. Default-Funktion ist hier
+                Awi_gemscript. Im Moment macht diese Routine noch
+                nichts, aber das ändert sich bald... ;-)
+             !end_enumerate
+
+         !item Die Struktur AUSERBLK der Userdefs wurde um folgende
+           Komponenten erweitert:
+
+             !begin_enumerate
+             !item Ein neuer String enthält den ggf. zu verwendenden Text
+                for eine BubbleGEM Help.
+
+             !item Ein weiterer String steht for ein kontextsensitives
+                Popup zur Verfügung.
+             !end_enumerate
+
+         !item Ebenso hat die Struktur AUSER_DEF ebenfalls zwei neue
+           Zeiger bekommen, einen for die BubbleGEM Help, einen for
+           das Kontext-Popup. Damit müssen alle vorhandenen Editoren
+           an diese Änderung angepaßt werden - sorry!
+         !end_itemize
+
+ 06/27/1999 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Das Dateiformat ist nun umgestellt worden. Der (!I)GUI-Editor(!i)
+           liest weiterhin alle alten Formate und konvertiert sie in
+           das neue Format, allerdings werden diese nach der
+           Umwandlung als verändert gekennzeichnet. Daraufhin wird
+           beim Beenden des (!I)GUI-Editor(!i) gefragt, ob die (!I)ACSpro(!i)-Datei
+           gesichert werden soll.
+
+           Alle (!I)ACSpro(!i)-Dateien im alten Format müssen aufgrund der
+           neuen Komponenten in den Structures Awindow und AUSERBLK
+           umgestellt werden. Andernfalls drohen Abstürze (zwei oder
+           drei Bömbchen) unter anderem bei der ST-Guide-Hilfe,
+           Iconify und GEMScript.
+         !end_itemize
+
+ 06/17/1999 Bibliothek (!link [ACSPLUS.LIB] [The C-Extension Library]) & (!I)GUI-Editor(!i)
+
+         !begin_itemize
+         !item Das Editor-Fenster und der (!I)GUI-Editor(!i) senden nun nach dem
+           Save per Aev_OlgaUpdate eine entsprechende Message an
+           den OLGA-Manager.
+
+           Damit kann z.B. der (!I)GUI-Editor(!i) mit Hilfe des integrierten
+           Editor-Fensters als OLGA-fähiger Texteditor eingesetzt
+           werden - das habe ich natürlich gleich ausprobieren
+           müssen... ;-)
+         !end_itemize
+
+ 06/17/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Das OLGA Protocol wird nun als (!link [OLGA-Server] [OLGA Protocol]) unterstützt.
+           Das Nachstarten des OLGA-Managers sowie das An- und
+           Abmelden am OLGA-Manager funktionieren vollautomatisch. Die
+           Funktionen Aev_OlgaUpdate, Aev_OlgaRename und
+           Aev_OlgaBreaklink stehen bereits zur Verfügung und arbeiten
+           korrekt.
+
+           Eine komfortablere Variante ist in Grundzügen bereits
+           implementiert und wird gerade ausgebaut. Wesentliche Teile
+           der (!link [OLGA-Client] [OLGA Protocol])-Seite sind ebenfalls fertig, allerdings
+           wird hier noch gefeilt... ;-)
+
+           Die volle OLGA-Unterstützung auch als Client wird in der
+           Version 3.0.0 noch nicht zur Verfügung stehen. Sie ist
+           jedoch in Arbeit und steht auch weiterhin auf der ToDo-
+           Liste.
+         !end_itemize
+
+ 05/30/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Das komplette PureC Help Protocol steht nun zur
+           Verfügung.
+
+           Allerdings habe ich bei den diversen Tests festgestellt,
+           daß PC_HELP.ACC die Rückmeldung stets an die Applikation 0
+           meldet. In Multitasking-Systemen geht dies dann "daneben".
+
+           Dies ist ein Bug in PC_HELP.ACC und kann von (!I)ACSpro(!i) nicht
+           umgangen werden. Wenn der ST-Guide über dieses (!link [Protocol] [External communication])
+           angesteuert wird, funktioniert alles reibungslos!
+
+         !item Der ST-Guide von Holger Weets kann nicht nur über das
+           PureC Help Protocol angesteuert werden, sondern versteht
+           auch das AV-(!link [Protocol] [External communication]). Die Funktion Aev_STGuideHelp stellt
+           das komfortable Inferface for die Ansteuerung des ST-Guide
+           dar.
+
+           Der ST-Guide scheint nach der Nachricht VA_START die
+           Antwort VA_STARTED an den AV-Server zu senden und nicht an
+           die absendende Anwendung. Damit ist keine Möglichkeit
+           gegeben, komfortable Rückmeldungen zu bekommen. Zum Glück
+           klappt mit dem PureC Help Protocol alles bestens... ;-)
+
+           Dies ist ein Bug im ST-Guide und kann von (!I)ACSpro(!i) nicht
+           umgangen werden. For beide Varianten, die Online-Hilfe
+           anzusprechen, habe ich entsprechende Workarounds
+           implementiert. (!I)ACSpro(!i) ist also auf dieses "besondere
+           Verhalten" beider Hilfe-Accessories vorbereitet und sollte
+           richtig darauf reagieren... ;-)
+
+         !item Die Strategie, um den AV-Server zu finden, wurde etwas
+           geändert. Zuerst wird die Environment-Variable AVSERVER
+           ausgewertet. Falls diese nicht existiert oder der dort
+           angegebene AV-Server nicht gefunden werden kann, werden (in
+           dieser Reihenfolge) jinnee, Gemini, AVServer und MagxDesk
+           als AV-Server versucht.
+         !end_itemize
+
+ 05/18/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Neue Funktion Awi_ontop liefert das oberste Fenster. Dies
+           wird auch behalten, wenn (!I)ACSpro(!i)-Anwendungen in den
+           Hintergrund treten.
+
+         !item Wenn (!I)ACSpro(!i) in Multitasking-Systemen wieder nach vorne kam,
+           wurde direkt ein Maus-Klick ausgelöst. Dies ist nun
+           abgestellt!
+         !end_itemize
+
+ 05/08/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Iconify in allen Varianten wird nun direkt vom (!I)ACSpro(!i)-
+           System erledigt. Die Realisierung über die Service Routine
+           ist somit hinfällig. Demnächst werden bei der sowieso
+           anstehenden Änderung der Awindow-Struktur entsprechende
+           Funktionszeiger for die Nachrichten WM_ICONIFY,
+           WM_ALLICONIFY und WM_UNICONIFY aufgenommen werden.
+         !end_itemize
+
+ 05/04/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die XAcc-Empfangsroutinen wurden komplett überarbeitet und
+           diverse kleinere Bugs ausgebaut.
+         !end_itemize
+
+ 05/04/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Durch die Nachricht AS_ACC_ACK wird mitgeteilt, daß ein von
+           (!I)ACSpro(!i) ausgelöster XAcc-Transfer abgeschlossen wurde.
+           Zugleich wird der Status des Transfers mitgeteilt
+           (Erfolg/Mißerfolg). Das Fenster kann dann geeignet darauf
+           reagieren (etwa nach einiger Zeit einen neuen Transfer
+           versuchen o.ä.).
+
+           Die auslösenden Routinen werden demnächst (Allerdings noch
+           nicht in Version 3.0.0) in (!I)ACSpro(!i) zur Verfügung stehen, so
+           daß dann auch der "aktive Datentransfer" per XAcc-(!link [Protocol] [External communication])
+           direkt unterstützt wird.
+         !end_itemize
+
+ 05/02/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Beim Löschen einer linearen Liste gab es einen Crash. Die
+           Routine stürzte ab, wenn (!I)ACSpro(!i) beendet wird und dabei
+           Alu_delete aufgerufen wurde. Der Bug ist behoben.
+
+         !item Optimierung: Umstellen der ACS-internen Message-
+           Verarbeitung auf Binärsuche. Damit ist die
+           Erweiterungsfähigkeit for GEMScript, OLGA, BubbleGEM o.ä.
+           (siehe ToDo List) gegeben, da sich bei diesen vielen
+           Nachrichten, auf die es zu reagieren gilt, die Vergleiche
+           bis zur Identifikation der Nachricht drastisch reduzieren.
+           Bei 61 Nachrichten (Stand 04/17/2001) wären es nach dem bis
+           einschl. Version 2.3.x verwendeten Verfahren im Mittel 30
+           Vergleiche, jetzt sind es (!I)maximal(!i) nur 7 Vergleiche, bis die
+           Nachricht einwandfrei identifiziert ist.
+
+           The Functions for die Drag&Drop-Protokolle werden
+           allerdings noch komplett überarbeitet, damit (!I)ACSpro(!i) nicht
+           nur den eher "passiven Empfang", sondern auch das "aktive
+           Senden" in gewohntem Komfort beherrscht.
+         !end_itemize
+
+ 04/14/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+         !item Die Routine ACSinit0 wird nun (!I)vor(!i) der Initialisierung der
+           XAcc-Daten und dem Anmelden bei den diversen Protokollen
+           (XAcc, VA, etc.) aufgerufen.
+         !end_itemize
+
+!end_node
+
+
+!begin_node Changes from version V2.32 to V2.3.3
+
+Hier sind die Änderungen und Erweiterungen von V2.32 zur V2.3.3 in
+umgekehrter chronologischer Reihenfolge aufgelistet.
+
+(!B)Note:(!b) Die Version 2.3.3 enthält nur wichtige Korrekturen von
+Fehlern der Version 2.32.
+
+(!B)Note:(!b) Änderungen an den C-Bibliotheken betreffen stets auch die
+(!link [Pascal-Library] [The Pascal Library]). Von Bugfixes und Erweiterungen in den Bibliotheken
+hat stets auch der (!I)GUI-Editor(!i) profitiert, da dieser ja mittels (!I)ACSpro(!i)
+entwickelt wurde.
+
+Stand der Liste ist der 06/13/2000.
+
+ 06/13/2000 PCTOS.LIB
+
+         !begin_itemize
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             In der Bibliothek PCTOS.LIB hatte sich for Mshrink ein
+             Fehler eingeschlichen, der Parameter zero war nicht
+             vorhanden. Auswirkungen hatte dies natürlich bei allen
+             Anwendungen, die diese Bibliothek verwenden, u.a. im
+             (!I)GUI-Editor(!i) beim Laden von Modulen.
+         !end_itemize
+
+ 06/09/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             Beim Löschen einer linearen Liste gab es einen Crash. Die
+             Routine stürzte ab, wenn (!I)ACSpro(!i) beendet wird und dabei
+             Alu_delete aufgerufen wurde. Der Bug ist behoben.
+
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             Kleineren Bug behoben: Die Funktion Awi_ontop() lieferte
+             nach der Nachricht WM_ONTOP fälschlicherweise das Root-
+             Fenster zurück... ;-/
+         !end_itemize
+
+ 06/02/2000 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             Der (!I)GUI-Editor(!i) hat for Pure-Pascal die Texte des
+             Hauptmoduls nicht exportiert (Der Bug war eigentlich
+             immer schon so drin, das hat noch nie richtig
+             funktioniert... ;-/). Damit stürzten Programme ab, wenn
+             per Ash_error oder Awi_alert Meldungen ausgegeben werden
+             sollte, ohne daß alert_name gesetzt war.
+         !end_itemize
+
+ 05/18/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library]), (!I)GUI-Editor(!i)
+
+         !begin_itemize
+           !item Die Versionsnummern wurden nun umbenannt. Aus V2.33 ist
+             V2.3.3 geworden.
+         !end_itemize
+
+ 04/04/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             Die Routine Awi_doform warf Bömbchen, wenn das Erzeugen
+             des Fensters nicht funktioniert hat und auf A_dialog
+             ausgewichen werden mußte.
+         !end_itemize
+
+ 03/29/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             Die Funktion Awi_obchange funktionierte bei einem Wechsel
+             des Objekt-Status von DISABLED auf ENABLED nicht richtig.
+             Das Objekt war zwar enabled, wurde aber z.T disabled
+             gezeichnet. Meine Untersuchungen haben ein etwas
+             merkwürdiges Verhalten von objc_change ergeben. Das
+             Problem wurde durch einen Workaround umschifft.
+
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             In Ast_ltrim - und damit auch in Ast_alltrim - war noch
+             ein Bug, der das Ende des korrigierten Strings falsch
+             setzte.
+         !end_itemize
+
+ 02/13/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             Wenn (!I)ACSpro(!i) in Multitasking-Systemen wieder nach vorne
+             kam, wurde direkt ein Maus-Klick ausgelöst. Dies ist nun
+             abgestellt!
+
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             Im Dialog "Allgemein" des Module-Fensters funktionierte
+             die Einstellung "Kopiere Bildteil" nicht richtig. Wenn
+             die Option umgestellt wurde, wurde stets das Gegenteil
+             durchgeführt. Wenn die Option in der Default-Einstellung
+             belassen wurde, klappte alles wie es sollte. Dies ist nun
+             korrigiert! Die Einstellungen in diesem Dialog sollten
+             daher nochmals kontrolliert werden.
+         !end_itemize
+
+ 01/25/2000 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Nachgezogene Korrektur for V2.32 (analog zu V3.0.0):
+
+             Die Funktion Af_readdir - und damit auch Af_first und
+             Af_next - funktionierte nicht korrekt, wenn Dxreaddir und
+             Dreaddirr (MagiC bzw. MiNT) nicht vorhanden sind und
+             intern Fsfirst/Fsnext verwendet wurde. Die Dateinamen
+             wurden mit "*.*" aufgebläht:
+
+                        Laufwerk:\ORDNER1\...\*.*\DATEI.XYZ
+
+             Das Problem ist nun behoben!
+         !end_itemize
+
+!end_node
+
+
+!begin_node Changes from version V2.31 to V2.32
+
+Hier sind die Änderungen und Erweiterungen von V2.31 zur V2.32 in
+umgekehrter chronologischer Reihenfolge aufgelistet.
+
+(!link [Zwei Probleme existieren noch] [ToDo List]): (!I)ACSpro(!i) hat noch Schwierigkeiten mit
+mehr als 256 Farben und mit einem proportionalen Systemzeichensatz.
+Beides sind etwas aufwendigere Korrekturen, die ich aus diesem Grunde
+nach hinten verschoben habe.
+
+Änderungen an den C-Bibliotheken betreffen stets auch die Pascal-
+Bibliothek. Von Bugfixes und Erweiterungen in den Bibliotheken hat
+stets auch der (!I)GUI-Editor(!i) profitiert, da dieser ja mittels (!I)ACSpro(!i)
+entwickelt wurde.
+
+Stand der Liste ist der 04/09/1999.
+
+ 04/09/1999 (!I)ACSpro(!i)-(!I)GUI-Editor(!i)
+
+         !begin_itemize
+           !item Im Fenster-Editor konnten die Grenzen zwischen den
+             verschiedenen Fenterelementen verschwinden. Bei kleinerem
+             Rahmen stand unter MultiTOS kein Text mehr in den
+             Elementen. Die gesamte Darstellung der Fensterelemente
+             ist nun völlig überarbeitet worden.
+         !end_itemize
+
+ 04/09/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library]) & ACS_LOAD.O
+
+         !begin_itemize
+           !item Die Modul-Schnittstelle enthält nun auch alle neuen
+             Funktionen. Sie ist abwärtskompatibel erweitert und
+             optimiert worden.
+         !end_itemize
+
+ 04/09/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Interne Optimierungen in der Event-Schleife und beim
+             Draggen der Auswahlliste.
+         !end_itemize
+
+ 04/01/1999 Bibliothek (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+           !item Der Desktop PUR_DESK hat unter gewissen Umständen die
+             internen Flags "verpfuscht". Damit ist das Flag Smart-
+             Redraw wieder ausgeschaltet worden. Ein bedauerliches
+             Versehen, welches nun korrigiert ist.
+         !end_itemize
+
+ 03/29/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library]) & (!I)GUI-Editor(!i)
+
+         !begin_itemize
+           !item Das Backdropping von angemeldeten Fenstern wird nun
+             automatisch erledigt, die entsprechenden Fenster müssen
+             im (!I)GUI-Editor(!i) mit Backdrop-Element angemeldet sein. Bei
+             Systemen ohne Backdrop-Funktion werden die Fenster
+             automatisch (!I)ohne(!i) dieses Fensterelement angelegt.
+
+             Bei modalen Fenster-Dialogen wird bei angemeldetem
+             Backdrop das Fenster natürlich (!I)nicht(!i) in den Hintergrund
+             gelegt (Ich suche noch nach einer Möglichkeit, bei
+             modalen Fenstern nicht das Fenster, sondern die Anwendung
+             in den Hintergrund zu bringen.).
+
+             Bei Fenster, die den Backdrop-Button nicht angemeldet
+             haben, wird der Button unter MagiC hinzugefügt und von
+             MagiC bedient. In diesem Fall kann ein modaler Fenster-
+             Dialog in den Hintergrund geklickt werden. Bevor
+             allerdings ein anderes Fenster getoppt werden kann, wird
+             automatisch wieder der modale Fenster-Dialog nach vorne
+             gebracht - ein unschönes Flackern ist die Folge.
+
+             In der Version 3.0 wird es hier eine Erweiterung der
+             Awindow-Struktur geben, in der auch das Backdropping
+             berücksichtigt ist!
+
+             (!I)Es ist dringendst anzuraten, die Backdrop-Komponente for
+             alle Fenster anzumelden, da dann (!i)(!I)ACSpro(!i)(!I) bzw. die
+             Anwendung die Kontrolle über das Verhalten beim Backdrop
+             hat.(!i)
+         !end_itemize
+
+ 03/27/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die (!I)ACSpro(!i)-eigenen Checkbox- und Radio-Button-Userdefs
+             wurden vom Aussehen her an die Checkbox- und Radio-
+             Button-Objekte von MagiC 6 angepaßt. Das Aussehen der
+             Userdefs entspricht nun sowohl im 3D-Modus als auch im
+             2D-Modus genau den MagiC-Objekten. Bei mehr als 256
+             Farben gibt es jedoch leider immer noch Probleme mit den
+             Chechbox- und Radio-Buttons.
+         !end_itemize
+
+ 03/26/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Ein kleiner Bug war noch in Af_readdir: die Root-
+             Verzeichnisse wurden nicht korrekt behandelt (ein '\'
+             zuviel hinten abgeschnitten). Das ist nun behoben.
+         !end_itemize
+
+ 03/24/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Der Vergleich der Dateiextension beim Laden der
+             (Autostart-)Module wurde intern von strcmp auf die
+             Funktion Ast_icmp umgestellt, damit spielt die Groß-/
+             Kleinschreibung der Extension beim Laden der Module keine
+             Rolle mehr! Das Laden von Modulen sollte nun auch auf
+             casesensitiven Systemen (MiNT mit MinixFS) funktionieren.
+         !end_itemize
+
+ 03/19/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die Funktion Af_readdir zum Einlesen eines kompletten
+             Verzeichnisinhaltes wurde komplett neu programmiert und
+             optimiert. Sie benutzt nun nicht mehr die beiden
+             archaischen Funktionen Af_first und Af_next und sollte
+             gegenüber diesen beiden auch bevorzugt werden!
+
+           !item The Functions Af_first und Af_next wurden komplett neu
+             programmiert und nutzen jetzt die Funktion Af_readdir.
+
+             (!B)Note:(!b) (!I)Af_first und Af_next sind nur zu
+             Kompatibilitätszwecken noch vorhanden und werden
+             wahrscheinlich (wenn sich kein zu großer Widerspruch regt
+             ;-) in einer der nächsten Versionen wegfallen.(!i)
+         !end_itemize
+
+ 02/14/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die Unterstützung von Konfigurationsdateien im ASCII-
+             Format wurde implementiert - der Data type UConfig mit
+             einigen (!link [Funktionen] [The Configuration strings]) zur Bearbeitung. Diese ASCII-Dateien
+             besitzen einen Aufbau analog zu den bekannten INI-Dateien
+             in der Windows-Welt. Ab der Version 2.4 von (!I)ACSpro(!i) werden
+             diese von mir Configuration strings (oder Config-
+             Strings, Cfg-Strings) genannten
+             Konfigurationsmöglichkeiten vollkommen transparent in
+             (!I)ACSpro(!i) integriert sein und vom (!I)GUI-Editor(!i) mit den
+             zugehörigen Initialisierungsdaten versehen werden können.
+             Noch ist dies nicht der Fall, dafor müßte ich das Format
+             der *.ACS-Dateien inkompatibel ändern. Das wird erst in
+             V2.4 (incl. automatischer Konversion natürlich!)
+             geschehen.
+         !end_itemize
+
+ 02/01/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Es wurden einige nützliche Funktionen for den Umgang mit
+             Strings implementiert. Diese sind:
+
+              !begin_xlist [Ach_tolower]
+              !item [Ach_tolower]  Buchstaben in Kleinbuchstaben wandeln -
+                           Umlaute werden korrekt berücksichtigt
+
+              !item [Ach_toupper]  Buchstaben in Großbuchstaben wandeln -
+                           Umlaute werden korrekt berücksichtigt
+
+              !item [Ach_isWhite]  Zeichen auf "Blank" (Leerzeichen,
+                           Tabulator, Carriage-Return, Line-Feed)
+                           überprüfen
+
+              !item [Ast_cmp]      Zwei Strings vergleichen, Groß-/
+                           Kleinschreibung (!I)wird(!i) berücksichtigt, die
+                           Umlaute werden korrekt behandelt
+
+              !item [Ast_icmp]     Zwei Strings vergleichen, Groß-/
+                           Kleinschreibung wird (!I)nicht(!i) berücksichtigt,
+                           die Umlaute werden korrekt behandelt
+
+
+              !item [Ast_isEmpty]  Prüfen, ob ein String nur Blanks (bestimmt
+                           durch Ach_isWhite) enthält, also eigentlich
+                           "leer" ist
+
+              !item [Ast_add]      Strings hintereinanderhängen und auf
+                           bestimmte Length mit Leerzeichen auffüllen
+
+              !item [Ast_adl]      String linksbündig mit Leerzeichen
+                           auffüllen
+
+              !item [Ast_adr]      String rechtsbündig mit Leerzeichen
+                           auffüllen
+
+              !item [Ast_adc]      String zentriert mit Leerzeichen auffüllen
+
+              Ast_filter   "Nicht erlaubte" Zeichen aus String
+                           herausnehmen
+
+              !item [Ast_count]    Häufigkeit von Zeichen im String zählen
+
+              !item [Ast_fcmp]     Dateinamen vergleichen, der erste darf die
+                           üblichen Wildcards '*' und '?'
+                           enthalten (Der zweite Dateiname darf keine
+                           Wildcards enthalten, evtl. werde ich diese
+                           aber doch noch einbauen, 'mal sehen... ;-))
+              !end_xlist
+         !end_itemize
+
+ 01/31/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die Service-Funktionen der unsortierten, linearen Liste
+             ULinList sind nun nur noch über die Zeiger der Struktur
+             ULinList verfügbar. Sie sind dem direkten Zugriff durch
+             die Realisierung als static-Funktionen verborgen worden.
+             Dies schützt vor fälschlichem Gebrauch der Funktionen und
+             schützt einmal entwickelten Code vor Arbeiten an der
+             Liste und den Service-Funktionen.
+         !end_itemize
+
+ 01/28/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die Funktion Ast_ltrim wurde implementiert. Sie entfernt
+             führende Leerzeichen, d.h. entfernt Leerzeichen links vom
+             "eigentlichen String".
+
+           !item Die Funktion Ast_rtrim entfernt analog abschließende
+             Leerzeichen, d.h. Leerzeichen, d.h. entfernt Leerzeichen
+             rechts vom "eigentlichen String".
+
+           !item Die Funktion Ast_alltrim ist die Kombination der beiden
+             Funktionen Ast_ltrim und Ast_rtrim und entfernt führende
+             und abschließende Leerzeichen eines Strings.
+         !end_itemize
+
+ 01/21/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Das "Shaden" der Fenster unter WINX und MagiC
+             funktioniert nun. Hier gab es Fehler mit den Maus-Formen.
+             War z.B. im obersten Fenster ein editierbares Objekt, so
+             wurde die Maus-Form auch dann noch auf den "Cursor"
+             gesetzt, wenn das Fenster unter MagiC per Doppelklick
+             zusammengeklappt wurde.
+
+             (!I)ACSpro(!i) kann nun mit dem Shaded-Zustand umgehen. Die
+             Meldungen WM_SHADED und WM_UNSHADED werden ausgewertet.
+             Der neue Fenster-Zustand (!link [AWS_SHADED] [AWS_SHADED]) gibt Auskunft
+             darüber, ob das Fenster zusammengeklappt wurde. Ferner
+             werden dem Fenster die (neuen) Nachrichten AS_SHADED und
+             AS_UNSHADED gesandt, um es davon zu informieren.
+
+           !item Das Flag AB_SMARTREDRAW wird nun beim Initialisieren
+             gesetzt. In ACSinit0 oder durch das Modul Ab_Cfg kann es
+             wieder abgeschaltet werden. Unter MagiC ((!link [MagiCMac] [MagiC]),
+             (!link [MagiCPC] [MagiC])) und N.AES werden so Redraw-Fehler vermieden, da
+             hier meist das sog. Smart-Redraw aktiviert ist. Unter
+             MagiC könnte zwar abgefragt werden, ob es eingeschaltet
+             ist, aber diese Lösung ist auf MagiC beschränkt.
+
+             In Zukunft wird u.a. das Konfigurieren der Flags
+             wesentlich einfacher gestaltet, ich bin bereits am
+             tüfteln und programmieren... ;-)
+         !end_itemize
+
+ 01/21/1999 (!I)ACSpro(!i)-(!I)GUI-Editor(!i)
+
+         !begin_itemize
+           !item Optimierung: Der (!I)GUI-Editor(!i) hatte beim Start
+             Einstellungen gesetzt, die beim Start bereits von den
+             Routinen der (!link [ACS.LIB] [The Pure-C Library]) durchgeführt wurden.
+         !end_itemize
+
+ 01/19/1999 Bibliotheken (!link [ACS.LIB] [The Pure-C Library]) und (!link [ACSPLUS.LIB] [The C-Extension Library]), (!I)ACSpro(!i)-(!I)GUI-Editor(!i)
+
+         !begin_itemize
+           !item Die Optik der Dialoge und Fenster wurde etwas
+             überarbeitet und vereinheitlicht. Dies betrifft besonders
+             die als "Untergrund" eingesetzten 3D-Buttons, die nun ein
+             durchgängigeres Aussehen haben.
+         !end_itemize
+
+ 01/15/1999 Der (!I)ACSpro(!i)-(!I)GUI-Editor(!i)
+
+         !begin_itemize
+           !item Der (!I)GUI-Editor(!i) besitzt nun in der freigeschalteten
+             Version einen eigenen Info-Dialog. Dieser wird per
+             Awi_doform dargestellt. Durch Weiterverzweigen in
+             Unterdialoge kann die Versionsnummer sowie Kurz-
+             Informationen zum Update bzw. Upgrade - u.a. die Stellen
+             zum Download - angezeigt werden.
+         !end_itemize
+
+ 01/15/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Es wurde die neue Funktion Awi_doform implementiert. Die
+             Funktion verwendet Awi_dialog. Falls kein Fenster
+             erstellt werden kann, wird automatisch A_dialog
+             verwendet. Das verwendete Fenster wird ohne Fuller und
+             Sizer dargestellt. Die Scrollbalken for vertikales und
+             horizontales Scrollen werden nur dann verwendet, wenn der
+             Dialog nicht komplett angezeigt werden kann.
+         !end_itemize
+
+ 01/02/1999 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item (!I)ACSpro(!i) verwendet nun die NKCC-Bibliothek (von Harald
+             Siegmund) in der Version 2.94 vom 09/21/1998.
+         !end_itemize
+
+ 10/22/1998 Bibliothek (!link [ACSPLUS.LIB] [The C-Extension Library])
+
+         !begin_itemize
+           !item Der pure Desktop sucht und schreibt seine
+             Konfigurationsdatei nun mit Kleinbuchstaben, d.h. sie
+             wird als "pdesk.cfg" gesucht. Damit sollte der pure
+             Desktop seine Konfigurationsdatei auch unter
+             casesensitiven Dateisystemen (unter MiNT auf MinixFS)
+             finden.
+         !end_itemize
+
+ 10/11/1998 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Neue String-Funktion Ast_toupper und Ast_tolower zur
+             Konversion von Strings implementiert.
+         !end_itemize
+
+!end_node
+
+
+!begin_node Changes from version V2.3 to V2.31
+
+Hier sind die Änderungen und Erweiterungen von V2.3 zur V2.31 in
+umgekehrter chronologischer Reihenfolge aufgelistet. Momentan sieht es
+noch nach recht wenig aus, doch muß hier auch ein gutes Stück
+Einarbeitungszeit in die Sourcen von (!I)ACSpro(!i) einkalkuliert werden. Da
+der Atari-Sektor recht klein geworden ist, muß ich anderweitig Geld
+verdienen, so daß (!I)ACSpro(!i) - leider - nur mein Hobby ist.
+
+Hier sind also die Änderungen! Änderungen an den C-Bibliotheken
+betreffen stets auch die (!link [Pascal-Library] [The Pascal Library]). Von Bugfixes und
+Erweiterungen in den Bibliotheken hat stets auch der (!I)GUI-Editor(!i)
+profitiert, da dieser ja mittels (!I)ACSpro(!i) entwickelt wurde.
+
+Stand der Liste ist der 09/30/1998.
+
+ 09/30/1998 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die neue Funktion Awi_diaabort kann als (!link [Click-Routine] [Click Routine & Drag Routine]) in
+             einem der modalen Fensterdialogen eingesetzt werden. Sie
+             setzt das Flag ACSblk->dia_abort auf TRUE und tut sonst
+             nichts weiter. Auch kurze Meldungen, die in einem Fenster
+             mit einem OK-Button dargestellt werden, können diese
+             Routine einsetzen.
+
+             Sie wird beispielsweise in der Info-Box eingesetzt, die
+             jedes mittels (!I)ACSpro(!i) erstellte Programm defaultmäßig
+             anzeigt - sofern die in ACSblk->ACSaboutme eingetragene
+             Routine nicht überschrieben wird. Der hier verwendete
+             3D-Button im Hintergrund hat das Flag TOUCHEXIT gesetzt
+             und als (!link [Click-Routine] [Click Routine & Drag Routine]) Awi_diaabort eingetragen bekommen.
+         !end_itemize
+
+ 08/31/1998 (!I)GUI-Editor(!i)
+
+         !begin_itemize
+           !item Die Text-Eingabe im (!I)GUI-Editor(!i) zur Eingabe von
+             Texten/freien Strings nimmt nun auch Sonderzeichen
+             (speziell <32) an. Damit sind z.B. das Ordner-Symbol
+             sowie die Pfeil-Symbole möglich. (for Änderungen an
+             Menu-Einträgen sehr nützlich ;-)
+         !end_itemize
+
+ 08/28/1998 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die Routine Awi_topped beachtet for modale Fenster-
+             Dialoge nun die Flags AB_CENTERDIALOG und AB_ACUSTIC.
+
+             Damit verhalten sich modale Fenster-Dialoge (Awi_dialog)
+             so wie die modalen Dialoge (A_dialog): Ein Klick neben
+             den Dialog bringt bei gelöschtem AB_CENTERDIALOG den
+             Dialog an die Mausposititon, bei gesetztem
+             AB_CENTERDIALOG wird ein "Pling" Bconin(2,7) ausgegeben,
+             falls auch AB_ACUSTIC gesetzt ist,
+         !end_itemize
+
+ 08/27/1998 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die unsortierte, lineare und doppelt verkettete Liste
+             ULinList mit einigen netten Funktionen ist dazugekommen.
+             Das Objekt hat keine visuelle Komponente (wozu auch) und
+             stellt die Funktionalität einer dynamischen, linearen,
+             unsortierten Liste zur Verfügung. Die Liste verwaltet
+             Zeiger auf Daten (in Pure- C: void *, in Pure-Pascal:
+             Pointer). Zusätzlich sind einige nützliche Funktionen
+             enthalten, die man im Zusammenhang mit linearen Listen
+             immer wieder einmal benötigt.
+         !end_itemize
+
+ 08/21/1998 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die Funktion Awi_keys wurde in Awi_keysend umbenannt.
+
+           !item Es gibt eine neue Routine Awi_keys, die den Rückgabewert
+             -2 nicht mehr liefert. Da intern Awi_keysend aufgerufen
+             wird, stellt Awi_keys die gewohnte Funktionalität zur
+             Verfügung. Allerdings werden Tastendrücke nicht mehr an
+             den AV-Server weitergemeldet. Wer dies unbedingt möchte,
+             sollte auf Awi_keysend zurückgreifen.
+
+           !item Awi_nokey liefert nun stets den Rückgabewert -1 (zuvor
+             war es -2) und leitet damit die Tastendrücke (!I)nicht(!i) mehr
+             an den AV-Server weiter.
+
+           !item Die neue Routine Awi_sendkey liefert nun stets den
+             Rückgabewert -2 und veranlaßt damit, daß Tastendrücke an
+             den AV-Server weitergeleitet werden.
+
+             Es gibt damit vier Key-Routinen for Fenster: Awi_keys,
+             Awi_keysend, Awi_sendkey und Awi_nokey.
+
+             Kurz zur Namensgebung der vier Routinen:
+
+              !begin_xlist [Awi_keysend]
+              !item [Awi_keys]     Key auswerten
+
+              !item [Awi_keysend]  Zuerst Key auswerten, dann ggf.
+                           weitersenden
+
+              !item [Awi_sendkey]  Sende den Key sofort weiter
+
+              !item [Awi_nokey]    Key "schlucken" und ignorieren
+              !end_xlist
+
+           !item Redraw-Probleme in der Toolbar beim Smart-Redraw unter
+             MagiC auf "drastische" Weise behoben (ggf. Neuzeichnen
+             des Fensters). Zuvor blieben evtl. Streifen des Toolbar-
+             Randes stehen.
+         !end_itemize
+
+ 08/02/1998 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Die Funktion Dxreaddir aus (!link [ACS.LIB] [The Pure-C Library]) herausgenommen. Der
+             (!I)ACSpro(!i)-(!I)GUI-Editor(!i) verwendet nun die Bibliothek
+             ACSTOS.LIB. Dort sind alle BIOS-, XBIOS- und GEMDOS-
+             Aufrufe abgelegt, die ich im Profibuch und im Compendium
+             gefunden habe. Die MagiC-spezifischen Funktionen fehlen
+             noch, werden aber noch nachgerüstet!
+
+           !item Af_first und Af_next sowie Af_readdir lieferten etwas
+             dürftige Informationen über die Dateien, es war gerade
+             einmal der Name. Da innerhalb dieser Funktionen die Daten
+             sowieso zur Verfügung stehen, werden nun alle
+             interessanten Daten der gefundenen Dateien geliefert.
+             Hierzu wurde die Struktur A_FileList um eine Komponente
+             vom Data type XATTR erweitert, in der die Dateiattribute,
+             Größe, etc. zu finden sind. Die Werte werden per
+             Dxreaddir bzw. Dreaddir/Fxattr bestimmt. Falls diese
+             Funktionen nicht zur Verfügung stehen (z.B. unter TOS),
+             werden die Daten der DTA nach den Aufrufen von
+             Fsfirst/Fsnext in diese Struktur kopiert.
+
+             Die XATTR-Struktur wurde zwar hinten an A_FileList
+             angefügt, da jedoch Af_first und Af_next nun einen Zeiger
+             auf eine A_FileList-Struktur oder NULL erwarten, um dort
+             diese Daten einzutragen, müßten alte Module trotzdem neu
+             compiliert werden, sorry!
+         !end_itemize
+
+ 07/31/1998 Bibliothek (!link [ACS.LIB] [The Pure-C Library])
+
+         !begin_itemize
+           !item Bug behoben, durch den ab ca. dem 100-ten Eintrag eines
+             Popups keine Subpopups mehr geöffnet wurden.
+
+           !item Fehlverhalten von Ame_strpopup korrigiert. Es wurde evtl.
+             ein falscher Teilstring geliefert. Beim Popup-String
+
+                  "Test 1|Test 2|Test"
+
+             wurde beim Klick auf "Test" der Teilstring
+
+                  "Test 1|Test 2|Test"
+
+             geliefert, also die erste Fundstelle des gewählten
+             Teilstrings. Jetzt wird - wie es sein soll - "Test"
+             geliefert.
+         !end_itemize
+
+!end_node
+
+
+!begin_node Changes up to version V2.3
+
+Dies sind Korrekturen und Erweiterungen, die noch von (!link [Oliver Michalak] [Oliver Michalak])
+gemacht wurden.
+
+Hier eine Auflistung der Korrekturen innerhalb diverser Module von
+ACSpro. Das Datum der Änderung und das betroffene Modul werden
+aufgelistet. Korrekturen an (!link [ACS.LIB] [The Pure-C Library]) oder (!link [ACSPLUS.LIB] [The C-Extension Library]) betreffen immer
+auch die Pascal-Library.
+
+!begin_itemize
+   !item 20.8.96
+
+      (!B)(!link [ACSPLUS.LIB] [The C-Extension Library]):(!b) Der EDITOR verkraftet nun eine andere Toolbar.
+          Außerdem kann sein Dateipfad per Nachricht ermittelt werden.
+          Die Cursorposition oder Blockausmaße werden angezeigt.
+
+   !item 12.8.96
+
+      (!B)purer Desktop:(!b) Unter SingleTOS wird nun ein blau-gemusterter
+          Hintergrund angemeldet. Außerdem beendet sich der Desktop
+          nur noch, wenn 'appexit' auf TRUE steht.
+
+   !item 6.8.96
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) Das letzte nicht-3-dimensionale Objekt (!B)A_cycle(!b) enthält
+          nun Paramater, die eine 3D-Optik ermöglichen, dazu wurde ein
+          neuer A_cycle-Editor entworfen. Dementsprechend wird das
+          Popup wenn möglich nun ebenfalls 3-dimensional dargestellt.
+          Dies hat unmittelbare Auswirkungen auf (!B)Ame_strpopup(!b) dessen
+          sich die (!link [Click-Routine] [Click Routine & Drag Routine]) von (!B)Aus_cycle(!b) bedient. Weiterhin kann
+          das (!link [Cycle] [Userdef-Cycle])- Zeichen nun frei gewählt werden.
+
+      (!B)(!link [ACSPLUS.LIB] [The C-Extension Library]):(!b) Es wurde die neue Fensterklasse (!B)LIST-Window(!b)
+          implementiert. Diese verwaltet dynamisch viele, frei
+          definierbare Data typeen einer festen Größe. Über Callback-
+          Routinen kann der Erzeuger die einzelnen Datenstrukturen
+          editieren, einsortieren, per Drag&Drop bedienen lassen
+          u.v.a.m. - inklusive von Blockfunktionen. Ungeöffnet erlaubt
+          das Fenster über einige Nachrichten, Elemente aus der intern
+          verwalteten Liste zu extrahieren, neue Elemente
+          hinzuzufügen, etc.
+
+          Davon profitiert zunächst der (!B)EDITOR(!b), der nun eine freie
+          Funktionstastenbelegung anbietet. Auf bis zu 40 F-Tasten
+          kann nun ein Text gelegt werden, der intuitiv per Listen-
+          Fenster zu verarbeiten ist. Hinzu kamen weitere Feinheiten:
+
+           !begin_xlist [manuelle Optionen-Sicherung]
+           !item [Control-BS/-DEL]              beachtet nun die Worttrenner
+
+           !item [SHIFT-BS/-DEL]                löscht bis zum Zeilenanfang/-
+                                        ende
+
+           !item [freie Online-Hilfe]
+
+           !item [manuelle Optionen-Sicherung]
+
+           !item [Cursorpositionsanzeige]
+           !end_xlist
+
+          Gleichzeitig wurde der Fehler eliminiert, das in einem
+          einzeiligen Text per (!B)Aed_selall(!b) nichts selektiert wurde.
+
+          Aufgrund interner Umstellungen ist auch die (!B)A_editor(!b)-
+          Nachricht (!link [AUO_EDPUTINFO] [Auo_editor]) weggefallen. Dafor kann der (!B)EDITOR(!b)
+          per AS_EDGETFNAME gefragt werden, wie der Dateiname for den
+          aktuellen Text lautet.
+
+   !item 29.7.96
+
+      (!B)ACS-Doku:(!b) The Documentation wurde um die letzten Erweiterungen
+          ergänzt -zusätzlich sind nun die Structures der ACS-PLUS-
+          Library dokumentiert.
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) Bei Popups konnte die Maus busy bleiben - dieser Fehler
+          ist behoben. Zusätzlich gibt es nun analog zu der Popup-
+          Bedienung Nachrichten während der Menubedienung.
+
+   !item 22.7.96
+
+      (!B)ACS-Builder:(!b) Ganz selten wurden Prototypen in der Referenzliste
+          angelegt, wo kein ersichtlicher Bezug zu existierte (vor
+          allem bei (!B)A_arrows(!b)).
+
+   !item 21.7.96
+
+      (!B)ACS-Builder:(!b) (!B)Tasten lernen(!b) funktionierte nicht sauber.
+          Zusätzlich konnte man nicht korrekt Objekte verschieben.
+          Schließlich konnten manche den Hinweistext im
+          Informationsdialog der unregistrierten Version nicht lesen.
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) Fehlerhafte Auswertung der Indizees bei Sub-Popups mit
+          Tastatursteuerung.
+
+   !item 17.7.96
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) In (!B)Awi_dialog(!b) wurde nach dem Setzen von (!B)dia_abort(!b) nicht
+          ein eventuell gedrückter Button-Index zurückgegeben. Zudem
+          wurde ein Edit Field- Wechsel per Maus nicht von der
+          Nachricht (!B)AS_FOCUSCHG(!b) begleitet.
+
+   !item 11.7.96
+
+      (!B)ACS-Builder:(!b) Es konnte kurzfristig kein Objekt kopiert (wohl
+          aber dupliziert) werden.
+
+          Im Icon-Editor hat der Farbpinsel bei mehr als 16 Farben die
+          aktuelle Farbe nicht dargestellt. OBJECTs können nun auch
+          mit allen Komponenten dupliziert werden, so daß Teile des
+          OBJECTs nicht mehr referenziert werden.
+
+   !item 1.7.96
+
+      (!B)ACSpro(!b) hat einen neuen (!B)Status(!b).
+
+   !item 30.6.96
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) Ein Objektbaum mit defautable-Objekten, der kein
+          Default enthält, konnte bei Control-Tab ACS zum abstürzen
+          bringen.
+
+   !item 21.6.96
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) In einigen (N)VDI-Versionen erscheint die Textselektion
+          im (!B)A_boxed(!b)- Objekt zumindest bei der Verwendung von 256
+          Farben als schwarzes Rechteck, ohne daß der darunter
+          liegende Text invers dargestellt wird. Trotz einiger
+          Versuche, diesen Fehler zu umschiffen, habe ich ad hoc keine
+          Lösung gefunden.
+
+   !item 13.6.96
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) Es konnte kurzfristig per MultiDateiAuswahl nicht mehr
+          als eine Datei eingelesen werden.
+
+          Ist (!B)AB_LAZYEVAL(!b) gesetzt, wird in (!B)Ash_prog(!b) nicht mehr der
+          Standardpfad selber gesetzt.
+
+          Außerdem konnte es in (!B)Awi_alert(!b) vorkommen, daß die Maus
+          dauerhaft als Biene angezeigt wurde.
+
+   !item 3.6.96
+
+      (!B)ACS-Builder:(!b) Die Minimal- und Maximalrechtecke beim Verändern
+          der Objektgröße konnten insbesondere beim Popup-Editor mit
+          Sub-Popups merkwürdige Ausmaße annehmen. Übrigens: Mit der
+          rechten Maustaste kann man das "Aufziehen" abbrechen.
+
+      (!B)purer Desktop:(!b) Wenn sich die Anordnung der Fenstericons im
+          Module-Fenster änderte, wurden die Stati der Icons nicht
+          mitverschoben, woduch plötzlich Icons nicht mehr als Ghost
+          erschienen oder umgekehrt.
+
+   !item 30.5.96
+
+      (!B)ACS-Builder:(!b) For Pascal wurde eine fehlerhafte Oberfläche
+          exportiert (kein (!B)ob_len(!b)).
+
+   !item 28.5.96
+
+      (!B)ACS-Builder:(!b) Eine Tastendruck im Icon-Editor führte zum Absturz.
+
+   !item 26.5.96
+
+      (!B)ACS-Builder:(!b) Einstellungen um Schlüsselregistrierung erweitert.
+
+   !item 22.5.96
+
+      (!B)purer Desktop:(!b) Ein Icon-Fenster konnte nicht per Menupunkt
+          "Öffnen" geöffnet werden.
+
+   !item 16.5.96
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) Ein Fehler im (!link [MagiCMac] [MagiC])-OS lief darauf hinaus, daß ein
+          ikonifiziertes Fenster ohne Anmeldung wieder normal
+          dargestellt wurde. ACS versucht dies nun abzufangen.
+
+          Bei (!B)A_boxed(!b) wurde der Cursor nicht immer in den sichtbaren
+          Bereich verschoben.
+
+   !item 13.5.96
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) (!B)A_boxed(!b)-(!link [Click-Routine] [Click Routine & Drag Routine]) for Fenster mit Slidern
+          korrigiert.
+
+          Es versteht nun diverse Datum- und Zeitformate.
+
+          Peinliche Debug-Printf-Ausgaben unterbunden.
+
+   !item 9.5.96
+
+      (!B)ACS.PAS:(!b) Korrekturen in einigen Definitionen.
+
+   !item 8.5.96
+
+      (!B)(!link [ACS.LIB] [The Pure-C Library]):(!b) Farbicons wurden unter MagiC nicht automatisch farbig
+          dargestellt, entweder man setzt (!B)AB_NOTRANSICON(!b) manuell oder
+          nimmt die neue Library.
+!end_itemize
+
+!end_node
+
+!end_node

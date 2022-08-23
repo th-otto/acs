@@ -1,0 +1,78 @@
+!begin_node A simple program: Hello World (Pure-Pascal, ACSpro 2.3.4)
+
+For the second example the previous "Hello World" program will be
+developed using Pure Pascal.
+
+(!B)Note:(!b) The is no archive with the sources for this example because
+it is far too simple for that. It's just as easy as before... ;-)
+
+!subtoc [all] !depth 1
+
+
+!begin_node Step II-1: Create the ACS files
+
+Creating the ACS files is done in the (!link [first example] [A simple program: Hello World (Pure-C, ACSpro 3.0.0)]) from
+(!link [Step I-1] [Step I-01: Start the GUI editor]) through (!link [Step I-44] [Step I-44: Exit ACS]).
+
+The only change is that in (!link [Step I-41] [Step I-41: The input values of the properties dialog]) the output language
+should be changed to Pure-Pascal instead of Pure-C.
+
+(!B)Note:(!b) Of course, for this example, as a path I use
+"D:\ACSPRO\EXAMPLE\HELLO.PAS" instead of
+"D:\ACSPRO\EXAMPLE\HELLO.C".
+
+Now back at the desktop - here it is jinnee - look in the
+directory where you saved the example and you should see
+the files shown here..
+
+
+!image (!IMAGES)img00812.img  Example files created
+
+!end_node
+
+
+!begin_node Step II-2: Create the main program in Pure-Pascal
+
+Start Pure-Pascal and create the main program, e.g.
+"D:\ACSPRO\EXAMPLE\HELLO.PAS\MAIN.PAS".
+
+Now enter the main program as shown and save it.
+
+
+!image (!IMAGES)img00811.img  Create the main program in Pure-Pascal
+
+!end_node
+
+
+!begin_node Step II-3: Create the Hello module in Pure-Pascal
+
+Next create the program for the unit Hello e.g.
+"D:\ACSPRO\EXAMPLE\HELLO.PAS\HELLO.PAS".
+
+Enter the program as shown and save it..
+
+
+!image (!IMAGES)img00810.img  Create the Hello module in Pure-Pascal
+
+!end_node
+
+
+!begin_node Step II-4: The finished program
+
+Let Pure-Pascal compile and link the main program. Then back
+at the desktop you should now see the following files.
+
+
+!image (!IMAGES)img00809.img  The finished program
+
+!end_node
+
+
+!begin_node Step II-5: Start the "Hello World" program
+
+The finished program can now be started as in (!link [Example I] [Step I-51: Start the "Hello World" program]) and
+will act and behave identically as it does there.
+
+!end_node
+
+!end_node

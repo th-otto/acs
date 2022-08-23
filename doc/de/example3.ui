@@ -1,0 +1,254 @@
+!begin_node Text-Eingaben: Begrung (Pure-C, ACSpro 2.3.4)
+
+Als drittes Beispiel-Programm wird nun ein einfaches Programm, das
+nach Eingabe des Namens den Benutzer pers”nlich begrt.
+
+(!B)Hinweis:(!b) Zu diesem Beispiel gibt es kein Archiv mit den Sourcen, da es
+dafr immer noch zu einfach ist... ;-)
+
+!subtoc [all] !depth 1
+
+
+!begin_node Schritt III-1: Erstellen der ACS-Dateien
+
+Starten Sie (!I)ACSpro(!i) und legen Sie eine neue ACS-Datei an, z.B.
+"D:\ACSPRO\BEISPIEL\SALUT.C\SALUT.ACS"
+
+
+!image (!IMAGES)img00808.img Neue ACS-Datei
+
+!end_node
+
+
+!begin_node Schritt III-2: Die Eigenschaften der ACS-Datei
+
+Wechseln Sie wie im (!link [Beispiel I] [Schritt I-41: Die Eigenschaften des Hauptmoduls]) in die Eigenschaften der ACS-Datei. Im
+Unterschied zum Beispiel I heit hier der ACC-Eintrag " Begrung".
+
+(!B)Hinweis:(!b) Beachten Sie bitte, da in den Versionen vor (!I)ACSpro(!i) 3.0.0 der
+ACC-Eintrag mit zwei Leerzeichen beginnen sollte! Ab Version 3.0.0
+erledigt dies (!I)ACSpro(!i) automatisch.
+
+
+!image (!IMAGES)img00807.img Die Eigenschaften der ACS-Datei
+
+!end_node
+
+
+!begin_node Schritt III-3: Der Objektbaum
+
+Legen Sie wie zuvor ein neues Fenster an, hier jedoch mit Namen
+SalutWind. Erzeugen Sie ebenso wie zuvor als Work-Objekt einen
+Objekt-Baum, hier mit Namen SalutObj. Diesen Objekt-Baum stellen Sie
+bitte wie abgebildet zusammen.
+
+(!B)Hinweis:(!b) Bei dem Eingabefeld handelt es sich um das (!link [BoxEdit] [BoxEdit])-Objekt.
+
+
+!image (!IMAGES)img00806.img Der Objektbaum des Work-Objektes
+
+!end_node
+
+
+!begin_node Schritt III-4: Aufruf des Editors "Erweiterte Werte"
+
+Das Eingabefeld soll vom Programm aus angesprochen werden, um den
+eingegebenen String auszulesen. Hierfr wird ein symbolischer Name,
+eine Konstante, vergeben. Nach einem Doppel-Klick auf das Eingabefeld
+w„hlen Sie aus dem erscheinenden Popup den Punkt "Referenzen..." aus.
+
+
+!image (!IMAGES)img00805.img Aufruf des Editors "Erweiterte Werte"
+
+!end_node
+
+
+!begin_node Schritt III-5: Symbolischen Namen (Index) fr das Eingabefeld vergeben
+
+Tragen Sie nun - wie abgebildet - USERNAME als Index ein und schlieen
+Sie den Dialog ber OK.
+
+(!B)Hinweis:(!b) Die Beschriftung des Feldes lautet "Index", da die erzeugte
+Konstante USERNAME als Array-Index fr den Objektbaum zu verwenden
+ist, um an das Objekt selbst zu gelangen.
+
+
+!image (!IMAGES)img00804.img Symbolischen Namen (Index) vergeben
+
+!end_node
+
+
+!begin_node Schritt III-6: Tastenkrzel fr den Button "Salut" - Krzel fr Alt
+
+Rufen Sie nun wie zuvor den Editor fr die erweiterten Werte fr den
+Button "Salut" auf. Klicken Sie auf das Eingabefeld, das mit "Taste"
+beschriftet ist oder gehen Sie mittels Tab dorthin.
+
+Der Button soll das Tastatur-Krzel ALT-S bekommen. Durch Drcken der
+Taste Insert (bei (!link [MagiCMac] [Mag!X]) auf einem Apple-Rechner ist dies Apfel-E)
+erhalten Sie ein Popup, in dem Ihnen alle ASCII-Zeichen zur Auswahl
+stehen. W„hlen Sie nun das im Bild selektierte Zeichen als Kennzeichen
+fr die ALT-Taste.
+
+
+!image (!IMAGES)img00803.img Tastenkrzel fr den Button "Salut"
+
+!end_node
+
+
+!begin_node Schritt III-7: Tastenkrzel fr den Button "Salut"
+
+Anschlieend geben Sie bitte das Zeichen 'S' ein. Sie sollten nun in
+etwa das folgende Bild erhalten.
+
+
+!image (!IMAGES)img00802.img Tastenkrzel fr den Button "Salut"
+
+!end_node
+
+
+!begin_node Schritt III-8: Klick-Routine fr den Button "Salut"
+
+Beim Klick auf den Button "Salut" soll der Anwender begrt werden.
+Hierzu wird wie abgebildet die Funktion ShowSalut als Klick-Routine
+hinterlegt.
+
+Verlassen Sie bitte dann den Dialog ber OK.
+
+
+!image (!IMAGES)img00801.img Klick-Routine fr den Button "Salut"
+
+!end_node
+
+
+!begin_node Schritt III-9: Anlegen einer Alertbox
+
+™ffnen Sie nun die Liste der Alertboxen und legen Sie eine neue
+Alert-Meldung wie abgebildet an.
+
+(!B)Hinweis:(!b) Wenn Sie die eingeschr„nkte (!link [Shareware] [Shareware])-Version von (!I)ACSpro(!i) mit
+diesem Beispiel ausprobieren, werden Sie an dieser Stelle den
+(!link [Shareware] [Shareware])-Hinweis bekommen, da Sie nur 2 Objekte pro Liste anlegen
+k”nnen. Diese sind bereits durch die Alertboxen des (!I)ACSpro(!i)-Systems
+berschritten.
+
+(!B)Tip:(!b) Sie k”nnen diesen (!link [Shareware] [Shareware])-Hinweis umgehen, indem Sie
+kurzfristig in den Eigenschaften der ACS-Datei den Schalter
+"Hauptmodul" deaktivieren und dadurch die System-Alertboxen l”schen.
+Nach dem Anlegen der Alertbox schaltn Sie diesen Schalter wieder ein.
+
+(!B)Hinweis:(!b) Dieser Tip funktioniert natrlich nur in der List der Alert-
+Boxen und nur dann, wenn Sie nicht schon 2 Alertboxen angelegt
+haben... ;-)
+
+
+!image (!IMAGES)img00800.img Neue Alertbox anlegen
+
+!end_node
+
+
+!begin_node Schritt III-10: Der Text der Alertbox
+
+Geben Sie den Text der Alertbox wie abgebildet ein.
+
+(!B)Hinweis:(!b) Die Zeichenfolge '%s' wird durch die sp„ter verwendete
+Funktion alert_str durch den eingegebenen Namen ersetzt und fungiert
+hier als Parameter.
+
+
+!image (!IMAGES)img00799.img Der Text der Alertbox
+
+!end_node
+
+
+!begin_node Schritt III-11: Das Icon der Alertbox
+
+Wenn Sie auf das Icon in der linken obern Ecke des Alertbox-Editors
+klicken, werden Ihnen die zur Verfgung stehenden Icons angeboten. Die
+ersten vier Varianten (kein Icon, Ausrufezeichen, Fragezeichen,
+Stopschild) stehen Ihnen wie bei der Funktion form_alert der AES zur
+Verfgung. Das letzte Icon ist eine Spezialit„t von (!I)ACSpro(!i). Es ist ein
+Timer-Icon, das nur bei den (!I)ACSpro(!i)-Funktionen Awi_alert bzw. alert_str
+verwendet wird. Sobald der Timer abgelaufen ist, wird der Alert-Dialog
+geschlossen.
+
+Hier w„hlen Sie bitte das Timer-Icon aus.
+
+(!B)Hinweis:(!b)šber den Button "Probe" k”nnen Sie die Alertbox gleich
+ausprobieren - natrlich ohne die Ersetzung von '%s'.
+
+
+!image (!IMAGES)img00798.img Das Icon der Alertbox
+
+!end_node
+
+
+!begin_node Schritt III-12: Das Pure-C-Projekt
+
+Starten Sie Pure-C und legen Sie eine Projekt-Datei an, z.B.
+"D:\ACSPRO\BEISPIEL\SALUT.C\SALUT.PRJ". Geben Sie nun die Projekt-
+Datei wie abgebildet ein und speichern Sie diese.
+
+
+!image (!IMAGES)img00797.img Das Pure-C-Projekt
+
+!end_node
+
+
+!begin_node Schritt III-13: Das Pure-C-Hauptprogramm - Teil 1/2
+
+Legen Sie nun das Hauptprogramm an, z.B.
+"D:\ACSPRO\BEISPIEL\SALUT.C\SALUT.C". Geben Sie nun bitte den ersten
+Teil des Programmes wie abgebildet ein.
+
+
+!image (!IMAGES)img00796.img Das Pure-C-Hauptprogramm - Teil 1/2
+
+!end_node
+
+
+!begin_node Schritt III-14: Das Pure-C-Hauptprogramm - Teil 2/2
+
+Als n„chstes geben Sie bitte den zweiten Teil des Programmes wie
+abgebildet ein und speichern Sie das Programm. Dann compilieren und
+linken Sie bitte die Anwendung wie in den Beispielen zuvor auch.
+
+
+!image (!IMAGES)img00795.img Das Pure-C-Hauptprogramm - Teil 2/2
+
+!end_node
+
+
+!begin_node Schritt III-15: Das fertige Programm - Teil 1/2
+
+Starten Sie nun bitte die Anwendung. Geben Sie Ihren Namen ein und
+klicken Sie auf den Button "Salut". Sie werden nun mit Ihrem Namen
+begrt.
+
+(!B)Hinweis:(!b) Das Bild zeigt hier das Programm im 2D-Modus, der
+standardm„ig (!I)nicht(!i) eingeschaltet sein drfte. Verwenden Sie das Modul
+NO3D bzw. ON3D, um zwischen 2D- und 3D-Modus umzuschalten.
+
+
+!image (!IMAGES)img00794.img Das fertige Programm - Teil 1/2
+
+!end_node
+
+
+!begin_node Schritt III-16: Das fertige Programm - Teil 2/2
+
+Wenn Sie die Begrung (!I)nicht(!i) mit OK best„tigen, k”nnen Sie beobachten,
+wie im Icon die Zeit abl„uft. Sobald die Uhr auf 0 steht, wird die
+Alertbox automatisch geschlossen.
+
+(!B)Hinweis:(!b) Das Bild zeigt hier das Programm im 2D-Modus, der
+standardm„ig (!I)nicht(!i) eingeschaltet sein drfte. Verwenden Sie das Modul
+NO3D bzw. ON3D, um zwischen 2D- und 3D-Modus umzuschalten.
+
+
+!image (!IMAGES)img00793.img Das fertige Programm - Teil 2/2
+
+!end_node
+
+
+!end_node

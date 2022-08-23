@@ -1,0 +1,702 @@
+!begin_node Ein einfaches Programm: Hello World (Pure-C, ACSpro 2.3.4)
+
+
+Das erste Beispiel-Programm ist das beliebte Programm "Hello World",
+hier allerdings als vollstÑndige GEM-Anwendung. Entwickelt wurde
+dieses Beispiel unter (!link [MagiCMac] [Mag!X]) 6.1 im Emulations-Modus ST-Hoch.
+
+(!B)Hinweis:(!b) Zu diesem Beispiel gibt es kein Archiv mit den Sourcen, da es
+dafÅr viel zu simpel ist. Folgen Sie einfach den verschiedenen
+Schritten und lassen Sie sich nicht von der groûen Anzahl der Schritte
+abhalten, denn ich habe recht viele Bilder gemacht! Es ist eigentlich
+wirklich ganz einfach!
+
+!subtoc [all] !depth 1
+
+
+!begin_node Schritt I-1: Starten des GUI-Editors
+
+Starten Sie (!I)ACSpro(!i) - hier ist es der (!I)GUI-Editor(!i) in der Version 2.3.4
+-, sie sollten dann etwa das folgende Bild haben:
+
+
+!image (!IMAGES)img00864.img Der (!I)ACSpro(!i)-(!I)GUI-Editor(!i) wird gestartet
+
+!end_node
+
+
+!begin_node Schritt I-2: Anlegen einer neuen ACS-Datei
+
+WÑhlen Sie aus dem MenÅ "Datei" den Eintrag "Neu...". Alternativ
+drÅcken Sie die Tastenkombination Ctrl-N. Geben Sie in der
+erscheinenden Dateiauswahl den Pfad und den Namen der neuen Datei an,
+z.B. "D:\ACSPRO\BEISPIEL\HELLO.C\HELLO.ACS".
+
+
+!image (!IMAGES)img00863.img Eine neue (!I)ACSpro(!i)-Datei anlegen
+
+!end_node
+
+
+!begin_node Schritt I-3: Das ACS-Fenster "Generelles"
+
+Sie erhalten das Fenster "Generelles", von dem aus jede Bearbeitung im
+(!I)ACSpro(!i)-(!I)GUI-Editor(!i) startet.
+
+
+!image (!IMAGES)img00862.img Das ACS-Fenster "Generelles"
+
+!end_node
+
+
+!begin_node Schritt I-4: ôffnen der Fenster-Liste, Anlegen eines Fensters
+
+ôffnen Sie die Fenster-Liste durch einen Klick auf das Fenster-Icon.
+Es îffnet sich das Fenster "FENSTER LISTE", in der zunÑchst kein
+Fenster angezeigt wird. WÑhlen Sie nun aus dem Fenster-MenÅ "Optionen"
+den Eintrag "Neu..." aus.
+
+
+!image (!IMAGES)img00861.img Ein neues Fenster anlegen
+
+!end_node
+
+
+!begin_node Schritt I-5: Den Namen des Fensters festlegen
+
+Sie werden nun nach dem Namen des neuen Fensters gefragt. Der Name in
+dem Dialog ist bereits vorbelegt. öberschreiben Sie diesen Namen mit
+"HelloWorldWind". Unter diesem Namen kann spÑter der erzeugte Prototyp
+des Fensters im Programm angesprochen werden.
+
+
+!image (!IMAGES)img00860.img Den Namen des Fensters festlegen
+
+!end_node
+
+
+!begin_node Schritt I-6: Eingeben der Fenster-Daten
+
+Es îffnet sich der Fenster-Editor. Hier nehmen Sie die im Bild
+ersichtlichen Einstellungen vor. Schalten Sie die Info-Zeile aus,
+geben Sie den Namen des Fensters ein und passen Sie die Fenster-
+Attribute an.
+
+Um dem Fenster ein Objekt als Inhalt zuzuordnen, klicken Sie auf den
+Text "Work:", im Bild ist er unter der Maus erkennbar.
+
+
+!image (!IMAGES)img00859.img Eingabe der Fensterdaten
+
+!end_node
+
+
+!begin_node Schritt I-7: Die Objektbaum-Liste
+
+Sie gelangen auf diese Art in die Objektbaum-Liste. Diese ist momentan
+noch leer.
+
+
+!image (!IMAGES)img00858.img Die Objektbaum-Liste
+
+!end_node
+
+
+!begin_node Schritt I-8: Anlegen des Objektes fÅr den Arbeitsbereich
+
+WÑhlen Sie aus dem Fenster-MenÅ "Optionen" den Eintrag "Neu..." aus,
+um einen neuen Objektbaum anzulegen.
+
+
+!image (!IMAGES)img00857.img Anlegen des Objektes fÅr den Arbeitsbereich
+
+!end_node
+
+
+!begin_node Schritt I-9: Den Namen des Objektbaumes festlegen
+
+Sie werden nun nach dem Namen des Objektbaumes gefragt. Der Name ist
+in dem Dialog bereits vorbelegt. öberschreiben Sie den Namen mit
+"HelloWorldObj".
+
+
+!image (!IMAGES)img00856.img Den Namen des Objektbaumes festlegen
+
+!end_node
+
+
+!begin_node Schritt I-10: Der Objektbaum-Editor
+
+Sie gelangen nun in den Objektbaum-Editor, wo Sie den Objektbaum
+zusammenstellen kînnen. Neben dem Fenster "OBJEKTBAUM EDITOR" ist das
+Fenster "Teilefenster", welches Ihnen die zur VerfÅgung stehenden
+Objekte anbietet.
+
+
+!image (!IMAGES)img00855.img Der Objektbaum-Editor
+
+!end_node
+
+
+!begin_node Schritt I-11: Einen 3D-Button plazieren
+
+Klicken Sie im Teilefenster wie im Bild erkennbar auf den 3D-Button
+und ziehen Sie ihn (bei gedrÅckter Maustaste) auf den Objektbaum.
+
+
+!image (!IMAGES)img00854.img Einen 3D-Button plazieren
+
+!end_node
+
+
+!begin_node Schritt I-12: Austauschen des Wurzelobjektes
+
+Klicken Sie nun neben den plazierten 3D-Button, so daû das
+Wurzelobjekt, die weiûe Box mit dem doppelten Rahmen, selektiert wird.
+WÑhlen Sie nun aus dem HauptmenÅ "Fenster" den Eintrag "Entfernen"
+oder drÅcken Sie Ctrl-D.
+
+Das alte Wurzelobjekt wird gelîscht und der zuvor plazierte 3D-Button
+als neues Wurzelobjekt des Objektbaumes verwendet. Auf diese Art
+kînnen Sie das Wurzelobjekt am Anfang festlegen und damit jedes
+beliebige Objekt als Wurzelobjekt verwenden.
+
+
+!image (!IMAGES)img00853.img Austauschen des Wurzelobjektes
+
+!end_node
+
+
+!begin_node Schritt I-13: Aufruf des Objekt-Editors
+
+Nach einem Doppel-Klick auf den 3D-Button erscheint ein Popup, in dem
+Sie nun den Objekt-Editor auswÑhlen.
+
+
+!image (!IMAGES)img00852.img Aufruf des Objekt-Editors
+
+!end_node
+
+
+!begin_node Schritt I-14: Der Objekt-Editor des 3D-Buttons
+
+Das Fenster "OBJEKTBAUM EDITOR" wechselt nun das innere Objekt, es
+erscheint der Objekt-Editor des 3D-Buttons mit dem Titel "3D-Button -
+OBJEKTBAUM EDITOR".
+
+
+!image (!IMAGES)img00851.img Der Objekt-Editor des 3D-Buttons
+
+!end_node
+
+
+!begin_node Schritt I-15: Eingabedaten im Objekt-Editor des 3D-Buttons
+
+Geben Sie im Objekt-Editor des 3D-Buttons bitte die im Bild sichtbaren
+Daten ein und verlassen Sie den Objekt-Editor durch Anklicken des
+Buttons "OK".
+
+
+!image (!IMAGES)img00850.img Eingabedaten im Objekt-Editor des 3D-Buttons
+
+!end_node
+
+
+!begin_node Schritt I-16: Aufruf des Status-Editors
+
+Um den Status-Editor fÅr den 3D-Button aufzurufen, wÑhlen Sie nach
+einem Doppel-Klick auf den 3D-Button aus dem Popup den Eintrag
+"Status..." aus.
+
+
+!image (!IMAGES)img00849.img Aufruf des Status-Editors
+
+!end_node
+
+
+!begin_node Schritt I-17: Eingabedaten im Status-Editor des 3D-Buttons
+
+Stellen Sie die im Bild erkennbaren Status-Daten fÅr den 3D-Button ein
+und verlassen Sie den Status-Editor durch Anklicken des Buttons "OK".
+
+
+!image (!IMAGES)img00848.img Eingabedaten im Status-Editor des 3D-Buttons
+
+!end_node
+
+
+!begin_node Schritt I-18: Vergrîûern des Wurzelobjektes
+
+Klicken Sie mit einem Einfach-Klick auf den 3D-Button. Der Button wird
+selektiert, und Sie erkennen im unteren rechten Eck ein dunkles
+KÑstchen. Dieses wird zur GrîûenÑnderung verwendet. Klicken Sie in
+dieses KÑstchen und fahren Sei mit gedrÅckter Maustaste nach rechts
+unten. Dabei ziehen Sie ein Gummiband fÅr die neue Grîûe des 3D-
+Buttons auf. An der linken oberen Ecke des 3D-Buttons wird die
+aktuelle Grîûe des Gummibandes eingeblendet, oben die Angaben in
+Zeichenpositionen, darunter die Pixel-Angaben.
+
+
+!image (!IMAGES)img00847.img Vergrîûern des Wurzelobjektes
+
+!end_node
+
+
+!begin_node Schritt I-19: Das Arbeitsobjekt des Fensters
+
+Vergrîûern Sie den 3D-Button auf 32 x 11 Zeichen und lassen Sie dann
+die linke Maustaste los. Danach vergrîûern Sie das Fenster des
+Objektbaum-Editors, bis Sie den 3D-Button komplett sehen kînnen.
+
+
+!image (!IMAGES)img00846.img Das Arbeitsobjekt des Fensters
+
+!end_node
+
+
+!begin_node Schritt I-20: Eine 3D-Umrahmung plazieren
+
+Klicken Sie im Teilefenster auf die im Bild erkennbare 3D-Umrahmung
+mit Titel und ziehen Sie diese bei gedrÅckter Maustaste auf das neue
+Wurzelobjekt.
+
+
+!image (!IMAGES)img00845.img Eine 3D-Umrahmung plazieren
+
+!end_node
+
+
+!begin_node Schritt I-21: Vergrîûern der 3D-Umrahmung
+
+Vergrîûern Sie die 3D-Umrahmung , so daû sie oben und unten an den
+3D-Button anstîût, rechts und links jedoch noch 1 Zeichen Platz ist,
+wie es auf dem Bild zu erkennen ist.
+
+
+!image (!IMAGES)img00844.img Vergrîûern der 3D-Umrahmung
+
+!end_node
+
+
+!begin_node Schritt I-22: Aufruf des Objekt-Editors
+
+Rufen Sie nun wie zuvor durch Doppel-Klick den Objekt-Editor auf,
+diesmal jedoch fÅr die 3D-Umrahmung.
+
+
+!image (!IMAGES)img00843.img Aufruf des Objekt-Editors
+
+!end_node
+
+
+!begin_node Schritt I-23: Eingabewerte im Objekt-Editor der 3D-Umrahmung
+
+Geben Sie im Objekt-Editor der 3D-Umrahmung bitte die im Bild
+sichtbaren Daten ein und verlassen Sie den Objekt-Editor durch
+Anklicken des Buttons "OK".
+
+
+!image (!IMAGES)img00842.img Eingabewerte im Objekt-Editor der 3D-Umrahmung
+
+!end_node
+
+
+!begin_node Schritt I-24: Eingabedaten im Status-Editor der 3D-Umrahmung
+
+Rufen Sie nun den Status-Editor fÅr die 3D-Umrahmung auf, indem Sie
+nach einem Doppel-Klick aus dem Popup den Eintrag "Status..."
+auswÑhlen. Lîschen Sie im Status-Editor alle evtl. selektierten Flags.
+
+
+!image (!IMAGES)img00841.img Eingabedaten im Status-Editor der 3D-Umrahmung
+
+!end_node
+
+
+!begin_node Schritt I-25: Das bisherige Arbeitsobjekt
+
+Nach dem Verlassen des Status-Editors mittels des Buttons "OK" sollte
+Ihr Arbeitsobjekt etwa folgendermaûen aussehen:
+
+
+!image (!IMAGES)img00840.img Das bisherige Arbeitsobjekt
+
+!end_node
+
+
+!begin_node Schritt I-26: HinzufÅgen eines Text-Feldes
+
+Ziehen Sie nun wie auf dem Bild erkennbar aus dem Teilefenster das
+Ausgabe-Textfeld auf die 3D-Umrahmung und plazieren Sie es dort.
+
+
+!image (!IMAGES)img00839.img HinzufÅgen eines Textfeldes
+
+!end_node
+
+
+!begin_node Schritt I-27: Plazieren des Text-Feldes
+
+Plazieren Sie das Text-Feld wie im Bild erkennbar in der linken oberen
+Ecke der 3D- Umrahmung. Das Text-Feld sollte hierbei die Rahmen nicht
+verdecken.
+
+
+!image (!IMAGES)img00838.img Plazieren des Text-Feldes
+
+!end_node
+
+
+!begin_node Schritt I-28: Vergrîûern des Textfeldes
+
+Vergrîûern Sie nun das Textfeld, bis es komplett in der 3D-Umrahmung
+liegt.
+
+
+!image (!IMAGES)img00837.img Vergrîûern des Textfeldes
+
+!end_node
+
+
+!begin_node Schritt I-29: Aufruf des Objekt-Editors
+
+Nach einem Doppel-Klick auf das Text-Feld wÑhlen Sie im erscheinenden
+Popup den Objekt-Editor aus.
+
+
+!image (!IMAGES)img00836.img Aufruf des Objekt-Editors
+
+!end_node
+
+
+!begin_node Schritt I-30: Eingabewerte im Objekt-Editor des Text-Feldes
+
+Geben Sie die im Bild erkennbaren Daten ein und verlassen Sie den
+Objekt-Editor durch einen Klick auf den Button "OK".
+
+
+!image (!IMAGES)img00835.img Eingabewerte im Objekt-Editor des Text-Feldes
+
+!end_node
+
+
+!begin_node Schritt I-31: Anpassen des Text-Feldes an den Text
+
+Verkleinern Sie nun wie auf dem Bild angegeben das Text-Feld, bis es
+die Hîhe des Textes hat.
+
+
+!image (!IMAGES)img00834.img Anpassen des Text-Feldes an den Text
+
+!end_node
+
+
+!begin_node Schritt I-32: Plazieren des Text-Feldes in der 3D-Umrahmung
+
+Plazieren Sie als nÑchstes wie auf dem Bild zu sehen das Text-Feld in
+der Mitte der 3D-Umrahmung.
+
+
+!image (!IMAGES)img00833.img Plazieren des Text-Feldes in der 3D-Umrahmung
+
+!end_node
+
+
+!begin_node Schritt I-33: Den Objektbaum als Arbeitsobjekt des Fensters verwenden
+
+Schlieûen Sie das Fenster durch einen Klick in die Schlieûbox oder
+durch DrÅcken der Tastenkombination Ctrl-U. Sie gelangen nun wieder in
+die Objektbaum-Liste, in der nun der erzeugte Objektbaum
+"HelloWorldObj" erscheint.
+
+Ziehen Sie diesen Objektbaum mit gedrÅckter Maustaste aus dem
+Listenfenster Åber das noch geîffnete Fenster des Fenster-Editors.
+
+
+!image (!IMAGES)img00832.img Den Objektbaum als Arbeitsobjekt verwenden
+
+!end_node
+
+
+!begin_node Schritt I-34: Das Icon Åber das Eingabefeld des Work-Objektes ziehen
+
+Sobald Sie mit dem Icon Åber das Eingabfeld des Work-Objektes kommen,
+wird die Annahmebereitschaft des Eingabefeldes durch einen Rahmen
+angezeigt. Sie sehen auf diese Art sofort, wohin sie den Objektbaum
+ziehen kînnen.
+
+Einen Objektbaum kînnen Sie als Arbeitsobjekt oder als Toolbar ( d.h.
+als Werkzeugleiste) eines Fensters verwenden.
+
+
+!image (!IMAGES)img00831.img Das Icon Åber das Eingabefeld ziehen
+
+!end_node
+
+
+!begin_node Schritt I-35: Das Icon Åber dem Eingabefeld des Workobjekt loslassen
+
+Lassen Sie nun das gezogene Icon des Objektbaumes Åber dem Eingabefeld
+des Work- Objektes los. Der Name des Objektbaumes "HelloWorkObj" wird
+in das Eingabefeld eingetragen.
+
+Sie haben nun den Objektbaum dem Fenster als Arbeitsobjekt zugeordnet.
+
+
+!image (!IMAGES)img00830.img Das Icon Åber dem Eingabefeld loslassen
+
+!end_node
+
+
+!begin_node Schritt I-36: Wechsel in den Fenster-Editor
+
+Schlieûen Sie nun die Objektbaum-Liste und wechseln Sie so in das
+darunter liegende Fenster des Fenster-Editors.
+
+
+!image (!IMAGES)img00829.img Wechsel in den Fenster-Editor
+
+!end_node
+
+
+!begin_node Schritt I-37: Eingabe der Funktionen im Fenster-Editor
+
+Wenn Sie im Fenster-Editor nach unten blÑttern, sehen Sie die
+Eingabefelder fÅr die verschiedenen Fenster-Funktionen. Sie kînnen
+hier eigene Funktionen angeben, falls Sie die Felder leer lassen,
+werden die von (!I)ACSpro(!i) definierten Funktionen verwendet. In diesem
+Beispiel geben SIe bitte keine Funktion ein, es sollen die (!I)ACSpro(!i)-
+Standard-Funktionen verwendet werden.
+
+
+!image (!IMAGES)img00828.img Eingabe der Funktionen im Fenster-Editor
+
+!end_node
+
+
+!begin_node Schritt I-38: Fenster-Editor schlieûen
+
+Schlieûen Sie den Fenster-Editor durch Klick auf den Button "OK".
+
+
+!image (!IMAGES)img00827.img Fenster-Editor schlieûen
+
+!end_node
+
+
+!begin_node Schritt I-39: Meldung des Fenster-Editors
+
+Es erscheint eine Meldung des Fenster-Editors, daû keine Create-
+Routine fÅr Awindow.create definiert wurde und daher Awi_selfcreate
+verwendet wird.
+
+Dies ist ein Hinweis fÅr Sie, da Awi_selfcreate als Parameter einen
+Zeiger auf die zu erzeugende Fensterstruktur benîtigt. BestÑtigen Sie
+diesen Hinweis mit "OK".
+
+
+!image (!IMAGES)img00826.img Meldung des Fenster-Editors
+
+!end_node
+
+
+!begin_node Schritt I-40: Die Fenster-Liste
+
+Sie gelangen nun wieder in die Fenster-Liste. Hier sehen Sie das
+mittlerweile fertig angelegte Fenster "HelloWorld". Schlieûen Sie die
+Fenster-Liste.
+
+
+!image (!IMAGES)img00825.img Die Fenster-Liste
+
+!end_node
+
+
+!begin_node Schritt I-41: Die Eigenschaften des Hauptmoduls
+
+Klicken Sie nun im Fenster "Generelles" auf das Icon "Eigenschaften".
+Alternativ kînnen Sie auch die Taste 'V' verwenden. Es îffnet sich der
+Dialog "Verhalten".
+
+(!B)Hinweis:(!b) Ab (!I)ACSpro(!i) 3.0.0 ist dieser Dialog in "Eigenschaften"
+umbenannt worden und hat als TastaturkÅrzel 'E'. Daher wird er ab
+jetzt auch hier so genannt.
+
+Geben Sie bitte die im Bild erkennbaren Daten in den Dialog ein und
+schlieûen Sie ihn durch Klick auf den Button "OK".
+
+
+!image (!IMAGES)img00824.img Eingabewerte im Eigenschaften-Dialog
+
+!end_node
+
+
+!begin_node Schritt I-42: Die System-Meldungen
+
+Wenn Sie nun die Liste der Meldungen durch einen Klick auf das Icon
+"ALERT BOX" îffnen, finden Sie die System-Meldungen. Diese kînnen Sie
+selbstverstÑndlich editieren und verÑndert. Da diese jedoch von (!I)ACSpro(!i)
+benîtigt werden, sollten Sie nie eine davon lîschen!
+
+
+!image (!IMAGES)img00823.img Die System-Meldungen
+
+!end_node
+
+
+!begin_node Schritt I-43: Speichern der ACS-Datei
+
+Schlieûen Sie die Alert-Liste und speichern Sie die ACS-Datei durch
+einen Klick auf das Disketten-Symbol in der Toolbar, wie es auf dem
+Bild zu sehen ist.
+
+Durch einen Klick auf das Icon, welches durch das lesbare "if" den
+Compiler-Source symbolisiert (zweites Icon von rechts in der Toolbar)
+veranlassen Sie den (!I)GUI-Editor(!i), den Compiler-Source zu generieren,
+falls dies beim Speichern nicht bereits automatisch erledigt sein
+sollte.
+
+
+!image (!IMAGES)img00822.img Speichern der ACS-Datei
+
+!end_node
+
+
+!begin_node Schritt I-44: ACS beenden
+
+Da nun im (!I)ACSpro(!i)-(!I)GUI-Editor(!i) alles getan ist, beenden Sie bitte den
+(!I)GUI-Editor(!i).
+
+Wenn Sie das (!link [Beispiel II] [Ein einfaches Programm: Hello World (Pure-Pascal, ACSpro 2.3.4)]) (Pure-Pascal) nachvollziehen mîchten, dann
+springen Sie bitte hier wieder zu (!link [Schritt II-1] [Schritt II-1: Erstellen der ACS-Dateien]) zurÅck.
+
+
+!image (!IMAGES)img00821.img (!I)ACSpro(!i) beenden
+
+!end_node
+
+
+!begin_node Schritt I-45: Die bisherigen Dateien des Beispiels
+
+Wenn Sie nun im Desktop - hier ist es jinnee - das Verzeichnis
+ansehen, in das Sie die Dateien gespeichert haben, so sollten Sie die
+hier abgebildeten Dateien vorfinden.
+
+
+!image (!IMAGES)img00820.img Die bisherigen Dateien des Beispiels
+
+!end_node
+
+
+!begin_node Schritt I-46: Anlegen der Pure-C-Projektdatei
+
+Starten Sie Pure-C und legen Sie eine neue Projektdatei an, z.B.
+"D:\ACSPRO\BEISPIEL\HELLO.C\HELLO.PRJ".
+
+Falls Sie nicht die Pure-C-eigene Dateiauswahl verwenden, sieht Ihr
+Bildschirm natÅrlich anders aus... ;-)
+
+
+!image (!IMAGES)img00819.img Anlegen der Pure-C-Projektdatei
+
+!end_node
+
+
+!begin_node Schritt I-47: Die Projekt-Datei in Pure-C
+
+Geben Sie nun die Projekt-Datei wie abgebildet ein und speichern Sie
+diese.
+
+
+!image (!IMAGES)img00818.img Die Projekt-Datei in Pure-C
+
+!end_node
+
+
+!begin_node Schritt I-48: Anlegen des Hauptmoduls in Pure-C
+
+Legen Sie nun eine neue Datei als Hauptmodul an, z.B.
+"D:\ACSPRO\BEISPIEL\HELLO.C\HELLO.C".
+
+Falls Sie nicht die Pure-C-eigene Dateiauswahl verwenden, sieht Ihr
+Bildschirm natÅrlich anders aus... ;-)
+
+
+!image (!IMAGES)img00817.img Anlegen des Hauptmoduls in Pure-C
+
+!end_node
+
+
+!begin_node Schritt I-49: Das Hauptprogramm in Pure-C
+
+Geben Sie nun das abgebildete Hauptprogramm ein und speichern Sie es
+unter dem in der Projektdatei angegebenen Namen.
+
+
+!image (!IMAGES)img00816.img Das Hauptprogramm in Pure-C
+
+!end_node
+
+
+!begin_node Schritt I-50: Das fertige Programm
+
+Lassen Sie Pure-C das Projekt compilieren und linken. Sie sollten dann
+in Ihrem Desktop die folgenden Dateien wieder finden.
+
+
+!image (!IMAGES)img00815.img Das fertige Programm
+
+!end_node
+
+
+!begin_node Schritt I-51: Start des Programmes "Hello World"
+
+Starten Sie das Programm durch einen Doppelklick vom Desktop aus. Es
+wird das konstruierte Fenster mit dem Schriftzug "Hello World"
+geîffnet.
+
+Das Fenster ist bereits voll funktionstÅchtig, sie kînnen dieses
+Fenster z.B. verschieben, die Grîûe verÑndern, ggf. per Iconify
+ablegen und wieder aktivieren. Dieses Verhalten ist das Standard-
+(!I)ACSpro(!i)-Verhalten, das Ihr neues Fenster geerbt hat, ohne daû Sie eine
+einzige Zeile Programm-Code schreiben muûten. Ebenso ist das (!I)ACSpro(!i)-
+Standard-MenÅ eingebunden worden. Durch dieses haben Sie z.B. Zugriff
+auf das Accessory-MenÅ.
+
+(!B)Hinweis:(!b) Beachten Sie, daû beim normalen (!I)ACSpro(!i)-Verhalten die
+Innenmaûe des Fensters nie grîûer werden als das Arbeitsobjekt. Ein
+abweichendes Verhalten muû selbst programmiert werden. Daher kînnen
+Sie das Fenster "Hello World" zwar verkleinern, es aber nicht grîûer
+als den konstruierten Objektbaum machen. Dies kînnen Sie ÅberprÅfen,
+indem Sie den Objektbaum im (!I)ACSpro(!i)-(!I)GUI-Editor(!i) etwas vergrîûern.
+
+(!B)Hinweis:(!b) Das Bild zeigt hier das Programm im 2D-Modus, der
+standardmÑûig (!I)nicht(!i) eingeschaltet sein dÅrfte. Verwenden Sie das Modul
+NO3D bzw. ON3D, um zwischen 2D- und 3D-Modus umzuschalten.
+
+
+!image (!IMAGES)img00814.img Start des Programmes "Hello World"
+
+!end_node
+
+
+!begin_node Schritt I-52: Beenden des Programmes "Hello World"
+
+Beenden Sie nun das Programm "Hello World" Åber das MenÅ "Datei" -
+oder verwenden Sie die Tastenkombination Ctrl-Q.
+
+(!B)Herzlichen GlÅckwunsch, Sie haben Ihr erstes (!I)ACSpro(!i)-Programm
+entwickelt!(!b)
+
+(!B)Hinweis:(!b) Das Bild zeigt hier das Programm im Gegensatz zum
+(!link [Schritt I-51] [Schritt I-51: Start des Programmes "Hello World"]) im 3D-Modus, der standardmÑûig eingeschaltet sein dÅrfte.
+Verwenden Sie das Modul NO3D bzw. ON3D, um zwischen 2D- und 3D-Modus
+umzuschalten.
+
+
+!image (!IMAGES)img00813.img Beenden des Programmes "Hello World"
+
+!end_node
+
+
+!end_node

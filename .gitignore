@@ -64,3 +64,5 @@ core
 bla.*
 aaa.cfg
 gensym
+udo_*.img
+*.uls
