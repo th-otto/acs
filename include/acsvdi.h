@@ -916,9 +916,9 @@ void v_clrwk( int16 handle );
 void v_updwk( int16 handle );
 
 /* NVDI-Erweiterungen */
-void v_opnbm( int16 *work_in, const MFDB *bitmap, int16 *handle, int16 *work_out );
+void v_opnbm( int16 *work_in, MFDB *bitmap, int16 *handle, int16 *work_out );
 void v_clsbm( int16 handle );
-int16 v_open_bm( int16 base_handle, const GCBITMAP *bitmap, int16 zero,
+int16 v_open_bm( int16 base_handle, GCBITMAP *bitmap, int16 zero,
             int16 flags, int16 pixel_width, int16 pixel_height );
 int16 v_resize_bm( int16 handle, int16 width, int16 height,
             int32 byte_width, const uint8 *addr );
@@ -1141,7 +1141,7 @@ void vqt_fontinfo( int16 handle, int16 *minADE, int16 *maxADE, int16 *distances,
          int16 *maxwidth, int16 *effects );
 void vqt_justified( int16 handle, int16 x, int16 y, const char *string,
          int16 length, int16 word_space, int16 char_space, int16 *offsets );
-void vq_devinfo( int16 handle, int16 device, boolean *dev_open,
+int16 vq_devinfo( int16 handle, int16 device, boolean *dev_open,
          char *file_name, char *device_name );
 void vqt_devinfo( int16 handle, int16 devnum,
             boolean *devexists, char *devstr );

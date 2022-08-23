@@ -1101,7 +1101,7 @@ void vqt_advance32( int16 handle, int16 index, fix31 *x_advance, fix31 *y_advanc
 /*                                                                            */
 /******************************************************************************/
 
-void vq_devinfo( int16 handle, int16 device, boolean *dev_open,
+int16 vq_devinfo( int16 handle, int16 device, boolean *dev_open,
          char *file_name, char *device_name )
 {
    register int16 i;
@@ -1149,6 +1149,7 @@ void vq_devinfo( int16 handle, int16 device, boolean *dev_open,
          memcpy(device_name, ptsout + 1, len * sizeof(*ptsout));
       device_name[2*len] =  '\0';
    }
+   return ptsout[0];
 }
 
 /******************************************************************************/

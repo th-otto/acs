@@ -360,7 +360,7 @@ void v_updwk( int16 handle )
 /*                                                                            */
 /******************************************************************************/
 
-void v_opnbm( int16 *work_in, const MFDB *bitmap, int16 *handle, int16 *work_out )
+void v_opnbm( int16 *work_in, MFDB *bitmap, int16 *handle, int16 *work_out )
 {
    if( handle!=NULL )
    {
@@ -371,7 +371,7 @@ void v_opnbm( int16 *work_in, const MFDB *bitmap, int16 *handle, int16 *work_out
       contrl[6]=*handle;
 
       /* Den MFDB eintragen */
-      *((const MFDB **)&(contrl[7])) = bitmap;
+      *((MFDB **)&(contrl[7])) = bitmap;
 
       /* VDI aufrufen */
       vdi_(contrl, work_in, _VDIParBlk.ptsin, work_out, &(work_out[45]));
@@ -418,7 +418,7 @@ int16 v_resize_bm( int16 handle, int16 width, int16 height,
 /*                                                                            */
 /******************************************************************************/
 
-int16 v_open_bm( int16 base_handle, const GCBITMAP *bitmap, int16 zero,
+int16 v_open_bm( int16 base_handle, GCBITMAP *bitmap, int16 zero,
             int16 flags, int16 pixel_width, int16 pixel_height )
 {
    /* contrl anlegen und fÅllen */
@@ -432,7 +432,7 @@ int16 v_open_bm( int16 base_handle, const GCBITMAP *bitmap, int16 zero,
    contrl[6] = base_handle;
 
    /* Die Bitmap eintragen */
-   *((const GCBITMAP **)&(contrl[7])) = bitmap;
+   *((GCBITMAP **)&(contrl[7])) = bitmap;
 
    /* intin fÅllen */
    intin[0] = zero;
